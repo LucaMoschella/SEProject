@@ -1,18 +1,24 @@
 \RequirePackage[l2tabu,orthodox]{nag} %Ti avverte di roba deprecata
 
-\documentclass{report}  %impostiamo il tipo di documento
+\documentclass{report}  		%impostiamo il tipo di documento
 
-\input{documents/preamble} %importiamo la configurazione
-\input{documents/glossario}
+\input{documents/preamble} 		%importiamo la configurazione
+\input{documents/glossario} 	%Importiamo le parole definite nel dizionario, 
+								%potranno essere usate con \gls{<label>} il riferimento alla pagina sarà aggiunto al glossario
+								%Le sigle verranno espanse al primo link, poi mai più
 
 
 %\includeonly{documents/1.PropostaDiProgetto} %Per compilazioni parziali
 
 \begin{document} %inizio stesura documento
 	\include{documents/titlePage}
+	\gls{computer}
 	\tableofcontents
 	\include{documents/1.PropostaDiProgetto}
-
+	\gls{computer}
+	
 	\glsaddall
+
+	
 	\printglossaries
 \end{document} %fine stesura doumento
