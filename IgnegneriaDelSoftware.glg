@@ -1,7 +1,18 @@
-This is makeindex, version 2.15 [MiKTeX 2.9 64-bit] (kpathsea + Thai support).
-Scanning style file ./IgnegneriaDelSoftware.ist.............................done (29 attributes redefined, 0 ignored).
-Scanning input file IgnegneriaDelSoftware.glo....done (3 entries accepted, 0 rejected).
-Sorting entries....done (4 comparisons).
-Generating output file IgnegneriaDelSoftware.gls....done (10 lines written, 0 warnings).
-Output written in IgnegneriaDelSoftware.gls.
-Transcript written in IgnegneriaDelSoftware.glg.
+;; This logfile was generated automatically by `xindy'
+;; at 23.04.2016  00:29:33
+;; Indexstyle: "C:\\Users\\Luca\\Desktop\\SEProject\\bF_7y2vl4b", Rawindex: "C:\\Users\\Luca\\Desktop\\SEProject\\nNs3ilgJOY", Output: "IgnegneriaDelSoftware.gls"
+
+
+Building indexentry-tree:
+Hierdepth of index is :TREE
+
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+
+Forming letter-groups:
+Letter-group: "†Ã»ÈàÚ—Ë" -> "C"
+Letter-group: "È¨" -> "P"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "†Ã»ÈàÚ—Ë" -> "C"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "È¨" -> "P"

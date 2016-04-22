@@ -1,3 +1,2 @@
-\glossaryentry{computer?\glossentry{computer}|setentrycounter[]{page}\glsnumberformat}{1}
-\glossaryentry{computer?\glossentry{computer}|setentrycounter[]{page}\glsnumberformat}{13}
-\glossaryentry{pi?\glossentry{pi}|setentrycounter[]{page}\glsignore}{13}
+(indexentry :tkey (("computer" "\\glossentry{computer}") ) :locref "{}{2}" :attr "pageglsnumberformat" ) 
+(indexentry :tkey (("pi" "\\glossentry{pi}") ) :locref "{}{14}" :attr "pageglsignore" ) 
