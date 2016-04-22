@@ -1,0 +1,52 @@
+%PACKAGE ESSENZIALI - anche se non usati così mi ricordo della loro esistenza
+\usepackage[italian]{babel} %imposta la lingua
+\usepackage[T1]{fontenc}  %compatibilità di output delle cose
+\usepackage[utf8]{inputenc}  %compatibilità di input delle cose
+
+\usepackage{lmodern} %rende più bello il font
+\usepackage{microtype}   %rende più bello il font
+
+\usepackage{index} %roba per personalizzare l'index
+\usepackage{titlesec} %roba per personalizzare gli header (capitolo, sezioni, etc.)
+\usepackage{titling} %roba per personalizzare il titolo e la pagina inziale
+
+\usepackage[italian]{varioref} %ref intelligente
+
+\usepackage[inline]{enumitem} %gestione liste avanzata
+\usepackage{parskip} %spazio vericale invece di indentazione nei paragrafi
+
+\usepackage{natbib} %roba per bibliografia
+\usepackage{tocbibind} %roba per inserire la bibliografia nella toc (table of contents)
+
+\usepackage{graphicx, xcolor} %gestione delle immagini e dei colori
+
+\usepackage{amsmath, amsthm, amssymb} %roba per matematica
+
+\usepackage{hyperref} %gestione dei link (da personalizzar eper togliere i quadrettoni)
+
+\usepackage{glossaries}
+
+%PERSONALIZZAZIONE
+%Va tolto la scritta capitolo ogni volta
+%Vanno sistemati i link (forse)
+%Va sistemato il titolo principale
+
+%\setlist[description]{itemindent=0.5cm}
+%\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+
+\titleformat{\chapter}{\normalfont\bfseries\huge}{\thechapter.}{15pt}{\normalfont\bfseries\huge} %toglie la scritta "Capitolo N"
+
+\frenchspacing 
+
+%DEFINIZIONE COMANDI PERSONALI - usando questi comandi invece di quelli di default possiamo mantenere la coerenza del documento e modificare TUTTO contemporaneamente
+\newcommand{\wemph}[1]{\emph{#1}} %strong emphatize 
+\newcommand{\semph}[1]{\textbf{#1}} %weak emphatize
+
+% forse da togleire
+\newcommand{\funref}[1]{funzionalità descritta nel punto \texttt{\ref{#1}}}
+\newcommand{\funrefs}[2]{funzionalità descritte nei punti \texttt{\ref{#1}} e \texttt{\ref{#2}} }
+\newcommand{\bloccofunref}[1]{blocco funzionalità \texttt{\ref{#1}.}}
+
+%DEFINIZIONE AMBIENTI PERSONALI
+%Def: \newenvironment{name}[num]{before}{after}
+\newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
