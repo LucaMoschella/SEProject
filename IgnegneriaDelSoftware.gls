@@ -25,8 +25,8 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{C}\relax\glsresetentrylist
 \glossentry{computer}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{2}}}\glsgroupskip
+\glsXpageXglsignore{}{13}}}\glsgroupskip
 \glsgroupheading{P}\relax\glsresetentrylist
 \glossentry{pi}{\glossaryentrynumbers{\relax 
-\glsXpageXglsignore{}{14}}}%
+\glsXpageXglsignore{}{13}}}%
 \end{theglossary}\glossarypostamble

@@ -11,6 +11,8 @@
 \usepackage{graphicx, xcolor} 					%gestione delle immagini e dei colori
 \usepackage{amsmath, amsthm, amssymb} 			%roba per matematica
 \usepackage{imakeidx}							%gestione indice analitico
+\usepackage{booktabs}							%tabelle semplificate ( professionali )
+\usepackage{datetime}							%gestisce le date
 \usepackage{hyperref} 							%gestione dei link
 \usepackage[xindy,toc]{glossaries} 				%glossario
 
@@ -29,7 +31,7 @@
 
 %crea il glossario ed imposta lo stile
 \makeglossaries
-\glossarystyle{altlist}
+\setglossarystyle{altlist}
 
 %usando le macro possiamo mantenere la coerenza del documento e modificare TUTTO contemporaneamente
 %MACRO COMANDI
