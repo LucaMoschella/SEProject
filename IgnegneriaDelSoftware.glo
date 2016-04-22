@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 \glossaryentry{computer?\glossentry{computer}|setentrycounter[]{page}\glsnumberformat}{1}
 \glossaryentry{computer?\glossentry{computer}|setentrycounter[]{page}\glsnumberformat}{14}
 \glossaryentry{computer?\glossentry{computer}|setentrycounter[]{page}\glsnumberformat}{14}
 \glossaryentry{pi?\glossentry{pi}|setentrycounter[]{page}\glsnumberformat}{14}
+=======
+\glossaryentry{computer?\glossentry{computer}|setentrycounter[]{page}\glsnumberformat}{13}
+\glossaryentry{pi?\glossentry{pi}|setentrycounter[]{page}\glsnumberformat}{13}
+>>>>>>> origin/master

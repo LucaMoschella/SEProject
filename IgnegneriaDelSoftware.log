@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.22)  22 APR 2016 22:56
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.4.20)  22 APR 2016 22:53
+>>>>>>> origin/master
 entering extended mode
 **./IgnegneriaDelSoftware.tex
 (IgnegneriaDelSoftware.tex
@@ -20,7 +24,11 @@ File: nag-orthodox.cfg 2006/04/19 v1.8 strict rules for nag.sty (ulmi)
 ))
 (G:\Latex\Latexx\tex\latex\base\report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+<<<<<<< HEAD
 (G:\Latex\Latexx\tex\latex\base\size11.clo
+=======
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+>>>>>>> origin/master
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count81
@@ -1084,6 +1092,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 \openout3 = `IgnegneriaDelSoftware.ist'.
 
 
+<<<<<<< HEAD
 {C:/Users/FuhAle/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]pdfTeX warn
 ing (ext4): destination with the same identifier (name{page.1}) has been alread
 y used, duplicate ignored
@@ -1093,13 +1102,23 @@ l.16 	\tableofcontents
                        [1
 
 ] (IgnegneriaDelSoftware.toc
+=======
+{C:/Users/Luca/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (IgnegneriaD
+elSoftware.toc
+>>>>>>> origin/master
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 5.
 )
 \tf@toc=\write6
 \openout6 = `IgnegneriaDelSoftware.toc'.
 
- [2
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.17 	\include{documents/1.PropostaDiProgetto}
+                                               [1
+
 
 ]
 \openout2 = `documents/1.PropostaDiProgetto.aux'.
@@ -1122,9 +1141,10 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 7.
- [3
+ [2
 
 
+<<<<<<< HEAD
 ] [4] [5] [6] [7] [8] [9] [10]
 [11] [12]) [13] (IgnegneriaDelSoftware.gls [14
 
@@ -1132,25 +1152,41 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 No complaints by nag.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 24.
 [15
+=======
+] [3] [4] [5] [6]
+[7] [8] [9] [10] [11]) [12] (IgnegneriaDelSoftware.gls [13
+
+])
+No complaints by nag.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 22.
+[14
+>>>>>>> origin/master
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 24.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 22.
  (IgnegneriaDelSoftware.aux (documents/titlePage.aux)
 (documents/1.PropostaDiProgetto.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 24.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 24.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 22.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 22.
 Package rerunfilecheck Info: File `IgnegneriaDelSoftware.out' has not changed.
 (rerunfilecheck)             Checksum: 8DD58521989CC3BE2306495808714EB2;1002.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  15097 strings out of 493617
  220278 string characters out of 3148510
  435941 words of memory out of 3000000
+=======
+ 15096 strings out of 493617
+ 223509 string characters out of 3143644
+ 435617 words of memory out of 3000000
+>>>>>>> origin/master
  17984 multiletter control sequences out of 15000+200000
  63363 words of font info for 90 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  48i,6n,50p,1996b,687s stack positions out of 5000i,500n,10000p,200000b,50000s
+<<<<<<< HEAD
 {G:/Latex/Latexx/fonts/enc/dvips/lm/lm-mathit.enc}{G:/Latex/Latexx/fonts/enc/
 dvips/lm/lm-ec.enc}{G:/Latex/Latexx/fonts/enc/dvips/lm/lm-mathsy.enc}<G:/Latex/
 Latexx/fonts/type1/public/lm/lmbx10.pfb><G:/Latex/Latexx/fonts/type1/public/lm/
@@ -1163,5 +1199,21 @@ Output written on IgnegneriaDelSoftware.pdf (16 pages, 234444 bytes).
 PDF statistics:
  305 PDF objects out of 1000 (max. 8388607)
  91 named destinations out of 1000 (max. 500000)
+=======
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-mathsy.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
+bx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmtt10.pfb>
+Output written on IgnegneriaDelSoftware.pdf (15 pages, 232890 bytes).
+PDF statistics:
+ 297 PDF objects out of 1000 (max. 8388607)
+ 90 named destinations out of 1000 (max. 500000)
+>>>>>>> origin/master
  16505 words of extra memory for PDF output out of 17280 (max. 10000000)
 
