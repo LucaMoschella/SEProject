@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}					
 \usepackage[italian]{babel}					
 
-%Miglioramenti visivi
+%Miglioramenti visivi - sempre necessario
 \usepackage{microtype} 						
 
 %Riferimenti intelligenti
@@ -34,12 +34,21 @@
 %gestione delle immagini e dei colori
 \usepackage{xcolor}
 \usepackage{graphicx} 	
-					%Inserire le immagini con dim relative a \textwidth
+					%Inserire le immagini  dim relative a \textwidth
 					%es: 0.8\textwidth
+				
+%Gestione figura con sottofigura
+\usepackage{subfig}		
 
-%Gestione didascalie avanzara
+%Gestione avvolgimento figure dal testo
+\usepackage{wrapfig} 	
+
+%Gestione didascalie avanzata
 \usepackage{caption}
-\captionsetup{tableposition=top,figureposition=bottom,font=small, format=hang,labelfont={sf,bf}}
+\captionsetup{tableposition=top,figureposition=bottom,font=small,format=hang,labelfont={sf,bf}}
+
+%Gestione didascalie a lato di una figura
+\usepackage{sidecap}
 
 %Gestione date
 \usepackage{datetime}
@@ -55,15 +64,6 @@
 %\usepackage{pgfplots}
 %\pgfplotsset{/pgf/number format/use comma,compat=newest}
 
-%Gestione note a margine di una figura
-\usepackage{sidecap}
-
-%Gestione figura con sottofigura
-\usepackage{subfig}		
-
-%Gestione avvolgimento figure dal testo
-\usepackage{wrapfig} 	 
-
 %Gestione unità di misura
 \usepackage[output-decimal-marker={,}]{siunitx}
 					%Per inserire numeri va usato \num{...}
@@ -71,7 +71,7 @@
 %Gestione bibliografia e citazioni
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage[backend=biber]{biblatex}
-\addbibresource{bibliografia/bibliografia.bib}	
+\addbibresource{bibliografia/bibliografia.bib}	%estensione necessaria (unico caso!)
 
 %Gestione dei link
 \usepackage{hyperref} 						
@@ -80,13 +80,19 @@
 \usepackage[xindy,toc]{glossaries} 	
 \makeglossaries
 \setglossarystyle{altlist}
-
+\input{glossario/glossario}	%importiamo il glossario, va usato con \gls{<label>}
 
 
 %ULTERIORI PERSONALIZZAZIONI
 
 %cambia Chapter in Documento
 \addto\captionsitalian{\renewcommand{\chaptername}{Documento}}
+
+%cambia Bibliografia in Opere consultate
+\DefineBibliographyStrings{italian}{%
+	bibliography = {Opere consultate},
+}
+
 
 %toglie lo spazio allungato dopo i punti di fine frase.
 \frenchspacing 
