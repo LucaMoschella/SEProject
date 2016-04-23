@@ -1,20 +1,21 @@
 %PERCHE' USARE LE MACRO
 %1) Usando le macro possiamo stabili la formattazione "logica" del documento,
-%		rendendo possibile cambiare le convenzioni adottate mantenendo la coerenza
+%	rendendo possibile cambiare le convenzioni adottate mantenendo la coerenza
 %2) Definire comandi abbreviati per semplificare comandi con opzioni complese ripetute più volte
 %3) Senza esagerare, definire testo da inserire in automatico senza riscriverlo ogni volta
 
 %MACRO COMANDI
+%strong emphatize
+\newcommand{\wemph}[1]{\emph{#1}} 
 
-\newcommand{\wemph}[1]{\emph{#1}} %strong emphatize 
-\newcommand{\semph}[1]{\textbf{#1}} %weak emphatize
+%weak emphatize
+\newcommand{\semph}[1]{\textbf{#1}} 
 
-\newcommand{\iindex}[1]{#1\index{#1}} %Indiicizzare e inserire contemporaneamente
+%Indiicizzare e inserire contemporaneamente
+\newcommand{\iindex}[1]{#1\index{#1}} 
 
-% forse da togleire - DA TOGLIRE SICURAMENTE, NON USARE ( meglio scrivere e usare ref/vref)
-\newcommand{\funref}[1]{funzionalità descritta nel punto \texttt{\ref{#1}}}
-\newcommand{\funrefs}[2]{funzionalità descritte nei punti \texttt{\ref{#1}} e \texttt{\ref{#2}} }
-\newcommand{\bloccofunref}[1]{blocco funzionalità \texttt{\ref{#1}.}}
+%Riferimenti a funzionalità
+\newcommand{\funref}[1]{\texttt{\ref{#1}}}
 
 
 %Matematica
@@ -34,4 +35,4 @@
 
 %lista descrption dove la descrizione va a capo.
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
-%Def: \newenvironment{name}[num]{before}{after}
+		%signatura: \newenvironment{name}[num]{before}{after}
