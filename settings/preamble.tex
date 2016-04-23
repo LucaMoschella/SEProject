@@ -1,0 +1,98 @@
+%IMPORT PACKAGE & INIZIALIZZAZIONI & PERSONALIZZAZIONI PACKAGE- l'ordine ha importanza
+%Compatibili input, output e lingua italiana
+\usepackage[T1]{fontenc}  					
+\usepackage[utf8]{inputenc}					
+\usepackage[italian]{babel}					
+
+%Miglioramenti visivi
+\usepackage{microtype} 						
+
+%Riferimenti intelligenti
+\usepackage[italian]{varioref} 				
+
+%Gestione liste avanzata e semplificata
+\usepackage[inline]{enumitem} 			
+
+%spazio vericale invece di indentazione nei paragrafi
+%\usepackage{parskip} 						
+
+%Gestione matematica
+\usepackage{amsmath, amsthm, amssymb} 	
+
+%gestione indice analitico
+\usepackage{makeidx}						
+\makeindex
+
+%Gestione inserimente di codice
+\usepackage{listings}
+
+%Gestione tabelle avanzata
+\usepackage{booktabs}					
+\usepackage{tabularx}
+\usepackage{multicol}
+
+%gestione delle immagini e dei colori
+\usepackage{xcolor}
+\usepackage{graphicx} 	
+					%Inserire le immagini con dim relative a \textwidth
+					%es: 0.8\textwidth
+
+%Gestione didascalie avanzara
+\usepackage{caption}
+\captionsetup{tableposition=top,figureposition=bottom,font=small, format=hang,labelfont={sf,bf}}
+
+%Gestione date
+\usepackage{datetime}
+
+%Miglioramento quoting						
+\usepackage{quoting}
+\quotingsetup{font=small}
+
+%Permette i commenti
+\usepackage{comment}
+
+%Gestione grafici
+%\usepackage{pgfplots}
+%\pgfplotsset{/pgf/number format/use comma,compat=newest}
+
+%Gestione note a margine di una figura
+\usepackage{sidecap}
+
+%Gestione figura con sottofigura
+\usepackage{subfig}		
+
+%Gestione avvolgimento figure dal testo
+\usepackage{wrapfig} 	 
+
+%Gestione unità di misura
+\usepackage[output-decimal-marker={,}]{siunitx}
+					%Per inserire numeri va usato \num{...}
+	
+%Gestione bibliografia e citazioni
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliografia/bibliografia.bib}	
+
+%Gestione dei link
+\usepackage{hyperref} 						
+
+%Crea il glossario ed imposta lo stile - dopo hyperref
+\usepackage[xindy,toc]{glossaries} 	
+\makeglossaries
+\setglossarystyle{altlist}
+
+
+
+%ULTERIORI PERSONALIZZAZIONI
+
+%cambia Chapter in Documento
+\addto\captionsitalian{\renewcommand{\chaptername}{Documento}}
+
+%toglie lo spazio allungato dopo i punti di fine frase.
+\frenchspacing 
+
+%non stiracchia la pagina per riempirla
+\raggedbottom
+
+%toglie la parola capitolo ad ogni capitolo
+%\titleformat{\chapter}{\normalfont\bfseries\huge}{\thechapter.}{15pt}{\normalfont\bfseries\huge} %toglie la scritta "Capitolo N

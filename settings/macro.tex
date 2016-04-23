@@ -1,0 +1,37 @@
+%PERCHE' USARE LE MACRO
+%1) Usando le macro possiamo stabili la formattazione "logica" del documento,
+%		rendendo possibile cambiare le convenzioni adottate mantenendo la coerenza
+%2) Definire comandi abbreviati per semplificare comandi con opzioni complese ripetute più volte
+%3) Senza esagerare, definire testo da inserire in automatico senza riscriverlo ogni volta
+
+%MACRO COMANDI
+
+\newcommand{\wemph}[1]{\emph{#1}} %strong emphatize 
+\newcommand{\semph}[1]{\textbf{#1}} %weak emphatize
+
+\newcommand{\iindex}[1]{#1\index{#1}} %Indiicizzare e inserire contemporaneamente
+
+% forse da togleire - DA TOGLIRE SICURAMENTE, NON USARE ( meglio scrivere e usare ref/vref)
+\newcommand{\funref}[1]{funzionalità descritta nel punto \texttt{\ref{#1}}}
+\newcommand{\funrefs}[2]{funzionalità descritte nei punti \texttt{\ref{#1}} e \texttt{\ref{#2}} }
+\newcommand{\bloccofunref}[1]{blocco funzionalità \texttt{\ref{#1}.}}
+
+
+%Matematica
+
+%insiemi numerici
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\R}{\numberset{R}}
+
+%lettere strane
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\theta}{\vartheta}
+\renewcommand{\rho}{\varrho}
+\renewcommand{\phi}{\varphi}
+
+%MACRO AMBIENTI
+
+%lista descrption dove la descrizione va a capo.
+\newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
+%Def: \newenvironment{name}[num]{before}{after}

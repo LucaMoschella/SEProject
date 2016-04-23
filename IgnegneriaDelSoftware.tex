@@ -1,26 +1,42 @@
-\RequirePackage[l2tabu,orthodox]{nag} %Ti avverte di roba deprecata
+\RequirePackage[l2tabu,orthodox]{nag} 	%Ti avverte di roba deprecata
 
 \documentclass[11pt]{report}  		%impostiamo il tipo di documento
 
-\input{documents/preamble} 		%importiamo la configurazione
-\input{documents/glossario} 	%Importiamo le parole definite nel dizionario, 
-								%potranno essere usate con \gls{<label>} il riferimento alla pagina sarà aggiunto al glossario
-								%Le sigle verranno espanse al primo link, poi mai più
+\input{settings/preamble} 				%importiamo la il preambolo: package, settings inizializzazioni
+\input{settings/macro}					%importiamo le macro personalizzate
+\input{glossario/glossario} 			%importiamo le parole definite nel dizionario, usate con \gls{<label>}
 
 
 %\includeonly{documents/1.PropostaDiProgetto} %Per compilazioni parziali
 
-%VERSIONE 1
-\newdate{versioneuno}{22}{04}{2016}
+
+%%%%%%%%%%%% PER COMPILARE %%%%%%%%%%%%%%
+%1) Compilare
+%2) Eseguire i programmi per generare indice, glossario e bibliografia {sotto strumenti}
+%3) Compilare DUE volte (per aggiornare i riferimenti)
 
 \begin{document} %inizio stesura documento
 	\include{documents/titlePage}   
 	\tableofcontents
-%
+%	
 	\include{documents/1.PropostaDiProgetto}
+%	
 %
+%Stampa il glossario - anche quelli non usati
 	\glsaddallunused
 	\printglossaries
 %
-	\printindex %Ma serve l'indice se abbiamo il glossario?
+%Stampa la bibliografia - anche quella non citata
+	\nocite{*}
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\bibname}
+	\printbibliography
+%
+%Stampa l'indice analitico
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\indexname}
+	\printindex %Maaaaa serve l'indice se abbiamo il glossario?
+%
 \end{document}  %fine stesura doumento
