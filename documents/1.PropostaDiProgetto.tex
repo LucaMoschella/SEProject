@@ -28,33 +28,33 @@ Come da richiesta, il portale permetterà agli utenti di reperire informazioni a
 Tali informazioni copriranno ogni aspetto riguardante il prodotto, visto che saranno anche arricchite dagli utenti attraverso un sistema di recensioni e commenti, così da rendere completa la descrizione dei prodotti (includendo l'opinione dell'utente stesso).
 Per i produttori, il portale sarà un mezzo di pubblicità in quanto avranno una vetrina personalizzata per esporre i propri prodotti e saranno essi stessi ad inserire tutte le specifiche dei loro prodotti, ovvero le informazioni che gli utenti potranno reperire.
 Il portale avrà diversi tipi di ruoli amministrativi e di utenze; segue una breve descrizione delle stesse, in seguito approfondita. 
-\begin{description}
-	\item Le \wemph{Utenze}: 
-			\begin{description}
-				\item[Produttore] si potrà iscrivere al portale solo tramite account verificati da siti terzi o tramite approvazione privata, contattando direttamente il supporto. Avrà il compito di creare e mantenere aggiornata la sua vetrina. Sarà a lui delegata l’aggiunta di ogni suo prodotto, anche in seguito a richieste da parte degli utenti.
-				
-				\item[Utente] si potrà iscrivere al portale, anche tramite account di siti terzi. La loro funzionalità principale, oltre la ricerca dei prodotti, sarà la possibilità di recensire e/o valutare i prodotti stessi. 
-			\end{description}
+\begin{itemize}
+	\item Le \ruolo{Utenze}:
+		\begin{description}
+			\item[Produttore] si potrà iscrivere al portale solo tramite account verificati da siti terzi o tramite approvazione privata, contattando direttamente il supporto. Avrà il compito di creare e mantenere aggiornata la sua vetrina. Sarà a lui delegata l’aggiunta di ogni suo prodotto, anche in seguito a richieste da parte degli utenti.
 			
-	\item Le \wemph{Figure di gestione del portale}:
-			\begin{description}
-				\item[Web Admin] avrà accesso completo al pannello di controllo del \gls{cms}
-				
-				\item[Newser] avrà, oltre alle funzionalità base dell’utente, il compito di gestire gli articoli e le notizie dal mondo dolciario.
-				
-				\item[Support] gestirà l’e-mail del portale rispondendo alle richieste di supporto e avrà il compito di approvare le richieste di iscrizione da parte dei produttori (tali richieste saranno inviate tramite form per una più facile gestione di esse).
-				
-				\item[Moderatore] avrà il compito di gestire segnalazioni di utenti eliminando/modificando eventuali contenuti non consoni presenti in recensioni.
-			\end{description}
-\end{description}
+			\item[Utente] si potrà iscrivere al portale, anche tramite account di siti terzi. La loro funzionalità principale, oltre la ricerca dei prodotti, sarà la possibilità di recensire e/o valutare i prodotti stessi. 
+		\end{description}
+	\item Le \ruolo{Figure di gestione del portale}:
+		\begin{description}
+			\item[Web Admin] avrà accesso completo al pannello di controllo del \gls{cms}
+			
+			\item[Newser] avrà, oltre alle funzionalità base dell’utente, il compito di gestire gli articoli e le notizie dal mondo dolciario.
+			
+			\item[Support] gestirà l’e-mail del portale rispondendo alle richieste di supporto e avrà il compito di approvare le richieste di iscrizione da parte dei produttori (tali richieste saranno inviate tramite form per una più facile gestione di esse).
+			
+			\item[Moderatore] avrà il compito di gestire segnalazioni di utenti eliminando/modificando eventuali contenuti non consoni presenti in recensioni.
+		\end{description}
+\end{itemize}
 
+\noindent
 Alcune funzionalità che potranno essere implementate in futuro sono: 
 \begin{itemize}
-	\item l’implementazione della \wemph{wishlist} per ricordarsi dei prodotti che si vorrebbero provare.
+	\item l’implementazione della \futuro{wishlist} per ricordarsi dei prodotti che si vorrebbero provare.
 
-	\item l’aggiunta del \wemph{produttore delegato}, una figura necessaria per aiutare le piccole realtà dolciarie che si occuperà di gestire le vetrine al loro posto.
+	\item l’aggiunta del \futuro{produttore delegato}, una figura necessaria per aiutare le piccole realtà dolciarie che si occuperà di gestire le vetrine al loro posto.
 
-	\item Aggiunta dei commenti alle \wemph{notizie}.
+	\item Aggiunta dei commenti alle \futuro{notizie}.
 \end{itemize}
 
 Per la fase iniziale di riempimento del portale, sarà compito di ChocoClub stessa prendere contatti con le molte pasticcerie artigianali già affiliate e le case produttrici, affinché esse si iscrivano al portale, per avere un buon numero di contenuti di partenza. 
@@ -62,7 +62,7 @@ Per la fase iniziale di riempimento del portale, sarà compito di ChocoClub stes
 \section{Descrizione funzionalità principali}
 Di seguito è presente una panoramica generale di alcune delle principali funzionalità che saranno presenti nel portale, tale elenco potrà essere soggetto a modifiche nel corso dello sviluppo.
 \begin{enumerate}
-	\item \wemph{Iscrizione \& Autenticazione} \label{bloccofun:iscAut}
+	\item \bloccofun{Iscrizione \& Autenticazione} \label{bloccofun:iscAut}
 		\begin{enumerate}        	
 			\item	\begin{descriptionNext}
 						\item[Iscrizione tramite portale] Permette l’iscrizione direttamente tramite il portale. 
@@ -86,7 +86,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext} \label{fun:aut.login}			
 		\end{enumerate}
 		
-	\item \wemph{Gestione iscrizione}	\label{bloccofun:gestisc}		
+	\item \bloccofun{Gestione iscrizione}	\label{bloccofun:gestisc}		
 		\begin{enumerate}        
 			\item	\begin{descriptionNext}
 						\item[Approvazione iscrizione] Si tratta della funzione relativa alla \funref{fun:isc.appr}, permette di approvare le richieste di iscrizione.
@@ -97,7 +97,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext}	\label{fun:rim.iscr}
 		\end{enumerate}
 		
-	\item \wemph{Gestione spazio dedicato alla presentazione prodotti (vetrina)}	\label{bloccofun:gestvet}		
+	\item \bloccofun{Gestione spazio dedicato alla presentazione prodotti (vetrina)}	\label{bloccofun:gestvet}		
 		\begin{enumerate}        
 			\item	\begin{descriptionNext}
 						\item[Inserimento descrizione e immagine vetrina] Permette di avere a disposizione una vetrina pubblica, in cui ci sarà la descrizione del produttore e in cui verranno presentati i suoi prodotti. La funzionalità permette di personalizzare la vetrina attraverso un campo testuale (descrizione) ed un’immagine di sfondo.
@@ -105,10 +105,10 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					                      
 			\item	\begin{descriptionNext}
 						\item[Inserimento prodotto in vetrina] Permette l’aggiunta di un prodotto alla vetrina. Questa funzionalità segue un rigido protocollo per far sì che le informazioni inserite siano complete e coerenti. 
-						Durante l’inserimento di un prodotto è necessario immettere: il \semph{nome del prodotto} con una sua \semph{descrizione} ed almeno una \semph{foto}. 
-						È inoltre necessario compilare un modulo che contiene campi a \wemph{scelta multipla} e campi con \wemph{tag dinamici}, di cui a seguire una breve descrizione: il sistema metterà a disposizione una grande lista dei possibili tag, che saranno suggeriti come auto-completamento all’utilizzatore durante la compilazione del campo correlato.
+						Durante l’inserimento di un prodotto è necessario immettere: il \campo{nome del prodotto} con una sua \campo{descrizione} ed almeno una \campo{foto}. 
+						È inoltre necessario compilare un modulo che contiene campi a \dominiocampo{scelta multipla} e campi con \dominiocampo{tag dinamici}, di cui a seguire una breve descrizione: il sistema metterà a disposizione una grande lista dei possibili tag, che saranno suggeriti come auto-completamento all’utilizzatore durante la compilazione del campo correlato.
 						L’utilizzo di un tag non in lista è permesso, ma esso verrà sottoposto ad una fase di verifica che se superata comporterà l’aggiunta in lista, in caso contrario verrà rimosso anche dal prodotto. Sarà specificato un limite massimo e minimo di tag da inserire per prodotto.
-						Nel modulo verrà chiesta la \semph{marca} (a scelta fra quelle associate al produttore che sta inserendo il prodotto), la \semph{categoria} del prodotto che si sta inserendo (a scelta fra \wemph{Dolce al cioccolato} oppure \wemph{cioccolato}), \semph{particolarità} (risposta con tag dinamici),  la \semph{consistenza} (a scelta fra \wemph{solida}, \wemph{liquida} oppure \emph{spalmabile}), gli \semph{ingredienti} (risposta con tag dinamici).
+						Nel modulo verrà chiesta la \campo{marca} (a scelta fra quelle associate al produttore che sta inserendo il prodotto), la \campo{categoria} del prodotto che si sta inserendo (a scelta fra \dominiocampo{Dolce al cioccolato} oppure \dominiocampo{cioccolato}), \campo{particolarità} (risposta con \dominiocampo{tag dinamici}),  la \campo{consistenza} (a scelta fra \dominiocampo{solida}, \dominiocampo{liquida} oppure \dominiocampo{spalmabile}), gli \campo{ingredienti} (risposta con \dominiocampo{tag dinamici}).
 						Durante la compilazione del modulo di un prodotto è possibile compilare ulteriori campi (oltre a quelli proposti di default) scegliendo fra quelli messi a disposizione dal sistema, per migliorare la descrizione del prodotto e facilitarne la ricerca.
 					\end{descriptionNext}	\label{fun:ins.prod}
 
@@ -121,7 +121,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext} \label{fun:vis.vetrPr}	 	  				
 		\end{enumerate}			
 		
-	\item \emph{Ricerca} \label{bloccofun:ric}
+	\item \bloccofun{Ricerca} \label{bloccofun:ric}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
 						\item[Ricerca prodotti tramite diversi criteri] Permette di effettuare ricerche, le ricerche potranno basarsi su qualsiasi campo della scheda del prodotto e dettagli del produttore. Sarà possibile ordinare i risultati.
@@ -136,7 +136,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext}	\label{fun:ric.not}
 		\end{enumerate}
 
-	\item \wemph{Gestione recensioni} \label{bloccofun:gestrec}
+	\item \bloccofun{Gestione recensioni} \label{bloccofun:gestrec}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
 						\item[Valutazione prodotto] Permette di esprimere una valutazione su scala limitata di un prodotto.
@@ -149,7 +149,6 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 			\item	\begin{descriptionNext}
 						\item[Richiesta inserimento di un prodotto a un produttore]Permette di segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema.
 					\end{descriptionNext}	\label{fun:ric.prodotto}
-
 
 			\item	\begin{descriptionNext}
 						\item[Richiesta inserimento di un prodotto e del suo produttore]Permette di segnalare al personale incaricato l’assenza di un produttore ed allo stesso tempo di uno suo specifico prodotto.
@@ -188,7 +187,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext}	\label{fun:report.cont}
 		\end{enumerate}
 
-	\item \wemph{Gestione notizie} \label{bloccofun:gestnot}
+	\item \bloccofun{Gestione notizie} \label{bloccofun:gestnot}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
 						\item[Consultazione notizie] Permette la visualizzazione delle notizie inserite nel portale, in base a preferenze dell’utente e impostazioni del gestore.
@@ -207,7 +206,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext}	\label{fun:del.not}
 		\end{enumerate}
 
-	\item \wemph{Gestione follower/followed} \label{bloccofun:gestfoll}
+	\item \bloccofun{Gestione follower/followed} \label{bloccofun:gestfoll}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
 						\item[Visualizzazione aggiornamenti followed] Mostra gli aggiornamenti e le notizie relativi ai propri followed.
@@ -223,22 +222,22 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 					\end{descriptionNext} \label{fun:unfoll.acc}
 		\end{enumerate}
 
-	\item \wemph{Gestioni suggerimenti} \label{bloccofun:gestsugg}
+	\item \bloccofun{Gestioni suggerimenti} \label{bloccofun:gestsugg}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
-						\item[Ti potrebbero piacere \dots] La funzionalità permette di ottenere suggerimenti ad hoc, essi potranno essere basati su diversi parametri: affinità con prodotti per i quali ha già espresso preferenza, informazioni presenti nel profilo (come il luogo di residenza per prodotti artigianali) e recensioni di utenti seguiti.
+						\item[Ti potrebbero piacere\dots] La funzionalità permette di ottenere suggerimenti ad hoc, essi potranno essere basati su diversi parametri: affinità con prodotti per i quali ha già espresso preferenza, informazioni presenti nel profilo (come il luogo di residenza per prodotti artigianali) e recensioni di utenti seguiti.
 					\end{descriptionNext}	\label{fun:cons.prod}
 
 			\item	\begin{descriptionNext}
-						\item[Prodotti simili a \dots] Permette di suggerire prodotti simili a quello che si sta visualizzando sulla base di diversi criteri.
+						\item[Prodotti simili a\dots] Permette di suggerire prodotti simili a quello che si sta visualizzando sulla base di diversi criteri.
 					\end{descriptionNext}	\label{fun:prod.sim}
 					
 			\item	\begin{descriptionNext}
-						\item[Notizie simili a \dots] Permette di suggerire articoli e notizie sulla base dell’articolo che si sta attualmente leggendo.
+						\item[Notizie simili a\dots] Permette di suggerire articoli e notizie sulla base dell’articolo che si sta attualmente leggendo.
 					\end{descriptionNext}	\label{fun:not.sim}
 		\end{enumerate}
 
-	\item \wemph{Gestione account} \label{bloccofun:gestacc}
+	\item \bloccofun{Gestione account} \label{bloccofun:gestacc}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
 						\item[Visualizzazione profilo] Permette di visualizzare il proprio profilo.
@@ -258,7 +257,7 @@ Di seguito è presente una panoramica generale di alcune delle principali funzio
 		\end{enumerate}			
 
 
-	\item \wemph{Visualizzazione} \label{bloccofun:gestvis}
+	\item \bloccofun{Visualizzazione} \label{bloccofun:gestvis}
 		\begin{enumerate}
 			\item	\begin{descriptionNext}
 						\item[Visualizza vetrina] Permette di visualizzare la vetrina di un dato produttore, ordinando i prodotti in base a diversi criteri.
@@ -315,7 +314,7 @@ Si tratta di un utente autenticato (quindi ne eredita tutte le funzionalità), m
 
 \section{Informazioni sui prodotti}
 Ogni prodotto conterrà le seguenti informazioni:
-\begin{itemize}
+\begin{itemize}[noitemsep]
 	\item Nome prodotto. 
 	\item Almeno una foto dell’articolo.
 	\item  Descrizione di presentazione.

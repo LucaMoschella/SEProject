@@ -5,11 +5,19 @@
 %3) Senza esagerare, definire testo da inserire in automatico senza riscriverlo ogni volta
 
 %MACRO COMANDI
-%strong emphatize
-\newcommand{\wemph}[1]{\emph{#1}} 
 
-%weak emphatize
-\newcommand{\semph}[1]{\textbf{#1}} 
+%formattazione logica
+\newcommand{\ruolo}[1]{\emph{#1}} 
+
+\newcommand{\campo}[1]{\textsc{#1}} 
+
+\newcommand{\dominiocampo}[1]{\emph{#1}} 
+
+\newcommand{\futuro}[1]{\emph{#1}}
+
+\newcommand{\bloccofun}[1]{\emph{#1}}
+
+\newcommand{\fun}[1]{\emph{#1}}
 
 %Indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
