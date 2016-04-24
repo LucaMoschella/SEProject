@@ -4,10 +4,6 @@
 \usepackage[utf8]{inputenc}					
 \usepackage[italian]{babel}	
 
-%Roba per il titolo (strumenti grafici)	
-\usepackage{tikz}
-\usepackage{epigraph}
-
 %Miglioramenti visivi - sempre necessario
 \usepackage{microtype} 						
 
@@ -36,7 +32,7 @@
 \usepackage{multicol}
 
 %gestione delle immagini e dei colori
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx} 	
 					%Inserire le immagini  dim relative a \textwidth
 					%es: 0.8\textwidth
@@ -74,8 +70,12 @@
 	
 %Gestione bibliografia e citazioni
 \usepackage[autostyle,italian=guillemets]{csquotes}
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber,style=philosophy-modern]{biblatex}
 \addbibresource{bibliografia/bibliografia.bib}	%estensione necessaria (unico caso!)
+
+%Roba per il titolo (strumenti grafici)	
+\usepackage{tikz}
+\usepackage{epigraph}
 
 %Gestione dei link
 \usepackage{hyperref} 	
@@ -94,7 +94,7 @@
 	pdfkeywords={keyword1, key2, key3}, % list of keywords
 	pdfnewwindow=true,      % links in new PDF window
 	colorlinks=true,       % false: boxed links; true: colored links
-	linkcolor=darkgray,          % color of internal links (change box color with linkbordercolor)
+	linkcolor=Blue,          % color of internal links (change box color with linkbordercolor)
 	citecolor=green,        % color of links to bibliography
 	filecolor=magenta,      % color of file links
 	urlcolor=cyan           % color of external links
