@@ -13,11 +13,12 @@
 
 \newcommand{\dominiocampo}[1]{\emph{#1}} 
 
-\newcommand{\futuro}[1]{\emph{#1}}
+\newcommand{\fun}[1]{\emph{#1}}
 
 \newcommand{\bloccofun}[1]{\emph{#1}}
 
-\newcommand{\fun}[1]{\emph{#1}}
+\newcommand{\funfutura}[1]{\emph{#1}}
+
 
 %Indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
@@ -40,6 +41,10 @@
 \renewcommand{\phi}{\varphi}
 
 %MACRO AMBIENTI
+
+
+%lista descrption dove c'è una leggera indentazione.
+\newenvironment{descriptionInd}{\begin{description}[leftmargin=1.5cm,labelindent=1cm]}{\end{description}}
 
 %lista descrption dove la descrizione va a capo.
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
