@@ -23,8 +23,8 @@
 %6) Inserire una label in un punto (occhio all'ambiente in cui si è) con: \label{key}
 %7) Ci si può riferire ad una label con: \ref{label} o \vref{label} <- l'ultimo mette la p. in modo intelligente
 %9) Per inserire link, oltre a \url{URL} e \ref{label}, vedere funzionalità del package hyperref. (testo -> qualcosa)
-%10) Per inserire una note a pié di pagina: \footcite{bibid}	- Meglio fare una macro e chiamare quella
-%11) Per inserire una note a margine:	\marginpar{}     		- Meglio fare una macro e chiamare quella
+%10) Per inserire una note a pié di pagina: \footcite{bibid}	- Forse meglio fare una macro e chiamare quella
+%11) Per inserire una note a margine:	\marginpar{}     		- Forse meglio fare una macro e chiamare quella
 %12) Per le tabelle usare (solo) lo stile booktabs: \toprule, \midrule, \bottomrule, \cmidrule{2-3} 
 %13) Per inserire immgaini: \includegraphics[width=x\textwidth]{imagefile} dove x è il fatto di scala
 %14) Preferire linserimento di immagini o tabelle fluttuanti (decide latex dove metterle) piuttosto che in testo
@@ -32,16 +32,64 @@
 %	preferenza di posizionamento (che sono opzionali) H lo si può comunque forzare
 %15) Utilizzare anche l'ambiente quoting, viene bene
 %16) enumitem ha opzioni interessani per personalizzare le liste. (La macro descriptionNext lo usa)
-%17)Per i comandi di base LaTex: strumenti -> LaTeX
+%17) Per i comandi di base LaTex: tasto LaTeX in alto 
+%18) La tilde è lo "spazio non separabile" da un sare in casi come: Dr. Rossi
 
 
 %%%%%%%%%%%%		 EXAMPLES 		%%%%%%%%%%%%%%%%%
-%1) Inserire floating
-%\begin{figure}
+%1) Tabella fluttuante
+%
+%\dots qui finisce un capoverso.
+%
+%\begin{table}
+%	\caption{. . .}  <- didascalia automatica
+%	\label{tab:esempio}
 %	\centering
-%	\includegraphics{bild}
+%	\begin{tabular}{. . .}
+%		...
+%	\end{tabular}
+%\end{table}
+%
+%La tabella~\ref{tab:esempio} è un esempio di tabella mobile.
+%
+%%%%%
+%
+%2) Figura fluttuante
+%
+%\dots qui finisce un capoverso.
+%
+%\begin{figure}
+%\centering   <- attentione, non center
+%\includegraphics[width=0.5\textwidth]{...}
+%\caption{. . .} <- didascalia automatica
+%\label{fig:esempio}
 %\end{figure}
-
+%
+%La figura~\ref{fig:esempio} è un esempio di figura mobile.
+%
+%%%%%
+%
+%3) Figura in testo (normale figura che "deve stare proprio lì" -> no didsascalia)
+%
+%\begin{center}
+%	\includegraphics[width=	0.5\textwidth]{Rettili}
+%\end{center}
+%
+%%%%%
+%
+%4) Tabella in testo (normale tabella) 
+%
+%\begin{center}
+%	\begin{tabular}{ll} <- SE CONTIENE PRINCIPALMENTE MATEMATICA: ARRAY, NON TABULAR (sempre racchiusa in ambiente matematico)
+%		\toprule
+%		Alcaloide & Origine \\
+%		\midrule
+%		atropina & belladonna \\
+%		morfina & papavero \\
+%		nicotina & tabacco \\
+%		\bottomrule
+%	\end{tabular}
+%\end{center}
 
  
 %\includeonly{documents/1.PropostaDiProgetto} %Per compilazioni parziali
