@@ -1,35 +1,35 @@
-\documentclass[11pt]{report}  			%impostiamo il tipo di documento
-%\documentclass[11pt]{scrreprt}  		%alternativi, ha margini più larghi e altre minori differenze
+\documentclass[11pt]{report}            %impostiamo il tipo di documento
+%\documentclass[11pt]{scrreprt}         %alternativi, ha margini più larghi e altre minori differenze
 
 
-\input{settings/preamble} 				%importiamo la il preambolo: package, settings inizializzazioni
-\input{settings/macro}					%importiamo le macro personalizzate
+\input{settings/preamble}               %importiamo la il preambolo: package, settings inizializzazioni
+\input{settings/macro}                  %importiamo le macro personalizzate
 
-%%%%%%%%%%%% 	PER COMPILARE	%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%    PER COMPILARE   %%%%%%%%%%%%%%%%%
 %1) Compilare
 %2) Eseguire i programmi per generare indice, glossario e bibliografia {sotto strumenti}
 %3) Compilare DUE volte (per aggiornare i riferimenti)
 
 
-%%%%%%%%%%%%		 TIPS 		%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%         TIPS       %%%%%%%%%%%%%%%%%
 %-1) Il libro "L'arte di scrivere in LaTeX" è ottimo (vedi fra fonti) :D
 %0) Le voci del glossario (e acronimi) e della libreria vanno aggiunte a mano nei database. (vedi esempi)
 %1) Per citare una fonte bibliografica: \cite{label}
 %2) Per riferirsi un termine nel glossario: \gls{label}
 %3) Per riferirsi ad un acronimo: \gls{label}   -> verrà espanso solo la prima volta
 %4) Per inserire un termine nell'indice analitico: \index{entry}
-%	Se lo si vuole anche scrivere in contemporanea si può usare la macro \iindex{entry}
+%   Se lo si vuole anche scrivere in contemporanea si può usare la macro \iindex{entry}
 %5) Vedere documentazione: biblatex, makeidx, glossaries per roba più fica
 %6) Inserire una label in un punto (occhio all'ambiente in cui si è) con: \label{key}
 %7) Ci si può riferire ad una label con: \ref{label} o \vref{label} <- l'ultimo mette la p. in modo intelligente
 %9) Per inserire link, oltre a \url{URL} e \ref{label}, vedere funzionalità del package hyperref. (testo -> qualcosa)
-%10) Per inserire una note a pié di pagina: \footcite{bibid}	- Forse meglio fare una macro e chiamare quella
-%11) Per inserire una note a margine:	\marginpar{}     		- Forse meglio fare una macro e chiamare quella
+%10) Per inserire una note a pié di pagina: \footcite{bibid}    - Forse meglio fare una macro e chiamare quella
+%11) Per inserire una note a margine:   \marginpar{}            - Forse meglio fare una macro e chiamare quella
 %12) Per le tabelle usare (solo) lo stile booktabs: \toprule, \midrule, \bottomrule, \cmidrule{2-3}
 %13) Per inserire immgaini: \includegraphics[width=x\textwidth]{imagefile} dove x è il fatto di scala
 %14) Preferire linserimento di immagini o tabelle fluttuanti (decide latex dove metterle) piuttosto che in testo
-%	Quelle fluttuanti sono fighe prchè c'è la gestione figa della numerazione, nome e didascalia. E tramite la
-%	preferenza di posizionamento (che sono opzionali) H lo si può comunque forzare
+%   Quelle fluttuanti sono fighe prchè c'è la gestione figa della numerazione, nome e didascalia. E tramite la
+%   preferenza di posizionamento (che sono opzionali) H lo si può comunque forzare
 %15) Utilizzare anche l'ambiente quoting, viene bene
 %16) enumitem ha opzioni interessani per personalizzare le liste. (La macro descriptionNext lo usa)
 %17) Per i comandi di base LaTex: tasto LaTeX in alto
@@ -39,18 +39,18 @@
 %21) \\* command disallows page breaking on the next row. Your next row is the \midrule so the page can be broken again after the \midrule. You could also try \\*\midrule\\*
 
 
-%%%%%%%%%%%%		 EXAMPLES 		%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%         EXAMPLES       %%%%%%%%%%%%%%%%%
 %1) Tabella fluttuante
 %
 %\dots qui finisce un capoverso.
 %
 %\begin{table}
-%	\caption{. . .}  <- didascalia automatica
-%	\label{tab:esempio}
-%	\centering
-%	\begin{tabular}{. . .}
-%		...
-%	\end{tabular}
+%   \caption{. . .}  <- didascalia automatica
+%   \label{tab:esempio}
+%   \centering
+%   \begin{tabular}{. . .}
+%       ...
+%   \end{tabular}
 %\end{table}
 %
 %La tabella~\ref{tab:esempio} è un esempio di tabella mobile.
@@ -75,7 +75,7 @@
 %3) Figura in testo (normale figura che "deve stare proprio lì" -> no didsascalia)
 %
 %\begin{center}
-%	\includegraphics[width=	0.5\textwidth]{Rettili}
+%   \includegraphics[width= 0.5\textwidth]{Rettili}
 %\end{center}
 %
 %%%%%
@@ -83,43 +83,43 @@
 %4) Tabella in testo (normale tabella)
 %
 %\begin{center}
-%	\begin{tabular}{ll} <- SE CONTIENE PRINCIPALMENTE MATEMATICA: ARRAY, NON TABULAR (sempre racchiusa in ambiente matematico)
-%		\toprule
-%		Alcaloide & Origine \\
-%		\midrule
-%		atropina & belladonna \\
-%		morfina & papavero \\
-%		nicotina & tabacco \\
-%		\bottomrule
-%	\end{tabular}
+%   \begin{tabular}{ll} <- SE CONTIENE PRINCIPALMENTE MATEMATICA: ARRAY, NON TABULAR (sempre racchiusa in ambiente matematico)
+%       \toprule
+%       Alcaloide & Origine \\
+%       \midrule
+%       atropina & belladonna \\
+%       morfina & papavero \\
+%       nicotina & tabacco \\
+%       \bottomrule
+%   \end{tabular}
 %\end{center}
 
 
 %\includeonly{documents/1.PropostaDiProgetto} %Per compilazioni parziali
 
 \begin{document} %inizio stesura documento
-	\include{documents/titlePage}
-	\tableofcontents
+    \include{documents/titlePage}
+    \tableofcontents
 %
-	\include{documents/RichiestaSistema}
-	\include{documents/1-PropostaDiProgetto}
+    \include{documents/RichiestaSistema}
+    \include{documents/1-PropostaDiProgetto}
 %
 %
 %Stampa il glossario - anche quelli non usati
-	\glsaddallunused
-	\printglossaries
+    \glsaddallunused
+    \printglossaries
 %
 %Stampa la bibliografia - anche quella non citata
-	\nocite{*}
-	\cleardoublepage
-	\phantomsection
-	\addcontentsline{toc}{chapter}{\bibname}
-	\printbibliography
+    \nocite{*}
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\bibname}
+    \printbibliography
 %
 %Stampa l'indice analitico - se presente
-	\cleardoublepage
-	\phantomsection
-	\addcontentsline{toc}{chapter}{\indexname}
-	\printindex %Maaaaa serve l'indice se abbiamo il glossario?
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\indexname}
+    \printindex %Maaaaa serve l'indice se abbiamo il glossario?
 %
 \end{document}  %fine stesura doumento

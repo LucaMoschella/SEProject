@@ -1,48 +1,48 @@
 %IMPORT PACKAGE & INIZIALIZZAZIONI & PERSONALIZZAZIONI PACKAGE- l'ordine ha importanza
 %Compatibili input, output e lingua italiana
-\usepackage[T1]{fontenc}  					
-\usepackage[utf8]{inputenc}					
-\usepackage[italian]{babel}	
+\usepackage[T1]{fontenc}                    
+\usepackage[utf8]{inputenc}                 
+\usepackage[italian]{babel} 
 
 %Miglioramenti visivi - sempre necessario
-\usepackage{microtype} 						
+\usepackage{microtype}                      
 
 %Riferimenti intelligenti
-\usepackage[italian]{varioref} 				
+\usepackage[italian]{varioref}              
 
 %Gestione liste avanzata e semplificata
-\usepackage[inline]{enumitem} 			
+\usepackage[inline]{enumitem}           
 
 %spazio vericale invece di indentazione nei paragrafi
-%\usepackage{parskip} 						
+%\usepackage{parskip}                       
 
 %Gestione matematica
-\usepackage{amsmath, amsthm, amssymb} 	
+\usepackage{amsmath, amsthm, amssymb}   
 
 %gestione indice analitico
-\usepackage{makeidx}						
+\usepackage{makeidx}                        
 \makeindex
 
 %Gestione inserimente di codice
 \usepackage{listings}
 
 %Gestione tabelle avanzata
-\usepackage{booktabs}			
-\usepackage{longtable}		
+\usepackage{booktabs}           
+\usepackage{longtable}      
 \usepackage{tabularx}
 \usepackage{multicol}
 
 %gestione delle immagini e dei colori
 \usepackage[dvipsnames]{xcolor}
-\usepackage{graphicx} 	
-					%Inserire le immagini  dim relative a \textwidth
-					%es: 0.8\textwidth
-				
+\usepackage{graphicx}   
+                    %Inserire le immagini  dim relative a \textwidth
+                    %es: 0.8\textwidth
+                
 %Gestione figura con sottofigura
-\usepackage{subfig}		
+\usepackage{subfig}     
 
 %Gestione avvolgimento figure dal testo
-\usepackage{wrapfig} 	
+\usepackage{wrapfig}    
 
 %Gestione didascalie avanzata
 \usepackage{caption}
@@ -54,7 +54,7 @@
 %Gestione date
 \usepackage{datetime}
 
-%Miglioramento quoting						
+%Miglioramento quoting                      
 \usepackage{quoting}
 \quotingsetup{font=small}
 
@@ -67,45 +67,45 @@
 
 %Gestione unità di misura
 \usepackage[output-decimal-marker={,}]{siunitx}
-					%Per inserire numeri va usato \num{...}
-	
+                    %Per inserire numeri va usato \num{...}
+    
 %Gestione bibliografia e citazioni
 \usepackage[autostyle,italian=guillemets]{csquotes}
 \usepackage[backend=biber,style=philosophy-modern]{biblatex}
-\addbibresource{bibliografia/bibliografia.bib}	%estensione necessaria (unico caso!)
+\addbibresource{bibliografia/bibliografia.bib}  %estensione necessaria (unico caso!)
 
-%Roba per il titolo (strumenti grafici)	
+%Roba per il titolo (strumenti grafici) 
 \usepackage{tikz}
 \usepackage{epigraph}
  
 %Gestione dei link
-\usepackage{hyperref} 	
+\usepackage{hyperref}   
 \hypersetup{
-%	bookmarks=true,         % show bookmarks bar?
-%	unicode=false,          % non-Latin characters in Acrobat’s bookmarks
-%	pdftoolbar=true,        % show Acrobat’s toolbar?
-%	pdfmenubar=true,        % show Acrobat’s menu?
-%	pdffitwindow=false,     % window fit to page when opened
-%	pdfstartview={FitH},    % fits the width of the page to the window
-%	pdftitle={My title},    % title
-%	pdfauthor={Author},     % author
-%	pdfsubject={Subject},   % subject of the document
-%	pdfcreator={Creator},   % creator of the document
-%	pdfproducer={Producer}, % producer of the document
-%	pdfkeywords={keyword1, key2, key3}, % list of keywords
-%	pdfnewwindow=true,      % links in new PDF window
-	colorlinks=true,       % false: boxed links; true: colored links
-	linkcolor=Blue,          % color of internal links (change box color with linkbordercolor)
-	citecolor=green,        % color of links to bibliography
-	filecolor=magenta,      % color of file links
-	urlcolor=cyan           % color of external links
-}					
+%   bookmarks=true,         % show bookmarks bar?
+%   unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+%   pdftoolbar=true,        % show Acrobat’s toolbar?
+%   pdfmenubar=true,        % show Acrobat’s menu?
+%   pdffitwindow=false,     % window fit to page when opened
+%   pdfstartview={FitH},    % fits the width of the page to the window
+%   pdftitle={My title},    % title
+%   pdfauthor={Author},     % author
+%   pdfsubject={Subject},   % subject of the document
+%   pdfcreator={Creator},   % creator of the document
+%   pdfproducer={Producer}, % producer of the document
+%   pdfkeywords={keyword1, key2, key3}, % list of keywords
+%   pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=Blue,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}                   
 
 %Crea il glossario ed imposta lo stile - dopo hyperref
-\usepackage[xindy,toc,acronym]{glossaries} 	
+\usepackage[xindy,toc,acronym]{glossaries}  
 \makeglossaries
 \setglossarystyle{altlist}
-\input{glossario/glossario}	%importiamo il glossario, va usato con \gls{<label>}
+\input{glossario/glossario} %importiamo il glossario, va usato con \gls{<label>}
 
 
 %ULTERIORI PERSONALIZZAZIONI
@@ -115,7 +115,7 @@
 
 %cambia Bibliografia in Opere consultate - al maledetto non piace il comando sopra -___-
 \DefineBibliographyStrings{italian}{%
-	bibliography = {Opere consultate},
+    bibliography = {Opere consultate},
 }
 
 

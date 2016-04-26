@@ -7,10 +7,10 @@
 L’associazione italiana amatori di cioccolato\footnote{Raggiungibile al seguente indirizzo: \url{http://www.chococlub.com/}} è intenzionata a lanciare un nuovo portale.
 Le richieste per questo sistema sono le seguenti:
 \begin{itemize}
-	\item possibilità da parte dei produttori di inserire (o modificare, o rimuovere) i propri prodotti (sia cioccolato che dolci a base di esso) nel catalogo generale.
-	\item ricerca sul catalogo dei prodotti, anche avanzata, sulla base delle caratteristiche degli stessi.
-	\item sezione notizie.
-	\item funzionalità stile social (recensioni di prodotti e sistema di follower/follo\-wed).
+    \item possibilità da parte dei produttori di inserire (o modificare, o rimuovere) i propri prodotti (sia cioccolato che dolci a base di esso) nel catalogo generale.
+    \item ricerca sul catalogo dei prodotti, anche avanzata, sulla base delle caratteristiche degli stessi.
+    \item sezione notizie.
+    \item funzionalità stile social (recensioni di prodotti e sistema di follower/follo\-wed).
 \end{itemize}
 Volontà dell'associazione è ottenere un sistema di facile consultazione e aggiornamento.
 Esso dovrà permettere agli utenti del servizio di ricercare e recensire prodotti come pure di consigliarne altri.
@@ -30,29 +30,29 @@ Per i produttori, il portale sarà un mezzo di pubblicità in quanto avranno una
 Il portale avrà diversi tipi di ruoli amministrativi e di utenze; segue una breve descrizione delle stesse, in seguito approfondita. 
 Le \ruolo{Utenze}:
 \begin{descriptionInd}
-	\item[Produttore] si potrà iscrivere al portale solo tramite account verificati da siti terzi o tramite approvazione privata, contattando direttamente il supporto. Avrà il compito di creare e mantenere aggiornata la sua vetrina. Sarà a lui delegata l’aggiunta di ogni suo prodotto, anche in seguito a richieste da parte degli utenti.
-	
-	\item[Utente] si potrà iscrivere al portale, anche tramite account di siti terzi. La loro funzionalità principale, oltre la ricerca dei prodotti, sarà la possibilità di recensire e/o valutare i prodotti stessi. 
+    \item[Produttore] si potrà iscrivere al portale solo tramite account verificati da siti terzi o tramite approvazione privata, contattando direttamente il supporto. Avrà il compito di creare e mantenere aggiornata la sua vetrina. Sarà a lui delegata l’aggiunta di ogni suo prodotto, anche in seguito a richieste da parte degli utenti.
+    
+    \item[Utente] si potrà iscrivere al portale, anche tramite account di siti terzi. La loro funzionalità principale, oltre la ricerca dei prodotti, sarà la possibilità di recensire e/o valutare i prodotti stessi. 
 \end{descriptionInd}
 Le \ruolo{Figure di gestione del portale}:
 \begin{descriptionInd}
-	\item[Web Admin] avrà accesso completo al pannello di controllo del \gls{cms}
-	
-	\item[Newser] avrà, oltre alle funzionalità base dell’utente, il compito di gestire gli articoli e le notizie dal mondo dolciario.
-	
-	\item[Support] gestirà l’e-mail del portale rispondendo alle richieste di supporto e avrà il compito di approvare le richieste di iscrizione da parte dei produttori (tali richieste saranno inviate tramite form per una più facile gestione di esse).
-	
-	\item[Moderatore] avrà il compito di gestire segnalazioni di utenti eliminando/modificando eventuali contenuti non consoni presenti in recensioni.
+    \item[Web Admin] avrà accesso completo al pannello di controllo del \gls{cms}
+    
+    \item[Newser] avrà, oltre alle funzionalità base dell’utente, il compito di gestire gli articoli e le notizie dal mondo dolciario.
+    
+    \item[Support] gestirà l’e-mail del portale rispondendo alle richieste di supporto e avrà il compito di approvare le richieste di iscrizione da parte dei produttori (tali richieste saranno inviate tramite form per una più facile gestione di esse).
+    
+    \item[Moderatore] avrà il compito di gestire segnalazioni di utenti eliminando/modificando eventuali contenuti non consoni presenti in recensioni.
 \end{descriptionInd}
 
 \noindent
 Alcune funzionalità che potranno essere implementate in futuro sono: 
 \begin{itemize}
-	\item l’implementazione della \funfutura{wishlist} per ricordarsi dei prodotti che si vorrebbero provare.
+    \item l’implementazione della \funfutura{wishlist} per ricordarsi dei prodotti che si vorrebbero provare.
 
-	\item l’aggiunta del \funfutura{produttore delegato}, una figura necessaria per aiutare le piccole realtà dolciarie che si occuperà di gestire le vetrine al loro posto.
+    \item l’aggiunta del \funfutura{produttore delegato}, una figura necessaria per aiutare le piccole realtà dolciarie che si occuperà di gestire le vetrine al loro posto.
 
-	\item Aggiunta dei commenti alle \funfutura{notizie}.
+    \item Aggiunta dei commenti alle \funfutura{notizie}.
 \end{itemize}
 
 Per la fase iniziale di riempimento del portale, sarà compito di ChocoClub stessa prendere contatti con le molte pasticcerie artigianali già affiliate e le case produttrici, affinché esse si iscrivano al portale, per avere un buon numero di contenuti di partenza. 
@@ -60,227 +60,227 @@ Per la fase iniziale di riempimento del portale, sarà compito di ChocoClub stes
 \section{Descrizione funzionalità principali}
 Di seguito è presente una panoramica generale di alcune delle principali funzionalità che saranno presenti nel portale, tale elenco potrà essere soggetto a modifiche nel corso dello sviluppo.
 \begin{enumerate}
-	\item \bloccofun{Iscrizione \& Autenticazione} \label{bloccofun:iscAut}
-		\begin{enumerate}        	
-			\item	\begin{descriptionNext}
-						\item[Iscrizione tramite portale] Permette l’iscrizione direttamente tramite il portale. 
-					\end{descriptionNext} \label{fun:isc.portale}
-						                      
-			\item 	\begin{descriptionNext}
-						\item[Iscrizione tramite account terzi verificati] Si tratta della possibilità di iscriversi tramite account di altri servizi come LinkedIn, Facebook e Twitter, purché risultino “verificati” anche su quelle piattaforme.							
-					\end{descriptionNext} \label{fun:isc.terziv}
-					                       
-			\item 	\begin{descriptionNext}
-						\item[Iscrizione tramite account terzi non verificati]	È possibile utilizzare un account di siti terzi Google o Facebook per iscriversi							 
-					\end{descriptionNext} \label{fun:isc.terzinv}
-					                       
-			\item 	\begin{descriptionNext}
-						\item[Iscrizione tramite approvazione] Si tratta della possibilità per i produttori di iscriversi in modo verificato al portale, senza possedere un account già verificato su siti terzi.
-						               
-					\end{descriptionNext} \label{fun:isc.appr}
-					                       
-			\item 	\begin{descriptionNext}
-						\item[Login] Permette di fare il login nel sistema utilizzando le credenziali con cui ci si è registrati.							
-					\end{descriptionNext} \label{fun:aut.login}			
-		\end{enumerate}
-		
-	\item \bloccofun{Gestione iscrizione}	\label{bloccofun:gestisc}		
-		\begin{enumerate}        
-			\item	\begin{descriptionNext}
-						\item[Approvazione iscrizione] Si tratta della funzione relativa alla \funref{fun:isc.appr}, permette di approvare le richieste di iscrizione.
-					\end{descriptionNext}	\label{fun:appr.iscr}
-					                      
-			\item	\begin{descriptionNext}
-						\item[Rimozione account altrui] Permette di eliminare un account, ma NON le recensioni e valutazioni ad esso correlate nel caso di utenti e NON rimuove i prodotti nel caso di account produttore.
-					\end{descriptionNext}	\label{fun:rim.iscr}
-		\end{enumerate}
-		
-	\item \bloccofun{Gestione spazio dedicato alla presentazione prodotti (vetrina)}	\label{bloccofun:gestvet}		
-		\begin{enumerate}        
-			\item	\begin{descriptionNext}
-						\item[Inserimento descrizione e immagine vetrina] Permette di avere a disposizione una vetrina pubblica, in cui ci sarà la descrizione del produttore e in cui verranno presentati i suoi prodotti. La funzionalità permette di personalizzare la vetrina attraverso un campo testuale (descrizione) ed un’immagine di sfondo.
-					\end{descriptionNext}	\label{fun:ins.vetr}
-					                      
-			\item	\begin{descriptionNext}
-						\item[Inserimento prodotto in vetrina] Permette l’aggiunta di un prodotto alla vetrina. Questa funzionalità segue un rigido protocollo per far sì che le informazioni inserite siano complete e coerenti. 
-						Durante l’inserimento di un prodotto è necessario immettere: il \campo{nome del prodotto} con una sua \campo{descrizione} ed almeno una \campo{foto}. 
-						È inoltre necessario compilare un modulo che contiene campi a \dominiocampo{scelta multipla} e campi con \dominiocampo{tag dinamici}, di cui a seguire una breve descrizione: il sistema metterà a disposizione una grande lista dei possibili tag, che saranno suggeriti come auto-completamento all’utilizzatore durante la compilazione del campo correlato.
-						L’utilizzo di un tag non in lista è permesso, ma esso verrà sottoposto ad una fase di verifica che se superata comporterà l’aggiunta in lista, in caso contrario verrà rimosso anche dal prodotto. Sarà specificato un limite massimo e minimo di tag da inserire per prodotto.
-						Nel modulo verrà chiesta la \campo{marca} (a scelta fra quelle associate al produttore che sta inserendo il prodotto), la \campo{categoria} del prodotto che si sta inserendo (a scelta fra \dominiocampo{Dolce al cioccolato} oppure \dominiocampo{cioccolato}), \campo{particolarità} (risposta con \dominiocampo{tag dinamici}),  la \campo{consistenza} (a scelta fra \dominiocampo{solida}, \dominiocampo{liquida} oppure \dominiocampo{spalmabile}), gli \campo{ingredienti} (risposta con \dominiocampo{tag dinamici}).
-						Durante la compilazione del modulo di un prodotto è possibile compilare ulteriori campi (oltre a quelli proposti di default) scegliendo fra quelli messi a disposizione dal sistema, per migliorare la descrizione del prodotto e facilitarne la ricerca.
-					\end{descriptionNext}	\label{fun:ins.prod}
+    \item \bloccofun{Iscrizione \& Autenticazione} \label{bloccofun:iscAut}
+        \begin{enumerate}           
+            \item   \begin{descriptionNext}
+                        \item[Iscrizione tramite portale] Permette l’iscrizione direttamente tramite il portale. 
+                    \end{descriptionNext} \label{fun:isc.portale}
+                                              
+            \item   \begin{descriptionNext}
+                        \item[Iscrizione tramite account terzi verificati] Si tratta della possibilità di iscriversi tramite account di altri servizi come LinkedIn, Facebook e Twitter, purché risultino “verificati” anche su quelle piattaforme.                         
+                    \end{descriptionNext} \label{fun:isc.terziv}
+                                           
+            \item   \begin{descriptionNext}
+                        \item[Iscrizione tramite account terzi non verificati]  È possibile utilizzare un account di siti terzi Google o Facebook per iscriversi                             
+                    \end{descriptionNext} \label{fun:isc.terzinv}
+                                           
+            \item   \begin{descriptionNext}
+                        \item[Iscrizione tramite approvazione] Si tratta della possibilità per i produttori di iscriversi in modo verificato al portale, senza possedere un account già verificato su siti terzi.
+                                       
+                    \end{descriptionNext} \label{fun:isc.appr}
+                                           
+            \item   \begin{descriptionNext}
+                        \item[Login] Permette di fare il login nel sistema utilizzando le credenziali con cui ci si è registrati.                           
+                    \end{descriptionNext} \label{fun:aut.login}         
+        \end{enumerate}
+        
+    \item \bloccofun{Gestione iscrizione}   \label{bloccofun:gestisc}       
+        \begin{enumerate}        
+            \item   \begin{descriptionNext}
+                        \item[Approvazione iscrizione] Si tratta della funzione relativa alla \funref{fun:isc.appr}, permette di approvare le richieste di iscrizione.
+                    \end{descriptionNext}   \label{fun:appr.iscr}
+                                          
+            \item   \begin{descriptionNext}
+                        \item[Rimozione account altrui] Permette di eliminare un account, ma NON le recensioni e valutazioni ad esso correlate nel caso di utenti e NON rimuove i prodotti nel caso di account produttore.
+                    \end{descriptionNext}   \label{fun:rim.iscr}
+        \end{enumerate}
+        
+    \item \bloccofun{Gestione spazio dedicato alla presentazione prodotti (vetrina)}    \label{bloccofun:gestvet}       
+        \begin{enumerate}        
+            \item   \begin{descriptionNext}
+                        \item[Inserimento descrizione e immagine vetrina] Permette di avere a disposizione una vetrina pubblica, in cui ci sarà la descrizione del produttore e in cui verranno presentati i suoi prodotti. La funzionalità permette di personalizzare la vetrina attraverso un campo testuale (descrizione) ed un’immagine di sfondo.
+                    \end{descriptionNext}   \label{fun:ins.vetr}
+                                          
+            \item   \begin{descriptionNext}
+                        \item[Inserimento prodotto in vetrina] Permette l’aggiunta di un prodotto alla vetrina. Questa funzionalità segue un rigido protocollo per far sì che le informazioni inserite siano complete e coerenti. 
+                        Durante l’inserimento di un prodotto è necessario immettere: il \campo{nome del prodotto} con una sua \campo{descrizione} ed almeno una \campo{foto}. 
+                        È inoltre necessario compilare un modulo che contiene campi a \dominiocampo{scelta multipla} e campi con \dominiocampo{tag dinamici}, di cui a seguire una breve descrizione: il sistema metterà a disposizione una grande lista dei possibili tag, che saranno suggeriti come auto-completamento all’utilizzatore durante la compilazione del campo correlato.
+                        L’utilizzo di un tag non in lista è permesso, ma esso verrà sottoposto ad una fase di verifica che se superata comporterà l’aggiunta in lista, in caso contrario verrà rimosso anche dal prodotto. Sarà specificato un limite massimo e minimo di tag da inserire per prodotto.
+                        Nel modulo verrà chiesta la \campo{marca} (a scelta fra quelle associate al produttore che sta inserendo il prodotto), la \campo{categoria} del prodotto che si sta inserendo (a scelta fra \dominiocampo{Dolce al cioccolato} oppure \dominiocampo{cioccolato}), \campo{particolarità} (risposta con \dominiocampo{tag dinamici}),  la \campo{consistenza} (a scelta fra \dominiocampo{solida}, \dominiocampo{liquida} oppure \dominiocampo{spalmabile}), gli \campo{ingredienti} (risposta con \dominiocampo{tag dinamici}).
+                        Durante la compilazione del modulo di un prodotto è possibile compilare ulteriori campi (oltre a quelli proposti di default) scegliendo fra quelli messi a disposizione dal sistema, per migliorare la descrizione del prodotto e facilitarne la ricerca.
+                    \end{descriptionNext}   \label{fun:ins.prod}
 
-			\item	\begin{descriptionNext}
-						\item[Modifica prodotto in vetrina] Permette la modifica delle caratteristiche dei prodotti presenti, secondo gli stessi campi della \funref{fun:ins.prod}. Permette, inoltre, di etichettare un prodotto come fuori produzione.
-					\end{descriptionNext} \label{fun:mod.login}
+            \item   \begin{descriptionNext}
+                        \item[Modifica prodotto in vetrina] Permette la modifica delle caratteristiche dei prodotti presenti, secondo gli stessi campi della \funref{fun:ins.prod}. Permette, inoltre, di etichettare un prodotto come fuori produzione.
+                    \end{descriptionNext} \label{fun:mod.login}
 
-			\item	\begin{descriptionNext}
-						\item[Visualizzazione statistiche vetrina privata] Mostra statistiche della vetrina, in rapporto al tempo; riassume le recensioni dei prodotti in essa presenti, in modo filtrabile e ordinabile in base a diversi criteri e permette di visualizzare il numero di visite ricevute.
-					\end{descriptionNext} \label{fun:vis.vetrPr}	 	  				
-		\end{enumerate}			
-		
-	\item \bloccofun{Ricerca} \label{bloccofun:ric}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Ricerca prodotti tramite diversi criteri] Permette di effettuare ricerche, le ricerche potranno basarsi su qualsiasi campo della scheda del prodotto e dettagli del produttore. Sarà possibile ordinare i risultati.
-					\end{descriptionNext}	\label{fun:ric.prod}
+            \item   \begin{descriptionNext}
+                        \item[Visualizzazione statistiche vetrina privata] Mostra statistiche della vetrina, in rapporto al tempo; riassume le recensioni dei prodotti in essa presenti, in modo filtrabile e ordinabile in base a diversi criteri e permette di visualizzare il numero di visite ricevute.
+                    \end{descriptionNext} \label{fun:vis.vetrPr}                        
+        \end{enumerate}         
+        
+    \item \bloccofun{Ricerca} \label{bloccofun:ric}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Ricerca prodotti tramite diversi criteri] Permette di effettuare ricerche, le ricerche potranno basarsi su qualsiasi campo della scheda del prodotto e dettagli del produttore. Sarà possibile ordinare i risultati.
+                    \end{descriptionNext}   \label{fun:ric.prod}
 
-			\item	\begin{descriptionNext}
-						\item[Ricerca profili pubblici] Permette di ricercare e in seguito visualizzare tramite l’apposita funzionalità, i profili pubblici di utenti e/o produttori.
-					\end{descriptionNext}	\label{fun:ric.prof}
+            \item   \begin{descriptionNext}
+                        \item[Ricerca profili pubblici] Permette di ricercare e in seguito visualizzare tramite l’apposita funzionalità, i profili pubblici di utenti e/o produttori.
+                    \end{descriptionNext}   \label{fun:ric.prof}
 
-			\item	\begin{descriptionNext}
-						\item[Ricerca notizie] Permette di effettuare ricerche sulle notizie pubblicate nel portale.
-					\end{descriptionNext}	\label{fun:ric.not}
-		\end{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Ricerca notizie] Permette di effettuare ricerche sulle notizie pubblicate nel portale.
+                    \end{descriptionNext}   \label{fun:ric.not}
+        \end{enumerate}
 
-	\item \bloccofun{Gestione recensioni} \label{bloccofun:gestrec}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Valutazione prodotto] Permette di esprimere una valutazione su scala limitata di un prodotto.
-					\end{descriptionNext}	\label{fun:val.prod}
+    \item \bloccofun{Gestione recensioni} \label{bloccofun:gestrec}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Valutazione prodotto] Permette di esprimere una valutazione su scala limitata di un prodotto.
+                    \end{descriptionNext}   \label{fun:val.prod}
 
-			\item	\begin{descriptionNext}
-						\item[Recensione prodotto esistente] Permette di aggiungere, alla semplice \funref{fun:val.prod}, anche una descrizione testuale della recensione, più completa.
-					\end{descriptionNext}	\label{fun:rece.prod}
+            \item   \begin{descriptionNext}
+                        \item[Recensione prodotto esistente] Permette di aggiungere, alla semplice \funref{fun:val.prod}, anche una descrizione testuale della recensione, più completa.
+                    \end{descriptionNext}   \label{fun:rece.prod}
 
-			\item	\begin{descriptionNext}
-						\item[Richiesta inserimento di un prodotto a un produttore]Permette di segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema.
-					\end{descriptionNext}	\label{fun:ric.prodotto}
+            \item   \begin{descriptionNext}
+                        \item[Richiesta inserimento di un prodotto a un produttore]Permette di segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema.
+                    \end{descriptionNext}   \label{fun:ric.prodotto}
 
-			\item	\begin{descriptionNext}
-						\item[Richiesta inserimento di un prodotto e del suo produttore]Permette di segnalare al personale incaricato l’assenza di un produttore ed allo stesso tempo di uno suo specifico prodotto.
-					\end{descriptionNext}	\label{fun:ric.produttore}
+            \item   \begin{descriptionNext}
+                        \item[Richiesta inserimento di un prodotto e del suo produttore]Permette di segnalare al personale incaricato l’assenza di un produttore ed allo stesso tempo di uno suo specifico prodotto.
+                    \end{descriptionNext}   \label{fun:ric.produttore}
 
-			\item	\begin{descriptionNext}
-						\item[Modifica recensione propria] Permette di modificare il campo testuale menzionato nella \funref{fun:rece.prod} della propria recensione.
-					\end{descriptionNext}		\label{fun:mod.recPropria}
+            \item   \begin{descriptionNext}
+                        \item[Modifica recensione propria] Permette di modificare il campo testuale menzionato nella \funref{fun:rece.prod} della propria recensione.
+                    \end{descriptionNext}       \label{fun:mod.recPropria}
 
-			\item	\begin{descriptionNext}
-						\item[Modifica recensione altrui] Permette di modificare il campo testuale menzionato nella  \funref{fun:rece.prod} di una qualsiasi recensione.
-					\end{descriptionNext}		\label{fun:mod.recAltrui}
+            \item   \begin{descriptionNext}
+                        \item[Modifica recensione altrui] Permette di modificare il campo testuale menzionato nella  \funref{fun:rece.prod} di una qualsiasi recensione.
+                    \end{descriptionNext}       \label{fun:mod.recAltrui}
 
-			\item	\begin{descriptionNext}
-						\item[Modifica valutazione] Permette di modificare la valutazione sia per recensioni che per semplici valutazioni.
-					\end{descriptionNext}		\label{fun:mod.valPropia}
+            \item   \begin{descriptionNext}
+                        \item[Modifica valutazione] Permette di modificare la valutazione sia per recensioni che per semplici valutazioni.
+                    \end{descriptionNext}       \label{fun:mod.valPropia}
 
-			\item	\begin{descriptionNext}
-						\item[Valutazione recensione] Permette di esprimere una valutazione positiva o negativa sulle recensioni. Ciò permetterà di stabilire quali recensioni sono più utili.
-					\end{descriptionNext}		\label{fun:val.rec}
+            \item   \begin{descriptionNext}
+                        \item[Valutazione recensione] Permette di esprimere una valutazione positiva o negativa sulle recensioni. Ciò permetterà di stabilire quali recensioni sono più utili.
+                    \end{descriptionNext}       \label{fun:val.rec}
 
-			\item	\begin{descriptionNext}
-						\item[Elimina recensione propria] Permette di eliminare la propria recensione. 
-					\end{descriptionNext}		\label{fun:del.recPropia}
+            \item   \begin{descriptionNext}
+                        \item[Elimina recensione propria] Permette di eliminare la propria recensione. 
+                    \end{descriptionNext}       \label{fun:del.recPropia}
 
-			\item	\begin{descriptionNext}
-						\item[Elimina recensione altrui] Permette di eliminare una qualsiasi recensione.
-					\end{descriptionNext}	 \label{fun:del.recAltrui}
-					
-			\item	\begin{descriptionNext}
-						\item[Commento a recensione] Permette di commentare una qualsiasi recensione.
-					\end{descriptionNext}	\label{fun:comm.rec}
+            \item   \begin{descriptionNext}
+                        \item[Elimina recensione altrui] Permette di eliminare una qualsiasi recensione.
+                    \end{descriptionNext}    \label{fun:del.recAltrui}
+                    
+            \item   \begin{descriptionNext}
+                        \item[Commento a recensione] Permette di commentare una qualsiasi recensione.
+                    \end{descriptionNext}   \label{fun:comm.rec}
 
-			\item	\begin{descriptionNext}
-						\item[Segnalazione contenuti] Permette di segnalare contenuti come recensioni e commenti alle stesse, se non consoni (secondo il regolamento del servizio). 
-					\end{descriptionNext}	\label{fun:report.cont}
-		\end{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Segnalazione contenuti] Permette di segnalare contenuti come recensioni e commenti alle stesse, se non consoni (secondo il regolamento del servizio). 
+                    \end{descriptionNext}   \label{fun:report.cont}
+        \end{enumerate}
 
-	\item \bloccofun{Gestione notizie} \label{bloccofun:gestnot}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Consultazione notizie] Permette la visualizzazione delle notizie inserite nel portale, in base a preferenze dell’utente e impostazioni del gestore.
-					\end{descriptionNext}	\label{fun:vis.not}
+    \item \bloccofun{Gestione notizie} \label{bloccofun:gestnot}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Consultazione notizie] Permette la visualizzazione delle notizie inserite nel portale, in base a preferenze dell’utente e impostazioni del gestore.
+                    \end{descriptionNext}   \label{fun:vis.not}
 
-			\item	\begin{descriptionNext}
-						\item[Inserisci notizia] Permette di aggiungere una notizia visibile tramite la \funref{fun:vis.not}.
-					\end{descriptionNext}	\label{fun:ins.not}
-					
-			\item	\begin{descriptionNext}
-						\item[Modifica notizia] Permette di modificare una notizia già esistente.
-					\end{descriptionNext}	 \label{fun:mod.not}
+            \item   \begin{descriptionNext}
+                        \item[Inserisci notizia] Permette di aggiungere una notizia visibile tramite la \funref{fun:vis.not}.
+                    \end{descriptionNext}   \label{fun:ins.not}
+                    
+            \item   \begin{descriptionNext}
+                        \item[Modifica notizia] Permette di modificare una notizia già esistente.
+                    \end{descriptionNext}    \label{fun:mod.not}
 
-			\item	\begin{descriptionNext}
-						\item[Elimina notizia] Permette di eliminare una notizia già esistente.
-					\end{descriptionNext}	\label{fun:del.not}
-		\end{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Elimina notizia] Permette di eliminare una notizia già esistente.
+                    \end{descriptionNext}   \label{fun:del.not}
+        \end{enumerate}
 
-	\item \bloccofun{Gestione follower/followed} \label{bloccofun:gestfoll}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Visualizzazione aggiornamenti followed] Mostra gli aggiornamenti e le notizie relativi ai propri followed.
-						Questo sistema permetterà di ottenere una vista sulle attività dei followed, ovvero: nuova recensione, nuovo followed, nuova valutazione se si tratta di un utente; nuovo prodotto, prodotto fuori produzione se invece di tratta di un produttore.
-					\end{descriptionNext}	\label{fun:vis.foll}
+    \item \bloccofun{Gestione follower/followed} \label{bloccofun:gestfoll}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Visualizzazione aggiornamenti followed] Mostra gli aggiornamenti e le notizie relativi ai propri followed.
+                        Questo sistema permetterà di ottenere una vista sulle attività dei followed, ovvero: nuova recensione, nuovo followed, nuova valutazione se si tratta di un utente; nuovo prodotto, prodotto fuori produzione se invece di tratta di un produttore.
+                    \end{descriptionNext}   \label{fun:vis.foll}
 
-			\item	\begin{descriptionNext}
-						\item[Follow account] Permette di seguire un account e ricevere da esso notizie e aggiornamenti. 
-					\end{descriptionNext}	\label{fun:foll.acc}
-					
-			\item	\begin{descriptionNext}
-						\item[Unfollow account] Permette di non seguire più un account che si segue. 
-					\end{descriptionNext} \label{fun:unfoll.acc}
-		\end{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Follow account] Permette di seguire un account e ricevere da esso notizie e aggiornamenti. 
+                    \end{descriptionNext}   \label{fun:foll.acc}
+                    
+            \item   \begin{descriptionNext}
+                        \item[Unfollow account] Permette di non seguire più un account che si segue. 
+                    \end{descriptionNext} \label{fun:unfoll.acc}
+        \end{enumerate}
 
-	\item \bloccofun{Gestioni suggerimenti} \label{bloccofun:gestsugg}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Ti potrebbero piacere\dots] La funzionalità permette di ottenere suggerimenti ad hoc, essi potranno essere basati su diversi parametri: affinità con prodotti per i quali ha già espresso preferenza, informazioni presenti nel profilo (come il luogo di residenza per prodotti artigianali) e recensioni di utenti seguiti.
-					\end{descriptionNext}	\label{fun:cons.prod}
+    \item \bloccofun{Gestioni suggerimenti} \label{bloccofun:gestsugg}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Ti potrebbero piacere\dots] La funzionalità permette di ottenere suggerimenti ad hoc, essi potranno essere basati su diversi parametri: affinità con prodotti per i quali ha già espresso preferenza, informazioni presenti nel profilo (come il luogo di residenza per prodotti artigianali) e recensioni di utenti seguiti.
+                    \end{descriptionNext}   \label{fun:cons.prod}
 
-			\item	\begin{descriptionNext}
-						\item[Prodotti simili a\dots] Permette di suggerire prodotti simili a quello che si sta visualizzando sulla base di diversi criteri.
-					\end{descriptionNext}	\label{fun:prod.sim}
-					
-			\item	\begin{descriptionNext}
-						\item[Notizie simili a\dots] Permette di suggerire articoli e notizie sulla base dell’articolo che si sta attualmente leggendo.
-					\end{descriptionNext}	\label{fun:not.sim}
-		\end{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Prodotti simili a\dots] Permette di suggerire prodotti simili a quello che si sta visualizzando sulla base di diversi criteri.
+                    \end{descriptionNext}   \label{fun:prod.sim}
+                    
+            \item   \begin{descriptionNext}
+                        \item[Notizie simili a\dots] Permette di suggerire articoli e notizie sulla base dell’articolo che si sta attualmente leggendo.
+                    \end{descriptionNext}   \label{fun:not.sim}
+        \end{enumerate}
 
-	\item \bloccofun{Gestione account} \label{bloccofun:gestacc}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Visualizzazione profilo] Permette di visualizzare il proprio profilo.
-					\end{descriptionNext}	\label{fun:vis.prof}
+    \item \bloccofun{Gestione account} \label{bloccofun:gestacc}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Visualizzazione profilo] Permette di visualizzare il proprio profilo.
+                    \end{descriptionNext}   \label{fun:vis.prof}
 
-			\item	\begin{descriptionNext}
-						\item[Accesso alle impostazioni] Permette di accedere alle impostazioni dell’account. Le impostazioni variano a seconda del tipo di account. Per gli utenti, fra le altre impostazioni, c’è la possibilità di stabilire le preferenze di prodotti e/o produttori, per ricerche più mirate.
-					\end{descriptionNext}	\label{fun:gest.imp}
-					
-			\item	\begin{descriptionNext}
-						\item[Logout] Permette di fare il logout del sistema.
-					\end{descriptionNext}	\label{fun:aut.logout}
+            \item   \begin{descriptionNext}
+                        \item[Accesso alle impostazioni] Permette di accedere alle impostazioni dell’account. Le impostazioni variano a seconda del tipo di account. Per gli utenti, fra le altre impostazioni, c’è la possibilità di stabilire le preferenze di prodotti e/o produttori, per ricerche più mirate.
+                    \end{descriptionNext}   \label{fun:gest.imp}
+                    
+            \item   \begin{descriptionNext}
+                        \item[Logout] Permette di fare il logout del sistema.
+                    \end{descriptionNext}   \label{fun:aut.logout}
 
-			\item	\begin{descriptionNext}
-						\item[Rimuovi account] Permette di eliminare il proprio account, ma NON le recensioni e valutazioni ad esso correlate nel caso di utenti e NON rimuove i prodotti nel caso di account produttore.
-					\end{descriptionNext}	\label{fun:del.acc}
-		\end{enumerate}			
+            \item   \begin{descriptionNext}
+                        \item[Rimuovi account] Permette di eliminare il proprio account, ma NON le recensioni e valutazioni ad esso correlate nel caso di utenti e NON rimuove i prodotti nel caso di account produttore.
+                    \end{descriptionNext}   \label{fun:del.acc}
+        \end{enumerate}         
 
 
-	\item \bloccofun{Visualizzazione} \label{bloccofun:gestvis}
-		\begin{enumerate}
-			\item	\begin{descriptionNext}
-						\item[Visualizza vetrina] Permette di visualizzare la vetrina di un dato produttore, ordinando i prodotti in base a diversi criteri.
-					\end{descriptionNext}	\label{fun:vis.vet}
+    \item \bloccofun{Visualizzazione} \label{bloccofun:gestvis}
+        \begin{enumerate}
+            \item   \begin{descriptionNext}
+                        \item[Visualizza vetrina] Permette di visualizzare la vetrina di un dato produttore, ordinando i prodotti in base a diversi criteri.
+                    \end{descriptionNext}   \label{fun:vis.vet}
 
-			\item	\begin{descriptionNext}
-						\item[Visualizza statistiche vetrina pubbliche] Permette di visualizzare le statistiche pubbliche di una vetrina.
-					\end{descriptionNext}	\label{fun:vis.statvetPubbliche}
-					
-			\item	\begin{descriptionNext}
-						\item[Visualizza prodotto] Permette di visualizzare un dato prodotto e le sue informazioni.
-					\end{descriptionNext}	\label{fun:vis.prod}
+            \item   \begin{descriptionNext}
+                        \item[Visualizza statistiche vetrina pubbliche] Permette di visualizzare le statistiche pubbliche di una vetrina.
+                    \end{descriptionNext}   \label{fun:vis.statvetPubbliche}
+                    
+            \item   \begin{descriptionNext}
+                        \item[Visualizza prodotto] Permette di visualizzare un dato prodotto e le sue informazioni.
+                    \end{descriptionNext}   \label{fun:vis.prod}
 
-			\item	\begin{descriptionNext}
-						\item[Visualizza recensioni] Permette di visualizzare le recensioni associate ad un prodotto, ordinandole in base a diversi criteri.
-					\end{descriptionNext}	\label{fun:vis.recs}
+            \item   \begin{descriptionNext}
+                        \item[Visualizza recensioni] Permette di visualizzare le recensioni associate ad un prodotto, ordinandole in base a diversi criteri.
+                    \end{descriptionNext}   \label{fun:vis.recs}
 
-			\item	\begin{descriptionNext}
-						\item[Visualizza profilo altrui] Permette di visualizzare un dato profilo; si differenziano le informazioni fornite se il profilo è associato ad un produttore o ad un utente.
-					\end{descriptionNext}	\label{fun:vis.profAltrui}
+            \item   \begin{descriptionNext}
+                        \item[Visualizza profilo altrui] Permette di visualizzare un dato profilo; si differenziano le informazioni fornite se il profilo è associato ad un produttore o ad un utente.
+                    \end{descriptionNext}   \label{fun:vis.profAltrui}
 
-			\item	\begin{descriptionNext}
-						\item[Visualizza statistiche profilo] Permette di visualizzare le statistiche di un dato profilo; si differenziano le informazioni fornite se il profilo è associato ad un produttore o ad un utente.
-					\end{descriptionNext}	\label{fun:vis.profStat}		
-		\end{enumerate}	
+            \item   \begin{descriptionNext}
+                        \item[Visualizza statistiche profilo] Permette di visualizzare le statistiche di un dato profilo; si differenziano le informazioni fornite se il profilo è associato ad un produttore o ad un utente.
+                    \end{descriptionNext}   \label{fun:vis.profStat}        
+        \end{enumerate} 
 \end{enumerate}
 
 \section{Utenze del portale}
@@ -313,26 +313,26 @@ Si tratta di un utente autenticato (quindi ne eredita tutte le funzionalità), m
 \section{Informazioni sui prodotti}
 Ogni prodotto conterrà le seguenti informazioni:
 \begin{itemize}[noitemsep]
-	\item Nome prodotto. 
-	\item Almeno una foto dell’articolo.
-	\item  Descrizione di presentazione.
-	\item  Marca.
-	\item Categoria.
-	\item Particolarità.
-	\item Consistenza.
-	\item Ingredienti.
-	\item Altri campi (a seconda dei quali ha compilato il produttore).
+    \item Nome prodotto. 
+    \item Almeno una foto dell’articolo.
+    \item  Descrizione di presentazione.
+    \item  Marca.
+    \item Categoria.
+    \item Particolarità.
+    \item Consistenza.
+    \item Ingredienti.
+    \item Altri campi (a seconda dei quali ha compilato il produttore).
 \end{itemize}
 Ad ogni prodotto saranno associate le sue recensioni con annessa valutazione e voto medio. Saranno inoltre suggeriti prodotti simili.
 
 \section{Revisioni}
 \begin{center}
-	\begin{tabular}{lll}
-		\toprule
-		Versione & Data & Descrizione \\
-		%	\cmidrule{2-3} 
-		\midrule
-		1.0 & \displaydate{versioneuno} & Prima versione \\
-		\bottomrule
-	\end{tabular}
+    \begin{tabular}{lll}
+        \toprule
+        Versione & Data & Descrizione \\
+        %   \cmidrule{2-3} 
+        \midrule
+        1.0 & \displaydate{versioneuno} & Prima versione \\
+        \bottomrule
+    \end{tabular}
 \end{center}
