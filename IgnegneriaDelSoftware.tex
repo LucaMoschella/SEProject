@@ -9,7 +9,7 @@
 %1) Compilare
 %2) Eseguire i programmi per generare indice, glossario e bibliografia {sotto strumenti}
 %3) Compilare DUE volte (per aggiornare i riferimenti)
- 
+
 
 %%%%%%%%%%%%		 TIPS 		%%%%%%%%%%%%%%%%%
 %-1) Il libro "L'arte di scrivere in LaTeX" è ottimo (vedi fra fonti) :D
@@ -25,14 +25,14 @@
 %9) Per inserire link, oltre a \url{URL} e \ref{label}, vedere funzionalità del package hyperref. (testo -> qualcosa)
 %10) Per inserire una note a pié di pagina: \footcite{bibid}	- Forse meglio fare una macro e chiamare quella
 %11) Per inserire una note a margine:	\marginpar{}     		- Forse meglio fare una macro e chiamare quella
-%12) Per le tabelle usare (solo) lo stile booktabs: \toprule, \midrule, \bottomrule, \cmidrule{2-3} 
+%12) Per le tabelle usare (solo) lo stile booktabs: \toprule, \midrule, \bottomrule, \cmidrule{2-3}
 %13) Per inserire immgaini: \includegraphics[width=x\textwidth]{imagefile} dove x è il fatto di scala
 %14) Preferire linserimento di immagini o tabelle fluttuanti (decide latex dove metterle) piuttosto che in testo
-%	Quelle fluttuanti sono fighe prchè c'è la gestione figa della numerazione, nome e didascalia. E tramite la 
+%	Quelle fluttuanti sono fighe prchè c'è la gestione figa della numerazione, nome e didascalia. E tramite la
 %	preferenza di posizionamento (che sono opzionali) H lo si può comunque forzare
 %15) Utilizzare anche l'ambiente quoting, viene bene
 %16) enumitem ha opzioni interessani per personalizzare le liste. (La macro descriptionNext lo usa)
-%17) Per i comandi di base LaTex: tasto LaTeX in alto 
+%17) Per i comandi di base LaTex: tasto LaTeX in alto
 %18) La tilde è lo "spazio non separabile" da un sare in casi come: Dr. Rossi
 %19) tab spazi e a capo valgono uno spazio. Una linea vuota indica un nuovo paragrafo (\par)
 %20) Per tabelle più lunghe di una pagina usare l'ambiente longtable (e non tabular)
@@ -80,7 +80,7 @@
 %
 %%%%%
 %
-%4) Tabella in testo (normale tabella) 
+%4) Tabella in testo (normale tabella)
 %
 %\begin{center}
 %	\begin{tabular}{ll} <- SE CONTIENE PRINCIPALMENTE MATEMATICA: ARRAY, NON TABULAR (sempre racchiusa in ambiente matematico)
@@ -94,16 +94,16 @@
 %	\end{tabular}
 %\end{center}
 
- 
+
 %\includeonly{documents/1.PropostaDiProgetto} %Per compilazioni parziali
 
 \begin{document} %inizio stesura documento
-	\include{documents/titlePage}   
+	\include{documents/titlePage}
 	\tableofcontents
-%	
+%
 	\include{documents/RichiestaSistema}
 	\include{documents/1-PropostaDiProgetto}
-%	
+%
 %
 %Stampa il glossario - anche quelli non usati
 	\glsaddallunused
