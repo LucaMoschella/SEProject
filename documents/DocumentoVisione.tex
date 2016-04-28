@@ -3,16 +3,20 @@
 
 \section{Introduzione}
 \label{sec:introduzione}
-Dopo un'attenta analisi della richiesta dell'associazione ChocoClub, abbiamo stilato il seguente documento di visione che ha l'obbiettivo di descrivere ad alto livello il sistema che si vuole realizzare ed il suo scopo, e di introdurre le principali figure che interagiranno con esso, assieme alle loro necessità. Inoltre viene effettuato uno studio della fattibilità per stabilire se tale sistema è realizzabile con le attuali tecnologia a disposizione.
+Dopo un'attenta analisi della richiesta dell'associazione ChocoClub, abbiamo stilato il seguente documento di visione che ha l'obiettivo di descrivere ad alto livello il portale che si vuole realizzare ed il suo scopo, e di introdurre le principali figure che interagiranno con esso, assieme alle loro necessità. Inoltre viene effettuato uno studio della fattibilità per stabilire se tale portale è realizzabile con le attuali tecnologia a disposizione.
 
-\section{Obbiettivi sistema} % (fold)
-\label{sec:descrizione_sistema}
-I principali obbiettivi del sistema che si intende realizzare sono riassumibili nei seguenti punti:
+\section{Obiettivi portale} 
+\label{sec:descrizione_portale}
+I principali obiettivi del portale che si intende realizzare sono riassumibili nei seguenti punti:
 \begin{itemize}
-	\item Fornire un portale capace di unificare le informazioni del mondo dolciario focalizzandosi sulla cioccolata.
+	\item Fornire un portale capace di unificare le informazioni dal mondo dolciario, focalizzandosi sui prodotti contenenti cioccolata.
 	\item Fornire un punto di incontro fra produttori e clienti
-	\item 
+	\item Fornire all'utenza metodi di interazione.
 \end{itemize}
+
+\section{Descrizone portale}
+\label{sec:descrizone_portale}
+Il portale offrirà ai produttori la possibilità di pubblicizzare i propri prodotti in uno spazio dedicato, mentre all'utenza la possibilità di ricercarli e visualizzarli. Offrirà inoltre un sistema di recensione e valutazione prodotti e un modo per restare aggiornati sulle attività altrui, sia dei prodotturi che degli utenti.
 
 \section{Descrizione figure} 
 \label{sec:descrizionefigure}
@@ -30,8 +34,6 @@ I visitatori, coloro che non sono stati identificati dal portale, potranno usufr
     \item[Visitatori] useranno il portale per ricercare prodotti e per leggere notizie presenti nel sito.
 \end{descriptionInd}
 
-
-
 \subsection{Utenza}
 \label{sub:utenza}
 L'utenza è rappresentata da coloro che, dopo aver effettuato la procedura di autenticazione, utilizzerà il portale per usufruire dei suoi servizi. Essi si dividono in due profili differenti:
@@ -40,8 +42,6 @@ L'utenza è rappresentata da coloro che, dopo aver effettuato la procedura di au
 
     \item[Utenti] useranno il portale per ricercare prodotti, con la possibilità di recensirli e/o valutarli; per seguire altra utenza e ricevere aggiornamenti da essa e per leggere notizie presenti nel sito.
 \end{descriptionInd}
-
-
 
 
 \subsection{Figure amministrative}
@@ -55,7 +55,7 @@ Le figure amministrative sono coloro che utilizzeranno il portale con lo scopo d
 \end{descriptionInd}
 
 
-\section{Tabelle necessità o esigenze} % (fold)
+\section{Tabella necessità o esigenze} % (fold)
 \label{sec:tabelle_necessita_o_esigenze}
 Nella seguente tabella riassumiamo le necessità o esigenze delle diverse figure:
 \begin{center}
@@ -64,12 +64,12 @@ Nella seguente tabella riassumiamo le necessità o esigenze delle diverse figure
 		\tabhead{Figura} & \tabhead{Necessità o Esigenze} \\
 	\midrule
 		\ruolo{Visitatori} & Ricercare prodotti, visualizzare prodotti, visualizzare notizie, autenticarsi o iscriversi.  \\
-		\addlinespace[0.75em]
-		\ruolo{Produttori} & Inserire prodotti nello spazio dedicato, rimuovere prodotti dallo spazio dedicato, modificare i prodotti inseriti.  \\
+		\addlinespace[1em]
+		\ruolo{Produttori} & Inserire prodotti nello spazio dedicato, modificare i prodotti inseriti.  \\
 		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, visualizzare notizie, seguire altra utenza. \\
-		\addlinespace[0.75em]
+		\addlinespace[1em]
 		\ruolo{Redattori} & Pubblicare notizie, modificare notizie, eliminare notizie.  \\
-		\ruolo{Assistenti} & Rispondere alle richieste dell`utenza  \\
+		\ruolo{Assistenti} & Rispondere alle richieste dell`utenza attraverso il sistema di tickets  \\
 		\ruolo{Moderatori} & Eliminare contenuti inappropriati, modificare contenuti inappropriati.  \\
 	\bottomrule
 	\end{tabularx}
@@ -79,7 +79,17 @@ Nella seguente tabella riassumiamo le necessità o esigenze delle diverse figure
 \section{Studio di fattiblità}
 \label{sec:studio_di_fatt}
 
-\newdate{visuno}{22}{04}{2016}
+Le tecnologie richieste per lo sviluppo del portale sono attualmente presenti nel mercato, e utilizzate da sistemi simili, possiamo quindi convenire che esso sia effettivamente realizzabile.
+
+Il portale che si intende realizzare offre funzionalità abbastanza comuni e già messe a dispozione da sofware commerciali; intendiamo quindi utilizzare un \gls{cms} commerciale che inglobi le funzionalità richieste. 
+
+Ciò permetterà di abbattere i costi di sviluppo e implementazione in quanto non sarà necessario re--implementare tutte le funzionalità necessarie, poiché già disponibili nel \gls{cms}.
+
+Inoltre la maggior parte dei \gls{cms} commerciali mette a disposizione una grandissima quantità di estensioni e plugin, che permette di usufruire di un notevole numero di funzionalità; le quali potranno essere utilizzate in futuro per ampliare il portale con nuovi servizi, ad esempio esistono plugin per l'intregazione con i principali social network o per la gestione del sistema di recensioni.
+
+Per la fase iniziale di inserimento informazioni è stato deciso di non utilizzare i contenuti attualmente presenti sul sito dell’associazione, in quanto il sito è statico e di difficile consultazione; oltretutto, la maggior parte dei contenuti non è aggiornata e non riguarda principalmente i prodotti, ma le pasticcerie come attività commerciali, quindi non è utile per gli obiettivi del nuovo portale.
+
+\newdate{visuno}{28}{04}{2016}
 \section{Revisioni}
 \begin{center}
     \begin{tabular}{lll}
