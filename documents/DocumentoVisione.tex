@@ -3,7 +3,7 @@
 
 \section{Introduzione}
 \label{sec:introduzione}
-Dopo un'attenta analisi della richiesta dell'associazione ChocoClub ed un esteso studio del contesto di utilizzo, abbiamo stilato il seguente documento di visione, che ha lo scopo di introdurre le principali figure del sistema proposto, assieme alle loro necessità e studiare la fattibilità dello stesso.
+Dopo un'attenta analisi della richiesta dell'associazione ChocoClub, abbiamo stilato il seguente documento di visione, che ha lo scopo di introdurre le principali figure del sistema proposto, assieme alle loro necessità e studiare la fattibilità dello stesso.
 
 \section{Descrizione figure} 
 \label{sec:descrizionefigure}
@@ -21,17 +21,7 @@ I visitatori, coloro che non sono stati identificati dal portale, potranno usufr
     \item[Visitatori] useranno il portale per ricercare prodotti e per leggere notizie presenti nel sito.
 \end{descriptionInd}
 
-\noindent
-Nella seguente tabella riassumiamo le necessità o esigenze dei visitatori:
-\begin{center}
-	\begin{tabularx}{0.8\textwidth}{l X}
-	\toprule 
-		\tabhead{Figura} & \tabhead{Necessità o Esigenze} \\
-	\midrule
-		\ruolo{Visitatori} & ricercare prodotti, visualizzare prodotti, visualizzare notizie, autenticarsi o iscriversi.  \\
-	\bottomrule
-	\end{tabularx}
-\end{center}
+
 
 % subsection subsection_name (end)
 \subsection{Utenza}
@@ -43,18 +33,7 @@ L'utenza è rappresentata da coloro che, dopo aver effettuato la procedura di au
     \item[Utenti] useranno il portale per ricercare prodotti, con la possibilità di recensirli e/o valutarli; per seguire altra utenza e ricevere aggiornamenti da essa e per leggere notizie presenti nel sito.
 \end{descriptionInd}
 
-\noindent
-Nella seguente tabella riassumiamo le necessità o esigenze dell'utenza:
-\begin{center}
-	\begin{tabularx}{0.8\textwidth}{l X}
-	\toprule 
-		\tabhead{Figura} & \tabhead{Necessità o Esigenze} \\
-	\midrule
-		\ruolo{Produttori} & Pubblicizzare se stessi e i loro prodotti.  \\ \\
-		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, visualizzare notizie, seguire altra utenza. \\
-	\bottomrule
-	\end{tabularx}
-\end{center}
+
 
 
 \subsection{Figure amministrative}
@@ -67,20 +46,27 @@ Le figure amministrative sono coloro che utilizzeranno il portale con lo scopo d
     \item[Moderatori] useranno il portale per gestire segnalazioni di utenti.
 \end{descriptionInd}
 
-\noindent
-Nella seguente tabella riassumiamo le necessità o esigenze delle figure amministrative:
+
+\section{Tabelle necessità o esigenze} % (fold)
+\label{sec:tabelle_necessita_o_esigenze}
+Nella seguente tabella riassumiamo le necessità o esigenze delle diverse figure:
 \begin{center}
 	\begin{tabularx}{0.8\textwidth}{l X}
 	\toprule 
 		\tabhead{Figura} & \tabhead{Necessità o Esigenze} \\
 	\midrule
-%		\ruolo{Web Admin} & Pubblicizzare se stessi e i loro prodotti.  \\ \\
-		\ruolo{Redattori} & pubblicare notizie, modificare notizie, eliminare notizie.  \\ \\
-		\ruolo{Assistenti} & rispondere alle richieste dell`utenza'  \\ \\
+		\ruolo{Visitatori} & ricercare prodotti, visualizzare prodotti, visualizzare notizie, autenticarsi o iscriversi.  \\
+		\addlinespace
+		\ruolo{Produttori} & inserire prodotti nello spazio dedicato, rimuovere prodotti dallo spazio dedicato, modificare i prodotti inseriti.  \\
+		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, visualizzare notizie, seguire altra utenza. \\
+		\addlinespace
+		\ruolo{Redattori} & pubblicare notizie, modificare notizie, eliminare notizie.  \\
+		\ruolo{Assistenti} & rispondere alle richieste dell`utenza  \\
 		\ruolo{Moderatori} & eliminare contenuti inappropriati, modificare contenuti inappropriati.  \\
 	\bottomrule
 	\end{tabularx}
 \end{center}
+
 
 \section{Studio di fattiblità}
 \label{sec:studio_di_fatt}
