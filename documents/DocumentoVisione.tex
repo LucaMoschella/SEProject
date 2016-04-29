@@ -10,47 +10,56 @@ Dopo un'attenta analisi della richiesta dell'associazione ChocoClub, abbiamo sti
 I principali obiettivi del portale che si intende realizzare sono riassumibili nei seguenti punti:
 \begin{itemize}
 	\item Fornire un portale capace di unificare le informazioni dal mondo dolciario, focalizzandosi sui prodotti contenenti cioccolata.
-	\item Fornire un punto di incontro fra produttori e clienti
-	\item Fornire all'utenza metodi di interazione.
+	\item Fornire un punto di incontro fra produttori e utenti.
+	\item Fornire alle figure pubbliche autenticate metodi di interazione.
 \end{itemize}
 
 \section{Descrizone portale}
 \label{sec:descrizone_portale}
-Il portale offrirà ai produttori la possibilità di pubblicizzare i propri prodotti in uno spazio dedicato, mentre all'utenza la possibilità di ricercarli e visualizzarli. Offrirà inoltre un sistema di recensione e valutazione prodotti e un modo per restare aggiornati sulle attività altrui, sia dei prodotturi che degli utenti.
+Il portale offrirà ai produttori la possibilità di pubblicizzare i propri prodotti in uno spazio dedicato; mentre agli utenti e ai visitatori la possibilità di ricercarli e visualizzarli. 
+
+Offrirà inoltre, solo per gli utenti, un sistema di recensione e valutazione prodotti e un modo per restare aggiornati sulle attività altrui, sia dei prodotturi che degli utenti.
 
 \section{Descrizione figure} 
 \label{sec:descrizionefigure}
-Le figure che potranno utilizzare il portale si dividono in tre categorie:
+Le figure che potranno utilizzare il portale si dividono in due categorie:
 \begin{itemize}
-	\item \ruolo{Visitatori}
-	\item \ruolo{Utenza}
+%	\item \ruolo{Visitatori}
+	\item \ruolo{Figure pubbliche}
 	\item \ruolo{Figure amministrative}
 \end{itemize}
 
-\subsection{Visitatori} % (fold)
-\label{sub:}
-I visitatori, coloro che non sono stati identificati dal portale, potranno usufruire dei suoi servizi pubblici.
-\begin{descriptionInd}
-    \item[Visitatori] useranno il portale per ricercare prodotti e per leggere notizie presenti nel sito.
-\end{descriptionInd}
+%\subsection{Visitatori} % (fold)
+%\label{sub:}
+%I visitatori, coloro che non sono stati identificati dal portale, potranno usufruire dei suoi servizi pubblici.
+%\begin{descriptionInd}
+%    \item[Visitatori] useranno il portale per ricercare prodotti e per leggere notizie presenti nel sito.
+%\end{descriptionInd}
 
-\subsection{Utenza}
-\label{sub:utenza}
-L'utenza è rappresentata da coloro che, dopo aver effettuato la procedura di autenticazione, utilizzerà il portale per usufruire dei suoi servizi. Essi si dividono in due profili differenti:
-\begin{descriptionInd}
-    \item[Produttori] useranno il portale per pubblicizzare i propri prodotti.
+\subsection{Figure pubbliche}
+\label{sub:figure_pubbliche}
+Le figure pubbliche sono coloro che usufruiscono dei servizi del portale. Si distinguono in base al loro stato (figure \stato{autenticate} oppure \stato{non autenticate} all'interno del portale) e nelle loro funzionalità. 
+\begin{itemize}
+	\item \stato{Non autenticate}:
+					\begin{descriptionInd}
+					    \item[Visitatori] useranno il portale per ricercare prodotti, per leggere notizie presenti nel sito e per iscriversi o autenticarsi.
+					\end{descriptionInd}
 
-    \item[Utenti] useranno il portale per ricercare prodotti, con la possibilità di recensirli e/o valutarli; per seguire altra utenza e ricevere aggiornamenti da essa e per leggere notizie presenti nel sito.
-\end{descriptionInd}
+	\item \stato{Autenticate}:
+					\begin{descriptionInd}
+					    \item[Produttori] useranno il portale per pubblicizzare i propri prodotti.
 
+					    \item[Utenti] useranno il portale per ricercare prodotti, con la possibilità di recensirli e/o valutarli; per seguire altre figure pubbliche autenticate per ricevere aggiornamenti da esse e per leggere notizie presenti nel sito.
+					\end{descriptionInd}
+\end{itemize}
 
 \subsection{Figure amministrative}
 \label{sub:figureamministrative}
-Le figure amministrative sono coloro che utilizzeranno il portale con lo scopo di fornire servizi all'utenza.
+Le figure amministrative sono coloro che utilizzeranno il portale con lo scopo di fornire servizi alle figure pubbliche.
 \begin{descriptionInd}
    % \item[Web Admin] avrà il compito di configurare e mantenere il portale, sia lato backend che frontend.
     \item[Redattori] useranno il portale per pubblicare notizie e articoli inerenti al mondo dolciario.   
-    \item[Assistenti] useranno il portale per fornire supporto all'utenza.
+    \item[Assistenti] useranno il portale per fornire supporto alle figure pubbliche.
     \item[Moderatori] useranno il portale per gestire segnalazioni di utenti.
 \end{descriptionInd}
 
@@ -66,10 +75,10 @@ Nella seguente tabella riassumiamo le necessità o esigenze delle diverse figure
 		\ruolo{Visitatori} & Ricercare prodotti, visualizzare prodotti, visualizzare notizie, autenticarsi o iscriversi.  \\
 		\addlinespace[1em]
 		\ruolo{Produttori} & Inserire prodotti nello spazio dedicato, modificare i prodotti inseriti.  \\
-		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, visualizzare notizie, seguire altra utenza. \\
+		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, visualizzare notizie, seguire altre figure pubbliche autenticate. \\
 		\addlinespace[1em]
 		\ruolo{Redattori} & Pubblicare notizie, modificare notizie, eliminare notizie.  \\
-		\ruolo{Assistenti} & Rispondere alle richieste dell`utenza attraverso il sistema di tickets  \\
+		\ruolo{Assistenti} & Rispondere alle richieste delle figure pubbliche attraverso il sistema di tickets  \\
 		\ruolo{Moderatori} & Eliminare contenuti inappropriati, modificare contenuti inappropriati.  \\
 	\bottomrule
 	\end{tabularx}
