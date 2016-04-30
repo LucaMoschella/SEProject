@@ -3,7 +3,7 @@
 
 \section{Introduzione}
 \label{sec:introduzione}
-Dopo un'attenta analisi della richiesta dell'associazione ChocoClub, abbiamo stilato il seguente documento di visione che ha l'obiettivo di descrivere ad alto livello il portale che si vuole realizzare ed il suo scopo, e di introdurre le principali figure che interagiranno con esso, assieme alle loro necessità. Inoltre viene effettuato uno studio della fattibilità per stabilire se tale portale è realizzabile con le attuali tecnologie a disposizione.
+Dopo un'attenta analisi della richiesta dell'associazione ChocoClub, abbiamo stilato il seguente documento di visione che ha l'obiettivo di descrivere ad alto livello il portale che si vuole realizzare ed il suo scopo, e di introdurre le principali figure che interagiranno con esso, assieme alle loro necessità.
 
 \section{Obiettivi portale} 
 \label{sec:descrizione_portale}
@@ -40,7 +40,7 @@ Le figure che potranno utilizzare il portale si dividono in due categorie:
 
 \subsection{Figure pubbliche}
 \label{sub:figure_pubbliche}
-Le figure pubbliche sono coloro che usufruiscono dei servizi del portale. Si distinguono in base al loro stato (figure \stato{autenticate} oppure \stato{non autenticate} all'interno del portale) e nelle loro funzionalità. 
+Le figure pubbliche sono coloro che usufruiscono dei servizi del portale. Si distinguono in base al loro stato (figure \stato{autenticate} oppure \stato{non autenticate} all'interno del portale) e nelle loro funzionalità:
 \begin{itemize}
 	\item \stato{Non autenticate}:
 					\begin{descriptionInd}
@@ -49,15 +49,15 @@ Le figure pubbliche sono coloro che usufruiscono dei servizi del portale. Si dis
 
 	\item \stato{Autenticate}:
 					\begin{descriptionInd}
-					    \item[Produttori] useranno il portale per pubblicizzare i propri prodotti.
+					    \item[Produttori] useranno il portale per pubblicizzare i propri prodotti; per commentare le recensioni dei propri prodotti.
 
-					    \item[Utenti] useranno il portale per ricercare prodotti, con la possibilità di recensirli e/o valutarli; per seguire altre figure pubbliche autenticate per ricevere aggiornamenti da esse e per leggere notizie presenti nel sito.
+					    \item[Utenti] useranno il portale per ricercare prodotti, con la possibilità di recensirli e/o valutarli; per commentare altre recensioni; per seguire altre figure pubbliche autenticate, per ricevere aggiornamenti da esse; per leggere notizie presenti nel sito; per suggerire prodotti e/o produttori mancanti.
 					\end{descriptionInd}
 \end{itemize}
 
 \subsection{Figure amministrative}
 \label{sub:figureamministrative}
-Le figure amministrative sono coloro che utilizzeranno il portale con lo scopo di fornire servizi alle figure pubbliche.
+Le figure amministrative sono coloro che utilizzeranno il portale con lo scopo di fornire servizi alle figure pubbliche:
 \begin{descriptionInd}
    % \item[Web Admin] avrà il compito di configurare e mantenere il portale, sia lato backend che frontend.
     \item[Redattori] useranno il portale per pubblicare notizie e articoli inerenti al mondo dolciario.   
@@ -76,8 +76,8 @@ Nella seguente tabella riassumiamo le necessità o esigenze delle diverse figure
 	\midrule
 		\ruolo{Visitatori} & Ricercare prodotti, visualizzare prodotti, visualizzare notizie, autenticarsi o iscriversi.  \\
 		\addlinespace[1em]
-		\ruolo{Produttori} & Inserire prodotti nello spazio dedicato, modificare i prodotti inseriti.  \\
-		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, visualizzare notizie, seguire altre figure pubbliche autenticate. \\
+		\ruolo{Produttori} & Inserire prodotti nello spazio dedicato, modificare i prodotti inseriti, commentare le recensioni dei propri prodotti.  \\
+		\ruolo{Utenti} & Cercare prodotti, visualizzare prodotti, valutare/recensire prodotti, commentare recensioni, visualizzare notizie, seguire altre figure pubbliche autenticate, suggerire prodotti e/o produttori mancanti. \\
 		\addlinespace[1em]
 		\ruolo{Redattori} & Pubblicare notizie, modificare notizie, eliminare notizie.  \\
 		\ruolo{Assistenti} & Rispondere alle richieste delle figure pubbliche attraverso il sistema di tickets  \\
