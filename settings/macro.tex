@@ -25,14 +25,26 @@
 
 \newcommand{\funfutura}[1]{\emph{#1}}
 
+\newcommand{\matricola}[1]{\textit{#1}}
+
+\newcommand{\email}[1]{\texttt{#1}}
+
+\newcommand{\fase}[1]{\textsf{#1}} 
+
+\newcommand{\workflow}[1]{\emph{#1}} 
+
+%FOrmattazione tabelle iterazione
+\newcommand{\tabwidthiter}{\textwidth} 
+\newcommand{\tabtitleiter}[1]{\textbf{#1}} 
+\newcommand{\tabheaditer}[1]{\textsc{#1}} 
+
 
 %Indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
 
-%Riferimenti a funzionalità
+%Riferimenti vari
 \newcommand{\funref}[1]{\texttt{\ref{#1}}}
 
-%Riferimenti a documenti
 \newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} 
 
 
@@ -58,3 +70,14 @@
 %lista descrption dove la descrizione va a capo.
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
         %signatura: \newenvironment{name}[num]{before}{after}
+
+%lista lavoro da fare dentro iterazione
+\newenvironment{enumWork}
+{
+		\begin{minipage}[t]{\linewidth}
+			    \begin{enumerate*}[itemjoin={\newline}]
+}
+{
+				\end{enumerate*}
+		\end{minipage}
+}
