@@ -74,10 +74,21 @@
 %lista lavoro da fare dentro iterazione
 \newenvironment{enumWork}
 {
-		\begin{minipage}[t]{\linewidth}
-			    \begin{enumerate*}[itemjoin={\newline}]
+	\begin{minipage}[t]{\linewidth}
+		\begin{enumerate*}[itemjoin={\newline}]
+		}
+		{
+		\end{enumerate*}
+	\end{minipage}
 }
+
+
+\newenvironment{itemWork}
 {
-				\end{enumerate*}
-		\end{minipage}
+	\begin{minipage}[t]{\linewidth}
+		\begin{itemize}[nosep, leftmargin=*]
+		}
+		{
+		\end{itemize}
+	\end{minipage}
 }
