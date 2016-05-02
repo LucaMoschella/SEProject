@@ -33,6 +33,11 @@
 
 \newcommand{\workflow}[1]{\emph{#1}} 
 
+%FOrmattazione tabelle iterazione
+\newcommand{\tabwidthiter}{\textwidth} 
+\newcommand{\tabtitleiter}[1]{\textbf{#1}} 
+\newcommand{\tabheaditer}[1]{\textsc{#1}} 
+
 
 %Indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
@@ -65,3 +70,14 @@
 %lista descrption dove la descrizione va a capo.
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
         %signatura: \newenvironment{name}[num]{before}{after}
+
+%lista lavoro da fare dentro iterazione
+\newenvironment{enumWork}
+{
+		\begin{minipage}[t]{\linewidth}
+			    \begin{enumerate*}[itemjoin={\newline}]
+}
+{
+				\end{enumerate*}
+		\end{minipage}
+}
