@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="DiagrammaGantt" company="" webLink="http://" view-date="2016-04-25" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7.2" locale="it">
+<?xml version="1.0" encoding="UTF-8"?><project name="DiagrammaGantt" company="" webLink="http://" view-date="2016-04-01" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7.2" locale="it">
     <description/>
-    <view zooming-state="default:7" id="gantt-chart">
+    <view zooming-state="default:8" id="gantt-chart">
         <field id="tpd3" name="Nome" width="57" order="0"/>
         <field id="tpd4" name="Data d'inizio" width="21" order="1"/>
         <field id="tpd5" name="Data di fine" width="21" order="2"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nome" width="70" order="0"/>
-        <field id="1" name="Ruolo predefinito" width="29" order="1"/>
+        <field id="0" name="Nome" width="56" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="43" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -39,6 +39,8 @@
         <task id="3" name="Studio della fattibilità" meeting="false" start="2016-04-30" duration="2" complete="0" expand="true"/>
         <task id="4" name="Contratto" meeting="false" start="2016-05-01" duration="1" complete="0" expand="true"/>
         <task id="5" name="Pianificazione del progetto" meeting="false" start="2016-05-02" duration="14" complete="0" expand="true"/>
+        <task id="6" name="Specifica del sistema" meeting="false" start="2016-05-04" duration="1" complete="0" expand="true"/>
+        <task id="7" name="Specifica dei requisiti" meeting="false" start="2016-05-04" duration="8" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
