@@ -6,50 +6,67 @@
 
 %MACRO COMANDI 
 
-%formattazione logica
+%%%%%%%%%%%%%%%%%% FORMATTAZIONE LOGICA %%%%%%%%%%%%%%%%%%
+
+%tecnologie necessarie (fattibilità)
 \newcommand{\tecnologia}[1]{\emph{#1}} 
 
+%autenticate o non autenticate (documenti di visione)
 \newcommand{\stato}[1]{\emph{#1}} 
 
+%ruolo nel sistema visitatori, etc. (visione, specifica sistema)
 \newcommand{\ruolo}[1]{\emph{#1}} 
+
+%gruppo di ruoli (visione, specifica sistema)
 \newcommand{\grupporuolo}[1]{\textsl{#1}} 
 
+%campo di informazione nel prodotto
 \newcommand{\campo}[1]{\emph{#1}} 
 
-\newcommand{\tabhead}[1]{\textsc{#1}} 
-
+%possibili valori dei campi
 \newcommand{\dominiocampo}[1]{\emph{#1}} 
 
+%intestazioni nelle tabelle generiche
+\newcommand{\tabhead}[1]{\textsc{#1}} 
+
+%funzionalità specifiche - deprecated
 \newcommand{\fun}[1]{\emph{#1}}
 
+%blocco di funzionalità - deprecated
 \newcommand{\bloccofun}[1]{\emph{#1}}
 
+%funzionalità da implementare
 \newcommand{\funfutura}[1]{\emph{#1}}
 
+%matricola 
 \newcommand{\matricola}[1]{\textit{#1}}
 
+%email
 \newcommand{\email}[1]{\texttt{#1}}
 
+%fase di sviluppo (inception, etc.)
 \newcommand{\fase}[1]{\textsf{#1}} 
 
+%workflow di sviluppo (raccolta requisiti, etc.)
 \newcommand{\workflow}[1]{\emph{#1}} 
 
-%FOrmattazione tabelle iterazione
-\newcommand{\tabwidthiter}{\textwidth} 
+
+%formattazione tabelle iterazioni ( pianificazione progetto)
 \newcommand{\tabtitleiter}[1]{\textbf{#1}} 
 \newcommand{\tabheaditer}[1]{\textsc{#1}} 
 
-
-%Indiicizzare e inserire contemporaneamente
+%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%
+%indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
 
-%Riferimenti vari
+%%%%%%%%%%%%%%%%%% RIFERIMENTI %%%%%%%%%%%%%%%%%%
+%a funzioni
 \newcommand{\funref}[1]{\texttt{\ref{#1}}}
-
+%a documenti
 \newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} 
 
 
-%Matematica
+%%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%
 
 %insiemi numerici
 \newcommand{\numberset}{\mathbb}
@@ -62,8 +79,16 @@
 \renewcommand{\rho}{\varrho}
 \renewcommand{\phi}{\varphi}
 
-%MACRO AMBIENTI
+%%%%%%%%%%%%%%%%%% TABELLE %%%%%%%%%%%%%%%%%%
+%larghezza tabelle iterazione
+\newcommand{\tabwidthiter}{\textwidth} 
 
+%larghezza tabelle revisione
+\newcommand{\tabwidthrev}{0.8\textwidth} 
+
+
+
+%%%%%%%%%%%%%%%%%% MACRO AMBIENTI %%%%%%%%%%%%%%%%%%
 
 %lista descrption dove c'è una leggera indentazione.
 \newenvironment{descriptionInd}{\begin{description}[leftmargin=1.5cm,labelindent=1cm]}{\end{description}}
