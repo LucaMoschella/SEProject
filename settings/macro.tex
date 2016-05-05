@@ -68,17 +68,61 @@
 \newcommand{\subreq}[5]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5}} 
 \newcommand{\subsubreq}[6]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5\reqsep#6}} 
 
+\newcounter{req}
+\newcounter{sottoreq}[req]
+\newcounter{sottosottoreq}[sottoreq]
+
+\newcommand{\ereq}[3]{%
+\stepcounter{req}%
+\displayReq{#1\reqsep#2\reqsep#3\reqsep\arabic{req}}%
+} 
+
+\newcommand{\esubreq}[3]{%
+\stepcounter{sottoreq}%
+\displayReq{#1\reqsep#2\reqsep#3\reqsep\arabic{req}\reqsep\arabic{sottoreq}}%
+} 
+
+\newcommand{\esubsubreq}[3]{%
+\stepcounter{sottosottoreq}%
+\displayReq{#1\reqsep#2\reqsep#3\reqsep\arabic{req}\reqsep\arabic{sottoreq}\reqsep\arabic{sottosottoreq}}%
+} 
+
+\newcommand{\countReset}{%
+	\setcounter{req}{0}%
+	\setcounter{sottoreq}{0}%
+	\setcounter{sottosottoreq}{0}%
+}
+
 %%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%
 %indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
 
 %%%%%%%%%%%%%%%%%% RIFERIMENTI %%%%%%%%%%%%%%%%%%
+
 %a funzioni
 \newcommand{\funref}[1]{\texttt{\ref{#1}}}
 %a documenti
 \newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} 
 
+%\newcommand{\var}[1]{#1}
 
+%\newcommand{\textLabel}[2]{
+%	\renewcommand{\var}{#2}
+
+\edef\textLabel[#1]#2{%
+	%\global\expandafter\def\csname test\endcsname\var{#2}
+	\label{#1}#2
+	\global\expandafter\def\csname#1\endcsname{\hyperref[#1]{#2}}
+}
+
+\newcommand{\textLabella}[2]{%
+	%\global\expandafter\def\csname test\endcsname\var{#2}
+	\renewcommand{\var}{#2}
+	\label{#1}\var
+	\global\expandafter\def\csname#1\endcsname{\hyperref[#1]{\var}}
+}
+% \newcommand{\babbonatale}{f(x)}
+% \babbonatale = f(x)
 %%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%
 
 %insiemi numerici
@@ -102,6 +146,10 @@
 
 
 %%%%%%%%%%%%%%%%%% MACRO AMBIENTI %%%%%%%%%%%%%%%%%%
+
+%toglie il bold dalle label delle descrizioni
+\renewcommand{\descriptionlabel}[1]{\textsf{#1}}
+
 
 %lista descrption dove c'è una leggera indentazione.
 \newenvironment{descriptionInd}{\begin{description}[leftmargin=1.5cm,labelindent=1cm]}{\end{description}}
