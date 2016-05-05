@@ -1,4 +1,75 @@
 \chapter{Specifica requisiti} 
-\label{cha:specifica_requisiti}
+\label{cha:specifica_sistema}
 
 \section{Introduzione} 
+In questo documento sono elencati e poi specificati nel dettaglio tutti i requisiti del sistema, suddivisi in funzionali e non funzionali.
+Per organizzare in modo corretto le informazioni è stato adottato un sistema codifica dei requisiti, descritto 
+
+\section{Struttura del documento}
+\label{cha:struttura_del_documento}
+
+I requisiti mostrati in questo documento sono prima elencati per una più facile consultazione, in seguito sono descritte in apposite tabelle. 
+Ogni tabella contiene diverse informazioni:
+\begin{itemize}
+	\item Un \descCTab{id} per identificare unvicamente il requisito.
+	\item Un \descCTab{titolo} per semplificare il riconoscimento del requisito.
+	\item Una \descCTab{descrizione} per indicare in cosa consiste la funzionalità rappresentata dal requisito.
+	\item Un \descCTab{tipo} per indicare se il requisito è funzionale o non funzionale
+	\item Una \descCTab{priorità} per indicare il grado di importanza del requisito.
+	\item Lo \descCTab{stato} per indicare l'idoneità del requisito.
+\end{itemize}
+
+\subsection{Identificativo dei requisiti}
+\label{cha:identificativo_dei_requisiti}
+
+Di seguito è spiegato come interpretare l'identificativo dei requisiti.
+Un identificativo è della forma:
+\begin{center}
+	\subreq{tipo}{contesto}{categoria}{req}{[sottoreq]}
+\end{center}
+
+Segue una descrizione di ogni campo utilizzato:
+\begin{itemize}
+\item Il tipo può essere:
+\begin{itemize}
+	\item F, funzionale.
+	\item NF, non funzionale.
+\end{itemize}
+
+\item Il contesto serve ad identificare a quali figure è rivolta una data funzionalità è un numero composto da 6 cifre, ognuna delle quali può assumere un valore 0 oppure 1. La posizione della cifra si riferisce ad una specifica figura, se la cifra i-esima vale 1 significa che l'i-esima figura è presente nel contesto del requisitio, altrimenti no.
+Di seguito elenchiamo ogni posizione a quale figura riferisce: 
+\begin{descriptionInd}
+	\item[1\textdegree\ bit] Visitatore.
+	\item[2\textdegree\ bit] Utente.
+	\item[3\textdegree\ bit] Produttore.
+	\item[4\textdegree\ bit] Redattore.
+	\item[5\textdegree\ bit] Assistente.
+	\item[6\textdegree\ bit] Moderatore.
+\end{descriptionInd}		
+
+\item La categoria è un numero progressivo utilizzato per raggruppare i requisiti con scopi simili.
+Le categorie per i requisiti funzionali sono le seguenti:
+\begin{descriptionInd}
+	\item[01] Iscrizione e autenticazione.
+	\item[02] Gestione iscrizione.
+	\item[03] Gestione vetrina.
+	\item[04] Ricerca.
+	\item[05] Gestione recensioni.
+	\item[06] Gestione notizie.
+	\item[07] Gestione follower/followed.
+	\item[08] Gestioni suggerimenti.
+	\item[09] Gestione account.
+	\item[10] Visualizzazione.
+\end{descriptionInd}	
+Le categorie per i requisiti non funzionali sono le seguenti:
+\begin{descriptionInd}
+	\item[01] Sicurezza.
+	\item[02] Portabilità.
+	\item[03] Usabilità.
+	\item[04] Implementazione.
+\end{descriptionInd}	
+
+\item Il campo req è il numero progressivo utilizzato per identificare in modo univoco un requisito all'interno della sua categoria.
+\item Il campo sottoreq (opzionale) è il numero progressivo utilizzato per identificare in modo univoco un sotto--requisito di un dato requisito.
+
+\end{itemize}
