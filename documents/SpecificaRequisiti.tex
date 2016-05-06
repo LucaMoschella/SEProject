@@ -2,13 +2,13 @@
 \label{cha:specifica_requisiti}
 
 \section{Introduzione} 
-In questo documento sono elencati e poi specificati nel dettaglio tutti i requisiti del sistema, suddivisi in funzionali e non funzionali.
+In questo documento sono specificati nel dettaglio tutti i requisiti del sistema, suddivisi in funzionali e non funzionali.
 Per organizzare in modo corretto le informazioni è stato adottato un sistema di codifica dei requisiti, descritto nella prossima sezione.
 
 \section{Struttura del documento}
 \label{sec:struttura_del_documento}
 
-I requisiti mostrati in questo documento sono prima elencati per una più facile consultazione, in seguito sono descritte in apposite tabelle. 
+I requisiti mostrati sono prima elencati, per una più facile consultazione, e in seguito sono descritti in apposite tabelle. 
 Ogni tabella contiene diverse informazioni:
 \begin{itemize}
 	\item Un \campiTabReq{id} per identificare univocamente il requisito.
@@ -48,7 +48,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[6\textdegree\ bit] Moderatore.
 	\end{descriptionInd}		
 
-	\item La \campiIdReq{categoria} è un numero progressivo utilizzato per raggruppare i requisiti con scopi simili.
+	\item La \campiIdReq{categoria} è una lettera utilizzata per raggruppare i requisiti con scopi simili.
 	Le categorie per i requisiti funzionali sono le seguenti:
 	\begin{descriptionInd}
 		\item[A] Iscrizione e autenticazione.
@@ -70,9 +70,9 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[D] Implementazione.
 	\end{descriptionInd}	
 
-	\item Il campo \campiIdReq{req} è il numero progressivo utilizzato per identificare in modo univoco un requisito all'interno della sua categoria.
+	\item Il campo \campiIdReq{req} è un numero progressivo utilizzato per identificare in modo univoco un requisito all'interno della sua categoria.
 
-	\item Il campo \campiIdReq{sottoreq} (opzionale) è il numero progressivo utilizzato per identificare in modo univoco un sotto--requisito di un dato requisito.
+	\item Il campo \campiIdReq{sottoreq} (opzionale) è un numero progressivo utilizzato per identificare in modo univoco un sotto--requisito di un dato requisito. Ci possono essere diversi campi sottoreq consecutivi, per esplicitare una nidificazione dei requisiti più dettagliata.
 \end{itemize}
 
 \subsection{Priorità}
@@ -90,10 +90,8 @@ Qui di seguito sono elencati in breve i ``gradi di giudizio'' della priorità di
 \section{Elenco dei requisiti}
 \label{sec:elenco_dei_requisiti}
 Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzionali.
-
+\nopagebreak
 \subsection{Requisiti funzionali}
-
-
 \label{sub:requisiti_funzionali}
 Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {tipo}{contesto}{categoria}{keyrequisito} - doublelink automatico con \refElencoFromDef{keyrequisito}
@@ -138,9 +136,9 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqLabel{req:eliminaValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Rimozione valutazione inserita
 
 	\item \reqLabel{req:recensioneProdotto}{\ereq{RF}{010111}{E}} - Recensione prodotto
-	\item \reqLabel{req:inserisciValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Inserimento recensione
-	\item \reqLabel{req:modificaValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Modifica valutazione inserita
-	\item \reqLabel{req:eliminaValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Rimozione recensione inserita
+	\item \reqLabel{req:inserisciRecensioneProdotto}{\esubreq{RF}{010111}{E}} - Inserimento recensione
+	\item \reqLabel{req:modificaRecensioneProdotto}{\esubreq{RF}{010111}{E}} - Modifica valutazione inserita
+	\item \reqLabel{req:eliminaRecensioneProdotto}{\esubreq{RF}{010111}{E}} - Rimozione recensione inserita
 
 	\item \reqLabel{req:commentoRecensione}{\ereq{RF}{011111}{E}} - Commento a recensione
 	
