@@ -98,16 +98,18 @@ Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzio
 Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {tipo}{contesto}{categoria}{keyrequisito} - doublelink automatico con \refElencoFromDef{keyrequisito}
 \begin{itemize} 
-	\item \ereq{RF}{100000}{A}{req:iscrizione} - Iscrizione
-	\item \esubreq{RF}{100000}{A}{req:iscrizionePortale} - Iscrizione tramite modulo del portale 
-	\item \esubreq{RF}{100000}{A}{req:iscrizioneSocial} - Iscrizione tramite Social Network
-	\item \esubsubreq{RF}{100000}{A}{req:iscrizioneSocialVer} - Iscrizione tramite Social Network verificati
-	\item \esubsubreq{RF}{100000}{A}{req:iscrizioneSocialNotVer} - Iscrizione tramite Social Network non verificati
-	\item \esubreq{RF}{100000}{A}{req:iscrizioneApprovazione} - Iscrizione tramite approvazione
-	\item \ereq{RF}{100000}{A}{req:login} - Login 
+	\item \reqLabel{req:prova}{\ereq{RF}{100000}{A}} - provaprova
+	\item quetsa è una linea
+	\item \reqLabel{req:iscrizione}{\ereq{RF}{100000}{A}} - Iscrizione
+	\item \reqLabel{req:iscrizionePortale}{\esubreq{RF}{100000}{A}} - Iscrizione tramite modulo del portale 
+	\item \reqLabel{req:iscrizioneSocial}{\esubreq{RF}{100000}{A}} - Iscrizione tramite Social Network
+	\item \reqLabel{req:iscrizioneSocialVer}{\esubsubreq{RF}{100000}{A}} - Iscrizione tramite Social Network verificati
+	\item \reqLabel{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{100000}{A}} - Iscrizione tramite Social Network non verificati
+	\item \reqLabel{req:iscrizioneApprovazione}{\esubreq{RF}{100000}{A}} - Iscrizione tramite approvazione
+	\item \reqLabel{req:login}{\ereq{RF}{100000}{A}} - Login 
 	\countReset 
-	\item \ereq{RF}{000010}{B}{req:approvazioneIscrizione} - Approvazione iscrizione
-	\item \ereq{RF}{000001}{B}{req:rimozioneaccount} - Rimozione account altrui 
+	\item \reqLabel{req:approvazioneIscrizione}{\ereq{RF}{000010}{B}} - Approvazione iscrizione
+	\item \reqLabel{req:rimozioneaccount}{\ereq{RF}{000001}{B}} - Rimozione account altrui 
 	\countReset
 
 \end{itemize}	
@@ -120,23 +122,26 @@ Vengono di seguito elencati i requisiti funzionali:
 \section{Descrizione dei requisiti}
 \label{sec:descrizione_dei_requisiti}
 Questi verranno linkati dall'elenco, sono le ``definizioni'' dei sequisiti:\\
-iscrizione:  \refElencoFromDef{req:iscrizione} \\
-iscportal:  \refElencoFromDef{req:iscrizionePortale} \\
-iscSocial:  \refElencoFromDef{req:iscrizioneSocial} \\
-iscSocialVer:  \refElencoFromDef{req:iscrizioneSocialVer} \\
-iscsocialnot:  \refElencoFromDef{req:iscrizioneSocialNotVer} \\
-iscapp  \refElencoFromDef{req:iscrizioneApprovazione}\\
-log  \refElencoFromDef{req:login}\\
-appr  \refElencoFromDef{req:approvazioneIscrizione}\\
-rem  \refElencoFromDef{req:rimozioneaccount}\\
+iscrizione:  \reqDefRef{req:iscrizione} \\
+iscportal:  \reqDefRef{req:iscrizionePortale} \\
+iscSocial:  \reqDefRef{req:iscrizioneSocial} \\
+iscSocialVer:  \reqDefRef{req:iscrizioneSocialVer} \\
+iscsocialnot:  \reqDefRef{req:iscrizioneSocialNotVer} \\
+iscapp  \reqDefRef{req:iscrizioneApprovazione}\\
+log  \reqDefRef{req:login}\\
+appr  \reqDefRef{req:approvazioneIscrizione}\\
+rem  \reqDefRef{req:rimozioneaccount}\\
 
 Ma possiamo riusare i nomi, linkandoli all'elenco, senza creare problemi al link elenco -> def!\\
-iscrizione:  \refElenco{req:iscrizione} \\
-iscportal:  \refElenco{req:iscrizionePortale} \\
-iscSocial:  \refElenco{req:iscrizioneSocial} \\
-iscSocialVer:  \refElenco{req:iscrizioneSocialVer} \\
-iscsocialnot:  \refElenco{req:iscrizioneSocialNotVer} \\
-iscapp  \refElenco{req:iscrizioneApprovazione}\\
-log  \refElenco{req:login}\\
-appr  \refElenco{req:approvazioneIscrizione}\\
-rem  \refElenco{req:rimozioneaccount}\\
+iscrizione:  \reqRef{req:iscrizione} \\
+iscportal:  \reqRef{req:iscrizionePortale} \\
+iscSocial:  \reqRef{req:iscrizioneSocial} \\
+iscSocialVer:  \reqRef{req:iscrizioneSocialVer} \\
+iscsocialnot:  \reqRef{req:iscrizioneSocialNotVer} \\
+iscapp  \reqRef{req:iscrizioneApprovazione}\\
+log  \reqRef{req:login}\\
+appr  \reqRef{req:approvazioneIscrizione}\\
+rem  \reqRef{req:rimozioneaccount}\\
+
+Provaidsvuiosbvcosneui: \\
+prova: \reqDefRef{req:prova}

@@ -81,7 +81,7 @@
 %descrizione campi degli identificatori dei requisiti
 \newcommand{\campiIdReq}[1]{\emph{#1}} 
 
-%formattazione requisiti- senza alcun link - deve essere tenuta in sinc a mano con quelle con link
+%formattazione requisiti
 \newcommand{\reqsep}{.} 
 \newcommand{\displayReq}[1]{\texttt{#1}} 
 \newcommand{\req}[4]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4}} 
@@ -100,19 +100,48 @@
 \setcounter{sottosottoreq}{0}%
 }
 
+%Macro per linkare requisiti
+\newcommand\reqLabel[2]{\hyperref[descrizione:#1]{#2\phantomsection\label{elenco:#1}}}
+\newcommand\reqDefRef[1]{\ref{elenco:#1}\phantomsection\label{descrizione:#1}}
+\newcommand\reqRef[1]{\ref{elenco:#1}}
+
+\makeatletter
+\newcommand{\ereq}[3]{%
+    \stepcounter{req}%
+    \def\@currentlabel{\req{#1}{#2}{#3}{\arabic{req}}}%
+    \req{#1}{#2}{#3}{\arabic{req}}%
+}
+\makeatother
+
+\makeatletter
+\newcommand{\esubreq}[3]{%
+    \stepcounter{sottoreq}%
+    \def\@currentlabel{\subreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}}%
+	\subreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}%
+}
+\makeatother
+
+\makeatletter
+\newcommand{\esubsubreq}[3]{%
+    \stepcounter{sottosottoreq}%
+    \def\@currentlabel{\subsubreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
+	\subsubreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
+}
+\makeatother
+
 %Funzione per creare il prossimo requisito, creare una label a cui punterà la defnizione, linkare la definizione.
 %Usage: \command{tipo}{contesto}{categoria}{keyrequisito}
-\newcommand*\ereq[4]{\def\thereq{#1.#2.#3.\arabic{req}}\refstepcounter{req}\hyperref[definizione#4]{\thereq}\phantomsection\label{elenco#4}} 
-\newcommand*\esubreq[4]{\def\thesottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}}\refstepcounter{sottoreq}\hyperref[definizione#4]{\thesottoreq}\phantomsection\label{elenco#4}} 
-\newcommand*\esubsubreq[4]{\def\thesottosottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}.\arabic{sottosottoreq}}\refstepcounter{sottosottoreq}\hyperref[definizione#4]{\thesottosottoreq}\phantomsection\label{elenco#4}} 
+%\newcommand*\ereq[4]{\def\thereq{#1.#2.#3.\arabic{req}}\refstepcounter{req}\hyperref[definizione#4]{\thereq}\phantomsection\label{elenco#4}} 
+%\newcommand*\esubreq[4]{\def\thesottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}}\refstepcounter{sottoreq}\hyperref[definizione#4]{\thesottoreq}\phantomsection\label{elenco#4}} 
+%\newcommand*\esubsubreq[4]{\def\thesottosottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}.\arabic{sottosottoreq}}\refstepcounter{sottosottoreq}\hyperref[definizione#4]{\thesottosottoreq}\phantomsection\label{elenco#4}} 
 
 %Funzione per stampare il nome del requisito associato alla label: keyrequisito
 %Linka l'elemento nell'elenco, e fa in modo di essere linkato dall'elenco
-\newcommand{\refElencoFromDef}[1]{\ref{elenco#1}\phantomsection\label{definizione#1}}
+%\newcommand{\refElencoFromDef}[1]{\ref{elenco#1}\phantomsection\label{definizione#1}}
 
 %Funzione per stampare il nome del requisito associato alla label: keyrequisito
 %Linka l'elemento nell'elenco.
-\newcommand{\refElenco}[1]{\ref{elenco#1}}
+%\newcommand{\refElenco}[1]{\ref{elenco#1}}
 
 
 
