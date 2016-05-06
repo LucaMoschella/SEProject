@@ -4,45 +4,47 @@
 %2) Definire comandi abbreviati per semplificare comandi con opzioni complese ripetute più volte
 %3) Senza esagerare, definire testo da inserire in automatico senza riscriverlo ogni volta
 
-%MACRO COMANDI 
 
-%%%%%%%%%%%%%%%%%% FORMATTAZIONE LOGICA %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FORMATTAZIONE LOGICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%tecnologie necessarie (fattibilità)
-\newcommand{\tecnologia}[1]{\emph{#1}} 
+%Il documento indicato è quello in cui sono state definite per la prima volta le macro, poi riutilizzate anche in altri documenti. 
+%(Un minimo di organizzazione senno impazzisco)
 
-%autenticate o non autenticate (documenti di visione)
-\newcommand{\stato}[1]{\emph{#1}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di richiesta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di visione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %ruolo nel sistema visitatori, etc. (visione, specifica sistema)
 \newcommand{\ruolo}[1]{\emph{#1}} 
 
-%gruppo di ruoli (visione, specifica sistema)
-\newcommand{\grupporuolo}[1]{\textsl{#1}} 
-
-%campo di informazione nel prodotto
-\newcommand{\campo}[1]{\emph{#1}} 
-
-%possibili valori dei campi
-\newcommand{\dominiocampo}[1]{\emph{#1}} 
+%autenticate o non autenticate (documenti di visione)
+\newcommand{\stato}[1]{\emph{#1}} 
 
 %intestazioni nelle tabelle generiche
 \newcommand{\tabhead}[1]{\textsc{#1}} 
 
-%funzionalità specifiche - deprecated
-\newcommand{\fun}[1]{\emph{#1}}
 
-%blocco di funzionalità - deprecated
-\newcommand{\bloccofun}[1]{\emph{#1}}
 
-%funzionalità da implementare
-\newcommand{\funfutura}[1]{\emph{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di fattibilità %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%matricola 
+%tecnologie necessarie
+\newcommand{\tecnologia}[1]{\emph{#1}} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di contratto %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%matricola (e titolo)
 \newcommand{\matricola}[1]{\textit{#1}}
 
-%email
+%email (e titolo)
 \newcommand{\email}[1]{\texttt{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di pianificazione %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %fase di sviluppo (inception, etc.)
 \newcommand{\fase}[1]{\textsf{#1}} 
@@ -50,80 +52,91 @@
 %workflow di sviluppo (raccolta requisiti, etc.)
 \newcommand{\workflow}[1]{\emph{#1}} 
 
-%formattazione tabelle iterazioni ( pianificazione progetto)
+%larghezza tabelle iterazione
+\newcommand{\tabwidthiter}{\textwidth} 
+
+%titolo tabelle iterazioni 
 \newcommand{\tabtitleiter}[1]{\textbf{#1}} 
+
+%campo tabelle iterazioni 
 \newcommand{\tabheaditer}[1]{\textsc{#1}} 
 
-%DOCUMENTO DEI REQUISITI
-%descrizione cambi delle tabelle
-\newcommand{\descCTab}[1]{\emph{#1}} 
 
-%descrizione cambi degli identificatori
-\newcommand{\descCID}[1]{\emph{#1}} 
 
-%formattazione requisiti
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di specifica sistema %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%gruppi di ruoli (figure pubbliche, etc.)
+\newcommand{\grupporuolo}[1]{\textsl{#1}} 
+
+%campo di informazione nel prodotto
+\newcommand{\infoProdotto}[1]{\emph{#1}} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di specifica requisiti %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%descrizione campi delle tabelle dei requisiti
+\newcommand{\campiTabReq}[1]{\emph{#1}} 
+
+%descrizione campi degli identificatori dei requisiti
+\newcommand{\campiIdReq}[1]{\emph{#1}} 
+
+%formattazione requisiti- senza alcun link - deve essere tenuta in sinc a mano con quelle con link
 \newcommand{\reqsep}{.} 
 \newcommand{\displayReq}[1]{\texttt{#1}} 
 \newcommand{\req}[4]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4}} 
 \newcommand{\subreq}[5]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5}} 
 \newcommand{\subsubreq}[6]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5\reqsep#6}} 
 
+%Creazione dei contatori per la gestione automatica dei requisiti
 \newcounter{req}
 \newcounter{sottoreq}[req]
 \newcounter{sottosottoreq}[sottoreq]
 
-\newcommand{\ereq}[3]{%
-\stepcounter{req}%
-\displayReq{#1\reqsep#2\reqsep#3\reqsep\arabic{req}}%
-} 
-
-\newcommand{\esubreq}[3]{%
-\stepcounter{sottoreq}%
-\displayReq{#1\reqsep#2\reqsep#3\reqsep\arabic{req}\reqsep\arabic{sottoreq}}%
-} 
-
-\newcommand{\esubsubreq}[3]{%
-\stepcounter{sottosottoreq}%
-\displayReq{#1\reqsep#2\reqsep#3\reqsep\arabic{req}\reqsep\arabic{sottoreq}\reqsep\arabic{sottosottoreq}}%
-} 
-
+%Funzione per resettare i contatori al cambio di categoria
 \newcommand{\countReset}{%
-	\setcounter{req}{0}%
-	\setcounter{sottoreq}{0}%
-	\setcounter{sottosottoreq}{0}%
+\setcounter{req}{0}%
+\setcounter{sottoreq}{0}%
+\setcounter{sottosottoreq}{0}%
 }
 
-%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%
+%Funzione per creare il prossimo requisito, creare una label a cui punterà la defnizione, linkare la definizione.
+%Usage: \command{tipo}{contesto}{categoria}{keyrequisito}
+\newcommand*\ereq[4]{\def\thereq{#1.#2.#3.\arabic{req}}\refstepcounter{req}\hyperref[definizione#4]{\thereq}\phantomsection\label{elenco#4}} 
+\newcommand*\esubreq[4]{\def\thesottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}}\refstepcounter{sottoreq}\hyperref[definizione#4]{\thesottoreq}\phantomsection\label{elenco#4}} 
+\newcommand*\esubsubreq[4]{\def\thesottosottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}.\arabic{sottosottoreq}}\refstepcounter{sottosottoreq}\hyperref[definizione#4]{\thesottosottoreq}\phantomsection\label{elenco#4}} 
+
+%Funzione per stampare il nome del requisito associato alla label: keyrequisito
+%Linka l'elemento nell'elenco, e fa in modo di essere linkato dall'elenco
+\newcommand{\refElencoFromDef}[1]{\ref{elenco#1}\phantomsection\label{definizione#1}}
+
+%Funzione per stampare il nome del requisito associato alla label: keyrequisito
+%Linka l'elemento nell'elenco.
+\newcommand{\refElenco}[1]{\ref{elenco#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %indiicizzare e inserire contemporaneamente
 \newcommand{\iindex}[1]{#1\index{#1}} 
 
-%%%%%%%%%%%%%%%%%% RIFERIMENTI %%%%%%%%%%%%%%%%%%
 
-%a funzioni
-\newcommand{\funref}[1]{\texttt{\ref{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RIFERIMENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %a documenti
 \newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} 
 
-\makeatletter
-\newcommand{\textLabel}[2]{%
-	Start call: #2
-	\\Secondo call: #2
-  	\protected@edef\var{\expandafter\noexpand#2}%
-  	\\Call with brilliant function: \var
-  	\\Another call with brilliant function: \var
-  	\\ANOTHER call with brilliant function: \var
-  	\\I FUCKED YOU STUPID MACRO!!!
 
-  	\label{#1}\var%
-	% expandafter qui serve per far espandere prima i comandi successivi, in modo che l'input di "newcommand" sia 
-	% il testo risultante da csname #1\endcsname e non "csname".
-  	\global\expandafter\def\csname prova\endcsname{\hyperref[#1]{\var}}
-}
-\makeatother
 
-% \newcommand{\babbonatale}{f(x)}
-% \babbonatale = f(x)
-%%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %insiemi numerici
 \newcommand{\numberset}{\mathbb}
@@ -136,16 +149,20 @@
 \renewcommand{\rho}{\varrho}
 \renewcommand{\phi}{\varphi}
 
-%%%%%%%%%%%%%%%%%% TABELLE %%%%%%%%%%%%%%%%%%
-%larghezza tabelle iterazione
-\newcommand{\tabwidthiter}{\textwidth} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABELLE GENERICHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %larghezza tabelle revisione - non usata (se con poco testo viene brutta)
 \newcommand{\tabwidthrev}{0.8\textwidth} 
 
 
 
-%%%%%%%%%%%%%%%%%% MACRO AMBIENTI %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AMBIENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %toglie il bold dalle label delle descrizioni
 \renewcommand{\descriptionlabel}[1]{\textsf{#1}}
@@ -158,7 +175,7 @@
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
         %signatura: \newenvironment{name}[num]{before}{after}
 
-%lista lavoro da fare dentro iterazione
+%lista numerata inseribile dentro tabelle
 \newenvironment{enumWork}
 {
 	\begin{minipage}[t]{\linewidth}
@@ -169,7 +186,7 @@
 	\end{minipage}
 }
 
-
+%lista itemize inseribile dentro tabelle
 \newenvironment{itemWork}
 {
 	\begin{minipage}[t]{\linewidth}
