@@ -94,105 +94,105 @@ Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzio
 \subsection{Requisiti funzionali}
 \label{sub:requisiti_funzionali}
 Vengono di seguito elencati i requisiti funzionali:
-%USAGE: {tipo}{contesto}{categoria}{keyrequisito} - doublelink automatico con \refElencoFromDef{keyrequisito}
+%USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize} 
-	\item \reqLabel{req:iscrizione}{\ereq{RF}{100000}{A}} - Iscrizione
-	\item \reqLabel{req:iscrizionePortale}{\esubreq{RF}{100000}{A}} - Iscrizione tramite modulo del portale 	
-	\item \reqLabel{req:iscrizioneSocial}{\esubreq{RF}{100000}{A}} - Iscrizione tramite Social Network	
-	\item \reqLabel{req:iscrizioneSocialVer}{\esubsubreq{RF}{100000}{A}} - Iscrizione tramite Social Network verificati
-	\item \reqLabel{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{100000}{A}} - Iscrizione tramite Social Network non verificati	
-	\item \reqLabel{req:iscrizioneApprovazione}{\esubreq{RF}{100000}{A}} - Iscrizione tramite approvazione
+	\item \reqItem{req:iscrizione}{\ereq{RF}{100000}{A}}{Iscrizione}
+	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{100000}{A}}{Iscrizione tramite modulo del portale 	}
+	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{100000}{A}}{Iscrizione tramite Social Network	}
+	\item \reqItem{req:iscrizioneSocialVer}{\esubsubreq{RF}{100000}{A}}{Iscrizione tramite Social Network verificati}
+	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{100000}{A}}{Iscrizione tramite Social Network non verificati	}
+	\item \reqItem{req:iscrizioneApprovazione}{\esubreq{RF}{100000}{A}}{Iscrizione tramite approvazione}
 	
-	\item \reqLabel{req:login}{\ereq{RF}{100000}{A}} - Login 
+	\item \reqItem{req:login}{\ereq{RF}{100000}{A}}{Login }
 	\countReset 
 	
-	\item \reqLabel{req:approvazioneIscrizione}{\ereq{RF}{000010}{B}} - Approvazione iscrizione
+	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{000010}{B}}{Approvazione iscrizione}
 	
-	\item \reqLabel{req:rimozioneAccountAltrui}{\ereq{RF}{000001}{B}} - Rimozione account altrui 
+	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{000001}{B}}{Rimozione account altrui }
 	\countReset
 	
-	\item \reqLabel{req:personalizzaVetrina}{\ereq{RF}{001000}{C}} - Personalizzione vetrina	
-	\item \reqLabel{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{001000}{C}} - Inserimento descrizione	
-	\item \reqLabel{req:personalizzaVetrinaInsImg}{\esubreq{RF}{001000}{C}} - Inserimento immagine
-	\item \reqLabel{req:personalizzaVetrinaInsProd}{\esubreq{RF}{001000}{C}} - Inserimento prodotto
-	\item \reqLabel{req:personalizzaVetrinaModProd}{\esubreq{RF}{001000}{C}} - Modifica prodotto
+	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{001000}{C}}{Personalizzione vetrina	}
+	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{001000}{C}}{Inserimento descrizione	}
+	\item \reqItem{req:personalizzaVetrinaInsImg}{\esubreq{RF}{001000}{C}}{Inserimento immagine}
+	\item \reqItem{req:personalizzaVetrinaInsProd}{\esubreq{RF}{001000}{C}}{Inserimento prodotto}
+	\item \reqItem{req:personalizzaVetrinaModProd}{\esubreq{RF}{001000}{C}}{Modifica prodotto}
 	
-	\item \reqLabel{req:statistichePrivateVetrina}{\ereq{RF}{001000}{C}} - Visualizzazione statistiche private della vetrina
+	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{001000}{C}}{Visualizzazione statistiche private della vetrina}
 	\countReset
 	
-	\item \reqLabel{req:ricercaInfo}{\ereq{RF}{111111}{D}} - Ricerca informazioni	
-	\item \reqLabel{req:ricercaProdotto}{\esubreq{RF}{111111}{D}} - Ricerca prodotto
-	\item \reqLabel{req:ricercaProfilo}{\esubreq{RF}{111111}{D}} - Ricerca profilo	
-	\item \reqLabel{req:ricercaNotizia}{\esubreq{RF}{111111}{D}} - Ricerca notizia
+	\item \reqItem{req:ricercaInfo}{\ereq{RF}{111111}{D}}{Ricerca informazioni	}
+	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{111111}{D}}{Ricerca prodotto}
+	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{111111}{D}}{Ricerca profilo	}
+	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{111111}{D}}{Ricerca notizia}
 
-	\item \reqLabel{req:richiestaInsProdotto}{\ereq{RF}{010000}{D}} - Richiesta inserimento di un prodotto a un produttore iscritto
+	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{010000}{D}}{Richiesta inserimento di un prodotto a un produttore iscritto}
 
-	\item \reqLabel{req:richiestaInsProduttore}{\ereq{RF}{010000}{D}} - Richiesta inserimento di un prodotto e del suo produttore
+	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{010000}{D}}{Richiesta inserimento di un prodotto e del suo produttore}
 	\countReset
 
-	\item \reqLabel{req:valutazioneProdotto}{\ereq{RF}{010111}{E}} - Valutazione prodotto
-	\item \reqLabel{req:inserisciValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Inserimento valutazione
-	\item \reqLabel{req:modificaValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Modifica valutazione inserita
-	\item \reqLabel{req:eliminaValutazioneProdotto}{\esubreq{RF}{010111}{E}} - Rimozione valutazione inserita
+	\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{010111}{E}}{Valutazione prodotto}
+	\item \reqItem{req:inserisciValutazioneProdotto}{\esubreq{RF}{010111}{E}}{Inserimento valutazione}
+	\item \reqItem{req:modificaValutazioneProdotto}{\esubreq{RF}{010111}{E}}{Modifica valutazione inserita}
+	\item \reqItem{req:eliminaValutazioneProdotto}{\esubreq{RF}{010111}{E}}{Rimozione valutazione inserita}
 
-	\item \reqLabel{req:recensioneProdotto}{\ereq{RF}{010111}{E}} - Recensione prodotto
-	\item \reqLabel{req:inserisciRecensioneProdotto}{\esubreq{RF}{010111}{E}} - Inserimento recensione
-	\item \reqLabel{req:modificaRecensioneProdotto}{\esubreq{RF}{010111}{E}} - Modifica valutazione inserita
-	\item \reqLabel{req:eliminaRecensioneProdotto}{\esubreq{RF}{010111}{E}} - Rimozione recensione inserita
+	\item \reqItem{req:recensioneProdotto}{\ereq{RF}{010111}{E}}{Recensione prodotto}
+	\item \reqItem{req:inserisciRecensioneProdotto}{\esubreq{RF}{010111}{E}}{Inserimento recensione}
+	\item \reqItem{req:modificaRecensioneProdotto}{\esubreq{RF}{010111}{E}}{Modifica valutazione inserita}
+	\item \reqItem{req:eliminaRecensioneProdotto}{\esubreq{RF}{010111}{E}}{Rimozione recensione inserita}
 
-	\item \reqLabel{req:commentoRecensione}{\ereq{RF}{011111}{E}} - Commento a recensione
+	\item \reqItem{req:commentoRecensione}{\ereq{RF}{011111}{E}}{Commento a recensione}
 	
-	\item \reqLabel{req:valutaRecensione}{\ereq{RF}{010111}{E}} - Valutazione recensione
+	\item \reqItem{req:valutaRecensione}{\ereq{RF}{010111}{E}}{Valutazione recensione}
 	
-	\item \reqLabel{req:segnalazioneContenuti}{\ereq{RF}{011111}{E}} - Segnalazione contenuti inappropriati
+	\item \reqItem{req:segnalazioneContenuti}{\ereq{RF}{011111}{E}}{Segnalazione contenuti inappropriati}
 	
-	\item \reqLabel{req:rimozioneRecensioneInap}{\ereq{RF}{000001}{E}} - Rimozione recensione inappropriata
+	\item \reqItem{req:rimozioneRecensioneInap}{\ereq{RF}{000001}{E}}{Rimozione recensione inappropriata}
 	\countReset
 
-	\item \reqLabel{req:inserimentoNotizia}{\ereq{RF}{000100}{F}} - Inserimento notizia
+	\item \reqItem{req:inserimentoNotizia}{\ereq{RF}{000100}{F}}{Inserimento notizia}
 	
-	\item \reqLabel{req:modificaNotizia}{\ereq{RF}{000100}{F}} - Modifica notizia
+	\item \reqItem{req:modificaNotizia}{\ereq{RF}{000100}{F}}{Modifica notizia}
 	
-	\item \reqLabel{req:rimozioneNotizia}{\ereq{RF}{000100}{F}} - Rimozione notizia
+	\item \reqItem{req:rimozioneNotizia}{\ereq{RF}{000100}{F}}{Rimozione notizia}
 	\countReset
 	
-	\item \reqLabel{req:followAccount}{\ereq{RF}{011111}{G}} - Follow account
+	\item \reqItem{req:followAccount}{\ereq{RF}{011111}{G}}{Follow account}
 	
-	\item \reqLabel{req:unFollowAccount}{\ereq{RF}{011111}{G}} - Unfollow account
+	\item \reqItem{req:unFollowAccount}{\ereq{RF}{011111}{G}}{Unfollow account}
 	\countReset
 
-	\item \reqLabel{req:suggerimentoProdotti}{\ereq{RF}{011111}{H}} - Suggerimento prodotti intelligente
+	\item \reqItem{req:suggerimentoProdotti}{\ereq{RF}{011111}{H}}{Suggerimento prodotti intelligente}
 	
-	\item \reqLabel{req:prodottiSimili}{\ereq{RF}{011111}{H}} - Suggerimento prodotti simili
+	\item \reqItem{req:prodottiSimili}{\ereq{RF}{011111}{H}}{Suggerimento prodotti simili}
 
-	\item \reqLabel{req:notizieSimili}{\ereq{RF}{011111}{H}} - Suggerimento notizie simili
+	\item \reqItem{req:notizieSimili}{\ereq{RF}{011111}{H}}{Suggerimento notizie simili}
 	\countReset
 
-	\item \reqLabel{req:accessoProfilo}{\ereq{RF}{011111}{I}} - Accesso al proprio profilo
+	\item \reqItem{req:accessoProfilo}{\ereq{RF}{011111}{I}}{Accesso al proprio profilo}
 	
-	\item \reqLabel{req:accessoImpostazioni}{\ereq{RF}{011111}{I}} - Accesso alle proprie impostazioni
+	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{011111}{I}}{Accesso alle proprie impostazioni}
 
-	\item \reqLabel{req:rimozioneAccountProprio}{\ereq{RF}{011111}{I}} - Rimozione account proprio 
+	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{011111}{I}}{Rimozione account proprio }
 	
-	\item \reqLabel{req:logout}{\ereq{RF}{011111}{I}} - Logout
+	\item \reqItem{req:logout}{\ereq{RF}{011111}{I}}{Logout}
 	\countReset
 	
-	\item \reqLabel{req:visualizzazioneVetrina}{\ereq{RF}{111111}{L}} - Visualizzazione vetrina
-	\item \reqLabel{req:visualizzazioneStatistichePubVetrina}{\esubreq{RF}{111111}{L}} - Visualizzazione statische pubbliche vetrina
-	\item \reqLabel{req:visualizzazioneProdottiVetrina}{\esubreq{RF}{111111}{L}} - Visualizzazione prodotti esposti in vetrina
+	\item \reqItem{req:visualizzazioneVetrina}{\ereq{RF}{111111}{L}}{Visualizzazione vetrina}
+	\item \reqItem{req:visualizzazioneStatistichePubVetrina}{\esubreq{RF}{111111}{L}}{Visualizzazione statische pubbliche vetrina}
+	\item \reqItem{req:visualizzazioneProdottiVetrina}{\esubreq{RF}{111111}{L}}{Visualizzazione prodotti esposti in vetrina}
 
-	\item \reqLabel{req:visualizzazioneProdotto}{\ereq{RF}{111111}{L}} - Visualizzazione prodotto
-	\item \reqLabel{req:visualizzazioneInfoProdotto}{\esubreq{RF}{111111}{L}} - Visualizzazione le informazioni del prodotto
-	\item \reqLabel{req:visualizzazioneRecProdotto}{\esubreq{RF}{111111}{L}} - Visualizzazione le recensioni associate al prodotto
-	\item \reqLabel{req:visualizzazioneStatProdotto}{\esubreq{RF}{111111}{L}} - Visualizzazione le statistiche del prodotto
+	\item \reqItem{req:visualizzazioneProdotto}{\ereq{RF}{111111}{L}}{Visualizzazione prodotto}
+	\item \reqItem{req:visualizzazioneInfoProdotto}{\esubreq{RF}{111111}{L}}{Visualizzazione le informazioni del prodotto}
+	\item \reqItem{req:visualizzazioneRecProdotto}{\esubreq{RF}{111111}{L}}{Visualizzazione le recensioni associate al prodotto}
+	\item \reqItem{req:visualizzazioneStatProdotto}{\esubreq{RF}{111111}{L}}{Visualizzazione le statistiche del prodotto}
 
-	\item \reqLabel{req:visualizzazioneProfilo}{\ereq{RF}{111111}{L}} - Visualizzazione un profilo pubblico
-	\item \reqLabel{req:visualizzazioneInfoProfilo}{\esubreq{RF}{111111}{L}} - Visualizzazione informazioni di un profilo pubblico
-	\item \reqLabel{req:visualizzazioneStatProfilo}{\esubreq{RF}{111111}{L}} - Visualizzazione statistiche di un profilo pubblico
+	\item \reqItem{req:visualizzazioneProfilo}{\ereq{RF}{111111}{L}}{Visualizzazione un profilo pubblico}
+	\item \reqItem{req:visualizzazioneInfoProfilo}{\esubreq{RF}{111111}{L}}{Visualizzazione informazioni di un profilo pubblico}
+	\item \reqItem{req:visualizzazioneStatProfilo}{\esubreq{RF}{111111}{L}}{Visualizzazione statistiche di un profilo pubblico}
 
-	\item \reqLabel{req:visualizzazioneNotizie}{\ereq{RF}{111111}{L}} - Visualizzazione notizie
+	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{111111}{L}}{Visualizzazione notizie}
 	
-	\item \reqLabel{req:visualizzazioneAggF}{\ereq{RF}{011111}{L}} - Visualizzazione aggiornamenti dai followed
+	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{011111}{L}}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
 
@@ -202,21 +202,24 @@ Vengono di seguito elencati i requisiti funzionali:
 
 \section{Descrizione dei requisiti}
 \label{sec:descrizione_dei_requisiti}
+
+Tho, questo linka alla descrizione, non all'elenco: \reqDesc{req:rimozioneAccountAltrui} ha titolo \reqTitle{req:iscrizionePortale}  \\
+
 Questi verranno linkati dall'elenco, sono le ``definizioni'' dei sequisiti:\\
-\reqDef{req:iscrizione} \\
-\reqDef{req:iscrizionePortale} \\
-\reqDef{req:iscrizioneSocial} \\
-\reqDef{req:iscrizioneSocialVer} \\
-\reqDef{req:iscrizioneSocialNotVer} \\
-\reqDef{req:iscrizioneApprovazione}\\
-\reqDef{req:login}\\
-\reqDef{req:approvazioneIscrizione}\\
-\reqDef{req:rimozioneAccountAltrui}\\
+\reqDef{req:iscrizione} ha titolo \reqTitle{req:iscrizione} \\
+\reqDef{req:iscrizionePortale} ha titolo \reqTitle{req:iscrizionePortale}  \\
+\reqDef{req:iscrizioneSocial} ha titolo \reqTitle{req:iscrizioneSocial}  \\
+\reqDef{req:iscrizioneSocialVer} ha titolo \reqTitle{req:iscrizioneSocialVer}  \\
+\reqDef{req:iscrizioneSocialNotVer} ha titolo \reqTitle{req:iscrizioneSocialNotVer}  \\
+\reqDef{req:iscrizioneApprovazione} ha titolo \reqTitle{req:iscrizioneApprovazione} \\
+\reqDef{req:login} ha titolo \reqTitle{req:login} \\
+\reqDef{req:approvazioneIscrizione} ha titolo \reqTitle{req:approvazioneIscrizione} \\
+\reqDef{req:rimozioneAccountAltrui} ha titolo \reqTitle{req:rimozioneAccountAltrui}  \\
 
 Ma possiamo riusare i nomi, linkandoli all'elenco, senza creare problemi al link elenco -> def!\\
 \reqID{req:iscrizione} \\
 \reqID{req:iscrizionePortale} \\
-\reqID{req:iscrizioneSocial} \\
+\reqID{req:iscrizioneSocial} ha titolo \reqTitle{req:iscrizioneSocial}  \\
 \reqID{req:iscrizioneSocialVer} \\
 \reqID{req:iscrizioneSocialNotVer} \\
 \reqID{req:iscrizioneApprovazione}\\

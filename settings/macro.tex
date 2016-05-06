@@ -101,9 +101,19 @@
 }
 
 %Macro per linkare requisiti
-\newcommand\reqLabel[2]{\hyperref[descrizione:#1]{#2\phantomsection\label{elenco:#1}}}
-\newcommand\reqDef[1]{\ref{elenco:#1}\phantomsection\label{descrizione:#1}}
-\newcommand\reqID[1]{\ref{elenco:#1}}
+\newcommand\reqItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}} - \reqtit{#3}\phantomsection\label{title:#1}}
+\newcommand\reqDef[1]{\ref{id:#1}\phantomsection\label{desc:#1}}
+\newcommand\reqID[1]{\ref{id:#1}}
+\newcommand\reqTitle[1]{\ref{title:#1}}
+\newcommand\reqDesc[1]{\ref{desc:#1}}
+
+
+\makeatletter
+\newcommand{\reqtit}[1]{%
+    \def\@currentlabel{#1}%
+    #1%
+}
+\makeatother
 
 \makeatletter
 \newcommand{\ereq}[3]{%
