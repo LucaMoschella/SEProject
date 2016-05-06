@@ -104,23 +104,23 @@
 %a documenti
 \newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} 
 
-%\newcommand{\var}[1]{#1}
+\makeatletter
+\newcommand{\textLabel}[2]{%
+	Start call: #2
+	\\Secondo call: #2
+  	\protected@edef\var{\expandafter\noexpand#2}%
+  	\\Call with brilliant function: \var
+  	\\Another call with brilliant function: \var
+  	\\ANOTHER call with brilliant function: \var
+  	\\I FUCKED YOU STUPID MACRO!!!
 
-%\newcommand{\textLabel}[2]{
-%	\renewcommand{\var}{#2}
-
-\edef\textLabel[#1]#2{%
-	%\global\expandafter\def\csname test\endcsname\var{#2}
-	\label{#1}#2
-	\global\expandafter\def\csname#1\endcsname{\hyperref[#1]{#2}}
+  	\label{#1}\var%
+	% expandafter qui serve per far espandere prima i comandi successivi, in modo che l'input di "newcommand" sia 
+	% il testo risultante da csname #1\endcsname e non "csname".
+  	\global\expandafter\def\csname prova\endcsname{\hyperref[#1]{\var}}
 }
+\makeatother
 
-\newcommand{\textLabella}[2]{%
-	%\global\expandafter\def\csname test\endcsname\var{#2}
-	\renewcommand{\var}{#2}
-	\label{#1}\var
-	\global\expandafter\def\csname#1\endcsname{\hyperref[#1]{\var}}
-}
 % \newcommand{\babbonatale}{f(x)}
 % \babbonatale = f(x)
 %%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%
