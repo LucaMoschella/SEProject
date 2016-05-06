@@ -81,7 +81,7 @@
 %descrizione campi degli identificatori dei requisiti
 \newcommand{\campiIdReq}[1]{\emph{#1}} 
 
-%formattazione requisiti
+%formattazione requisiti - non mette link
 \newcommand{\reqsep}{.} 
 \newcommand{\displayReq}[1]{\texttt{#1}} 
 \newcommand{\req}[4]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4}} 
@@ -100,16 +100,27 @@
 \setcounter{sottosottoreq}{0}%
 }
 
+
 %Macro per linkare requisiti
-\newcommand{\sepIDTitle}{ - } 
+%separatore id titolo
+\newcommand{\sepIDTitle}{ - }
+
+%macro per creare un nuovo requisito, usando i vari contatori
+%usage: \reqItem{reqkey}{\ereq{ ...ID... }}{titolo} 
 \newcommand\reqItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\reqtit{#3}\phantomsection\label{title:#1}}
+
+%macro per creare la definizione, unica, di un requisito già esistente
+%usage: \reqDef{reqkey}
 \newcommand\reqDef[1]{\ref{id:#1}\phantomsection\label{desc:#1}}
 
+%macro per stampare (e linkare, tranne il titolo) informazioni del req.
+%usage: \reqGet..{reqkey}
 \newcommand\reqGetID[1]{\ref{id:#1}}
 \newcommand\reqGetTitle[1]{\ref*{title:#1}}
 \newcommand\reqGetDesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
 \newcommand\reqGetIDTitle[1]{\ref{id:#1}\sepIDTitle\ref*{title:#1}}
 
+%fa ma in modo che la label attuale contenga il titolo (e non il numero di sezione)
 \makeatletter
 \newcommand{\reqtit}[1]{%
     \def\@currentlabel{#1}%
@@ -117,6 +128,9 @@
 }
 \makeatother
 
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
 \makeatletter
 \newcommand{\ereq}[3]{%
     \stepcounter{req}%
