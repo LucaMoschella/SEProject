@@ -97,22 +97,22 @@ Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize} 
 	\item \reqItem{req:iscrizione}{\ereq{RF}{100000}{A}}{Iscrizione}
-	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{100000}{A}}{Iscrizione tramite modulo del portale 	}
-	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{100000}{A}}{Iscrizione tramite Social Network	}
+	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{100000}{A}}{Iscrizione tramite modulo del portale}
+	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{100000}{A}}{Iscrizione tramite Social Network}
 	\item \reqItem{req:iscrizioneSocialVer}{\esubsubreq{RF}{100000}{A}}{Iscrizione tramite Social Network verificati}
-	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{100000}{A}}{Iscrizione tramite Social Network non verificati	}
+	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{100000}{A}}{Iscrizione tramite Social Network non verificati}
 	\item \reqItem{req:iscrizioneApprovazione}{\esubreq{RF}{100000}{A}}{Iscrizione tramite approvazione}
 	
-	\item \reqItem{req:login}{\ereq{RF}{100000}{A}}{Login }
+	\item \reqItem{req:login}{\ereq{RF}{100000}{A}}{Login}
 	\countReset 
 	
 	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{000010}{B}}{Approvazione iscrizione}
 	
-	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{000001}{B}}{Rimozione account altrui }
+	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{000001}{B}}{Rimozione account altrui}
 	\countReset
 	
-	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{001000}{C}}{Personalizzione vetrina	}
-	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{001000}{C}}{Inserimento descrizione	}
+	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{001000}{C}}{Personalizzione vetrina}
+	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{001000}{C}}{Inserimento descrizione}
 	\item \reqItem{req:personalizzaVetrinaInsImg}{\esubreq{RF}{001000}{C}}{Inserimento immagine}
 	\item \reqItem{req:personalizzaVetrinaInsProd}{\esubreq{RF}{001000}{C}}{Inserimento prodotto}
 	\item \reqItem{req:personalizzaVetrinaModProd}{\esubreq{RF}{001000}{C}}{Modifica prodotto}
@@ -120,9 +120,9 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{001000}{C}}{Visualizzazione statistiche private della vetrina}
 	\countReset
 	
-	\item \reqItem{req:ricercaInfo}{\ereq{RF}{111111}{D}}{Ricerca informazioni	}
+	\item \reqItem{req:ricercaInfo}{\ereq{RF}{111111}{D}}{Ricerca informazioni}
 	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{111111}{D}}{Ricerca prodotto}
-	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{111111}{D}}{Ricerca profilo	}
+	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{111111}{D}}{Ricerca profilo}
 	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{111111}{D}}{Ricerca notizia}
 
 	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{010000}{D}}{Richiesta inserimento di un prodotto a un produttore iscritto}
@@ -172,7 +172,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	
 	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{011111}{I}}{Accesso alle proprie impostazioni}
 
-	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{011111}{I}}{Rimozione account proprio }
+	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{011111}{I}}{Rimozione account proprio}
 	
 	\item \reqItem{req:logout}{\ereq{RF}{011111}{I}}{Logout}
 	\countReset
@@ -203,29 +203,31 @@ Vengono di seguito elencati i requisiti funzionali:
 \section{Descrizione dei requisiti}
 \label{sec:descrizione_dei_requisiti}
 
-Tho, questo linka alla descrizione, non all'elenco: \reqDesc{req:rimozioneAccountAltrui} ha titolo \reqTitle{req:iscrizionePortale}  \\
+Tho, questo linka alla descrizione, non all'elenco: \reqGetDesc{req:rimozioneAccountAltrui} ha titolo \reqGetTitle{req:iscrizionePortale}  \\
 
 Questi verranno linkati dall'elenco, sono le ``definizioni'' dei sequisiti:\\
-\reqDef{req:iscrizione} ha titolo \reqTitle{req:iscrizione} \\
-\reqDef{req:iscrizionePortale} ha titolo \reqTitle{req:iscrizionePortale}  \\
-\reqDef{req:iscrizioneSocial} ha titolo \reqTitle{req:iscrizioneSocial}  \\
-\reqDef{req:iscrizioneSocialVer} ha titolo \reqTitle{req:iscrizioneSocialVer}  \\
-\reqDef{req:iscrizioneSocialNotVer} ha titolo \reqTitle{req:iscrizioneSocialNotVer}  \\
-\reqDef{req:iscrizioneApprovazione} ha titolo \reqTitle{req:iscrizioneApprovazione} \\
-\reqDef{req:login} ha titolo \reqTitle{req:login} \\
-\reqDef{req:approvazioneIscrizione} ha titolo \reqTitle{req:approvazioneIscrizione} \\
-\reqDef{req:rimozioneAccountAltrui} ha titolo \reqTitle{req:rimozioneAccountAltrui}  \\
+\reqDef{req:iscrizione} ha titolo \reqGetTitle{req:iscrizione} \\
+\reqDef{req:iscrizionePortale} ha titolo \reqGetTitle{req:iscrizionePortale}  \\
+\reqDef{req:iscrizioneSocial} ha titolo \reqGetTitle{req:iscrizioneSocial}  \\
+\reqDef{req:iscrizioneSocialVer} ha titolo \reqGetTitle{req:iscrizioneSocialVer}  \\
+\reqDef{req:iscrizioneSocialNotVer} ha titolo \reqGetTitle{req:iscrizioneSocialNotVer}  \\
+\reqDef{req:iscrizioneApprovazione} ha titolo \reqGetTitle{req:iscrizioneApprovazione} \\
+\reqDef{req:login} ha titolo \reqGetTitle{req:login} \\
+\reqDef{req:approvazioneIscrizione} ha titolo \reqGetTitle{req:approvazioneIscrizione} \\
+\reqDef{req:rimozioneAccountAltrui} ha titolo \reqGetTitle{req:rimozioneAccountAltrui}  \\
 
+
+oeoinvei: \reqGetIDTitle{req:iscrizioneApprovazione}
 Ma possiamo riusare i nomi, linkandoli all'elenco, senza creare problemi al link elenco -> def!\\
-\reqID{req:iscrizione} \\
-\reqID{req:iscrizionePortale} \\
-\reqID{req:iscrizioneSocial} ha titolo \reqTitle{req:iscrizioneSocial}  \\
-\reqID{req:iscrizioneSocialVer} \\
-\reqID{req:iscrizioneSocialNotVer} \\
-\reqID{req:iscrizioneApprovazione}\\
-\reqID{req:login}\\
-\reqID{req:approvazioneIscrizione}\\
-\reqID{req:rimozioneAccount}\\
+\reqGetID{req:iscrizione} \\
+\reqGetID{req:iscrizionePortale} \\
+\reqGetID{req:iscrizioneSocial} ha titolo \reqGetTitle{req:iscrizioneSocial}  \\
+\reqGetID{req:iscrizioneSocialVer} \\
+\reqGetID{req:iscrizioneSocialNotVer} \\
+\reqGetID{req:iscrizioneApprovazione}\\
+\reqGetID{req:login}\\
+\reqGetID{req:approvazioneIscrizione}\\
+\reqGetID{req:rimozioneAccount}\\
 
 Provaidsvuiosbvcosneui: \\
 prova: \reqDef{req:prova}
