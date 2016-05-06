@@ -98,8 +98,6 @@ Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzio
 Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {tipo}{contesto}{categoria}{keyrequisito} - doublelink automatico con \refElencoFromDef{keyrequisito}
 \begin{itemize} 
-	\item \reqLabel{req:prova}{\ereq{RF}{100000}{A}} - provaprova
-	\item quetsa è una linea
 	\item \reqLabel{req:iscrizione}{\ereq{RF}{100000}{A}} - Iscrizione
 	\item \reqLabel{req:iscrizionePortale}{\esubreq{RF}{100000}{A}} - Iscrizione tramite modulo del portale 
 	\item \reqLabel{req:iscrizioneSocial}{\esubreq{RF}{100000}{A}} - Iscrizione tramite Social Network
@@ -111,6 +109,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqLabel{req:approvazioneIscrizione}{\ereq{RF}{000010}{B}} - Approvazione iscrizione
 	\item \reqLabel{req:rimozioneaccount}{\ereq{RF}{000001}{B}} - Rimozione account altrui 
 	\countReset
+	
 
 \end{itemize}	
 
@@ -122,26 +121,26 @@ Vengono di seguito elencati i requisiti funzionali:
 \section{Descrizione dei requisiti}
 \label{sec:descrizione_dei_requisiti}
 Questi verranno linkati dall'elenco, sono le ``definizioni'' dei sequisiti:\\
-iscrizione:  \reqDefRef{req:iscrizione} \\
-iscportal:  \reqDefRef{req:iscrizionePortale} \\
-iscSocial:  \reqDefRef{req:iscrizioneSocial} \\
-iscSocialVer:  \reqDefRef{req:iscrizioneSocialVer} \\
-iscsocialnot:  \reqDefRef{req:iscrizioneSocialNotVer} \\
-iscapp  \reqDefRef{req:iscrizioneApprovazione}\\
-log  \reqDefRef{req:login}\\
-appr  \reqDefRef{req:approvazioneIscrizione}\\
-rem  \reqDefRef{req:rimozioneaccount}\\
+\reqDef{req:iscrizione} \\
+\reqDef{req:iscrizionePortale} \\
+\reqDef{req:iscrizioneSocial} \\
+\reqDef{req:iscrizioneSocialVer} \\
+\reqDef{req:iscrizioneSocialNotVer} \\
+\reqDef{req:iscrizioneApprovazione}\\
+\reqDef{req:login}\\
+\reqDef{req:approvazioneIscrizione}\\
+\reqDef{req:rimozioneaccount}\\
 
 Ma possiamo riusare i nomi, linkandoli all'elenco, senza creare problemi al link elenco -> def!\\
-iscrizione:  \reqRef{req:iscrizione} \\
-iscportal:  \reqRef{req:iscrizionePortale} \\
-iscSocial:  \reqRef{req:iscrizioneSocial} \\
-iscSocialVer:  \reqRef{req:iscrizioneSocialVer} \\
-iscsocialnot:  \reqRef{req:iscrizioneSocialNotVer} \\
-iscapp  \reqRef{req:iscrizioneApprovazione}\\
-log  \reqRef{req:login}\\
-appr  \reqRef{req:approvazioneIscrizione}\\
-rem  \reqRef{req:rimozioneaccount}\\
+\reqID{req:iscrizione} \\
+\reqID{req:iscrizionePortale} \\
+\reqID{req:iscrizioneSocial} \\
+\reqID{req:iscrizioneSocialVer} \\
+\reqID{req:iscrizioneSocialNotVer} \\
+\reqID{req:iscrizioneApprovazione}\\
+\reqID{req:login}\\
+\reqID{req:approvazioneIscrizione}\\
+\reqID{req:rimozioneaccount}\\
 
 Provaidsvuiosbvcosneui: \\
-prova: \reqDefRef{req:prova}
+prova: \reqDef{req:prova}
