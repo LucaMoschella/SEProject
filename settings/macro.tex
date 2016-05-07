@@ -182,50 +182,35 @@
 
 %Tabella per descrizione requisiti funzionali 
 %usage: {reqkey}{descrizione}{priorità}{stato}
-\newcommand{\reqTabRF}[4]{\phantomsection\label{desc:#1}
-\begin{center}
-	\begin{tabularx}{\tabwidthreq}{ l  X } 
-		\toprule
-			\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
-		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-			\tabheadreq{ID} & \reqGetID{#1} \\ 
-			\addlinespace[1em] 
-			\tabheadreq{Titolo} &  \reqGetTitle{#1} \\
-			\addlinespace[1em]
-			\tabheadreq{Descrizione} &  #2 \\		
-			\addlinespace[1em]
-			\tabheadreq{Tipo} &  Requisito funzionale \\
-			\addlinespace[1em]
-			\tabheadreq{Priorità} &  #3 \\
-			\addlinespace[1em]
-			\tabheadreq{Stato} &  #4 \\
-		\bottomrule
-	\end{tabularx}
-\end{center}
-}
+\newcommand{\reqTabRF}[4]{\reqTab{#1}{#2}{Requisito funzionale}{#3}{#4}}
 
 %Tabella per descrizione requisiti non funzionali
 %usage: {reqkey}{descrizione}{priorità}{stato}
-\newcommand{\reqTabRNF}[4]{\phantomsection\label{desc:#1}
-\begin{center}
-	\begin{tabularx}{\tabwidthreq}{ l  X } 
-		\toprule
-			\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
-		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-			\tabheadreq{ID} & \reqGetID{#1} \\ 
+\newcommand{\reqTabRNF}[4]{\reqTab{#1}{#2}{Requisito non funzionale}{#3}{#4}}
+
+%Tabella per descrizione requisiti
+%usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
+\newcommand{\reqTab}[5]{%
+	\begin{center}
+		\phantomsection\label{desc:#1}
+		\begin{tabularx}{\tabwidthreq}{ l  X }
+			\toprule
+				\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
+			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+				\tabheadreq{ID} & \reqGetID{#1} \\ 
 			\addlinespace[1em] 
-			\tabheadreq{Titolo} &  \reqGetTitle{#1} \\
+				\tabheadreq{Titolo} & \reqGetTitle{#1} \\
 			\addlinespace[1em]
-			\tabheadreq{Descrizione} &  #2 \\		
+				\tabheadreq{Descrizione} &  #2 \\		
 			\addlinespace[1em]
-			\tabheadreq{Tipo} &  Requisito non funzionale \\
+				\tabheadreq{Tipo} &  #3 \\
 			\addlinespace[1em]
-			\tabheadreq{Priorità} &  #3 \\
+				\tabheadreq{Priorità} &  #4 \\
 			\addlinespace[1em]
-			\tabheadreq{Stato} &  #4 \\
-		\bottomrule
-	\end{tabularx}
-\end{center}
+				\tabheadreq{Stato} &  #5 \\
+			\bottomrule
+		\end{tabularx}
+	\end{center}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
