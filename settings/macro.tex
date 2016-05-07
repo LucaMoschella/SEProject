@@ -109,7 +109,7 @@
 
 %macro per creare un nuovo requisito, usando i vari contatori
 %usage: \reqItem{reqkey}{\ereq{ ...ID... }}{titolo} 
-\newcommand\reqItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\reqtit{#3}\phantomsection\label{title:#1}}
+\newcommand\reqItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\reqtit{#3}\label{title:#1}}
 
 %macro per creare la definizione, unica, di un requisito già esistente
 %usage: \reqDef{reqkey}
