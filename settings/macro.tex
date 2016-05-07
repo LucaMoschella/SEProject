@@ -107,20 +107,16 @@
 %separatore id titolo
 \newcommand{\sepIDTitle}{ - }
 
-%macro per creare un nuovo requisito, usando i vari contatori
+%macro per creare un nuovo requisito, usando i vari contatori. Necessita della crezione di una tabella per descriverla
 %usage: \reqItem{reqkey}{\ereq{ ...ID... }}{titolo} 
 \newcommand\reqItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\reqtit{#3}\label{title:#1}}
-
-%macro per creare la definizione, unica, di un requisito già esistente
-%usage: \reqDef{reqkey}
-\newcommand\reqDef[1]{\phantomsection\ref{id:#1}\label{desc:#1}}
 
 %macro per stampare (e linkare, tranne il titolo) informazioni del req.
 %usage: \reqGet..{reqkey}
 \newcommand\reqGetID[1]{\ref{id:#1}}
+\newcommand\reqGetIDtodesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
 \newcommand\reqGetTitle[1]{\ref*{title:#1}}
-\newcommand\reqGetDesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
-\newcommand\reqGetIDTitle[1]{\ref{id:#1}\sepIDTitle\ref*{title:#1}}
+\newcommand\reqGetIDTitle[1]{\reqGetID{#1}\sepIDTitle\reqGetTitle{#1}}
 
 %fa ma in modo che la label attuale contenga il titolo (e non il numero di sezione)
 \makeatletter
@@ -184,13 +180,13 @@
 %spazio fra tabelle requisiti 
 \newcommand{\tabwidthreq}{\textwidth} 
 
-%Tabella per descrizione requisiti funzionali
+%Tabella per descrizione requisiti funzionali 
 %usage: {reqkey}{descrizione}{priorità}{stato}
-\newcommand{\reqTabRF}[4]{%
+\newcommand{\reqTabRF}[4]{\phantomsection\label{desc:#1}
 \begin{center}
 	\begin{tabularx}{\tabwidthreq}{ l  X } 
 		\toprule
-			\multicolumn{2}{c}{\tabtitlereq{\reqDef{#1}\sepIDTitle\reqGetTitle{#1}}}  \\
+			\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 			\tabheadreq{ID} & \reqGetID{#1} \\ 
 			\addlinespace[1em] 
@@ -210,11 +206,11 @@
 
 %Tabella per descrizione requisiti non funzionali
 %usage: {reqkey}{descrizione}{priorità}{stato}
-\newcommand{\reqTabRNF}[4]{%
+\newcommand{\reqTabRNF}[4]{\phantomsection\label{desc:#1}
 \begin{center}
 	\begin{tabularx}{\tabwidthreq}{ l  X } 
 		\toprule
-			\multicolumn{2}{c}{\tabtitlereq{\reqDef{#1}\sepIDTitle\reqGetTitle{#1}}}  \\
+			\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 			\tabheadreq{ID} & \reqGetID{#1} \\ 
 			\addlinespace[1em] 
