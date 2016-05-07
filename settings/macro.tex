@@ -61,6 +61,8 @@
 %campo tabelle iterazioni 
 \newcommand{\tabheaditer}[1]{\textsc{#1}} 
 
+%spazio fra tabelle iterazioni 
+\newcommand{\tabitervspace}{\bigskip} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di specifica sistema %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,7 +113,7 @@
 
 %macro per creare la definizione, unica, di un requisito già esistente
 %usage: \reqDef{reqkey}
-\newcommand\reqDef[1]{\ref{id:#1}\phantomsection\label{desc:#1}}
+\newcommand\reqDef[1]{\phantomsection\ref{id:#1}\label{desc:#1}}
 
 %macro per stampare (e linkare, tranne il titolo) informazioni del req.
 %usage: \reqGet..{reqkey}
@@ -170,8 +172,65 @@
 %Linka l'elemento nell'elenco.
 %\newcommand{\refElenco}[1]{\ref{elenco#1}}
 
+%titolo tabelle req 
+\newcommand{\tabtitlereq}[1]{#1} 
 
+%campo tabelle req 
+\newcommand{\tabheadreq}[1]{\textsc{#1}} 
 
+%spazio fra tabelle requisiti 
+\newcommand{\tabreqvspace}{\bigskip} 
+
+%spazio fra tabelle requisiti 
+\newcommand{\tabwidthreq}{\textwidth} 
+
+%Tabella per descrizione requisiti funzionali
+%usage: {reqkey}{descrizione}{priorità}{stato}
+\newcommand{\reqTabRF}[4]{%
+\begin{center}
+	\begin{tabularx}{\tabwidthreq}{ l  X } 
+		\toprule
+			\multicolumn{2}{c}{\tabtitlereq{\reqDef{#1}\sepIDTitle\reqGetTitle{#1}}}  \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+			\tabheadreq{ID} & \reqGetID{#1} \\ 
+			\addlinespace[1em] 
+			\tabheadreq{Titolo} &  \reqGetTitle{#1} \\
+			\addlinespace[1em]
+			\tabheadreq{Descrizione} &  #2 \\		
+			\addlinespace[1em]
+			\tabheadreq{Tipo} &  Requisito funzionale \\
+			\addlinespace[1em]
+			\tabheadreq{Priorità} &  #3 \\
+			\addlinespace[1em]
+			\tabheadreq{Stato} &  #4 \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+}
+
+%Tabella per descrizione requisiti non funzionali
+%usage: {reqkey}{descrizione}{priorità}{stato}
+\newcommand{\reqTabRNF}[4]{%
+\begin{center}
+	\begin{tabularx}{\tabwidthreq}{ l  X } 
+		\toprule
+			\multicolumn{2}{c}{\tabtitlereq{\reqDef{#1}\sepIDTitle\reqGetTitle{#1}}}  \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+			\tabheadreq{ID} & \reqGetID{#1} \\ 
+			\addlinespace[1em] 
+			\tabheadreq{Titolo} &  \reqGetTitle{#1} \\
+			\addlinespace[1em]
+			\tabheadreq{Descrizione} &  #2 \\		
+			\addlinespace[1em]
+			\tabheadreq{Tipo} &  Requisito non funzionale \\
+			\addlinespace[1em]
+			\tabheadreq{Priorità} &  #3 \\
+			\addlinespace[1em]
+			\tabheadreq{Stato} &  #4 \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

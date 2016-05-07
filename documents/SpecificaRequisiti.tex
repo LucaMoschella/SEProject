@@ -92,7 +92,6 @@ Qui di seguito sono elencati in breve i ``gradi di giudizio'' della priorità di
 Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzionali.
 
 \subsection{Requisiti funzionali}
-\label{sub:requisiti_funzionali}
 Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize} 
@@ -125,9 +124,9 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{111111}{D}}{Ricerca profilo}
 	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{111111}{D}}{Ricerca notizia}
 
-	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{010000}{D}}{Richiesta inserimento di un prodotto a un produttore iscritto}
+	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{010000}{D}}{Richiesta inserimento prodotto a un produttore iscritto}
 
-	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{010000}{D}}{Richiesta inserimento di un prodotto e del suo produttore}
+	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{010000}{D}}{Richiesta inserimento prodotto e del suo produttore}
 	\countReset
 
 	\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{010111}{E}}{Valutazione prodotto}
@@ -202,32 +201,234 @@ Vengono di seguito elencati i requisiti funzionali:
 
 \section{Descrizione dei requisiti}
 \label{sec:descrizione_dei_requisiti}
+\subsection{Requisiti funzionali}
+Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requisito funzionale
 
-Tho, questo linka alla descrizione, non all'elenco: \reqGetDesc{req:rimozioneAccountAltrui} ha titolo \reqGetTitle{req:rimozioneAccountAltrui}  \\
+\reqTabRF{req:iscrizione}{}{}{}
 
-Questi verranno linkati dall'elenco, sono le ``definizioni'' dei sequisiti:\\
-\reqDef{req:iscrizione} ha titolo \reqGetTitle{req:iscrizione} \\
-\reqDef{req:iscrizionePortale} ha titolo \reqGetTitle{req:iscrizionePortale}  \\
-\reqDef{req:iscrizioneSocial} ha titolo \reqGetTitle{req:iscrizioneSocial}  \\
-\reqDef{req:iscrizioneSocialVer} ha titolo \reqGetTitle{req:iscrizioneSocialVer}  \\
-\reqDef{req:iscrizioneSocialNotVer} ha titolo \reqGetTitle{req:iscrizioneSocialNotVer}  \\
-\reqDef{req:iscrizioneApprovazione} ha titolo \reqGetTitle{req:iscrizioneApprovazione} \\
-\reqDef{req:login} ha titolo \reqGetTitle{req:login} \\
-\reqDef{req:approvazioneIscrizione} ha titolo \reqGetTitle{req:approvazioneIscrizione} \\
-\reqDef{req:rimozioneAccountAltrui} ha titolo \reqGetTitle{req:rimozioneAccountAltrui}  \\
+\tabreqvspace
 
+\reqTabRF{req:iscrizionePortale}{}{}{}
 
-oeoinvei: \reqGetIDTitle{req:iscrizioneApprovazione}
-Ma possiamo riusare i nomi, linkandoli all'elenco, senza creare problemi al link elenco -> def!\\
-\reqGetID{req:iscrizione} \\
-\reqGetID{req:iscrizionePortale} \\
-\reqGetID{req:iscrizioneSocial} ha titolo \reqGetTitle{req:iscrizioneSocial}  \\
-\reqGetID{req:iscrizioneSocialVer} \\
-\reqGetID{req:iscrizioneSocialNotVer} \\
-\reqGetID{req:iscrizioneApprovazione}\\
-\reqGetID{req:login}\\
-\reqGetID{req:approvazioneIscrizione}\\
-\reqDef{req:rimozioneAccountProprio}\\
+\tabreqvspace
 
-Provaidsvuiosbvcosneui: \\
-prova: \reqDef{req:prova}
+\reqTabRF{req:iscrizioneSocial}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:iscrizioneSocialVer}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:iscrizioneSocialNotVer}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:iscrizioneApprovazione}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:login}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:approvazioneIscrizione}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:rimozioneAccountAltrui}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:personalizzaVetrina}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:personalizzaVetrinaInsDesc}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:personalizzaVetrinaInsImg}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:personalizzaVetrinaInsProd}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:personalizzaVetrinaModProd}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:statistichePrivateVetrina}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:ricercaInfo}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:ricercaProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:ricercaProfilo}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:ricercaNotizia}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:richiestaInsProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:richiestaInsProduttore}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:valutazioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:inserisciValutazioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:modificaValutazioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:eliminaValutazioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:recensioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:inserisciRecensioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:modificaRecensioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:eliminaRecensioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:commentoRecensione}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:valutaRecensione}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:segnalazioneContenuti}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:rimozioneRecensioneInap}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:inserimentoNotizia}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:modificaNotizia}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:rimozioneNotizia}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:followAccount}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:unFollowAccount}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:suggerimentoProdotti}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:prodottiSimili}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:notizieSimili}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:accessoProfilo}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:accessoImpostazioni}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:rimozioneAccountProprio}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:logout}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneVetrina}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneStatistichePubVetrina}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneProdottiVetrina}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneInfoProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneRecProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneStatProdotto}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneProfilo}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneInfoProfilo}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneStatProfilo}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneNotizie}{}{}{}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneAggF}{}{}{}
+
+\subsection{Requisiti funzionali}
+Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requisito non funzionale
