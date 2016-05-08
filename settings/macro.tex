@@ -192,9 +192,10 @@
 %usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
 \newcommand{\reqTab}[5]{%
 	\begin{center}
+		\phantomsection\label{desc:#1}
 		\begin{tabularx}{\tabwidthreq}{ l  X }
 			\toprule
-				\multicolumn{2}{c}{\phantomsection\label{desc:#1}\tabtitlereq{\reqGetIDTitle{#1}}}  \\
+				\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
 			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 				\tabheadreq{ID} & \reqGetID{#1} \\ 
 			\addlinespace[0.5em] 
