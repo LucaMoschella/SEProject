@@ -169,13 +169,13 @@
 %\newcommand{\refElenco}[1]{\ref{elenco#1}}
 
 %titolo tabelle req 
-\newcommand{\tabtitlereq}[1]{#1} 
+\newcommand{\tabtitlereq}[1]{\texttt{#1}} 
 
 %campo tabelle req 
 \newcommand{\tabheadreq}[1]{\textsc{#1}} 
 
 %spazio fra tabelle requisiti 
-\newcommand{\tabreqvspace}{\smallskip} 
+\newcommand{\tabreqvspace}{\bigskip} 
 
 %spazio fra tabelle requisiti 
 \newcommand{\tabwidthreq}{\textwidth} 
@@ -191,17 +191,15 @@
 %Tabella per descrizione requisiti
 %usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
 \newcommand{\reqTab}[5]{%
-	\begin{minipage}[t]{\textwidth}
-		\phantomsection\label{desc:#1}
-		\begin{center}
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection\label{desc:#1}
 			\begin{tabularx}{\tabwidthreq}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
+				\multicolumn{2}{c}{\tabtitlereq{\reqGetTitle{#1}}}  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 				\tabheadreq{ID} & \reqGetID{#1} \\ 
 				\addlinespace[0.5em] 
-				\tabheadreq{Titolo} & \reqGetTitle{#1} \\
-				\addlinespace[0.5em]
 				\tabheadreq{Descrizione} &  #2 \\		
 				\addlinespace[0.5em]
 				\tabheadreq{Tipo} &  #3 \\
@@ -211,8 +209,8 @@
 				\tabheadreq{Stato} &  #5 \\
 				\bottomrule
 			\end{tabularx}
-		\end{center}
-	\end{minipage}
+		\end{minipage}
+	\end{center}
 }
 
 \newcommand{\prioritaH}{Alta} 

@@ -11,8 +11,8 @@ Per organizzare in modo corretto le informazioni è stato adottato un sistema di
 I requisiti mostrati sono prima elencati, per una più facile consultazione, e in seguito sono descritti in apposite tabelle. 
 Ogni tabella contiene diverse informazioni:
 \begin{itemize}
-	\item Un \campiTabReq{id} per identificare univocamente il requisito.
 	\item Un \campiTabReq{titolo} per semplificare il riconoscimento del requisito.
+	\item Un \campiTabReq{id} per identificare univocamente il requisito.
 	\item Una \campiTabReq{descrizione} per indicare in cosa consiste la funzionalità rappresentata dal requisito.
 	\item Un \campiTabReq{tipo} per indicare se il requisito è funzionale o non funzionale
 	\item Una \campiTabReq{priorità} per indicare il grado di importanza del requisito.
@@ -56,7 +56,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[A] Iscrizione e autenticazione.
 		\item[B] Gestione iscrizione.
 		\item[C] Gestione vetrina.
-		\item[D] Ricerca.
+		\item[D] Ricerca contenuti.
 		\item[E] Gestione recensioni.
 		\item[F] Gestione notizie.
 		\item[G] Gestione follower/followed.
@@ -67,9 +67,11 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 	Le categorie per i requisiti non funzionali sono le seguenti:
 	\begin{descriptionInd}
 		\item[A] Sicurezza.
-		\item[B] Portabilità.
-		\item[C] Usabilità.
-		\item[D] Implementazione.
+		\item[B] Usabilità.
+		\item[C] Portabilità.
+		%\item[D] Implementazione.
+		%\item[E] Organizzazione.
+
 	\end{descriptionInd}	
 
 	\item Il campo \campiIdReq{req} è un numero progressivo utilizzato per identificare in modo univoco un requisito all'interno della sua categoria.
@@ -196,12 +198,34 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{1111111}{L}}{Visualizzazione notizie}
 	
 	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{0111111}{L}}{Visualizzazione aggiornamenti dai followed}
+	\countReset
 \end{itemize}	
 
 
 \subsection{Requisiti non funzionali}
 \label{sub:requisiti_non_funzionali}
+Vengono di seguito elencati i requisiti non funzionali:
+%USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
+\begin{itemize}
+	\item  \reqItem{req:sicurezzaHttps}{\ereq{RNF}{1111111}{A}}{Protollo \texttt{HTTPS}}
 
+	\item  \reqItem{req:sicurezzaDati}{\ereq{RNF}{1111111}{A}}{Protezione dei dati}
+	\countReset
+
+	\item  \reqItem{req:usabilitaInterfaccia}{\ereq{RNF}{1111111}{B}}{Interfaccia intuitiva del portale}
+	\item  \reqItem{req:usabilitaRicerca}{\ereq{RNF}{1111111}{B}}{Semplicità ricerca contenuti}
+	\countReset
+
+	\item  \reqItem{req:portabilitaBrowser}{\ereq{RNF}{1111111}{C}}{Sito web portabile fra browser}
+	\item  \reqItem{req:portabilitaMobile}{\ereq{RNF}{1111111}{C}}{Sito web responsive}
+	\countReset
+
+	%\item  \reqItem{req:implementazioneDDF}{\ereq{RNF}{1111111}{D}}{ }
+	%\countReset
+
+	%\item  \reqItem{req:standards}{\ereq{RNF}{0000000}{E}}{Rispetto degli standard}
+	%\countReset
+\end{itemize}
 
 \section{Descrizione dei requisiti}
 \label{sec:descrizione_dei_requisiti}
@@ -456,3 +480,25 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \subsection{Requisiti non funzionali}
 Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requisito non funzionale.
+
+\reqTabRNF{req:sicurezzaHttps}{Il portale garantirà l'autenticità e la confidenzialità delle comunicazioni attraverso l'utilizzo del protocollo \texttt{HTTPS}}{\prioritaH}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRNF{req:sicurezzaDati}{Il portale garantirà la protezione dei dati sensibili di tutte le figure che interagiscono con esso}{\prioritaH}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRNF{req:usabilitaInterfaccia}{Il portale disporrà di un interfaccia semplice e intuitiva in modo tale da avere una curva di apprendimento bassa, affinché chiunque sia in un grado di utilizzarlo appieno}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRNF{req:usabilitaRicerca}{Il portale disporrà di metodi di ricerca intuitivi per permettere di effettuare in poco tempo ricerche affidabili}{\prioritaH}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRNF{req:portabilitaBrowser}{Il sito web del portale sarà portabile fra i principali browser web presenti nel mercato}{\prioritaH}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRNF{req:portabilitaMobile}{Il sito web del portale sarà \emph{responsive} in modo tale da poter essere consultato agevolmente da qualsiasi dispositivo}{\prioritaH}{\statoUn}
