@@ -175,7 +175,7 @@
 \newcommand{\tabheadreq}[1]{\textsc{#1}} 
 
 %spazio fra tabelle requisiti 
-\newcommand{\tabreqvspace}{\bigskip} 
+\newcommand{\tabreqvspace}{\smallskip} 
 
 %spazio fra tabelle requisiti 
 \newcommand{\tabwidthreq}{\textwidth} 
@@ -198,20 +198,32 @@
 				\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
 			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 				\tabheadreq{ID} & \reqGetID{#1} \\ 
-			\addlinespace[1em] 
+			\addlinespace[0.5em] 
 				\tabheadreq{Titolo} & \reqGetTitle{#1} \\
-			\addlinespace[1em]
+			\addlinespace[0.5em]
 				\tabheadreq{Descrizione} &  #2 \\		
-			\addlinespace[1em]
+			\addlinespace[0.5em]
 				\tabheadreq{Tipo} &  #3 \\
-			\addlinespace[1em]
+			\addlinespace[0.5em]
 				\tabheadreq{Priorità} &  #4 \\
-			\addlinespace[1em]
+			\addlinespace[0.5em]
 				\tabheadreq{Stato} &  #5 \\
 			\bottomrule
 		\end{tabularx}
 	\end{center}
 }
+
+\newcommand{\prioritaH}{Alta} 
+\newcommand{\prioritaM}{Media} 
+\newcommand{\prioritaL}{Media}
+
+\newcommand{\statoOK}{Approvato} 
+\newcommand{\statoNOK}{Non approvato} 
+\newcommand{\statoUn}{Da approvare} 
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
