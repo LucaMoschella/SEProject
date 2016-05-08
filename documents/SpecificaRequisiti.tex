@@ -47,32 +47,29 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[5\textdegree\ bit] Assistente.
 		\item[6\textdegree\ bit] Moderatore.
 		\item[7\textdegree\ bit] Amministratore.
-
 	\end{descriptionInd}		
 
 	\item La \campiIdReq{categoria} è una lettera utilizzata per raggruppare i requisiti con scopi simili.
 	Le categorie per i requisiti funzionali sono le seguenti:
-	\begin{descriptionInd}
-		\item[A] Iscrizione e autenticazione.
-		\item[B] Gestione iscrizione.
-		\item[C] Gestione vetrina.
-		\item[D] Ricerca contenuti.
-		\item[E] Gestione recensioni.
-		\item[F] Gestione notizie.
-		\item[G] Gestione follower/followed.
-		\item[H] Gestioni suggerimenti.
-		\item[I] Gestione account.
-		\item[L] Visualizzazione contenuti.
-	\end{descriptionInd}	
+	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\texttt{\Alph*}}
+		\item Autenticazione. \label{cat:autenticazione}
+		\item Gestione iscrizione. \label{cat:iscrizione}
+		\item Gestione vetrina. \label{cat:vetrina}
+		\item Gestione notizie. \label{cat:notizie}
+		\item Gestioni suggerimenti. \label{cat:suggerimenti}
+		\item Gestione account. \label{cat:account}
+		\item Interazione fra figure. \label{cat:interazione}
+		\item Ricerca contenuti. \label{cat:ricerca}
+		\item Visualizzazione contenuti. \label{cat:visualizzazione}
+	\end{enumerateIndLabel}
 	Le categorie per i requisiti non funzionali sono le seguenti:
-	\begin{descriptionInd}
-		\item[A] Sicurezza.
-		\item[B] Usabilità.
-		\item[C] Portabilità.
+	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\texttt{\Alph*}}
+		\item Sicurezza. \label{cat:sicurezza}
+		\item Usabilità. \label{cat:usabilita}
+		\item Portabilità. \label{cat:portabilita}
 		%\item[D] Implementazione.
 		%\item[E] Organizzazione.
-
-	\end{descriptionInd}	
+	\end{enumerateIndLabel}	
 
 	\item Il campo \campiIdReq{req} è un numero progressivo utilizzato per identificare in modo univoco un requisito all'interno della sua categoria.
 
@@ -84,7 +81,6 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 
 La priorità di un requisito identifica quanto un requisito sia importante ai fini del completamento del sistema.
 Qui di seguito sono elencati in breve i ``gradi di giudizio'' della priorità di un requisito:
-
 \begin{descriptionInd}
 	\item[Priorità Alta] Requisiti che il sistema deve necessariamente soddisfare.
 	\item[Priorità Media] Requisiti la cui assenza non comporta grossi problemi per la soddisfacibilità del progetto: i requisiti base riescono comunque ad essere soddisfatti, con qualche sacrificio in termini di funzionalità. 
@@ -97,108 +93,109 @@ Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzio
 
 \subsection{Requisiti funzionali}
 Vengono di seguito elencati i requisiti funzionali:
-%USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
+%USAGE: {keyrequisito}{\ereq{tipo}{contesto}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize} 
-	\item \reqItem{req:iscrizione}{\ereq{RF}{1000000}{A}}{Iscrizione}
-	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{1000000}{A}}{Iscrizione tramite modulo del portale}
-	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{1000000}{A}}{Iscrizione tramite Social Network}
-	\item \reqItem{req:iscrizioneSocialVer}{\esubsubreq{RF}{1000000}{A}}{Iscrizione tramite Social Network verificati}
-	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{1000000}{A}}{Iscrizione tramite Social Network non verificati}
-	\item \reqItem{req:iscrizioneApprovazione}{\esubreq{RF}{1000000}{A}}{Iscrizione tramite approvazione}
-	
-	\item \reqItem{req:login}{\ereq{RF}{1000000}{A}}{Login}
-	\countReset 
-	
-	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{0000101}{B}}{Approvazione iscrizione}
-	
-	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{0000011}{B}}{Rimozione account altrui}
-	\countReset
-	
-	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{0010000}{C}}{Personalizzione vetrina}
-	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{0010000}{C}}{Inserimento descrizione}
-	\item \reqItem{req:personalizzaVetrinaInsImg}{\esubreq{RF}{0010000}{C}}{Inserimento immagine}
-	\item \reqItem{req:personalizzaVetrinaInsProd}{\esubreq{RF}{0010000}{C}}{Inserimento prodotto}
-	\item \reqItem{req:personalizzaVetrinaModProd}{\esubreq{RF}{0010000}{C}}{Modifica prodotto}
-	
-	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{0010000}{C}}{Visualizzazione statistiche private della vetrina}
-	\countReset
-	
-	\item \reqItem{req:ricercaInfo}{\ereq{RF}{1111111}{D}}{Ricerca informazioni}
-	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{1111111}{D}}{Ricerca prodotto}
-	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{1111111}{D}}{Ricerca profilo}
-	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{1111111}{D}}{Ricerca notizia}
+	\setCat{\ref*{cat:autenticazione}}%A
+	\item \reqItem{req:login}{\ereq{RF}{1000000}}{Login}
+	\item \reqItem{req:logout}{\ereq{RF}{0111111}}{Logout}
 
-	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{0101111}{D}}{Richiesta inserimento prodotto a un produttore iscritto}
-
-	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{0101111}{D}}{Richiesta inserimento prodotto e del suo produttore}
-	\countReset
-
-	\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{0101111}{E}}{Valutazione prodotto}
-	\item \reqItem{req:inserisciValutazioneProdotto}{\esubreq{RF}{0101111}{E}}{Inserimento valutazione}
-	\item \reqItem{req:modificaValutazioneProdotto}{\esubreq{RF}{0101111}{E}}{Modifica valutazione inserita}
-	\item \reqItem{req:eliminaValutazioneProdotto}{\esubreq{RF}{0101111}{E}}{Rimozione valutazione inserita}
-
-	\item \reqItem{req:recensioneProdotto}{\ereq{RF}{0101111}{E}}{Recensione prodotto}
-	\item \reqItem{req:inserisciRecensioneProdotto}{\esubreq{RF}{0101111}{E}}{Inserimento recensione}
-	\item \reqItem{req:modificaRecensioneProdotto}{\esubreq{RF}{0101111}{E}}{Modifica valutazione inserita}
-	\item \reqItem{req:eliminaRecensioneProdotto}{\esubreq{RF}{0101111}{E}}{Rimozione recensione inserita}
-
-	\item \reqItem{req:commentoRecensione}{\ereq{RF}{0111111}{E}}{Commento a recensione}
+	\setCat{\ref*{cat:iscrizione}}%B
+	\item \reqItem{req:iscrizione}{\ereq{RF}{1000000}}{Iscrizione}
+	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{1000000}}{Iscrizione tramite modulo del portale}
+	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{1000000}}{Iscrizione tramite Social Network}
+	\item \reqItem{req:iscrizioneSocialVer}{\esubsubreq{RF}{1000000}}{Iscrizione tramite Social Network verificati}
+	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{1000000}}{Iscrizione tramite Social Network non verificati}
+	\item \reqItem{req:iscrizioneApprovazione}{\esubreq{RF}{1000000}}{Iscrizione tramite approvazione}
 	
-	\item \reqItem{req:valutaRecensione}{\ereq{RF}{0101111}{E}}{Valutazione recensione}
+	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{0000101}}{Approvazione iscrizione}
 	
-	\item \reqItem{req:segnalazioneContenutiInap}{\ereq{RF}{0111111}{E}}{Segnalazione contenuti inappropriati}
-	
-	\item \reqItem{req:rimozioneContenutiInap}{\ereq{RF}{0000011}{E}}{Rimozione contenuti inappropriati}
-	\item \reqItem{req:rimozioneRecensioneInap}{\ereq{RF}{0000011}{E}}{Rimozione recensione}
-	\item \reqItem{req:rimozioneCommentoInap}{\ereq{RF}{0000011}{E}}{Rimozione commento}
-	\countReset
+	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{0000011}}{Rimozione account altrui}
 
-	\item \reqItem{req:inserimentoNotizia}{\ereq{RF}{0001001}{F}}{Inserimento notizia}
+	\setCat{\ref*{cat:vetrina}}%C
+	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{0010000}}{Personalizzione vetrina}
+	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{0010000}}{Inserimento descrizione}
+	\item \reqItem{req:personalizzaVetrinaInsImg}{\esubreq{RF}{0010000}}{Inserimento immagine}
+	\item \reqItem{req:personalizzaVetrinaInsProd}{\esubreq{RF}{0010000}}{Inserimento prodotto}
+	\item \reqItem{req:personalizzaVetrinaModProd}{\esubreq{RF}{0010000}}{Modifica prodotto}
 	
-	\item \reqItem{req:modificaNotizia}{\ereq{RF}{0001001}{F}}{Modifica notizia}
+	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{0010000}}{Visualizzazione statistiche private della vetrina}
 	
-	\item \reqItem{req:rimozioneNotizia}{\ereq{RF}{0001001}{F}}{Rimozione notizia}
-	\countReset
+	\setCat{\ref*{cat:notizie}}%D
+	\item \reqItem{req:inserimentoNotizia}{\ereq{RF}{0001001}}{Inserimento notizia}
 	
-	\item \reqItem{req:followAccount}{\ereq{RF}{0111111}{G}}{Follow account}
+	\item \reqItem{req:modificaNotizia}{\ereq{RF}{0001001}}{Modifica notizia}
 	
-	\item \reqItem{req:unFollowAccount}{\ereq{RF}{0111111}{G}}{Unfollow account}
-	\countReset
+	\item \reqItem{req:rimozioneNotizia}{\ereq{RF}{0001001}}{Rimozione notizia}
+	
+	\setCat{\ref*{cat:suggerimenti}}%E
+	\item \reqItem{req:suggerimentoProdotti}{\ereq{RF}{0111111}}{Suggerimento prodotti intelligente}
+	
+	\item \reqItem{req:prodottiSimili}{\ereq{RF}{0111111}}{Suggerimento prodotti simili}
 
-	\item \reqItem{req:suggerimentoProdotti}{\ereq{RF}{0111111}{H}}{Suggerimento prodotti intelligente}
+	\item \reqItem{req:notizieSimili}{\ereq{RF}{0111111}}{Suggerimento notizie simili}
 	
-	\item \reqItem{req:prodottiSimili}{\ereq{RF}{0111111}{H}}{Suggerimento prodotti simili}
-
-	\item \reqItem{req:notizieSimili}{\ereq{RF}{0111111}{H}}{Suggerimento notizie simili}
-	\countReset
-
-	\item \reqItem{req:accessoProfilo}{\ereq{RF}{0111111}{I}}{Accesso al proprio profilo}
+	\setCat{\ref*{cat:account}}%F
+	\item \reqItem{req:accessoProfilo}{\ereq{RF}{0111111}}{Accesso al proprio profilo}
 	
-	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{0111111}{I}}{Accesso alle proprie impostazioni}
+	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{0111111}}{Accesso alle proprie impostazioni}
 
-	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{0111111}{I}}{Rimozione account proprio}
+	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{0111111}}{Rimozione account proprio}
 	
-	\item \reqItem{req:logout}{\ereq{RF}{0111111}{I}}{Logout}
-	\countReset
+	\setCat{\ref*{cat:interazione}}%G
+	\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{0101111}}{Valutazione prodotto}
+	\item \reqItem{req:inserisciValutazioneProdotto}{\esubreq{RF}{0101111}}{Inserimento valutazione}
+	\item \reqItem{req:modificaValutazioneProdotto}{\esubreq{RF}{0101111}}{Modifica valutazione inserita}
+	\item \reqItem{req:eliminaValutazioneProdotto}{\esubreq{RF}{0101111}}{Rimozione valutazione inserita}
+
+	\item \reqItem{req:recensioneProdotto}{\ereq{RF}{0101111}}{Recensione prodotto}
+	\item \reqItem{req:inserisciRecensioneProdotto}{\esubreq{RF}{0101111}}{Inserimento recensione}
+	\item \reqItem{req:modificaRecensioneProdotto}{\esubreq{RF}{0101111}}{Modifica valutazione inserita}
+	\item \reqItem{req:eliminaRecensioneProdotto}{\esubreq{RF}{0101111}}{Rimozione recensione inserita}
+
+	\item \reqItem{req:commentoRecensione}{\ereq{RF}{0111111}}{Commento a recensione}
 	
-	\item \reqItem{req:visualizzazioneVetrina}{\ereq{RF}{1111111}{L}}{Visualizzazione vetrina}
-	\item \reqItem{req:visualizzazioneStatistichePubVetrina}{\esubreq{RF}{1111111}{L}}{Visualizzazione statische pubbliche vetrina}
-	\item \reqItem{req:visualizzazioneProdottiVetrina}{\esubreq{RF}{1111111}{L}}{Visualizzazione prodotti esposti in vetrina}
-
-	\item \reqItem{req:visualizzazioneProdotto}{\ereq{RF}{1111111}{L}}{Visualizzazione prodotto}
-	\item \reqItem{req:visualizzazioneInfoProdotto}{\esubreq{RF}{1111111}{L}}{Visualizzazione informazioni del prodotto}
-	\item \reqItem{req:visualizzazioneRecProdotto}{\esubreq{RF}{1111111}{L}}{Visualizzazione recensioni associate al prodotto}
-	\item \reqItem{req:visualizzazioneStatProdotto}{\esubreq{RF}{1111111}{L}}{Visualizzazione statistiche del prodotto}
-
-	\item \reqItem{req:visualizzazioneProfilo}{\ereq{RF}{1111111}{L}}{Visualizzazione profilo pubblico}
-	\item \reqItem{req:visualizzazioneInfoProfilo}{\esubreq{RF}{1111111}{L}}{Visualizzazione informazioni di un profilo pubblico}
-	\item \reqItem{req:visualizzazioneStatProfilo}{\esubreq{RF}{1111111}{L}}{Visualizzazione statistiche di un profilo pubblico}
-
-	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{1111111}{L}}{Visualizzazione notizie}
+	\item \reqItem{req:valutaRecensione}{\ereq{RF}{0101111}}{Valutazione recensione}
 	
-	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{0111111}{L}}{Visualizzazione aggiornamenti dai followed}
-	\countReset
+	\item \reqItem{req:segnalazioneContenutiInap}{\ereq{RF}{0111111}}{Segnalazione contenuti inappropriati}
+	
+	\item \reqItem{req:rimozioneContenutiInap}{\ereq{RF}{0000011}}{Rimozione contenuti inappropriati}
+
+	\item \reqItem{req:followAccount}{\ereq{RF}{0111111}}{Follow account}
+	
+	\item \reqItem{req:unFollowAccount}{\ereq{RF}{0111111}}{Unfollow account}
+
+	\item \reqItem{req:ticketComunicazione}{\ereq{RF}{1111111}}{Comunicazione tramite tickets}
+	\item \reqItem{req:ticketInvio}{\esubreq{RF}{1111111}}{Invio di un ticket}
+	\item \reqItem{req:ticketRisposta}{\esubreq{RF}{1111111}}{Risposta ad un ticket}
+	\item \reqItem{req:ticketChiudi}{\esubreq{RF}{0000101}}{Chiusura di un ticket}
+
+	\setCat{\ref*{cat:ricerca}}%H
+	\item \reqItem{req:ricercaInfo}{\ereq{RF}{1111111}}{Ricerca informazioni}
+	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{1111111}}{Ricerca prodotto}
+	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{1111111}}{Ricerca profilo}
+	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{1111111}}{Ricerca notizia}
+
+	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{0101111}}{Richiesta inserimento prodotto a un produttore iscritto}
+
+	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{0101111}}{Richiesta inserimento prodotto e del suo produttore}
+	
+	\setCat{\ref*{cat:visualizzazione}}%I
+	\item \reqItem{req:visualizzazioneVetrina}{\ereq{RF}{1111111}}{Visualizzazione vetrina}
+	\item \reqItem{req:visualizzazioneStatistichePubVetrina}{\esubreq{RF}{1111111}}{Visualizzazione statische pubbliche vetrina}
+	\item \reqItem{req:visualizzazioneProdottiVetrina}{\esubreq{RF}{1111111}}{Visualizzazione prodotti esposti in vetrina}
+
+	\item \reqItem{req:visualizzazioneProdotto}{\ereq{RF}{1111111}}{Visualizzazione prodotto}
+	\item \reqItem{req:visualizzazioneInfoProdotto}{\esubreq{RF}{1111111}}{Visualizzazione informazioni del prodotto}
+	\item \reqItem{req:visualizzazioneRecProdotto}{\esubreq{RF}{1111111}}{Visualizzazione recensioni associate al prodotto}
+	\item \reqItem{req:visualizzazioneStatProdotto}{\esubreq{RF}{1111111}}{Visualizzazione statistiche del prodotto}
+
+	\item \reqItem{req:visualizzazioneProfilo}{\ereq{RF}{1111111}}{Visualizzazione profilo pubblico}
+	\item \reqItem{req:visualizzazioneInfoProfilo}{\esubreq{RF}{1111111}}{Visualizzazione informazioni di un profilo pubblico}
+	\item \reqItem{req:visualizzazioneStatProfilo}{\esubreq{RF}{1111111}}{Visualizzazione statistiche di un profilo pubblico}
+
+	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{1111111}}{Visualizzazione notizie}
+	
+	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{0111111}}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
 
@@ -207,23 +204,22 @@ Vengono di seguito elencati i requisiti funzionali:
 Vengono di seguito elencati i requisiti non funzionali:
 %USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize}
-	\item  \reqItem{req:sicurezzaHttps}{\ereq{RNF}{1111111}{A}}{Protollo \texttt{HTTPS}}
+	\setCat{\ref*{cat:sicurezza}}%A
+	\item  \reqItem{req:sicurezzaHttps}{\ereq{RNF}{1111111}}{Protollo \texttt{HTTPS}}
+	\item  \reqItem{req:sicurezzaDati}{\ereq{RNF}{1111111}}{Protezione dei dati}
+	
+	\setCat{\ref*{cat:usabilita}}%B
+	\item  \reqItem{req:usabilitaInterfaccia}{\ereq{RNF}{1111111}}{Interfaccia intuitiva del portale}
+	\item  \reqItem{req:usabilitaRicerca}{\ereq{RNF}{1111111}}{Semplicità ricerca contenuti}
+	
+	\setCat{\ref*{cat:portabilita}}%C
+	\item  \reqItem{req:portabilitaBrowser}{\ereq{RNF}{1111111}}{Sito web portabile fra browser}
+	\item  \reqItem{req:portabilitaMobile}{\ereq{RNF}{1111111}}{Sito web responsive}
 
-	\item  \reqItem{req:sicurezzaDati}{\ereq{RNF}{1111111}{A}}{Protezione dei dati}
-	\countReset
-
-	\item  \reqItem{req:usabilitaInterfaccia}{\ereq{RNF}{1111111}{B}}{Interfaccia intuitiva del portale}
-	\item  \reqItem{req:usabilitaRicerca}{\ereq{RNF}{1111111}{B}}{Semplicità ricerca contenuti}
-	\countReset
-
-	\item  \reqItem{req:portabilitaBrowser}{\ereq{RNF}{1111111}{C}}{Sito web portabile fra browser}
-	\item  \reqItem{req:portabilitaMobile}{\ereq{RNF}{1111111}{C}}{Sito web responsive}
-	\countReset
-
-	%\item  \reqItem{req:implementazioneDDF}{\ereq{RNF}{1111111}{D}}{ }
+	%\item  \reqItem{req:implementazioneDDF}{\ereq{RNF}{1111111}}{ }
 	%\countReset
 
-	%\item  \reqItem{req:standards}{\ereq{RNF}{0000000}{E}}{Rispetto degli standard}
+	%\item  \reqItem{req:standards}{\ereq{RNF}{0000000}}{Rispetto degli standard}
 	%\countReset
 \end{itemize}
 
@@ -243,6 +239,16 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 %\statoNOK - non approvato
 %\statoUn - da approvare
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% A - AUTENTICAZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reqTabRF{req:login}{Il portale deve permettere ai visitori di effettuare il login con i dati inseriti nella fase di iscrizione}{\prioritaH}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:logout}{Il portale deve permettere di effettuare il logout}{\prioritaH}{\statoUn}
+
+\tabreqvspace
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% B - GESTIONE ISCRIZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRF{req:iscrizione}{Il portale deve permettere l'iscrizione ai visitatori.}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -267,10 +273,6 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:login}{Il portale deve permettere ai visitori di effettuare il login con i dati inseriti nella fase di iscrizione}{\prioritaH}{\statoUn}
-
-\tabreqvspace
-
 \reqTabRF{req:approvazioneIscrizione}{Il portale deve permettere agli assistenti di rispondere alle richieste di iscrizione effettuate tramite la procedura che richiede approvazione}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -279,6 +281,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C - GESTIONE VETRINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRF{req:personalizzaVetrina}{Il portale deve permettere la personalizzazione della vetrina ad ogni produttore}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -304,30 +307,46 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:ricercaInfo}{Il portale deve permettere di effettuare ricerche in base a diversi criteri}{\prioritaH}{\statoUn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE NOTIZIE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reqTabRF{req:inserimentoNotizia}{Il portale deve permettere ai redattori di inserire una notizia}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:ricercaProdotto}{Deve essere possibili cercare prodotti in base a diversi criteri}{\prioritaH}{\statoUn}
+\reqTabRF{req:modificaNotizia}{Il portale deve permettere ai redattori di modifare una notizia}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:ricercaProfilo}{Deve essere possibili cercare profili pubblici in base a diversi criteri}{\prioritaM}{\statoUn}
+\reqTabRF{req:rimozioneNotizia}{Il portale deve permettere ai redattori di eliminare una notizia}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:ricercaNotizia}{Deve essere possibili cercare notizie in base a diversi criteri}{\prioritaM}{\statoUn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE SUGGERIMENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reqTabRF{req:suggerimentoProdotti}{Il portale deve permettere di ricevere suggerimenti riguardo quali altri prodotti potrebbero piacere}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema}{\prioritaL}{\statoUn}
+\reqTabRF{req:prodottiSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altri prodotti sono simili a quello che si sta visualizzando}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:richiestaInsProduttore}{Deve essere possibile segnalare al sistema l’assenza di un produttore ed allo stesso tempo di uno suo specifico prodotto}{\prioritaL}{\statoUn}
+\reqTabRF{req:notizieSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre notizie sono simili a quella che si sta visualizzando}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE ACCOUNT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reqTabRF{req:accessoProfilo}{Il portale deve permette l'accesso al proprio profilo per visualizzarne i contenuti}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:accessoImpostazioni}{Il portale deve permettere l'accesso alle impostazioni e la modifica di queste ultime}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:rimozioneAccountProprio}{Il portale deve permettere l'eliminazione del proprio account. L'eliminazione di un account non comporterà l'eliminazione dei contenuti inseriti da esso.}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - INTERAZIONE FRA FIGURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRF{req:valutazioneProdotto}{Il portale deve permettere di valutare un prodotto}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -364,7 +383,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:valutaRecensione}{Il portale deve permettere di esprimere una valutazione, positiva o negatva, di una recensione}{\prioritaM}{\statoUn}
+\reqTabRF{req:valutaRecensione}{Il portale deve permettere di esprimere una valutazione, positiva o negativa, di una recensione}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
@@ -376,26 +395,6 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:rimozioneRecensioneInap}{Deve essere possibile per i moderatori rimuovere una recensione inappropriata}{\prioritaL}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:rimozioneCommentoInap}{Deve essere possibile per i moderatori rimuovere un commento inappropriato}{\prioritaL}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:inserimentoNotizia}{Il portale deve permettere ai redattori di inserire una notizia}{\prioritaH}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:modificaNotizia}{Il portale deve permettere ai redattori di modifare una notizia}{\prioritaH}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:rimozioneNotizia}{Il portale deve permettere ai redattori di eliminare una notizia}{\prioritaH}{\statoUn}
-
-\tabreqvspace
-
 \reqTabRF{req:followAccount}{Il portale deve permettere di seguire un account per ricevere aggiornamenti da esso}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -404,34 +403,48 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:suggerimentoProdotti}{Il portale deve permettere di ricevere suggerimenti riguardo quali altri prodotti potrebbero piacere}{\prioritaL}{\statoUn}
+\reqTabRF{req:ticketComunicazione}{Il portale deve permettere alle figure di comunicare con gli assistenti tramite tickets}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:prodottiSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altri prodotti sono simili a quello che si sta visualizzando}{\prioritaL}{\statoUn}
+\reqTabRF{req:ticketInvio}{Deve essere possibile creare ed inviare diversi tipi di tickets}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:notizieSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre notizie sono simili a quella che si sta visualizzando}{\prioritaL}{\statoUn}
+\reqTabRF{req:ticketRisposta}{Deve essere possibile rispondere ad un ticket. Le risposte ad un ticket possono essere effettuate da un assistente o dal creatore del ticket}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:accessoProfilo}{Il portale deve permette l'accesso al proprio profilo per visualizzarne i contenuti}{\prioritaM}{\statoUn}
+\reqTabRF{req:ticketChiudi}{Deve essere possibile per gli assistenti chiudere un ticket}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:accessoImpostazioni}{Il portale deve permettere l'accesso alle impostazioni e la modifica di queste ultime}{\prioritaM}{\statoUn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - RICERCA CONTENUTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\reqTabRF{req:ricercaInfo}{Il portale deve permettere di effettuare ricerche in base a diversi criteri}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:rimozioneAccountProprio}{Il portale deve permettere l'eliminazione del proprio account. L'eliminazione di un account non comporterà l'eliminazione dei contenuti inseriti da esso.}{\prioritaL}{\statoUn}
+\reqTabRF{req:ricercaProdotto}{Deve essere possibili cercare prodotti in base a diversi criteri}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:logout}{Il portale deve permettere di effettuare il logout}{\prioritaH}{\statoUn}
+\reqTabRF{req:ricercaProfilo}{Deve essere possibili cercare profili pubblici in base a diversi criteri}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
+\reqTabRF{req:ricercaNotizia}{Deve essere possibili cercare notizie in base a diversi criteri}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:richiestaInsProduttore}{Deve essere possibile segnalare al sistema l’assenza di un produttore ed allo stesso tempo di uno suo specifico prodotto}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - VISUALIZZIONE CONTENUTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRF{req:visualizzazioneVetrina}{Il portale deve permettere di visualizzare una data vetrina}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -481,6 +494,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 \subsection{Requisiti non funzionali}
 Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requisito non funzionale.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SICUREZZA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRNF{req:sicurezzaHttps}{Il portale garantirà l'autenticità e la confidenzialità delle comunicazioni attraverso l'utilizzo del protocollo \texttt{HTTPS}}{\prioritaH}{\statoUn}
 
 \tabreqvspace
@@ -489,6 +503,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% USABILITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRNF{req:usabilitaInterfaccia}{Il portale disporrà di un interfaccia semplice e intuitiva in modo tale da avere una curva di apprendimento bassa, affinché chiunque sia in un grado di utilizzarlo appieno}{\prioritaM}{\statoUn}
 
 \tabreqvspace
@@ -497,8 +512,21 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTABILITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \reqTabRNF{req:portabilitaBrowser}{Il sito web del portale sarà portabile fra i principali browser web presenti nel mercato}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
 \reqTabRNF{req:portabilitaMobile}{Il sito web del portale sarà \emph{responsive} in modo tale da poter essere consultato agevolmente da qualsiasi dispositivo}{\prioritaH}{\statoUn}
+
+\newdate{recuno}{08}{05}{2016}
+\section{Revisioni}
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        	\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+        	1.0 & \displaydate{recuno} & Prima versione \\
+        \bottomrule
+    \end{tabular}
+\end{center}

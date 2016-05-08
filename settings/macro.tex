@@ -85,7 +85,7 @@
 
 %formattazione requisiti - non mette link
 \newcommand{\reqsep}{.} 
-\newcommand{\displayReq}[1]{\texttt{#1}} 
+\newcommand{\displayReq}[1]{\texttt{#1}}
 \newcommand{\req}[4]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4}} 
 \newcommand{\subreq}[5]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5}} 
 \newcommand{\subsubreq}[6]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5\reqsep#6}} 
@@ -95,8 +95,17 @@
 \newcounter{sottoreq}[req]
 \newcounter{sottosottoreq}[sottoreq]
 
+%Funzioni per gestire le categorie
+\newcommand{\getCat}{
+}
+
+\newcommand{\setCat}[1]{%
+	\renewcommand{\getCat}{#1}
+	\resetCounter
+}
+
 %Funzione per resettare i contatori al cambio di categoria
-\newcommand{\countReset}{%
+\newcommand{\resetCounter}{
 \setcounter{req}{0}%
 \setcounter{sottoreq}{0}%
 \setcounter{sottosottoreq}{0}%
@@ -130,26 +139,26 @@
 %Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
 %fa in modo che anche la label contenga la giusta formattazione del requisito.
 \makeatletter
-\newcommand{\ereq}[3]{%
+\newcommand{\ereq}[2]{%
     \stepcounter{req}%
-    \def\@currentlabel{\req{#1}{#2}{#3}{\arabic{req}}}%
-    \req{#1}{#2}{#3}{\arabic{req}}%
+    \def\@currentlabel{\req{#1}{#2}{\getCat}{\arabic{req}}}%
+    \req{#1}{#2}{\getCat}{\arabic{req}}%
 }
 \makeatother
 
 \makeatletter
-\newcommand{\esubreq}[3]{%
+\newcommand{\esubreq}[2]{%
     \stepcounter{sottoreq}%
-    \def\@currentlabel{\subreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}}%
-	\subreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}%
+    \def\@currentlabel{\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}}%
+	\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}%
 }
 \makeatother
 
 \makeatletter
-\newcommand{\esubsubreq}[3]{%
+\newcommand{\esubsubreq}[2]{%
     \stepcounter{sottosottoreq}%
-    \def\@currentlabel{\subsubreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
-	\subsubreq{#1}{#2}{#3}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
+    \def\@currentlabel{\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
+	\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
 }
 \makeatother
 
@@ -275,9 +284,15 @@
 %toglie il bold dalle label delle descrizioni
 \renewcommand{\descriptionlabel}[1]{\textsf{#1}}
 
-
 %lista descrption dove c'è una leggera indentazione.
 \newenvironment{descriptionInd}{\begin{description}[leftmargin=1.5cm,labelindent=1cm]}{\end{description}}
+
+%lista enumerate dove c'è una leggera indentazione.
+\newenvironment{enumerateInd}[1]{\begin{enumerate}[leftmargin=1.5cm,labelindent=1cm,label=#1]}{\end{enumerate}}
+
+%lista enumerate dove c'è una leggera indentazione.
+\newenvironment{enumerateIndLabel}[2]{\begin{enumerate}[leftmargin=1.5cm,labelindent=1cm,label=#1,ref=#2]}{\end{enumerate}}
+
 
 %lista descrption dove la descrizione va a capo.
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
@@ -286,6 +301,7 @@
 %lista numerata inseribile dentro tabelle
 \newenvironment{enumWork}
 {
+	\noindent
 	\begin{minipage}[t]{\linewidth}
 		\begin{enumerate*}[itemjoin={\newline}]
 		}
@@ -297,6 +313,7 @@
 %lista itemize inseribile dentro tabelle
 \newenvironment{itemWork}
 {
+	\noindent
 	\begin{minipage}[t]{\linewidth}
 		\begin{itemize}[nosep, leftmargin=*]
 		}
