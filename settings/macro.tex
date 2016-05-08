@@ -191,26 +191,28 @@
 %Tabella per descrizione requisiti
 %usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
 \newcommand{\reqTab}[5]{%
-	\begin{center}
+	\begin{minipage}[t]{\textwidth}
 		\phantomsection\label{desc:#1}
-		\begin{tabularx}{\tabwidthreq}{ l  X }
-			\toprule
+		\begin{center}
+			\begin{tabularx}{\tabwidthreq}{ l  X }
+				\toprule
 				\multicolumn{2}{c}{\tabtitlereq{\reqGetIDTitle{#1}}}  \\
-			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 				\tabheadreq{ID} & \reqGetID{#1} \\ 
-			\addlinespace[0.5em] 
+				\addlinespace[0.5em] 
 				\tabheadreq{Titolo} & \reqGetTitle{#1} \\
-			\addlinespace[0.5em]
+				\addlinespace[0.5em]
 				\tabheadreq{Descrizione} &  #2 \\		
-			\addlinespace[0.5em]
+				\addlinespace[0.5em]
 				\tabheadreq{Tipo} &  #3 \\
-			\addlinespace[0.5em]
+				\addlinespace[0.5em]
 				\tabheadreq{Priorità} &  #4 \\
-			\addlinespace[0.5em]
+				\addlinespace[0.5em]
 				\tabheadreq{Stato} &  #5 \\
-			\bottomrule
-		\end{tabularx}
-	\end{center}
+				\bottomrule
+			\end{tabularx}
+		\end{center}
+	\end{minipage}
 }
 
 \newcommand{\prioritaH}{Alta} 
