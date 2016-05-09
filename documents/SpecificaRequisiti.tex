@@ -37,7 +37,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[RNF] indica un requisito non funzionale.
 	\end{descriptionInd}
 
-	\item Il \campiIdReq{contesto} serve ad identificare a quali figure è rivolta una data funzionalità, è un numero composto da 7 cifre ognuna delle quali può assumere un valore 0 oppure 1. La posizione della cifra si riferisce ad una specifica figura, se la cifra i-esima vale 1 significa che l'i-esima figura è presente nel contesto del requisitio, altrimenti no.
+	\item Il \campiIdReq{contesto} serve ad identificare a quali figure è rivolta una data funzionalità, è un numero composto da 6 cifre ognuna delle quali può assumere un valore 0 oppure 1. La posizione della cifra si riferisce ad una specifica figura, se la cifra i-esima vale 1 significa che l'i-esima figura è presente nel contesto del requisitio, altrimenti no.
 	Di seguito elenchiamo ogni posizione a quale figura riferisce: 
 	\begin{descriptionInd}
 		\item[1\textdegree\ bit] Visitatore.
@@ -51,7 +51,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 
 	\item La \campiIdReq{categoria} è una lettera utilizzata per raggruppare i requisiti con scopi simili.
 	Le categorie per i requisiti funzionali sono le seguenti:
-	\begin{enumerateInd}{\textsf{\Alph*}}
+	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\displayReq{\Alph*}}
 		\item Autenticazione. \label{cat:autenticazione}
 		\item Gestione iscrizione. \label{cat:iscrizione}
 		\item Gestione vetrina. \label{cat:vetrina}
@@ -61,15 +61,15 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item Interazione fra figure. \label{cat:interazione}
 		\item Ricerca contenuti. \label{cat:ricerca}
 		\item Visualizzazione contenuti. \label{cat:visualizzazione}
-	\end{enumerateInd}
+	\end{enumerateIndLabel}
 	Le categorie per i requisiti non funzionali sono le seguenti:
-	\begin{enumerateInd}{\textsf{\Alph*}}
+	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\displayReq{\Alph*}}
 		\item Sicurezza. \label{cat:sicurezza}
 		\item Usabilità. \label{cat:usabilita}
 		\item Portabilità. \label{cat:portabilita}
 		%\item[D] Implementazione.
 		%\item[E] Organizzazione.
-	\end{enumerateInd}	
+	\end{enumerateIndLabel}	
 
 	\item Il campo \campiIdReq{req} è un numero progressivo utilizzato per identificare in modo univoco un requisito all'interno della sua categoria.
 
@@ -81,7 +81,6 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 
 La priorità di un requisito identifica quanto un requisito sia importante ai fini del completamento del sistema.
 Qui di seguito sono elencati in breve i ``gradi di giudizio'' della priorità di un requisito:
-
 \begin{descriptionInd}
 	\item[Priorità Alta] Requisiti che il sistema deve necessariamente soddisfare.
 	\item[Priorità Media] Requisiti la cui assenza non comporta grossi problemi per la soddisfacibilità del progetto: i requisiti base riescono comunque ad essere soddisfatti, con qualche sacrificio in termini di funzionalità. 
@@ -95,7 +94,6 @@ Di seguito sono elencati tutti i requisiti, suddivisi in funzionali e non funzio
 \subsection{Requisiti funzionali}
 Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {keyrequisito}{\ereq{tipo}{contesto}}{titolo} - doublelink automatico con \refDef{keyrequisito}
-
 \begin{itemize} 
 	\setCat{\ref*{cat:autenticazione}}%A
 	\item \reqItem{req:login}{\ereq{RF}{1000000}}{Login}
@@ -172,7 +170,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:ticketChiudi}{\esubreq{RF}{0000101}}{Chiusura di un ticket}
 
 	\setCat{\ref*{cat:ricerca}}%H
-	\item \reqItem{req:ricercaInfo}{\ereq{RF}{1111111}}{Ricerca informazioni}
+	\item \reqItem{req:ricercaInfo}{\ereq{RF}{1111111}}{Ricerca contenuti}
 	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{1111111}}{Ricerca prodotto}
 	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{1111111}}{Ricerca profilo}
 	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{1111111}}{Ricerca notizia}
@@ -242,7 +240,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 %\statoUn - da approvare
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% A - AUTENTICAZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:login}{Il portale deve permettere ai visitatori di effettuare il login con i dati inseriti nella fase di iscrizione}{\prioritaH}{\statoUn}
+\reqTabRF{req:login}{Il portale deve permettere ai visitori di effettuare il login con i dati inseriti nella fase di iscrizione}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
@@ -520,3 +518,15 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 \tabreqvspace
 
 \reqTabRNF{req:portabilitaMobile}{Il sito web del portale sarà \emph{responsive} in modo tale da poter essere consultato agevolmente da qualsiasi dispositivo}{\prioritaH}{\statoUn}
+
+\newdate{requno}{08}{05}{2016}
+\section{Revisioni}
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        	\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+        	1.0 & \displaydate{requno} & Prima versione \\
+        \bottomrule
+    \end{tabular}
+\end{center}

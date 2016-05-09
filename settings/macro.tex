@@ -85,7 +85,7 @@
 
 %formattazione requisiti - non mette link
 \newcommand{\reqsep}{.} 
-\newcommand{\displayReq}[1]{\textsf{#1}} 
+\newcommand{\displayReq}[1]{\texttt{#1}}
 \newcommand{\req}[4]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4}} 
 \newcommand{\subreq}[5]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5}} 
 \newcommand{\subsubreq}[6]{\displayReq{#1\reqsep#2\reqsep#3\reqsep#4\reqsep#5\reqsep#6}} 
@@ -95,7 +95,7 @@
 \newcounter{sottoreq}[req]
 \newcounter{sottosottoreq}[sottoreq]
 
-%Funzione per resettare i contatori al cambio di categoria
+%Funzioni per gestire le categorie
 \newcommand{\getCat}{
 }
 
@@ -104,12 +104,12 @@
 	\resetCounter
 }
 
+%Funzione per resettare i contatori al cambio di categoria
 \newcommand{\resetCounter}{
 \setcounter{req}{0}%
 \setcounter{sottoreq}{0}%
 \setcounter{sottosottoreq}{0}%
 }
-
 
 
 %Macro per linkare requisiti
@@ -289,6 +289,10 @@
 
 %lista enumerate dove c'è una leggera indentazione.
 \newenvironment{enumerateInd}[1]{\begin{enumerate}[leftmargin=1.5cm,labelindent=1cm,label=#1]}{\end{enumerate}}
+
+%lista enumerate dove c'è una leggera indentazione.
+\newenvironment{enumerateIndLabel}[2]{\begin{enumerate}[leftmargin=1.5cm,labelindent=1cm,label=#1,ref=#2]}{\end{enumerate}}
+
 
 %lista descrption dove la descrizione va a capo.
 \newenvironment{descriptionNext}{\begin{description}[style=nextline]}{\end{description}}
