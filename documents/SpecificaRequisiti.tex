@@ -40,18 +40,18 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 	\item Il \campiIdReq{contesto} serve ad identificare a quali figure è rivolta una data funzionalità, è un numero composto da 7 cifre ognuna delle quali può assumere valore 0 oppure 1. La posizione della cifra si riferisce ad una specifica figura, se la cifra i-esima vale 1 significa che l'i-esima figura è presente nel contesto del requisito, altrimenti no.
 	Di seguito elenchiamo ogni posizione a quale figura riferisce: 
 	\begin{descriptionInd}
-		\item[\setTextToLabel{V}{req:visitatore}] Visitatore.
-		\item[\setTextToLabel{U}{req:utente}] Utente. 
-		\item[\setTextToLabel{P}{req:produttore}] Produttore. 
-		\item[\setTextToLabel{R}{req:redattore}] Redattore. 
-		\item[\setTextToLabel{A}{req:assistente}] Assistente. 
-		\item[\setTextToLabel{M}{req:moderatore}] Moderatore. 
-		\item[\setTextToLabel{S}{req:amministratore}] Amministratore. 
+		\item[\setTextToLabel{V}{con:visitatore}] Visitatore.
+		\item[\setTextToLabel{U}{con:utente}] Utente. 
+		\item[\setTextToLabel{P}{con:produttore}] Produttore. 
+		\item[\setTextToLabel{R}{con:redattore}] Redattore. 
+		\item[\setTextToLabel{A}{con:assistente}] Assistente. 
+		\item[\setTextToLabel{M}{con:moderatore}] Moderatore. 
+		\item[\setTextToLabel{S}{con:amministratore}] Amministratore. 
 	\end{descriptionInd}		
 
 	\item La \campiIdReq{categoria} è una lettera utilizzata per raggruppare i requisiti con scopi simili.
 	Le categorie per i requisiti funzionali sono le seguenti:
-	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\displayReq{\Alph*}}
+	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\Alph*}
 		\item Autenticazione. \label{cat:autenticazione}
 		\item Gestione iscrizione. \label{cat:iscrizione}
 		\item Gestione vetrina. \label{cat:vetrina} 
@@ -63,7 +63,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item Visualizzazione contenuti. \label{cat:visualizzazione}
 	\end{enumerateIndLabel}
 	Le categorie per i requisiti non funzionali sono le seguenti:
-	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\displayReq{\Alph*}}
+	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\Alph*}
 		\item Sicurezza. \label{cat:sicurezza}
 		\item Usabilità. \label{cat:usabilita}
 		\item Portabilità. \label{cat:portabilita}
@@ -250,7 +250,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 \tabreqvspace
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% B - GESTIONE ISCRIZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:iscrizione}{Il portale deve permettere l'iscrizione ai visitatori.}{\prioritaH}{\statoUn}
+\reqTabRF{req:iscrizione}{Il portale deve permettere l'iscrizione ai visitatori}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
