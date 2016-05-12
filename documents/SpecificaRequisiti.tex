@@ -40,13 +40,13 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 	\item Il \campiIdReq{contesto} serve ad identificare a quali figure è rivolta una data funzionalità, è un numero composto da 7 cifre ognuna delle quali può assumere valore 0 oppure 1. La posizione della cifra si riferisce ad una specifica figura, se la cifra i-esima vale 1 significa che l'i-esima figura è presente nel contesto del requisitio, altrimenti no.
 	Di seguito elenchiamo ogni posizione a quale figura riferisce: 
 	\begin{descriptionInd}
-		\item[1\textdegree\ bit] Visitatore.
-		\item[2\textdegree\ bit] Utente.
-		\item[3\textdegree\ bit] Produttore.
-		\item[4\textdegree\ bit] Redattore.
-		\item[5\textdegree\ bit] Assistente.
-		\item[6\textdegree\ bit] Moderatore.
-		\item[7\textdegree\ bit] Amministratore.
+		\item[V] Visitatore.\setTextToLabel{V}{req:visitatore}
+		\item[U] Utente. \setTextToLabel{U}{req:utente}
+		\item[P] Produttore. \setTextToLabel{P}{req:produttore}
+		\item[R] Redattore. \setTextToLabel{R}{req:redattore}
+		\item[A] Assistente. \setTextToLabel{A}{req:assistente}
+		\item[M] Moderatore. \setTextToLabel{M}{req:moderatore}
+		\item[S] Amministratore. \setTextToLabel{S}{req:amministratore}
 	\end{descriptionInd}		
 
 	\item La \campiIdReq{categoria} è una lettera utilizzata per raggruppare i requisiti con scopi simili.
@@ -97,106 +97,106 @@ Vengono di seguito elencati i requisiti funzionali:
 %USAGE: {keyrequisito}{\ereq{tipo}{contesto}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize} 
 	\setCat{\ref*{cat:autenticazione}}%A
-	\item \reqItem{req:login}{\ereq{RF}{1000000}}{Login}
-	\item \reqItem{req:logout}{\ereq{RF}{0111111}}{Logout}
+	\item \reqItem{req:login}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Login}
+	\item \reqItem{req:logout}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Logout}
 
 	\setCat{\ref*{cat:iscrizione}}%B
-	\item \reqItem{req:iscrizione}{\ereq{RF}{1000000}}{Iscrizione}
-	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{1000000}}{Iscrizione tramite modulo del portale}
-	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{1000000}}{Iscrizione tramite Social Network}
-	\item \reqItem{req:iscrizioneSocialVer}{\esubsubreq{RF}{1000000}}{Iscrizione tramite Social Network verificati}
-	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{1000000}}{Iscrizione tramite Social Network non verificati}
-	\item \reqItem{req:iscrizioneApprovazione}{\esubreq{RF}{1000000}}{Iscrizione tramite approvazione}
+	\item \reqItem{req:iscrizione}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione}
+	\item \reqItem{req:iscrizionePortale}{\esubreq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite modulo del portale}
+	\item \reqItem{req:iscrizioneSocial}{\esubreq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network}
+	\item \reqItem{req:iscrizioneSocialVer}{\esubsubreq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network verificati}
+	\item \reqItem{req:iscrizioneSocialNotVer}{\esubsubreq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network non verificati}
+	\item \reqItem{req:iscrizioneApprovazione}{\esubreq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite approvazione}
 	
-	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{0000101}}{Approvazione iscrizione}
+	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Approvazione iscrizione}
 	
-	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{0000011}}{Rimozione account altrui}
+	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\amministratore}}{Rimozione account altrui}
 
 	\setCat{\ref*{cat:vetrina}}%C
-	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{0010000}}{Personalizzione vetrina}
-	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{0010000}}{Inserimento descrizione}
-	\item \reqItem{req:personalizzaVetrinaInsImg}{\esubreq{RF}{0010000}}{Inserimento immagine}
-	\item \reqItem{req:personalizzaVetrinaInsProd}{\esubreq{RF}{0010000}}{Inserimento prodotto}
-	\item \reqItem{req:personalizzaVetrinaModProd}{\esubreq{RF}{0010000}}{Modifica prodotto}
+	\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Personalizzione vetrina}
+	\item \reqItem{req:personalizzaVetrinaInsDesc}{\esubreq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento descrizione}
+	\item \reqItem{req:personalizzaVetrinaInsImg}{\esubreq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento immagine}
+	\item \reqItem{req:personalizzaVetrinaInsProd}{\esubreq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento prodotto}
+	\item \reqItem{req:personalizzaVetrinaModProd}{\esubreq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica prodotto}
 	
-	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{0010000}}{Visualizzazione statistiche private della vetrina}
+	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Visualizzazione statistiche private della vetrina}
 	
 	\setCat{\ref*{cat:notizie}}%D
-	\item \reqItem{req:inserimentoNotizia}{\ereq{RF}{0001001}}{Inserimento notizia}
+	\item \reqItem{req:inserimentoNotizia}{\ereq{RF}{\noF\noF\noF\redattore\noF\noF\amministratore}}{Inserimento notizia}
 	
-	\item \reqItem{req:modificaNotizia}{\ereq{RF}{0001001}}{Modifica notizia}
+	\item \reqItem{req:modificaNotizia}{\ereq{RF}{\noF\noF\noF\redattore\noF\noF\amministratore}}{Modifica notizia}
 	
-	\item \reqItem{req:rimozioneNotizia}{\ereq{RF}{0001001}}{Rimozione notizia}
+	\item \reqItem{req:rimozioneNotizia}{\ereq{RF}{\noF\noF\noF\redattore\noF\noF\amministratore}}{Rimozione notizia}
 	
 	\setCat{\ref*{cat:suggerimenti}}%E
-	\item \reqItem{req:suggerimentoProdotti}{\ereq{RF}{0111111}}{Suggerimento prodotti intelligente}
+	\item \reqItem{req:suggerimentoProdotti}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Suggerimento prodotti intelligente}
 	
-	\item \reqItem{req:prodottiSimili}{\ereq{RF}{0111111}}{Suggerimento prodotti simili}
+	\item \reqItem{req:prodottiSimili}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Suggerimento prodotti simili}
 
-	\item \reqItem{req:notizieSimili}{\ereq{RF}{0111111}}{Suggerimento notizie simili}
+	\item \reqItem{req:notizieSimili}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Suggerimento notizie simili}
 	
 	\setCat{\ref*{cat:account}}%F
-	\item \reqItem{req:accessoProfilo}{\ereq{RF}{0111111}}{Accesso al proprio profilo}
+	\item \reqItem{req:accessoProfilo}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Accesso al proprio profilo}
 	
-	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{0111111}}{Accesso alle proprie impostazioni}
+	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Accesso alle proprie impostazioni}
 
-	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{0111111}}{Rimozione account proprio}
+	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Rimozione account proprio}
 	
 	\setCat{\ref*{cat:interazione}}%G
-	\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{0101111}}{Valutazione prodotto}
-	\item \reqItem{req:inserisciValutazioneProdotto}{\esubreq{RF}{0101111}}{Inserimento valutazione}
-	\item \reqItem{req:modificaValutazioneProdotto}{\esubreq{RF}{0101111}}{Modifica valutazione inserita}
-	\item \reqItem{req:eliminaValutazioneProdotto}{\esubreq{RF}{0101111}}{Rimozione valutazione inserita}
+	\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Valutazione prodotto}
+	\item \reqItem{req:inserisciValutazioneProdotto}{\esubreq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Inserimento valutazione}
+	\item \reqItem{req:modificaValutazioneProdotto}{\esubreq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Modifica valutazione inserita}
+	\item \reqItem{req:eliminaValutazioneProdotto}{\esubreq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Rimozione valutazione inserita}
 
-	\item \reqItem{req:recensioneProdotto}{\ereq{RF}{0101111}}{Recensione prodotto}
-	\item \reqItem{req:inserisciRecensioneProdotto}{\esubreq{RF}{0101111}}{Inserimento recensione}
-	\item \reqItem{req:modificaRecensioneProdotto}{\esubreq{RF}{0101111}}{Modifica valutazione inserita}
-	\item \reqItem{req:eliminaRecensioneProdotto}{\esubreq{RF}{0101111}}{Rimozione recensione inserita}
+	\item \reqItem{req:recensioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Recensione prodotto}
+	\item \reqItem{req:inserisciRecensioneProdotto}{\esubreq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Inserimento recensione}
+	\item \reqItem{req:modificaRecensioneProdotto}{\esubreq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Modifica valutazione inserita}
+	\item \reqItem{req:eliminaRecensioneProdotto}{\esubreq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Rimozione recensione inserita}
 
-	\item \reqItem{req:commentoRecensione}{\ereq{RF}{0111111}}{Commento a recensione}
+	\item \reqItem{req:commentoRecensione}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Commento a recensione}
 	
-	\item \reqItem{req:giudizioRecensione}{\ereq{RF}{0101111}}{Giudizio recensione}
+	\item \reqItem{req:giudizioRecensione}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Giudizio recensione}
 	
-	\item \reqItem{req:segnalazioneContenutiInap}{\ereq{RF}{0111111}}{Segnalazione contenuti inappropriati}
+	\item \reqItem{req:segnalazioneContenutiInap}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Segnalazione contenuti inappropriati}
 	
-	\item \reqItem{req:rimozioneContenutiInap}{\ereq{RF}{0000011}}{Rimozione contenuti inappropriati}
+	\item \reqItem{req:rimozioneContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\amministratore}}{Rimozione contenuti inappropriati}
 
-	\item \reqItem{req:followAccount}{\ereq{RF}{0111111}}{Follow account}
+	\item \reqItem{req:followAccount}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Follow account}
 	
-	\item \reqItem{req:unFollowAccount}{\ereq{RF}{0111111}}{Unfollow account}
+	\item \reqItem{req:unFollowAccount}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Unfollow account}
 
-	\item \reqItem{req:ticketComunicazione}{\ereq{RF}{1111111}}{Comunicazione tramite tickets}
-	\item \reqItem{req:ticketInvio}{\esubreq{RF}{1111111}}{Invio di un ticket}
-	\item \reqItem{req:ticketRisposta}{\esubreq{RF}{1111111}}{Risposta ad un ticket}
-	\item \reqItem{req:ticketChiudi}{\esubreq{RF}{0000101}}{Chiusura di un ticket}
+	\item \reqItem{req:ticketComunicazione}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Comunicazione tramite tickets}
+	\item \reqItem{req:ticketInvio}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Invio di un ticket}
+	\item \reqItem{req:ticketRisposta}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Risposta ad un ticket}
+	\item \reqItem{req:ticketChiudi}{\esubreq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Chiusura di un ticket}
 
 	\setCat{\ref*{cat:ricerca}}%H
-	\item \reqItem{req:ricercaInfo}{\ereq{RF}{1111111}}{Ricerca contenuti}
-	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{1111111}}{Ricerca prodotto}
-	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{1111111}}{Ricerca profilo}
-	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{1111111}}{Ricerca notizia}
+	\item \reqItem{req:ricercaInfo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Ricerca contenuti}
+	\item \reqItem{req:ricercaProdotto}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Ricerca prodotto}
+	\item \reqItem{req:ricercaProfilo}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Ricerca profilo}
+	\item \reqItem{req:ricercaNotizia}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Ricerca notizia}
 
-	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{0101111}}{Richiesta inserimento prodotto a un produttore iscritto}
+	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Richiesta inserimento prodotto a un produttore iscritto}
 
-	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{0101111}}{Richiesta inserimento prodotto e del suo produttore}
+	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Richiesta inserimento prodotto e del suo produttore}
 	
 	\setCat{\ref*{cat:visualizzazione}}%I
-	\item \reqItem{req:visualizzazioneVetrina}{\ereq{RF}{1111111}}{Visualizzazione vetrina}
-	\item \reqItem{req:visualizzazioneStatistichePubVetrina}{\esubreq{RF}{1111111}}{Visualizzazione statische pubbliche vetrina}
-	\item \reqItem{req:visualizzazioneProdottiVetrina}{\esubreq{RF}{1111111}}{Visualizzazione prodotti esposti in vetrina}
+	\item \reqItem{req:visualizzazioneVetrina}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione vetrina}
+	\item \reqItem{req:visualizzazioneStatistichePubVetrina}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione statische pubbliche vetrina}
+	\item \reqItem{req:visualizzazioneProdottiVetrina}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione prodotti esposti in vetrina}
 
-	\item \reqItem{req:visualizzazioneProdotto}{\ereq{RF}{1111111}}{Visualizzazione prodotto}
-	\item \reqItem{req:visualizzazioneInfoProdotto}{\esubreq{RF}{1111111}}{Visualizzazione informazioni del prodotto}
-	\item \reqItem{req:visualizzazioneRecProdotto}{\esubreq{RF}{1111111}}{Visualizzazione recensioni associate al prodotto}
-	\item \reqItem{req:visualizzazioneStatProdotto}{\esubreq{RF}{1111111}}{Visualizzazione statistiche del prodotto}
+	\item \reqItem{req:visualizzazioneProdotto}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione prodotto}
+	\item \reqItem{req:visualizzazioneInfoProdotto}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione informazioni del prodotto}
+	\item \reqItem{req:visualizzazioneRecProdotto}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione recensioni associate al prodotto}
+	\item \reqItem{req:visualizzazioneStatProdotto}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione statistiche del prodotto}
 
-	\item \reqItem{req:visualizzazioneProfilo}{\ereq{RF}{1111111}}{Visualizzazione profilo pubblico}
-	\item \reqItem{req:visualizzazioneInfoProfilo}{\esubreq{RF}{1111111}}{Visualizzazione informazioni di un profilo pubblico}
-	\item \reqItem{req:visualizzazioneStatProfilo}{\esubreq{RF}{1111111}}{Visualizzazione statistiche di un profilo pubblico}
+	\item \reqItem{req:visualizzazioneProfilo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione profilo pubblico}
+	\item \reqItem{req:visualizzazioneInfoProfilo}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione informazioni di un profilo pubblico}
+	\item \reqItem{req:visualizzazioneStatProfilo}{\esubreq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione statistiche di un profilo pubblico}
 
-	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{1111111}}{Visualizzazione notizie}
+	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione notizie}
 	
-	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{0111111}}{Visualizzazione aggiornamenti dai followed}
+	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
 
@@ -206,21 +206,21 @@ Vengono di seguito elencati i requisiti non funzionali:
 %USAGE: {keyrequisito}{\ereq{tipo}{contesto}{categoria}}{titolo} - doublelink automatico con \refDef{keyrequisito}
 \begin{itemize}
 	\setCat{\ref*{cat:sicurezza}}%A
-	\item  \reqItem{req:sicurezzaHttps}{\ereq{RNF}{1111111}}{Protollo \texttt{HTTPS}}
-	\item  \reqItem{req:sicurezzaDati}{\ereq{RNF}{1111111}}{Protezione dei dati}
+	\item  \reqItem{req:sicurezzaHttps}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Protollo \texttt{HTTPS}}
+	\item  \reqItem{req:sicurezzaDati}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Protezione dei dati}
 	
 	\setCat{\ref*{cat:usabilita}}%B
-	\item  \reqItem{req:usabilitaInterfaccia}{\ereq{RNF}{1111111}}{Interfaccia intuitiva del portale}
-	\item  \reqItem{req:usabilitaRicerca}{\ereq{RNF}{1111111}}{Semplicità ricerca contenuti}
+	\item  \reqItem{req:usabilitaInterfaccia}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Interfaccia intuitiva del portale}
+	\item  \reqItem{req:usabilitaRicerca}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Semplicità ricerca contenuti}
 	
 	\setCat{\ref*{cat:portabilita}}%C
-	\item  \reqItem{req:portabilitaBrowser}{\ereq{RNF}{1111111}}{Sito web portabile fra browser}
-	\item  \reqItem{req:portabilitaMobile}{\ereq{RNF}{1111111}}{Sito web responsive}
+	\item  \reqItem{req:portabilitaBrowser}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Sito web portabile fra browser}
+	\item  \reqItem{req:portabilitaMobile}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Sito web responsive}
 
-	%\item  \reqItem{req:implementazioneDDF}{\ereq{RNF}{1111111}}{ }
+	%\item  \reqItem{req:implementazioneDDF}{\ereq{RNF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{ }
 	%\countReset
 
-	%\item  \reqItem{req:standards}{\ereq{RNF}{0000000}}{Rispetto degli standard}
+	%\item  \reqItem{req:standards}{\ereq{RNF}{\noF\noF\noF\noF\noF\noF\noF}}{Rispetto degli standard}
 	%\countReset
 \end{itemize}
 

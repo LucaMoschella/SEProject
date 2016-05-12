@@ -149,16 +149,16 @@
 \makeatletter
 \newcommand{\esubreq}[2]{%
     \stepcounter{sottoreq}%
-    \def\@currentlabel{\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}}%
-	\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}%
+    \def\@currentlabel{\subreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}}%
+	\subreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}%
 }
 \makeatother
 
 \makeatletter
 \newcommand{\esubsubreq}[2]{%
     \stepcounter{sottosottoreq}%
-    \def\@currentlabel{\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
-	\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
+    \def\@currentlabel{\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}{\alph{sottosottoreq}}}%
+	\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}{\alph{sottosottoreq}}%
 }
 \makeatother
 
@@ -230,7 +230,23 @@
 \newcommand{\statoNOK}{Non approvato} 
 \newcommand{\statoUn}{Da approvare} 
 
+\makeatletter
+\newcommand{\setTextToLabel}[2]{%
+    \def\@currentlabel{#1}%
+    \label{#2}
+}
+\makeatother
 
+
+\newcommand{\visitatore}{\ref*{req:visitatore}} 
+\newcommand{\utente}{\ref*{req:utente}} 
+\newcommand{\produttore}{\ref*{req:produttore}} 
+\newcommand{\redattore}{\ref*{req:redattore}} 
+\newcommand{\assistente}{\ref*{req:assistente}} 
+\newcommand{\moderatore}{\ref*{req:moderatore}} 
+\newcommand{\amministratore}{\ref*{req:amministratore}} 
+
+\newcommand{\noF}{*} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -286,6 +302,9 @@
 
 %lista descrption dove c'è una leggera indentazione.
 \newenvironment{descriptionInd}{\begin{description}[leftmargin=1.5cm,labelindent=1cm]}{\end{description}}
+
+\newenvironment{descriptionIndLabel}[1]{\begin{description}[leftmargin=1.5cm,labelindent=1cm,ref=#1]}{\end{description}}
+
 
 %lista enumerate dove c'è una leggera indentazione.
 \newenvironment{enumerateInd}[1]{\begin{enumerate}[leftmargin=1.5cm,labelindent=1cm,label=#1]}{\end{enumerate}}
