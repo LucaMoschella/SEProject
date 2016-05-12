@@ -149,16 +149,16 @@
 \makeatletter
 \newcommand{\esubreq}[2]{%
     \stepcounter{sottoreq}%
-    \def\@currentlabel{\subreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}}%
-	\subreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}%
+    \def\@currentlabel{\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}}%
+	\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}%
 }
 \makeatother
 
 \makeatletter
 \newcommand{\esubsubreq}[2]{%
     \stepcounter{sottosottoreq}%
-    \def\@currentlabel{\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}{\alph{sottosottoreq}}}%
-	\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\alph{sottoreq}}{\alph{sottosottoreq}}%
+    \def\@currentlabel{\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
+	\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
 }
 \makeatother
 
@@ -232,11 +232,11 @@
 
 \makeatletter
 \newcommand{\setTextToLabel}[2]{%
+	#1
     \def\@currentlabel{#1}%
-    \label{#2}
+    \phantomsection\label{#2}
 }
 \makeatother
-
 
 \newcommand{\visitatore}{\ref*{req:visitatore}} 
 \newcommand{\utente}{\ref*{req:utente}} 
@@ -246,7 +246,7 @@
 \newcommand{\moderatore}{\ref*{req:moderatore}} 
 \newcommand{\amministratore}{\ref*{req:amministratore}} 
 
-\newcommand{\noF}{*} 
+\newcommand{\noF}{\textemdash} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
