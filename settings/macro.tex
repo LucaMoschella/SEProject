@@ -64,6 +64,31 @@
 %spazio fra tabelle iterazioni 
 \newcommand{\tabitervspace}{\bigskip} 
 
+%tabelle iterazioni
+\newcommand{\tabiter}[5]{
+\begin{center}
+	\begin{minipage}[t]{\linewidth}
+		\begin{tabularx}{\tabwidthiter}{ l  X } 
+			\toprule
+				\multicolumn{2}{c}{\tabtitleiter{#1}}  \\
+			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+				\tabheaditer{Fase} & #2 \\ 
+				\addlinespace[1em] 
+				\tabheaditer{Obiettivi} & #3 \\
+				\addlinespace[1em]
+				\tabheaditer{Milestones} & #4 \\
+				\addlinespace[1em]
+				\tabheaditer{Stato} &  #5 \\
+			\bottomrule
+		\end{tabularx}
+	\end{minipage}
+\end{center}
+} 
+
+%camo vuoto
+\newcommand{\emptycell}{-} 
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di specifica sistema %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
