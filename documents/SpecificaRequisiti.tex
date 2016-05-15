@@ -37,8 +37,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[RNF] indica un requisito non funzionale.
 	\end{descriptionInd}
 
-	\item Il \campiIdReq{contesto} serve ad identificare a quali figure è rivolta una data funzionalità, è un numero composto da 7 cifre ognuna delle quali può assumere valore 0 oppure 1. La posizione della cifra si riferisce ad una specifica figura, se la cifra i-esima vale 1 significa che l'i-esima figura è presente nel contesto del requisito, altrimenti no.
-	Di seguito elenchiamo ogni posizione a quale figura riferisce: 
+	\item Il \campiIdReq{contesto} serve ad identificare a quali figure è rivolta una data funzionalità. Le lettere che compaiono in questo campo individuano le figure a cui il requisito è rivolto. Ad ogni figura è associata una lettera come segue:
 	\begin{descriptionInd}
 		\item[\setTextToLabel{V}{con:visitatore}] Visitatore.
 		\item[\setTextToLabel{U}{con:utente}] Utente. 
@@ -115,7 +114,6 @@ Vengono di seguito elencati i requisiti funzionali:
 	
 	\setCat{\ref*{cat:gestioneiscrizione}}%B
 	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Approvazione iscrizione}
-	
 	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\amministratore}}{Rimozione account altrui}
 
 	\setCat{\ref*{cat:vetrina}}%C
@@ -124,28 +122,21 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:personalizzaVetrinaInsImg}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento immagine}
 	\item \reqItem{req:personalizzaVetrinaInsProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento prodotto}
 	\item \reqItem{req:personalizzaVetrinaModProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica prodotto}
-	
 	\item \reqItem{req:statistichePrivateVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Visualizzazione statistiche private della vetrina}
 	
 	\setCat{\ref*{cat:notizie}}%D
 	\item \reqItem{req:inserimentoNotizia}{\ereq{RF}{\noF\noF\noF\redattore\noF\noF\amministratore}}{Inserimento notizia}
-	
 	\item \reqItem{req:modificaNotizia}{\ereq{RF}{\noF\noF\noF\redattore\noF\noF\amministratore}}{Modifica notizia}
-	
 	\item \reqItem{req:rimozioneNotizia}{\ereq{RF}{\noF\noF\noF\redattore\noF\noF\amministratore}}{Rimozione notizia}
 	
 	\setCat{\ref*{cat:suggerimenti}}%E
 	\item \reqItem{req:suggerimentoProdotti}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Suggerimento prodotti intelligente}
-	
 	\item \reqItem{req:prodottiSimili}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Suggerimento prodotti simili}
-
 	\item \reqItem{req:notizieSimili}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Suggerimento notizie simili}
 	
 	\setCat{\ref*{cat:account}}%F
 	\item \reqItem{req:accessoProfilo}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Accesso al proprio profilo}
-	
 	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Accesso alle proprie impostazioni}
-
 	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Rimozione account proprio}
 	
 	\setCat{\ref*{cat:gestionevalutazione}}%G
@@ -159,13 +150,9 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:inserisciRecensioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Inserimento recensione}
 	\item \reqItem{req:modificaRecensioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Modifica valutazione inserita}
 	\item \reqItem{req:eliminaRecensioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Rimozione recensione inserita}
-
 	\item \reqItem{req:commentoRecensione}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Commento a recensione}
-	
 	\item \reqItem{req:giudizioRecensione}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Giudizio recensione}
-	
 	\item \reqItem{req:segnalazioneContenutiInap}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Segnalazione contenuti inappropriati}
-	
 	\item \reqItem{req:rimozioneContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\amministratore}}{Rimozione contenuti inappropriati}
 
 	\setCat{\ref*{cat:interazione}}%G
@@ -186,25 +173,20 @@ Vengono di seguito elencati i requisiti funzionali:
 
 	\setCat{\ref*{cat:prodottimancanti}}%H
 	\item \reqItem{req:richiestaInsProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Richiesta inserimento prodotto a un produttore iscritto}
-
 	\item \reqItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Richiesta inserimento prodotto e del suo produttore}
 	
 	\setCat{\ref*{cat:visualizzazione}}%I
 	\item \reqItem{req:visualizzazioneVetrina}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione vetrina}
 	\item \reqItem{req:visualizzazioneStatistichePubVetrina}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione statische pubbliche vetrina}
 	\item \reqItem{req:visualizzazioneProdottiVetrina}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione prodotti esposti in vetrina}
-
 	\item \reqItem{req:visualizzazioneProdotto}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione prodotto}
 	\item \reqItem{req:visualizzazioneInfoProdotto}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione informazioni del prodotto}
 	\item \reqItem{req:visualizzazioneRecProdotto}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione recensioni associate al prodotto}
 	\item \reqItem{req:visualizzazioneStatProdotto}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione statistiche del prodotto}
-
 	\item \reqItem{req:visualizzazioneProfilo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione profilo pubblico}
 	\item \reqItem{req:visualizzazioneInfoProfilo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione informazioni di un profilo pubblico}
 	\item \reqItem{req:visualizzazioneStatProfilo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione statistiche di un profilo pubblico}
-
 	\item \reqItem{req:visualizzazioneNotizie}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione notizie}
-	
 	\item \reqItem{req:visualizzazioneAggF}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
