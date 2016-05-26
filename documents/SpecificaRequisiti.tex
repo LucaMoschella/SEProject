@@ -114,7 +114,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	
 	\setCat{\ref*{cat:gestioneiscrizione}}%B
 	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Approvazione iscrizione}
-	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\amministratore}}{Rimozione account altrui}
+	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
 
 	\setCat{\ref*{cat:vetrina}}%C
 	%\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Personalizzione vetrina}
@@ -160,10 +160,11 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:unFollowAccount}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Unfollow account}
 
 	\setCat{\ref*{cat:gestioneticket}}%G
-	\item \reqItem{req:ticketComunicazione}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Comunicazione tramite ticket}
+	%\item \reqItem{req:ticketComunicazione}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Comunicazione tramite ticket}
 	\item \reqItem{req:ticketInvio}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Invio di un ticket}
 	\item \reqItem{req:ticketRisposta}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Risposta ad un ticket}
 	\item \reqItem{req:ticketChiudi}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Chiusura di un ticket}
+	\item \reqItem{req:ticketLettura}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Lettura di un ticket}
 
 	\setCat{\ref*{cat:ricerca}}%H
 	%\item \reqItem{req:ricercaInfo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Ricerca contenuti}
@@ -393,23 +394,29 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \reqTabRF{req:unFollowAccount}{Il portale deve permettere di cessare di seguire un account che si segue}{\prioritaH}{\statoUn}
 
-\tabreqvspace
+%\tabreqvspace
 
-\reqTabRF{req:ticketComunicazione}{Il portale deve permettere alle figure di comunicare con gli assistenti tramite ticket}{\prioritaM}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:ticketInvio}{Deve essere possibile creare ed inviare diversi tipi di ticket}{\prioritaM}{\statoUn}
+%\reqTabRF{req:ticketComunicazione}{Il portale deve permettere alle figure di comunicare con gli assistenti tramite ticket}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:ticketRisposta}{Deve essere possibile rispondere ad un ticket. Le risposte ad un ticket possono essere effettuate da un assistente o dal creatore del ticket}{\prioritaM}{\statoUn}
+\reqTabRF{req:ticketInvio}{Deve essere possibile creare ed inviare diversi tipi di ticket per comunicare con gli assistenti}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:ticketRisposta}{Deve essere possibile rispondere ad un ticket. Le risposte ad un ticket possono essere effettuate da un assistente o dal creatore dello stesso}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
 \reqTabRF{req:ticketChiudi}{Deve essere possibile per gli assistenti chiudere un ticket}{\prioritaM}{\statoUn}
 
 \tabreqvspace
+
+\reqTabRF{req:ticketLettura}{Deve essere possibile visualizzare il ticket dal suo creatore per controllare lo status e dagli assistenti per gestirli}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - RICERCA CONTENUTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\reqTabRF{req:ricercaInfo}{Il portale deve permettere di effettuare ricerche in base a diversi criteri}{\prioritaH}{\statoUn}
