@@ -43,9 +43,9 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 		\item[\setTextToLabel{U}{con:utente}] Utente. 
 		\item[\setTextToLabel{P}{con:produttore}] Produttore. 
 		\item[\setTextToLabel{R}{con:redattore}] Redattore. 
-		\item[\setTextToLabel{A}{con:assistente}] Assistente. 
+		\item[\setTextToLabel{S}{con:assistente}] Assistente. 
 		\item[\setTextToLabel{M}{con:moderatore}] Moderatore. 
-		\item[\setTextToLabel{S}{con:amministratore}] Amministratore. 
+		\item[\setTextToLabel{A}{con:amministratore}] Amministratore. 
 	\end{descriptionInd}		
 
 	\item La \campiIdReq{categoria} è una lettera utilizzata per raggruppare i requisiti con scopi simili.
@@ -87,7 +87,9 @@ La priorità di un requisito identifica quanto un requisito sia importante ai fi
 Qui di seguito sono elencati in breve i ``gradi di giudizio'' della priorità di un requisito:
 \begin{descriptionInd}
 	\item[Priorità Alta] Requisiti che il sistema deve necessariamente soddisfare.
+
 	\item[Priorità Media] Requisiti la cui assenza non comporta grossi problemi per la soddisfacibilità del progetto: i requisiti base riescono comunque ad essere soddisfatti, con qualche sacrificio in termini di funzionalità. 
+
 	\item[Priorità Bassa] Requisiti la cui assenza non comporta alcun tipo di problema per la soddisfacibilità del progetto. Questi requisiti possono anche visti come superflui o non strettamente necessari. La loro inclusione comporta un miglioramento della qualità complessiva dell’offerta dei servizi e delle funzionalità del progetto.
 \end{descriptionInd}
 
@@ -115,6 +117,8 @@ Vengono di seguito elencati i requisiti funzionali:
 	\setCat{\ref*{cat:gestioneiscrizione}}%B
 	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Approvazione iscrizione}
 	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
+	\item \reqItem{req:aggiungiAccountAFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi account a figura}
+	\item \reqItem{req:rimuoviAccountDaFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi account da figura}
 
 	\setCat{\ref*{cat:vetrina}}%C
 	%\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Personalizzione vetrina}
@@ -274,10 +278,15 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C - GESTIONE VETRINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\reqTabRF{req:personalizzaVetrina}{Il portale deve permettere la personalizzazione della vetrina ad ogni produttore}{\prioritaH}{\statoUn}
+\reqTabRF{req:aggiungiAccountAFigura}{Il portale deve permettere agli amministratori di aggiungere un account presente nel sistema ad una figura. In questo modo l'account avrà accesso anche alle funzionalità associate alla figura in questione.}{\prioritaL}{\statoUn}
 
 \tabreqvspace
+
+\reqTabRF{req:rimuoviAccountDaFigura}{Il portale deve permettere agli amministratori di rimuovere un account presente nel sistema da una figura. In questo modo l'account non avrà più accesso alle funzionalità associate alla figura in questione, se tali funzionalità non sono presenti in altre figure associate all'account.}{\prioritaL}{\statoUn}
+
+\tabreqvspace 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C - GESTIONE VETRINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\reqTabRF{req:personalizzaVetrina}{Il portale deve permettere la personalizzazione della vetrina ad ogni produttore}{\prioritaH}{\statoUn}
 
 \reqTabRF{req:personalizzaVetrinaInsDesc}{Deve essere possibile per il produttore inserire una descrizione nella propria vetrina}{\prioritaM}{\statoUn}
 

@@ -1,4 +1,4 @@
-\chapter{Specifica sistema} 
+\chapter{Descrizione sistema} 
 \label{cha:specifica_sistema}
 
 \section{Introduzione} 
@@ -8,10 +8,11 @@ In questo documento verrà descritto nel dettaglio il sistema nel suo complesso,
 \label{sec:descrizione_dettagliata}
 Il portale che si vuole realizzare interagirà con diverse \grupporuolo{figure pubbliche}, che si distinguono tra autenticate e non autenticate. Fra le \grupporuolo{figure pubbliche autenticate} troviamo gli \ruolo{utenti} e i \ruolo{produttori}, mentre i \ruolo{visitatori} sono l'unica \grupporuolo{figura pubblica non autenticata}.
 Sono presenti inoltre diverse \grupporuolo{figure amministrative}, quali i \ruolo{redattori}, gli \ruolo{assistenti}, i \ruolo{moderatori} e gli \ruolo{amministratori}.
+Le diverse figure presenti si distinguono a seconda di quali funzionalità, messe a disposizione dal sistema, possono utilizzare. 
 
 \bigskip
 \noindent
-Le diverse figure presenti si distinguono a seconda di quali funzionalità, messe a disposizione dal sistema, possono utilizzare.
+Gli \emph{account} presenti nel sistema sono gestiti in un modo analogo agli utenti di Unix: un account può \emph{appartenere} a più figure e ha accesso ad alcune funzionalità a seconda delle figure a cui appartiene. In questo modo un singolo account può ricoprire più ruoli, è ad esempio possibile che un utente sia anche un redattore.
 
 I \ruolo{visitatori} possono effettuare l'iscrizione, diversa a seconda della tipologia di account che si vuole creare, e l'autenticazione. Entrambe possono essere effettuate tramite l'integrazione con i principali Social Network, tuttavia per iscriversi come \ruolo{produttore} tramite Social Network si deve avere un account certificato in esso.
 
