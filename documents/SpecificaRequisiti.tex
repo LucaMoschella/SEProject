@@ -53,7 +53,7 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\Alph*}
 		\item Autenticazione. \label{cat:autenticazione}
 		\item Iscrizione. \label{cat:iscrizione}
-		\item Gestione iscrizioni. \label{cat:gestioneiscrizione}
+		%\item Gestione iscrizioni. \label{cat:gestioneiscrizione}
 		\item Gestione vetrina. \label{cat:vetrina} 
 		\item Gestione notizie. \label{cat:notizie}
 		\item Gestioni suggerimenti. \label{cat:suggerimenti}
@@ -114,11 +114,9 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:iscrizioneSocialNotVer}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network non verificati}
 	\item \reqItem{req:iscrizioneApprovazione}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite approvazione}
 	
-	\setCat{\ref*{cat:gestioneiscrizione}}%B
-	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\amministratore}}{Approvazione iscrizione}
-	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
-	\item \reqItem{req:aggiungiAccountAFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi funzionalità di una figura ad account}
-	\item \reqItem{req:rimuoviAccountDaFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi funzionalità di una figura da account}
+	%\setCat{\ref*{cat:gestioneiscrizione}}%B
+	\item \reqItem{req:approvazioneIscrizione}{\ereq{RF}{\noF\noF\noF\noF\assistente\noF\noF}}{Approvazione iscrizione}
+
 
 	\setCat{\ref*{cat:vetrina}}%C
 	%\item \reqItem{req:personalizzaVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Personalizzione vetrina}
@@ -143,6 +141,11 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \reqItem{req:accessoImpostazioni}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Accesso alle proprie impostazioni}
 	\item \reqItem{req:rimozioneAccountProprio}{\ereq{RF}{\noF\utente\produttore\redattore\assistente\moderatore\amministratore}}{Rimozione account proprio}
 	
+	\item \reqItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
+	\item \reqItem{req:aggiungiAccountAFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi funzionalità di una figura ad account}
+	\item \reqItem{req:rimuoviAccountDaFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi funzionalità di una figura da account}
+
+
 	\setCat{\ref*{cat:gestionevalutazione}}%G
 	%\item \reqItem{req:valutazioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Valutazione prodotto}
 	\item \reqItem{req:inserisciValutazioneProdotto}{\ereq{RF}{\noF\utente\noF\redattore\assistente\moderatore\amministratore}}{Inserimento valutazione}
