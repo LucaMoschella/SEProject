@@ -4,6 +4,44 @@
 %2) Definire comandi abbreviati per semplificare comandi con opzioni complese ripetute più volte
 %3) Senza esagerare, definire testo da inserire in automatico senza riscriverlo ogni volta
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FUNZIONI COMUNI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% funzioni per la creazione automatica degli identificatori %%%%
+%Macro per linkare requisiti
+%separatore id titolo
+\newcommand{\sepIDTitle}{ - }
+
+%fa ma in modo che la label attuale contenga il titolo (e non il numero di sezione)
+\makeatletter
+\newcommand{\titleLabel}[1]{%
+    \def\@currentlabel{#1}%
+    #1%
+}
+\makeatother
+
+%macro per creare un nuovo requisito, usando i vari contatori. Necessita della crezione di una tabella per descriverla
+%usage: \newListItem{reqkey}{\ereq{ ...ID... }}{titolo} 
+\newcommand\newListItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\titleLabel{#3}\label{title:#1}}
+
+%macro per stampare (e linkare, tranne il titolo) informazioni del req.
+%usage: \reqGet..{reqkey}
+\newcommand\getID[1]{\ref{id:#1}}
+\newcommand\getIDtodesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
+\newcommand\getTitle[1]{\ref*{title:#1}}
+\newcommand\getIDTitle[1]{\getID{#1}\sepIDTitle\getTitle{#1}}
+
+
+%%%%% altre funzioni %%%%%
+\makeatletter
+\newcommand{\setTextToLabel}[2]{%
+	#1
+    \def\@currentlabel{#1}%
+    \phantomsection\label{#2}
+}
+\makeatother
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FORMATTAZIONE LOGICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,44 +159,20 @@
 \newcounter{sottosottoreq}[sottoreq]
 
 %Funzioni per gestire le categorie
-\newcommand{\getCat}{
+\newcommand{\getCatR}{
 }
 
-\newcommand{\setCat}[1]{%
-	\renewcommand{\getCat}{#1}
-	\resetCounter
+\newcommand{\setCatR}[1]{%
+	\renewcommand{\getCatR}{#1}
+	\resetCounterR
 }
 
 %Funzione per resettare i contatori al cambio di categoria
-\newcommand{\resetCounter}{
+\newcommand{\resetCounterR}{
 \setcounter{req}{0}%
 \setcounter{sottoreq}{0}%
 \setcounter{sottosottoreq}{0}%
 }
-
-
-%Macro per linkare requisiti
-%separatore id titolo
-\newcommand{\sepIDTitle}{ - }
-
-%macro per creare un nuovo requisito, usando i vari contatori. Necessita della crezione di una tabella per descriverla
-%usage: \reqItem{reqkey}{\ereq{ ...ID... }}{titolo} 
-\newcommand\reqItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\reqtit{#3}\label{title:#1}}
-
-%macro per stampare (e linkare, tranne il titolo) informazioni del req.
-%usage: \reqGet..{reqkey}
-\newcommand\reqGetID[1]{\ref{id:#1}}
-\newcommand\reqGetIDtodesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
-\newcommand\reqGetTitle[1]{\ref*{title:#1}}
-\newcommand\reqGetIDTitle[1]{\reqGetID{#1}\sepIDTitle\reqGetTitle{#1}}
-
-%fa ma in modo che la label attuale contenga il titolo (e non il numero di sezione)
-\makeatletter
-\newcommand{\reqtit}[1]{%
-    \def\@currentlabel{#1}%
-    #1%
-}
-\makeatother
 
 %macro per gestire i requisiti, e sotto requisiti vari.
 %Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
@@ -166,24 +180,24 @@
 \makeatletter
 \newcommand{\ereq}[2]{%
     \stepcounter{req}%
-    \def\@currentlabel{\req{#1}{#2}{\getCat}{\arabic{req}}}%
-    \req{#1}{#2}{\getCat}{\arabic{req}}%
+    \def\@currentlabel{\req{#1}{#2}{\getCatR}{\arabic{req}}}%
+    \req{#1}{#2}{\getCatR}{\arabic{req}}%
 }
 \makeatother
 
 \makeatletter
 \newcommand{\esubreq}[2]{%
     \stepcounter{sottoreq}%
-    \def\@currentlabel{\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}}%
-	\subreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}%
+    \def\@currentlabel{\subreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}}%
+	\subreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}%
 }
 \makeatother
 
 \makeatletter
 \newcommand{\esubsubreq}[2]{%
     \stepcounter{sottosottoreq}%
-    \def\@currentlabel{\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
-	\subsubreq{#1}{#2}{\getCat}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
+    \def\@currentlabel{\subsubreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
+	\subsubreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
 }
 \makeatother
 
@@ -230,9 +244,9 @@
 			\phantomsection\label{desc:#1}
 			\begin{tabularx}{\tabwidthreq}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\tabtitlereq{\reqGetTitle{#1}}}  \\
+				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-				\tabheadreq{ID} & \reqGetID{#1} \\ 
+				\tabheadreq{ID} & \getID{#1} \\ 
 				\addlinespace[0.5em] 
 				\tabheadreq{Descrizione} &  #2 \\		
 				\addlinespace[0.5em]
@@ -255,13 +269,7 @@
 \newcommand{\statoNOK}{Non approvato} 
 \newcommand{\statoUn}{Da approvare} 
 
-\makeatletter
-\newcommand{\setTextToLabel}[2]{%
-	#1
-    \def\@currentlabel{#1}%
-    \phantomsection\label{#2}
-}
-\makeatother
+
 
 \newcommand{\visitatore}{\ref*{con:visitatore}} 
 \newcommand{\utente}{\ref*{con:utente}} 
@@ -285,6 +293,40 @@
 \newcommand{\usesep}{.} 
 \newcommand{\displayUse}[1]{\texttt{#1}}
 \newcommand{\use}[2]{\displayUse{CU\usesep#1\usesep#2}} 
+
+
+%Creazione dei contatori per la gestione automatica dei requisiti
+\newcounter{counterCU}
+
+%Funzioni per gestire le categorie
+\newcommand{\getCatCU}{
+}
+
+\newcommand{\setCatCU}[1]{%
+	\renewcommand{\getCatCU}{#1}
+	\resetCounterCU
+}
+
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterCU}{
+\setcounter{counterCU}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\cuSep}{.} 
+\newcommand{\displayCU}[1]{\texttt{#1}}
+\newcommand{\cu}[3]{\displayCU{#1\cuSep#2\cuSep#3}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\makeatletter
+\newcommand{\formattaCU}{%
+    \stepcounter{counterCU}%
+    \def\@currentlabel{\cu{CU}{\getCatCU}{\arabic{counterCU}}}%
+	\cu{CU}{\getCatCU}{\arabic{counterCU}}%
+}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

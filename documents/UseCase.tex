@@ -62,14 +62,99 @@ Gli attori che interagiscono con il portale sono otto. Sono elencati e descritti
 
 	\item[\setTextToLabel{CMS}{att:cms}]\glsdesc*{cmsdef}.
 \end{descriptionInd}
-La gerarchia degli attori è mostrata dal seguente diagramma UML:
+La gerarchia degli attori è mostrata nel seguente diagramma UML:
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/SchemaAttori}
 \end{center}
 
-\section{Specifica dei casi d'uso}
+\section{Elenco dei casi d'uso}
+Vengono di seguito elencati i casi d'uso:
+\begin{itemize} 
+	\setCatCU{\ref*{pkg:autenticazione}}%A
+	\item \newListItem{cu:login}{\formattaCU}{Login}
+	\item \newListItem{cu:logout}{\formattaCU}{Logout}
+
+	\setCatCU{\ref*{pkg:iscrizione}}%B
+	\item \newListItem{cu:iscrizionePortale}{\formattaCU}{Iscrizione tramite modulo del portale}
+	\item \newListItem{cu:iscrizioneSocialVer}{\formattaCU}{Iscrizione tramite Social Network verificati}
+	\item \newListItem{cu:iscrizioneSocialNotVer}{\formattaCU}{Iscrizione tramite Social Network non verificati}
+	\item \newListItem{cu:iscrizioneApprovazione}{\formattaCU}{Iscrizione tramite approvazione}
+	\item \newListItem{cu:approvazioneIscrizione}{\formattaCU}{Approvazione iscrizione}
+
+	\setCatCU{\ref*{pkg:vetrina}}%C
+	\item \newListItem{cu:personalizzaVetrinaInsDesc}{\formattaCU}{Inserimento descrizione}
+	\item \newListItem{cu:personalizzaVetrinaInsImg}{\formattaCU}{Inserimento immagine}
+	\item \newListItem{cu:personalizzaVetrinaInsProd}{\formattaCU}{Inserimento prodotto}
+	\item \newListItem{cu:personalizzaVetrinaModProd}{\formattaCU}{Modifica prodotto}
+	\item \newListItem{cu:statistichePrivateVetrina}{\formattaCU}{Visualizzazione statistiche private della vetrina}
 
 
+	\setCatCU{\ref*{pkg:notizie}}%D
+	\item \newListItem{cu:inserimentoNotizia}{\formattaCU}{Inserimento notizia}
+	\item \newListItem{cu:modificaNotizia}{\formattaCU}{Modifica notizia}
+	\item \newListItem{cu:rimozioneNotizia}{\formattaCU}{Rimozione notizia}
+
+	\setCatCU{\ref*{pkg:suggerimenti}}%E
+	\item \newListItem{cu:suggerimentoProdotti}{\formattaCU}{Suggerimento prodotti intelligente}
+	\item \newListItem{cu:prodottiSimili}{\formattaCU}{Suggerimento prodotti simili}
+	\item \newListItem{cu:notizieSimili}{\formattaCU}{Suggerimento notizie simili}
+
+	\setCatCU{\ref*{pkg:account}}%F
+	\item \newListItem{cu:accessoProfilo}{\formattaCU}{Accesso al proprio profilo}
+	\item \newListItem{cu:accessoImpostazioni}{\formattaCU}{Accesso alle proprie impostazioni}
+	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
+
+	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
+	\item \newListItem{cu:aggiungiAccountAFigura}{\formattaCU}{Aggiungi funzionalità di una figura ad account}
+	\item \newListItem{cu:rimuoviAccountDaFigura}{\formattaCU}{Rimuovi funzionalità di una figura da account}
+
+	\setCatCU{\ref*{pkg:gestionevalutazione}}%G
+	\item \newListItem{cu:inserisciValutazioneProdotto}{\formattaCU}{Inserimento valutazione}
+	\item \newListItem{cu:modificaValutazioneProdotto}{\formattaCU}{Modifica valutazione}
+
+	\setCatCU{\ref*{pkg:gestionerecensione}}%H
+	\item \newListItem{cu:inserisciRecensioneProdotto}{\formattaCU}{Inserimento recensione}
+	\item \newListItem{cu:modificaRecensioneProdotto}{\formattaCU}{Modifica recensione propria}
+	\item \newListItem{cu:eliminaRecensioneProdotto}{\formattaCU}{Rimozione recensione propria}
+	\item \newListItem{cu:commentoRecensione}{\formattaCU}{Commento a recensione}
+	\item \newListItem{cu:giudizioRecensione}{\formattaCU}{Giudizio recensione}
+	\item \newListItem{cu:segnalazioneContenutiInap}{\formattaCU}{Segnalazione contenuti inappropriati}
+	\item \newListItem{cu:rimozioneContenutiInap}{\formattaCU}{Rimozione contenuti inappropriati}
+
+	\setCatCU{\ref*{pkg:interazione}}%I
+	\item \newListItem{cu:followAccount}{\formattaCU}{Follow account}
+	\item \newListItem{cu:unFollowAccount}{\formattaCU}{Unfollow account}
+
+	\setCatCU{\ref*{pkg:gestioneticket}}%J
+	\item \newListItem{cu:ticketInvio}{\formattaCU}{Invio di un ticket}
+	\item \newListItem{cu:ticketRisposta}{\formattaCU}{Risposta ad un ticket}
+	\item \newListItem{cu:ticketChiudi}{\formattaCU}{Chiusura di un ticket}
+	\item \newListItem{cu:ticketLettura}{\formattaCU}{Lettura di un ticket}
+
+	\setCatCU{\ref*{pkg:ricerca}}%K
+	\item \newListItem{cu:ricercaProdotto}{\formattaCU}{Ricerca prodotto}
+	\item \newListItem{cu:ricercaProfilo}{\formattaCU}{Ricerca profilo}
+	\item \newListItem{cu:ricercaNotizia}{\formattaCU}{Ricerca notizia}
+
+
+	\setCatCU{\ref*{pkg:prodottimancanti}}%L
+	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto a un produttore iscritto}
+	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento prodotto e del suo produttore}
+
+	\setCatCU{\ref*{pkg:visualizzazione}}%M
+	\item \newListItem{cu:visualizzazioneVetrina}{\formattaCU}{Visualizzazione vetrina}
+	\item \newListItem{cu:visualizzazioneStatistichePubVetrina}{\formattaCU}{Visualizzazione statische pubbliche vetrina}
+	\item \newListItem{cu:visualizzazioneProdottiVetrina}{\formattaCU}{Visualizzazione prodotti esposti in vetrina}
+	\item \newListItem{cu:visualizzazioneProdotto}{\formattaCU}{Visualizzazione prodotto}
+	\item \newListItem{cu:visualizzazioneInfoProdotto}{\formattaCU}{Visualizzazione informazioni del prodotto}
+	\item \newListItem{cu:visualizzazioneRecProdotto}{\formattaCU}{Visualizzazione recensioni associate al prodotto}
+	\item \newListItem{cu:visualizzazioneStatProdotto}{\formattaCU}{Visualizzazione statistiche del prodotto}
+	\item \newListItem{cu:visualizzazioneProfilo}{\formattaCU}{Visualizzazione profilo pubblico}
+	\item \newListItem{cu:visualizzazioneInfoProfilo}{\formattaCU}{Visualizzazione informazioni di un profilo pubblico}
+	\item \newListItem{cu:visualizzazioneStatProfilo}{\formattaCU}{Visualizzazione statistiche di un profilo pubblico}
+	\item \newListItem{cu:visualizzazioneNotizie}{\formattaCU}{Visualizzazione notizie}
+	\item \newListItem{cu:visualizzazioneAggF}{\formattaCU}{Visualizzazione aggiornamenti dai followed}
+\end{itemize}	
 
 
 
