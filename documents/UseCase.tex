@@ -4,11 +4,13 @@
 In questo documento sono analizzati ed elencati gli attori ed i casi d'uso del sistema.
 Scopo del documento è la dettagliata descrizione delle modalità di interazione tra le diverse entità presenti ed il sistema.
 Ciò permetterà di mettere in evidenza eventuali conflitti tra i requisiti del sistema stesso.
-Tale analisi e descrizione dei casi d'uso verrà presentata tramite grafici che seguono lo standard UML, con relativo commento per ognuno.
+Tale analisi e descrizione dei casi d'uso verrà presentata tramite grafici che seguono lo standard UML.
 
 Nei casi in cui più attori possono accedere ad un determinato caso d’uso, ma uno
 solo ha come compito quella operazione, non verranno elencati tutti gli attori
 ma solo quello a cui quel caso appartiene.
+
+Inoltre non verranno riportati tutti gli attori che hanno accesso ad un dato caso d'uso ma solo quello più generico.
 
 \section{Identificativo dei casi d'uso} %(vengono usati per definire l'ID, non ha senso metterli dopo la struttura ID)
 Di seguito è spiegato come interpretare l'identificativo dei casi d'uso:
@@ -59,8 +61,11 @@ Gli attori che interagiscono con il portale sono otto. Sono elencati e descritti
 	\item[\setTextToLabel{Amministratore}{att:amministratore}]\glsdesc*{amministratore}.
 
 	\item[\setTextToLabel{CMS}{att:cms}]\glsdesc*{cmsdef}.
-
-\end{descriptionInd}		
+\end{descriptionInd}
+La gerarchia degli attori è mostrata dal seguente diagramma UML:
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/SchemaAttori}
+\end{center}
 
 \section{Specifica dei casi d'uso}
 
