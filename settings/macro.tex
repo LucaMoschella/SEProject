@@ -30,6 +30,7 @@
 \newcommand\getID[1]{\ref{id:#1}}
 \newcommand\getIDtodesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
 \newcommand\getTitle[1]{\ref*{title:#1}}
+\newcommand\getTitletodesc[1]{\hyperref[desc:#1]{\ref*{title:#1}}}
 \newcommand\getIDTitle[1]{\getID{#1}\sepIDTitle\getTitle{#1}}
 
 
@@ -294,6 +295,53 @@
 \newcommand{\displayUse}[1]{\texttt{#1}}
 \newcommand{\use}[2]{\displayUse{CU\usesep#1\usesep#2}} 
 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ATTORI
+\newcounter{counterAtt}
+
+\newcommand{\resetCounterAtt}{
+\setcounter{counterAtt}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\attSep}{.} 
+\newcommand{\displayAtt}[1]{\texttt{#1}}
+\newcommand{\att}[2]{\displayAtt{#1\attSep#2}}
+
+
+\makeatletter
+\newcommand{\formattaAtt}{%
+    \stepcounter{counterAtt}%
+    \def\@currentlabel{\att{ATT}{\arabic{counterAtt}}}%
+	\att{ATT}{\arabic{counterAtt}}%
+}
+\makeatother
+
+%Tabella per descrizione requisiti
+%usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
+\newcommand{\attTab}[3]{%
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection\label{desc:#1}
+			\begin{tabularx}{\textwidth}{ l  X }
+				\toprule
+				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+				\tabheadreq{ID} & \getID{#1} \\ 
+				\addlinespace[0.5em] 
+				\tabheadreq{Genitore} &  #2 \\		
+				\addlinespace[0.5em]
+				\tabheadreq{Descrizione} &  #3 \\
+				\bottomrule
+			\end{tabularx}
+		\end{minipage}
+	\end{center}
+}
+
+\newcommand{\tabattvspace}{\medskip} 
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% casi d'uso
+
 
 %Creazione dei contatori per la gestione automatica dei requisiti
 \newcounter{counterCU}
@@ -327,6 +375,36 @@
 	\cu{CU}{\getCatCU}{\arabic{counterCU}}%
 }
 \makeatother
+
+
+%Tabella per descrizione requisiti
+%usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
+\newcommand{\cuTab}[5]{%
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection\label{desc:#1}
+			\begin{tabularx}{\textwidth}{ l  X }
+				\toprule
+				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+				\tabheadreq{ID} & \getID{#1} \\ 
+				\addlinespace[0.5em] 
+				\tabheadreq{Attori} &  #2 \\		
+				\addlinespace[0.5em]
+				\tabheadreq{Precondizioni} &  #3 \\
+				\addlinespace[0.5em]
+				\tabheadreq{Postcondizioni} &  #4 \\
+				\addlinespace[0.5em]
+				\tabheadreq{Flusso principale} &  #5 \\
+				\bottomrule
+			\end{tabularx}
+		\end{minipage}
+	\end{center}
+}
+
+
+
+\newcommand{\tabcuvspace}{\bigskip} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -417,5 +495,16 @@
 		}
 		{
 		\end{itemize}
+	\end{minipage}
+}
+
+\newenvironment{enumTest}
+{
+	\noindent
+	\begin{minipage}[t]{\linewidth}
+		\begin{enumerate}[nosep, leftmargin=*]
+		}
+		{
+		\end{enumerate}
 	\end{minipage}
 }

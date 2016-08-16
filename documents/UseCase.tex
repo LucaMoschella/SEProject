@@ -12,6 +12,57 @@ ma solo quello a cui quel caso appartiene.
 
 Inoltre non verranno riportati tutti gli attori che hanno accesso ad un dato caso d'uso ma solo quello più generico.
 
+
+
+\section{Elenco degli attori}
+Gli attori che interagiscono con il portale sono elencati di seguito:
+\begin{itemize}
+	\item \newListItem{att:visitatore}{\formattaAtt}{Visitatore}
+	\item \newListItem{att:utente}{\formattaAtt}{Utente}
+	\item \newListItem{att:produttore}{\formattaAtt}{Produttore}
+	\item \newListItem{att:redattore}{\formattaAtt}{Redattore}
+	\item \newListItem{att:assistente}{\formattaAtt}{Assistente}
+	\item \newListItem{att:moderatore}{\formattaAtt}{Moderatore}
+	\item \newListItem{att:amministratore}{\formattaAtt}{Amministratore}
+	\item \newListItem{att:cms}{\formattaAtt}{CMS}
+\end{itemize}
+La gerarchia degli attori è mostrata nel seguente diagramma UML:
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/SchemaAttori}
+\end{center}
+
+\section{Specifica degli attori}
+Gli attori che interagiscono con il portale sono descritti di seguito:
+\attTab{att:visitatore}{-}{\glsdesc*{visitatore}}
+
+\tabattvspace
+
+\attTab{att:utente}{\getTitletodesc{att:visitatore}}{\glsdesc*{utente}}
+
+\tabattvspace
+
+\attTab{att:produttore}{\getTitletodesc{att:visitatore}}{\glsdesc*{produttore}}
+
+\tabattvspace
+
+\attTab{att:redattore}{\getTitletodesc{att:utente}}{\glsdesc*{redattore}}
+
+\tabattvspace
+
+\attTab{att:assistente}{\getTitletodesc{att:utente}}{\glsdesc*{assistente}}
+
+\tabattvspace
+
+\attTab{att:moderatore}{\getTitletodesc{att:utente}}{\glsdesc*{moderatore}}
+
+\tabattvspace
+
+\attTab{att:amministratore}{\getTitletodesc{att:utente}}{\glsdesc*{amministratore}}
+
+\tabattvspace
+
+\attTab{att:cms}{-}{\glsdesc*{cmsdef}}
+
 \section{Identificativo dei casi d'uso} %(vengono usati per definire l'ID, non ha senso metterli dopo la struttura ID)
 Di seguito è spiegato come interpretare l'identificativo dei casi d'uso:
 \begin{center}
@@ -26,7 +77,6 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 	\begin{enumerateIndLabel}{\textsf{\Alph*}}{\Alph*}
 		\item Autenticazione. \label{pkg:autenticazione}
 		\item Gestione iscrizioni. \label{pkg:iscrizione}
-		%\item Gestione iscrizioni. \label{pkg:gestioneiscrizione}
 		\item Gestione vetrina. \label{pkg:vetrina} 
 		\item Gestione notizie. \label{pkg:notizie}
 		\item Gestione suggerimenti. \label{pkg:suggerimenti}
@@ -42,30 +92,6 @@ Segue una descrizione di ogni campo utilizzato nell'identificatore:
 
 	\item Il campo \campiIdReq{caso} è un numero progressivo utilizzato per identificare in modo univoco un caso d'uso all'interno della sua categoria.
 \end{itemize}
-
-\section{Specifica degli attori}
-Gli attori che interagiscono con il portale sono otto. Sono elencati e descritti di seguito:
-\begin{descriptionInd}
-	\item[\setTextToLabel{Visitatore}{att:visitatore}]\glsdesc*{visitatore}.
-
-	\item[\setTextToLabel{Utente}{att:utente}]\glsdesc*{utente}.
-
-	\item[\setTextToLabel{Produttore}{att:produttore}]\glsdesc*{produttore}.
-
-	\item[\setTextToLabel{Redattore}{att:redattore}]\glsdesc*{redattore}.
-
-	\item[\setTextToLabel{Assistente}{att:assistente}]\glsdesc*{assistente}.
-
-	\item[\setTextToLabel{Moderatore}{att:moderatore}]\glsdesc*{moderatore}.
-
-	\item[\setTextToLabel{Amministratore}{att:amministratore}]\glsdesc*{amministratore}.
-
-	\item[\setTextToLabel{CMS}{att:cms}]\glsdesc*{cmsdef}.
-\end{descriptionInd}
-La gerarchia degli attori è mostrata nel seguente diagramma UML:
-\begin{center}
-   \includegraphics[width=\textwidth]{assets/visualParadigm/SchemaAttori}
-\end{center}
 
 \section{Elenco dei casi d'uso}
 Vengono di seguito elencati i casi d'uso:
@@ -156,11 +182,128 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:visualizzazioneAggF}{\formattaCU}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
+%{id}{attori}{pre}{post}{flusso}
+\section{Specifica dei casi d'uso}
+\subsection{Autenticazione}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/Autenticazione}
+\end{center}
+\cuTab{cu:login}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:redattore}, \getTitletodesc{att:assistente}, \getTitletodesc{att:moderatore}, \getTitletodesc{att:amministratore}}{}{}{}
 
+\subsection{Gestione iscrizioni}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneIscrizione}
+\end{center}
+\cuTab{cu:iscrizionePortale}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:iscrizioneSocialVer}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:iscrizioneSocialNotVer}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:iscrizioneApprovazione}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{}{}{}
 
+\subsection{Gestione vetrina}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneVentrina}
+\end{center}
+\cuTab{cu:personalizzaVetrinaInsDesc}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaInsImg}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaInsProd}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaModProd}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:statistichePrivateVetrina}{\getTitletodesc{att:produttore}}{}{}{}
 
+\subsection{Gestione notizie}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneNotizie}
+\end{center}
+\cuTab{cu:inserimentoNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+\cuTab{cu:modificaNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+\cuTab{cu:rimozioneNotizia}{\getTitletodesc{att:redattore}}{}{}{}
 
+\subsection{Gestione suggerimenti}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneSuggerimenti}
+\end{center}
+\cuTab{cu:suggerimentoProdotti}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:prodottiSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:notizieSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
 
+\subsection{Gestione account}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneAccount}
+\end{center}
+\cuTab{cu:accessoProfilo}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:accessoImpostazioni}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:rimozioneAccountProprio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:rimozioneAccountAltrui}{\getTitletodesc{att:amministratore}}{}{}{}
+\cuTab{cu:aggiungiAccountAFigura}{\getTitletodesc{att:amministratore}}{}{}{}
+\cuTab{cu:rimuoviAccountDaFigura}{\getTitletodesc{att:amministratore}}{}{}{}
+
+\subsection{Gestione valutazioni}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneValutazioni}
+\end{center}
+\cuTab{cu:inserisciValutazioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:modificaValutazioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
+\subsection{Gestione recensioni}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneRecensioni}
+\end{center}
+\cuTab{cu:inserisciRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:modificaRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:eliminaRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:commentoRecensione}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:giudizioRecensione}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:segnalazioneContenutiInap}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:rimozioneContenutiInap}{\getTitletodesc{att:moderatore}}{}{}{}
+
+\subsection{Interazione tra figure}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/InterazioneTraFigure}
+\end{center}
+\cuTab{cu:followAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:unFollowAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\subsection{Gestione ticket}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneTicket}
+\end{center}
+\cuTab{cu:ticketInvio}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ticketRisposta}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}}{}{}{}
+\cuTab{cu:ticketChiudi}{\getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:ticketLettura}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore},\getTitletodesc{att:assistente}}{}{}{}
+
+\subsection{Ricerca contenuti}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/RicercaContenuti}
+\end{center}
+\cuTab{cu:ricercaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ricercaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ricercaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\subsection{Gestione prodotti mancanti}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneProdottiMancanti}
+\end{center}
+\cuTab{cu:richiestaInsProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:richiestaInsProduttore}{\getTitletodesc{att:utente}}{}{}{}
+
+\subsection{Visualizzazione contenuti pubblici}
+\begin{center}
+   \includegraphics[width=\textwidth]{assets/visualParadigm/Visualizzazione}
+\end{center}
+\cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneStatistichePubVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneNotizie}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
 
 
 
