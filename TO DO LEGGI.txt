@@ -1,8 +1,9 @@
-Rivedi immagini sfocate con export
-Accorpa use case seguendo quelli già fatti nei diagrammi 
+Usa extends o implements!
 Riempi tabelle, con gestione dei flussi secondari (necessità di macro aggiuntive)
 Controlla consistenza del testo
-Aggiungi <<subsystem>> ai diagrammi
+Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto in quanto errato)
+Requisito  "Prodotto fuori produzione"?
 
-a tempo perso:
+A tempo perso:
 Ordinare i casi d'uso dentro i diagrammi
+
