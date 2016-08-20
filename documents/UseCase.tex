@@ -101,9 +101,8 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:logout}{\formattaCU}{Logout}
 
 	\setCatCU{\ref*{pkg:iscrizione}}%B
-	\item \newListItem{cu:iscrizionePortale}{\formattaCU}{Iscrizione tramite modulo del portale}
-	\item \newListItem{cu:iscrizioneSocialVer}{\formattaCU}{Iscrizione tramite Social Network verificati}
-	\item \newListItem{cu:iscrizioneSocialNotVer}{\formattaCU}{Iscrizione tramite Social Network non verificati}
+	\item \newListItem{cu:iscrizionePortale}{\formattaCU}{Iscrizione tramite modulo}
+	\item \newListItem{cu:iscrizioneSocial}{\formattaCU}{Iscrizione tramite Social Network}
 	\item \newListItem{cu:iscrizioneApprovazione}{\formattaCU}{Iscrizione tramite approvazione}
 	\item \newListItem{cu:approvazioneIscrizione}{\formattaCU}{Approvazione iscrizione}
 
@@ -121,10 +120,9 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:rimozioneNotizia}{\formattaCU}{Rimozione notizia}
 
 	\setCatCU{\ref*{pkg:suggerimenti}}%E
-	\item \newListItem{cu:suggerimentoProdotti}{\formattaCU}{Suggerimento prodotti intelligente}
-	\item \newListItem{cu:prodottiSimili}{\formattaCU}{Suggerimento prodotti simili}
+	\item \newListItem{cu:suggerimentoProdotti}{\formattaCU}{Suggerimento prodotti}
 	\item \newListItem{cu:notizieSimili}{\formattaCU}{Suggerimento notizie simili}
-
+	
 	\setCatCU{\ref*{pkg:account}}%F
 	\item \newListItem{cu:accessoProfilo}{\formattaCU}{Accesso al proprio profilo}
 	\item \newListItem{cu:accessoImpostazioni}{\formattaCU}{Accesso alle proprie impostazioni}
@@ -169,15 +167,15 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
 	\item \newListItem{cu:visualizzazioneVetrina}{\formattaCU}{Visualizzazione vetrina}
-	\item \newListItem{cu:visualizzazioneStatistichePubVetrina}{\formattaCU}{Visualizzazione statische pubbliche vetrina}
-	\item \newListItem{cu:visualizzazioneProdottiVetrina}{\formattaCU}{Visualizzazione prodotti esposti in vetrina}
+	\item \newListItem{cu:visualizzazioneInfoVetrina}{\formattaCU}{Visualizzazione informazioni vetrina}
+%%	\item \newListItem{cu:visualizzazioneProdottiVetrina}{\formattaCU}{Visualizzazione prodotti esposti in vetrina}
 	\item \newListItem{cu:visualizzazioneProdotto}{\formattaCU}{Visualizzazione prodotto}
 	\item \newListItem{cu:visualizzazioneInfoProdotto}{\formattaCU}{Visualizzazione informazioni del prodotto}
 	\item \newListItem{cu:visualizzazioneRecProdotto}{\formattaCU}{Visualizzazione recensioni associate al prodotto}
-	\item \newListItem{cu:visualizzazioneStatProdotto}{\formattaCU}{Visualizzazione statistiche del prodotto}
+%	\item \newListItem{cu:visualizzazioneStatProdotto}{\formattaCU}{Visualizzazione statistiche del prodotto}
 	\item \newListItem{cu:visualizzazioneProfilo}{\formattaCU}{Visualizzazione profilo pubblico}
 	\item \newListItem{cu:visualizzazioneInfoProfilo}{\formattaCU}{Visualizzazione informazioni di un profilo pubblico}
-	\item \newListItem{cu:visualizzazioneStatProfilo}{\formattaCU}{Visualizzazione statistiche di un profilo pubblico}
+%	\item \newListItem{cu:visualizzazioneStatProfilo}{\formattaCU}{Visualizzazione statistiche di un profilo pubblico}
 	\item \newListItem{cu:visualizzazioneNotizie}{\formattaCU}{Visualizzazione notizie}
 	\item \newListItem{cu:visualizzazioneAggF}{\formattaCU}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
@@ -189,130 +187,262 @@ Vengono di seguito elencati i casi d'uso:
    \includegraphics[width=\textwidth]{assets/visualParadigm/Autenticazione}
 \end{center}
 \cuTab{cu:login}{\getTitletodesc{att:visitatore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:redattore}, \getTitletodesc{att:assistente}, \getTitletodesc{att:moderatore}, \getTitletodesc{att:amministratore}}{}{}{}
+
 
 \subsection{Gestione iscrizioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneIscrizione}
 \end{center}
 \cuTab{cu:iscrizionePortale}{\getTitletodesc{att:visitatore}}{}{}{}
-\cuTab{cu:iscrizioneSocialVer}{\getTitletodesc{att:visitatore}}{}{}{}
-\cuTab{cu:iscrizioneSocialNotVer}{\getTitletodesc{att:visitatore}}{}{}{}
+
+\tabcuvspace
+
+%Accorpa verificati e non verificati
+\cuTab{cu:iscrizioneSocial}{\getTitletodesc{att:visitatore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:iscrizioneApprovazione}{\getTitletodesc{att:visitatore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{}{}{}
+
 
 \subsection{Gestione vetrina}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneVentrina}
 \end{center}
 \cuTab{cu:personalizzaVetrinaInsDesc}{\getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:personalizzaVetrinaInsImg}{\getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:personalizzaVetrinaInsProd}{\getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:personalizzaVetrinaModProd}{\getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:statistichePrivateVetrina}{\getTitletodesc{att:produttore}}{}{}{}
+
 
 \subsection{Gestione notizie}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneNotizie}
 \end{center}
 \cuTab{cu:inserimentoNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:modificaNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:rimozioneNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+
+
 
 \subsection{Gestione suggerimenti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneSuggerimenti}
 \end{center}
+
+%Accorpa suggerimento intelligente e simili
 \cuTab{cu:suggerimentoProdotti}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-\cuTab{cu:prodottiSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:notizieSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
 
 \subsection{Gestione account}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneAccount}
 \end{center}
 \cuTab{cu:accessoProfilo}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:accessoImpostazioni}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:rimozioneAccountProprio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:rimozioneAccountAltrui}{\getTitletodesc{att:amministratore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:aggiungiAccountAFigura}{\getTitletodesc{att:amministratore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:rimuoviAccountDaFigura}{\getTitletodesc{att:amministratore}}{}{}{}
+
 
 \subsection{Gestione valutazioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneValutazioni}
 \end{center}
 \cuTab{cu:inserisciValutazioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:modificaValutazioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
 
 \subsection{Gestione recensioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneRecensioni}
 \end{center}
 \cuTab{cu:inserisciRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:modificaRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:eliminaRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:commentoRecensione}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:giudizioRecensione}{\getTitletodesc{att:utente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:segnalazioneContenutiInap}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:rimozioneContenutiInap}{\getTitletodesc{att:moderatore}}{}{}{}
+
 
 \subsection{Interazione tra figure}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/InterazioneTraFigure}
 \end{center}
 \cuTab{cu:followAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:unFollowAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
 
 \subsection{Gestione ticket}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneTicket}
 \end{center}
 \cuTab{cu:ticketInvio}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:ticketRisposta}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:ticketChiudi}{\getTitletodesc{att:assistente}}{}{}{}
-\cuTab{cu:ticketLettura}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore},\getTitletodesc{att:assistente}}{}{}{}
+
+\tabcuvspace
+
+\cuTab{cu:ticketLettura}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
+
 
 \subsection{Ricerca contenuti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/RicercaContenuti}
 \end{center}
 \cuTab{cu:ricercaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:ricercaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:ricercaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
 
 \subsection{Gestione prodotti mancanti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneProdottiMancanti}
 \end{center}
 \cuTab{cu:richiestaInsProdotto}{\getTitletodesc{att:utente}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:richiestaInsProduttore}{\getTitletodesc{att:utente}}{}{}{}
+
 
 \subsection{Visualizzazione contenuti pubblici}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/Visualizzazione}
 \end{center}
+%accorpa visalizza prodotti in vetrina e visualizza vetrina
 \cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-\cuTab{cu:visualizzazioneStatistichePubVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-\cuTab{cu:visualizzazioneProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
+%Cambiato da: statistiche pubbliche vetrina
+\cuTab{cu:visualizzazioneInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+%\tabcuvspace
+%
+%\cuTab{cu:visualizzazioneProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
+%Accorpa statistiche prodotto e informazioni prodotto
 \cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-\cuTab{cu:visualizzazioneStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
+%\cuTab{cu:visualizzazioneStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%
+%\tabcuvspace
+
 \cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
+%Accorpa informazioni profilo e statistiche profilo
 \cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-\cuTab{cu:visualizzazioneStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+%\tabcuvspace
+%
+%\cuTab{cu:visualizzazioneStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:visualizzazioneNotizie}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+
+\tabcuvspace
+
 \cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-
-
-
-
-
-
-
-
-
 
 
 
