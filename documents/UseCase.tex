@@ -6,13 +6,13 @@ Scopo del documento è la dettagliata descrizione delle modalità di interazione
 Ciò permetterà di mettere in evidenza eventuali conflitti tra i requisiti del sistema stesso.
 Tale analisi e descrizione dei casi d'uso verrà presentata tramite grafici che seguono lo standard UML.
 
-Nei casi in cui più attori possono accedere ad un determinato caso d’uso, ma uno
-solo ha come compito quella operazione, non verranno elencati tutti gli attori
-ma solo quello a cui quel caso appartiene.
+\noindent
+Si utilizzeranno le seguenti convenzioni:
+\begin{itemize}
+	\item Nei casi in cui più attori possono accedere ad un determinato caso d’uso, ma quest'ultimo è rivolto principalmente ad un solo attore, non verranno elencati tutti gli altri.
 
-Inoltre non verranno riportati tutti gli attori che hanno accesso ad un dato caso d'uso ma solo quello più generico.
-
-
+	\item Non verranno riportati tutti gli attori che hanno accesso ad un determinato caso d'uso, ma solo l'attore più generico.
+\end{itemize}
 
 \section{Elenco degli attori}
 Gli attori che interagiscono con il portale sono elencati di seguito:
@@ -182,15 +182,17 @@ Vengono di seguito elencati i casi d'uso:
 
 %{id}{attori}{pre}{post}{flusso}
 \section{Specifica dei casi d'uso}
+Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi per categoria:
+
 \subsection{Autenticazione}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/Autenticazione}
 \end{center}
-\cuTab{cu:login}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:login}{\getTitletodesc{att:visitatore}}{La persona connessa al sito è inizialmente riconosciuta come Visitatore. Il sistema mette a disposizione una funzionalità per effettuare il Login}{La persona connessa al sito è ora autenticata, come Utente o Produttore}{}
 
 \tabcuvspace
 
-\cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:redattore}, \getTitletodesc{att:assistente}, \getTitletodesc{att:moderatore}, \getTitletodesc{att:amministratore}}{}{}{}
+\cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:redattore}, \getTitletodesc{att:assistente}, \getTitletodesc{att:moderatore}, \getTitletodesc{att:amministratore}}{La persona connessa al sito è autenticata}{La persona connessa al sito non è autenticata, ed è ora un Visitatore}{}
 
 
 \subsection{Gestione iscrizioni}
