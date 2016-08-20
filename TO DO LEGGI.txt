@@ -2,7 +2,8 @@ Rivedi immagini sfocate con export
 Accorpa use case seguendo quelli già fatti nei diagrammi 
 Riempi tabelle, con gestione dei flussi secondari (necessità di macro aggiuntive)
 Controlla consistenza del testo
-
+Aggiungi <<subsystem>> ai diagrammi
+Controlla che non diciamo mai  che il visitatore è il padre di tutti
 
 a tempo perso:
 Ordinare i casi d'uso dentro i diagrammi
