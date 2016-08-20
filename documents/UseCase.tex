@@ -37,11 +37,11 @@ Gli attori che interagiscono con il portale sono descritti di seguito:
 
 \tabattvspace
 
-\attTab{att:utente}{\getTitletodesc{att:visitatore}}{\glsdesc*{utente}}
+\attTab{att:utente}{-}{\glsdesc*{utente}}
 
 \tabattvspace
 
-\attTab{att:produttore}{\getTitletodesc{att:visitatore}}{\glsdesc*{produttore}}
+\attTab{att:produttore}{-}{\glsdesc*{produttore}}
 
 \tabattvspace
 
@@ -192,65 +192,64 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:redattore}, \getTitletodesc{att:assistente}, \getTitletodesc{att:moderatore}, \getTitletodesc{att:amministratore}}{La persona connessa al sito è autenticata}{La persona connessa al sito non è autenticata, ed è ora un Visitatore}{}
-
+\cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona connessa al sito è autenticata}{La persona connessa al sito non è più autenticata, ed è ora un Visitatore}{}
 
 \subsection{Gestione iscrizioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneIscrizione}
 \end{center}
-\cuTab{cu:iscrizionePortale}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:iscrizionePortale}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha ora un account proprio, creato con i dati da essa inseriti}{}
 
 \tabcuvspace
 
 %Accorpa verificati e non verificati
-\cuTab{cu:iscrizioneSocial}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:iscrizioneSocial}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha ora un account proprio, creato tramite le API messe a disposizione dal Social Network utilizzato durante l'iscrizione}{}
 
 \tabcuvspace
 
-\cuTab{cu:iscrizioneApprovazione}{\getTitletodesc{att:visitatore}}{}{}{}
+\cuTab{cu:iscrizioneApprovazione}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha inviato correttamente una richiesta per la creazione di un account di tipo produttore ad essa associato}{}
 
 \tabcuvspace
 
-\cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{La persona è autenticata come utente e ha i privilegi di assistente. E' stata inviata una richiesta di creazione di un account di tipo produttore da parte di un Visitatore}{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore}{}
 
 
 \subsection{Gestione vetrina}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneVentrina}
 \end{center}
-\cuTab{cu:personalizzaVetrinaInsDesc}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaInsDesc}{\getTitletodesc{att:produttore}}{La persona è autenticata al sito come Produttore}{Il Produttore inserisce correttamente una descrizione nella vetrina}{}
 
 \tabcuvspace
 
-\cuTab{cu:personalizzaVetrinaInsImg}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaInsImg}{\getTitletodesc{att:produttore}}{La persona è autenticata al sito come Produttore}{Il Produttore inserisce correttamente un'immagine nella vetrina}{}
 
 \tabcuvspace
 
-\cuTab{cu:personalizzaVetrinaInsProd}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaInsProd}{\getTitletodesc{att:produttore}}{La persona è autenticata al sito come Produttore}{Il Produttore inserisce correttamente un prodotto nella vetrina}{}
 
 \tabcuvspace
 
-\cuTab{cu:personalizzaVetrinaModProd}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:personalizzaVetrinaModProd}{\getTitletodesc{att:produttore}}{La persona è autenticata al sito come Produttore. Il prodotto è presente nella sua vetrina}{Il Produttore modifica correttamente un prodotto nella sua vetrina}{} %%SETTARE UN PRODOTTO COME FUORI PRODUZIONE&&
 
 \tabcuvspace
 
-\cuTab{cu:statistichePrivateVetrina}{\getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:statistichePrivateVetrina}{\getTitletodesc{att:produttore}}{La persona è autenticata al sito come Produttore}{Il Produttore accede alle statistiche private della propria vetrina}{}
 
 
 \subsection{Gestione notizie}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneNotizie}
 \end{center}
-\cuTab{cu:inserimentoNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+\cuTab{cu:inserimentoNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata come utente e ha i privilegi di Redattore}{Il Redattore inserisce correttamente la notizia nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:modificaNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+\cuTab{cu:modificaNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata come utente e ha i privilegi di Redattore. La notizia è presente nel sistema}{Il Redattore modifica correttamente la notizia}{}
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneNotizia}{\getTitletodesc{att:redattore}}{}{}{}
+\cuTab{cu:rimozioneNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata come utente e ha i privilegi di Redattore. La notizia è presente nel sistema}{Il Redattore rimuove correttamente la notizia dal sistema}{}
 
 
 
@@ -351,11 +350,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneTicket}
 \end{center}
-\cuTab{cu:ticketInvio}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ticketInvio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
 
 \tabcuvspace
 
-\cuTab{cu:ticketRisposta}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:ticketRisposta}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
 
 \tabcuvspace
 
@@ -363,7 +362,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:ticketLettura}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:ticketLettura}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
 
 
 \subsection{Ricerca contenuti}
