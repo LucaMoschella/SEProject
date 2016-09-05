@@ -160,6 +160,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:commentoRecensione}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Commento a recensione}
 	\item \newListItem{req:giudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Giudizio recensione}
 	\item \newListItem{req:segnalazioneContenutiInap}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Segnalazione contenuti inappropriati}
+	\item \newListItem{req:visualizzazioneSegnContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Visualizzazione segnalazioni contenuti inappropriati}
 	\item \newListItem{req:rimozioneContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Rimozione contenuti inappropriati}
 
 	\setCatR{\ref*{cat:interazione}}%I
@@ -181,7 +182,8 @@ Vengono di seguito elencati i requisiti funzionali:
 
 	\setCatR{\ref*{cat:prodottimancanti}}%N
 	\item \newListItem{req:richiestaInsProdotto}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento prodotto a un produttore iscritto}
-	\item \newListItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento prodotto e del suo produttore}
+	\item \newListItem{req:visualizzazioneRichiesteInsProdotto}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Visualizzazione richieste inserimento prodotto}
+	\item \newListItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento di un produttore}
 	
 	\setCatR{\ref*{cat:visualizzazione}}%O
 	\item \newListItem{req:visualizzazioneVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione vetrina}
@@ -277,18 +279,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:rimozioneAccountAltrui}{Il portale deve permettere agli amministratori di rimuovere un account}{\prioritaL}{\statoUn}
 
-\tabreqvspace
-
-\reqTabRF{req:aggiungiAccountAFigura}{Il portale deve permette agli amministratori di aggiungere un account presente nel sistema al gruppo associato ad una figura. 
-Ciò significa che gli amministratori potranno aggiungere un account al gruppo degli account che hanno accesso alle funzionalità di una data figura, fornendogli tali funzionalità aggiuntive.}{\prioritaL}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:rimuoviAccountDaFigura}{Il portale deve permettere agli amministratori di rimuovere un account presente nel sistema dal gruppo associato ad una figura. Ciò significa che gli amministratori potranno rimuovere un account dal gruppo degli account che hanno accesso alle funzionalità di una data figura, rimuovendogli l'accesso a tali funzionalità, se non presenti in altre figure associate all'account.}{\prioritaL}{\statoUn}
-
-\tabreqvspace 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C - GESTIONE VETRINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\reqTabRF{req:personalizzaVetrina}{Il portale deve permettere la personalizzazione della vetrina ad ogni produttore}{\prioritaH}{\statoUn}
 
@@ -352,6 +343,17 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \tabreqvspace
 
+\reqTabRF{req:rimozioneAccountAltrui}{Il portale deve permettere agli amministratori di rimuovere un account}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:aggiungiAccountAFigura}{Il portale deve permette agli amministratori di aggiungere un account presente nel sistema al gruppo associato ad una figura. 
+Ciò significa che gli amministratori potranno aggiungere un account al gruppo degli account che hanno accesso alle funzionalità di una data figura, fornendogli tali funzionalità aggiuntive.}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:rimuoviAccountDaFigura}{Il portale deve permettere agli amministratori di rimuovere un account presente nel sistema dal gruppo associato ad una figura. Ciò significa che gli amministratori potranno rimuovere un account dal gruppo degli account che hanno accesso alle funzionalità di una data figura, rimuovendogli l'accesso a tali funzionalità, se non presenti in altre figure associate all'account.}{\prioritaL}{\statoUn}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - INTERAZIONE TRA FIGURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\reqTabRF{req:valutazioneProdotto}{Il portale deve permettere di valutare un prodotto}{\prioritaH}{\statoUn}
 
@@ -394,6 +396,10 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 \tabreqvspace
 
 \reqTabRF{req:segnalazioneContenutiInap}{Il portale deve permettere di segnalare contenuti inappropriati}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:visualizzazioneSegnContenutiInap}{Il portale deve permettere ai moderatori la visualizzazione delle segnalazioni dei contenuti inappropriati}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
@@ -448,11 +454,15 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \tabreqvspace
 
-\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema}{\prioritaL}{\statoUn}
+\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema. La segnalazione conterrà una scheda prodotto parzialmente compilata dall'utente per favorirne l'aggiunta da parte del produttore}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:richiestaInsProduttore}{Deve essere possibile segnalare al sistema l’assenza di un produttore ed allo stesso tempo di uno suo specifico prodotto}{\prioritaL}{\statoUn}
+\reqTabRF{req:visualizzazioneRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento prodotto indirizzate a lui, con la possibilità di inserire direttamente il prodotto, modificarne la scheda o rifiutare la richiesta.}{\prioritaL}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:richiestaInsProduttore}{Deve essere possibile segnalare al sistema l’assenza di un produttore}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
@@ -485,7 +495,7 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneProfilo}{Il portale deve permettere di visualizzare un dato pro}{\prioritaM}{\statoUn}
+\reqTabRF{req:visualizzazioneProfilo}{Il portale deve permettere di visualizzare un dato profilo}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 

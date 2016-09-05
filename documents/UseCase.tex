@@ -143,6 +143,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:commentoRecensione}{\formattaCU}{Commento a recensione}
 	\item \newListItem{cu:giudizioRecensione}{\formattaCU}{Giudizio recensione}
 	\item \newListItem{cu:segnalazioneContenutiInap}{\formattaCU}{Segnalazione contenuti inappropriati}
+	\item \newListItem{cu:visualizzazioneSegnContenutiInap}{\formattaCU}{Visualizzazione segnalazioni contenuti inappropriati}
 	\item \newListItem{cu:rimozioneContenutiInap}{\formattaCU}{Rimozione contenuti inappropriati}
 
 	\setCatCU{\ref*{pkg:interazione}}%I
@@ -163,6 +164,7 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
 	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto a un produttore iscritto}
+	\item \newListItem{cu:visualizzazioneRichiestaInsProdotto}{\formattaCU}{Visualizzazione richiesta inserimento prodotto}
 	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento prodotto e del suo produttore}
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
@@ -176,7 +178,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:visualizzazioneProfilo}{\formattaCU}{Visualizzazione profilo pubblico}
 	\item \newListItem{cu:visualizzazioneInfoProfilo}{\formattaCU}{Visualizzazione informazioni di un profilo pubblico}
 %	\item \newListItem{cu:visualizzazioneStatProfilo}{\formattaCU}{Visualizzazione statistiche di un profilo pubblico}
-	\item \newListItem{cu:visualizzazioneNotizie}{\formattaCU}{Visualizzazione notizie}
+	\item \newListItem{cu:visualizzazioneNotizia}{\formattaCU}{Visualizzazione notizia}
 	\item \newListItem{cu:visualizzazioneAggF}{\formattaCU}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
@@ -211,7 +213,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{La persona è autenticata come utente e ha i privilegi di assistente. E' stata inviata una richiesta di creazione di un account di tipo produttore da parte di un Visitatore}{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore}{}
+\cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{La persona è autenticata e ha i privilegi di assistente. E' stata inviata una richiesta di creazione di un account di tipo produttore da parte di un Visitatore}{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore}{}
 
 
 \subsection{Gestione vetrina}
@@ -241,15 +243,15 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneNotizie}
 \end{center}
-\cuTab{cu:inserimentoNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata come utente e ha i privilegi di Redattore}{Il Redattore inserisce correttamente la notizia nel sistema}{}
+\cuTab{cu:inserimentoNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata e ha i privilegi di Redattore}{Il Redattore inserisce correttamente la notizia nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:modificaNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata come utente e ha i privilegi di Redattore. La notizia è presente nel sistema}{Il Redattore modifica correttamente la notizia}{}
+\cuTab{cu:modificaNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}{Il Redattore modifica correttamente la notizia}{}
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata come utente e ha i privilegi di Redattore. La notizia è presente nel sistema}{Il Redattore rimuove correttamente la notizia dal sistema}{}
+\cuTab{cu:rimozioneNotizia}{\getTitletodesc{att:redattore}}{La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}{Il Redattore rimuove correttamente la notizia dal sistema}{}
 
 
 
@@ -259,136 +261,144 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 
 %Accorpa suggerimento intelligente e simili
-\cuTab{cu:suggerimentoProdotti}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:suggerimentoProdotti}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema e sta visualizzando un prodotto}{Viene suggerito un prodotto presente nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:notizieSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
-
+\cuTab{cu:notizieSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema e sta visualizzando una notizia}{Viene suggerita una notizia presente nel sistema}{}
 
 \subsection{Gestione account}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneAccount}
 \end{center}
-\cuTab{cu:accessoProfilo}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:accessoProfilo}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{La persona visualizza il suo profilo}{}
 
 \tabcuvspace
 
-\cuTab{cu:accessoImpostazioni}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:accessoImpostazioni}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{La persona visualizza la pagina delle proprie impostazioni}{}
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneAccountProprio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:rimozioneAccountProprio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{L'account della persona non è più presente nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneAccountAltrui}{\getTitletodesc{att:amministratore}}{}{}{}
+\cuTab{cu:rimozioneAccountAltrui}{\getTitletodesc{att:amministratore}}{La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}{L'account da rimuovere non è più presente nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:aggiungiAccountAFigura}{\getTitletodesc{att:amministratore}}{}{}{}
+\cuTab{cu:aggiungiAccountAFigura}{\getTitletodesc{att:amministratore}}{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}{L'account da modificare ha i privilegi della figura scelta, oltre a quelli già posseduti}{}
 
 \tabcuvspace
 
-\cuTab{cu:rimuoviAccountDaFigura}{\getTitletodesc{att:amministratore}}{}{}{}
+\cuTab{cu:rimuoviAccountDaFigura}{\getTitletodesc{att:amministratore}}{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}{L'account da modificare non ha più i privilegi della figura scelta, ma mantiene gli altri}{}
 
 
 \subsection{Gestione valutazioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneValutazioni}
 \end{center}
-\cuTab{cu:inserisciValutazioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:inserisciValutazioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il prodotto è presente nel sistema}{La valutazione dell'Utente per quel prodotto è aggiunta nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:modificaValutazioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:modificaValutazioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente e ha effettuato una valutazione di un prodotto presente nel sistema}{La valutazione viene modificata correttamente}{}
 
 
 \subsection{Gestione recensioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneRecensioni}
 \end{center}
-\cuTab{cu:inserisciRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:inserisciRecensioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato recensito dall'Utente}{La recensione dell'Utente per quel prodotto è aggiunta nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:modificaRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:modificaRecensioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}{La recensione viene modificata correttamente}{}
 
 \tabcuvspace
 
-\cuTab{cu:eliminaRecensioneProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:eliminaRecensioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}{La recensione viene eliminata correttamente}{}
 
 \tabcuvspace
 
-\cuTab{cu:commentoRecensione}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:commentoRecensione}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. La recensione di un prodotto è presente nel sistema}{Il commento viene aggiunto ai commenti di quella recensione}{}
 
 \tabcuvspace
 
-\cuTab{cu:giudizioRecensione}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:giudizioRecensione}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}{Il giudizio (positivo o negativo) per quella recensione viene aggiunto nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:segnalazioneContenutiInap}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:segnalazioneContenutiInap}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. Il contenuto è presente nel sistema}{La segnalazione viene inviata correttamente al Moderatore}{}
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneContenutiInap}{\getTitletodesc{att:moderatore}}{}{}{}
+\cuTab{cu:visualizzazioneSegnContenutiInap}{\getTitletodesc{att:moderatore}}{La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}{La segnalazione è stata gestita dal Moderatore}{}
+%marcare segfnalazione come risolta/eliminarla dalla lista
+
+\tabcuvspace
+
+\cuTab{cu:rimozioneContenutiInap}{\getTitletodesc{att:moderatore}}{La persona è autenticata ed ha i privilegi Moderatore. Il contenuto da rimuovere è presente nel sistema}{Il contenuto da rimuovere non è più presente nel sistema}{}
 
 
 \subsection{Interazione tra figure}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/InterazioneTraFigure}
 \end{center}
-\cuTab{cu:followAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:followAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. L'account da seguire è presente nel sistema}{L'account da seguire viene aggiunto alla lista degli account che si seguono}{}
 
 \tabcuvspace
 
-\cuTab{cu:unFollowAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:unFollowAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. L'account seguito è presente nel sistema}{L'account seguito viene rimosso dalla lista degli account che si seguono}{}
 
 
 \subsection{Gestione ticket}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneTicket}
 \end{center}
-\cuTab{cu:ticketInvio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ticketInvio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore}{Viene creato un nuovo ticket}{}
 
 \tabcuvspace
 
-\cuTab{cu:ticketRisposta}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:ticketRisposta}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{La persona è autenticata come Utente o come Produttore o ha i privilegi di Assistente. Il ticket è stato creato da quella persona}{La risposta al ticket è aggiunta nel sistema}{}
 
 \tabcuvspace
 
-\cuTab{cu:ticketChiudi}{\getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:ticketChiudi}{\getTitletodesc{att:assistente}}{La persona è autenticata e ha i privilegi di Assistente. Il ticket è presente nel sistema}{Il ticket viene etichettato come chiuso}{}
 
 \tabcuvspace
 
-\cuTab{cu:ticketLettura}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{}{}{}
+\cuTab{cu:ticketLettura}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{La persona è autenticata come Utente o come Produttore o ha i privilegi di Assistente. Il ticket è stato creato da quella persona}{Il ticket viene visualizzato}{}
 
 
 \subsection{Ricerca contenuti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/RicercaContenuti}
 \end{center}
-\cuTab{cu:ricercaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ricercaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{-}{I risultati della ricerca sono visualizzati}{}
 
 \tabcuvspace
 
-\cuTab{cu:ricercaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ricercaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{-}{I risultati della ricerca sono visualizzati}{}
 
 \tabcuvspace
 
-\cuTab{cu:ricercaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:ricercaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{-}{I risultati della ricerca sono visualizzati}{}
 
 
 \subsection{Gestione prodotti mancanti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneProdottiMancanti}
 \end{center}
-\cuTab{cu:richiestaInsProdotto}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:richiestaInsProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}{La richiesta è inviata al Produttore}{}
 
 \tabcuvspace
 
-\cuTab{cu:richiestaInsProduttore}{\getTitletodesc{att:utente}}{}{}{}
+\cuTab{cu:visualizzazioneRichiestaInsProdotto}{\getTitletodesc{att:produttore}}{La persona è autenticata come Produttore. La richiesta è presente nel sistema}{La richiesta è stata gestita dal Produttore}{}
+
+\tabcuvspace
+
+\cuTab{cu:richiestaInsProduttore}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}{La richiesta è inviata all'assistente tramite ticket}{}
 
 
 \subsection{Visualizzazione contenuti pubblici}
@@ -396,12 +406,12 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
    \includegraphics[width=\textwidth]{assets/visualParadigm/Visualizzazione}
 \end{center}
 %accorpa visalizza prodotti in vetrina e visualizza vetrina
-\cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}{La vetrina è mostrata}{}
 
 \tabcuvspace
 
 %Cambiato da: statistiche pubbliche vetrina
-\cuTab{cu:visualizzazioneInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}{Le informazioni relative alla vetrina sono mostrate}{}
 
 %\tabcuvspace
 %
@@ -409,16 +419,16 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}{Il prodotto è mostrato}{}
 
 \tabcuvspace
 
 %Accorpa statistiche prodotto e informazioni prodotto
-\cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}{Le informazioni e le statistiche relative al prodotto sono mostrate}{}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}{Le recensioni relative al prodotto sono mostrate}{}
 
 \tabcuvspace
 
@@ -426,12 +436,12 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %
 %\tabcuvspace
 
-\cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il profilo è presente nel sistema}{Il profilo è mostrato}{}
 
 \tabcuvspace
 
 %Accorpa informazioni profilo e statistiche profilo
-\cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il profilo è presente nel sistema}{Le informazioni e le statistiche relative al profilo sono mostrate}{}
 
 %\tabcuvspace
 %
@@ -439,11 +449,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneNotizie}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La notizia è presente nel sistema}{La notizia è mostrata}{}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+\cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore}{Vengono mostrati gli aggiornamenti delle persone che si stanno seguendo}{}
 
 
 
