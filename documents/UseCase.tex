@@ -12,6 +12,8 @@ Si utilizzeranno le seguenti convenzioni:
 	\item Nei casi in cui più attori possono accedere ad un determinato caso d’uso, ma quest'ultimo è rivolto principalmente ad un solo attore, non verranno elencati tutti gli altri.
 
 	\item Non verranno riportati tutti gli attori che hanno accesso ad un determinato caso d'uso, ma solo l'attore più generico.
+	
+	\item Nei diagrammi dei casi d'uso non viene riportato l'identificatore del singolo caso d'uso ma solo il titolo, per facilitarne la lettura.
 \end{itemize}
 
 \section{Elenco degli attori}
@@ -190,36 +192,153 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/Autenticazione}
 \end{center}
-\cuTab{cu:login}{\getTitletodesc{att:visitatore}}{La persona connessa al sito è inizialmente riconosciuta come Visitatore. Il sistema mette a disposizione una funzionalità per effettuare il Login}{La persona connessa al sito è ora autenticata, come Utente o Produttore}{}
+%*************** LOGIN *****************
+\cuTab{cu:login}%
+{\getTitletodesc{att:visitatore}}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{La persona connessa al sito è ora autenticata, come Utente o Produttore}%
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare il login 
+	\item Il sistema richiede le credenziali di autenticazione 
+	\item Il visitatore inserisce le credenziali di accesso negli appositi campi \label{culogin:3}
+	\item Il visitatore conferma i dati inseriti
+	\item Il sistema verifica che i dati inseriti corrispondano ad un account esistente \label{culogin:5}
+	\item Il sistema accetta le credenziali ricevute
+\end{enumCU}}%
+%
+\cuAlternativo{cu:login}
+{Flusso alternativo 1}%
+{Errore Login}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+	\item Dopo il punto \ref{culogin:5} il sistema rifiuta le credenziali
+\end{enumCU}}%
+%
+\cuAlternativo{cu:login}
+{Flusso alternativo 2}%
+{Annulla Login}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{culogin:3} l'utente annulla l'operazione di login
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:logout}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona connessa al sito è autenticata}{La persona connessa al sito non è più autenticata, ed è ora un Visitatore}{}
+%*************** LOGOUT *****************
+\cuTab{cu:logout}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona connessa al sito è autenticata}
+{La persona connessa al sito non è più autenticata, ed è ora un Visitatore}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona autenticata richiede di effettuare il logout
+	\item Il sistema effettua il logout richiesto
+\end{enumCU}}
 
 \subsection{Gestione iscrizioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneIscrizione}
 \end{center}
-\cuTab{cu:iscrizionePortale}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha ora un account proprio, creato con i dati da essa inseriti}{}
+%*************** ISCRIZIONE PORTALE *****************
+\cuTab{cu:iscrizionePortale}
+{\getTitletodesc{att:visitatore}}
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}
+{La persona ha ora un account proprio, creato con i dati da essa inseriti}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare l'iscrizione
+	\item Il sistema richiede i dati richiesti per effettuare l'iscrizione
+	\item Il visitatore inserisce i dati richiesti negli appositi campi \label{cuiscr:3}
+	\item Il visitatore conferma i dati inseriti
+	\item Il sistema verifica che i dati inseriti siano corretti e che l'identificatore dell'account che si sta creando non sia già presente \label{cuiscr:5}
+	\item Il sistema accetta le credenziali ricevute
+\end{enumCU}}
+%
+\cuAlternativo{cu:iscrizionePortale}
+{Flusso alternativo 1}%
+{Annulla iscrizione}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuiscr:3} l'utente annulla l'operazione di iscrizione
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:iscrizionePortale}
+{Flusso alternativo 2}%
+{Errore iscrizione}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuiscr:5} il sistema rileva un errore nei dati inseriti
+	\end{enumCU}}%
+
 
 \tabcuvspace
 
+%%%FORSE DA TOGLIERE -------------------------------------------------------------------------
 %Accorpa verificati e non verificati
 \cuTab{cu:iscrizioneSocial}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha ora un account proprio, creato tramite le API messe a disposizione dal Social Network utilizzato durante l'iscrizione}{}
 
 \tabcuvspace
 
-\cuTab{cu:iscrizioneApprovazione}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha inviato correttamente una richiesta per la creazione di un account di tipo produttore ad essa associato}{}
+%*************** ISCRIZIONE CON APPROVAZIONE *****************
+\cuTab{cu:iscrizioneApprovazione}
+{\getTitletodesc{att:visitatore}}
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}
+{Viene inserita nel sistema una richiesta di creazione di un account di tipo produttore}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare l'iscrizione tramite approvazione
+	\item Il sistema richiede i dati richiesti per effettuare l'iscrizione
+	\item Il visitatore inserisce i dati richiesti negli appositi campi \label{cuiscrapp:3}
+	\item Il visitatore conferma i dati inseriti
+	\item Il sistema verifica che i dati inseriti siano corretti e che l'identificatore dell'account che si sta creando non sia già presente \label{cuiscrapp:5}
+	\item Il sistema accetta le credenziali ricevute 
+\end{enumCU}}
+%
+\cuAlternativo{cu:iscrizioneApprovazione}
+{Flusso alternativo 1}%
+{Annulla iscrizione}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuiscrapp:3} l'utente annulla l'operazione di iscrizione
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:iscrizioneApprovazione}
+{Flusso alternativo 2}%
+{Errore iscrizione}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuiscrapp:5} il sistema rileva un errore nei dati inseriti
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:approvazioneIscrizione}{\getTitletodesc{att:assistente}}{La persona è autenticata e ha i privilegi di assistente. E' stata inviata una richiesta di creazione di un account di tipo produttore da parte di un Visitatore}{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore}{}
-
+%***************  APPROVAZIONE DI UNA RICHIESTA DI ISCRIZIONE *****************
+\cuTab{cu:approvazioneIscrizione}
+{\getTitletodesc{att:assistente}}
+{La persona connessa al sito è autenticata e ha i privilegi di assistente. Nel sistema è presente una richiesta di creazione di un account}
+{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore. Nel sistema non è più presente la richesta}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona con privilegi di assistente controlla una richiesta di creazione di account di tipo produttore \label{cuappriscr:1}
+	\item L'assistente approva la richiesta di creazione dell'account
+\end{enumCU}}
+%
+\cuAlternativo{cu:approvazioneIscrizione}
+{Flusso alternativo 1}%
+{Richiesta rifiutata}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{Nel sistema non è più presente la richesta}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuappriscr:1} l'assistente rifiuta la richiesta di creazione dell'account
+	\end{enumCU}}%
 
 \subsection{Gestione vetrina}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneVentrina}
 \end{center}
+%***************  INSERISCI DESCRIZIONE IN VETRINA *****************
 \cuTab{cu:personalizzaVetrinaInsDesc}{\getTitletodesc{att:produttore}}{La persona è autenticata al sito come Produttore}{Il Produttore inserisce correttamente una descrizione nella vetrina}{}
 
 \tabcuvspace
