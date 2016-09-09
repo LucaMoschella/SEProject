@@ -7,3 +7,6 @@ Requisito  "Prodotto fuori produzione"?
 A tempo perso:
 Ordinare i casi d'uso dentro i diagrammi
 
+
+IMPORTANTE:
+Semplificare il progetto! Valutare l'elimazione dell'integrazione con i social ì. (cit. lorenzo: occorre conosce, gestire e integrare le varie API)

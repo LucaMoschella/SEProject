@@ -393,15 +393,42 @@
 				\addlinespace[0.5em]
 				\tabheadreq{Precondizioni} &  #3 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Postcondizioni} &  #4 \\
-				\addlinespace[0.5em]
 				\tabheadreq{Flusso principale} &  #5 \\
+				\addlinespace[0.5em]
+				\tabheadreq{Postcondizioni} &  #4 \\
 				\bottomrule
 			\end{tabularx}
 		\end{minipage}
 	\end{center}
 }
 
+\newcommand{\tabtitleflussosec}[1]{\textit{#1}} 
+\newcommand{\lNum}[1]{\texttt{#1}} 
+\newcommand{\postNulle}{-} 
+
+%key #flusso nomeFLusso pre post flusso
+\newcommand{\cuAlternativo}[6]{%
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection
+			\begin{tabularx}{\textwidth}{ l  X }
+				\toprule
+				\multicolumn{2}{c}{\getTitle{#1} - \tabtitleflussosec{#2} }  \\
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+				\tabheadreq{ID} & \getIDtodesc{#1} \\ 
+				\addlinespace[0.5em] 
+				\tabheadreq{Nome} & #3 \\ 
+				\addlinespace[0.5em] 
+				\tabheadreq{Precondizioni} &  #4 \\
+				\addlinespace[0.5em]
+				\tabheadreq{Flusso alternativo} &  #6 \\
+				\addlinespace[0.5em]
+				\tabheadreq{Postcondizioni} &  #5 \\
+				\bottomrule
+			\end{tabularx}
+		\end{minipage}
+	\end{center}
+}
 
 
 \newcommand{\tabcuvspace}{\bigskip} 
@@ -476,6 +503,28 @@
 
 %lista numerata inseribile dentro tabelle
 \newenvironment{enumWork}
+{
+	\noindent
+	\begin{minipage}[t]{\linewidth}
+		\begin{enumerate*}[itemjoin={\newline}]
+		}
+		{
+		\end{enumerate*}
+	\end{minipage}
+}
+
+\newenvironment{enumCU}
+{
+	\noindent
+	\begin{minipage}[t]{\linewidth}
+		\begin{enumerate}[nosep, leftmargin=*]
+		}
+		{
+		\end{enumerate}
+	\end{minipage}
+}
+%lista numerata inseribile dentro tabelle
+\newenvironment{enumCUB}
 {
 	\noindent
 	\begin{minipage}[t]{\linewidth}
