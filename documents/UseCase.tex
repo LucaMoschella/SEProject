@@ -343,7 +343,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:personalizzaVetrinaInsDesc}
 {\getTitletodesc{att:produttore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
-{Il Produttore inserisce correttamente una descrizione nella vetrina}
+{Nel sistema è presente la descrizione della vetrina inserita dal Produttore}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un produttore richiedere di inserire una descrizione nella vetrina
 		\item Il sistema richiede il testo da inserire come descrizione \label{cuinsdescr:2}
@@ -365,7 +365,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {Flusso alternativo 2}%
 {Modifica descrizione}%
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è già presente una descrizione della vetrina}%
-{Il Produttore modifica correttamente una descrizione nella vetrina}%
+{Nel sistema è la descrizione della vetrina è stata correttamente modificata}%
 {\begin{enumCU}
 		\item Nel punto \ref{cuinsdescr:3} il sistema chiede di inserire la descrizione, il campo è precompilato con la descrizione attuale
 	\end{enumCU}}%
@@ -376,7 +376,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:personalizzaVetrinaInsImg}
 {\getTitletodesc{att:produttore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
-{Il Produttore inserisce correttamente un'immagine nella vetrina}
+{Nel sistema è presente l'immagine della vetrina inserita dal Produttore}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un produttore richiedere di inserire un immagine nella vetrina
 		\item Il sistema richiede il percorso nel file system dell'immagine da inserire 
@@ -409,7 +409,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:personalizzaVetrinaInsProd}
 {\getTitletodesc{att:produttore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
-{Il Produttore inserisce correttamente un prodotto nella vetrina}
+{Nel sistema è presente il prodotto che Produttore ha inserito in vetrina}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un produttore richiedere di inserire un prodotto nella vetrina
 		\item Il sistema richiede di compilare la scheda del prodotto da inserire
@@ -445,7 +445,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:personalizzaVetrinaModProd}
 {\getTitletodesc{att:produttore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il prodotto è presente nella sua vetrina}%
-{Il Produttore modifica correttamente un prodotto nella sua vetrina}
+{Nel sistema il prodotto è stato correttamente modificato}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un produttore richiede di modificare un prodotto presente nella sua vetrina
 		\item Il sistema richiede di compilare la scheda prodotto, percompilata con i dati già presenti nel sistema
@@ -498,7 +498,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:inserimentoNotizia}
 {\getTitletodesc{att:redattore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Redattore}
-{Il Redattore inserisce correttamente la notizia nel sistema}
+{Nel  sistema è presente la notizia inserita dal Redattore}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un redattore richiede di inserire una notizia  
 	\item Il sistema richiede di compilare i campi necessari all'inserimento della notizia
@@ -522,7 +522,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:modificaNotizia}
 {\getTitletodesc{att:redattore}}
 {La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}
-{Il Redattore modifica correttamente la notizia}
+{La notizia è stata correttamente modificata}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un redattore richiede di modificare una notizia presente nel sistema 
 	\item Il sistema mostra i campi necessari all'inserimento della notizia precompilati con i dati già presenti nel sistema
@@ -546,7 +546,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:rimozioneNotizia}
 {\getTitletodesc{att:redattore}}
 {La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}
-{Il Redattore rimuove correttamente la notizia dal sistema}
+{Nel sistema non è più presente la notizia eliminata}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un redattore richiede di eliminare una notizia presente nel sistema
 	\item Il sistema chiede conferma dell'eliminazione \label{curemnot:2}
