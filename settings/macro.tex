@@ -393,7 +393,7 @@
 				\addlinespace[0.5em]
 				\tabheadreq{Precondizioni} &  #3 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Flusso principale} &  #5 \\
+				\tabheadreq{Flusso principale} &  \begin{NoHyper}#5\end{NoHyper} \\
 				\addlinespace[0.5em]
 				\tabheadreq{Postcondizioni} &  #4 \\
 				\bottomrule
@@ -421,7 +421,7 @@
 				\addlinespace[0.5em] 
 				\tabheadreq{Precondizioni} &  #4 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Flusso alternativo} &  #6 \\
+				\tabheadreq{Flusso principale} &  \begin{NoHyper}#6\end{NoHyper} \\
 				\addlinespace[0.5em]
 				\tabheadreq{Postcondizioni} &  #5 \\
 				\bottomrule
@@ -513,18 +513,6 @@
 	\end{minipage}
 }
 
-\newenvironment{enumCU}
-{
-	\noindent
-	\begin{minipage}[t]{\linewidth}
-		\begin{enumerate}[nosep, leftmargin=*]
-		}
-		{
-		\end{enumerate}
-	\end{minipage}
-}
-
-
 %lista itemize inseribile dentro tabelle
 \newenvironment{itemWork}
 {
@@ -534,5 +522,16 @@
 		}
 		{
 		\end{itemize}
+	\end{minipage}
+}
+
+\newenvironment{enumCU}
+{
+	\noindent
+	\begin{minipage}[t]{\linewidth}
+		\begin{enumerate}[nosep, leftmargin=*]
+		}
+		{
+		\end{enumerate}
 	\end{minipage}
 }
