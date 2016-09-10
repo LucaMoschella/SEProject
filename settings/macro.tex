@@ -410,7 +410,7 @@
 \newcommand{\cuAlternativo}[6]{%
 	\begin{center}
 		\begin{minipage}[t]{\linewidth}
-			\phantomsection
+			%\phantomsection
 			\begin{tabularx}{\textwidth}{ l  X }
 				\toprule
 				\multicolumn{2}{c}{\getTitle{#1} - \tabtitleflussosec{#2} }  \\
@@ -523,17 +523,7 @@
 		\end{enumerate}
 	\end{minipage}
 }
-%lista numerata inseribile dentro tabelle
-\newenvironment{enumCUB}
-{
-	\noindent
-	\begin{minipage}[t]{\linewidth}
-		\begin{enumerate*}[itemjoin={\newline}]
-		}
-		{
-		\end{enumerate*}
-	\end{minipage}
-}
+
 
 %lista itemize inseribile dentro tabelle
 \newenvironment{itemWork}
@@ -544,16 +534,5 @@
 		}
 		{
 		\end{itemize}
-	\end{minipage}
-}
-
-\newenvironment{enumTest}
-{
-	\noindent
-	\begin{minipage}[t]{\linewidth}
-		\begin{enumerate}[nosep, leftmargin=*]
-		}
-		{
-		\end{enumerate}
 	\end{minipage}
 }
