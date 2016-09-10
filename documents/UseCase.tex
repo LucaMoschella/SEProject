@@ -569,16 +569,32 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 %***************  SUGGERIMENTO PRODOTTI *****************
 %Accorpa suggerimento intelligente e simili
-\cuTab{cu:suggerimentoProdotti}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema e sta visualizzando un prodotto}{Viene suggerito un prodotto presente nel sistema}{}
+\cuTab{cu:suggerimentoProdotti}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata nel sistema e sta visualizzando un prodotto}
+{Viene suggerito un prodotto presente nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un utente o un produttore richiede un consiglio su quale prodotto visualizzare
+	\item Il sistema mostra all'utente o al produttore un prodotto, sulla base della sua cronologia e delle sue valutazioni
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:notizieSimili}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema e sta visualizzando una notizia}{Viene suggerita una notizia presente nel sistema}{}
+%***************  SUGGERIMENTO NOTIZIE *****************
+\cuTab{cu:notizieSimili}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata nel sistema e sta visualizzando una notizia}
+{Viene suggerita una notizia presente nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un utente o un produttore richiede un consiglio su quale notizia visualizzare
+	\item Il sistema mostra all'utente o al produttore una notizia, sulla base della sua cronologia
+\end{enumCU}}
 
 \subsection{Gestione account}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneAccount}
 \end{center}
+%***************  ACCESSO PROFILO *****************
 \cuTab{cu:accessoProfilo}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{La persona visualizza il suo profilo}{}
 
 \tabcuvspace
