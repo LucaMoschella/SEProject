@@ -413,7 +413,7 @@
 			%\phantomsection
 			\begin{tabularx}{\textwidth}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\getTitle{#1} - \tabtitleflussosec{#2} }  \\
+				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}} - \tabtitleflussosec{#2} }  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 				\tabheadreq{ID} & \getIDtodesc{#1} \\ 
 				\addlinespace[0.5em] 
@@ -421,7 +421,7 @@
 				\addlinespace[0.5em] 
 				\tabheadreq{Precondizioni} &  #4 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Flusso principale} &  \begin{NoHyper}#6\end{NoHyper} \\
+				\tabheadreq{Flusso alternativo} &  \begin{NoHyper}#6\end{NoHyper} \\
 				\addlinespace[0.5em]
 				\tabheadreq{Postcondizioni} &  #5 \\
 				\bottomrule
