@@ -21,6 +21,9 @@ IMPORTANTE:
 
 )Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
 
+) Correggi la def di figura pubblica e amministrativa
+
+) Cambiare alcuni Gestione in Sistema
 
 A tempo perso:
 Ordinare i casi d'uso dentro i diagrammi (da fare dopo averli sistemati, vedi iMPORTANTE)

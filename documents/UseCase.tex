@@ -201,8 +201,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare il login 
 	\item Il sistema richiede le credenziali di autenticazione 
-	\item Il visitatore inserisce le credenziali di accesso negli appositi campi \label{culogin:3}
-	\item Il visitatore conferma i dati inseriti
+	\item Il Visitatore inserisce le credenziali di accesso negli appositi campi \label{culogin:3}
+	\item Il Visitatore conferma i dati inseriti
 	\item Il sistema verifica che i dati inseriti corrispondano ad un account esistente \label{culogin:5}
 	\item Il sistema accetta le credenziali ricevute
 \end{enumCU}}%
@@ -222,7 +222,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{culogin:3} l'utente annulla l'operazione di login
+		\item Dopo il punto \ref{culogin:3} il Visitatore annulla l'operazione di login
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -247,10 +247,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è inizialmente riconosciuta come Visitatore}
 {La persona ha ora un account proprio, creato con i dati da essa inseriti}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare l'iscrizione
-	\item Il sistema richiede i dati richiesti per effettuare l'iscrizione
-	\item Il visitatore inserisce i dati richiesti negli appositi campi \label{cuiscr:3}
-	\item Il visitatore conferma i dati inseriti
+	\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare l'iscrizione
+	\item Il sistema richiede i dati richiesti per effettuare l'iscrizione tra cui un identificatore all'interno del sistema
+	\item Il Visitatore inserisce i dati richiesti negli appositi campi \label{cuiscr:3}
+	\item Il Visitatore conferma i dati inseriti
 	\item Il sistema verifica che i dati inseriti siano corretti e che l'identificatore dell'account che si sta creando non sia già presente \label{cuiscr:5}
 	\item Il sistema accetta le credenziali ricevute
 \end{enumCU}}
@@ -278,7 +278,18 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %%%FORSE DA TOGLIERE -------------------------------------------------------------------------
 %Accorpa verificati e non verificati
-\cuTab{cu:iscrizioneSocial}{\getTitletodesc{att:visitatore}}{La persona è connessa al sito come Visitatore}{La persona ha ora un account proprio, creato tramite le API messe a disposizione dal Social Network utilizzato durante l'iscrizione}{}
+\cuTab{cu:iscrizioneSocial}
+{\getTitletodesc{att:visitatore}}
+{La persona è connessa al sito come Visitatore}
+{La persona ha ora un account proprio, creato tramite le API messe a disposizione dal Social Network utilizzato durante l'iscrizione}
+{\begin{enumCU}
+		\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare l'iscrizione tramite Social Network
+		\item Il sistema richiede i dati richiesti per effettuare l'iscrizione
+		\item Il visitatore inserisce i dati richiesti negli appositi campi \label{cuiscrapp:3}
+		\item Il visitatore conferma i dati inseriti
+		\item Il sistema verifica che i dati inseriti siano corretti e che l'identificatore dell'account che si sta creando non sia già presente \label{cuiscrapp:5}
+		\item Il sistema accetta le credenziali ricevute 
+	\end{enumCU}}
 
 \tabcuvspace
 
