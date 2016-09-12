@@ -1,12 +1,26 @@
-Usa extends o implements!
-Riempi tabelle, con gestione dei flussi secondari (necessità di macro aggiuntive)
-Controlla consistenza del testo
-Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto in quanto errato)
-Requisito  "Prodotto fuori produzione"?
+IMPORTANTE:
+) Controlla consistenza del testo
+
+)Semplificare il progetto! Valutare l'elimazione dell'integrazione con i social ì. (cit. lorenzo: occorre conoscere, gestire e integrare le varie API nel progetto)
+
+)CAMBIARE NOME NEL DIAGRAMMA UML DEL CASO D'USO MODIFICA IMPOSTAZIONE, IN GESTIONE ACCOUNT
+
+)Rivedi i casi d'uso che hanno a ce fare con i prodotti (inserimento prodott, richiesta ins. prodotto)
+
+)Diagramma GANTT
+
+)Cambia nomi dei casi d'uso nel diagramma UML di "Gestione proodtti mancanti"
+
+)Uniforma la "visualizzazione": si visualizza una cosa alla volta, o più cose alla volta e nel flusso ne selezioni e visualizzi una?
+
+)Spiega, controllo che non sia detto altrimenti: cosa intendiamo per "privilegi". Aggiungere un privilegio di Redattore ad un account, significa aggiungere quell'account al gruppo dei redattori.
+
+)Usa extends o implements!
+
+)Requisito  "Prodotto fuori produzione"? (che fino ha fatto nei casi d'uso?)
+
+)Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
+
 
 A tempo perso:
-Ordinare i casi d'uso dentro i diagrammi
-
-
-IMPORTANTE:
-Semplificare il progetto! Valutare l'elimazione dell'integrazione con i social ì. (cit. lorenzo: occorre conosce, gestire e integrare le varie API)
+Ordinare i casi d'uso dentro i diagrammi (da fare dopo averli sistemati, vedi iMPORTANTE)

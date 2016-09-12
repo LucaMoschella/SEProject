@@ -138,7 +138,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	
 	\setCatR{\ref*{cat:account}}%F
 	\item \newListItem{req:accessoProfilo}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Accesso al proprio profilo}
-	\item \newListItem{req:accessoImpostazioni}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Accesso alle proprie impostazioni}
+	\item \newListItem{req:modificaImpostazioni}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Modifica delle proprie impostazioni}
 	\item \newListItem{req:rimozioneAccountProprio}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Rimozione account proprio}
 	
 	\item \newListItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
@@ -159,6 +159,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:eliminaRecensioneProdotto}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Rimozione recensione propria}
 	\item \newListItem{req:commentoRecensione}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Commento a recensione}
 	\item \newListItem{req:giudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Giudizio recensione}
+	\item \newListItem{req:modificaGiudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Modifica giudizio recensione}
 	\item \newListItem{req:segnalazioneContenutiInap}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Segnalazione contenuti inappropriati}
 	\item \newListItem{req:visualizzazioneSegnContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Visualizzazione segnalazioni contenuti inappropriati}
 	\item \newListItem{req:rimozioneContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Rimozione contenuti inappropriati}
@@ -335,7 +336,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
-\reqTabRF{req:accessoImpostazioni}{Il portale deve permettere l'accesso alle impostazioni e la modifica di queste ultime}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaImpostazioni}{Il portale deve permettere l'accesso alle impostazioni e la modifica di queste ultime}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
@@ -392,6 +393,10 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 \tabreqvspace
 
 \reqTabRF{req:giudizioRecensione}{Il portale deve permettere di esprimere un giudizio, positivo o negativo, di una recensione}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:modificaGiudizioRecensione}{Il portale deve permettere di modificare un giudizio, positivo o negativo, espresso su una recensione}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 

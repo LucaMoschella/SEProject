@@ -127,12 +127,12 @@ Vengono di seguito elencati i casi d'uso:
 	
 	\setCatCU{\ref*{pkg:account}}%F
 	\item \newListItem{cu:accessoProfilo}{\formattaCU}{Accesso al proprio profilo}
-	\item \newListItem{cu:accessoImpostazioni}{\formattaCU}{Accesso alle proprie impostazioni}
+	\item \newListItem{cu:modificaImpostazioni}{\formattaCU}{Modifica delle proprie impostazioni}
 	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
 
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
-	\item \newListItem{cu:aggiungiAccountAFigura}{\formattaCU}{Aggiungi funzionalità di una figura ad account}
-	\item \newListItem{cu:rimuoviAccountDaFigura}{\formattaCU}{Rimuovi funzionalità di una figura da account}
+	\item \newListItem{cu:aggiungiAccountAFigura}{\formattaCU}{Aggiungi privilegi ad account}
+	\item \newListItem{cu:rimuoviAccountDaFigura}{\formattaCU}{Rimuovi privilegi da account}
 
 	\setCatCU{\ref*{pkg:gestionevalutazione}}%G
 	\item \newListItem{cu:inserisciValutazioneProdotto}{\formattaCU}{Inserimento valutazione}
@@ -144,8 +144,9 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:eliminaRecensioneProdotto}{\formattaCU}{Rimozione recensione propria}
 	\item \newListItem{cu:commentoRecensione}{\formattaCU}{Commento a recensione}
 	\item \newListItem{cu:giudizioRecensione}{\formattaCU}{Giudizio recensione}
+	\item \newListItem{cu:modificaGiudizioRecensione}{\formattaCU}{Modifica giudizio recensione}
 	\item \newListItem{cu:segnalazioneContenutiInap}{\formattaCU}{Segnalazione contenuti inappropriati}
-	\item \newListItem{cu:visualizzazioneSegnContenutiInap}{\formattaCU}{Visualizzazione segnalazioni contenuti inappropriati}
+	\item \newListItem{cu:visualizzazioneSegnContenutiInap}{\formattaCU}{Visualizzazione segnalazioni contenuti}
 	\item \newListItem{cu:rimozioneContenutiInap}{\formattaCU}{Rimozione contenuti inappropriati}
 
 	\setCatCU{\ref*{pkg:interazione}}%I
@@ -165,9 +166,9 @@ Vengono di seguito elencati i casi d'uso:
 
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
-	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto a un produttore iscritto}
-	\item \newListItem{cu:visualizzazioneRichiestaInsProdotto}{\formattaCU}{Visualizzazione richiesta inserimento prodotto}
-	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento prodotto e del suo produttore}
+	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto}
+	\item \newListItem{cu:visualizzazioneRichiestaInsProdotto}{\formattaCU}{Visualizzazione richiesta prodotto}
+	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento produttore e prodotto}
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
 	\item \newListItem{cu:visualizzazioneVetrina}{\formattaCU}{Visualizzazione vetrina}
@@ -595,147 +596,672 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneAccount}
 \end{center}
 %***************  ACCESSO PROFILO *****************
-\cuTab{cu:accessoProfilo}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{La persona visualizza il suo profilo}{}
+\cuTab{cu:accessoProfilo}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata nel sistema}
+{La persona visualizza il suo profilo}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare il proprio profilo
+	\item Il sistema mostra alla persona la pagina del proprio profilo
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:accessoImpostazioni}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{La persona visualizza la pagina delle proprie impostazioni}{}
+%***************  ACCESSO IMPOSTAZIONI *****************
+\cuTab{cu:modificaImpostazioni}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata nel sistema}
+{La persona modifica le proprie impostazioni}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare la apgine delle proprie impostazioni
+	\item Il sistema mostra alla persona la pagina delle proprie impostazione
+	\item La persona modifica i campi presenti nella pagina \label{cumodimp:1}
+	\item La persona conferma le modifiche effettuate
+	\item Il sistema acceta le modifiche effettuate
+\end{enumCU}}
+%
+\cuAlternativo{cu:modificaImpostazioni}
+{Flusso alternativo 1}%
+{Annulla modifica}%
+{La persona è autenticata nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cumodimp:1} annulla le modifiche effettuate
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneAccountProprio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata nel sistema}{L'account della persona non è più presente nel sistema}{}
+%***************  RIMOZIONE ACCOUNT PROPRIO  *****************
+\cuTab{cu:rimozioneAccountProprio}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata nel sistema}
+{La persona non più autenticata nel sistema. L'account della persona non è più presente nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di eliminare il proprio account
+	\item Il sistema chiede conferma dell'eliminazione dell'account \label{curimaccprop:1}
+	\item La persona conferma l'eliminazione
+\end{enumCU}}
+%
+\cuAlternativo{cu:rimozioneAccountProprio}
+{Flusso alternativo 1}%
+{Annulla eliminazione}%
+{La persona è autenticata nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curimaccprop:1} la persona annulla l`eliminazione dell'account
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneAccountAltrui}{\getTitletodesc{att:amministratore}}{La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}{L'account da rimuovere non è più presente nel sistema}{}
+%***************  RIMOZIONE ACCOUNT ALTRUI  *****************
+\cuTab{cu:rimozioneAccountAltrui}
+{\getTitletodesc{att:amministratore}}
+{La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}
+{L'account da rimuovere non è più presente nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Amministratore richiede di eliminare un account
+	\item Il sistema chiede conferma dell'eliminazione dell'account \label{curimaccaltr:1}
+	\item L'Amministratore conferma l'eliminazione
+\end{enumCU}}
+%
+\cuAlternativo{cu:rimozioneAccountAltrui}
+{Flusso alternativo 1}%
+{Annulla eliminazione}%
+{La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curimaccaltr:1} l'Amministratore annulla l`eliminazione dell'account
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:aggiungiAccountAFigura}{\getTitletodesc{att:amministratore}}{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}{L'account da modificare ha i privilegi della figura scelta, oltre a quelli già posseduti}{}
+%***************  Aggiungi privilegi  *****************
+\cuTab{cu:aggiungiAccountAFigura}
+{\getTitletodesc{att:amministratore}}
+{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}
+{L'account da modificare ha i privilegi della figura scelta, oltre a quelli già posseduti}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Amministratore vuole fornire un ulteriore privilegio ad un account
+	\item Il sistema chiede quali privilegi fornire all'account 
+	\item L'Amministratore seleziona quale privilegio si vuole fornire all'account \label{cufornpriv:1}
+	\item L'Amministratore conferma la selezione
+	\item Il sistema accetta la selezione effettuata
+\end{enumCU}}
+%
+\cuAlternativo{cu:aggiungiAccountAFigura}
+{Flusso alternativo 1}%
+{Annulla operazione}%
+{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cufornpriv:1} l'Amministratore annulla l'operazione
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:rimuoviAccountDaFigura}{\getTitletodesc{att:amministratore}}{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}{L'account da modificare non ha più i privilegi della figura scelta, ma mantiene gli altri}{}
+%***************  Rimuovi privilegi  *****************
+\cuTab{cu:rimuoviAccountDaFigura}
+{\getTitletodesc{att:amministratore}}
+{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}
+{L'account da modificare non ha più i privilegi della figura scelta, ma mantiene gli altri}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Amministratore vuole rimuovere un privilegio ad un account
+	\item Il sistema chiede quali privilegi rimuovere dall'account  fra quelli che possiede
+	\item L'Amministratore seleziona quale privilegio si vuole rimuovere dall'account \label{curimpriv:1}
+	\item L'Amministratore conferma la selezione
+	\item Il sistema accetta la selezione effettuata
+\end{enumCU}}
+%
+\cuAlternativo{cu:rimuoviAccountDaFigura}
+{Flusso alternativo 1}%
+{Annulla operazione}%
+{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curimpriv:1} l'Amministratore annulla l'operazione
+	\end{enumCU}}%
 
 
+%***************  Gestione valutazioni *****************
 \subsection{Gestione valutazioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneValutazioni}
 \end{center}
-\cuTab{cu:inserisciValutazioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il prodotto è presente nel sistema}{La valutazione dell'Utente per quel prodotto è aggiunta nel sistema}{}
+\cuTab{cu:inserisciValutazioneProdotto}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato valutato dall'Utente}
+{La valutazione dell'Utente per quel prodotto è aggiunta nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la valutazione di un prodotto presente nel sistema
+	\item Il sistema richiede all'Utente la valutazione per quel prodotto
+	\item L'Utente inserisce la valutazione
+	\item Il sistema accetta la valutazione
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:modificaValutazioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente e ha effettuato una valutazione di un prodotto presente nel sistema}{La valutazione viene modificata correttamente}{}
+\cuTab{cu:modificaValutazioneProdotto}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente e ha effettuato una valutazione di un prodotto presente nel sistema}
+{La valutazione viene modificata correttamente}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di modificare una sua valutazione di un prodotto presente nel sistema
+	\item Il sistema mostra all'Utente la valutazione che ha effettuato per quel prodotto
+	\item L'Utente inserisce la nuova valutazione
+	\item Il sistema accetta la nuova valutazione inserita
+\end{enumCU}}
 
-
+%***************  Gestione recensione *****************
 \subsection{Gestione recensioni}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneRecensioni}
 \end{center}
-\cuTab{cu:inserisciRecensioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato recensito dall'Utente}{La recensione dell'Utente per quel prodotto è aggiunta nel sistema}{}
+\cuTab{cu:inserisciRecensioneProdotto}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato recensito dall'Utente}
+{La recensione dell'Utente per quel prodotto è aggiunta nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la recensione di un prodotto presente nel sistema
+	\item Il sistema richiede all'Utente il testo da inserire come recensione
+	\item L'Utente inserisce la recensione \label{addrec:3}
+	\item L'Utente conferma la recensione inserita
+	\item Il sistema accetta la recensione
+\end{enumCU}}
+%
+\cuAlternativo{cu:inserisciRecensioneProdotto}
+{Flusso alternativo 1}%
+{Annulla inserimento}%
+{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato recensito dall'Utente}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{addrec:3}, l'Utente annulla l'operazione di inserimento
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:modificaRecensioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}{La recensione viene modificata correttamente}{}
+\cuTab{cu:modificaRecensioneProdotto}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
+{La recensione viene modificata correttamente}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di modificare una sua recensione di un prodotto presente nel sistema
+	\item Il sistema mostra all'Utente la recensione che ha effettuato per quel prodotto
+	\item L'Utente inserisce la nuova recensione \label{newrec:3}
+	\item L'Utente conferma la nuova recensione inserita
+	\item Il sistema accetta la nuova recensione
+\end{enumCU}}
+%
+\cuAlternativo{cu:modificaRecensioneProdotto}
+{Flusso alternativo 1}%
+{Annulla modifiche}%
+{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{newrec:3}, l'Utente annulla l'operazione di modifica
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:eliminaRecensioneProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}{La recensione viene eliminata correttamente}{}
+\cuTab{cu:eliminaRecensioneProdotto}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
+{La recensione viene eliminata correttamente}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di rimuovere una sua recensione di un prodotto presente nel sistema
+	\item Il sistema mostra all'Utente la recensione che ha effettuato per quel prodotto
+	\item Il sistema richiede di confermare la rimozione \label{remrec:3}
+	\item L'Utente conferma la rimozione
+	\item Il sistema rimuove la recensione
+\end{enumCU}}
+%
+\cuAlternativo{cu:eliminaRecensioneProdotto}
+{Flusso alternativo 1}%
+{Annulla rimozione}%
+{La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{remrec:3}, l'Utente annulla l'operazione di rimozione
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:commentoRecensione}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. La recensione di un prodotto è presente nel sistema}{Il commento viene aggiunto ai commenti di quella recensione}{}
+\cuTab{cu:commentoRecensione}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata come Utente o come Produttore. La recensione di un prodotto è presente nel sistema}
+{Il commento viene aggiunto ai commenti di quella recensione}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona, autenticata come Utente o come Produttore, richiede di effettuare un commento ad una recensione di un prodotto presente nel sistema
+	\item Il sistema mostra alla persona la recensione
+	\item Il sistema richiede di inserire il commento 
+	\item La persona inserisce il commento \label{addcom:3}
+	\item La persona conferma il commento inserito
+	\item Il sistema accetta il commento
+\end{enumCU}}
+%
+\cuAlternativo{cu:commentoRecensione}
+{Flusso alternativo 1}%
+{Annulla rimozione}%
+{La persona è autenticata come Utente o come Produttore. La recensione di un prodotto è presente nel sistema}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{addcom:3}, la persona, autenticata come Utente o come Produttore, annulla l'operazione di inserimento
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:giudizioRecensione}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}{Il giudizio (positivo o negativo) per quella recensione viene aggiunto nel sistema}{}
+\cuTab{cu:giudizioRecensione}
+{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}
+{Il giudizio per quella recensione è presente nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di esprimere un giudizio (positivo o negativo) su una recensione di un prodotto presente nel sistema
+	\item Il sistema mostra all'Utente la recensione
+	\item Il sistema richiede all'Utente il giudizio per quella recensione
+	\item L'Utente inserisce il giudizio
+	\item Il sistema accetta il giudizio
+\end{enumCU}}
+
+
+\cuTab{cu:modificaGiudizioRecensione}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}
+{Il giudizio per quella recensione viene modificato correttamente}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente richiede di modificare un giudizio di una recensione di un prodotto presente nel sistema
+	\item Il sistema mostra all'Utente il suo giudizio per quella recensione
+	\item Il sistema richiede all'Utente il nuovo giudizio per quella recensione
+	\item L'Utente inserisce il nuovo giudizio
+	\item Il sistema accetta il nuovo giudizio
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:segnalazioneContenutiInap}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. Il contenuto è presente nel sistema}{La segnalazione viene inviata correttamente al Moderatore}{}
+\cuTab{cu:segnalazioneContenutiInap}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata come Utente o come Produttore. Il contenuto è presente nel sistema}
+{La segnalazione viene inviata correttamente al Moderatore}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona, autenticata come Utente o come Produttore, richiede di segnalare un contenuto inappropriato presente nel sistema
+	\item Il sistema richiede alla persona di specificare il motivo della segnalazione
+	\item L'Utente inserisce il motivo della segnalazione
+	\item Il sistema accetta la segnalazione
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneSegnContenutiInap}{\getTitletodesc{att:moderatore}}{La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}{La segnalazione è stata gestita dal Moderatore}{}
+\cuTab{cu:visualizzazioneSegnContenutiInap}
+{\getTitletodesc{att:moderatore}}
+{La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}
+{La segnalazione è stata gestita dal Moderatore}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una Moderatore richiede di visualizzare una segnalazione
+	\item Il sistema mostra al Moderatore la segnalazione \label{delsegn:3}
+\end{enumCU}}
+%
+\cuAlternativo{cu:visualizzazioneSegnContenutiInap}
+{Flusso alternativo 1}%
+{Elimina segnalazione}%
+{La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}
+{La segnalazione non è più presente nel sistema}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{delsegn:3}, il Moderatore elimina la segnalazione
+\end{enumCU}}%
 %marcare segfnalazione come risolta/eliminarla dalla lista
 
 \tabcuvspace
 
-\cuTab{cu:rimozioneContenutiInap}{\getTitletodesc{att:moderatore}}{La persona è autenticata ed ha i privilegi Moderatore. Il contenuto da rimuovere è presente nel sistema}{Il contenuto da rimuovere non è più presente nel sistema}{}
+\cuTab{cu:rimozioneContenutiInap}
+{\getTitletodesc{att:moderatore}}
+{La persona è autenticata ed ha i privilegi Moderatore. Il contenuto da rimuovere è presente nel sistema}
+{Il contenuto da rimuovere non è più presente nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Moderatore richiede di rimuovere un contenuto inappropriato presente nel sistema
+	\item Il sistema richiede al Moderatore di confermare la rimozione
+	\item Il Moderatore conferma la rimozione \label{delcont:3}
+	\item Il sistema rimuove il contenuto inappropriato
+\end{enumCU}}
+%
+\cuAlternativo{cu:rimozioneContenutiInap}
+{Flusso alternativo 1}%
+{Annulla rimozione}%
+{La persona è autenticata ed ha i privilegi Moderatore. Il contenuto da rimuovere è presente nel sistema}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{delcont:3}, il Moderatore annulla l'operazione di rimozione
+\end{enumCU}}%
 
 
 \subsection{Interazione tra figure}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/InterazioneTraFigure}
 \end{center}
-\cuTab{cu:followAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. L'account da seguire è presente nel sistema}{L'account da seguire viene aggiunto alla lista degli account che si seguono}{}
+%****************** FOLLOW ACCOUNT ***********
+\cuTab{cu:followAccount}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata come Utente o come Produttore. L'account da seguire è presente nel sistema}
+{L'account da seguire viene aggiunto alla lista degli account che si seguono}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore vuole seguire un altro account per riceverne gli aggiornamenti
+	\item Il sistema accetta l`operazione
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:unFollowAccount}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore. L'account seguito è presente nel sistema}{L'account seguito viene rimosso dalla lista degli account che si seguono}{}
-
+%****************** UNFOLLOW ACCOUNT ***********
+\cuTab{cu:unFollowAccount}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata come Utente o come Produttore. L'account seguito è presente nel sistema}
+{L'account seguito viene rimosso dalla lista degli account che si seguono}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore vuole smettere di seguire un altro account che già si segue
+	\item Il sistema accetta l`operazione
+\end{enumCU}}
 
 \subsection{Gestione ticket}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneTicket}
 \end{center}
-\cuTab{cu:ticketInvio}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore}{Viene creato un nuovo ticket}{}
+%****************** INVIO TICKET ***********
+\cuTab{cu:ticketInvio}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata come Utente o come Produttore}
+{Viene creato un nuovo ticket}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiedono la creazione di un ticket per ricevere assistenza
+	\item Il sistema richiede di compilare la scheda necessaria alla creazione del ticket
+	\item L'utente (o il produttore) compilano la scheda \label{cucretick:1}
+	\item L'utente (o il produttore) confermano i dati inseriti
+	\item Il sistema accetta la creazione del ticket
+\end{enumCU}}
+%
+\cuAlternativo{cu:ticketInvio}
+{Flusso alternativo 1}%
+{Annulla creazione ticket}%
+{La persona è autenticata come Utente o come Produttore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cucretick:1} l'Utente (o il produttore) annulla la creazione del ticket
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:ticketRisposta}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{La persona è autenticata come Utente o come Produttore o ha i privilegi di Assistente. Il ticket è stato creato da quella persona}{La risposta al ticket è aggiunta nel sistema}{}
+%****************** RISPOSTA TICKET ***********
+\cuTab{cu:ticketRisposta}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}
+{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}
+{La risposta al ticket è aggiunta nel sistema}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando il creatore di un ticket o un Assistente richiedono di inserire una risposta ad un ticket
+	\item Il sistema richiede di compilare la scheda necessaria alla creazione della risposta
+	\item Colui che intende inserire la risposta compila la scheda necessaria all'inserimento della risposta\label{curisptick:1}
+	\item Colui che intende inserire la risposta conferma i dati inseriti
+	\item Il sistema accetta la creazione della risposta al ticket
+\end{enumCU}}
+%
+\cuAlternativo{cu:ticketRisposta}
+{Flusso alternativo 1}%
+{Annulla risposta ticket}%
+{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curisptick:1} colui che intende inserire la risposta annulla l'inserimento
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:ticketChiudi}{\getTitletodesc{att:assistente}}{La persona è autenticata e ha i privilegi di Assistente. Il ticket è presente nel sistema}{Il ticket viene etichettato come chiuso}{}
+%****************** CHIUDI TICKET ***********
+\cuTab{cu:ticketChiudi}
+{\getTitletodesc{att:assistente}}
+{La persona è autenticata e ha i privilegi di Assistente. Il ticket è presente nel sistema}
+{Il ticket viene etichettato come chiuso}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando il creatore di un Assistente richiede di chiudere un ticket
+	\item Il sistema richiede conferma della chiusura \label{cuchiutick:1}
+	\item L'Assistente conferma la chiusura del ticket
+	\item Il sistema accetta l'operazione
+\end{enumCU}}
+%
+\cuAlternativo{cu:ticketChiudi}
+{Flusso alternativo 1}%
+{Annulla chiusura ticket}%
+{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuchiutick:1} colui che intende inserire la risposta annulla l'inserimento
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:ticketLettura}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}{La persona è autenticata come Utente o come Produttore o ha i privilegi di Assistente. Il ticket è stato creato da quella persona}{Il ticket viene visualizzato}{}
+%****************** LEGGI TICKET ***********
+\cuTab{cu:ticketLettura}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}
+{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}
+{Il ticket viene visualizzato}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando il creatore di un ticket o un Assistente richiedono di visualizzare un ticket
+	\item Il sistema mostra il ticket al richiedente
+\end{enumCU}}
 
 
 \subsection{Ricerca contenuti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/RicercaContenuti}
 \end{center}
-\cuTab{cu:ricercaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{-}{I risultati della ricerca sono visualizzati}{}
+%****************** RICERCA PRODOTTO ***********
+\cuTab{cu:ricercaProdotto}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è connessa al sito}
+{I risultati della ricerca sono visualizzati}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un prodotto
+	\item Il sistema richiede di complilare la scheda necessaria per definire in che modo cercare un prodotto
+	\item La persona inserisce i dati negli appositi campi \label{curicprod:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema effettua la ricerca richiesta
+\end{enumCU}}
+%
+\cuAlternativo{cu:ricercaProdotto}
+{Flusso alternativo 1}%
+{Annulla ricerca}%
+{La persona è connessa al sito}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curicprod:1} la persona annulla la ricerca
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:ricercaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{-}{I risultati della ricerca sono visualizzati}{}
+%****************** RICERCA PROFILO ***********
+\cuTab{cu:ricercaProfilo}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è connessa al sito}
+{I risultati della ricerca sono visualizzati}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un profilo
+	\item Il sistema richiede di complilare la scheda necessaria per definire in che modo cercare un profilo
+	\item La persona inserisce i dati negli appositi campi \label{curicprof:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema effettua la ricerca richiesta
+\end{enumCU}}
+%
+\cuAlternativo{cu:ricercaProfilo}
+{Flusso alternativo 1}%
+{Annulla ricerca}%
+{La persona è connessa al sito}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curicprof:1} la persona annulla la ricerca
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:ricercaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{-}{I risultati della ricerca sono visualizzati}{}
-
+%****************** RICERCA NOTIZIA ***********
+\cuTab{cu:ricercaNotizia}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è connessa al sito}
+{I risultati della ricerca sono visualizzati}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di una notizia
+	\item Il sistema richiede di complilare la scheda necessaria per definire in che modo cercare un a notizia
+	\item La persona inserisce i dati negli appositi campi \label{curicnot:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema effettua la ricerca richiesta
+\end{enumCU}}
+%
+\cuAlternativo{cu:ricercaNotizia}
+{Flusso alternativo 1}%
+{Annulla ricerca}%
+{La persona è connessa al sito}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curicnot:1} la persona annulla la ricerca
+	\end{enumCU}}%
 
 \subsection{Gestione prodotti mancanti}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/GestioneProdottiMancanti}
 \end{center}
-\cuTab{cu:richiestaInsProdotto}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}{La richiesta è inviata al Produttore}{}
+%****************** RICHIESTA PRODOTTO ***********
+\cuTab{cu:richiestaInsProdotto}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}
+{La richiesta è inviata al Produttore}
+{\begin{enumCU}
+		\item Il caso d'uso ha inizio quando un Utente richiedere ad un produttore di inserire un suo prodotto mancante
+		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
+		\item L'Utente inserisce i dati richiesti \label{curicinsimmpro:1}
+		\item L'Utente conferma i dati inseriti 
+		\item Il sistema richiede zero o più percorsi nel file system delle immagini del prodotto da inserire
+		\item L'Utente inserisce nell'apposito campo zero o più percorsi nel file system delle immagini che vuole inserire \label{curicinsimmpro:2}
+		\item L'Utente conferma i percorsi inseriti \label{curicinsimmpro:3}
+		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
+	\end{enumCU}}
+%
+\cuAlternativo{cu:richiestaInsProdotto}
+{Flusso alternativo 1}%
+{Annulla richiesta}%
+{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curicinsimmpro:2} o dopo il punto \ref{curicinsimmpro:1} l'Utente annulla la richiesta
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:richiestaInsProdotto}
+{Flusso alternativo 2}%
+{Errore richiesta}%
+{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curicinsimmpro:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneRichiestaInsProdotto}{\getTitletodesc{att:produttore}}{La persona è autenticata come Produttore. La richiesta è presente nel sistema}{La richiesta è stata gestita dal Produttore}{}
+\cuTab{cu:visualizzazioneRichiestaInsProdotto}
+{\getTitletodesc{att:produttore}}
+{La persona è autenticata come Produttore. La richiesta è presente nel sistema}
+{Il prodotto suggerito è presente nella vetrina del produttore Produttore}
+{\begin{enumCU}
+		\item Il caso d'uso ha inizio quando un Produttore richiedere di visualizzare le proprie richieste di aggiunta di prodotti in sospeso
+		\item Il sistema richiede di selezionare quale richiesta visualizzare
+		\item Il Produttore seleziona quale richiesta visualizzare inserisce i dati richiesti 
+		\item Il sistema mostra al Produttore la scheda provvisoria del prodotto compilata dall'utente che ha effettuato la richiesta \label{cuvisricprodel}
+		\item Il Produttore modifica i campi nella scheda o inserisce quelli mancanti \label{cuvisricpro:1}
+		\item Il Produttore conferma i dati inseriti
+		\item Il sistema richiede zero o più percorsi nel file system delle immagini del prodotto da inserire
+		\item Il Produttore inserisce nell'apposito campo uno (zero se già inserite dall'utente) o più percorsi nel file system delle immagini che vuole inserire \label{cuvisricpro:2}
+		\item Il Produttore conferma i percorsi inseriti \label{cuvisricpro:3}
+		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
+	\end{enumCU}}
+%
+\cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
+{Flusso alternativo 1}%
+{Elimina richiesta}%
+{La persona è autenticata come Produttore. La richiesta è presente nel sistema}%
+{La richiesta non è più presente nel sistema}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuvisricprodel} il produttore richede di eliminare la richiesta
+		\item Il sistema accetta l'operazione
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
+{Flusso alternativo 2}%
+{Annulla inserimento}%
+{La persona è autenticata come Produttore. La richiesta è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuvisricpro:2} o dopo il punto \ref{cuvisricpro:1} il Produttore annulla l`inserimento
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
+{Flusso alternativo 3}%
+{Errore inserimento}%
+{La persona è autenticata come Produttore. La richiesta è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuvisricpro:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
+	\end{enumCU}}%
 
 \tabcuvspace
 
-\cuTab{cu:richiestaInsProduttore}{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}{La richiesta è inviata all'assistente tramite ticket}{}
-
+\cuTab{cu:richiestaInsProduttore}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}
+{La richiesta è inviata all'assistente tramite ticket}
+{\begin{enumCU}
+		\item Il caso d'uso ha inizio quando un Utente richiedere di inserire un prodotto mancante di un produttore mancante
+		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
+		\item L'Utente inserisce i dati richiesti \label{cuinsproduttore:1}
+		\item L'Utente conferma i dati inseriti 
+		\item Il sistema richiede zero o più percorsi nel file system delle immagini del prodotto da inserire
+		\item L'Utente inserisce nell'apposito campo zero o più percorsi nel file system delle immagini che vuole inserire \label{cuinsproduttore:2}
+		\item L'Utente conferma i percorsi inseriti \label{cuinsproduttore:3}
+		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
+		\item Il sistema richiede un nome e un recapito del produttore del prodotto
+		\item L'Utente inserisce i dati richiesti \label{cuinsproduttore:0}
+		\item L'Utente conferma i dati inseriti
+		\item Il sistema accetta i dati inseriti
+	\end{enumCU}}
+%
+\cuAlternativo{cu:richiestaInsProduttore}
+{Flusso alternativo 1}%
+{Annulla inserimento}%
+{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuinsproduttore:1}, il punto \ref{cuinsproduttore:2} o dopo il punto \ref{cuinsproduttore:0} l'Utente annulla l'operazione
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:richiestaInsProduttore}
+{Flusso alternativo 2}%
+{Errore inserimento}%
+{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cuinsproduttore:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
+	\end{enumCU}}%
 
 \subsection{Visualizzazione contenuti pubblici}
 \begin{center}
    \includegraphics[width=\textwidth]{assets/visualParadigm/Visualizzazione}
 \end{center}
 %accorpa visalizza prodotti in vetrina e visualizza vetrina
-\cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}{La vetrina è mostrata}{}
+\cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}
+{La vetrina è mostrata}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare una vetrina presente nel sistema
+	\item Il sistema mostra alla persona la vetrina richiesta
+\end{enumCU}}
 
 \tabcuvspace
 
 %Cambiato da: statistiche pubbliche vetrina
-\cuTab{cu:visualizzazioneInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}{Le informazioni relative alla vetrina sono mostrate}{}
+\cuTab{cu:visualizzazioneInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La vetrina è presente nel sistema}
+{Le informazioni relative alla vetrina sono mostrate}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni relative ad una vetrina presente nel sistema
+	\item Il sistema mostra alla persona le informazioni richieste
+\end{enumCU}}
 
 %\tabcuvspace
 %
@@ -743,16 +1269,33 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}{Il prodotto è mostrato}{}
+\cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}
+{Il prodotto è mostrato}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare un prodotto presente nel sistema
+	\item Il sistema mostra alla persona il prodotto richiesto
+\end{enumCU}}
 
 \tabcuvspace
 
 %Accorpa statistiche prodotto e informazioni prodotto
-\cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}{Le informazioni e le statistiche relative al prodotto sono mostrate}{}
+\cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{Il prodotto è presente nel sistema}
+{Le informazioni e le statistiche relative al prodotto sono mostrate}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni e le statistiche relative ad un prodotto presente nel sistema
+	\item Il sistema mostra alla persona le informazioni e le statistiche relative a quel prodotto
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}{Le recensioni relative al prodotto sono mostrate}{}
+\cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{Il prodotto è presente nel sistema}
+{Le recensioni relative al prodotto sono mostrate}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le recensioni relative ad un prodotto presente nel sistema
+	\item Il sistema mostra alla persona le recensioni relative a quel prodotto
+\end{enumCU}}
 
 \tabcuvspace
 
@@ -760,12 +1303,24 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %
 %\tabcuvspace
 
-\cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il profilo è presente nel sistema}{Il profilo è mostrato}{}
+\cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{Il profilo è presente nel sistema}
+{Il profilo è mostrato}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare un profilo presente nel sistema
+	\item Il sistema mostra alla persona il profilo richiesto
+\end{enumCU}}
 
 \tabcuvspace
 
 %Accorpa informazioni profilo e statistiche profilo
-\cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il profilo è presente nel sistema}{Le informazioni e le statistiche relative al profilo sono mostrate}{}
+\cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{Il profilo è presente nel sistema}
+{Le informazioni e le statistiche relative al profilo sono mostrate}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni relative ad un profilo presente nel sistema
+	\item Il sistema mostra alla persona le informazioni relative a quel profilo
+\end{enumCU}}
 
 %\tabcuvspace
 %
@@ -773,14 +1328,37 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La notizia è presente nel sistema}{La notizia è mostrata}{}
+\cuTab{cu:visualizzazioneNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La notizia è presente nel sistema}
+{La notizia è mostrata}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le notizie presenti nel sistema
+	\item Il sistema mostra alla persona le notizie richieste
+\end{enumCU}}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La persona è autenticata come Utente o come Produttore}{Vengono mostrati gli aggiornamenti delle persone che si stanno seguendo}{}
+\cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è autenticata come Utente o come Produttore}
+{Vengono mostrati gli aggiornamenti delle persone che si stanno seguendo}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona, autenticata come Utente o come Produttore, richiede di visualizzare gli aggiornamenti delle persone che segue
+	\item Il sistema mostra alla persona gli aggiornamenti delle persone che segue
+\end{enumCU}}
 
 
 
+\newdate{cuuno}{12}{09}{2016}
+\section{Revisioni}
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        	\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+        	1.0 & \displaydate{cuuno} & Prima versione \\
+        \bottomrule
+    \end{tabular}
+\end{center}
 
 
 
