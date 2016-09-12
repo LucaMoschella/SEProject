@@ -1,15 +1,35 @@
 IMPORTANTE:
+) Visualizza anteprima notizia (nella ricerca)
+
+)Accorpa visualizza recensione prodotto in Visualizza scheda prodotto
+
+) Vedi: Visualizza X & Visualizza informazioni X. Accorpare? Una per la sheda di X, con info e statistiche. 
+	Visualizza -> Visualizza anteprima prodotto
+	Visualizza informazioni -> Visualizza scheda prodotto
+
+) UML gestione prodotti mancanti: rinomina actor
+
+)Rivedere visualizza e rimuovi contenuti inappropriati (CU.H.8)
+
+) Il produttore non dovrebbe poter fare commenti a recensioni di prodotti non suoi ( caso d'uso: commento a recensione)
+
+) Modifica recensione: campi precompilati
+
+) Nell'inserimento di una recensione (CU.H.1) bisogna inserire anche una valutazione
+
+) Accorpa Aggiungi privilegio e Rimuovi privilegio in: MOdifica privilegi account
+
 ) Controlla consistenza del testo
 
 )Semplificare il progetto! Valutare l'elimazione dell'integrazione con i social ì. (cit. lorenzo: occorre conoscere, gestire e integrare le varie API nel progetto)
 
-)CAMBIARE NOME NEL DIAGRAMMA UML DEL CASO D'USO MODIFICA IMPOSTAZIONE, IN GESTIONE ACCOUNT
+)CAMBIARE NOME NEL DIAGRAMMA UML DEL CASO D'USO MODIFICA IMPOSTAZIONE, AGGIUNGI FUNZIONALITà, etc; IN GESTIONE ACCOUNT
 
 )Rivedi i casi d'uso che hanno a ce fare con i prodotti (inserimento prodott, richiesta ins. prodotto)
 
 )Diagramma GANTT
 
-)Cambia nomi dei casi d'uso nel diagramma UML di "Gestione proodtti mancanti"
+!!!)Cambia nomi dei casi d'uso nel diagramma UML di "Gestione proodtti mancanti" e "Gestione account"
 
 )Uniforma la "visualizzazione": si visualizza una cosa alla volta, o più cose alla volta e nel flusso ne selezioni e visualizzi una?
 
@@ -24,6 +44,9 @@ IMPORTANTE:
 ) Correggi la def di figura pubblica e amministrativa
 
 ) Cambiare alcuni Gestione in Sistema
+
+
+
 
 A tempo perso:
 Ordinare i casi d'uso dentro i diagrammi (da fare dopo averli sistemati, vedi iMPORTANTE)

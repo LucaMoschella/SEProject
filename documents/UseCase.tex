@@ -286,7 +286,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 		\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare l'iscrizione tramite un Social Network
 		\item Il sistema richiede le credenziali di accesso del Social Network scelto
 		\item Il Visitatore inserisce i dati richiesti \label{cuiscrappsocial:3}
-		\item Il Visitatore conferma i dati inferiti \label{cuiscrappsocial:5}
+		\item Il Visitatore conferma i dati inseriti \label{cuiscrappsocial:5}
 		\item Il sistema accetta le operazioni
 	\end{enumCU}}
 
@@ -316,12 +316,12 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:iscrizioneApprovazione}
 {\getTitletodesc{att:visitatore}}
 {La persona connessa al sito è inizialmente riconosciuta come Visitatore}
-{Viene inserita nel sistema una richiesta di creazione di un account di tipo produttore}
+{Viene inserita nel sistema una richiesta di creazione di un account di tipo Produttore}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare l'iscrizione tramite approvazione
-	\item Il sistema richiede i dati richiesti per effettuare l'iscrizione
-	\item Il visitatore inserisce i dati richiesti negli appositi campi \label{cuiscrapp:3}
-	\item Il visitatore conferma i dati inseriti
+	\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare l'iscrizione tramite approvazione
+	\item Il sistema richiede i dati richiesti per effettuare l'iscrizione  tra cui un identificatore all'interno del sistema
+	\item Il Visitatore inserisce i dati richiesti negli appositi campi \label{cuiscrapp:3}
+	\item Il Visitatore conferma i dati inseriti
 	\item Il sistema verifica che i dati inseriti siano corretti e che l'identificatore dell'account che si sta creando non sia già presente \label{cuiscrapp:5}
 	\item Il sistema accetta le credenziali ricevute 
 \end{enumCU}}
@@ -350,10 +350,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:approvazioneIscrizione}
 {\getTitletodesc{att:assistente}}
 {La persona connessa al sito è autenticata e ha i privilegi di  Assistente. Nel sistema è presente una richiesta di creazione di un account}
-{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore. Nel sistema non è più presente la richesta}
+{Il Visitatore che ha effettuato la richiesta ha ora un account di tipo produttore. Nel sistema non è più presente la richiesta}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona con privilegi di assistente controlla una richiesta di creazione di account di tipo produttore \label{cuappriscr:1}
-	\item L'assistente approva la richiesta di creazione dell'account
+	\item Il caso d'uso ha inizio quando una persona con privilegi di Assistente controlla una richiesta di creazione di account di tipo Produttore \label{cuappriscr:1}
+	\item L'Assistente approva la richiesta di creazione dell'account
 \end{enumCU}}
 %
 \cuAlternativo{cu:approvazioneIscrizione}
@@ -362,7 +362,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Assistente}%
 {Nel sistema non è più presente la richesta}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuappriscr:1} l'assistente rifiuta la richiesta di creazione dell'account
+		\item Dopo il punto \ref{cuappriscr:1} l'Assistente rifiuta la richiesta di creazione dell'account
 	\end{enumCU}}%
 
 \subsection{Gestione vetrina}
@@ -376,10 +376,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
 {Nel sistema è presente la descrizione della vetrina inserita dal Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un produttore richiedere di inserire una descrizione nella vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di inserire una descrizione nella sua vetrina
 		\item Il sistema richiede il testo da inserire come descrizione \label{cuinsdescr:2}
-		\item Il produttore inserisce la decrizione nell'apposito campo \label{cuinsdescr:3}
-		\item Il produttore conferma il testo inserito
+		\item Il Produttore inserisce la descrizione nell'apposito campo \label{cuinsdescr:3}
+		\item Il Produttore conferma il testo inserito
 		\item Il sistema accetta il testo inserito
 	\end{enumCU}}
 %
@@ -389,7 +389,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuinsdescr:2} il produttore annulla l'inserimento della descrizione
+		\item Dopo il punto \ref{cuinsdescr:2} il Produttore annulla l'inserimento della descrizione
 	\end{enumCU}}%
 %
 \cuAlternativo{cu:personalizzaVetrinaInsDesc}
@@ -409,10 +409,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
 {Nel sistema è presente l'immagine della vetrina inserita dal Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un produttore richiedere di inserire un immagine nella vetrina
-		\item Il sistema richiede il percorso nel file system dell'immagine da inserire 
-		\item Il produttore inserisce il percorso dell'immagine nell'apposito campo \label{cuinsimm:2}
-		\item Il produttore conferma il percorso dell'immagine inserito \label{cuinsimm:3}
+		\item Il caso d'uso ha inizio quando un Produttore richiedere di inserire un'immagine nella vetrina
+		\item Il sistema richiede il percorso nel file system, o nella rete, dell'immagine da inserire 
+		\item Il Produttore inserisce il percorso dell'immagine nell'apposito campo \label{cuinsimm:2}
+		\item Il Produttore conferma il percorso dell'immagine inserito \label{cuinsimm:3}
 		\item Il sistema accetta il percorso dell'immagine inserito e salva l'immagine nel sistema
 	\end{enumCU}}
 %
@@ -427,7 +427,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %
 \cuAlternativo{cu:personalizzaVetrinaInsImg}
 {Flusso alternativo 2}%
-{Anulla inserimento}%
+{Annulla inserimento}%
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
 {\postNulle}%
 {\begin{enumCU}
@@ -440,16 +440,16 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:personalizzaVetrinaInsProd}
 {\getTitletodesc{att:produttore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
-{Nel sistema è presente il prodotto che Produttore ha inserito in vetrina}
+{Nel sistema è presente il prodotto che la persona ha inserito in vetrina}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un produttore richiedere di inserire un prodotto nella vetrina
 		\item Il sistema richiede di compilare la scheda del prodotto da inserire
-		\item Il produttore inserisce i dati richiesti \label{cuinsimmpro:1}
-		\item Il produttore conferma i dati inseriti 
-		\item Il sistema richiede uno o più percorsi nel file system delle immagini del prodotto da inserire
-		\item Il produttore inserisce nell'apposito campo uno o più percorsi nel file system delle immagini che vuole inserire \label{cuinsimmpro:2}
-		\item Il produttore conferma i percorsi inseriti \label{cuinsimmpro:3}
-		\item Il sistema accetta i dati inseriti e i percorsi inseriti e salva le immagini nel sistema
+		\item Il Produttore inserisce i dati richiesti \label{cuinsimmpro:1}
+		\item Il Produttore conferma i dati inseriti 
+		\item Il sistema richiede almeno un percorso nel file system, o nella rete, dell'immagine del prodotto da inserire
+		\item Il Produttore inserisce nell'apposito campo uno o più percorsi  delle immagini che vuole inserire \label{cuinsimmpro:2}
+		\item Il Produttore conferma i percorsi inseriti \label{cuinsimmpro:3}
+		\item Il sistema accetta i dati e i percorsi inseriti e salva le immagini nel sistema
 	\end{enumCU}}
 %
 \cuAlternativo{cu:personalizzaVetrinaInsProd}
@@ -463,11 +463,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %
 \cuAlternativo{cu:personalizzaVetrinaInsProd}
 {Flusso alternativo 2}%
-{Anulla inserimento}%
+{Annulla inserimento}%
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuinsimmpro:2} o dopo il punto \ref{cuinsimmpro:1} il produttore annulla l'inserimento del prodotto
+		\item Dopo il punto \ref{cuinsimmpro:2} o dopo il punto \ref{cuinsimmpro:1} il Produttore annulla l'inserimento del prodotto
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -478,14 +478,14 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il prodotto è presente nella sua vetrina}%
 {Nel sistema il prodotto è stato correttamente modificato}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un produttore richiede di modificare un prodotto presente nella sua vetrina
-		\item Il sistema richiede di compilare la scheda prodotto, percompilata con i dati già presenti nel sistema
-		\item Il produttore inserisce i dati richiesti \label{cumodprodelim:1}
-		\item Il produttore conferma i dati inseriti
-		\item Il sistema mostra le immagini del prodotto presenti, con la possibilità di eliminarle, e mostra i campi per aggiungere i percorsi nel file system di altre immagini da aggiungere \label{cumodprodelim:3}
-		\item Il produttore inserisce i percorsi nel file system delle immagini che intende aggiungere
-		\item Il produttore conferma i percorsi inseriti \label{cumodprodelim:2}
-		\item Il sistema accetta i dati inseriti e i percorsi inseriti e salva le immagini nel sistema
+		\item Il caso d'uso ha inizio quando un Produttore richiede di modificare un prodotto presente nella sua vetrina
+		\item Il sistema richiede di compilare la scheda prodotto, precompilata con i dati già presenti nel sistema
+		\item Il Produttore inserisce i dati richiesti \label{cumodprodelim:1}
+		\item Il Produttore conferma i dati inseriti
+		\item Il sistema mostra le immagini del prodotto presenti, con la possibilità di eliminarle, e mostra i campi per aggiungere i percorsi nel file system, o nella rete, di altre immagini da aggiungere \label{cumodprodelim:3}
+		\item Il Produttore inserisce i percorsi nel file system delle immagini che intende aggiungere
+		\item Il Produttore conferma i percorsi inseriti \label{cumodprodelim:2}
+		\item Il sistema accetta i dati e i percorsi inseriti e salva le immagini nel sistema
 	\end{enumCU}} %%SETTARE UN PRODOTTO COME FUORI PRODUZIONE&&
 %
 \cuAlternativo{cu:personalizzaVetrinaModProd}
@@ -494,17 +494,17 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il prodotto è presente nella sua vetrina}
 {L'immagine selezionata non è più presente nel sistema}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cumodprodelim:3} il produttore decide di eliminare un immagine
-		\item Il sistema elimina l'immagine dal sistema
+		\item Dopo il punto \ref{cumodprodelim:3} il Produttore decide di eliminare un'immagine
+		\item Il sistema accetta l'operazione
 	\end{enumCU}}%
 %
 \cuAlternativo{cu:personalizzaVetrinaModProd}
 {Flusso alternativo 2}%
-{Anulla Modifica}%
+{Annulla Modifica}%
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il prodotto è presente nella sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cumodprodelim:2} o dopo il punto \ref{cumodprodelim:1} il produttore annulla l'inserimento del prodotto
+		\item Dopo il punto \ref{cumodprodelim:2} o dopo il punto \ref{cumodprodelim:1} il Produttore annulla l'inserimento del prodotto
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -515,8 +515,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
 {Il Produttore accede alle statistiche private della propria vetrina}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un produttore richiede di accedere alle statistiche private della sua vetrina
-		\item Il sistema mostra al produttore le statistiche della sua vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di accedere alle statistiche private della sua vetrina
+		\item Il sistema mostra al Produttore le statistiche della sua vetrina
 	\end{enumCU}}
 
 
@@ -529,22 +529,22 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:inserimentoNotizia}
 {\getTitletodesc{att:redattore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Redattore}
-{Nel  sistema è presente la notizia inserita dal Redattore}
+{Nel  sistema è presente la notizia inserita dalla persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un redattore richiede di inserire una notizia  
+	\item Il caso d'uso ha inizio quando un Redattore richiede di inserire una notizia  
 	\item Il sistema richiede di compilare i campi necessari all'inserimento della notizia
-	\item Il redattore inserisce i dati richiesti \label{cuinsnot:2}
-	\item Il redattore conferma i dati richiesti
+	\item Il Redattore inserisce i dati richiesti \label{cuinsnot:2}
+	\item Il Redattore conferma i dati richiesti
 	\item Il sistema accetta i dati inseriti e crea una nuova notizia nel sistema
 \end{enumCU}}
 %
 \cuAlternativo{cu:inserimentoNotizia}
 {Flusso alternativo 1}%
-{Anulla inserimento}%
+{Annulla inserimento}%
 {La persona connessa al sito è autenticata e ha i privilegi di Redattore}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuinsnot:2} il redattore annulla l'inserimento della notizia
+		\item Dopo il punto \ref{cuinsnot:2} il Redattore annulla l'inserimento della notizia
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -555,20 +555,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}
 {La notizia è stata correttamente modificata}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un redattore richiede di modificare una notizia presente nel sistema 
+	\item Il caso d'uso ha inizio quando un Redattore richiede di modificare una notizia presente nel sistema 
 	\item Il sistema mostra i campi necessari all'inserimento della notizia precompilati con i dati già presenti nel sistema
-	\item Il redattore inserisce, modifica o lascia inalterati i dati richiesti \label{cumodnot:2}
-	\item Il redattore conferma i dati richiesti
+	\item Il Redattore inserisce, modifica o lascia inalterati i dati richiesti \label{cumodnot:2}
+	\item Il Redattore conferma i dati richiesti
 	\item Il sistema accetta i dati inseriti e modifica la notizia nel sistema
 \end{enumCU}}
 %
 \cuAlternativo{cu:modificaNotizia}
 {Flusso alternativo 1}%
-{Anulla modifica}%
+{Annulla modifica}%
 {La persona connessa al sito è autenticata e ha i privilegi di Redattore}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cumodnot:2} il redattore annulla la modifica della notizia
+		\item Dopo il punto \ref{cumodnot:2} il Redattore annulla la modifica della notizia
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -579,20 +579,19 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}
 {Nel sistema non è più presente la notizia eliminata}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un redattore richiede di eliminare una notizia presente nel sistema
+	\item Il caso d'uso ha inizio quando un Redattore richiede di eliminare una notizia presente nel sistema
 	\item Il sistema chiede conferma dell'eliminazione \label{curemnot:2}
-	\item Il redattore conferma l'eliminazione
+	\item Il Redattore conferma l'eliminazione
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneNotizia}
 {Flusso alternativo 1}%
-{Anulla rimozione}%
+{Annulla rimozione}%
 {La persona connessa al sito è autenticata e ha i privilegi di Redattore}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{curemnot:2} il redattore annulla la rimozione della notizia
+		\item Dopo il punto \ref{curemnot:2} il Redattore annulla la rimozione della notizia
 	\end{enumCU}}%
-
 
 \subsection{Gestione suggerimenti}
 \begin{center}
@@ -603,10 +602,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:suggerimentoProdotti}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata nel sistema e sta visualizzando un prodotto}
-{Viene suggerito un prodotto presente nel sistema}
+{Vengono suggeriti dei prodotti presenti nel sistema}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un utente o un produttore richiede un consiglio su quale prodotto visualizzare
-	\item Il sistema mostra all'utente o al produttore un prodotto, sulla base della sua cronologia e delle sue valutazioni
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore sta visualizzando un prodotto
+	\item Il sistema mostra all'Utente o al Produttore dei prodotti, sulla base della sua cronologia e delle sue valutazioni
 \end{enumCU}}
 
 \tabcuvspace
@@ -615,10 +614,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:notizieSimili}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata nel sistema e sta visualizzando una notizia}
-{Viene suggerita una notizia presente nel sistema}
+{Vengono suggerite delle notizie presenti nel sistema}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un utente o un produttore richiede un consiglio su quale notizia visualizzare
-	\item Il sistema mostra all'utente o al produttore una notizia, sulla base della sua cronologia
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore sta visualizzando una notizia
+	\item Il sistema mostra all'Utente o al Produttore delle notizie, sulla base della sua cronologia
 \end{enumCU}}
 
 \subsection{Gestione account}
@@ -629,7 +628,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:accessoProfilo}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata nel sistema}
-{La persona visualizza il suo profilo}
+{Viene mostrato il profilo alla persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare il proprio profilo
 	\item Il sistema mostra alla persona la pagina del proprio profilo
@@ -643,11 +642,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata nel sistema}
 {La persona modifica le proprie impostazioni}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare la apgine delle proprie impostazioni
-	\item Il sistema mostra alla persona la pagina delle proprie impostazione
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di modificare la pagine delle proprie impostazioni
+	\item Il sistema mostra alla persona la pagina delle proprie impostazioni
 	\item La persona modifica i campi presenti nella pagina \label{cumodimp:1}
 	\item La persona conferma le modifiche effettuate
-	\item Il sistema acceta le modifiche effettuate
+	\item Il sistema accetta le modifiche effettuate
 \end{enumCU}}
 %
 \cuAlternativo{cu:modificaImpostazioni}
@@ -665,20 +664,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:rimozioneAccountProprio}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata nel sistema}
-{La persona non più autenticata nel sistema. L'account della persona non è più presente nel sistema}
+{La persona non è più autenticata nel sistema. L'account della persona non è più presente nel sistema}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di eliminare il proprio account
-	\item Il sistema chiede conferma dell'eliminazione dell'account \label{curimaccprop:1}
-	\item La persona conferma l'eliminazione
+	\item Il sistema chiede conferma della rimozione dell'account \label{curimaccprop:1}
+	\item La persona conferma la rimozione
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneAccountProprio}
 {Flusso alternativo 1}%
-{Annulla eliminazione}%
+{Annulla rimozione}%
 {La persona è autenticata nel sistema}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{curimaccprop:1} la persona annulla l`eliminazione dell'account
+		\item Dopo il punto \ref{curimaccprop:1} la persona annulla la rimozione dell'account
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -696,11 +695,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %
 \cuAlternativo{cu:rimozioneAccountAltrui}
 {Flusso alternativo 1}%
-{Annulla eliminazione}%
+{Annulla rimozioni}%
 {La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{curimaccaltr:1} l'Amministratore annulla l`eliminazione dell'account
+		\item Dopo il punto \ref{curimaccaltr:1} l'Amministratore annulla la rimozione dell'account
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -759,7 +758,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 \cuTab{cu:inserisciValutazioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato valutato dall'Utente}
+{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato valutato dalla persona}
 {La valutazione dell'Utente per quel prodotto è aggiunta nel sistema}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la valutazione di un prodotto presente nel sistema
@@ -835,7 +834,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:eliminaRecensioneProdotto}
 {\getTitletodesc{att:utente}}
 {La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
-{La recensione viene eliminata correttamente}
+{La recensione viene rimossa dal sistema correttamente }
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di rimuovere una sua recensione di un prodotto presente nel sistema
 	\item Il sistema mostra all'Utente la recensione che ha effettuato per quel prodotto
@@ -881,7 +880,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:giudizioRecensione}
 {\getTitletodesc{att:utente}}{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}
-{Il giudizio per quella recensione è presente nel sistema}
+{Il giudizio per quella recensione di quell'Utente è presente nel sistema}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di esprimere un giudizio (positivo o negativo) su una recensione di un prodotto presente nel sistema
 	\item Il sistema mostra all'Utente la recensione
@@ -908,11 +907,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:segnalazioneContenutiInap}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata come Utente o come Produttore. Il contenuto è presente nel sistema}
-{La segnalazione viene inviata correttamente al Moderatore}
+{La segnalazione viene memorizzata nel sistema}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona, autenticata come Utente o come Produttore, richiede di segnalare un contenuto inappropriato presente nel sistema
 	\item Il sistema richiede alla persona di specificare il motivo della segnalazione
-	\item L'Utente inserisce il motivo della segnalazione
+	\item La persona inserisce il motivo della segnalazione
 	\item Il sistema accetta la segnalazione
 \end{enumCU}}
 
@@ -920,7 +919,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:visualizzazioneSegnContenutiInap}
 {\getTitletodesc{att:moderatore}}
-{La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}
+{La persona è autenticata ed ha i privilegi di Moderatore. La segnalazione è presente nel sistema}
 {La segnalazione è stata gestita dal Moderatore}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Moderatore richiede di visualizzare una segnalazione
@@ -968,9 +967,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:followAccount}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata come Utente o come Produttore. L'account da seguire è presente nel sistema}
-{L'account da seguire viene aggiunto alla lista degli account che si seguono}
+{L'account da seguire viene aggiunto alla lista degli account che la persona segue}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore vuole seguire un altro account per riceverne gli aggiornamenti
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiede di seguire un altro account per riceverne gli aggiornamenti
 	\item Il sistema accetta l`operazione
 \end{enumCU}}
 
@@ -980,9 +979,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:unFollowAccount}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata come Utente o come Produttore. L'account seguito è presente nel sistema}
-{L'account seguito viene rimosso dalla lista degli account che si seguono}
+{L'account seguito viene rimosso dalla lista degli account che la persona segue}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore vuole smettere di seguire un altro account che già si segue
+	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiede di smettere di seguire un altro account che già segue
 	\item Il sistema accetta l`operazione
 \end{enumCU}}
 
@@ -998,8 +997,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiedono la creazione di un ticket per ricevere assistenza
 	\item Il sistema richiede di compilare la scheda necessaria alla creazione del ticket
-	\item L'utente (o il produttore) compilano la scheda \label{cucretick:1}
-	\item L'utente (o il produttore) confermano i dati inseriti
+	\item La persona compila la scheda \label{cucretick:1}
+	\item La persona conferma i dati inseriti
 	\item Il sistema accetta la creazione del ticket
 \end{enumCU}}
 %
@@ -1040,13 +1039,13 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %****************** CHIUDI TICKET ***********
 \cuTab{cu:ticketChiudi}
-{\getTitletodesc{att:assistente}}
-{La persona è autenticata e ha i privilegi di Assistente. Il ticket è presente nel sistema}
+{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}
+{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}
 {Il ticket viene etichettato come chiuso}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando il creatore di un Assistente richiede di chiudere un ticket
+	\item Il caso d'uso ha inizio quando il creatore del ticket o un Assistente richiede di chiudere il ticket
 	\item Il sistema richiede conferma della chiusura \label{cuchiutick:1}
-	\item L'Assistente conferma la chiusura del ticket
+	\item La persona conferma la chiusura del ticket
 	\item Il sistema accetta l'operazione
 \end{enumCU}}
 %
@@ -1083,7 +1082,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {I risultati della ricerca sono visualizzati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un prodotto
-	\item Il sistema richiede di complilare la scheda necessaria per definire in che modo cercare un prodotto
+	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicprod:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
@@ -1107,7 +1106,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {I risultati della ricerca sono visualizzati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un profilo
-	\item Il sistema richiede di complilare la scheda necessaria per definire in che modo cercare un profilo
+	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicprof:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
@@ -1131,7 +1130,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {I risultati della ricerca sono visualizzati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di una notizia
-	\item Il sistema richiede di complilare la scheda necessaria per definire in che modo cercare un a notizia
+	\item Il sistema richiede di compilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicnot:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
@@ -1156,12 +1155,12 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}
 {La richiesta è inviata al Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Utente richiedere ad un produttore di inserire un suo prodotto mancante
+		\item Il caso d'uso ha inizio quando un Utente richiede ad un Produttore di inserire un suo prodotto mancante
 		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
 		\item L'Utente inserisce i dati richiesti \label{curicinsimmpro:1}
 		\item L'Utente conferma i dati inseriti 
-		\item Il sistema richiede zero o più percorsi nel file system delle immagini del prodotto da inserire
-		\item L'Utente inserisce nell'apposito campo zero o più percorsi nel file system delle immagini che vuole inserire \label{curicinsimmpro:2}
+		\item Il sistema richiede zero o più percorsi nel file system, o nella rete, delle immagini del prodotto da inserire
+		\item L'Utente inserisce nell'apposito campo zero o più percorsi delle immagini che vuole inserire \label{curicinsimmpro:2}
 		\item L'Utente conferma i percorsi inseriti \label{curicinsimmpro:3}
 		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
 	\end{enumCU}}
@@ -1188,17 +1187,17 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:visualizzazioneRichiestaInsProdotto}
 {\getTitletodesc{att:produttore}}
-{La persona è autenticata come Produttore. La richiesta è presente nel sistema}
-{Il prodotto suggerito è presente nella vetrina del produttore Produttore}
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
+{Il prodotto suggerito è presente nella vetrina del Produttore}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un Produttore richiedere di visualizzare le proprie richieste di aggiunta di prodotti in sospeso
 		\item Il sistema richiede di selezionare quale richiesta visualizzare
-		\item Il Produttore seleziona quale richiesta visualizzare inserisce i dati richiesti 
-		\item Il sistema mostra al Produttore la scheda provvisoria del prodotto compilata dall'utente che ha effettuato la richiesta \label{cuvisricprodel}
+		\item Il Produttore seleziona quale richiesta visualizzare
+		\item Il sistema mostra al Produttore la scheda provvisoria del prodotto compilata dall'Utente che ha effettuato la richiesta \label{cuvisricprodel}
 		\item Il Produttore modifica i campi nella scheda o inserisce quelli mancanti \label{cuvisricpro:1}
 		\item Il Produttore conferma i dati inseriti
-		\item Il sistema richiede zero o più percorsi nel file system delle immagini del prodotto da inserire
-		\item Il Produttore inserisce nell'apposito campo uno (zero se già inserite dall'utente) o più percorsi nel file system delle immagini che vuole inserire \label{cuvisricpro:2}
+		\item Il sistema richiede zero o più percorsi nel file system, o nella rete, delle immagini del prodotto da inserire
+		\item Il Produttore inserisce nell'apposito campo uno (zero se già inserite dall'utente) o più percorsi delle immagini che vuole inserire \label{cuvisricpro:2}
 		\item Il Produttore conferma i percorsi inseriti \label{cuvisricpro:3}
 		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
 	\end{enumCU}}
@@ -1206,26 +1205,26 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
 {Flusso alternativo 1}%
 {Elimina richiesta}%
-{La persona è autenticata come Produttore. La richiesta è presente nel sistema}%
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
 {La richiesta non è più presente nel sistema}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuvisricprodel} il produttore richede di eliminare la richiesta
+		\item Dopo il punto \ref{cuvisricprodel} il Produttore richede di eliminare la richiesta
 		\item Il sistema accetta l'operazione
 	\end{enumCU}}%
 %
 \cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
 {Flusso alternativo 2}%
 {Annulla inserimento}%
-{La persona è autenticata come Produttore. La richiesta è presente nel sistema}%
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuvisricpro:2} o dopo il punto \ref{cuvisricpro:1} il Produttore annulla l`inserimento
+		\item Dopo il punto \ref{cuvisricpro:2} o dopo il punto \ref{cuvisricpro:1} il Produttore annulla l'inserimento
 	\end{enumCU}}%
 %
 \cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
 {Flusso alternativo 3}%
 {Errore inserimento}%
-{La persona è autenticata come Produttore. La richiesta è presente nel sistema}%
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuvisricpro:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
@@ -1236,17 +1235,17 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:richiestaInsProduttore}
 {\getTitletodesc{att:utente}}
 {La persona è autenticata come Utente. Il Produttore non è presente nel sistema}
-{La richiesta è inviata all'assistente tramite ticket}
+{Nel sistema è presente un ticket riguardante la richiesta}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Utente richiedere di inserire un prodotto mancante di un produttore mancante
+		\item Il caso d'uso ha inizio quando un Utente richiedere di inserire un prodotto mancante di un Produttore non presente nel sistema
 		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
 		\item L'Utente inserisce i dati richiesti \label{cuinsproduttore:1}
 		\item L'Utente conferma i dati inseriti 
-		\item Il sistema richiede zero o più percorsi nel file system delle immagini del prodotto da inserire
-		\item L'Utente inserisce nell'apposito campo zero o più percorsi nel file system delle immagini che vuole inserire \label{cuinsproduttore:2}
+		\item Il sistema richiede zero o più percorsi nel file system, o nella rete, delle immagini del prodotto da inserire
+		\item L'Utente inserisce nell'apposito campo zero o più percorsi delle immagini che vuole inserire \label{cuinsproduttore:2}
 		\item L'Utente conferma i percorsi inseriti \label{cuinsproduttore:3}
 		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
-		\item Il sistema richiede un nome e un recapito del produttore del prodotto
+		\item Il sistema richiede di compilare un profilo provvisorio, con almeno un nome e un recapito, del produttore
 		\item L'Utente inserisce i dati richiesti \label{cuinsproduttore:0}
 		\item L'Utente conferma i dati inseriti
 		\item Il sistema accetta i dati inseriti
