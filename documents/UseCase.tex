@@ -20,6 +20,8 @@ Si utilizzeranno le seguenti convenzioni:
 Gli attori che interagiscono con il portale sono elencati di seguito:
 \begin{itemize}
 	\item \newListItem{att:visitatore}{\formattaAtt}{Visitatore}
+	\item \newListItem{att:figuraPubblicaAutenticata}{\formattaAtt}{Figura Pubblica Autenticata}
+	\item \newListItem{att:figuraAmministrativa}{\formattaAtt}{Figura Amministrativa}
 	\item \newListItem{att:utente}{\formattaAtt}{Utente}
 	\item \newListItem{att:produttore}{\formattaAtt}{Produttore}
 	\item \newListItem{att:redattore}{\formattaAtt}{Redattore}
@@ -39,27 +41,35 @@ Gli attori che interagiscono con il portale sono descritti di seguito:
 
 \tabattvspace
 
-\attTab{att:utente}{-}{\glsdesc*{utente}}
+\attTab{att:figuraPubblicaAutenticata}{-}{\glsdesc*{figuraPubblicaAutenticata}}
 
 \tabattvspace
 
-\attTab{att:produttore}{-}{\glsdesc*{produttore}}
+\attTab{att:figuraAmministrativa}{-}{\glsdesc*{figuraAmministrativa}}
 
 \tabattvspace
 
-\attTab{att:redattore}{\getTitletodesc{att:utente}}{\glsdesc*{redattore}}
+\attTab{att:utente}{\getTitletodesc{att:figuraPubblicaAutenticata}}{\glsdesc*{utente}}
 
 \tabattvspace
 
-\attTab{att:assistente}{\getTitletodesc{att:utente}}{\glsdesc*{assistente}}
+\attTab{att:produttore}{\getTitletodesc{att:figuraPubblicaAutenticata}}{\glsdesc*{produttore}}
 
 \tabattvspace
 
-\attTab{att:moderatore}{\getTitletodesc{att:utente}}{\glsdesc*{moderatore}}
+\attTab{att:redattore}{\getTitletodesc{att:figuraAmministrativa}}{\glsdesc*{redattore}}
 
 \tabattvspace
 
-\attTab{att:amministratore}{\getTitletodesc{att:utente}}{\glsdesc*{amministratore}}
+\attTab{att:assistente}{\getTitletodesc{att:figuraAmministrativa}}{\glsdesc*{assistente}}
+
+\tabattvspace
+
+\attTab{att:moderatore}{\getTitletodesc{att:figuraAmministrativa}}{\glsdesc*{moderatore}}
+
+\tabattvspace
+
+\attTab{att:amministratore}{\getTitletodesc{att:figuraAmministrativa}}{\glsdesc*{amministratore}}
 
 \tabattvspace
 
@@ -100,6 +110,7 @@ Vengono di seguito elencati i casi d'uso:
 \begin{itemize} 
 	\setCatCU{\ref*{pkg:autenticazione}}%A
 	\item \newListItem{cu:login}{\formattaCU}{Login}
+	\item \newListItem{cu:loginAmm}{\formattaCU}{Login Figure Amministrative}
 	\item \newListItem{cu:logout}{\formattaCU}{Logout}
 
 	\setCatCU{\ref*{pkg:iscrizione}}%B
@@ -197,13 +208,13 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:login}%
 {\getTitletodesc{att:visitatore}}%
 {La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
-{La persona connessa al sito è ora autenticata, come Utente o Produttore}%
+{La persona connessa al sito è ora riconosciuta come Figura Pubblica Autenticata}%
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un visitatore richiede di effettuare il login 
-	\item Il sistema richiede le credenziali di autenticazione 
+	\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare il login 
+	\item Il sistema richiede le credenziali di autenticazione
 	\item Il Visitatore inserisce le credenziali di accesso negli appositi campi \label{culogin:3}
 	\item Il Visitatore conferma i dati inseriti
-	\item Il sistema verifica che i dati inseriti corrispondano ad un account esistente \label{culogin:5}
+	\item Il sistema verifica che i dati inseriti corrispondano ad un account pubblico esistente\label{culogin:5}
 	\item Il sistema accetta le credenziali ricevute
 \end{enumCU}}%
 %
@@ -223,7 +234,63 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{culogin:3} il Visitatore annulla l'operazione di login
-	\end{enumCU}}%
+\end{enumCU}}%
+
+\tabcuvspace
+
+\cuTab{cu:loginAmm}%
+{\getTitletodesc{att:visitatore}}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{La persona connessa al sito è ora riconosciuta Figura Amministrativa}%
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare il login 
+	\item Il sistema richiede le credenziali di autenticazione
+	\item Il Visitatore inserisce le credenziali di accesso negli appositi campi \label{culoginamm:3}
+	\item Il Visitatore conferma i dati inseriti
+	\item Il sistema verifica che i dati inseriti corrispondano ad un account amministrativo esistente\label{culoginamm:5}
+	\item Il sistema accetta le credenziali ricevute
+	\item Il sistema invia un codice casuale sul cellulare del Visitatore
+	\item Il Visitatore inserisce il codice ricevuto sul cellulare in un apposito campo \label{culoginamm:8}
+	\item Il Visitatore conferma il codice inserito
+	\item Il sistema verifica che il codice inserito corrisponda a quello inviato \label{culoginamm:10}
+	\item Il sistema accetta il codice ricevuto
+\end{enumCU}}%
+%
+\cuAlternativo{cu:loginAmm}
+{Flusso alternativo 1}%
+{Errore Credenziali}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+	\item Dopo il punto \ref{culoginamm:5} il sistema rifiuta le credenziali
+\end{enumCU}}%
+%
+\cuAlternativo{cu:loginAmm}
+{Flusso alternativo 2}%
+{Annulla Credenziali}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{culoginamm:3} il Visitatore annulla l'operazione di login
+\end{enumCU}}%
+%
+\cuAlternativo{cu:loginAmm}
+{Flusso alternativo 3}%
+{Errore Codice}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{culoginamm:10}, il sistema rifiuta il codice
+\end{enumCU}}%
+%
+\cuAlternativo{cu:login}
+{Flusso alternativo 4}%
+{Annulla Codice}%
+{La persona connessa al sito è inizialmente riconosciuta come Visitatore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{culoginamm:8}, il Visitatore annulla l'operazione di login
+\end{enumCU}}%
 
 \tabcuvspace
 
