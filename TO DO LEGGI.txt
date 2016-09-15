@@ -1,4 +1,6 @@
 IMPORTANTE:
+) Abbiamo aggiungo il LOGIN amministrativo -> da aggiungere anche nei requisiti!!!
+
 ) Visualizza anteprima notizia (nella ricerca)
 
 )Accorpa visualizza recensione prodotto in Visualizza scheda prodotto
