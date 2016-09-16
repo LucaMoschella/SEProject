@@ -1,5 +1,5 @@
 IMPORTANTE:
-) Aggiunti: modifica descrizione, elimina immagine in gestione vetrina
+) Aggiunti: modifica descrizione, elimina immagine in gestione vetrina. (da fare l'update dei diagrammi)
 
 ) Visualizza anteprima notizia (nella ricerca)
 
