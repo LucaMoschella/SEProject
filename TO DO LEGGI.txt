@@ -1,5 +1,5 @@
 IMPORTANTE:
-) Abbiamo aggiungo il LOGIN amministrativo -> da aggiungere anche nei requisiti!!!
+) Aggiunti: modifica descrizione, elimina immagine in gestione vetrina
 
 ) Visualizza anteprima notizia (nella ricerca)
 
@@ -39,7 +39,7 @@ IMPORTANTE:
 
 )Usa extends o implements!
 
-)Requisito  "Prodotto fuori produzione"? (che fino ha fatto nei casi d'uso?)
+)Requisito  "Prodotto fuori produzione"? (che fino ha fatto nei casi d'uso?) {nella scheda prodotto! :P}
 
 )Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
 

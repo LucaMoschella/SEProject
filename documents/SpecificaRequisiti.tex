@@ -104,6 +104,7 @@ Vengono di seguito elencati i requisiti funzionali:
 \begin{itemize} 
 	\setCatR{\ref*{cat:autenticazione}}%A
 	\item \newListItem{req:login}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Login}
+	\item \newListItem{req:loginAmm}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Login Figure Amministrative}
 	\item \newListItem{req:logout}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Logout}
 
 	\setCatR{\ref*{cat:iscrizione}}%B
@@ -121,7 +122,9 @@ Vengono di seguito elencati i requisiti funzionali:
 	\setCatR{\ref*{cat:vetrina}}%C
 	%\item \newListItem{req:personalizzaVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Personalizzione vetrina}
 	\item \newListItem{req:personalizzaVetrinaInsDesc}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento descrizione}
+	\item \newListItem{req:personalizzaVetrinaModDesc}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica descrizione}
 	\item \newListItem{req:personalizzaVetrinaInsImg}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento immagine}
+	\item \newListItem{req:personalizzaVetrinaDelImg}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Rimozione immagine}
 	\item \newListItem{req:personalizzaVetrinaInsProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento prodotto}
 	\item \newListItem{req:personalizzaVetrinaModProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica prodotto}
 	\item \newListItem{req:statistichePrivateVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Visualizzazione statistiche private della vetrina}
@@ -243,7 +246,9 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 %\statoUn - da approvare
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% A - AUTENTICAZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:login}{Il portale deve permettere ai visitatori di effettuare il login con i dati inseriti nella fase di iscrizione}{\prioritaH}{\statoUn}
+\reqTabRF{req:login}{Il portale deve permettere ai visitatori di effettuare il login con i dati inseriti nella fase di iscrizione, per entrare nel portale come una Figura Pubblica autenticata}{\prioritaH}{\statoUn}
+
+\reqTabRF{req:loginAmm}{Il portale deve permettere agli amministratori di effettuare il login in modo sicuro}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
@@ -288,7 +293,15 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \tabreqvspace
 
+\reqTabRF{req:personalizzaVetrinaModDesc}{Deve essere possibile per il produttore modificare la descrizione nella propria vetrina}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
 \reqTabRF{req:personalizzaVetrinaInsImg}{Deve essere possibile per il produttore inserire un'immagine nella propria vetrina}{\prioritaM}{\statoUn}
+
+\tabreqvspace
+
+\reqTabRF{req:personalizzaVetrinaDelImg}{Deve essere possibile per il produttore rimuovere l'immagine nella propria vetrina}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
