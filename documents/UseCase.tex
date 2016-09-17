@@ -144,8 +144,9 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
 
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
-	\item \newListItem{cu:aggiungiAccountAFigura}{\formattaCU}{Aggiungi privilegi ad account}
-	\item \newListItem{cu:rimuoviAccountDaFigura}{\formattaCU}{Rimuovi privilegi da account}
+	\item \newListItem{cu:modificaPrivilegiAccount}{\formattaCU}{Modifica privilegi di un account}
+	%\item \newListItem{cu:aggiungiPrivilegiAccount}{\formattaCU}{Aggiungi privilegi ad account}
+	%\item \newListItem{cu:rimuoviPrivilegiAccount}{\formattaCU}{Rimuovi privilegi da account}
 
 	\setCatCU{\ref*{pkg:gestionevalutazione}}%G
 	\item \newListItem{cu:inserisciValutazioneProdotto}{\formattaCU}{Inserimento valutazione}
@@ -587,8 +588,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {Nel sistema è stato modificato un prodotto presente nella vetrina del Produttore}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un Produttore richiede di modificare un prodotto presente nella sua vetrina
-		\item Il sistema mostra i prodotti presenti nella vetrina del Produttore e chiede di selezionarne uno
-		\item Il Produttore seleziona un prodotto tra quelli mostrati \label{cumodprodelim:0}
+		\item Il sistema mostra i prodotti presenti nella vetrina del Produttore e chiede di selezionarne uno\label{cumodprodelim:0}
+		\item Il Produttore seleziona un prodotto tra quelli mostrati 
 		\item Il sistema mostra il prodotto selezionato e richiede di compilare la scheda prodotto, precompilata con i dati già presenti nel sistema
 		\item Il Produttore inserisce i dati richiesti \label{cumodprodelim:1}
 		\item Il Produttore conferma i dati inseriti
@@ -649,13 +650,13 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:inserimentoNotizia}
 {\getTitletodesc{att:redattore}}
 {La persona connessa al sito è autenticata e ha i privilegi di Redattore}
-{Nel  sistema è presente la notizia inserita dalla persona}
+{Nel sistema è presente una nuova notizia}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Redattore richiede di inserire una notizia  
 	\item Il sistema richiede di compilare i campi necessari all'inserimento della notizia
 	\item Il Redattore inserisce i dati richiesti \label{cuinsnot:2}
 	\item Il Redattore conferma i dati richiesti
-	\item Il sistema accetta i dati inseriti e crea una nuova notizia nel sistema
+	\item Il sistema memorizza i dati inseriti e crea una nuova notizia
 \end{enumCU}}
 %
 \cuAlternativo{cu:inserimentoNotizia}
@@ -672,14 +673,16 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  MODIFICA NOTIZIA *****************
 \cuTab{cu:modificaNotizia}
 {\getTitletodesc{att:redattore}}
-{La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}
-{La notizia è stata correttamente modificata}
+{La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}
+{Nel sistema è stata modificata una notizia}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Redattore richiede di modificare una notizia presente nel sistema 
-	\item Il sistema mostra i campi necessari all'inserimento della notizia precompilati con i dati già presenti nel sistema
+	\item Il caso d'uso ha inizio quando un Redattore richiede di modificare una notizia presente nel sistema
+	\item Il sistema mostra le notizie presenti al Redattore e chiede di selezionarne una \label{cumodnot:1}
+	\item Il Redattore seleziona una notizia tra quelle mostrate
+	\item Il sistema mostra la notizia selezionata e richiede di compilarne la scheda associata, precompilata con i dati già presenti nel sistema 
 	\item Il Redattore inserisce, modifica o lascia inalterati i dati richiesti \label{cumodnot:2}
 	\item Il Redattore conferma i dati richiesti
-	\item Il sistema accetta i dati inseriti e modifica la notizia nel sistema
+	\item Il sistema memorizza i dati inseriti e modifica la notizia
 \end{enumCU}}
 %
 \cuAlternativo{cu:modificaNotizia}
@@ -689,29 +692,50 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cumodnot:2} il Redattore annulla la modifica della notizia
-	\end{enumCU}}%
+\end{enumCU}}%
+%
+\cuAlternativo{cu:modificaNotizia}
+{Flusso alternativo 2}%
+{Annulla selezione}%
+{La persona connessa al sito è autenticata e ha i privilegi di Redattore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cumodnot:2} il Redattore annulla la selezione della notizia
+\end{enumCU}}%
 
 \tabcuvspace
 
 %***************  RIMOZIONE NOTIZIA *****************
 \cuTab{cu:rimozioneNotizia}
 {\getTitletodesc{att:redattore}}
-{La persona è autenticata e ha i privilegi di Redattore. La notizia è presente nel sistema}
-{Nel sistema non è più presente la notizia eliminata}
+{La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}
+{Nel sistema è presente una notizia in meno}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Redattore richiede di eliminare una notizia presente nel sistema
-	\item Il sistema chiede conferma dell'eliminazione \label{curemnot:2}
-	\item Il Redattore conferma l'eliminazione
+	\item Il sistema mostra le notizie presenti al Redattore e chiede di selezionarne una \label{cumodnot:1}
+	\item Il Redattore seleziona una notizia tra quelle mostrate
+	\item Il sistema mostra la notizia selezionata e chiede conferma della rimozione \label{curemnot:2}
+	\item Il Redattore conferma la rimozione
+	\item Il sistema rimuove la notizia selezionata
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneNotizia}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona connessa al sito è autenticata e ha i privilegi di Redattore}%
+{La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curemnot:2} il Redattore annulla la rimozione della notizia
 	\end{enumCU}}%
+%
+\cuAlternativo{cu:rimozioneNotizia}
+{Flusso alternativo 2}%
+{Annulla selezione}%
+{La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cumodnot:1} il Redattore annulla la selezione della notizia
+\end{enumCU}}%
 
 \subsection{Gestione suggerimenti}
 \begin{center}
@@ -720,24 +744,24 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  SUGGERIMENTO PRODOTTI *****************
 %Accorpa suggerimento intelligente e simili
 \cuTab{cu:suggerimentoProdotti}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata nel sistema e sta visualizzando un prodotto}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona è autenticata nel sistema ed ha i privilegi di Figura Pubblica Autenticata}
 {Vengono suggeriti dei prodotti presenti nel sistema}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore sta visualizzando un prodotto
-	\item Il sistema mostra all'Utente o al Produttore dei prodotti, sulla base della sua cronologia e delle sue valutazioni
+	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede il suggerimento di prodotti
+	\item Il sistema mostra alla Figura Pubblica Autenticata dei prodotti, sulla base della sua cronologia e delle sue valutazioni
 \end{enumCU}}
 
 \tabcuvspace
 
 %***************  SUGGERIMENTO NOTIZIE *****************
 \cuTab{cu:notizieSimili}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata nel sistema e sta visualizzando una notizia}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona è autenticata nel sistema ed ha i privilegi di Figura Pubblica Autenticata}
 {Vengono suggerite delle notizie presenti nel sistema}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore sta visualizzando una notizia
-	\item Il sistema mostra all'Utente o al Produttore delle notizie, sulla base della sua cronologia
+	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede il suggerimento di notizie
+	\item Il sistema mostra alla Figura Pubblica Autenticata delle notizie, sulla base della sua cronologia
 \end{enumCU}}
 
 \subsection{Gestione account}
@@ -746,8 +770,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 %***************  ACCESSO PROFILO *****************
 \cuTab{cu:accessoProfilo}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata nel sistema}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{La persona connessa al sito è autenticata}
 {Viene mostrato il profilo alla persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare il proprio profilo
@@ -758,15 +782,15 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %***************  ACCESSO IMPOSTAZIONI *****************
 \cuTab{cu:modificaImpostazioni}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata nel sistema}
-{La persona modifica le proprie impostazioni}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{La persona connessa al sito è autenticata}
+{Le impostazioni della persona sono state modificate}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di modificare la pagine delle proprie impostazioni
-	\item Il sistema mostra alla persona la pagina delle proprie impostazioni
-	\item La persona modifica i campi presenti nella pagina \label{cumodimp:1}
-	\item La persona conferma le modifiche effettuate
-	\item Il sistema accetta le modifiche effettuate
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di modificare la pagina delle proprie impostazioni
+	\item Il sistema mostra alla persona la pagina delle proprie impostazioni, abilitando solo i campi che la persona puo modificare
+	\item La persona modifica i campi presenti nella pagina  \label{cumodimp:1}
+	\item La persona conferma le modifiche effettuate 
+	\item Il sistema memorizza le modifiche effettuate
 \end{enumCU}}
 %
 \cuAlternativo{cu:modificaImpostazioni}
@@ -782,19 +806,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %***************  RIMOZIONE ACCOUNT PROPRIO  *****************
 \cuTab{cu:rimozioneAccountProprio}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata nel sistema}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona connessa al sito è autenticata ed ha solo i privilegi di Figura Pubblica Autenticata}
 {La persona non è più autenticata nel sistema. L'account della persona non è più presente nel sistema}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di eliminare il proprio account
+	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata nel sistema richiede di rimuovere il proprio account
 	\item Il sistema chiede conferma della rimozione dell'account \label{curimaccprop:1}
 	\item La persona conferma la rimozione
+	\item Il sistema rimuove l'account del richiedente
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneAccountProprio}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona è autenticata nel sistema}%
+{La persona connessa al sito è autenticata ed ha solo i privilegi di Figura Pubblica Autenticata}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curimaccprop:1} la persona annulla la rimozione dell'account
@@ -805,70 +830,118 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  RIMOZIONE ACCOUNT ALTRUI  *****************
 \cuTab{cu:rimozioneAccountAltrui}
 {\getTitletodesc{att:amministratore}}
-{La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}
-{L'account da rimuovere non è più presente nel sistema}
+{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un altro account}
+{Nel sistema è presente account in meno}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Amministratore richiede di eliminare un account
-	\item Il sistema chiede conferma dell'eliminazione dell'account \label{curimaccaltr:1}
+	\item Il sistema mostra all'Amministratore l'elenco degli account presenti \label{curimaccaltr:0}
+	\item L'Amministratore seleziona un account dall'elenco e richiede al sistema di rimuoverlo
+	\item Il sistema mostra l'account selezionato e chiede conferma della rimozione dell'account \label{curimaccaltr:1}
 	\item L'Amministratore conferma l'eliminazione
+	\item Il sistema rimuove l'account selezionato
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneAccountAltrui}
 {Flusso alternativo 1}%
-{Annulla rimozioni}%
-{La persona è autenticata e ha i privilegi di Amministratore. L'account da rimuovere è presente nel sistema}%
+{Annulla rimozione}%
+{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un altro account}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curimaccaltr:1} l'Amministratore annulla la rimozione dell'account
 	\end{enumCU}}%
+%	
+\cuAlternativo{cu:rimozioneAccountAltrui}
+{Flusso alternativo 2}%
+{Annulla selezione}%
+{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un altro account}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{curimaccaltr:0} l'Assistente annulla la selezione
+\end{enumCU}}%
 
 \tabcuvspace
 
-%***************  Aggiungi privilegi  *****************
-\cuTab{cu:aggiungiAccountAFigura}
+%***************  Modifica privilegi  *****************
+\cuTab{cu:modificaPrivilegiAccount}
 {\getTitletodesc{att:amministratore}}
-{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}
-{L'account da modificare ha i privilegi della figura scelta, oltre a quelli già posseduti}
+{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un account}
+{Sono stati aggiornati i privilegi di un account}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Amministratore vuole fornire un ulteriore privilegio ad un account
-	\item Il sistema chiede quali privilegi fornire all'account 
-	\item L'Amministratore seleziona quale privilegio si vuole fornire all'account \label{cufornpriv:1}
+	\item Il caso d'uso ha inizio quando un Amministratore vuole modificare i privilegi di un account
+	\item Il sistema mostra all'Amministratore l'elenco degli account presenti \label{cufornpriv:0}
+	\item L'Amministratore seleziona un account dall'elenco
+	\item Il sistema mostra all'Amministratore la lista dei privilegi, specificando quelli posseduti dall'account selezionato
+	\item Il sistema chiede di modificare i privilegi posseduti dall'account selezionato
+	\item L'Amministratore seleziona quali privilegi vuole fornire all'account selezionato \label{cufornpriv:1}
 	\item L'Amministratore conferma la selezione
-	\item Il sistema accetta la selezione effettuata
+	\item Il sistema memorizza le scelte effettuate
 \end{enumCU}}
 %
-\cuAlternativo{cu:aggiungiAccountAFigura}
+\cuAlternativo{cu:modificaPrivilegiAccount}
 {Flusso alternativo 1}%
 {Annulla operazione}%
-{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}%
+{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un account}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cufornpriv:1} l'Amministratore annulla l'operazione
 	\end{enumCU}}%
+%	
+\cuAlternativo{cu:modificaPrivilegiAccount}
+{Flusso alternativo 2}%
+{Annulla selezione}%
+{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un account}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cufornpriv:0} l'Assistente annulla la selezione
+\end{enumCU}}%
 
 \tabcuvspace
 
-%***************  Rimuovi privilegi  *****************
-\cuTab{cu:rimuoviAccountDaFigura}
-{\getTitletodesc{att:amministratore}}
-{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}
-{L'account da modificare non ha più i privilegi della figura scelta, ma mantiene gli altri}
-{\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Amministratore vuole rimuovere un privilegio ad un account
-	\item Il sistema chiede quali privilegi rimuovere dall'account  fra quelli che possiede
-	\item L'Amministratore seleziona quale privilegio si vuole rimuovere dall'account \label{curimpriv:1}
-	\item L'Amministratore conferma la selezione
-	\item Il sistema accetta la selezione effettuata
-\end{enumCU}}
+%***************  Aggiungi privilegi  *****************
+%\cuTab{cu:aggiungiPrivilegiAccount}
+%{\getTitletodesc{att:amministratore}}
+%{La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un account}
+%{L'account da modificare ha i privilegi della figura scelta, oltre a quelli già posseduti}
+%{\begin{enumCU}
+%	\item Il caso d'uso ha inizio quando un Amministratore vuole fornire un ulteriore privilegio ad un account
+%	\item Il sistema chiede quali privilegi fornire all'account 
+%	\item L'Amministratore seleziona quale privilegio si vuole fornire all'account \label{cufornpriv:1}
+%	\item L'Amministratore conferma la selezione
+%	\item Il sistema accetta la selezione effettuata
+%\end{enumCU}}
+%%
+%\cuAlternativo{cu:aggiungiPrivilegiAccount}
+%{Flusso alternativo 1}%
+%{Annulla operazione}%
+%{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e non ha già i privilegi della figura scelta}%
+%{\postNulle}%
+%{\begin{enumCU}
+%		\item Dopo il punto \ref{cufornpriv:1} l'Amministratore annulla l'operazione
+%	\end{enumCU}}%
 %
-\cuAlternativo{cu:rimuoviAccountDaFigura}
-{Flusso alternativo 1}%
-{Annulla operazione}%
-{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}%
-{\postNulle}%
-{\begin{enumCU}
-		\item Dopo il punto \ref{curimpriv:1} l'Amministratore annulla l'operazione
-	\end{enumCU}}%
+%\tabcuvspace
+%
+%***************  Rimuovi privilegi  *****************
+%\cuTab{cu:rimuoviPrivilegiAccount}
+%{\getTitletodesc{att:amministratore}}
+%{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}
+%{L'account da modificare non ha più i privilegi della figura scelta, ma mantiene gli altri}
+%{\begin{enumCU}
+%	\item Il caso d'uso ha inizio quando un Amministratore vuole rimuovere un privilegio ad un account%
+%	\item Il sistema chiede quali privilegi rimuovere dall'account  fra quelli che possiede
+%	\item L'Amministratore seleziona quale privilegio si vuole rimuovere dall'account \label{curimpriv:1}
+%	\item L'Amministratore conferma la selezione
+%	\item Il sistema accetta la selezione effettuata
+%\end{enumCU}}
+%
+%\cuAlternativo{cu:rimuoviPrivilegiAccount}
+%{Flusso alternativo 1}%
+%{Annulla operazione}%
+%{La persona è autenticata e ha i privilegi di Amministratore. L'account da modificare è presente nel sistema e ha già i privilegi della figura scelta}%
+%{\postNulle}%
+%{\begin{enumCU}%
+%		\item Dopo il punto \ref{curimpriv:1} l'Amministratore annulla l'operazione%
+%	\end{enumCU}}%
 
 
 %***************  Gestione valutazioni *****************

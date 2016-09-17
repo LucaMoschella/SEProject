@@ -1,4 +1,20 @@
 IMPORTANTE:
+) Inserisic valutazione, modifica, inserisci recensione, modifica, rimuovi ESTENDONO visualizza prodotto
+
+) COmmento recensione ESTENDE visualizza recensione
+
+) MOdifica prodotto ESTENDE ?
+
+) X può annulare l'operazione in qualsiasi momento -> flusso alternativo
+
+) In tutti gli use case in cui il  sistema "mostra" qualcosa, incluso la lista di qualcosa per la selezione... ci va un include visualizza (anteprima) (?)
+
+) In visualizza mettere gli include necessari
+
+) La ricerca include visualizza anteprima
+
+) RIGIRARE FRECCE in suggerimento prodotto
+
 ) Aggiunti: modifica descrizione, elimina immagine in gestione vetrina. (da fare l'update dei diagrammi)
 
 ) Visualizza anteprima notizia (nella ricerca)
