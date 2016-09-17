@@ -1,4 +1,6 @@
 IMPORTANTE:
+) Al momento per aggiungere un commmento ad una recensione devo selezionare la recensione fra la lista di TUTTE le recensioni. Idem per il resto. Da cambiare. [...]
+
 ) Inserisic valutazione, modifica, inserisci recensione, modifica, rimuovi ESTENDONO visualizza prodotto
 
 ) COmmento recensione ESTENDE visualizza recensione

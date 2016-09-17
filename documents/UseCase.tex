@@ -951,26 +951,26 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 \cuTab{cu:inserisciValutazioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato valutato dalla persona}
-{La valutazione dell'Utente per quel prodotto è aggiunta nel sistema}
+{La persona è autenticata e ha i privilegi di Utente. Nel sistema è presente almeno un prodotto che non è già stato valutato dalla persona}
+{Nel sistema è stata aggiunta la valutazione della persona per un prodotto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la valutazione di un prodotto presente nel sistema
 	\item Il sistema richiede all'Utente la valutazione per quel prodotto
 	\item L'Utente inserisce la valutazione
-	\item Il sistema accetta la valutazione
+	\item Il sistema memorizza la valutazione
 \end{enumCU}}
 
 \tabcuvspace
 
 \cuTab{cu:modificaValutazioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente e ha effettuato una valutazione di un prodotto presente nel sistema}
+{La persona è autenticata e ha i privilegi di Utente e ha effettuato una valutazione di un prodotto presente nel sistema}
 {La valutazione viene modificata correttamente}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di modificare una sua valutazione di un prodotto presente nel sistema
 	\item Il sistema mostra all'Utente la valutazione che ha effettuato per quel prodotto
 	\item L'Utente inserisce la nuova valutazione
-	\item Il sistema accetta la nuova valutazione inserita
+	\item Il sistema memorizza la nuova valutazione inserita
 \end{enumCU}}
 
 %***************  Gestione recensione *****************
