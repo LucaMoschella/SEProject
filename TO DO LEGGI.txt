@@ -1,4 +1,7 @@
 IMPORTANTE:
+
+)Togliere le selezioni e accorparle nei mostra |||||||||||||||||||||||||||||||||||||||||||||| AGGIUNGI FLUSSO ALTERNATIVO PER RIFERIMENTO AD X SENZA RICERCA
+
 ) Al momento per aggiungere un commmento ad una recensione devo selezionare la recensione fra la lista di TUTTE le recensioni. Idem per il resto. Da cambiare. [...]
 
 ) Inserisic valutazione, modifica, inserisci recensione, modifica, rimuovi ESTENDONO visualizza prodotto
@@ -21,7 +24,7 @@ IMPORTANTE:
 
 ) Visualizza anteprima notizia (nella ricerca)
 
-)Accorpa visualizza recensione prodotto in Visualizza scheda prodotto
+) Accorpa visualizza recensione prodotto in Visualizza scheda prodotto
 
 ) Vedi: Visualizza X & Visualizza informazioni X. Accorpare? Una per la sheda di X, con info e statistiche. 
 	Visualizza -> Visualizza anteprima prodotto
