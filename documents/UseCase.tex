@@ -160,7 +160,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:giudizioRecensione}{\formattaCU}{Giudizio recensione}
 	\item \newListItem{cu:modificaGiudizioRecensione}{\formattaCU}{Modifica giudizio recensione}
 	\item \newListItem{cu:segnalazioneContenutiInap}{\formattaCU}{Segnalazione contenuti inappropriati}
-	\item \newListItem{cu:visualizzazioneSegnContenutiInap}{\formattaCU}{Visualizzazione segnalazioni contenuti}
+	\item \newListItem{cu:mostraSegnContenutiInap}{\formattaCU}{Visualizzazione segnalazioni contenuti}
 	\item \newListItem{cu:rimozioneContenutiInap}{\formattaCU}{Rimozione contenuti inappropriati}
 
 	\setCatCU{\ref*{pkg:interazione}}%I
@@ -175,28 +175,33 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:ricerca}}%K
 	\item \newListItem{cu:ricercaProdotto}{\formattaCU}{Ricerca prodotto}
+	\item \newListItem{cu:selezionaProdotto}{\formattaCU}{Seleziona prodotto}
 	\item \newListItem{cu:ricercaProfilo}{\formattaCU}{Ricerca profilo}
+	\item \newListItem{cu:selezionaProfilo}{\formattaCU}{Seleziona profilo}
 	\item \newListItem{cu:ricercaNotizia}{\formattaCU}{Ricerca notizia}
-
+	\item \newListItem{cu:selezionaNotizia}{\formattaCU}{Seleziona notizia}
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
 	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto}
-	\item \newListItem{cu:visualizzazioneRichiestaInsProdotto}{\formattaCU}{Visualizzazione richiesta prodotto}
+	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Visualizzazione richiesta prodotto}
 	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento produttore e prodotto}
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
-	\item \newListItem{cu:visualizzazioneVetrina}{\formattaCU}{Visualizzazione vetrina}
-	\item \newListItem{cu:visualizzazioneInfoVetrina}{\formattaCU}{Visualizzazione informazioni vetrina}
-%%	\item \newListItem{cu:visualizzazioneProdottiVetrina}{\formattaCU}{Visualizzazione prodotti esposti in vetrina}
-	\item \newListItem{cu:visualizzazioneProdotto}{\formattaCU}{Visualizzazione prodotto}
-	\item \newListItem{cu:visualizzazioneInfoProdotto}{\formattaCU}{Visualizzazione informazioni del prodotto}
-	\item \newListItem{cu:visualizzazioneRecProdotto}{\formattaCU}{Visualizzazione recensioni associate al prodotto}
-%	\item \newListItem{cu:visualizzazioneStatProdotto}{\formattaCU}{Visualizzazione statistiche del prodotto}
-	\item \newListItem{cu:visualizzazioneProfilo}{\formattaCU}{Visualizzazione profilo pubblico}
-	\item \newListItem{cu:visualizzazioneInfoProfilo}{\formattaCU}{Visualizzazione informazioni di un profilo pubblico}
-%	\item \newListItem{cu:visualizzazioneStatProfilo}{\formattaCU}{Visualizzazione statistiche di un profilo pubblico}
-	\item \newListItem{cu:visualizzazioneNotizia}{\formattaCU}{Visualizzazione notizia}
-	\item \newListItem{cu:visualizzazioneAggF}{\formattaCU}{Visualizzazione aggiornamenti dai followed}
+	\item \newListItem{cu:mostraVetrina}{\formattaCU}{Visualizzazione vetrina}
+	%\item \newListItem{cu:mostraInfoVetrina}{\formattaCU}{Visualizzazione informazioni vetrina}
+%%	\item \newListItem{cu:mostraProdottiVetrina}{\formattaCU}{Visualizzazione prodotti esposti in vetrina}
+	\item \newListItem{cu:mostraProdotto}{\formattaCU}{Visualizzazione prodotto}
+%	\item \newListItem{cu:mostraAnteprimaProdotto}{\formattaCU}{Mostra anteprima prodotto}
+%	\item \newListItem{cu:mostraInfoProdotto}{\formattaCU}{Visualizzazione informazioni del prodotto}
+	\item \newListItem{cu:mostraRecProdotto}{\formattaCU}{Visualizzazione recensioni associate al prodotto}
+%	\item \newListItem{cu:mostraStatProdotto}{\formattaCU}{Visualizzazione statistiche del prodotto}
+	\item \newListItem{cu:mostraProfilo}{\formattaCU}{Visualizzazione profilo pubblico}
+%	\item \newListItem{cu:mostraAnteprimaProfilo}{\formattaCU}{Mostra anteprima profilo}
+%	\item \newListItem{cu:mostraInfoProfilo}{\formattaCU}{Visualizzazione informazioni di un profilo pubblico}
+%	\item \newListItem{cu:mostraStatProfilo}{\formattaCU}{Visualizzazione statistiche di un profilo pubblico}
+	\item \newListItem{cu:mostraNotizia}{\formattaCU}{Visualizzazione notizia}
+%	\item \newListItem{cu:mostraAnteprimaNotizia}{\formattaCU}{Mostra anteprima notizia}
+	\item \newListItem{cu:mostraAggF}{\formattaCU}{Visualizzazione aggiornamenti dai followed}
 \end{itemize}	
 
 %{id}{attori}{pre}{post}{flusso}
@@ -458,7 +463,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema non è presente la descrizione della vetrina di quel Produttore}
 {Nel sistema è presente la descrizione della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:visualizzazioneVetrina}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
 		\item Il Produttore richiede di inserire la descrizione della sua vetrina
 		\item Il sistema richiede il testo da inserire come descrizione 
 		\item Il Produttore inserisce la descrizione nell'apposito campo\label{cuinsdescr:2}
@@ -482,7 +487,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente la descrizione della vetrina di quel Produttore}
 {Nel sistema è presente la descrizione della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:visualizzazioneVetrina}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
 		\item Il Produttore richiede di modificare la descrizione della sua vetrina
 		\item Il sistema richiede il testo da inserire come descrizione, il campo in cui inserire il testo è precompilato con la descrizione già presente nel sistema 
 		\item Il Produttore inserisce la descrizione nell'apposito campo\label{cumoddescr:2}
@@ -507,7 +512,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
 {Nel sistema è presente l'immagine della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:visualizzazioneVetrina}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
 		\item Il Produttore richiede di inserire l'immagine della vetrina
 		\item Il sistema richiede il percorso nel file system, o nella rete, dell'immagine da inserire 
 		\item Il Produttore inserisce il percorso dell'immagine nell'apposito campo\label{cuinsimm:2}
@@ -540,7 +545,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente l'immagine della vetrina del Produttore}
 {Nel sistema non è presente l'immagine della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:visualizzazioneVetrina}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
 		\item Il  Produttore richiede di rimuovere l'immagine della vetrina
 		\item Il sistema richiede di confermare l'operazione \label{cudelimm:2}
 		\item Il Produttore conferma l'operazione
@@ -555,7 +560,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
 {Nel sistema è presente un nuovo prodotto nella vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:visualizzazioneVetrina}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
 		\item Il Produttore richiedere di inserire un prodotto nella vetrina
 		\item Il sistema richiede di compilare la scheda del prodotto da inserire
 		\item Il Produttore inserisce i dati richiesti \label{cuinsimmpro:1}
@@ -592,7 +597,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nella vetrina del Produttore è presente almeno un prodotto}%
 {Nel sistema è stato modificato un prodotto presente nella vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza un prodotto, \inc{cu:visualizzazioneProdotto}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza un prodotto, \inc{cu:mostraProdotto}
 		\item Il Produttore richiede di modificare il prodotto visualizzato
 		\item Il sistema richiede di compilare la scheda prodotto, precompilata con i dati già presenti nel sistema
 		\item Il Produttore inserisce i dati richiesti \label{cumodprodelim:1}
@@ -631,7 +636,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di Produttore}
 {Al Produttore sono mostrate le statistiche private della propria vetrina}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:visualizzazioneVetrina}
+		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
 		\item Il Produttore richiede di accedere alle statistiche private della sua vetrina
 		\item Il sistema mostra al Produttore le statistiche della sua vetrina
 	\end{enumCU}}
@@ -1106,7 +1111,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneSegnContenutiInap}
+\cuTab{cu:mostraSegnContenutiInap}
 {\getTitletodesc{att:moderatore}}
 {La persona è autenticata ed ha i privilegi di Moderatore. La segnalazione è presente nel sistema}
 {La segnalazione è stata gestita dal Moderatore}
@@ -1115,7 +1120,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il sistema mostra al Moderatore la segnalazione \label{delsegn:3}
 \end{enumCU}}
 %
-\cuAlternativo{cu:visualizzazioneSegnContenutiInap}
+\cuAlternativo{cu:mostraSegnContenutiInap}
 {Flusso alternativo 1}%
 {Elimina segnalazione}%
 {La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}
@@ -1288,6 +1293,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
+\cuTab{cu:selezionaProdotto}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è connessa al sito}
+{I risultati della ricerca sono visualizzati}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un prodotto
+	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
+	\item La persona inserisce i dati negli appositi campi \label{curicprod:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema effettua la ricerca richiesta
+\end{enumCU}}
+
+\tabcuvspace
+
 %****************** RICERCA PROFILO ***********
 \cuTab{cu:ricercaProfilo}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
@@ -1312,6 +1331,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
+\cuTab{cu:selezionaProfilo}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è connessa al sito}
+{I risultati della ricerca sono visualizzati}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un profilo
+	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
+	\item La persona inserisce i dati negli appositi campi \label{curicprof:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema effettua la ricerca richiesta
+\end{enumCU}}
+
+\tabcuvspace
+
 %****************** RICERCA NOTIZIA ***********
 \cuTab{cu:ricercaNotizia}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
@@ -1333,6 +1366,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\begin{enumCU}
 		\item Dopo il punto \ref{curicnot:1} la persona annulla la ricerca
 	\end{enumCU}}%
+
+\tabcuvspace
+
+\cuTab{cu:selezionaNotizia}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{La persona è connessa al sito}
+{I risultati della ricerca sono visualizzati}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di una notizia
+	\item Il sistema richiede di compilare la scheda necessaria per definire i parametri di ricerca
+	\item La persona inserisce i dati negli appositi campi \label{curicnot:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema effettua la ricerca richiesta
+\end{enumCU}}
 
 \subsection{Gestione prodotti mancanti}
 \begin{center}
@@ -1374,7 +1421,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneRichiestaInsProdotto}
+\cuTab{cu:mostraRichiestaInsProdotto}
 {\getTitletodesc{att:produttore}}
 {La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
 {Il prodotto suggerito è presente nella vetrina del Produttore}
@@ -1391,7 +1438,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
 	\end{enumCU}}
 %
-\cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
+\cuAlternativo{cu:mostraRichiestaInsProdotto}
 {Flusso alternativo 1}%
 {Elimina richiesta}%
 {La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
@@ -1401,7 +1448,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 		\item Il sistema accetta l'operazione
 	\end{enumCU}}%
 %
-\cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
+\cuAlternativo{cu:mostraRichiestaInsProdotto}
 {Flusso alternativo 2}%
 {Annulla inserimento}%
 {La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
@@ -1410,7 +1457,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 		\item Dopo il punto \ref{cuvisricpro:2} o dopo il punto \ref{cuvisricpro:1} il Produttore annulla l'inserimento
 	\end{enumCU}}%
 %
-\cuAlternativo{cu:visualizzazioneRichiestaInsProdotto}
+\cuAlternativo{cu:mostraRichiestaInsProdotto}
 {Flusso alternativo 3}%
 {Errore inserimento}%
 {La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
@@ -1463,7 +1510,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
    \includegraphics[width=\textwidth]{assets/visualParadigm/Visualizzazione}
 \end{center}
 %accorpa visalizza prodotti in vetrina e visualizza vetrina
-\cuTab{cu:visualizzazioneVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}
+\cuTab{cu:mostraVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{La vetrina è presente nel sistema}
 {La vetrina è mostrata}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare una vetrina presente nel sistema
@@ -1473,41 +1520,54 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \tabcuvspace
 
 %Cambiato da: statistiche pubbliche vetrina
-\cuTab{cu:visualizzazioneInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La vetrina è presente nel sistema}
-{Le informazioni relative alla vetrina sono mostrate}
-{\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni relative ad una vetrina presente nel sistema
-	\item Il sistema mostra alla persona le informazioni richieste
-\end{enumCU}}
+%\cuTab{cu:mostraInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{La vetrina è presente nel sistema}
+%{Le informazioni relative alla vetrina sono mostrate}
+%{\begin{enumCU}
+%	%\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni relative ad una vetrina presente nel sistema
+%	\item Il sistema mostra alla persona le informazioni richieste
+%\end{enumCU}}
 
 %\tabcuvspace
 %
-%\cuTab{cu:visualizzazioneProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%\cuTab{cu:mostraProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}
+\cuTab{cu:mostraProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}
 {Il prodotto è mostrato}
 {\begin{enumCU}
+	% Effettua una ricerca di prodotti con \incl ricercs
+	% Seleziona un 
 	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare un prodotto presente nel sistema
 	\item Il sistema mostra alla persona il prodotto richiesto
 \end{enumCU}}
 
 \tabcuvspace
 
-%Accorpa statistiche prodotto e informazioni prodotto
-\cuTab{cu:visualizzazioneInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{Il prodotto è presente nel sistema}
-{Le informazioni e le statistiche relative al prodotto sono mostrate}
-{\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni e le statistiche relative ad un prodotto presente nel sistema
-	\item Il sistema mostra alla persona le informazioni e le statistiche relative a quel prodotto
-\end{enumCU}}
+%\cuTab{cu:mostraAnteprimaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}
+%{Il prodotto è mostrato}
+%{\begin{enumCU}
+%	% Effettua una ricerca di prodotti con \incl ricercs
+%	% Seleziona un 
+%	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare un prodotto presente nel sistema
+%	\item Il sistema mostra alla persona il prodotto richiesto
+%\end{enumCU}}
+%
+%\tabcuvspace
 
-\tabcuvspace
-
-\cuTab{cu:visualizzazioneRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%%Accorpa statistiche prodotto e informazioni prodotto
+%\cuTab{cu:mostraInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{Il prodotto è presente nel sistema}
+%{Le informazioni e le statistiche relative al prodotto sono mostrate}
+%{\begin{enumCU}
+%	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni e le statistiche relative ad un prodotto presente nel sistema
+%	\item Il sistema mostra alla persona le informazioni e le statistiche relative a quel prodotto
+%\end{enumCU}}
+%
+%\tabcuvspace
+%
+\cuTab{cu:mostraRecProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {Il prodotto è presente nel sistema}
 {Le recensioni relative al prodotto sono mostrate}
 {\begin{enumCU}
@@ -1517,11 +1577,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-%\cuTab{cu:visualizzazioneStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%\cuTab{cu:mostraStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
 %
 %\tabcuvspace
 
-\cuTab{cu:visualizzazioneProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+\cuTab{cu:mostraProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {Il profilo è presente nel sistema}
 {Il profilo è mostrato}
 {\begin{enumCU}
@@ -1529,25 +1589,35 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il sistema mostra alla persona il profilo richiesto
 \end{enumCU}}
 
-\tabcuvspace
+%\tabcuvspace
+%
+%\cuTab{cu:mostraAnteprimaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{Il profilo è presente nel sistema}
+%{Il profilo è mostrato}
+%{\begin{enumCU}
+%	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare un profilo presente nel sistema
+%	\item Il sistema mostra alla persona il profilo richiesto
+%\end{enumCU}}
+%
+%\tabcuvspace
 
 %Accorpa informazioni profilo e statistiche profilo
-\cuTab{cu:visualizzazioneInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{Il profilo è presente nel sistema}
-{Le informazioni e le statistiche relative al profilo sono mostrate}
-{\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni relative ad un profilo presente nel sistema
-	\item Il sistema mostra alla persona le informazioni relative a quel profilo
-\end{enumCU}}
+%\cuTab{cu:mostraInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{Il profilo è presente nel sistema}
+%{Le informazioni e le statistiche relative al profilo sono mostrate}
+%{\begin{enumCU}
+%	%\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le informazioni relative ad un profilo presente nel sistema
+%	\item Il sistema mostra alla persona le informazioni relative a quel profilo
+%\end{enumCU}}
 
 %\tabcuvspace
 %
-%\cuTab{cu:visualizzazioneStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%\cuTab{cu:mostraStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La notizia è presente nel sistema}
+\cuTab{cu:mostraNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{Nel sistema è presente almeno una notizia}
 {La notizia è mostrata}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona connessa al sito richiede di visualizzare le notizie presenti nel sistema
@@ -1556,7 +1626,17 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-\cuTab{cu:visualizzazioneAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%\cuTab{cu:mostraAnteprimaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{Nel sistema è presente almeno una notizia}
+%{La notizia è mostrata}
+%{\begin{enumCU}
+%	\item Il caso d'uso ha inizio quando il sistema vuole mostrare l'anteprima di una notizia
+%	\item Il sistema mostra la notizia
+%\end{enumCU}}
+%
+%\tabcuvspace
+
+\cuTab{cu:mostraAggF}{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
 {La persona è autenticata come Utente o come Produttore}
 {Vengono mostrati gli aggiornamenti delle persone che si stanno seguendo}
 {\begin{enumCU}

@@ -164,7 +164,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:giudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Giudizio recensione}
 	\item \newListItem{req:modificaGiudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Modifica giudizio recensione}
 	\item \newListItem{req:segnalazioneContenutiInap}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Segnalazione contenuti inappropriati}
-	\item \newListItem{req:visualizzazioneSegnContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Visualizzazione segnalazioni contenuti inappropriati}
+	\item \newListItem{req:mostraSegnContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Visualizzazione segnalazioni contenuti inappropriati}
 	\item \newListItem{req:rimozioneContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Rimozione contenuti inappropriati}
 
 	\setCatR{\ref*{cat:interazione}}%I
@@ -186,22 +186,25 @@ Vengono di seguito elencati i requisiti funzionali:
 
 	\setCatR{\ref*{cat:prodottimancanti}}%N
 	\item \newListItem{req:richiestaInsProdotto}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento prodotto a un produttore iscritto}
-	\item \newListItem{req:visualizzazioneRichiesteInsProdotto}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Visualizzazione richieste inserimento prodotto}
+	\item \newListItem{req:mostraRichiesteInsProdotto}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Mostra richieste inserimento prodotto}
 	\item \newListItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento di un produttore}
 	
 	\setCatR{\ref*{cat:visualizzazione}}%O
-	\item \newListItem{req:visualizzazioneVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione vetrina}
-	\item \newListItem{req:visualizzazioneStatistichePubVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione statische pubbliche vetrina}
-	%\item %\newListItem{req:visualizzazioneProdottiVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione prodotti esposti in vetrina}
-	\item \newListItem{req:visualizzazioneProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione prodotto}
-	\item \newListItem{req:visualizzazioneInfoProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione informazioni del prodotto}
-	\item \newListItem{req:visualizzazioneRecProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione recensioni associate al prodotto}
-	\item \newListItem{req:visualizzazioneStatProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione statistiche del prodotto}
-	\item \newListItem{req:visualizzazioneProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione profilo pubblico}
-	\item \newListItem{req:visualizzazioneInfoProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione informazioni di un profilo pubblico}
-	\item \newListItem{req:visualizzazioneStatProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione statistiche di un profilo pubblico}
-	\item \newListItem{req:visualizzazioneNotizie}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Visualizzazione notizie}
-	\item \newListItem{req:visualizzazioneAggF}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Visualizzazione aggiornamenti dai followed}
+	\item \newListItem{req:mostraVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra vetrina}
+	%\item \newListItem{req:mostraStatistichePubVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra statische pubbliche vetrina}
+	%\item %\newListItem{req:mostraProdottiVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra prodotti esposti in vetrina}
+	\item \newListItem{req:mostraProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra prodotto}
+	%\item \newListItem{req:mostraAnteprimaProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra anteprima prodotto}
+	%\item \newListItem{req:mostraInfoProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra informazioni del prodotto}
+	\item \newListItem{req:mostraRecProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra recensioni associate al prodotto}
+	%\item \newListItem{req:mostraStatProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra statistiche del prodotto}
+	\item \newListItem{req:mostraProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra profilo pubblico}
+	%\item \newListItem{req:mostraAnteprimaProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra anteprima profilo pubblico}
+	%\item \newListItem{req:mostraInfoProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra informazioni di un profilo pubblico}
+	%\item \newListItem{req:mostraStatProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra statistiche di un profilo pubblico}
+	\item \newListItem{req:mostraNotizia}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra notizia}
+	%\item \newListItem{req:mostraAnteprimaNotizia}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra anteprima notizia}
+	\item \newListItem{req:mostraAggF}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Mostra aggiornamenti dai followed}
 \end{itemize}	
 
 
@@ -417,7 +420,7 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneSegnContenutiInap}{Il portale deve permettere ai moderatori la visualizzazione delle segnalazioni dei contenuti inappropriati}{\prioritaL}{\statoUn}
+\reqTabRF{req:mostraSegnContenutiInap}{Il portale deve permettere ai moderatori la visualizzazione delle segnalazioni dei contenuti inappropriati}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
@@ -476,7 +479,7 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento prodotto indirizzate a lui, con la possibilità di inserire direttamente il prodotto, modificarne la scheda o rifiutare la richiesta.}{\prioritaL}{\statoUn}
+\reqTabRF{req:mostraRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento prodotto indirizzate a lui, con la possibilità di inserire direttamente il prodotto, modificarne la scheda o rifiutare la richiesta.}{\prioritaL}{\statoUn}
 
 \tabreqvspace
 
@@ -485,51 +488,58 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 \tabreqvspace
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - VISUALIZZIONE CONTENUTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:visualizzazioneVetrina}{Il portale deve permettere di visualizzare una data vetrina}{\prioritaH}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:visualizzazioneStatistichePubVetrina}{Deve essere possibile visualizzare le statistiche pubbliche di una data vetrina}{\prioritaL}{\statoUn}
+\reqTabRF{req:mostraVetrina}{Il portale deve permettere di visualizzare una data vetrina}{\prioritaH}{\statoUn}
 
 %\tabreqvspace
 %
-%\reqTabRF{req:visualizzazioneProdottiVetrina}{Deve essere possibile visualizzare i prodotti presenti in una data vetrina}{\prioritaH}{\statoUn}
+%\reqTabRF{req:mostraStatistichePubVetrina}{Deve essere possibile visualizzare le statistiche pubbliche di una data vetrina}{\prioritaL}{\statoUn}
+
+%\tabreqvspace
+%
+%\reqTabRF{req:mostraProdottiVetrina}{Deve essere possibile visualizzare i prodotti presenti in una data vetrina}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneProdotto}{Il portale deve permettere di visualizzare un dato prodotto}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraProdotto}{Il portale deve permettere di visualizzare un dato prodotto}{\prioritaH}{\statoUn}
+
+%\tabreqvspace
+%
+%\reqTabRF{req:mostraAnteprimaProdotto}{Il portale deve permettere di visualizzare l'anteprima di un dato prodotto}{\prioritaH}{\statoUn}
+
+%\reqTabRF{req:mostraInfoProdotto}{Deve essere possibile visualizzare le informazioni di un dato prodotto}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneInfoProdotto}{Deve essere possibile visualizzare le informazioni di un dato prodotto}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraRecProdotto}{Deve essere possibile visualizzare le recensioni di un dato prodotto}{\prioritaH}{\statoUn}
+
+%\tabreqvspace
+%
+%\reqTabRF{req:mostraStatProdotto}{Deve essere possibile visualizzare le statistiche di un dato prodotto}{\prioritaM}{\statoUn}
+%
+\tabreqvspace
+
+\reqTabRF{req:mostraProfilo}{Il portale deve permettere di visualizzare un dato profilo}{\prioritaM}{\statoUn}
+
+%\tabreqvspace
+%
+%\reqTabRF{req:mostraAnteprimaProfilo}{Il portale deve permettere di visualizzare l'anteprima di un dato profilo}{\prioritaM}{\statoUn}
+
+%\reqTabRF{req:mostraInfoProfilo}{Deve essere possibile visualizzare le informazioni di un dato profilo}{\prioriaM}{\statoUn}
+%tabreqvspace
+%
+%\reqTabRF{req:mostraStatProfilo}{Deve essere possibile visualizzare le statistiche di un dato profilo}{\prioritaM}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneRecProdotto}{Deve essere possibile visualizzare le recensioni di un dato prodotto}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraNotizia}{Il portale deve permettere di visualizzare una data notizia}{\prioritaH}{\statoUn}
+
+%\tabreqvspace
+%
+%\reqTabRF{req:mostraAnteprimaNotizia}{Il portale deve permettere di visualizzare l'anteprima di una data notizia}{\prioritaH}{\statoUn}
 
 \tabreqvspace
 
-\reqTabRF{req:visualizzazioneStatProdotto}{Deve essere possibile visualizzare le statistiche di un dato prodotto}{\prioritaM}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:visualizzazioneProfilo}{Il portale deve permettere di visualizzare un dato profilo}{\prioritaM}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:visualizzazioneInfoProfilo}{Deve essere possibile visualizzare le informazioni di un dato profilo}{\prioritaM}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:visualizzazioneStatProfilo}{Deve essere possibile visualizzare le statistiche di un dato profilo}{\prioritaM}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:visualizzazioneNotizie}{Il portale deve permettere di visualizzare le notizie}{\prioritaH}{\statoUn}
-
-\tabreqvspace
-
-\reqTabRF{req:visualizzazioneAggF}{Il portale deve permettere di visualizzare gli aggiornamenti ricevuti dagli account che si stanno seguendo}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraAggF}{Il portale deve permettere di visualizzare gli aggiornamenti ricevuti dagli account che si stanno seguendo}{\prioritaH}{\statoUn}
 
 \subsection{Requisiti non funzionali}
 Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requisito non funzionale.
