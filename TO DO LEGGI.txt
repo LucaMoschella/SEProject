@@ -1,6 +1,6 @@
 IMPORTANTE:
 
-) TOGLIERE REQUISITI SUGGERIMENTI INTELLIGENTI
+) TOGLIERE REQUISITI SUGGERIMENTI INTELLIGENTI - lascia solo "prodotti/notizie simili"
 
 )Togliere le selezioni e accorparle nei mostra |||||||||||||||||||||||||||||||||||||||||||||| AGGIUNGI FLUSSO ALTERNATIVO PER RIFERIMENTO AD X SENZA RICERCA
 
