@@ -446,7 +446,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %
 \cuAlternativo{cu:approvazioneIscrizione}
 {Flusso alternativo 2}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {La persona connessa al sito è autenticata e ha i privilegi di  Assistente. Nel sistema è presente almeno una richiesta di creazione di un account}%
 {\postNulle}%
 {\begin{enumCU}
@@ -814,9 +814,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un altro account}
 {Nel sistema è presente account in meno}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Amministratore effettua la ricerca di un profilo, \inc{cu:ricercaProfilo}
-	\item L'Amministratore seleziona un profilo dal risultato della ricerca e richiede al sistema di rimuoverlo \label{curimaccaltr:0}
-	\item Il sistema mostra l'account associato al profilo selezionato e chiede conferma della rimozione dell'account \label{curimaccaltr:1}
+	\item Il caso d'uso ha inizio quando un Amministratore effettua la ricerca di un profilo, \inc{cu:ricercaProfilo}\label{curimaccaltr:0}
+	\item L'Amministratore seleziona un profilo dal risultato della ricerca e richiede al sistema di rimuoverlo 
+	\item Il sistema mostra l'account associato al profilo selezionato e chiede conferma della rimozione dell'account\label{curimaccaltr:1}
 	\item L'Amministratore conferma la rimozione
 	\item Il sistema rimuove l'account selezionato
 \end{enumCU}}
@@ -832,7 +832,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %	
 \cuAlternativo{cu:rimozioneAccountAltrui}
 {Flusso alternativo 2}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un altro account}%
 {\postNulle}%
 {\begin{enumCU}
@@ -847,8 +847,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un account}
 {Sono stati aggiornati i privilegi di un account}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Amministratore effettua la ricerca di un profilo, \inc{cu:ricercaProfilo}
-	\item L'Amministratore seleziona un profilo dal risultato della ricerca\label{cufornpriv:0}
+	\item Il caso d'uso ha inizio quando un Amministratore effettua la ricerca di un profilo, \inc{cu:ricercaProfilo}\label{cufornpriv:0}
+	\item L'Amministratore seleziona un profilo dal risultato della ricerca
 	\item Il sistema mostra all'Amministratore la lista dei privilegi, specificando quelli posseduti dall'account associato al profilo selezionato
 	\item Il sistema chiede di modificare i privilegi posseduti dall'account
 	\item L'Amministratore seleziona quali privilegi vuole fornire all'account\label{cufornpriv:1}
@@ -867,7 +867,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %	
 \cuAlternativo{cu:modificaPrivilegiAccount}
 {Flusso alternativo 2}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {La persona è autenticata e ha i privilegi di Amministratore. Nel sistema è presente almeno un account}%
 {\postNulle}%
 {\begin{enumCU}
@@ -933,7 +933,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Utente. Nel sistema è presente almeno un prodotto che non è già stato valutato dalla persona}
 {Nel sistema è stata aggiunta la valutazione della persona per un prodotto}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la valutazione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto, \inc{cu:mostraProdotto}
+	\item L'Utente richiede di effettuare la valutazione del prodotto che sta visualizzando
 	\item Il sistema richiede all'Utente la valutazione per quel prodotto
 	\item L'Utente inserisce la valutazione
 	\item Il sistema memorizza la valutazione
@@ -943,10 +944,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:modificaValutazioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata e ha i privilegi di Utente e ha effettuato una valutazione di un prodotto presente nel sistema}
-{La valutazione viene modificata correttamente}
+{La persona è autenticata, ha i privilegi di Utente e ha effettuato una valutazione di un prodotto presente nel sistema}
+{Nel sistema è stata modificata la valutazione di un prodotto inserita da una persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di modificare una sua valutazione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che ha già valutato, \inc{cu:mostraProdotto}
+	\item L'Utente richiede di modificare la valutazione del prodotto
 	\item Il sistema mostra all'Utente la valutazione che ha effettuato per quel prodotto
 	\item L'Utente inserisce la nuova valutazione
 	\item Il sistema memorizza la nuova valutazione inserita
@@ -1521,7 +1523,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %	
 \cuAlternativo{cu:mostraVetrina}
 {Flusso alternativo 3}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {Nel sistema è presente almeno un Produttore}%
 {\postNulle}%
 {\begin{enumCU}
@@ -1576,7 +1578,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %	
 \cuAlternativo{cu:mostraProdotto}
 {Flusso alternativo 3}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {Nel sistema è presente almeno un prodotto}%
 {\postNulle}%
 {\begin{enumCU}
@@ -1664,7 +1666,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %	
 \cuAlternativo{cu:mostraProfilo}
 {Flusso alternativo 3}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {Nel sistema è presente almeno un profilo}%
 {\postNulle}%
 {\begin{enumCU}
@@ -1729,7 +1731,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %	
 \cuAlternativo{cu:mostraNotizia}
 {Flusso alternativo 3}%
-{Annulla selezione}%
+{Annulla operazione di selezione}%
 {Nel sistema è presente almeno una notizia}%
 {\postNulle}%
 {\begin{enumCU}
