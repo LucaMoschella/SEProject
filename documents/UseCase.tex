@@ -677,10 +677,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}
 {Nel sistema è stata modificata una notizia}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Redattore richiede di modificare una notizia presente nel sistema
-	\item Il sistema mostra le notizie presenti al Redattore e chiede di selezionarne una \label{cumodnot:0}
-	\item Il Redattore seleziona una notizia tra quelle mostrate
-	\item Il sistema mostra la notizia selezionata e richiede di compilarne la scheda associata, precompilata con i dati già presenti nel sistema 
+	\item Il caso d'uso ha inizio quando un Redattore visualizza una notizia, \inc{cu:mostraNotizia}
+	\item Il Redattore richiede di modificare la notizia che sta visualizzando
+	\item Il sistema richiede di compilarne la scheda associata, precompilata con i dati già presenti nel sistema 
 	\item Il Redattore inserisce, modifica o lascia inalterati i dati richiesti \label{cumodnot:2}
 	\item Il Redattore conferma i dati richiesti
 	\item Il sistema memorizza i dati inseriti e modifica la notizia
@@ -693,15 +692,6 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cumodnot:2} il Redattore annulla la modifica della notizia
-\end{enumCU}}%
-%
-\cuAlternativo{cu:modificaNotizia}
-{Flusso alternativo 2}%
-{Annulla selezione}%
-{La persona connessa al sito è autenticata e ha i privilegi di Redattore}%
-{\postNulle}%
-{\begin{enumCU}
-		\item Dopo il punto \ref{cumodnot:0} il Redattore annulla la selezione della notizia
 \end{enumCU}}%
 
 \tabcuvspace
