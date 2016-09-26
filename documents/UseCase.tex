@@ -702,10 +702,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}
 {Nel sistema è presente una notizia in meno}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Redattore richiede di eliminare una notizia presente nel sistema
-	\item Il sistema mostra le notizie presenti al Redattore e chiede di selezionarne una \label{curemnot:1}
-	\item Il Redattore seleziona una notizia tra quelle mostrate
-	\item Il sistema mostra la notizia selezionata e chiede conferma della rimozione \label{curemnot:2}
+	\item Il caso d'uso ha inizio quando un Redattore visualizza una notizia, \inc{cu:mostraNotizia}
+	\item Il Redattore richiede di rimuovere la notizia che sta visualizzando
+	\item Il sistema chiede conferma della rimozione \label{curemnot:2}
 	\item Il Redattore conferma la rimozione
 	\item Il sistema rimuove la notizia selezionata
 \end{enumCU}}
@@ -718,15 +717,6 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\begin{enumCU}
 		\item Dopo il punto \ref{curemnot:2} il Redattore annulla la rimozione della notizia
 	\end{enumCU}}%
-%
-\cuAlternativo{cu:rimozioneNotizia}
-{Flusso alternativo 2}%
-{Annulla selezione}%
-{La persona è autenticata e ha i privilegi di Redattore. Nel sistema è presente almeno una notizia}%
-{\postNulle}%
-{\begin{enumCU}
-		\item Dopo il punto \ref{curemnot:1} il Redattore annulla la selezione della notizia
-\end{enumCU}}%
 
 \subsection{Gestione suggerimenti}
 \begin{center}
@@ -737,7 +727,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:suggerimentoProdotti}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è autenticata nel sistema ed ha i privilegi di Figura Pubblica Autenticata}
-{Vengono suggeriti dei prodotti presenti nel sistema}
+{\postNulle}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede il suggerimento di prodotti
 	\item Il sistema mostra alla Figura Pubblica Autenticata dei prodotti, sulla base della sua cronologia e delle sue valutazioni
@@ -749,7 +739,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:notizieSimili}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è autenticata nel sistema ed ha i privilegi di Figura Pubblica Autenticata}
-{Vengono suggerite delle notizie presenti nel sistema}
+{\postNulle}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede il suggerimento di notizie
 	\item Il sistema mostra alla Figura Pubblica Autenticata delle notizie, sulla base della sua cronologia
@@ -1555,6 +1545,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il caso d'uso ha inizio quando una persona connessa al sito effettua la ricerca di un prodotto, \inc{cu:ricercaProdotto}\label{cu:mostraProd1}
 	\item La persona seleziona un prodotto fra quelli presenti nel risultato della ricerca\label{cu:mostraProd2}
 	\item Il sistema mostra alla persona il prodotto selezionato
+	\item Il sistema mostra alla persona prodotti simili a quello selezionato, \inc{cu:suggerimentoProdotti}
 \end{enumCU}}
 %
 \cuAlternativo{cu:mostraProdotto}
@@ -1689,6 +1680,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il caso d'uso ha inizio quando una persona connessa al sito effettua la ricerca di una notizia, \inc{cu:ricercaNotizia}\label{cu:mostraNot1}
 	\item La persona seleziona una notizia fra quelle presenti nel risultato della ricerca\label{cu:mostraNot2}
 	\item Il sistema mostra alla persona la notizia selezionata
+	\item Il sistema mostra alla persona notizie simili a quella selezionata, \inc{cu:notizieSimili}
 \end{enumCU}}
 %
 \cuAlternativo{cu:mostraNotizia}
