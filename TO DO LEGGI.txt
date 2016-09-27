@@ -1,5 +1,13 @@
 IMPORTANTE:
 
+)
+
+) Interazione fra figure: "mostra profilo", ma si chiama "mostra profilo pubblico"
+
+) Chiususa di un ticket, togli spazio prima della label
+
+) Gestione prodotti mancanti: in diagramma c'è visualizza, in tabella mostra
+
 ) TOGLIERE REQUISITI SUGGERIMENTI INTELLIGENTI - lascia solo "prodotti/notizie simili"
 
 )Togliere le selezioni e accorparle nei mostra |||||||||||||||||||||||||||||||||||||||||||||| AGGIUNGI FLUSSO ALTERNATIVO PER RIFERIMENTO AD X SENZA RICERCA
