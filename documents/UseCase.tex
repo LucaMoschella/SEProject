@@ -136,7 +136,7 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:suggerimenti}}%E
 	\item \newListItem{cu:suggerimentoProdotti}{\formattaCU}{Suggerimento prodotti}
-	\item \newListItem{cu:notizieSimili}{\formattaCU}{Suggerimento notizie simili}
+	\item \newListItem{cu:notizieSimili}{\formattaCU}{Suggerimento notizie}
 	
 	\setCatCU{\ref*{pkg:account}}%F
 	\item \newListItem{cu:accessoProfilo}{\formattaCU}{Accesso al proprio profilo}
@@ -160,7 +160,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:giudizioRecensione}{\formattaCU}{Giudizio recensione}
 	\item \newListItem{cu:modificaGiudizioRecensione}{\formattaCU}{Modifica giudizio recensione}
 	\item \newListItem{cu:segnalazioneContenutiInap}{\formattaCU}{Segnalazione contenuti inappropriati}
-	\item \newListItem{cu:mostraSegnContenutiInap}{\formattaCU}{Visualizzazione segnalazioni contenuti}
+	\item \newListItem{cu:mostraSegnContenutiInap}{\formattaCU}{Mostra segnalazioni contenuti}
 	\item \newListItem{cu:rimozioneContenutiInap}{\formattaCU}{Rimozione contenuti inappropriati}
 
 	\setCatCU{\ref*{pkg:interazione}}%I
@@ -183,7 +183,7 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
 	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto}
-	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Visualizzazione richiesta prodotto}
+	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Mostra richiesta prodotto}
 	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento produttore e prodotto}
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
@@ -1033,7 +1033,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \tabcuvspace
 
 \cuTab{cu:commentoRecensione}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente una recensione di un prodotto}
 {Nel sistema è presente un nuovo commento a una recensione}
 {\begin{enumCU}
@@ -1088,7 +1088,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \tabcuvspace
 
 \cuTab{cu:segnalazioneContenutiInap}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente almeno un \gls{contenuto}}
 {Nel sistema è presente una nuova segnalazione}
 {\begin{enumCU}
@@ -1145,22 +1145,32 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:rimozioneContenutiInap}
 {\getTitletodesc{att:moderatore}}
-{La persona è autenticata ed ha i privilegi Moderatore. Il contenuto da rimuovere è presente nel sistema}
-{Il contenuto da rimuovere non è più presente nel sistema}
+{La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente almeno un \gls{contenuto}}
+{Nel sistema è presente un \gls{contenuto} in meno}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Moderatore richiede di rimuovere un contenuto inappropriato presente nel sistema
-	\item Il sistema richiede al Moderatore di confermare la rimozione
-	\item Il Moderatore conferma la rimozione \label{delcont:3}
+	\item Il caso d'uso ha inizio quando un Moderatore visualizza una segnalazione, \inc{mostraSegnCotenutiInap}\label{rim}
+	\item Il Moderatore richiede di rimuovere il contenuto segnalato all'interno della segnalazione\label{rim2}
+	\item Il sistema richiede al Moderatore di confermare la rimozione\label{delcont:3}
+	\item Il Moderatore conferma la rimozione 
 	\item Il sistema rimuove il contenuto inappropriato
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneContenutiInap}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona è autenticata ed ha i privilegi Moderatore. Il contenuto da rimuovere è presente nel sistema}
+{La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente almeno un \gls{contenuto}}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{delcont:3}, il Moderatore annulla l'operazione di rimozione
+\end{enumCU}}%
+%
+\cuAlternativo{cu:rimozioneContenutiInap}
+{Flusso alternativo 2}%
+{Rimozione senza segnalazione}%
+{La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente almeno un \gls{contenuto}}
+{\postNulle}%
+{\begin{enumCU}
+		\item Al posto dei punti \ref{rim} e \ref{rim2}, il Moderatore visualizza un \gls{contenuto} presente nel sistema e richiede di rimuoverlo
 \end{enumCU}}%
 
 
@@ -1170,11 +1180,12 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 %****************** FOLLOW ACCOUNT ***********
 \cuTab{cu:followAccount}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata come Utente o come Produttore. L'account da seguire è presente nel sistema}
-{L'account da seguire viene aggiunto alla lista degli account che la persona segue}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente almeno un altro account}
+{La persona segue un account in più}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiede di seguire un altro account per riceverne gli aggiornamenti
+	\item Il caso d'uso ha inizio quando la persona visualizza un profilo associato ad un account che non sta già seguendo, \inc{cu:mostraProfilo}
+	\item La persona richiede di seguire l'account associato a quel profilo
 	\item Il sistema accetta l`operazione
 \end{enumCU}}
 
@@ -1182,11 +1193,12 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %****************** UNFOLLOW ACCOUNT ***********
 \cuTab{cu:unFollowAccount}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata come Utente o come Produttore. L'account seguito è presente nel sistema}
-{L'account seguito viene rimosso dalla lista degli account che la persona segue}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente almeno un account che la persona segue}
+{La persona segue un account in meno}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiede di smettere di seguire un altro account che già segue
+	\item Il caso d'uso ha inizio quando la persona visualizza un profilo associato ad un account che sta già seguendo, \inc{cu:mostraProfilo}
+	\item La persona richiede di non seguire più l'account associato a quel profilo
 	\item Il sistema accetta l`operazione
 \end{enumCU}}
 
@@ -1196,84 +1208,97 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 %****************** INVIO TICKET ***********
 \cuTab{cu:ticketInvio}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata come Utente o come Produttore}
-{Viene creato un nuovo ticket}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}
+{Nel sistema è presente un nuovo ticket creato da quella persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente o un Produttore richiedono la creazione di un ticket per ricevere assistenza
+	\item Il caso d'uso ha inizio quando la persona richiede la creazione di un ticket per ricevere assistenza
 	\item Il sistema richiede di compilare la scheda necessaria alla creazione del ticket
-	\item La persona compila la scheda \label{cucretick:1}
+	\item La persona compila la scheda\label{cucretick:1}
 	\item La persona conferma i dati inseriti
-	\item Il sistema accetta la creazione del ticket
+	\item Il sistema memorizza il ticket
 \end{enumCU}}
 %
 \cuAlternativo{cu:ticketInvio}
 {Flusso alternativo 1}%
 {Annulla creazione ticket}%
-{La persona è autenticata come Utente o come Produttore}%
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cucretick:1} l'Utente (o il produttore) annulla la creazione del ticket
+		\item Dopo il punto \ref{cucretick:1} la persona annulla la creazione del ticket
 	\end{enumCU}}%
 
 \tabcuvspace
 
 %****************** RISPOSTA TICKET ***********
 \cuTab{cu:ticketRisposta}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}
-{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}
-{La risposta al ticket è aggiunta nel sistema}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:assistente}}
+{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto}
+{Nel sistema è presente una nuova risposta ad un ticket}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando il creatore di un ticket o un Assistente richiedono di inserire una risposta ad un ticket
+	\item Il caso d'uso ha inizio quando la persona visualizza un ticket, \inc{cu:ticketLettura}
+	\item La persona richiede di rispondere a quel ticket
 	\item Il sistema richiede di compilare la scheda necessaria alla creazione della risposta
-	\item Colui che intende inserire la risposta compila la scheda necessaria all'inserimento della risposta\label{curisptick:1}
-	\item Colui che intende inserire la risposta conferma i dati inseriti
-	\item Il sistema accetta la creazione della risposta al ticket
+	\item La persona compila la scheda necessaria all'inserimento della risposta\label{curisptick:1}
+	\item La persona conferma i dati inseriti
+	\item Il sistema memorizza la risposta al ticket
 \end{enumCU}}
 %
 \cuAlternativo{cu:ticketRisposta}
 {Flusso alternativo 1}%
 {Annulla risposta ticket}%
-{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}%
+{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{curisptick:1} colui che intende inserire la risposta annulla l'inserimento
+		\item Dopo il punto \ref{curisptick:1} la persona annulla l'inserimento della risposta
 	\end{enumCU}}%
 
 \tabcuvspace
 
 %****************** CHIUDI TICKET ***********
 \cuTab{cu:ticketChiudi}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}
-{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}
-{Il ticket viene etichettato come chiuso}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:assistente}}
+{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto}
+{Nel sistema è presente un ticket chiuso in più}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando il creatore del ticket o un Assistente richiede di chiudere il ticket
+	\item Il caso d'uso ha inizio quando la persona visualizza un ticket, \inc{cu:ticketLettura}\label{cuchiutick:0}
+	\item La persona richiede di chiudere il ticket
 	\item Il sistema richiede conferma della chiusura \label{cuchiutick:1}
 	\item La persona conferma la chiusura del ticket
-	\item Il sistema accetta l'operazione
+	\item Il sistema accetta l'operazione e memorizza il ticket come chiuso
 \end{enumCU}}
 %
 \cuAlternativo{cu:ticketChiudi}
 {Flusso alternativo 1}%
 {Annulla chiusura ticket}%
-{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}%
+{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuchiutick:1} colui che intende inserire la risposta annulla l'inserimento
+		\item Dopo il punto \ref{cuchiutick:1} la persona annulla l'operazione di chiusura
 	\end{enumCU}}%
 
 \tabcuvspace
 
 %****************** LEGGI TICKET ***********
 \cuTab{cu:ticketLettura}
-{\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}, \getTitletodesc{att:assistente}}
-{La persona è autenticata come Utente o come Produttore e il ticket è stato creato da quella persona, oppure ha i privilegi di Assistente}
-{Il ticket viene visualizzato}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:assistente}}
+{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket}
+{\postNulle}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando il creatore di un ticket o un Assistente richiedono di visualizzare un ticket
-	\item Il sistema mostra il ticket al richiedente
+	\item Il caso d'uso ha inizio quando la persona richiede di visualizzare un ticket
+	\item Il sistema mostra alla persona i ticket a cui ha accesso\label{annsel}
+	\item La persona seleziona un ticket
+	\item Il sistema mostra il ticket alla persona
 \end{enumCU}}
+%	
+\cuAlternativo{cu:ticketLettura}
+{Flusso alternativo 1}%
+{Annulla operazione di selezione}%
+{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{annsel} la persona annulla l'operazione di selezione
+\end{enumCU}}%
 
 
 \subsection{Ricerca contenuti}
@@ -1282,15 +1307,17 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 %****************** RICERCA PRODOTTO ***********
 \cuTab{cu:ricercaProdotto}
-{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{I risultati della ricerca sono visualizzati}
+{\postNulle}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un prodotto
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di un prodotto
 	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicprod:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
+	\item Il sistema mostra i risultati della ricerca
+	
 \end{enumCU}}
 %
 \cuAlternativo{cu:ricercaProdotto}
@@ -1305,7 +1332,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \tabcuvspace
 
 %\cuTab{cu:selezionaProdotto}
-%{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{La persona è connessa al sito}
 %{I risultati della ricerca sono visualizzati}
 %{\begin{enumCU}
@@ -1320,15 +1347,16 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %****************** RICERCA PROFILO ***********
 \cuTab{cu:ricercaProfilo}
-{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{I risultati della ricerca sono visualizzati}
+{\postNulle}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di un profilo
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di un profilo
 	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicprof:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
+	\item Il sistema mostra i risultati della ricerca
 \end{enumCU}}
 %
 \cuAlternativo{cu:ricercaProfilo}
@@ -1343,7 +1371,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \tabcuvspace
 
 %\cuTab{cu:selezionaProfilo}
-%{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{La persona è connessa al sito}
 %{I risultati della ricerca sono visualizzati}
 %{\begin{enumCU}
@@ -1358,15 +1386,16 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %****************** RICERCA NOTIZIA ***********
 \cuTab{cu:ricercaNotizia}
-{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{I risultati della ricerca sono visualizzati}
+{\postNulle}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando la persona richiede di effettuare una ricerca di una notizia
+	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di una notizia
 	\item Il sistema richiede di compilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicnot:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
+	\item Il sistema mostra i risultati della ricerca
 \end{enumCU}}
 %
 \cuAlternativo{cu:ricercaNotizia}
@@ -1381,7 +1410,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %\tabcuvspace
 %
 %\cuTab{cu:selezionaNotizia}
-%{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{La persona è connessa al sito}
 %{I risultati della ricerca sono visualizzati}
 %{\begin{enumCU}
@@ -1399,8 +1428,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** RICHIESTA PRODOTTO ***********
 \cuTab{cu:richiestaInsProdotto}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}
-{La richiesta è inviata al Produttore}
+{La persona è autenticata come Utente. Nel sistema è presente un Produttore che non ha ancora aggiunto un prodotto in vetrina}
+{Il Produttore ha una richiesta in più}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un Utente richiede ad un Produttore di inserire un suo prodotto mancante
 		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
@@ -1409,13 +1438,14 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 		\item Il sistema richiede zero o più percorsi nel file system, o nella rete, delle immagini del prodotto da inserire
 		\item L'Utente inserisce nell'apposito campo zero o più percorsi delle immagini che vuole inserire \label{curicinsimmpro:2}
 		\item L'Utente conferma i percorsi inseriti \label{curicinsimmpro:3}
-		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
+		\item Il sistema memorizza i dati inseriti, i percorsi inseriti e carica le immagini nel sistema
+		\item Il sistema crea una nuova richiesta di inserimento prodotto per il Produttore
 	\end{enumCU}}
 %
 \cuAlternativo{cu:richiestaInsProdotto}
 {Flusso alternativo 1}%
 {Annulla richiesta}%
-{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}%
+{La persona è autenticata come Utente. Nel sistema è presente un Produttore che non ha ancora aggiunto un prodotto in vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curicinsimmpro:2} o dopo il punto \ref{curicinsimmpro:1} l'Utente annulla la richiesta
@@ -1424,7 +1454,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:richiestaInsProdotto}
 {Flusso alternativo 2}%
 {Errore richiesta}%
-{La persona è autenticata come Utente. Il Produttore è presente nel sistema. Il prodotto non è presente nel sistema}%
+{La persona è autenticata come Utente. Nel sistema è presente un Produttore che non ha ancora aggiunto un prodotto in vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curicinsimmpro:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
@@ -1434,35 +1464,35 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:mostraRichiestaInsProdotto}
 {\getTitletodesc{att:produttore}}
-{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
-{Il prodotto suggerito è presente nella vetrina del Produttore}
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lei indirizzata}
+{Nella vetrina del Produttore è presente un nuovo prodotto}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un Produttore richiedere di visualizzare le proprie richieste di aggiunta di prodotti in sospeso
 		\item Il sistema richiede di selezionare quale richiesta visualizzare
-		\item Il Produttore seleziona quale richiesta visualizzare
+		\item Il Produttore seleziona una richiesta
 		\item Il sistema mostra al Produttore la scheda provvisoria del prodotto compilata dall'Utente che ha effettuato la richiesta \label{cuvisricprodel}
 		\item Il Produttore modifica i campi nella scheda o inserisce quelli mancanti \label{cuvisricpro:1}
 		\item Il Produttore conferma i dati inseriti
 		\item Il sistema richiede zero o più percorsi nel file system, o nella rete, delle immagini del prodotto da inserire
 		\item Il Produttore inserisce nell'apposito campo uno (zero se già inserite dall'utente) o più percorsi delle immagini che vuole inserire \label{cuvisricpro:2}
 		\item Il Produttore conferma i percorsi inseriti \label{cuvisricpro:3}
-		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
+		\item Il sistema memorizza i dati inseriti, i percorsi inseriti e carica le immagini nel sistema
 	\end{enumCU}}
 %
 \cuAlternativo{cu:mostraRichiestaInsProdotto}
 {Flusso alternativo 1}%
 {Elimina richiesta}%
-{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
-{La richiesta non è più presente nel sistema}%
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lei indirizzata}
+{Il Produttore ha una richiesta in meno}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuvisricprodel} il Produttore richede di eliminare la richiesta
-		\item Il sistema accetta l'operazione
+		\item Il sistema accetta l'operazionee rimuove la richiesta
 	\end{enumCU}}%
 %
 \cuAlternativo{cu:mostraRichiestaInsProdotto}
 {Flusso alternativo 2}%
 {Annulla inserimento}%
-{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lei indirizzata}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuvisricpro:2} o dopo il punto \ref{cuvisricpro:1} il Produttore annulla l'inserimento
@@ -1471,7 +1501,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraRichiestaInsProdotto}
 {Flusso alternativo 3}%
 {Errore inserimento}%
-{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lui indirizzata}
+{La persona è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lei indirizzata}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuvisricpro:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
@@ -1481,27 +1511,27 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:richiestaInsProduttore}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}
-{Nel sistema è presente un ticket riguardante la richiesta}
+{La persona è autenticata come Utente}
+{Nel sistema è presente un nuovo ticket}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Utente richiedere di inserire un prodotto mancante di un Produttore non presente nel sistema
+		\item Il caso d'uso ha inizio quando un Utente richiede di inserire un prodotto mancante di un Produttore non presente nel sistema
 		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
 		\item L'Utente inserisce i dati richiesti \label{cuinsproduttore:1}
 		\item L'Utente conferma i dati inseriti 
 		\item Il sistema richiede zero o più percorsi nel file system, o nella rete, delle immagini del prodotto da inserire
 		\item L'Utente inserisce nell'apposito campo zero o più percorsi delle immagini che vuole inserire \label{cuinsproduttore:2}
 		\item L'Utente conferma i percorsi inseriti \label{cuinsproduttore:3}
-		\item Il sistema accetta i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
+		\item Il sistema memorizza i dati inseriti, i percorsi inseriti e salva le immagini nel sistema
 		\item Il sistema richiede di compilare un profilo provvisorio, con almeno un nome e un recapito, del produttore
 		\item L'Utente inserisce i dati richiesti \label{cuinsproduttore:0}
 		\item L'Utente conferma i dati inseriti
-		\item Il sistema accetta i dati inseriti
+		\item Il sistema crea un ticket allegando i riferimenti alle schede compilate
 	\end{enumCU}}
 %
 \cuAlternativo{cu:richiestaInsProduttore}
 {Flusso alternativo 1}%
 {Annulla inserimento}%
-{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}%
+{La persona è autenticata come Utente}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsproduttore:1}, il punto \ref{cuinsproduttore:2} o dopo il punto \ref{cuinsproduttore:0} l'Utente annulla l'operazione
@@ -1510,7 +1540,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:richiestaInsProduttore}
 {Flusso alternativo 2}%
 {Errore inserimento}%
-{La persona è autenticata come Utente. Il Produttore non è presente nel sistema}%
+{La persona è autenticata come Utente}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsproduttore:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
@@ -1564,7 +1594,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \tabcuvspace
 
 %Cambiato da: statistiche pubbliche vetrina
-%\cuTab{cu:mostraInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%\cuTab{cu:mostraInfoVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{La vetrina è presente nel sistema}
 %{Le informazioni relative alla vetrina sono mostrate}
 %{\begin{enumCU}
@@ -1574,7 +1604,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %\tabcuvspace
 %
-%\cuTab{cu:mostraProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%\cuTab{cu:mostraProdottiVetrina}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}{}{}{}
 %
 %\tabcuvspace
 
@@ -1618,7 +1648,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-%\cuTab{cu:mostraAnteprimaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{Il prodotto è presente nel sistema}
+%\cuTab{cu:mostraAnteprimaProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}{Il prodotto è presente nel sistema}
 %{Il prodotto è mostrato}
 %{\begin{enumCU}
 %	% Effettua una ricerca di prodotti con \incl ricercs
@@ -1630,7 +1660,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %\tabcuvspace
 
 %%Accorpa statistiche prodotto e informazioni prodotto
-%\cuTab{cu:mostraInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%\cuTab{cu:mostraInfoProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{Il prodotto è presente nel sistema}
 %{Le informazioni e le statistiche relative al prodotto sono mostrate}
 %{\begin{enumCU}
@@ -1662,7 +1692,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-%\cuTab{cu:mostraStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%\cuTab{cu:mostraStatProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}{}{}{}
 %
 %\tabcuvspace
 
@@ -1705,7 +1735,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{enumCU}}%
 %\tabcuvspace
 %
-%\cuTab{cu:mostraAnteprimaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%\cuTab{cu:mostraAnteprimaProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{Il profilo è presente nel sistema}
 %{Il profilo è mostrato}
 %{\begin{enumCU}
@@ -1716,7 +1746,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %\tabcuvspace
 
 %Accorpa informazioni profilo e statistiche profilo
-%\cuTab{cu:mostraInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%\cuTab{cu:mostraInfoProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{Il profilo è presente nel sistema}
 %{Le informazioni e le statistiche relative al profilo sono mostrate}
 %{\begin{enumCU}
@@ -1726,7 +1756,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %\tabcuvspace
 %
-%\cuTab{cu:mostraStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}{}{}{}
+%\cuTab{cu:mostraStatProfilo}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}{}{}{}
 
 \tabcuvspace
 
@@ -1771,7 +1801,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \tabcuvspace
 
-%\cuTab{cu:mostraAnteprimaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
+%\cuTab{cu:mostraAnteprimaNotizia}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 %{Nel sistema è presente almeno una notizia}
 %{La notizia è mostrata}
 %{\begin{enumCU}
