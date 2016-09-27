@@ -1119,7 +1119,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il caso d'uso ha inizio quando un Moderatore richiede di visualizzare una segnalazione
 	\item Il sistema mostra al Moderatore le segnalazioni presenti nel sistema\label{delsegn:3}
 	\item Il Moderatore seleziona una segnalazione tra quelle proposte
-	\item Il sistema mostra la segnalazione \ref{delsegn:4}
+	\item Il sistema mostra la segnalazione \label{delsegn:4}
 \end{enumCU}}
 %
 \cuAlternativo{cu:mostraSegnContenutiInap}
@@ -1148,7 +1148,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente almeno un \gls{contenuto}}
 {Nel sistema è presente un \gls{contenuto} in meno}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Moderatore visualizza una segnalazione, \inc{mostraSegnCotenutiInap}\label{rim}
+	\item Il caso d'uso ha inizio quando un Moderatore visualizza una segnalazione, \inc{cu:mostraSegnContenutiInap}\label{rim}
 	\item Il Moderatore richiede di rimuovere il contenuto segnalato all'interno della segnalazione\label{rim2}
 	\item Il sistema richiede al Moderatore di confermare la rimozione\label{delcont:3}
 	\item Il Moderatore conferma la rimozione 
