@@ -726,7 +726,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %Accorpa suggerimento intelligente e simili
 \cuTab{cu:suggerimentoProdotti}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è autenticata nel sistema ed ha i privilegi di Figura Pubblica Autenticata}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}
 {\postNulle}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare prodotti simili al prodotto che sta visualizzando
@@ -738,7 +738,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  SUGGERIMENTO NOTIZIE *****************
 \cuTab{cu:notizieSimili}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è autenticata nel sistema ed ha i privilegi di Figura Pubblica Autenticata}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}
 {\postNulle}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare notizie simili alla notizia che sta visualizzando
@@ -933,19 +933,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata e ha i privilegi di Utente. Nel sistema è presente almeno un prodotto che non è già stato valutato dalla persona}
 {Nel sistema è stata aggiunta la valutazione della persona per un prodotto}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto, \inc{cu:mostraProdotto}
+	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che non già valutato, \inc{cu:mostraProdotto}
 	\item L'Utente richiede di effettuare la valutazione del prodotto che sta visualizzando
 	\item Il sistema richiede all'Utente la valutazione per quel prodotto
 	\item L'Utente inserisce la valutazione
 	\item Il sistema memorizza la valutazione
 \end{enumCU}}
 
+
 \tabcuvspace
 
 \cuTab{cu:modificaValutazioneProdotto}
 {\getTitletodesc{att:utente}}
 {La persona è autenticata, ha i privilegi di Utente e ha effettuato una valutazione di un prodotto presente nel sistema}
-{Nel sistema è stata modificata la valutazione di un prodotto inserita da una persona}
+{Nel sistema è stata modificata la valutazione di un prodotto inserita dalla persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che ha già valutato, \inc{cu:mostraProdotto}
 	\item L'Utente richiede di modificare la valutazione del prodotto
@@ -961,20 +962,21 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 \cuTab{cu:inserisciRecensioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato recensito dall'Utente}
-{La recensione dell'Utente per quel prodotto è aggiunta nel sistema}
+{La persona è autenticata come Utente. Nel sistema è presente un prodotto che non è già stato recensito dall'Utente}
+{Nel sistema è presente la recensione dell'Utente per quel prodotto}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la recensione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che non ha già recensito, \inc{cu:mostraProdotto}
+	\item L'Utente richiede di effettuare la recensione del prodotto che sta visualizzando
 	\item Il sistema richiede all'Utente il testo da inserire come recensione
 	\item L'Utente inserisce la recensione \label{addrec:3}
 	\item L'Utente conferma la recensione inserita
-	\item Il sistema accetta la recensione
+	\item Il sistema memorizza la recensione
 \end{enumCU}}
 %
 \cuAlternativo{cu:inserisciRecensioneProdotto}
 {Flusso alternativo 1}%
 {Annulla inserimento}%
-{La persona è autenticata come Utente. Il prodotto è presente nel sistema e non è già stato recensito dall'Utente}%
+{La persona è autenticata come Utente. Nel sistema è presente un prodotto che non è già stato recensito dall'Utente}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{addrec:3}, l'Utente annulla l'operazione di inserimento
@@ -985,13 +987,14 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:modificaRecensioneProdotto}
 {\getTitletodesc{att:utente}}
 {La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
-{La recensione viene modificata correttamente}
+{Nel sistema è stata modificata una recensione di quella persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di modificare una sua recensione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che ha già recensito, \inc{cu:mostraProdotto}
+	\item L'Utente richiede di modificare la recensione per quel prodotto
 	\item Il sistema mostra all'Utente la recensione che ha effettuato per quel prodotto
 	\item L'Utente inserisce la nuova recensione \label{newrec:3}
 	\item L'Utente conferma la nuova recensione inserita
-	\item Il sistema accetta la nuova recensione
+	\item Il sistema memorizza la nuova recensione
 \end{enumCU}}
 %
 \cuAlternativo{cu:modificaRecensioneProdotto}
@@ -1008,9 +1011,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:eliminaRecensioneProdotto}
 {\getTitletodesc{att:utente}}
 {La persona è autenticata come Utente e ha effettuato una recensione di un prodotto presente nel sistema}
-{La recensione viene rimossa dal sistema correttamente }
+{Nel sistema è stata rimossa una recensione di quella persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di rimuovere una sua recensione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che ha già recensito, \inc{cu:mostraProdotto}
+	\item L'Utente richiede di rimuovere la recensione per quel prodotto
 	\item Il sistema mostra all'Utente la recensione che ha effettuato per quel prodotto
 	\item Il sistema richiede di confermare la rimozione \label{remrec:3}
 	\item L'Utente conferma la rimozione
@@ -1030,85 +1034,112 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:commentoRecensione}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata come Utente o come Produttore. La recensione di un prodotto è presente nel sistema}
-{Il commento viene aggiunto ai commenti di quella recensione}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente una recensione di un prodotto}
+{Nel sistema è presente un nuovo commento a una recensione}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona, autenticata come Utente o come Produttore, richiede di effettuare un commento ad una recensione di un prodotto presente nel sistema
-	\item Il sistema mostra alla persona la recensione
-	\item Il sistema richiede di inserire il commento 
+	\item Il caso d'uso ha inizio quando la persona visualizza le recensioni di un prodotto, \inc{cu:mostraRecProdotto}
+	\item La persona richiede di effettuare un commento ad una recensione tra quelle che sta visualizzando
+	\item Il sistema mostra alla persona la recensione e i commenti relativi ad essa
+	\item Il sistema richiede di inserire un nuovo commento 
 	\item La persona inserisce il commento \label{addcom:3}
 	\item La persona conferma il commento inserito
-	\item Il sistema accetta il commento
+	\item Il sistema memorizza il commento
 \end{enumCU}}
 %
 \cuAlternativo{cu:commentoRecensione}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona è autenticata come Utente o come Produttore. La recensione di un prodotto è presente nel sistema}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente una recensione di un prodotto}
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{addcom:3}, la persona, autenticata come Utente o come Produttore, annulla l'operazione di inserimento
+		\item Dopo il punto \ref{addcom:3}, la persona annulla l'operazione di inserimento
 	\end{enumCU}}%
 
 \tabcuvspace
 
 \cuTab{cu:giudizioRecensione}
-{\getTitletodesc{att:utente}}{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}
-{Il giudizio per quella recensione di quell'Utente è presente nel sistema}
+{\getTitletodesc{att:utente}}
+{La persona è autenticata come Utente. Nel sistema è presente una recensione di un prodotto che l'Utente non ha giudicato}
+{Nel sistema è presente un giudizio in più di quella persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di esprimere un giudizio (positivo o negativo) su una recensione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza le recensioni di un prodotto, \inc{cu:mostraRecProdotto}
+	\item L'Utente richiede di esprimere un giudizio (positivo o negativo) su una recensione tra quelle che sta visualizzando
 	\item Il sistema mostra all'Utente la recensione
 	\item Il sistema richiede all'Utente il giudizio per quella recensione
 	\item L'Utente inserisce il giudizio
-	\item Il sistema accetta il giudizio
+	\item Il sistema memorizza il giudizio
 \end{enumCU}}
 
 
 \cuTab{cu:modificaGiudizioRecensione}
 {\getTitletodesc{att:utente}}
-{La persona è autenticata come Utente. La recensione di un prodotto è presente nel sistema}
-{Il giudizio per quella recensione viene modificato correttamente}
+{La persona è autenticata come Utente. Nel sistema è presente una recensione di un prodotto che l'Utente ha già giudicato}
+{Nel sistema è stato modificato un giudizio di quella persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di modificare un giudizio di una recensione di un prodotto presente nel sistema
+	\item L'Utente richiede di modificare un giudizio di una recensione tra quelle che sta visualizzando
+	\item Il sistema mostra all'Utente la recensione
 	\item Il sistema mostra all'Utente il suo giudizio per quella recensione
 	\item Il sistema richiede all'Utente il nuovo giudizio per quella recensione
 	\item L'Utente inserisce il nuovo giudizio
-	\item Il sistema accetta il nuovo giudizio
+	\item Il sistema memorizza il nuovo giudizio
 \end{enumCU}}
 
 \tabcuvspace
 
 \cuTab{cu:segnalazioneContenutiInap}
 {\getTitletodesc{att:utente}, \getTitletodesc{att:produttore}}
-{La persona è autenticata come Utente o come Produttore. Il contenuto è presente nel sistema}
-{La segnalazione viene memorizzata nel sistema}
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente almeno un \gls{contenuto}}
+{Nel sistema è presente una nuova segnalazione}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona, autenticata come Utente o come Produttore, richiede di segnalare un contenuto inappropriato presente nel sistema
+	\item Il caso d'uso ha inizio quando una persona visualizza un \gls{contenuto}
+	\item La persona richiede di segnalare quel \gls{contenuto} in quanto inappropriato
 	\item Il sistema richiede alla persona di specificare il motivo della segnalazione
-	\item La persona inserisce il motivo della segnalazione
-	\item Il sistema accetta la segnalazione
+	\item La persona inserisce il motivo della segnalazione\label{annullasegn}
+	\item La persona conferma la segnalazione
+	\item Il sistema memorizza la segnalazione allegando un \gls{riferimento} al contenuto segnalato
 \end{enumCU}}
+%
+\cuAlternativo{cu:segnalazioneContenutiInap}
+{Flusso alternativo 1}%
+{Annulla segnalazione}%
+{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente almeno un \gls{contenuto}}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{annullasegn}, la persona annulla l'operazione di segnalazione
+	\end{enumCU}}%
 
 \tabcuvspace
 
 \cuTab{cu:mostraSegnContenutiInap}
 {\getTitletodesc{att:moderatore}}
-{La persona è autenticata ed ha i privilegi di Moderatore. La segnalazione è presente nel sistema}
-{La segnalazione è stata gestita dal Moderatore}
+{La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente una segnalazione}
+{\postNulle}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una Moderatore richiede di visualizzare una segnalazione
-	\item Il sistema mostra al Moderatore la segnalazione \label{delsegn:3}
+	\item Il caso d'uso ha inizio quando un Moderatore richiede di visualizzare una segnalazione
+	\item Il sistema mostra al Moderatore le segnalazioni presenti nel sistema\label{delsegn:3}
+	\item Il Moderatore seleziona una segnalazione tra quelle proposte
+	\item Il sistema mostra la segnalazione \ref{delsegn:4}
 \end{enumCU}}
 %
 \cuAlternativo{cu:mostraSegnContenutiInap}
 {Flusso alternativo 1}%
 {Elimina segnalazione}%
-{La persona è autenticata ed ha i privilegi Moderatore. La segnalazione è presente nel sistema}
-{La segnalazione non è più presente nel sistema}%
+{La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente una segnalazione}
+{Nel sistema è presente una segnalazione in meno}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{delsegn:3}, il Moderatore elimina la segnalazione
+		\item Dopo il punto \ref{delsegn:4}, il Moderatore elimina la segnalazione
 \end{enumCU}}%
-%marcare segfnalazione come risolta/eliminarla dalla lista
+%marcare segnalazione come risolta/eliminarla dalla lista
+%	
+\cuAlternativo{cu:mostraSegnContenutiInap}
+{Flusso alternativo 2}%
+{Annulla operazione di selezione}%
+{La persona è autenticata ed ha i privilegi di Moderatore. Nel sistema è presente una segnalazione}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{delsegn:3} la persona annulla l'operazione di selezione
+\end{enumCU}}%
 
 \tabcuvspace
 
