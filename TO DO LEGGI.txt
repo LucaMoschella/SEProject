@@ -1,11 +1,7 @@
 IMPORTANTE:
 
-) X può annulare l'operazione in qualsiasi momento -> flusso alternativo
-
 ) CONTROLLA CONSISTENZA PROGETTO (per Valentino)
 .......Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
 .......Quando vedi parole strane: scrivile quì/inseriscili nel glossario
 ) Spiega da qualche parte, se non già fatto, cosa intendiamo per "privilegi". (es. Aggiungere un privilegio X ad un account, significa aggiungere quell'account al gruppo X) (per Valentino²)
 ) Requisito  "Prodotto fuori produzione"? Dobbiamo dire da qualche parte che nella scheda prodotto c'è un booleano "fuori produzione". (per Valentino³)
-
-) Diagramma GANTT
