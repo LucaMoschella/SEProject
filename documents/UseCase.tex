@@ -14,6 +14,8 @@ Si utilizzeranno le seguenti convenzioni:
 	\item Non verranno riportati tutti gli attori che hanno accesso ad un determinato caso d'uso, ma solo l'attore più generico.
 	
 	\item Nei diagrammi dei casi d'uso non viene riportato l'identificatore del singolo caso d'uso ma solo il titolo, per facilitarne la lettura.
+
+	\item Nella descrizione dei flussi alternativi dei casi d'uso, quando si indica la modifica di alcuni punti e non si nominano gli altri, si assume che gli altri rimangano immutati.
 \end{itemize}
 
 \section{Elenco degli attori}
@@ -965,16 +967,25 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata come Utente. Nel sistema è presente un prodotto che non è già stato recensito dall'Utente}
 {Nel sistema è presente la recensione dell'Utente per quel prodotto}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente visualizza un prodotto che non ha già recensito, \inc{cu:mostraProdotto}
+	\item Il caso d'uso ha inizio quando un Utente valuta un prodotto che non ha già recensito, \inc{cu:inserisciValutazioneProdotto}\label{insrec0}
 	\item L'Utente richiede di effettuare la recensione del prodotto che sta visualizzando
 	\item Il sistema richiede all'Utente il testo da inserire come recensione
-	\item L'Utente inserisce la recensione \label{addrec:3}
+	\item L'Utente inserisce la recensione\label{addrec:3}
 	\item L'Utente conferma la recensione inserita
 	\item Il sistema memorizza la recensione
 \end{enumCU}}
 %
 \cuAlternativo{cu:inserisciRecensioneProdotto}
 {Flusso alternativo 1}%
+{Prodotto già valutato}%
+{La persona è autenticata come Utente. Nel sistema è presente un prodotto che non è già stato recensito dall'Utente}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Nel punto \ref{insrec0}, l'Utente visualizza un prodotto che ha valutato ma non recensito, \inc{cu:mostraProdotto}
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:inserisciRecensioneProdotto}
+{Flusso alternativo 2}%
 {Annulla inserimento}%
 {La persona è autenticata come Utente. Nel sistema è presente un prodotto che non è già stato recensito dall'Utente}%
 {\postNulle}%
@@ -1037,11 +1048,11 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Nel sistema è presente una recensione di un prodotto}
 {Nel sistema è presente un nuovo commento a una recensione}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando la persona visualizza le recensioni di un prodotto, \inc{cu:mostraRecProdotto}
-	\item La persona richiede di effettuare un commento ad una recensione tra quelle che sta visualizzando
+	\item Il caso d'uso ha inizio quando la persona visualizza le recensioni di un prodotto, \inc{cu:mostraRecProdotto}\label{commrifiutato1}
+	\item La persona richiede di effettuare un commento ad una recensione tra quelle che sta visualizzando\label{commrifiutato2}
 	\item Il sistema mostra alla persona la recensione e i commenti relativi ad essa
 	\item Il sistema richiede di inserire un nuovo commento 
-	\item La persona inserisce il commento \label{addcom:3}
+	\item La persona inserisce il commento\label{addcom:3}
 	\item La persona conferma il commento inserito
 	\item Il sistema memorizza il commento
 \end{enumCU}}
@@ -1053,6 +1064,16 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{addcom:3}, la persona annulla l'operazione di inserimento
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:commentoRecensione}
+{Flusso alternativo 2}%
+{Errore inserimento}%
+{La persona è connessa al portale ed ha i privilegi di Produttore. Nel sistema è presente una recensione di un prodotto}
+{\postNulle}%
+{\begin{enumCU}
+		\item Nel punto \ref{commrifiutato1}, la persona visualizza le recensioni di un prodotto non suo
+		\item Dopo il punto \ref{commrifiutato2} il sistema rifiuta la richiesta
 	\end{enumCU}}%
 
 \tabcuvspace
@@ -1263,7 +1284,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona visualizza un ticket, \inc{cu:ticketLettura}\label{cuchiutick:0}
 	\item La persona richiede di chiudere il ticket
-	\item Il sistema richiede conferma della chiusura \label{cuchiutick:1}
+	\item Il sistema richiede conferma della chiusura\label{cuchiutick:1}
 	\item La persona conferma la chiusura del ticket
 	\item Il sistema accetta l'operazione e memorizza il ticket come chiuso
 \end{enumCU}}
@@ -1823,6 +1844,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 
 \newdate{cuuno}{12}{09}{2016}
+\newdate{cudue}{29}{09}{2016}
 \section{Revisioni}
 \begin{center}
     \begin{tabular}{lll}
@@ -1830,6 +1852,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
         	\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
         	1.0 & \displaydate{cuuno} & Prima versione \\
+        	2.0 & \displaydate{cudue} & Riorganizzati casi d'uso \\
         \bottomrule
     \end{tabular}
 \end{center}

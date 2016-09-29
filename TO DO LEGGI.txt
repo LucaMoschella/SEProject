@@ -1,85 +1,11 @@
 IMPORTANTE:
 
-)
-
-) Interazione fra figure: "mostra profilo", ma si chiama "mostra profilo pubblico"
-
-) Chiususa di un ticket, togli spazio prima della label
-
-) Gestione prodotti mancanti: in diagramma c'è visualizza, in tabella mostra
-
-) TOGLIERE REQUISITI SUGGERIMENTI INTELLIGENTI - lascia solo "prodotti/notizie simili"
-
-)Togliere le selezioni e accorparle nei mostra |||||||||||||||||||||||||||||||||||||||||||||| AGGIUNGI FLUSSO ALTERNATIVO PER RIFERIMENTO AD X SENZA RICERCA
-
-) Al momento per aggiungere un commmento ad una recensione devo selezionare la recensione fra la lista di TUTTE le recensioni. Idem per il resto. Da cambiare. [...]
-
-) Inserisic valutazione, modifica, inserisci recensione, modifica, rimuovi ESTENDONO visualizza prodotto
-
-) COmmento recensione ESTENDE visualizza recensione
-
-) MOdifica prodotto ESTENDE ?
-
 ) X può annulare l'operazione in qualsiasi momento -> flusso alternativo
 
-) In tutti gli use case in cui il  sistema "mostra" qualcosa, incluso la lista di qualcosa per la selezione... ci va un include visualizza (anteprima) (?)
+) CONTROLLA CONSISTENZA PROGETTO (per Valentino)
+.......Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
+.......Quando vedi parole strane: scrivile quì/inseriscili nel glossario
+) Spiega da qualche parte, se non già fatto, cosa intendiamo per "privilegi". (es. Aggiungere un privilegio X ad un account, significa aggiungere quell'account al gruppo X) (per Valentino²)
+) Requisito  "Prodotto fuori produzione"? Dobbiamo dire da qualche parte che nella scheda prodotto c'è un booleano "fuori produzione". (per Valentino³)
 
-) In visualizza mettere gli include necessari
-
-) La ricerca include visualizza anteprima
-
-) RIGIRARE FRECCE in suggerimento prodotto
-
-) Aggiunti: modifica descrizione, elimina immagine in gestione vetrina. (da fare l'update dei diagrammi)
-
-) Visualizza anteprima notizia (nella ricerca)
-
-) Accorpa visualizza recensione prodotto in Visualizza scheda prodotto
-
-) Vedi: Visualizza X & Visualizza informazioni X. Accorpare? Una per la sheda di X, con info e statistiche. 
-	Visualizza -> Visualizza anteprima prodotto
-	Visualizza informazioni -> Visualizza scheda prodotto
-
-) UML gestione prodotti mancanti: rinomina actor
-
-)Rivedere visualizza e rimuovi contenuti inappropriati (CU.H.8)
-
-) Il produttore non dovrebbe poter fare commenti a recensioni di prodotti non suoi ( caso d'uso: commento a recensione)
-
-) Modifica recensione: campi precompilati
-
-) Nell'inserimento di una recensione (CU.H.1) bisogna inserire anche una valutazione
-
-) Accorpa Aggiungi privilegio e Rimuovi privilegio in: MOdifica privilegi account
-
-) Controlla consistenza del testo
-
-)Semplificare il progetto! Valutare l'elimazione dell'integrazione con i social ì. (cit. lorenzo: occorre conoscere, gestire e integrare le varie API nel progetto)
-
-)CAMBIARE NOME NEL DIAGRAMMA UML DEL CASO D'USO MODIFICA IMPOSTAZIONE, AGGIUNGI FUNZIONALITà, etc; IN GESTIONE ACCOUNT
-
-)Rivedi i casi d'uso che hanno a ce fare con i prodotti (inserimento prodott, richiesta ins. prodotto)
-
-)Diagramma GANTT
-
-!!!)Cambia nomi dei casi d'uso nel diagramma UML di "Gestione proodtti mancanti" e "Gestione account"
-
-)Uniforma la "visualizzazione": si visualizza una cosa alla volta, o più cose alla volta e nel flusso ne selezioni e visualizzi una?
-
-)Spiega, controllo che non sia detto altrimenti: cosa intendiamo per "privilegi". Aggiungere un privilegio di Redattore ad un account, significa aggiungere quell'account al gruppo dei redattori.
-
-)Usa extends o implements!
-
-)Requisito  "Prodotto fuori produzione"? (che fino ha fatto nei casi d'uso?) {nella scheda prodotto! :P}
-
-)Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
-
-) Correggi la def di figura pubblica e amministrativa
-
-) Cambiare alcuni Gestione in Sistema
-
-
-
-
-A tempo perso:
-Ordinare i casi d'uso dentro i diagrammi (da fare dopo averli sistemati, vedi iMPORTANTE)
+) Diagramma GANTT
