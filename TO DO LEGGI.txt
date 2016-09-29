@@ -12,6 +12,10 @@
 *************************************************************************************************************
 *************************************************************************************************************
 
+Todo:
+
+) Aggiornare descrizione di aggiungi e rimuovi privilegi all'interno del documento dei requisiti
+) Aggiornare la tabella delle revisioni dei requisiti
 
 Next:
 
