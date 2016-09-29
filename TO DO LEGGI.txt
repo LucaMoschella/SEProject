@@ -1,7 +1,22 @@
-IMPORTANTE:
+*************************************************************************************************************
+******************************************* PER VALENTINO ***************************************************
+*************************************************************************************************************
 
-) CONTROLLA CONSISTENZA PROGETTO (per Valentino)
+) Controlla consistenza progetto
 .......Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
 .......Quando vedi parole strane: scrivile quì/inseriscili nel glossario
-) Spiega da qualche parte, se non già fatto, cosa intendiamo per "privilegi". (es. Aggiungere un privilegio X ad un account, significa aggiungere quell'account al gruppo X) (per Valentino²)
-) Requisito  "Prodotto fuori produzione"? Dobbiamo dire da qualche parte che nella scheda prodotto c'è un booleano "fuori produzione". (per Valentino³)
+) Spiega da qualche parte, se non già fatto, cosa intendiamo per "privilegi". (es. Aggiungere un privilegio X ad un account, significa aggiungere quell'account al gruppo X) 
+) Requisito  "Prodotto fuori produzione"? Dobbiamo dire da qualche parte che nella scheda prodotto c'è un booleano "fuori produzione". 
+
+*************************************************************************************************************
+*************************************************************************************************************
+*************************************************************************************************************
+
+
+Next:
+
+) Analisi dei rischi
+) Analisi dei costi (con use case point: https://en.wikipedia.org/wiki/Use_Case_Points )
+) CRC
+) Analisi classi
+) Analisi nomi verbi
