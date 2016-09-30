@@ -3,3 +3,73 @@
 \section{Introduzione}
 In questo documento verrà effettuata l'analisi dei rischi, per gestire eventuali imprevisti e limitarne i danni, i quali comporterebbero possibili aumenti del costo, ritardi rispetto alla \docref{cha:pianificazione_del_progetto} o, nei casi più gravi, l'annullamento dell'intero progetto.
 
+Compileremo delle tabelle con alcuni dei possibili rischi, in cui verrà indicata la probabilità del rischio e la tipologia dell'effetto negaativo che il rischio comporta. I rischi più probabili e quelli con i maggiori effetti negativi dovranno essere oggetto di maggiori attenzioni durante lo sviluppo del progetto.
+
+\section{Classificazione probabilità}
+Le probabilità del verificarsi di un rischio vengono, per semplicità, così classificate:
+\begin{center}
+	\begin{tabularx}{\tabwidthiter}{ l  X } 
+		\toprule
+			\fromattaTitoloTab{Classificazione} & \fromattaTitoloTab{Probabilità} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+			Molta alta & maggiore del 75\% \\ 
+			\addlinespace[1em] 
+			Alta & compresa fra il 50\% e il 75\%  \\ 
+			\addlinespace[1em] 
+			Meida & compresa fra il 25\% e il 50\%  \\ 
+			\addlinespace[1em] 
+			Bassa & compresa fra il 10\% e il 25\%  \\ 
+			\addlinespace[1em] 
+			Molto bassa & minore del 10\% \\ 
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\section{Classificazione effetti}
+I possibili eventi che un rischio può provocare vengono così suddivisi:
+\begin{center}
+	\begin{tabularx}{\tabwidthiter}{ l  X } 
+		\toprule
+			\fromattaTitoloTab{Classificazione} & \fromattaTitoloTab{Effetti} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+			Catastrofici & Il verificarsi del rischio probabilmente comporta il fallimento del progetto \\ 
+			\addlinespace[1em] 
+			Seri & Il verificarsi del rischio, se non correttamente gestito, potrebbe comportare il fallimento del progetto o ad ingenti aumenti di costo e del tempo richiesto per il completamento dello stesso \\ 
+			\addlinespace[1em] 
+			Tollerabili & Il verificarsi del rischio comporta un aumento dei costi e un ritardo nel completamento del progetto  \\ 
+			\addlinespace[1em] 
+			Insignificanti & Il verificarsi del rischio non comporta aumenti di costo o ritardi \\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\section{Elenco dei rischi}
+Vengono di seguito elencati i possibili rischi che possono verificarsi:
+\begin{itemize}
+	\item \newListItem{rk:ritardo}{\formattaRK}{Ritardi}
+	\item \newListItem{rk:reqerrati}{\formattaRK}{Requisiti errati}
+	\item \newListItem{rk:reqincompleti}{\formattaRK}{Requisiti incompleti}
+	\item \newListItem{rk:reqcambiati}{\formattaRK}{Requisiti cambiati}
+	\item \newListItem{rk:ucerrati}{\formattaRK}{Use Case errati}
+	\item \newListItem{rk:ucincompleti}{\formattaRK}{Use Case incompleti}
+	\item \newListItem{rk:docerrata}{\formattaRK}{Documentazione incompleta o errata}
+	\item \newListItem{rk:complessita}{\formattaRK}{Complessità sottovalutata}
+\end{itemize}
+
+\section{Specifica tabelle RMMM}
+Le tabelle del \gls{rmmm} servono per gestire i rischi, la loro specifica indica tre diverse fasi per ogni rischio:
+\begin{descriptionInd}
+	\item[Mitigation] Come cercare di impedire il verificarsi del rischio adottando alcune tecniche o strategie
+	\item[Monitoring] Come sorvegliare il lavoro progettuale per accorgersi del rischio in tempo utile
+	\item[Management] Come gestire il rischio nel caso esso si verifichi
+\end{descriptionInd}
+Di seguito elenchiamo le tabelle \gls{rmmm}:
+
+\rkTab{rk:ritardo}{}{}{}{}{}{}
+\rkTab{rk:reqerrati}{}{}{}{}{}{}
+\rkTab{rk:reqincompleti}{}{}{}{}{}{}
+\rkTab{rk:reqcambiati}{}{}{}{}{}{}
+\rkTab{rk:ucerrati}{}{}{}{}{}{}
+\rkTab{rk:ucincompleti}{}{}{}{}{}{}
+\rkTab{rk:docerrata}{}{}{}{}{}{}
+\rkTab{rk:complessita}{}{}{}{}{}{}

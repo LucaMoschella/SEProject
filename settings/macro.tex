@@ -8,6 +8,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FUNZIONI COMUNI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\fromattaTitoloTab}[1]{\texttt{#1}} 
+
 %%%%% funzioni per la creazione automatica degli identificatori %%%%
 %Macro per linkare requisiti
 %separatore id titolo
@@ -436,6 +438,62 @@
 }
 
 \newcommand{\tabcuvspace}{\bigskip} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VALUTAZIONE DEI RISCHI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{counterRK}
+
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterRK}{
+\setcounter{counterRK}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\rkSep}{.} 
+\newcommand{\displayRK}[1]{\texttt{#1}}
+\newcommand{\rk}[2]{\displayRK{#1\rkSep#2}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\makeatletter
+\newcommand{\formattaRK}{%
+    \stepcounter{counterRK}%
+    \def\@currentlabel{\rk{RK}{\arabic{counterRK}}}%
+	\rk{RK}{\arabic{counterRK}}%
+}
+\makeatother
+
+%Tabella per rischi
+%usage: {rkkey}{prob}{effetto}{desc}{mitig}{monit}{manag}
+\newcommand{\rkTab}[7]{%
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection\label{desc:#1}
+			\begin{tabularx}{\textwidth}{ l  X }
+				\toprule
+					\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+					\tabheadreq{ID} & \getID{#1} \\ 
+					\addlinespace[0.5em] 
+					\tabheadreq{Probabilità} &  #2 \\		
+					\addlinespace[0.5em]
+					\tabheadreq{Effetti} &  #3 \\
+					\addlinespace[0.5em]
+					\tabheadreq{Descrizione} &  #4 \\
+					\addlinespace[0.5em]
+					\tabheadreq{Mitigation} &  #5 \\					
+					\addlinespace[0.5em]
+					\tabheadreq{Monitoring} &  #6 \\
+					\addlinespace[0.5em]
+					\tabheadreq{Management} &  #7 \\
+				\bottomrule
+			\end{tabularx}
+		\end{minipage}
+	\end{center}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
