@@ -17,15 +17,14 @@
 
 %fa ma in modo che la label attuale contenga il titolo (e non il numero di sezione)
 \makeatletter
-\newcommand{\titleLabel}[1]{%
+\newcommand{\currentLabelText}[1]{%
     \def\@currentlabel{#1}%
-    #1%
 }
 \makeatother
 
 %macro per creare un nuovo requisito, usando i vari contatori. Necessita della crezione di una tabella per descriverla
 %usage: \newListItem{reqkey}{\ereq{ ...ID... }}{titolo} 
-\newcommand\newListItem[3]{\hyperref[desc:#1]{#2\phantomsection\label{id:#1}}\sepIDTitle\titleLabel{#3}\label{title:#1}}
+\newcommand\newListItem[3]{\hyperref[desc:#1]{\phantomsection\currentLabelText{#2}#2\label{id:#1}}\sepIDTitle\currentLabelText{#3}#3\label{title:#1}}
 
 %macro per stampare (e linkare, tranne il titolo) informazioni del req.
 %usage: \reqGet..{reqkey}
@@ -180,29 +179,20 @@
 %macro per gestire i requisiti, e sotto requisiti vari.
 %Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
 %fa in modo che anche la label contenga la giusta formattazione del requisito.
-\makeatletter
 \newcommand{\ereq}[2]{%
-    \stepcounter{req}%
-    \def\@currentlabel{\req{#1}{#2}{\getCatR}{\arabic{req}}}%
+    \protect\stepcounter{req}%
     \req{#1}{#2}{\getCatR}{\arabic{req}}%
 }
-\makeatother
 
-\makeatletter
 \newcommand{\esubreq}[2]{%
-    \stepcounter{sottoreq}%
-    \def\@currentlabel{\subreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}}%
+    \protect\stepcounter{sottoreq}%
 	\subreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}%
 }
-\makeatother
 
-\makeatletter
 \newcommand{\esubsubreq}[2]{%
-    \stepcounter{sottosottoreq}%
-    \def\@currentlabel{\subsubreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}}%
+    \protect\stepcounter{sottosottoreq}%
 	\subsubreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
 }
-\makeatother
 
 %deprecated, inutilmente complicato. (Principio di funzionamento: sovrascrive il modo di riferirsi a contatori. Penso.)
 %Funzione per creare il prossimo requisito, creare una label a cui punterà la defnizione, linkare la definizione.
@@ -310,13 +300,10 @@
 \newcommand{\att}[2]{\displayAtt{#1\attSep#2}}
 
 
-\makeatletter
 \newcommand{\formattaAtt}{%
-    \stepcounter{counterAtt}%
-    \def\@currentlabel{\att{ATT}{\arabic{counterAtt}}}%
+    \protect\stepcounter{counterAtt}%
 	\att{ATT}{\arabic{counterAtt}}%
 }
-\makeatother
 
 %Tabella per descrizione requisiti
 %usage: {reqkey}{descrizione}{tipo}{priorità}{stato}
@@ -370,13 +357,10 @@
 %macro per gestire i requisiti, e sotto requisiti vari.
 %Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
 %fa in modo che anche la label contenga la giusta formattazione del requisito.
-\makeatletter
 \newcommand{\formattaCU}{%
-    \stepcounter{counterCU}%
-    \def\@currentlabel{\cu{CU}{\getCatCU}{\arabic{counterCU}}}%
+    \protect\stepcounter{counterCU}%
 	\cu{CU}{\getCatCU}{\arabic{counterCU}}%
 }
-\makeatother
 
 
 %Tabella per descrizione requisiti
@@ -458,13 +442,10 @@
 %macro per gestire i requisiti, e sotto requisiti vari.
 %Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
 %fa in modo che anche la label contenga la giusta formattazione del requisito.
-\makeatletter
-\newcommand{\formattaRK}{%
-    \stepcounter{counterRK}%
-    \def\@currentlabel{\rk{RK}{\arabic{counterRK}}}%
+\newcommand{\formattaRK}{%    
+	\protect\stepcounter{counterRK}%
 	\rk{RK}{\arabic{counterRK}}%
 }
-\makeatother
 
 %Tabella per rischi
 %usage: {rkkey}{prob}{effetto}{desc}{mitig}{monit}{manag}
