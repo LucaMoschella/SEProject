@@ -8,22 +8,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FUNZIONI COMUNI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\fromattaTitoloTab}[1]{\texttt{#1}} 
+
+\newcommand{\iindex}[1]{#1\index{#1}} %indiicizzare e inserire contemporaneamente
+\newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} %a documenti
+\newcommand{\formattaTitoloTab}[1]{\texttt{#1}} 
+\newcommand{\formattaCampiTab}[1]{\textsc{#1}} 
+\newcommand{\widthTab}{\textwidth} %larghezza tabelle iterazione
+\newcommand{\vspaceTab}{\bigskip} %spazio fra tabelle iterazioni 
 
 %%%%% funzioni per la creazione automatica degli identificatori %%%%
 %Macro per linkare requisiti
 %separatore id titolo
 \newcommand{\sepIDTitle}{ - }
 
-%fa ma in modo che la label attuale contenga il titolo (e non il numero di sezione)
+%Modifica il contenuto della prossima \label
 \makeatletter
 \newcommand{\currentLabelText}[1]{%
     \def\@currentlabel{#1}%
 }
 \makeatother
 
-%macro per creare un nuovo requisito, usando i vari contatori. Necessita della crezione di una tabella per descriverla
-%usage: \newListItem{reqkey}{\ereq{ ...ID... }}{titolo} 
+%macro per creare un nuovo item in lista, necessità di una descrizione \label{desc:key}
+%usage: \newListItem{key}{id}{titolo} 
 \newcommand\newListItem[3]{\hyperref[desc:#1]{\phantomsection\currentLabelText{#2}#2\label{id:#1}}\sepIDTitle\currentLabelText{#3}#3\label{title:#1}}
 
 %macro per stampare (e linkare, tranne il titolo) informazioni del req.
@@ -34,8 +40,7 @@
 \newcommand\getTitletodesc[1]{\hyperref[desc:#1]{\ref*{title:#1}}}
 \newcommand\getIDTitle[1]{\getID{#1}\sepIDTitle\getTitle{#1}}
 
-
-%%%%% altre funzioni %%%%%
+%Stampa il testo, imposta una label con la key passata, facendo il ref ti stampa il testo.
 \makeatletter
 \newcommand{\setTextToLabel}[2]{%
 	#1
@@ -92,33 +97,21 @@
 %workflow di sviluppo (raccolta requisiti, etc.)
 \newcommand{\workflow}[1]{\emph{#1}} 
 
-%larghezza tabelle iterazione
-\newcommand{\tabwidthiter}{\textwidth} 
-
-%titolo tabelle iterazioni 
-\newcommand{\tabtitleiter}[1]{\textbf{#1}} 
-
-%campo tabelle iterazioni 
-\newcommand{\tabheaditer}[1]{\textsc{#1}} 
-
-%spazio fra tabelle iterazioni 
-\newcommand{\tabitervspace}{\bigskip} 
-
 %tabelle iterazioni
 \newcommand{\tabiter}[5]{
 \begin{center}
 	\begin{minipage}[t]{\linewidth}
-		\begin{tabularx}{\tabwidthiter}{ l  X } 
+		\begin{tabularx}{\widthTab}{ l  X } 
 			\toprule
-				\multicolumn{2}{c}{\tabtitleiter{#1}}  \\
+				\multicolumn{2}{c}{\formattaTitoloTab{#1}}  \\
 			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-				\tabheaditer{Fase} & #2 \\ 
+				\formattaCampiTab{Fase} & #2 \\ 
 				\addlinespace[1em] 
-				\tabheaditer{Obiettivi} & #3 \\
+				\formattaCampiTab{Obiettivi} & #3 \\
 				\addlinespace[1em]
-				\tabheaditer{Milestones} & #4 \\
+				\formattaCampiTab{Milestones} & #4 \\
 				\addlinespace[1em]
-				\tabheaditer{Stato} &  #5 \\
+				\formattaCampiTab{Stato} &  #5 \\
 			\bottomrule
 		\end{tabularx}
 	\end{minipage}
@@ -127,7 +120,6 @@
 
 %campo vuoto
 \newcommand{\emptycell}{-} 
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento di specifica sistema %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -194,32 +186,6 @@
 	\subsubreq{#1}{#2}{\getCatR}{\arabic{req}}{\arabic{sottoreq}}{\arabic{sottosottoreq}}%
 }
 
-%deprecated, inutilmente complicato. (Principio di funzionamento: sovrascrive il modo di riferirsi a contatori. Penso.)
-%Funzione per creare il prossimo requisito, creare una label a cui punterà la defnizione, linkare la definizione.
-%Usage: \command{tipo}{contesto}{categoria}{keyrequisito}
-%\newcommand*\ereq[4]{\def\thereq{#1.#2.#3.\arabic{req}}\refstepcounter{req}\hyperref[definizione#4]{\thereq}\phantomsection\label{elenco#4}} 
-%\newcommand*\esubreq[4]{\def\thesottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}}\refstepcounter{sottoreq}\hyperref[definizione#4]{\thesottoreq}\phantomsection\label{elenco#4}} 
-%\newcommand*\esubsubreq[4]{\def\thesottosottoreq{#1.#2.#3.\arabic{req}.\arabic{sottoreq}.\arabic{sottosottoreq}}\refstepcounter{sottosottoreq}\hyperref[definizione#4]{\thesottosottoreq}\phantomsection\label{elenco#4}} 
-
-%Funzione per stampare il nome del requisito associato alla label: keyrequisito
-%Linka l'elemento nell'elenco, e fa in modo di essere linkato dall'elenco
-%\newcommand{\refElencoFromDef}[1]{\ref{elenco#1}\phantomsection\label{definizione#1}}
-
-%Funzione per stampare il nome del requisito associato alla label: keyrequisito
-%Linka l'elemento nell'elenco.
-%\newcommand{\refElenco}[1]{\ref{elenco#1}}
-
-%titolo tabelle req 
-\newcommand{\tabtitlereq}[1]{\texttt{#1}} 
-
-%campo tabelle req 
-\newcommand{\tabheadreq}[1]{\textsc{#1}} 
-
-%spazio fra tabelle requisiti 
-\newcommand{\tabreqvspace}{\bigskip} 
-
-%spazio fra tabelle requisiti 
-\newcommand{\tabwidthreq}{\textwidth} 
 
 %Tabella per descrizione requisiti funzionali 
 %usage: {reqkey}{descrizione}{priorità}{stato}
@@ -235,19 +201,19 @@
 	\begin{center}
 		\begin{minipage}[t]{\linewidth}
 			\phantomsection\label{desc:#1}
-			\begin{tabularx}{\tabwidthreq}{ l  X }
+			\begin{tabularx}{\widthTab}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+				\multicolumn{2}{c}{\formattaTitoloTab{\getTitle{#1}}}  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-				\tabheadreq{ID} & \getID{#1} \\ 
+				\formattaCampiTab{ID} & \getID{#1} \\ 
 				\addlinespace[0.5em] 
-				\tabheadreq{Descrizione} &  #2 \\		
+				\formattaCampiTab{Descrizione} &  #2 \\		
 				\addlinespace[0.5em]
-				\tabheadreq{Tipo} &  #3 \\
+				\formattaCampiTab{Tipo} &  #3 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Priorità} &  #4 \\
+				\formattaCampiTab{Priorità} &  #4 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Stato} &  #5 \\
+				\formattaCampiTab{Stato} &  #5 \\
 				\bottomrule
 			\end{tabularx}
 		\end{minipage}
@@ -262,8 +228,6 @@
 \newcommand{\statoNOK}{Non approvato} 
 \newcommand{\statoUn}{Da approvare} 
 
-
-
 \newcommand{\visitatore}{\ref*{con:visitatore}} 
 \newcommand{\utente}{\ref*{con:utente}} 
 \newcommand{\produttore}{\ref*{con:produttore}} 
@@ -275,12 +239,6 @@
 \newcommand{\noF}{}%\textemdash} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% documento dei casi d'uso %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%descrizione campi delle tabelle dei requisiti
-\newcommand{\campiTabUse}[1]{\emph{#1}} 
-
-%descrizione campi degli identificatori dei requisiti
-\newcommand{\campiIdUse}[1]{\emph{#1}} 
 
 %formattazione requisiti - non mette link
 \newcommand{\usesep}{.} 
@@ -313,20 +271,18 @@
 			\phantomsection\label{desc:#1}
 			\begin{tabularx}{\textwidth}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+				\multicolumn{2}{c}{\formattaTitoloTab{\getTitle{#1}}}  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-				\tabheadreq{ID} & \getID{#1} \\ 
+				\formattaCampiTab{ID} & \getID{#1} \\ 
 				\addlinespace[0.5em] 
-				\tabheadreq{Genitore} &  #2 \\		
+				\formattaCampiTab{Genitore} &  #2 \\		
 				\addlinespace[0.5em]
-				\tabheadreq{Descrizione} &  #3 \\
+				\formattaCampiTab{Descrizione} &  #3 \\
 				\bottomrule
 			\end{tabularx}
 		\end{minipage}
 	\end{center}
 }
-
-\newcommand{\tabattvspace}{\bigskip} 
 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% casi d'uso
@@ -371,17 +327,17 @@
 			\phantomsection\label{desc:#1}
 			\begin{tabularx}{\textwidth}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+				\multicolumn{2}{c}{\formattaTitoloTab{\getTitle{#1}}}  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-				\tabheadreq{ID} & \getID{#1} \\ 
+				\formattaCampiTab{ID} & \getID{#1} \\ 
 				\addlinespace[0.5em] 
-				\tabheadreq{Attori} &  #2 \\		
+				\formattaCampiTab{Attori} &  #2 \\		
 				\addlinespace[0.5em]
-				\tabheadreq{Precondizioni} &  #3 \\
+				\formattaCampiTab{Precondizioni} &  #3 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Flusso principale} &  \begin{NoHyper}#5\end{NoHyper} \\
+				\formattaCampiTab{Flusso principale} &  \begin{NoHyper}#5\end{NoHyper} \\
 				\addlinespace[0.5em]
-				\tabheadreq{Postcondizioni} &  #4 \\
+				\formattaCampiTab{Postcondizioni} &  #4 \\
 				\bottomrule
 			\end{tabularx}
 		\end{minipage}
@@ -389,7 +345,6 @@
 }
 
 \newcommand{\tabtitleflussosec}[1]{\textit{#1}} 
-\newcommand{\lNum}[1]{\texttt{#1}} 
 \newcommand{\postNulle}{-} 
 
 %key #flusso nomeFLusso pre post flusso
@@ -399,17 +354,17 @@
 			%\phantomsection
 			\begin{tabularx}{\textwidth}{ l  X }
 				\toprule
-				\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}} - \tabtitleflussosec{#2} }  \\
+				\multicolumn{2}{c}{\formattaTitoloTab{\getTitle{#1}} - \tabtitleflussosec{#2} }  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-				\tabheadreq{ID} & \getIDtodesc{#1} \\ 
+				\formattaCampiTab{ID} & \getIDtodesc{#1} \\ 
 				\addlinespace[0.5em] 
-				\tabheadreq{Nome} & #3 \\ 
+				\formattaCampiTab{Nome} & #3 \\ 
 				\addlinespace[0.5em] 
-				\tabheadreq{Precondizioni} &  #4 \\
+				\formattaCampiTab{Precondizioni} &  #4 \\
 				\addlinespace[0.5em]
-				\tabheadreq{Flusso alternativo} &  \begin{NoHyper}#6\end{NoHyper} \\
+				\formattaCampiTab{Flusso alternativo} &  \begin{NoHyper}#6\end{NoHyper} \\
 				\addlinespace[0.5em]
-				\tabheadreq{Postcondizioni} &  #5 \\
+				\formattaCampiTab{Postcondizioni} &  #5 \\
 				\bottomrule
 			\end{tabularx}
 		\end{minipage}
@@ -420,8 +375,6 @@
 \newcommand{\inc}[1]{%
 \textbf{include} <\getTitletodesc{#1}>%
 }
-
-\newcommand{\tabcuvspace}{\bigskip} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VALUTAZIONE DEI RISCHI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,68 +408,26 @@
 			\phantomsection\label{desc:#1}
 			\begin{tabularx}{\textwidth}{ l  X }
 				\toprule
-					\multicolumn{2}{c}{\tabtitlereq{\getTitle{#1}}}  \\
+					\multicolumn{2}{c}{\formattaTitoloTab{\getTitle{#1}}}  \\
 				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
-					\tabheadreq{ID} & \getID{#1} \\ 
+					\formattaCampiTab{ID} & \getID{#1} \\ 
 					\addlinespace[0.5em] 
-					\tabheadreq{Probabilità} &  #2 \\		
+					\formattaCampiTab{Probabilità} &  #2 \\		
 					\addlinespace[0.5em]
-					\tabheadreq{Effetti} &  #3 \\
+					\formattaCampiTab{Effetti} &  #3 \\
 					\addlinespace[0.5em]
-					\tabheadreq{Descrizione} &  #4 \\
+					\formattaCampiTab{Descrizione} &  #4 \\
 					\addlinespace[0.5em]
-					\tabheadreq{Mitigation} &  #5 \\					
+					\formattaCampiTab{Mitigation} &  #5 \\					
 					\addlinespace[0.5em]
-					\tabheadreq{Monitoring} &  #6 \\
+					\formattaCampiTab{Monitoring} &  #6 \\
 					\addlinespace[0.5em]
-					\tabheadreq{Management} &  #7 \\
+					\formattaCampiTab{Management} &  #7 \\
 				\bottomrule
 			\end{tabularx}
 		\end{minipage}
 	\end{center}
 }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ANALITICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%indiicizzare e inserire contemporaneamente
-\newcommand{\iindex}[1]{#1\index{#1}} 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RIFERIMENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%a documenti
-\newcommand{\docref}[1]{\nameref{#1} \vpageref{#1}} 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%insiemi numerici
-\newcommand{\numberset}{\mathbb}
-\newcommand{\N}{\numberset{N}}
-\newcommand{\R}{\numberset{R}}
-
-%lettere strane
-\renewcommand{\epsilon}{\varepsilon}
-\renewcommand{\theta}{\vartheta}
-\renewcommand{\rho}{\varrho}
-\renewcommand{\phi}{\varphi}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABELLE GENERICHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%larghezza tabelle revisione - non usata (se con poco testo viene brutta)
-\newcommand{\tabwidthrev}{0.8\textwidth} 
 
 
 
@@ -578,3 +489,18 @@
 		\end{enumerate}
 	\end{minipage}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATEMATICA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%insiemi numerici
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}}
+\newcommand{\R}{\numberset{R}}
+
+%lettere strane
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\theta}{\vartheta}
+\renewcommand{\rho}{\varrho}
+\renewcommand{\phi}{\varphi}
