@@ -1,0 +1,209 @@
+\chapter{Stima dei costi}
+
+\section{Introduzione}
+In questo documento utilizzeremo il metodo \gls{ucp} per calcolare la stima della dimensione del progetto. Tale metodo si basa sul calcolo dei seguenti elementi:
+\begin{itemize}
+	\item \gls{uaw} una stima che tiene del numero e della complessità degli attori
+	\item \gls{uucw} una stima che tiene del numero e della complessità dei casi d'uso
+	\item \gls{tcf} un fattore che è usato per aggiustare la stima basandosi su considerazioni tecniche
+	\item \gls{ecf} un fattore che è usato per aggiustare la stima basandosi su considerazioni ambientali
+\end{itemize}
+
+\section{Stima della complessità degli attori}
+Gli attori vengono classificati in una scala di tre valori, in base alla loro complessità. Il metodo \gls{ucp} definisce le seguenti direttive per catalogare gli attori:
+\begin{center}
+	\begin{tabularx}{\widthTab}{ l  X  l} 
+		\toprule
+			\formattaTitoloTab{Classificazione} & \formattaTitoloTab{Tipo di attore} & \formattaTitoloTab{Peso} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+			\formattaCampiTab{Simple} & L'attore è un sistema esterno che utilizza una \gls{api} & 1 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{Average} & L'attore è un sistema esterno che utilizza un protocollo (ad esempio TCP/IP, FTP, HTTP) & 2 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{Complex} & L'attore è un utente che utilizza una \gls{gui} & 3 \\ 
+		\bottomrule
+	\end{tabularx}
+\end{center}
+La stima del costo degli attori (\gls{uaw}) è data dalla seguente formula:
+\begin{displaymath}
+UAW = (NoSimpleActors \times 1) + (NoAvgActors \times 2) + (NoComplexActors \times 3)
+\end{displaymath}
+Di seguito riportiamo la tabella con indicati pesi di ogni attore:
+\begin{center}
+	\begin{tabularx}{\widthTab}{ l  X  l} 
+		\toprule
+			\formattaTitoloTab{ID} & \formattaTitoloTab{Attore} & \formattaTitoloTab{Peso} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+			\rowIDTitle{att:visitatore} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:figuraPubblicaAutenticata} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:figuraAmministrativa} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:utente} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:produttore} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:redattore} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:assistente} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:moderatore} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:amministratore} & 3 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{att:cms} & 2 \\ 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+			\formattaCampiTab{\gls{uaw}}  & & 29\\
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\section{Stima della complessità dei casi d'uso}
+I casi d'uso vengono classificati in una scala di tre valori, in base alla loro complessità. Il metodo \gls{ucp} definisce le seguenti direttive per catalogare i casi d'uso:
+\begin{center}
+	\begin{tabularx}{\widthTab}{ l  X  l} 
+		\toprule
+			\formattaTitoloTab{Classificazione} & \formattaTitoloTab{Numero di transazioni} & \formattaTitoloTab{Peso} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+			\formattaCampiTab{Simple} & Un numero di transazioni compreso fra 1 e 3 & 5 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{Average} & Un numero di transazioni compreso fra 4 e 7 & 10 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{Complex} & Un numero di transazioni pari a 8 o maggiore & 15 \\ 
+		\bottomrule
+	\end{tabularx}
+\end{center}
+La stima del costo dei casi d'uso (\gls{uucw}) è data dalla seguente formula:
+\begin{displaymath}
+UUCW = (NoSimpleUC \times 1) + (NoAvgUC \times 2) + (NoComplexUC \times 3)
+\end{displaymath}
+Di seguito riportiamo la tabella con indicati pesi di ogni attore:
+\begin{center}
+	\begin{longtable}{ p{0.125\textwidth} p{0.7\textwidth} p{0.075\textwidth} } 
+		\toprule
+			\formattaTitoloTab{ID} & \formattaTitoloTab{Attore} & \formattaTitoloTab{Peso} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+		\endfirsthead
+
+		\toprule
+			\formattaTitoloTab{ID} & \formattaTitoloTab{Attore} & \formattaTitoloTab{Peso} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+		\endhead
+
+		\midrule
+		\multicolumn{3}{r}{\footnotesize\itshape continua nella prossima pagina} \\
+		\endfoot
+
+		\bottomrule
+		\endlastfoot
+
+			\rowIDTitle{cu:login} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:loginAmm} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:logout} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:iscrizionePortale} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:iscrizioneSocial} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:iscrizioneApprovazione} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:approvazioneIscrizione} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:personalizzaVetrinaInsDesc} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:personalizzaVetrinaModDesc} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:personalizzaVetrinaInsImg} & 10 \\ 			
+			\addlinespace[1em] 
+			\rowIDTitle{cu:personalizzaVetrinaDelImg} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:personalizzaVetrinaInsProd} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:personalizzaVetrinaModProd} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:statistichePrivateVetrina} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:inserimentoNotizia} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:modificaNotizia} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:rimozioneNotizia} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:suggerimentoProdotti} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:notizieSimili} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:accessoProfilo} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:modificaImpostazioni} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:rimozioneAccountProprio} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:rimozioneAccountAltrui} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:modificaPrivilegiAccount} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:inserisciValutazioneProdotto} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:modificaValutazioneProdotto} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:inserisciRecensioneProdotto} & 15 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:modificaRecensioneProdotto} & 10 \\ 			
+			\addlinespace[1em] 
+			\rowIDTitle{cu:eliminaRecensioneProdotto} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:commentoRecensione} & 15 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:giudizioRecensione} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:modificaGiudizioRecensione} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:segnalazioneContenutiInap} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraSegnContenutiInap} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:rimozioneContenutiInap} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:followAccount} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:unFollowAccount} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ticketInvio} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ticketRisposta} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ticketChiudi} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ticketLettura} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ricercaProdotto} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ricercaProfilo} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:ricercaNotizia} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:richiestaInsProdotto} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraRichiestaInsProdotto} & 10 \\ 			
+			\addlinespace[1em] 
+			\rowIDTitle{cu:richiestaInsProduttore} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraVetrina} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraProdotto} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraRecProdotto} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraProfilo} & 5 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraNotizia} & 10 \\ 
+			\addlinespace[1em] 
+			\rowIDTitle{cu:mostraAggF} & 5 \\ 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+			\formattaCampiTab{\gls{uucw}}  & & 460\\
+	\end{longtable}
+\end{center}

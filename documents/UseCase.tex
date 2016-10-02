@@ -149,8 +149,7 @@ Vengono di seguito elencati i casi d'uso:
 
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
 	\item \newListItem{cu:modificaPrivilegiAccount}{\formattaCU}{Modifica privilegi di un account}
-	%\item \newListItem{cu:aggiungiPrivilegiAccount}{\formattaCU}{Aggiungi privilegi ad account}
-	%\item \newListItem{cu:rimuoviPrivilegiAccount}{\formattaCU}{Rimuovi privilegi da account}
+
 
 	\setCatCU{\ref*{pkg:gestionevalutazione}}%G
 	\item \newListItem{cu:inserisciValutazioneProdotto}{\formattaCU}{Inserimento valutazione}
@@ -179,11 +178,8 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:ricerca}}%K
 	\item \newListItem{cu:ricercaProdotto}{\formattaCU}{Ricerca prodotto}
-	%\item \newListItem{cu:selezionaProdotto}{\formattaCU}{Seleziona prodotto}
 	\item \newListItem{cu:ricercaProfilo}{\formattaCU}{Ricerca profilo}
-	%\item \newListItem{cu:selezionaProfilo}{\formattaCU}{Seleziona profilo}
 	\item \newListItem{cu:ricercaNotizia}{\formattaCU}{Ricerca notizia}
-	%\item \newListItem{cu:selezionaNotizia}{\formattaCU}{Seleziona notizia}
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
 	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto}
@@ -192,19 +188,10 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
 	\item \newListItem{cu:mostraVetrina}{\formattaCU}{Mostra vetrina}
-	%\item \newListItem{cu:mostraInfoVetrina}{\formattaCU}{Mostra informazioni vetrina}
-%%	\item \newListItem{cu:mostraProdottiVetrina}{\formattaCU}{Mostra prodotti esposti in vetrina}
 	\item \newListItem{cu:mostraProdotto}{\formattaCU}{Mostra prodotto}
-%	\item \newListItem{cu:mostraAnteprimaProdotto}{\formattaCU}{Mostra anteprima prodotto}
-%	\item \newListItem{cu:mostraInfoProdotto}{\formattaCU}{Mostra informazioni del prodotto}
 	\item \newListItem{cu:mostraRecProdotto}{\formattaCU}{Mostra recensioni associate al prodotto}
-%	\item \newListItem{cu:mostraStatProdotto}{\formattaCU}{Mostra statistiche del prodotto}
 	\item \newListItem{cu:mostraProfilo}{\formattaCU}{Mostra profilo pubblico}
-%	\item \newListItem{cu:mostraAnteprimaProfilo}{\formattaCU}{Mostra anteprima profilo}
-%	\item \newListItem{cu:mostraInfoProfilo}{\formattaCU}{Mostra informazioni di un profilo pubblico}
-%	\item \newListItem{cu:mostraStatProfilo}{\formattaCU}{Mostra statistiche di un profilo pubblico}
 	\item \newListItem{cu:mostraNotizia}{\formattaCU}{Mostra notizia}
-%	\item \newListItem{cu:mostraAnteprimaNotizia}{\formattaCU}{Mostra anteprima notizia}
 	\item \newListItem{cu:mostraAggF}{\formattaCU}{Mostra aggiornamenti dai followed}
 \end{itemize}	
 
@@ -1099,7 +1086,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata come Utente. Nel sistema è presente una recensione di un prodotto che l'Utente ha già giudicato}
 {Nel sistema è stato modificato un giudizio di quella persona}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Utente richiede di modificare un giudizio di una recensione di un prodotto presente nel sistema
+	\item Il caso d'uso ha inizio quando un Utente visualizza le recensioni di un prodotto, \inc{cu:mostraRecProdotto}
 	\item L'Utente richiede di modificare un giudizio di una recensione tra quelle che sta visualizzando
 	\item Il sistema mostra all'Utente la recensione
 	\item Il sistema mostra all'Utente il suo giudizio per quella recensione
@@ -1454,7 +1441,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona è autenticata come Utente. Nel sistema è presente un Produttore che non ha ancora aggiunto un prodotto in vetrina}
 {Il Produttore ha una richiesta in più}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Utente richiede ad un Produttore di inserire un suo prodotto mancante
+		\item Il caso d'uso ha inizio quando un Utente visualizza una vetrina di un produttore, \inc{cu:mostraVetrina}
+		\item L'Utente richiede al Produttore proprietario della vetrina che sta visualizzando di inserire un suo prodotto mancante
 		\item Il sistema richiede di compilare una scheda provvisoria del prodotto da inserire
 		\item L'Utente inserisce i dati richiesti \label{curicinsimmpro:1}
 		\item L'Utente conferma i dati inseriti 
