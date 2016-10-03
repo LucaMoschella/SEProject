@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="DiagrammaGantt" company="" webLink="http://" view-date="2016-04-01" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7.2" locale="it">
+<?xml version="1.0" encoding="UTF-8"?><project name="DiagrammaGantt" company="" webLink="http://" view-date="2016-03-01" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.7.2" locale="it">
     <description/>
-    <view zooming-state="default:9" id="gantt-chart">
+    <view zooming-state="default:10" id="gantt-chart">
         <field id="tpd3" name="Nome" width="57" order="0"/>
         <field id="tpd4" name="Data d'inizio" width="21" order="1"/>
         <field id="tpd5" name="Data di fine" width="21" order="2"/>
@@ -35,13 +35,15 @@
         </taskproperties>
         <task id="0" name="Documento di richiesta" meeting="false" start="2016-04-25" duration="1" complete="0" expand="true"/>
         <task id="1" name="Documenta di visione" meeting="false" start="2016-04-25" duration="6" complete="0" expand="true"/>
-        <task id="2" name="Glossario e Acronimi" meeting="false" start="2016-04-25" duration="158" complete="0" expand="true"/>
+        <task id="2" name="Glossario e Acronimi" meeting="false" start="2016-04-25" duration="162" complete="0" expand="true"/>
         <task id="3" name="Studio della fattibilità" meeting="false" start="2016-04-30" duration="2" complete="0" expand="true"/>
         <task id="4" name="Contratto" meeting="false" start="2016-05-01" duration="1" complete="0" expand="true"/>
         <task id="5" name="Pianificazione del progetto" meeting="false" start="2016-05-02" duration="14" complete="0" expand="true"/>
         <task id="6" name="Specifica del sistema" meeting="false" start="2016-05-04" duration="1" complete="0" expand="true"/>
         <task id="7" name="Specifica dei requisiti" meeting="false" start="2016-05-04" duration="15" complete="0" expand="true"/>
         <task id="8" name="Documento dei casi d'uso" meeting="false" start="2016-08-15" duration="46" complete="0" expand="true"/>
+        <task id="9" name="Valutazione dei rischi" meeting="false" start="2016-09-29" duration="4" complete="0" expand="true"/>
+        <task id="11" name="Stima dei costi" meeting="false" start="2016-10-02" duration="2" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
