@@ -78,7 +78,7 @@ La stima del costo dei casi d'uso (\gls{uucw}) è data dalla seguente formula:
 \begin{displaymath}
 UUCW = (NoSimpleUC \times 1) + (NoAvgUC \times 2) + (NoComplexUC \times 3)
 \end{displaymath}
-Di seguito riportiamo la tabella con indicati pesi di ogni attore:
+Di seguito riportiamo la tabella con indicati pesi di ogni attore: 
 \begin{center}
 	\begin{longtable}{ p{0.125\textwidth} p{0.7\textwidth} p{0.075\textwidth} } 
 		\toprule
@@ -207,3 +207,124 @@ Di seguito riportiamo la tabella con indicati pesi di ogni attore:
 			\formattaCampiTab{\gls{uucw}}  & & 460\\
 	\end{longtable}
 \end{center}
+
+\section{Fattore di aggiustamento tecnico}
+Il \gls{tcf} è uno dei fattori che viene applicato alla stima della dimensione del progetto in modo tale da tener conto delle considerazioni tecniche.
+Questo fattore è determinato assegnando un valore compreso fra 0 (irrilevante) e 5 (essenziale) ai 13 aspetti tecnici, ad ognuno dei quali è associato un peso. 
+Il \gls{tcf} è dato dalla seguente formula:
+\begin{displaymath}
+	TCF = 0.6 + (TF \div 100)
+\end{displaymath}
+Dove il \gls{tf} viene così calcolato:
+\begin{displaymath}
+	TF = \sum_{i=1}^{13}FactorWeight_i \times FactorScore_i 
+\end{displaymath}
+Nella seguente tabella riportiamo gli aspetti tecnici che vengono presi in considerazione nel calcolo del \gls{tcf}, il peso di ognuno di essi e il valore che gli viene assegnato:
+\begin{center}
+	\begin{tabularx}{\widthTab}{l X l l} 
+		\toprule
+			\formattaTitoloTab{Fattore} & \formattaTitoloTab{Descrizione} & \formattaTitoloTab{Peso} & \formattaTitoloTab{Valore} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-4}
+			\formattaCampiTab{T1} & Distributed system & 2.0 & 0.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T2} & Response time/performance objectives & 1.0 & 5.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T3} & End-user efficiency & 1.0 & 5.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T4} & Internal processing complexity & 1.0 & 1.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T5} & Code reusability & 1.0 & 3.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T6} & Easy to install & 0.5 & 1.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T7} & Easy to use & 0.5 & 5.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T8} & Portability to other platforms & 2.0 & 5.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T9} & System maintenance & 1.0 & 3.0 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T10} & Concurrent/parallel processing & 1.0 & 1.0 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T11} & Security features & 1.0 & 4.0 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T12} & Access for third parties & 1.0 & 0.0 \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{T13} & End user training & 1.0 & 0.0 \\ 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-4}
+			\formattaCampiTab{TF} & & & 35.0 \\ 
+			\formattaCampiTab{TCF} & & & 0.95 \\ 
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\section{Fattore di aggiustamento ambientale}
+Il \gls{ecf} è l'altro fattore che viene applicato alla stima della dimensione del progetto in modo tale da tener conto delle considerazioni ambientali.
+Questo fattore è determinato assegnando un valore compreso fra 0 (nessuna esperienza) e 5 (esperto) agli 8 aspetti ambientali, ad ognuno dei quali è associato un peso. 
+Il \gls{ecf} è dato dalla seguente formula:
+\begin{displaymath}
+	ECF = 1.4 + (-0.03 \times EF)
+\end{displaymath}
+Dove il \gls{ef} viene così calcolato:
+\begin{displaymath}
+	EF = \sum_{i=1}^{8}FactorWeight_i \times FactorScore_i 
+\end{displaymath}
+Nella seguente tabella riportiamo gli aspetti ambientali che vengono presi in considerazione nel calcolo del \gls{ecf}, il peso di ognuno di essi e il valore che gli viene assegnato:
+\begin{center}
+	\begin{tabularx}{\widthTab}{l X l l} 
+		\toprule
+			\formattaTitoloTab{Fattore} & \formattaTitoloTab{Descrizione} & \formattaTitoloTab{Peso} & \formattaTitoloTab{Valore} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-4}
+			\formattaCampiTab{E1} & Familiarity with development process used & 1.5 & 0.5\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E2} & Application experience & 0.5 & 0.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E3} & Object-oriented experience of team & 1.0 & 5.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E4} & Lead analyst capability & 0.5 & 2.5\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E5} & Motivation of the team & 1.0 & 5.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E6} & Stability of requirements & 2.0 & 3.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E7} & Part-time staff & -1.0 & 0.0\\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{E8} & Difficult programming language & -1.0 & 2.0\\ 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-4}
+			\formattaCampiTab{EF} & & & 16.0 \\ 
+			\formattaCampiTab{ECF} & & & 0.92 \\ 
+		\bottomrule
+	\end{tabularx}
+\end{center}
+
+\section{Calcolo UCP}
+Il valore finale degli \acrfull{ucp} è dato dalla seguente formula:
+\begin{displaymath}
+	UCP = (UAW + UUCW) \times TCF \times ECF = (29 + 460) \times 0.95 \times 0.92 = 427.386 
+\end{displaymath}
+
+\section{Stima dello sforzo}
+Una volta nota la stima della dimensione del progetto è possibile stimare lo sforzo necessario per comopletarlo.
+Si assume, non avendo esperienze passate, che per ogni \gls{ucp} siano necessarie 30 ore/uomo.
+Lo sforzo totale per il completamento del progetto, \gls{ee}, è dato dalla seguente formula:
+\begin{displaymath}
+	EE = UCP \times (Hours Per UCP) = 427.386 \times 30 = 12821.58\, ore/uomo
+\end{displaymath}
+In un giorno si hanno generalmente 8 ore lavorative, quindi, dividendo la quantità precedente per 8 si ottiene lo sforzo in giorni/uomo:
+\begin{displaymath}
+	EE = 12821.58 \div 8 = 1602.70\, giorni/uomo
+\end{displaymath}
+In un mese si hanno generalmente 22 giorni lavorativi, quindi, dividendo la quantità precedente per 22 si ottiene lo sforzo in mesi/uomo:
+\begin{displaymath}
+	EE = 1602.6975 \div 22 = 72.85\, mesi/uomo
+\end{displaymath}
+Quindi lo sforzo in anni/uomo è il seguente:
+\begin{displaymath}
+	EE = 72.85 \div 12 = 6\, anni/uomo
+\end{displaymath}
+Con un team di tre persone si stima il completamento del progetto entro 2 anni.
+
+\section{Stima del costo}
+Supponendo uno stipendio medio di \(4000\, euro\) si stima il seguente costo del progetto:
+\begin{displaymath}
+	COSTO = 72.85 \times 4000 = 291400\, euro
+\end{displaymath}
