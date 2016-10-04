@@ -16,6 +16,7 @@ Todo:
 
 ) Aggiornare descrizione di aggiungi e rimuovi privilegi all'interno del documento dei requisiti
 ) Aggiornare la tabella delle revisioni dei requisiti
+) Aggiungi modifica profilo
 
 Next:
 
@@ -24,3 +25,19 @@ Next:
 ) CRC
 ) Analisi classi
 ) Analisi nomi verbi
+
+#############################################
+#############################################
+
+EXTENSION POINT:
+
+) Mostra vetrina:
+	-visualizza stat private vetrina
+	-inserimento prodotto
+	-rimozione immagine
+	-inserimento immagine
+	-Inserimento desc
+	-modifica descrizione
+	-inserimento descrizione
+
+) 

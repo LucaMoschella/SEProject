@@ -451,11 +451,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  INSERISCI DESCRIZIONE IN VETRINA *****************
 \cuTab{cu:personalizzaVetrinaInsDesc}
 {\getTitletodesc{att:produttore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema non è presente la descrizione della vetrina di quel Produttore}
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema non è presente la descrizione della vetrina di quel Produttore. Il sistema sta mostrando alla persona la sua vetrina}
 {Nel sistema è presente la descrizione della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
-		\item Il Produttore richiede di inserire la descrizione della sua vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di inserire la descrizione della sua vetrina
 		\item Il sistema richiede il testo da inserire come descrizione 
 		\item Il Produttore inserisce la descrizione nell'apposito campo\label{cuinsdescr:2}
 		\item Il Produttore conferma il testo inserito
@@ -465,7 +464,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:personalizzaVetrinaInsDesc}
 {Flusso alternativo 1}%
 {Annulla inserimento}%
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema non è presente la descrizione della vetrina di quel Produttore}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema non è presente la descrizione della vetrina di quel Produttore. Il sistema sta mostrando alla persona la sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsdescr:2} il Produttore annulla l'inserimento della descrizione
@@ -475,11 +474,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:personalizzaVetrinaModDesc}
 {\getTitletodesc{att:produttore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente la descrizione della vetrina di quel Produttore}
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente la descrizione della vetrina di quel Produttore. Il sistema sta mostrando alla persona la sua vetrina}
 {Nel sistema è presente la descrizione della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
-		\item Il Produttore richiede di modificare la descrizione della sua vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di modificare la descrizione della sua vetrina
 		\item Il sistema richiede il testo da inserire come descrizione, il campo in cui inserire il testo è precompilato con la descrizione già presente nel sistema 
 		\item Il Produttore inserisce la descrizione nell'apposito campo\label{cumoddescr:2}
 		\item Il Produttore conferma il testo inserito
@@ -489,7 +487,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:personalizzaVetrinaModDesc}
 {Flusso alternativo 1}%
 {Annulla modifica}%
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente la descrizione della vetrina di quel Produttore}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente la descrizione della vetrina di quel Produttore. Il sistema sta mostrando alla persona la sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cumoddescr:2} il Produttore annulla la modifca della descrizione
@@ -500,11 +498,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  INSERISCI IMMAGINE IN VETRINA *****************
 \cuTab{cu:personalizzaVetrinaInsImg}
 {\getTitletodesc{att:produttore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore}
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona la sua vetrina}
 {Nel sistema è presente l'immagine della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
-		\item Il Produttore richiede di inserire l'immagine della vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di inserire l'immagine della sua vetrina
 		\item Il sistema richiede il percorso nel file system, o nella rete, dell'immagine da inserire 
 		\item Il Produttore inserisce il percorso dell'immagine nell'apposito campo\label{cuinsimm:2}
 		\item Il Produttore conferma il percorso dell'immagine inserito\label{cuinsimm:3}
@@ -514,7 +511,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:personalizzaVetrinaInsImg}
 {Flusso alternativo 1}%
 {Errore inserimento}%
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona la sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsimm:3} il sistema non riesce a trovare, scaricare o inserire correttamente l'immagine
@@ -523,7 +520,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:personalizzaVetrinaInsImg}
 {Flusso alternativo 2}%
 {Annulla inserimento}%
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona la sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsimm:2} il produttore annulla l'inserimento dell'immagine
@@ -533,11 +530,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:personalizzaVetrinaDelImg}
 {\getTitletodesc{att:produttore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente l'immagine della vetrina del Produttore}
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nel sistema è presente l'immagine della vetrina del Produttore. Il sistema sta mostrando alla persona la sua vetrina}
 {Nel sistema non è presente l'immagine della vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
-		\item Il  Produttore richiede di rimuovere l'immagine della vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di rimuovere l'immagine della sua vetrina
 		\item Il sistema richiede di confermare l'operazione \label{cudelimm:2}
 		\item Il Produttore conferma l'operazione
 		\item Il sistema rimuove l'immagine della vetrina del produttore
@@ -548,11 +544,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  INSERISCI PRODOTTO IN VETRINA *****************
 \cuTab{cu:personalizzaVetrinaInsProd}
 {\getTitletodesc{att:produttore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore}
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona la sua vetrina}
 {Nel sistema è presente un nuovo prodotto nella vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza la sua vetrina, \inc{cu:mostraVetrina}
-		\item Il Produttore richiedere di inserire un prodotto nella vetrina
+		\item Il caso d'uso ha inizio quando un Produttore richiede di inserire un prodotto nella sua vetrina
 		\item Il sistema richiede di compilare la scheda del prodotto da inserire
 		\item Il Produttore inserisce i dati richiesti \label{cuinsimmpro:1}
 		\item Il Produttore conferma i dati inseriti 
@@ -565,7 +560,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:personalizzaVetrinaInsProd}
 {Flusso alternativo 1}%
 {Errore inserimento}%
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona la sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsimmpro:3} il sistema non riesce a trovare, scaricare o inserire correttamente una o più immagini
@@ -574,7 +569,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:personalizzaVetrinaInsProd}
 {Flusso alternativo 2}%
 {Annulla inserimento}%
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona la sua vetrina}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuinsimmpro:2} o dopo il punto \ref{cuinsimmpro:1} il Produttore annulla l'inserimento del prodotto
@@ -585,11 +580,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  MODIFICA PRODOTTO IN VETRINA *****************
 \cuTab{cu:personalizzaVetrinaModProd}
 {\getTitletodesc{att:produttore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Nella vetrina del Produttore è presente almeno un prodotto}%
+{La persona connessa al sito è autenticata e ha i privilegi di Produttore. Il sistema sta mostrando alla persona un prodotto presente nella sua vetrina}%
 {Nel sistema è stato modificato un prodotto presente nella vetrina del Produttore}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore visualizza un prodotto, \inc{cu:mostraProdotto}
-		\item Il Produttore richiede di modificare il prodotto visualizzato
+		\item Il caso d'uso ha inizio quando un Produttore richiede di modificare il prodotto che sta visualizzando
 		\item Il sistema richiede di compilare la scheda prodotto, precompilata con i dati già presenti nel sistema
 		\item Il Produttore inserisce i dati richiesti \label{cumodprodelim:1}
 		\item Il Produttore conferma i dati inseriti
@@ -1860,28 +1854,6 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 %Struttura dei casi d'uso (ID) T_T
 %Esempi:
 %Lumiere -> Ogni caso `e identificato da una stringa del tipo CU.entit`a.sottoentit`a.caso.
@@ -1891,7 +1863,4 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 %Scopiazzerei il grafico di Airbnb.it a pagina 9, utilizzando quella figura per descrivere il sistema a grandi linee, con i package. Mostrata questa, procederei con l'analisi
 %dei package uno ad uno e quindi dei singoli casi d'uso.
-%Per ogni caso d'uso, entrambi gli esempi fanno la descrizione stile Basi 2 con precondizioni e postcondizioni (oltre che attori coinvolti, nome, descrizione e flusso).
-%A me piace
-
-
+%Per ogni caso d'uso, entrambi gli esempi fanno la descrizione stile Basi 2 con precondizioni e postcondizioni (oltre che attori coinvolti, nome, descrizione e flussasoddfdA dmeasasdfassdù
