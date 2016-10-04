@@ -28,6 +28,7 @@ Next:
 
 #############################################
 #############################################
+#############################################
 
 EXTENSION POINT:
 
@@ -39,5 +40,8 @@ EXTENSION POINT:
 	-Inserimento desc
 	-modifica descrizione
 	-inserimento descrizione
+
+) Mostra prodotto:
+	- Modifica prodotto
 
 ) 
