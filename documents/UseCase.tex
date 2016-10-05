@@ -710,10 +710,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:suggerimentoProdotti}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona connessa al sito è autenticata ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona la scheda di un prodotto}
-{Il sistema sta mostrando alla persona una lista di anteprime di prodotti simili}
+{Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di prodotti simili}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare le anteprime delle schede di prodotti simili a quella che sta visualizzando
-	\item Il sistema mostra alla Figura Pubblica Autenticata una lista di anteprime di prodotti simili
+	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare le \glspl{anteprima} delle schede di prodotti simili a quella che sta visualizzando
+	\item Il sistema mostra alla Figura Pubblica Autenticata una lista di \glspl{anteprima} di prodotti simili
 \end{enumCU}}
 
 \vspaceTab
@@ -722,10 +722,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:notizieSimili}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona connessa al sito è autenticata ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona la scheda di un prodotto}
-{Il sistema sta mostrando alla persona una lista di anteprime di notizie simili}
+{Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di notizie simili}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare notizie simili alla notizia che sta visualizzando
-	\item Il sistema mostra alla Figura Pubblica Autenticata una lista di anteprime di notizie simili
+	\item Il sistema mostra alla Figura Pubblica Autenticata una lista di \glspl{anteprima} di notizie simili
 \end{enumCU}}
 
 \subsection{Gestione account}
@@ -884,10 +884,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  Modifica privilegi  *****************
 \cuTab{cu:modificaPrivilegiAccount}
 {\getTitletodesc{att:amministratore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di anteprime di profili}
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}
 {Nel sistema sono stati aggiornati i privilegi di quell'account come richiesto}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Amministratore seleziona un'anteprima profilo tra quelle mostrate nel risultato della ricerca e richiede di modificarne i privilegi
+	\item Il caso d'uso ha inizio quando un Amministratore seleziona un'\gls{anteprima} profilo tra quelle mostrate nel risultato della ricerca e richiede di modificarne i privilegi
 	\item Il sistema mostra all'Amministratore la lista dei privilegi, specificando quelli posseduti dall'account associato al profilo selezionato
 	\item Il sistema chiede di modificare i privilegi posseduti dall'account
 	\item L'Amministratore seleziona quali privilegi vuole fornire all'account\label{cufornpriv:1}
@@ -898,7 +898,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:modificaPrivilegiAccount}
 {Flusso alternativo 1}%
 {Annulla operazione}%
-{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cufornpriv:1} l'Amministratore annulla l'operazione
@@ -907,7 +907,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:modificaPrivilegiAccount}
 {Flusso alternativo 2}%
 {Annulla operazione di selezione}%
-{La persona connessa al sito è autenticata  e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
+{La persona connessa al sito è autenticata  e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cufornpriv:0} l'Assistente annulla la selezione
@@ -1297,14 +1297,14 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:ricercaProdotto}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{Il sistema sta mostrando alla persona la lista delle anteprime delle schede dei prodotti cercati}
+{Il sistema sta mostrando alla persona la lista delle \glspl{anteprima} delle schede dei prodotti cercati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca della scheda di un prodotto
 	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicprod:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
-	\item Il sistema mostra le anteprime dei risultati della ricerca
+	\item Il sistema mostra le \glspl{anteprima} dei risultati della ricerca
 \end{enumCU}
 \ext{cu:mostraProdotto}
 }
@@ -1324,7 +1324,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:ricercaProfilo}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{Il sistema sta mostrando alla persona la lista delle anteprime dei profili cercati}
+{Il sistema sta mostrando alla persona la lista delle \glspl{anteprima} dei profili cercati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di un profilo
 	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
@@ -1353,14 +1353,14 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:ricercaNotizia}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{Il sistema sta mostrando alla persona la lista delle anteprime delle notizie cercati}
+{Il sistema sta mostrando alla persona la lista delle \glspl{anteprima} delle notizie cercati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di una notizia
 	\item Il sistema richiede di compilare la scheda necessaria per definire i parametri di ricerca
 	\item La persona inserisce i dati negli appositi campi \label{curicnot:1}
 	\item La persona conferma i dati inseriti
 	\item Il sistema effettua la ricerca richiesta
-	\item Il sistema mostra le anteprime dei risultati della ricerca
+	\item Il sistema mostra le \glspl{anteprima} dei risultati della ricerca
 \end{enumCU}
 \ext{cu:mostraNotizia}
 }
@@ -1507,10 +1507,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %accorpa visalizza prodotti in vetrina e visualizza vetrina
 \cuTab{cu:mostraVetrina}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili di Produttori}
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili di Produttori}
 {Il sistema sta mostrando alla persona la vetrina del Produttore selezionato}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona seleziona un anteprima fra quelle presenti nella lista di anteprime di profili che sta visualizzando\label{cu:mostraVetr1}
+	\item Il caso d'uso ha inizio quando una persona seleziona un \gls{anteprima} fra quelle presenti nella lista di \glspl{anteprima} di profili che sta visualizzando\label{cu:mostraVetr1}
 	\item Il sistema mostra alla persona la vetrina del Produttore selezionato
 \end{enumCU}
 \ext{cu:statistichePrivateVetrina}
@@ -1525,7 +1525,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraVetrina}%
 {Flusso alternativo 1}%
 {Selezione alternativa}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}%
 {Il sistema sta mostrando alla persona la vetrina selezionata}%
 {\begin{enumCU}
 	\item Non viene effettuato il punto \ref{cu:mostraVetr1}, ma la persona seleziona un \gls{riferimento} verso una vetrina
@@ -1534,7 +1534,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraVetrina}%
 {Flusso alternativo 2}%
 {Errore ricerca}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}%
 {\postNulle}%
 {\begin{enumCU}
 	\item Dopo il passo \ref{cu:mostraVetr1}, non ci sono risultati per la ricerca effettuata
@@ -1544,10 +1544,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \vspaceTab
 
 \cuTab{cu:mostraProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di schede di prodotti}
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di schede di prodotti}
 {Il sistema sta mostrando alla persona la scheda del prodotto selezionato}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona seleziona un anteprima fra quelle presenti nella lista di anteprime prodotto che sta visualizzando\label{cu:mostraProd1}
+	\item Il caso d'uso ha inizio quando una persona seleziona un \gls{anteprima} fra quelle presenti nella lista di \glspl{anteprima} prodotto che sta visualizzando\label{cu:mostraProd1}
 	\item Il sistema mostra alla persona il prodotto selezionato
 	\item \inc{cu:suggerimentoProdotti}
 \end{enumCU}
@@ -1560,7 +1560,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraProdotto}
 {Flusso alternativo 1}%
 {Selezione alternativa}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di schede di prodotti}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di schede di prodotti}%
 {Il sistema sta mostrando alla persona la scheda del prodotto selezionato}%
 {\begin{enumCU}
 		\item Non viene effettuato il punto \ref{cu:mostraProd1}, ma la persona seleziona un \gls{riferimento} verso la scheda di un prodotto
@@ -1569,7 +1569,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraProdotto}
 {Flusso alternativo 2}%
 {Errore ricerca}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di schede di prodotti}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di schede di prodotti}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il passo \ref{cu:mostraProd1}, non ci sono risultati per la ricerca effettuata
@@ -1620,10 +1620,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:mostraProfilo}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili}
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}
 {Il sistema sta mostrando alla persona il profilo selezionato}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona seleziona un anteprima fra quelle presenti nella lista di anteprime di profili che sta visualizzando\label{cu:mostraProf1}
+	\item Il caso d'uso ha inizio quando una persona seleziona un \gls{anteprima} fra quelle presenti nella lista di \glspl{anteprima} di profili che sta visualizzando\label{cu:mostraProf1}
 	\item Il sistema mostra alla persona il profilo selezionato
 \end{enumCU}
 \ext{cu:rimozioneAccountAltrui}
@@ -1638,7 +1638,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraProfilo}
 {Flusso alternativo 1}%
 {Selezione alternativa}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}%
 {Il sistema sta mostrando alla persona il profilo}%
 {\begin{enumCU}
 		\item Non viene effettuato il punto \ref{cu:mostraProf1}, ma la persona seleziona un \gls{riferimento} verso un profilo
@@ -1647,7 +1647,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraProfilo}
 {Flusso alternativo 2}%
 {Errore ricerca}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di profili}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il passo \ref{cu:mostraProf1}, non ci sono risultati per la ricerca effettuata
@@ -1658,10 +1658,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:mostraNotizia}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di notizie}
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di notizie}
 {Il sistema sta mostrando alla persona la notizia selezionata}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona seleziona un anteprima fra quelle presenti nella lista di anteprime di notizie che sta visualizzando\label{cu:mostraNot1}
+	\item Il caso d'uso ha inizio quando una persona seleziona un \gls{anteprima} fra quelle presenti nella lista di \glspl{anteprima} di notizie che sta visualizzando\label{cu:mostraNot1}
 	\item Il sistema mostra alla persona la notizia selezionata
 	\item \inc{cu:notizieSimili}
 \end{enumCU}
@@ -1672,7 +1672,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraNotizia}
 {Flusso alternativo 1}%
 {Selezione alternativa}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di notizie}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di notizie}%
 {Il sistema sta mostrando alla persona la notizia scelta}%
 {\begin{enumCU}
 		\item Non viene effettuato il punto \ref{cu:mostraNot1}, ma la persona seleziona un \gls{riferimento} verso una notizia.
@@ -1681,7 +1681,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:mostraNotizia}
 {Flusso alternativo 2}%
 {Errore ricerca}%
-{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di notizie}%
+{La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di \glspl{anteprima} di notizie}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il passo \ref{cu:mostraNot1}, non ci sono risultati per la ricerca effettuata
