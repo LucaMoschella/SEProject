@@ -182,9 +182,9 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:ricercaNotizia}{\formattaCU}{Ricerca notizia}
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
-	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento prodotto}
-	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Mostra richiesta prodotto}
-	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento produttore e prodotto}
+	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento scheda prodotto}
+	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Mostra richiesta scehda prodotto}
+	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento produttore e scheda prodotto}
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
 	\item \newListItem{cu:mostraVetrina}{\formattaCU}{Mostra vetrina}
@@ -657,7 +657,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  MODIFICA NOTIZIA *****************
 \cuTab{cu:modificaNotizia}
 {\getTitletodesc{att:redattore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando una notizia}
+{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando alla persona una notizia}
 {Nel sistema la notizia viene modificata correttamente}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Redattore richiede di modificare la notizia che sta visualizzando
@@ -670,7 +670,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:modificaNotizia}
 {Flusso alternativo 1}%
 {Annulla modifica}%
-{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando una notizia}%
+{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando alla persona una notizia}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cumodnot:2} il Redattore annulla la modifica della notizia
@@ -681,7 +681,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  RIMOZIONE NOTIZIA *****************
 \cuTab{cu:rimozioneNotizia}
 {\getTitletodesc{att:redattore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando una notizia}
+{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando alla persona una notizia}
 {Nel sistema non è più presente la notizia}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Redattore richiede di rimuovere la notizia che sta visualizzando
@@ -693,7 +693,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:rimozioneNotizia}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando una notizia}%
+{La persona connessa al sito è autenticata e ha i privilegi di Redattore. Il sistema sta mostrando alla persona una notizia}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curemnot:2} il Redattore annulla la rimozione della notizia
@@ -707,8 +707,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %Accorpa suggerimento intelligente e simili
 \cuTab{cu:suggerimentoProdotti}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona connessa al sito è autenticata ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando la scheda di un prodotto}
-{Il sistema sta mostrando una lista di anteprime di prodotti simili alla persona}
+{La persona connessa al sito è autenticata ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona la scheda di un prodotto}
+{Il sistema sta mostrando alla persona una lista di anteprime di prodotti simili}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare le anteprime delle schede di prodotti simili a quella che sta visualizzando
 	\item Il sistema mostra alla Figura Pubblica Autenticata una lista di anteprime di prodotti simili
@@ -719,8 +719,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  SUGGERIMENTO NOTIZIE *****************
 \cuTab{cu:notizieSimili}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona connessa al sito è autenticata ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando la scheda di un prodotto}
-{Il sistema sta mostrando una lista di anteprime di notizie simili alla persona}
+{La persona connessa al sito è autenticata ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona la scheda di un prodotto}
+{Il sistema sta mostrando alla persona una lista di anteprime di notizie simili}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una Figura Pubblica Autenticata richiede di mostrare notizie simili alla notizia che sta visualizzando
 	\item Il sistema mostra alla Figura Pubblica Autenticata una lista di anteprime di notizie simili
@@ -734,7 +734,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:accessoProfilo}
 {\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
 {La persona connessa al sito è autenticata}
-{Il sistema sta mostrando la pagina del profilo della persona}
+{Il sistema sta mostrando alla persona la sua pagina del profilo}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare il proprio profilo
 	\item Il sistema mostra alla persona la pagina del proprio profilo
@@ -792,7 +792,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  RIMOZIONE ACCOUNT ALTRUI  *****************
 \cuTab{cu:rimozioneAccountAltrui}
 {\getTitletodesc{att:amministratore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando un profilo associato ad un altro account}
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona un profilo associato ad un altro account}
 {Nel sistema non è più presente l'account rimosso}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Amministratore richiede al sistema di rimuovere l'account associato al profilo che sta visualizzando
@@ -804,7 +804,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:rimozioneAccountAltrui}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando un profilo associato ad un altro account}%
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona un profilo associato ad un altro account}%
 {\postNulle}%
 {\begin{enumCU}
 	\item Dopo il punto \ref{curimaccaltr:1} l'Amministratore annulla la rimozione dell'account
@@ -815,7 +815,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %***************  Modifica privilegi  *****************
 \cuTab{cu:modificaPrivilegiAccount}
 {\getTitletodesc{att:amministratore}}
-{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando una lista di anteprime di profili}
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di anteprime di profili}
 {Nel sistema sono stati aggiornati i privilegi di quell'account come richiesto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Amministratore seleziona un'anteprima profilo tra quelle mostrate nel risultato della ricerca e richiede di modificarne i privilegi
@@ -829,7 +829,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:modificaPrivilegiAccount}
 {Flusso alternativo 1}%
 {Annulla operazione}%
-{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando una lista di anteprime di profili}%
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cufornpriv:1} l'Amministratore annulla l'operazione
@@ -838,7 +838,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:modificaPrivilegiAccount}
 {Flusso alternativo 2}%
 {Annulla operazione di selezione}%
-{La persona connessa al sito è autenticata  e ha i privilegi di Amministratore. Il sistema sta mostrando una lista di anteprime di profili}%
+{La persona connessa al sito è autenticata  e ha i privilegi di Amministratore. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cufornpriv:0} l'Assistente annulla la selezione
@@ -853,7 +853,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 \cuTab{cu:inserisciValutazioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata ed ha i privilegi di Utente. Il sistema sta mostrando la scheda di un prodotto che non è già stato valutato dalla persona}
+{La persona connessa al sito è autenticata ed ha i privilegi di Utente. Il sistema sta mostrando alla persona la scheda di un prodotto che non ha già stato valutato}
 {Nel sistema è stata aggiunta la valutazione della persona per il prodotto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la valutazione del prodotto che sta visualizzando
@@ -869,7 +869,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:modificaValutazioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata ed ha i privilegi di Utente. Il sistema sta mostrando la scheda di un prodotto che è già stato valutato dalla persona}
+{La persona connessa al sito è autenticata ed ha i privilegi di Utente. Il sistema sta mostrando alla persona la scheda di un prodotto che ha già stato valutato}
 {Nel sistema è stata modificata la valutazione del prodotto inserita dalla persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di modificare la valutazione del prodotto
@@ -885,7 +885,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 \cuTab{cu:inserisciRecensioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando la scheda di un prodotto che è già stato valutato dalla persona}
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona la scheda di un prodotto che ha già stato valutato}
 {Nel sistema è presente la recensione dell'Utente per quel prodotto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di effettuare la recensione del prodotto che sta visualizzando
@@ -898,7 +898,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:inserisciRecensioneProdotto}
 {Flusso alternativo 1}%
 {Annulla inserimento}%
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando la scheda di un prodotto che è già stato valutato dalla persona}%
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona la scheda di un prodotto che ha già stato valutato}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{addrec:3}, l'Utente annulla l'operazione di inserimento
@@ -908,7 +908,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:modificaRecensioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando una recensione di un prodotto effettuata dalla persona}
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona una recensione di un prodotto che ha effettuato}
 {Nel sistema è stata modificata la recensione di quella persona per quel prodotto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di modificare la recensione che sta visualizzando
@@ -921,7 +921,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:modificaRecensioneProdotto}
 {Flusso alternativo 1}%
 {Annulla modifiche}%
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando una recensione di un prodotto effettuata dalla persona}
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona una recensione di un prodotto che ha effettuato}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{newrec:3}, l'Utente annulla l'operazione di modifica
@@ -931,7 +931,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:eliminaRecensioneProdotto}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando una recensione di un prodotto effettuata dalla persona}
+{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando alla persona una recensione di un prodotto che ha effettuato}
 {Nel sistema è stata rimossa la recensione di quella persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di rimuovere la recensione per quel prodotto
@@ -944,7 +944,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:eliminaRecensioneProdotto}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando una recensione di un prodotto effettuata dalla persona}
+{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando alla persona una recensione di un prodotto effettuata dalla persona}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{remrec:3}, l'Utente annulla l'operazione di rimozione
@@ -954,7 +954,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:commentoRecensione}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando la recensione di un prodotto}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona la recensione di un prodotto}
 {Nel sistema è presente il commento inserito dalla persona per quella recensione}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare un commento alla recensione che sta visualizzando\label{commrifiutato2}
@@ -968,7 +968,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:commentoRecensione}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando la recensione di un prodotto}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona la recensione di un prodotto}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{addcom:3}, la persona annulla l'operazione di inserimento
@@ -977,10 +977,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:commentoRecensione}
 {Flusso alternativo 2}%
 {Errore inserimento}%
-{La persona è connessa al portale ed ha i privilegi di Produttore. Il sistema sta mostrando la recensione di un prodotto}
+{La persona è connessa al sito ed ha i privilegi di Produttore. Il sistema sta mostrando alla persona la recensione di un prodotto}
 {\postNulle}%
 {\begin{enumCU}
-		\item Nel punto \ref{commrifiutato1}, la persona visualizza le recensioni di un prodotto non suo
+		\item Nel punto \ref{commrifiutato2} la persona richiede di effettuare un commento alla recensione che sta visualizzando, di un prodotto non suo
 		\item Dopo il punto \ref{commrifiutato2} il sistema rifiuta la richiesta
 	\end{enumCU}}%
 
@@ -988,7 +988,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:giudizioRecensione}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando la recensione di un prodotto che l'Utente non ha giudicato}
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona la recensione di un prodotto che non ha giudicato}
 {Nel sistema è presente il giudizio di quella persona per quella recensione}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di esprimere un giudizio (positivo o negativo) sulla recensione che sta visualizzando
@@ -1001,7 +1001,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:modificaGiudizioRecensione}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando la recensione di un prodotto che l'Utente ha già giudicato}
+{La persona connessa al sito è autenticata  come Utente. Il sistema sta mostrando alla persona la recensione di un prodotto che ha già giudicato}
 {Nel sistema è stato modificato il giudizio di quella persona per quella recensione}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Utente richiede di modificare un giudizio della recensione che sta visualizzando
@@ -1016,20 +1016,20 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:segnalazioneContenutiInap}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando un \gls{contenuto}}
-{Nel sistema è presente la segnalazione di quella persona per quel contenuto}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un \gls{contenuto}}
+{Nel sistema è presente la segnalazione di quella persona per quel \gls{contenuto}}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona richiede di segnalare il \gls{contenuto} che sta visualizzando in quanto inappropriato
 	\item Il sistema richiede alla persona di specificare il motivo della segnalazione
 	\item La persona inserisce il motivo della segnalazione\label{annullasegn}
 	\item La persona conferma la segnalazione
-	\item Il sistema memorizza la segnalazione allegando un \gls{riferimento} al contenuto segnalato
+	\item Il sistema memorizza la segnalazione allegando un \gls{riferimento} al \gls{contenuto} segnalato
 \end{enumCU}}
 %
 \cuAlternativo{cu:segnalazioneContenutiInap}
 {Flusso alternativo 1}%
 {Annulla segnalazione}%
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando un \gls{contenuto}}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un \gls{contenuto}}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{annullasegn}, la persona annulla l'operazione di segnalazione
@@ -1040,7 +1040,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:mostraSegnContenutiInap}
 {\getTitletodesc{att:moderatore}}
 {La persona connessa al sito è autenticata  ed ha i privilegi di Moderatore. Nel sistema è presente almeno una segnalazione}
-{Il sistema sta mostrando il contenuto segnalato}
+{Il sistema sta mostrando alla persona il \gls{contenuto} segnalato}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Moderatore richiede di visualizzare una segnalazione
 	\item Il sistema mostra al Moderatore le segnalazioni presenti nel sistema\label{delsegn:3}
@@ -1075,19 +1075,19 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:rimozioneContenutiInap}
 {\getTitletodesc{att:moderatore}}
-{La persona connessa al sito è autenticata ed ha i privilegi di Moderatore. Il sistema sta mostrando un \gls{contenuto}}
+{La persona connessa al sito è autenticata ed ha i privilegi di Moderatore. Il sistema sta mostrando alla persona un \gls{contenuto}}
 {Nel sistema non è più presente il \gls{contenuto}}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando un Moderatore richiede di rimuovere il contenuto che sta visualizzando\label{rim2}
+	\item Il caso d'uso ha inizio quando un Moderatore richiede di rimuovere il \gls{contenuto} che sta visualizzando\label{rim2}
 	\item Il sistema richiede al Moderatore di confermare la rimozione\label{delcont:3}
 	\item Il Moderatore conferma la rimozione 
-	\item Il sistema rimuove il contenuto inappropriato
+	\item Il sistema rimuove il \gls{contenuto} inappropriato
 \end{enumCU}}
 %
 \cuAlternativo{cu:rimozioneContenutiInap}
 {Flusso alternativo 1}%
 {Annulla rimozione}%
-{La persona connessa al sito è autenticata ed ha i privilegi di Moderatore. Il sistema sta mostrando un \gls{contenuto}}
+{La persona connessa al sito è autenticata ed ha i privilegi di Moderatore. Il sistema sta mostrando alla persona un \gls{contenuto}}
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{delcont:3}, il Moderatore annulla l'operazione di rimozione
@@ -1101,7 +1101,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** FOLLOW ACCOUNT ***********
 \cuTab{cu:followAccount}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando un profilo associato ad un altro account}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un profilo associato ad un altro account}
 {La persona segue quell'account}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di seguire l'account associato al profilo visualizzato
@@ -1113,7 +1113,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** UNFOLLOW ACCOUNT ***********
 \cuTab{cu:unFollowAccount}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando un profilo associato ad un account che la persona segue}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un profilo associato ad un account che segue}
 {La persona non segue più quell'account}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di non seguire più l'account associato a quel profilo
@@ -1127,7 +1127,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** INVIO TICKET ***********
 \cuTab{cu:ticketInvio}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata}
 {Nel sistema è presente il ticket creato da quella persona}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede la creazione di un ticket per ricevere assistenza
@@ -1140,7 +1140,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:ticketInvio}
 {Flusso alternativo 1}%
 {Annulla creazione ticket}%
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}%
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cucretick:1} la persona annulla la creazione del ticket
@@ -1151,7 +1151,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** RISPOSTA TICKET ***********
 \cuTab{cu:ticketRisposta}
 {\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:assistente}}
-{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto che il sistema sta mostrando}
+{La persona è connessa al sito ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un ticket. Se la persona è una Figura Pubblica Autenticata deve essere il creatore del ticket mostrato}
 {Nel sistema è presente la risposta al ticket in questione}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di rispondere a quel ticket
@@ -1164,7 +1164,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:ticketRisposta}
 {Flusso alternativo 1}%
 {Annulla risposta ticket}%
-{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto che il sistema sta mostrando}%
+{La persona è connessa al sito ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un ticket. Se la persona è una Figura Pubblica Autenticata deve essere il creatore del ticket mostrato}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curisptick:1} la persona annulla l'inserimento della risposta
@@ -1175,7 +1175,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** CHIUDI TICKET ***********
 \cuTab{cu:ticketChiudi}
 {\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:assistente}}
-{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto che il sistema sta mostrando}
+{La persona è connessa al sito ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un ticket. Se la persona è una Figura Pubblica Autenticata deve essere il creatore del ticket mostrato}
 {Il ticket in questione risulta chiuso nel sistema}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di chiudere il ticket\label{cuchiutick:0}
@@ -1187,7 +1187,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:ticketChiudi}
 {Flusso alternativo 1}%
 {Annulla chiusura ticket}%
-{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket aperto che il sistema sta mostrando}%
+{La persona è connessa al sito ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata. Il sistema sta mostrando alla persona un ticket. Se la persona è una Figura Pubblica Autenticata deve essere il creatore del ticket mostrato}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuchiutick:1} la persona annulla l'operazione di chiusura
@@ -1198,9 +1198,8 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** LEGGI TICKET ***********
 \cuTab{cu:ticketLettura}
 {\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:assistente}}
-{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket}
-{Il sistema sta mostrando il ticket}
-{\postNulle}
+{La persona è connessa al sito ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket}
+{Il sistema sta mostrando alla persona il ticket}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di visualizzare un ticket
 	\item Il sistema mostra alla persona i ticket a cui ha accesso\label{annsel}
@@ -1214,7 +1213,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:ticketLettura}
 {Flusso alternativo 1}%
 {Annulla operazione di selezione}%
-{La persona è connessa al portale ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket}%
+{La persona è connessa al sito ed ha i privilegi di Assistente, oppure ha i privilegi di Figura Pubblica Autenticata ed è il creatore di un ticket}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{annsel} la persona annulla l'operazione di selezione
@@ -1229,7 +1228,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:ricercaProdotto}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{Il sistema sta mostrando la lista delle anteprime delle schede dei prodotti cercati}
+{Il sistema sta mostrando alla persona la lista delle anteprime delle schede dei prodotti cercati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca della scheda di un prodotto
 	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
@@ -1256,7 +1255,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:ricercaProfilo}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{Il sistema sta mostrando la lista delle anteprime dei profili cercati}
+{Il sistema sta mostrando alla persona la lista delle anteprime dei profili cercati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di un profilo
 	\item Il sistema richiede di complilare la scheda necessaria per definire i parametri di ricerca
@@ -1265,9 +1264,6 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il sistema effettua la ricerca richiesta
 	\item Il sistema mostra le aneteprime dei risultati della ricerca
 \end{enumCU}
-\ext{cu:modificaPrivilegiAccount}
-\ext{cu:followAccount}
-\ext{cu:unFollowAccount}
 \ext{cu:mostraVetrina}
 \ext{cu:mostraProfilo}
 }
@@ -1288,7 +1284,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:ricercaNotizia}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito}
-{Il sistema sta mostrando la lista delle anteprime delle notizie cercati}
+{Il sistema sta mostrando alla persona la lista delle anteprime delle notizie cercati}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando la persona richiede di effettuare la ricerca di una notizia
 	\item Il sistema richiede di compilare la scheda necessaria per definire i parametri di ricerca
@@ -1317,7 +1313,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 %****************** RICHIESTA PRODOTTO ***********
 \cuTab{cu:richiestaInsProdotto}
 {\getTitletodesc{att:utente}}
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando la vetrina di un Produttore}
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona la vetrina di un Produttore}
 {Il sistema contiene la richiesta di inserimento della scheda del prodotto creata, indirizzata al Produttore}
 {\begin{enumCU}
 		\item Il caso d'uso ha inizio quando un Utente richiede al Produttore, proprietario della vetrina che sta visualizzando, di inserire una sua scheda prodotto non già presente
@@ -1334,7 +1330,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:richiestaInsProdotto}
 {Flusso alternativo 1}%
 {Annulla richiesta}%
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando la vetrina di un Produttore}%
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona la vetrina di un Produttore}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curicinsimmpro:2} o dopo il punto \ref{curicinsimmpro:1} l'Utente annulla la richiesta
@@ -1343,7 +1339,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuAlternativo{cu:richiestaInsProdotto}
 {Flusso alternativo 2}%
 {Errore richiesta}%
-{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando la vetrina di un Produttore}%
+{La persona connessa al sito è autenticata come Utente. Il sistema sta mostrando alla persona la vetrina di un Produttore}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{curicinsimmpro:3} il sistema non riesce a trovare, caricare o inserire correttamente una o più immagini
@@ -1443,7 +1439,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:mostraVetrina}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili di Produttori}
-{Il sistema sta mostrando la vetrina del Produttore selezionato}
+{Il sistema sta mostrando alla persona la vetrina del Produttore selezionato}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona seleziona un anteprima fra quelle presenti nella lista di anteprime di profili che sta visualizzando\label{cu:mostraVetr1}
 	\item Il sistema mostra alla persona la vetrina del Produttore selezionato
@@ -1454,13 +1450,14 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \ext{cu:personalizzaVetrinaDelImg}
 \ext{cu:personalizzaVetrinaInsDesc}
 \ext{cu:personalizzaVetrinaModDesc}
+\ext(cu:richiestaInsProdotto)
 }
 %
 \cuAlternativo{cu:mostraVetrina}%
 {Flusso alternativo 1}%
 {Selezione alternativa}%
 {La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di profili}%
-{Il sistema sta mostrando la vetrina selezionata}%
+{Il sistema sta mostrando alla persona la vetrina selezionata}%
 {\begin{enumCU}
 	\item Non viene effettuato il punto \ref{cu:mostraVetr1}, ma la persona seleziona un \gls{riferimento} verso una vetrina
 \end{enumCU}}%
@@ -1479,7 +1476,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:mostraProdotto}{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di schede di prodotti}
-{Il sistema sta mostrando la scheda del prodotto selezionato}
+{Il sistema sta mostrando alla persona la scheda del prodotto selezionato}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona seleziona un anteprima fra quelle presenti nella lista di anteprime prodotto che sta visualizzando\label{cu:mostraProd1}
 	\item Il sistema mostra alla persona il prodotto selezionato
@@ -1495,7 +1492,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {Flusso alternativo 1}%
 {Selezione alternativa}%
 {La persona è connessa al sito. Il sistema sta mostrando alla persona una lista di anteprime di schede di prodotti}%
-{Il sistema sta mostrando la scheda del prodotto selezionato}%
+{Il sistema sta mostrando alla persona la scheda del prodotto selezionato}%
 {\begin{enumCU}
 		\item Non viene effettuato il punto \ref{cu:mostraProd1}, ma la persona seleziona un \gls{riferimento} verso la scheda di un prodotto
 \end{enumCU}}%
@@ -1515,7 +1512,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:mostraRecProdotto}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito. Il sistema sta mostrando alla persona la scheda di un prodotto}
-{Il sistema sta mostrando le recensioni associate al prodotto}
+{Il sistema sta mostrando alla persona le recensioni associate al prodotto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona richiede di visualizzare le recensioni della scheda prodotto che sta visualizzando\label{cu:mostraRec1}
 	\item Il sistema mostra alla persona le recensioni relative a quel prodotto
@@ -1544,6 +1541,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item Il sistema mostra alla persona il profilo selezionato
 \end{enumCU}
 \ext{cu:rimozioneAccountAltrui}
+\ext{cu:modificaPrivilegiAccount}
+\ext{cu:followAccount}
+\ext{cu:unFollowAccount}
 }
 %
 \cuAlternativo{cu:mostraProfilo}
@@ -1603,7 +1603,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \cuTab{cu:mostraAggF}
 {\getTitletodesc{att:figuraPubblicaAutenticata}}
-{La persona è connessa al portale ed ha i privilegi di Figura Pubblica Autenticata}
+{La persona è connessa al sito ed ha i privilegi di Figura Pubblica Autenticata}
 {Il sistema sta mostrando alla persona la pagina degli aggiornamenti dai followed}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona richiede di visualizzare gli aggiornamenti delle persone che segue
