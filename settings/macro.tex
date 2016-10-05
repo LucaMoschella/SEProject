@@ -335,7 +335,7 @@
 				\addlinespace[0.5em]
 				\formattaCampiTab{Precondizioni} &  #3 \\
 				\addlinespace[0.5em]
-				\formattaCampiTab{Flusso principale} &  \begin{NoHyper}#5\end{NoHyper} \\
+				\formattaCampiTab{Flusso principale} & \begin{NoHyper}#5\end{NoHyper} \\
 				\addlinespace[0.5em]
 				\formattaCampiTab{Postcondizioni} &  #4 \\
 				\bottomrule
@@ -373,7 +373,11 @@
 
 
 \newcommand{\inc}[1]{%
-\textbf{include} <\getTitletodesc{#1}>%
+\textbf{include}( \getTitletodesc{#1} )%
+}
+\newcommand{\ext}[1]{%
+\newline
+<\getTitletodesc{#1}>%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

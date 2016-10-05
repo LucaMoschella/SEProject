@@ -22,6 +22,8 @@ Todo:
 ) Modifica recensione estende mostra recensione ( e non mostra prodotto )
 ) FINIRE DI MODIFICARE LA VISUALIZZAZIONE (TOGLIERE GLI INCLUDE)
 ) FINO A 1051 "OK" PRE E POST CONDIZIONI
+) MODIFICARE PRODOTTO IN "SCHEDA PRODOTTO"
+) Cambia nei requisiti i titoli con prodotto in "scheda prodotto"
 
 Next:
 
@@ -37,50 +39,9 @@ Next:
 
 EXTENSION POINT:
 
-) Mostra vetrina:
-	-visualizza stat private vetrina
-	-inserimento prodotto
-	-rimozione immagine
-	-inserimento immagine
-	-Inserimento desc
-	-modifica descrizione
-	-inserimento descrizione
-	-statistichePrivateVetrina
-
-) Mostra prodotto:
-	- Modifica prodotto
-	- Inserisci valutazione
-	- Modifica valutazione
-	- 
-
-) Mostra notizia:
-	- Modifica notizia
-	- Rimuovi notizia
-
-) Ricerca profilo
-	- Modifica privilegi account
-	- Follow account
-	- Unfollow account
-
-) Inserisci valutazione
-	- Inserisci recensione
-
 ) Mostra recensione
 	- Modifica recensione
 	- Elimina recensione
 	- Commento recensione
 	- Giudizio recensione
 	- Modifica giudizio recensione
-
-) Mostra recensioni
-	- Mostra recensione
-
-) Mostra profilo
-	- Rimozione account altrui
-
-) Mostra segnalazione
-	- Rimozione contenuto
-
-) Ticket lettura
-	- Ticket risposta
-	- Ticket chiudi
