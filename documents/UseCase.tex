@@ -130,7 +130,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:personalizzaVetrinaDelImg}{\formattaCU}{Rimozione immagine}
 	\item \newListItem{cu:personalizzaVetrinaInsProd}{\formattaCU}{Inserimento scheda prodotto}
 	\item \newListItem{cu:personalizzaVetrinaModProd}{\formattaCU}{Modifica scheda prodotto}
-	\item \newListItem{cu:statistichePrivateVetrina}{\formattaCU}{Visualizzazione statistiche private della vetrina}
+	\item \newListItem{cu:statistichePrivateVetrina}{\formattaCU}{Mostra statistiche private della vetrina}
 
 
 	\setCatCU{\ref*{pkg:notizie}}%D
@@ -143,10 +143,11 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:notizieSimili}{\formattaCU}{Suggerimento notizie}
 	
 	\setCatCU{\ref*{pkg:account}}%F
-	\item \newListItem{cu:accessoProfilo}{\formattaCU}{Accesso al proprio profilo}
+	\item \newListItem{cu:modificaProfilo}{\formattaCU}{Modifica del proprio profilo}
+	\item \newListItem{cu:inserisciImgProfilo}{\formattaCU}{Inserimento immagine profilo proprio}
+	\item \newListItem{cu:rimuoviImgProfilo}{\formattaCU}{Rimozione immagine profilo proprio}
 	\item \newListItem{cu:modificaImpostazioni}{\formattaCU}{Modifica delle proprie impostazioni}
 	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
-
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
 	\item \newListItem{cu:modificaPrivilegiAccount}{\formattaCU}{Modifica privilegi di un account}
 
@@ -183,13 +184,14 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:prodottimancanti}}%L
 	\item \newListItem{cu:richiestaInsProdotto}{\formattaCU}{Richiesta inserimento scheda prodotto}
-	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Mostra richiesta scehda prodotto}
+	\item \newListItem{cu:mostraRichiestaInsProdotto}{\formattaCU}{Mostra richiesta scheda prodotto}
 	\item \newListItem{cu:richiestaInsProduttore}{\formattaCU}{Richiesta inserimento produttore e scheda prodotto}
 
 	\setCatCU{\ref*{pkg:visualizzazione}}%M
 	\item \newListItem{cu:mostraVetrina}{\formattaCU}{Mostra vetrina}
 	\item \newListItem{cu:mostraProdotto}{\formattaCU}{Mostra scheda prodotto}
-	\item \newListItem{cu:mostraRecProdotto}{\formattaCU}{Mostra recensioni associate al prodotto}
+	\item \newListItem{cu:mostraRecensioniProdotto}{\formattaCU}{Mostra recensioni associate al prodotto}
+	\item \newListItem{cu:mostraRecensione}{\formattaCU}{Mostra recensione}
 	\item \newListItem{cu:mostraProfilo}{\formattaCU}{Mostra profilo pubblico}
 	\item \newListItem{cu:mostraNotizia}{\formattaCU}{Mostra notizia}
 	\item \newListItem{cu:mostraAggF}{\formattaCU}{Mostra aggiornamenti dai followed}
@@ -731,14 +733,80 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
    \includegraphics[width=\textwidth]{assets/visualParadigm/cu/GestioneAccount}
 \end{center}
 %***************  ACCESSO PROFILO *****************
-\cuTab{cu:accessoProfilo}
+\cuTab{cu:modificaProfilo}
 {\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
-{La persona connessa al sito è autenticata}
-{Il sistema sta mostrando alla persona la sua pagina del profilo}
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
+{Il profilo della persona è stato modificato}
 {\begin{enumCU}
-	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di visualizzare il proprio profilo
-	\item Il sistema mostra alla persona la pagina del proprio profilo
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di modificare il proprio profilo
+	\item Il sistema mostra alla persona i campi modificabili
+	\item La persona effettua le modifiche volute \label{modProf}
+	\item La persona conferma le modifiche effettuate
+	\item Il sistema memorizza le modifiche
 \end{enumCU}}
+%
+\cuAlternativo{cu:modificaProfilo}
+{Flusso alternativo 1}%
+{Annulla modifica}%
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
+{\postNulle}%
+{\begin{enumCU}
+	\item Dopo il punto \ref{modProf} annulla le modifiche effettuate
+\end{enumCU}}%
+
+\vspaceTab
+
+\cuTab{cu:inserisciImgProfilo}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
+{Nel sistema è presente l'immagine del profilo della persona}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di inserire l'immagine del proprio profilo
+	\item Il sistema richiede il percorso nel file system, o nella rete, dell'immagine da inserire 
+	\item La persona inserisce il percorso dell'immagine nell'apposito campo\label{insimg1}
+	\item La persona conferma il percorso dell'immagine inserito\label{insimg2}
+	\item Il sistema scarica e memorizza l'immagine impostandola come immagine del profilo della persona
+\end{enumCU}}
+%
+\cuAlternativo{cu:inserisciImgProfilo}
+{Flusso alternativo 1}%
+{Errore inserimento}%
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{insimg2} il sistema non riesce a trovare, scaricare o inserire correttamente l'immagine
+	\end{enumCU}}%
+%
+\cuAlternativo{cu:inserisciImgProfilo}
+{Flusso alternativo 2}%
+{Annulla inserimento}%
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{insimg1} il produttore annulla l'inserimento dell'immagine
+	\end{enumCU}}%
+
+\vspaceTab
+
+\cuTab{cu:rimuoviImgProfilo}
+{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo. Nel sistema è presente l'immagine del profilo della persona}
+{Nel sistema non è presente l'immagine del profilo della persona}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di rimuovere l'immagine del proprio profilo
+	\item Il sistema richiede conferma della rimozione\label{annrimimg}
+	\item La persona conferma la rimozione
+	\item Il sistema rimuove l'immagine
+\end{enumCU}}
+%
+\cuAlternativo{cu:rimuoviImgProfilo}
+{Flusso alternativo 1}%
+{Annulla rimozione}%
+{La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo. Nel sistema è presente l'immagine del profilo della persona}
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{annrimimg} la persona annulla l'operazione di rimozione
+	\end{enumCU}}%
 
 \vspaceTab
 
@@ -753,12 +821,13 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item La persona modifica i campi presenti nella pagina\label{cumodimp:1}
 	\item La persona conferma le modifiche effettuate 
 	\item Il sistema memorizza le modifiche effettuate
-\end{enumCU}}
+\end{enumCU}
+\ext{cu:rimozioneAccountProprio}}
 %
 \cuAlternativo{cu:modificaImpostazioni}
 {Flusso alternativo 1}%
 {Annulla modifica}%
-{La persona connessa al sito è autenticata  nel sistema}%
+{La persona connessa al sito è autenticata nel sistema}%
 {\postNulle}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cumodimp:1} annulla le modifiche effettuate
@@ -1352,7 +1421,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata come Produttore. Nel sistema è presente una richiesta di inserimento prodotto a lei indirizzata}
 {Nella vetrina del Produttore è presente la scheda del prodotto suggerito}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Produttore richiedere di visualizzare le proprie richieste di aggiunta di prodotti in sospeso
+		\item Il caso d'uso ha inizio quando un Produttore richiedere di visualizzare le proprie richieste di aggiunta di schede prodotto in sospeso
 		\item Il sistema richiede di selezionare quale richiesta visualizzare
 		\item Il Produttore seleziona una richiesta
 		\item Il sistema mostra al Produttore la scheda provvisoria del prodotto compilata dall'Utente che ha effettuato la richiesta \label{cuvisricprodel}
@@ -1485,7 +1554,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \ext{cu:personalizzaVetrinaModProd}
 \ext{cu:inserisciValutazioneProdotto}
 \ext{cu:modificaValutazioneProdotto}
-\ext{cu:mostraRecProdotto}
+\ext{cu:mostraRecensioniProdotto}
 }
 %
 \cuAlternativo{cu:mostraProdotto}
@@ -1509,7 +1578,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 
 \vspaceTab
 
-\cuTab{cu:mostraRecProdotto}
+\cuTab{cu:mostraRecensioniProdotto}
 {\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona è connessa al sito. Il sistema sta mostrando alla persona la scheda di un prodotto}
 {Il sistema sta mostrando alla persona le recensioni associate al prodotto}
@@ -1520,7 +1589,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \ext{cu:mostraRecensione}
 }
 %
-\cuAlternativo{cu:mostraRecProdotto}
+\cuAlternativo{cu:mostraRecensioniProdotto}
 {Flusso alternativo 1}%
 {Recensioni assenti}%
 {La persona è connessa al sito. Il sistema sta mostrando alla persona la scheda di un prodotto}%
@@ -1529,6 +1598,23 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 		\item Dopo il passo \ref{cu:mostraRec1}, non ci sono risultati per la ricerca effettuata
 		\item Il sistema mostra un avvertimento e annulla l'operazione
 \end{enumCU}}
+
+\vspaceTab
+
+\cuTab{cu:mostraRecensione}
+{\getTitletodesc{att:visitatore}, \getTitletodesc{att:figuraPubblicaAutenticata}}
+{La persona è connessa al sito. Il sistema sta mostrando alla persona la lista delle recensioni associate ad un prodotto}
+{Il sistema sta mostrando alla persona la recensione selezionata}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando una persona richiede di visualizzare una recensione selezionandola dalla lista di recensioni che sta visualizzando\label{cu:mostraRec2}
+	\item Il sistema mostra alla persona la recensione richiesta
+\end{enumCU}
+\ext{cu:modificaRecensioneProdotto}
+\ext{cu:eliminaRecensioneProdotto}
+\ext{cu:commentoRecensione}
+\ext{cu:giudizioRecensione}
+\ext{cu:modificaGiudizioRecensione}
+}
 
 \vspaceTab
 
@@ -1544,6 +1630,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \ext{cu:modificaPrivilegiAccount}
 \ext{cu:followAccount}
 \ext{cu:unFollowAccount}
+\ext{cu:modificaProfilo}
+\ext{cu:inserisciImgProfilo}
+\ext{cu:rimuoviImgProfilo}
 }
 %
 \cuAlternativo{cu:mostraProfilo}
@@ -1636,16 +1725,3 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
         \bottomrule
     \end{tabular}
 \end{center}
-
-
-
-%Struttura dei casi d'uso (ID) T_T
-%Esempi:
-%Lumiere -> Ogni caso `e identificato da una stringa del tipo CU.entit`a.sottoentit`a.caso.
-%Airbnb.it -> package = PKG_<numero package>_<numero_sottopackage> | caso d'uso = UC_<numero package>_<numero caso d’uso> | attore = ATT_<num. Attore generico>_<num. Attore specifico>
-
-%A me la struttura a package piace, possiamo racchiudere molti casi d'uso in categorie così.
-
-%Scopiazzerei il grafico di Airbnb.it a pagina 9, utilizzando quella figura per descrivere il sistema a grandi linee, con i package. Mostrata questa, procederei con l'analisi
-%dei package uno ad uno e quindi dei singoli casi d'uso.
-%Per ogni caso d'uso, entrambi gli esempi fanno la descrizione stile Basi 2 con precondizioni e postcondizioni (oltre che attori coinvolti, nome, descrizione e flussasoddfdA dmeasasdfassdù

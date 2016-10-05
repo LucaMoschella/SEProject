@@ -5,32 +5,26 @@
 ) Controlla consistenza progetto
 .......Controllare che non abbiamo scritto stupidaggini (in particolare che tutti estendono il visitatore! abbianmo cambianto ciò  in quanto errato)
 .......Quando vedi parole strane: scrivile quì/inseriscili nel glossario
+
 ) Spiega da qualche parte, se non già fatto, cosa intendiamo per "privilegi". (es. Aggiungere un privilegio X ad un account, significa aggiungere quell'account al gruppo X) 
+
 ) Requisito  "Prodotto fuori produzione"? Dobbiamo dire da qualche parte che nella scheda prodotto c'è un booleano "fuori produzione". 
 
-*************************************************************************************************************
+) Rimuovi postcondizioni tautologiche
+.......Es: Il sistema ha rimosso la notizia che è stata rimossa
+.......Deve diventare -> Il sistema ha rimosso la notizia 
+
+) DIAGRAMMI UML!!!
+.......Sotto c'è una lista -forse- complea dei vari extend che vanno messi.
+.......Non ti basare sui diagrammi precedenti che abbiamo aggiunto alcuni use case e cambiato NOMI
+
+
 *************************************************************************************************************
 *************************************************************************************************************
 
 Todo:
 
-) Aggiornare descrizione di aggiungi e rimuovi privilegi all'interno del documento dei requisiti
-) Aggiornare la tabella delle revisioni dei requisiti
-) Aggiungi modifica profilo
 ) Aggiungi anteprima notizia e prodotti nel glossario
-) Scehda prodotto nel glossario 
-) Modifica recensione estende mostra recensione ( e non mostra prodotto )
-) FINIRE DI MODIFICARE LA VISUALIZZAZIONE (TOGLIERE GLI INCLUDE)
-) FINO A 1051 "OK" PRE E POST CONDIZIONI
-) MODIFICARE PRODOTTO IN "SCHEDA PRODOTTO"
-) Cambia nei requisiti i titoli con prodotto in "scheda prodotto"
-) Visualizzazione statistiche private della vetrina -> cambia in mostra
-) NUovi use case: inserisci/rimuovi immagine
-) Modifica use case: acceso profilo -> modifica profile
-) Modifica account proprio ora estende mod impostazioni
-) Rimuovi postcondizioni tautologiche
-) MOdifica privilegi account ora estende mosta profilo
-) Cambia nomi requisti di: prodotti mancanti (scheda prodotto)
 
 
 Next:
@@ -46,6 +40,7 @@ Next:
 #############################################
 
 EXTENSION POINT:
+
 ) Mostra vetrina
 	- Inserimento descrizione
 	- Modifica descrizione
@@ -60,9 +55,12 @@ EXTENSION POINT:
 	- Rimozione account altrui
 	- follow account
 	- unfollow account
+	- Modifica profilo
+	- Inserisci immagine profilo
+	- Rimuovi immagine profilo
 
 ) Modifica impostazioni:
-	- Rimozione acount proprio
+	- Rimozione account proprio
 
 ) Mostra scheda prodotto
 	- Modifica prodotto
@@ -70,8 +68,7 @@ EXTENSION POINT:
 	- modifica valutazione
 	- Mostra recensioni associate al prodotto
 
-
-) Insermento valuazione:
+) Inserimento valuazione:
 	- Inserimento recensione
 
 ) Mostra notizia
@@ -79,7 +76,7 @@ EXTENSION POINT:
 	- Rimozione notizia
 
 ) Lettura ticket
-	- risposta ad  un ticket
+	- risposta ad un ticket
 	- chiudi un ticket
 
 ) Mostra recensionE

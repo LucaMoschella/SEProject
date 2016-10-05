@@ -125,8 +125,8 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:personalizzaVetrinaModDesc}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica descrizione}
 	\item \newListItem{req:personalizzaVetrinaInsImg}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento immagine}
 	\item \newListItem{req:personalizzaVetrinaDelImg}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Rimozione immagine}
-	\item \newListItem{req:personalizzaVetrinaInsProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento prodotto}
-	\item \newListItem{req:personalizzaVetrinaModProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica prodotto}
+	\item \newListItem{req:personalizzaVetrinaInsProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Inserimento scheda prodotto}
+	\item \newListItem{req:personalizzaVetrinaModProd}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Modifica scheda prodotto}
 	\item \newListItem{req:statistichePrivateVetrina}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Visualizzazione statistiche private della vetrina}
 	
 	\setCatR{\ref*{cat:notizie}}%D
@@ -139,13 +139,13 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:notizieSimili}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Suggerimento notizie simili}
 	
 	\setCatR{\ref*{cat:account}}%F
-	\item \newListItem{req:accessoProfilo}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Accesso al proprio profilo}
+	\item \newListItem{req:modificaProfilo}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Modifica del proprio profilo}
 	\item \newListItem{req:modificaImpostazioni}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Modifica delle proprie impostazioni}
 	\item \newListItem{req:rimozioneAccountProprio}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Rimozione account proprio}
 	
 	\item \newListItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
-	\item \newListItem{req:aggiungiAccountAFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi privilegio ad account}
-	\item \newListItem{req:rimuoviAccountDaFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi privilegio da account}
+	\item \newListItem{req:aggiungiPrivilegioFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi privilegio ad account}
+	\item \newListItem{req:rimuoviPrivilegioFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi privilegio da account}
 
 
 	\setCatR{\ref*{cat:gestionevalutazione}}%G
@@ -163,7 +163,7 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:giudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Giudizio recensione}
 	\item \newListItem{req:modificaGiudizioRecensione}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Modifica giudizio recensione}
 	\item \newListItem{req:segnalazioneContenutiInap}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Segnalazione contenuti inappropriati}
-	\item \newListItem{req:mostraSegnContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Visualizzazione segnalazioni contenuti inappropriati}
+	\item \newListItem{req:mostraSegnContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Mostra segnalazioni contenuti inappropriati}
 	\item \newListItem{req:rimozioneContenutiInap}{\ereq{RF}{\noF\noF\noF\noF\noF\moderatore\noF}}{Rimozione contenuti inappropriati}
 
 	\setCatR{\ref*{cat:interazione}}%I
@@ -179,20 +179,20 @@ Vengono di seguito elencati i requisiti funzionali:
 
 	\setCatR{\ref*{cat:ricerca}}%M
 	%\item \newListItem{req:ricercaInfo}{\ereq{RF}{\visitatore\utente\produttore\redattore\assistente\moderatore\amministratore}}{Ricerca contenuti}
-	\item \newListItem{req:ricercaProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Ricerca prodotto}
+	\item \newListItem{req:ricercaProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Ricerca scheda prodotto}
 	\item \newListItem{req:ricercaProfilo}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Ricerca profilo}
 	\item \newListItem{req:ricercaNotizia}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Ricerca notizia}
 
 	\setCatR{\ref*{cat:prodottimancanti}}%N
-	\item \newListItem{req:richiestaInsProdotto}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento prodotto a un produttore iscritto}
-	\item \newListItem{req:mostraRichiesteInsProdotto}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Mostra richieste inserimento prodotto}
-	\item \newListItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento di un produttore}
+	\item \newListItem{req:richiestaInsProdotto}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento scheda prodotto}
+	\item \newListItem{req:mostraRichiesteInsProdotto}{\ereq{RF}{\noF\noF\produttore\noF\noF\noF\noF}}{Mostra richiesta scheda prodotto}
+	\item \newListItem{req:richiestaInsProduttore}{\ereq{RF}{\noF\utente\noF\noF\noF\noF\noF}}{Richiesta inserimento produttore e scheda prodotto}
 	
 	\setCatR{\ref*{cat:visualizzazione}}%O
 	\item \newListItem{req:mostraVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra vetrina}
 	%\item \newListItem{req:mostraStatistichePubVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra statische pubbliche vetrina}
 	%\item %\newListItem{req:mostraProdottiVetrina}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra prodotti esposti in vetrina}
-	\item \newListItem{req:mostraProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra prodotto}
+	\item \newListItem{req:mostraProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra scheda prodotto}
 	%\item \newListItem{req:mostraAnteprimaProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra anteprima prodotto}
 	%\item \newListItem{req:mostraInfoProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra informazioni del prodotto}
 	\item \newListItem{req:mostraRecProdotto}{\ereq{RF}{\visitatore\utente\produttore\noF\noF\noF\noF}}{Mostra recensioni associate al prodotto}
@@ -308,11 +308,11 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 \vspaceTab
 
 %Vedi se va qui la descrizione dettagliata dell'inserimento!
-\reqTabRF{req:personalizzaVetrinaInsProd}{Deve essere possibile per il produttore inserire un prodotto nella propria vetrina}{\prioritaH}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaInsProd}{Deve essere possibile per il produttore inserire una scheda prodotto nella propria vetrina}{\prioritaH}{\statoUn}
 
 \vspaceTab
 
-\reqTabRF{req:personalizzaVetrinaModProd}{Deve essere possibile per il produttore modificare un prodotto già inserito nella propria vetrina}{\prioritaH}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaModProd}{Deve essere possibile per il produttore modificare una scheda prodotto già inserito nella propria vetrina}{\prioritaH}{\statoUn}
 
 \vspaceTab
 
@@ -334,7 +334,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE SUGGERIMENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:prodottiSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altri prodotti sono simili a quello che si sta visualizzando}{\prioritaL}{\statoUn}
+\reqTabRF{req:prodottiSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre schede prodotto sono simili a quello che si sta visualizzando}{\prioritaL}{\statoUn}
 
 \vspaceTab
 
@@ -343,7 +343,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE ACCOUNT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:accessoProfilo}{Il portale deve permette l'accesso al proprio profilo per visualizzarne i contenuti}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaProfilo}{Il portale deve permette la modifica del proprio profilo}{\prioritaM}{\statoUn}
 
 \vspaceTab
 
@@ -359,12 +359,11 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \vspaceTab
 
-\reqTabRF{req:aggiungiAccountAFigura}{Il portale deve permette agli amministratori di aggiungere un account presente nel sistema al gruppo associato ad una figura. 
-Ciò significa che gli amministratori potranno aggiungere un account al gruppo degli account che hanno accesso alle funzionalità di una data figura, fornendogli tali funzionalità aggiuntive.}{\prioritaL}{\statoUn}
+\reqTabRF{req:aggiungiPrivilegioFigura}{Il portale deve permettere agli amministratori di aggiungere un privilegio ad un account presente nel sistema, che non possiede già tale privilegio. Fornendogli in tal modo funzionalità aggiuntive}{\prioritaL}{\statoUn}
 
 \vspaceTab
 
-\reqTabRF{req:rimuoviAccountDaFigura}{Il portale deve permettere agli amministratori di rimuovere un account presente nel sistema dal gruppo associato ad una figura. Ciò significa che gli amministratori potranno rimuovere un account dal gruppo degli account che hanno accesso alle funzionalità di una data figura, rimuovendogli l'accesso a tali funzionalità, se non presenti in altre figure associate all'account.}{\prioritaL}{\statoUn}
+\reqTabRF{req:rimuoviPrivilegioFigura}{Il portale deve permettere agli amministratori di rimuovere un privilegio da un account presente nel sistema. Rimuovendogli in tal modo funzionalità aggiuntive, se non disponibili grazie ad altri privilegi già posseduti}{\prioritaL}{\statoUn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - INTERAZIONE TRA FIGURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\reqTabRF{req:valutazioneProdotto}{Il portale deve permettere di valutare un prodotto}{\prioritaH}{\statoUn}
@@ -458,7 +457,7 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \vspaceTab
 
-\reqTabRF{req:ricercaProdotto}{Deve essere possibili cercare prodotti in base a diversi criteri}{\prioritaH}{\statoUn}
+\reqTabRF{req:ricercaProdotto}{Deve essere possibili cercare schede prodotto in base a diversi criteri}{\prioritaH}{\statoUn}
 
 \vspaceTab
 
@@ -470,11 +469,11 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \vspaceTab
 
-\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di un suo prodotto tra quelli presenti nel sistema. La segnalazione conterrà una scheda prodotto parzialmente compilata dall'utente per favorirne l'aggiunta da parte del produttore}{\prioritaL}{\statoUn}
+\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di una sua scheda prodotto tra quelli presenti nel sistema. La segnalazione conterrà una scheda prodotto parzialmente compilata dall'utente per favorirne l'aggiunta da parte del produttore}{\prioritaL}{\statoUn}
 
 \vspaceTab
 
-\reqTabRF{req:mostraRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento prodotto indirizzate a lui, con la possibilità di inserire direttamente il prodotto, modificarne la scheda o rifiutare la richiesta.}{\prioritaL}{\statoUn}
+\reqTabRF{req:mostraRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento delle schede prodotto indirizzate a lui, con la possibilità di inserire direttamente la scheda prodotto consigliata, modificarla o rifiutare la richiesta.}{\prioritaL}{\statoUn}
 
 \vspaceTab
 
@@ -495,7 +494,7 @@ Ciò significa che gli amministratori potranno aggiungere un account al gruppo d
 
 \vspaceTab
 
-\reqTabRF{req:mostraProdotto}{Il portale deve permettere di visualizzare un dato prodotto}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraProdotto}{Il portale deve permettere di visualizzare una data scheda prodotto}{\prioritaH}{\statoUn}
 
 %\vspaceTab
 %
@@ -566,6 +565,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 
 \newdate{requno}{09}{05}{2016}
 \newdate{reqdue}{13}{05}{2016}
+\newdate{reqtre}{13}{05}{2016}
 \section{Revisioni}
 \begin{center}
     \begin{tabular}{lll}
@@ -574,6 +574,7 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
         	1.0 & \displaydate{requno} & Prima versione \\
         	1.1 & \displaydate{reqdue} & Riorganizzati i requisiti \\
+        	1.2 & \displaydate{reqdue} & Aggiornati nomi e descrizioni \\
         \bottomrule
     \end{tabular}
 \end{center}
