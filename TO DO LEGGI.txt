@@ -27,11 +27,17 @@ Todo:
 
 Next:
 
-) Analisi dei rischi
-) Analisi dei costi (con use case point: https://en.wikipedia.org/wiki/Use_Case_Points )
-) CRC
-) Analisi classi
+) Analisi CRC: Class-Responsibilities-Collaborators
 ) Analisi nomi verbi
+
+) Diagrammi attività 
+....Desrcrivono come funzonano i casi d'uso, e come interagiscono i flussi alternativi
+
+) Analisi Classi
+) Analisi Package
+
+) Diagrammi di sequenza - se il tempo ha importanza
+) DIagrammi di comunicazione - altrimenti
 
 #############################################
 #############################################
