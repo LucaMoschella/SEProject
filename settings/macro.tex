@@ -35,11 +35,13 @@
 %macro per stampare (e linkare, tranne il titolo) informazioni del req.
 %usage: \reqGet..{reqkey}
 \newcommand\getID[1]{\ref{id:#1}}
+\newcommand\getIDnolink[1]{\ref*{id:#1}}
 \newcommand\getIDtodesc[1]{\hyperref[desc:#1]{\ref*{id:#1}}}
 \newcommand\getTitle[1]{\ref*{title:#1}}
 \newcommand\getTitletodesc[1]{\hyperref[desc:#1]{\ref*{title:#1}}}
 \newcommand\getIDTitle[1]{\getID{#1}\sepIDTitle\getTitle{#1}}
 \newcommand\getIDTitletodesc[1]{\getIDtodesc{#1}\sepIDTitle\getTitle{#1}}
+\newcommand\getIDTitlenolink[1]{\getIDnolink{#1}\sepIDTitle\getTitle{#1}}
 
 %Stampa il testo, imposta una label con la key passata, facendo il ref ti stampa il testo.
 \makeatletter
@@ -462,11 +464,19 @@
 %Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
 %fa in modo che anche la label contenga la giusta formattazione del requisito.
 \newcommand{\formattaAT}{%    
-	\protect\stepcounter{counterAT}%
 	\attivita{DA}{\arabic{counterAT}}%
 }
 
+\newcommand{\newAttivita}[3]{%
+	\protect\stepcounter{counterAT}\newListItem{#1}{#2}{#3}
+}
 
+
+
+\newcommand\subsectionDA[1]{
+	\subsection{\getIDTitle{#1}}\label{desc:#1}%
+}
+			
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AMBIENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
