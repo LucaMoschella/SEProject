@@ -39,6 +39,7 @@
 \newcommand\getTitle[1]{\ref*{title:#1}}
 \newcommand\getTitletodesc[1]{\hyperref[desc:#1]{\ref*{title:#1}}}
 \newcommand\getIDTitle[1]{\getID{#1}\sepIDTitle\getTitle{#1}}
+\newcommand\getIDTitletodesc[1]{\getIDtodesc{#1}\sepIDTitle\getTitle{#1}}
 
 %Stampa il testo, imposta una label con la key passata, facendo il ref ti stampa il testo.
 \makeatletter
@@ -440,6 +441,31 @@
 \newcommand{\rowIDTitle}[1]{%
 	\getIDtodesc{#1} & \getTitle{#1}%
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ATTIVITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{counterAT}
+
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterAT}{
+\setcounter{counterAT}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\attivitaSep}{.} 
+\newcommand{\displayAT}[1]{\texttt{#1}}
+\newcommand{\attivita}[2]{\displayAT{#1\attivitaSep#2}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\newcommand{\formattaAT}{%    
+	\protect\stepcounter{counterAT}%
+	\attivita{DA}{\arabic{counterAT}}%
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AMBIENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
