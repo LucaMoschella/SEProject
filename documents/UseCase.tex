@@ -425,6 +425,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\item L'Assistente seleziona una richiesta di iscrizione
 	\item Il sistema mostra all'Assistente la richiesta da lui selezionata\label{cuappriscr:1}
 	\item L'Assistente approva la richiesta di iscrizione
+	\item Il sistema rimuove la richiesta selezionata dall'Assistente
 \end{enumCU}}
 %
 \cuAlternativo{cu:approvazioneIscrizione}
@@ -434,7 +435,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {Nel sistema non è più presente la richiesta selezionata}%
 {\begin{enumCU}
 		\item Dopo il punto \ref{cuappriscr:1} l'Assistente rifiuta la richiesta di creazione dell'account
-		\item Il sistema elimina la richiesta selezionata dall'Assistente
+		\item Il sistema rimuove la richiesta selezionata dall'Assistente
 \end{enumCU}}%
 %
 \cuAlternativo{cu:approvazioneIscrizione}
@@ -443,7 +444,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {La persona connessa al sito è autenticata e ha i privilegi di  Assistente. Nel sistema è presente almeno una richiesta di creazione di un account}%
 {\postNulle}%
 {\begin{enumCU}
-		\item Dopo il punto \ref{cuappriscr:0} l'Assistente annulla la selezione
+		\item Dopo il punto \ref{cuappriscr:0} l'Assistente annulla l'operazione di selezione
 \end{enumCU}}%
 
 \subsection{Gestione vetrina}
