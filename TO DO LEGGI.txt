@@ -24,7 +24,7 @@
 
 Todo:
 
-) Tutti gli use case che estendono mostra recensione sono da rivedere!
+
 
 Next:
 
