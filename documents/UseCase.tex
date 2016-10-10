@@ -145,8 +145,8 @@ Vengono di seguito elencati i casi d'uso:
 	
 	\setCatCU{\ref*{pkg:account}}%F
 	\item \newListItem{cu:modificaProfilo}{\formattaCU}{Modifica del proprio profilo}
-	\item \newListItem{cu:inserisciImgProfilo}{\formattaCU}{Inserimento immagine profilo proprio}
-	\item \newListItem{cu:rimuoviImgProfilo}{\formattaCU}{Rimozione immagine profilo proprio}
+	\item \newListItem{cu:inserisciImgProfilo}{\formattaCU}{Inserimento immagine del profilo}
+	\item \newListItem{cu:rimuoviImgProfilo}{\formattaCU}{Rimozione immagine del profilo}
 	\item \newListItem{cu:modificaImpostazioni}{\formattaCU}{Modifica delle proprie impostazioni}
 	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
@@ -736,13 +736,13 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \end{center}
 %***************  ACCESSO PROFILO *****************
 \cuTab{cu:modificaProfilo}
-{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
 {Il profilo della persona è stato modificato}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando una persona autenticata nel sistema richiede di modificare il proprio profilo
 	\item Il sistema mostra alla persona i campi modificabili
-	\item La persona effettua le modifiche volute \label{modProf}
+	\item La persona effettua le modifiche volute\label{modProf}
 	\item La persona conferma le modifiche effettuate
 	\item Il sistema memorizza le modifiche
 \end{enumCU}}
@@ -759,7 +759,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \vspaceTab
 
 \cuTab{cu:inserisciImgProfilo}
-{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo}
 {Nel sistema è presente l'immagine del profilo della persona}
 {\begin{enumCU}
@@ -791,7 +791,7 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \vspaceTab
 
 \cuTab{cu:rimuoviImgProfilo}
-{\getTitletodesc{att:figuraPubblicaAutenticata}, \getTitletodesc{att:figuraAmministrativa}}
+{\getTitletodesc{att:figuraPubblicaAutenticata}}
 {La persona connessa al sito è autenticata. Il sistema sta mostrando alla persona il suo profilo. Nel sistema è presente l'immagine del profilo della persona}
 {Nel sistema non è presente l'immagine del profilo della persona}
 {\begin{enumCU}
