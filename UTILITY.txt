@@ -1,0 +1,156 @@
+*************************************************************************************************************
+******************************************* Extension Points ************************************************
+*************************************************************************************************************
+
+) Mostra vetrina
+	- Inserimento descrizione
+	- Modifica descrizione
+	- Inserimento Immagine
+	- Rimozione Immagine
+	- Inserimento prodotto
+	- Visualizzazione statistiche private della vetrina (modifica in mostra)
+	- Richiesta inserimento scheda prodotto
+
+) Mostra profilo
+	- Modifica privilegi account
+	- Rimozione account altrui
+	- follow account
+	- unfollow account
+	- Modifica profilo
+	- Inserisci immagine profilo
+	- Rimuovi immagine profilo
+
+) Modifica impostazioni:
+	- Rimozione account proprio
+
+) Mostra scheda prodotto
+	- Modifica prodotto
+	- inserimento valutazione
+	- modifica valutazione
+	- Mostra recensioni associate al prodotto
+
+) Inserimento valuazione:
+	- Inserimento recensione
+
+) Mostra notizia
+	- Modifica Notizia
+	- Rimozione notizia
+
+) Lettura ticket
+	- risposta ad un ticket
+	- chiudi un ticket
+
+) Mostra recensionE
+	- Modifica recensione propria
+	- Elimina recensione propria
+	- Commento recensione 
+	- Giudizio recensione
+	- Modifica giudizio recensione
+
+) Mostra recensioni associate al prodotto
+	-Mostra recensionE
+
+) Mostra segnalazione contenuti
+	-Rimozione contenuti
+
+) Ricerca prodotto
+	-Mostra scheda prodotto
+
+) Ricerca profilo
+	-Mostra profilo
+	-mostra vetrina
+
+) Ricerca notizia
+	-Mostra notizia
+
+*************************************************************************************************************
+******************************************* Package e Classi ************************************************
+*************************************************************************************************************
+
+Account
+	-ID: int
+	-Lista di enum ( Utente, Produttore, ... ): List<enum>
+	-username: String
+	-nome: String
+	-password: String
+	--------------
+	-Vari set
+	-Vari get
+
+=======================================================================
+
+(file di configurazione?)
+Tipo:
+	UTENTE:
+		-canRecensione=TRUE
+		-
+		-
+	Produttore:
+		-
+
+=======================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Accesso 
+	- Ricerca
+	- Visualizzazione
+	<generalizzato in>
+		scriviRecensione: boolean
+		.
+		.
+		Produttore
+			canPutProduct: boolean
+			.
+			.
+		Amministratore
+			canRemove: boolean
+			.
+			.
+		Redattore
+			canInsert: boolean
+			.
+			.
+		Moderatore
+			.
+			.
+		Assistente 
+			.
+			.
+
+
+--------------------------------------------
+
+
+
