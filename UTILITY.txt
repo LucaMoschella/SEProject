@@ -67,16 +67,6 @@
 ******************************************* Package e Classi ************************************************
 *************************************************************************************************************
 
-Account
-	-ID: int
-	-Lista di privilegi enum( Utente, Produttore, Assistente, Moderatore,...): List<enum>
-	-username: String
-	-nome: String
-	-password: String
-	--------------
-	-Vari set
-	-Vari get
-
 =======================================================================
 
 (file di configurazione?)
@@ -88,42 +78,139 @@ Tipo:
 	Produttore:
 		-
 
+
 =======================================================================
 
+Account
+	-ID: int
+	-Lista di privilegi enum( Utente, Produttore, Assistente, Moderatore,...): List<enum>
+	-username: String
+	-password: String
+	-profilo: Profilo
+	--------------
+	-Vari add e remove
+	-Vari set
+	-Vari get
+
+Profilo:
+	-Followed: List<Account>
+	-Follower: List<Account>
+	-Percorso immagine: String
+	-nome: String
+	-cognome: String
+
+extended Profilo produttore:
+	-vetrina: Vetrina
+	-richieste: List<RichiestaProdotto>
 
 (Account 0-1 Vetrina)
 
 Vetrina 
-	-
-	-
+	-ID: int
+	-Produttore: account
+	-Lista di Prodotti: List<Prodotto>
+	-Percorso immagine: String
+	-Descrizione: String
+	--------------
+	-Vari set
+	-Vari get
+
+Scheda Prodotto
+	-ID: int
+	-Vetrina: Vetrina
+	-Scheda: Scheda
+	-Recensioni: Lista<Recensione>
+	-Valutazioni: List<Valutazione>
+
+Dettaglio prodotto:
+	-ID: int
+	-Nome: 
+	-Descrizione
+	-Marca
+	-Percorso immagini: List<String>
+	-Categoria enum( Cioccolato, Dolce al cioccolato)
+	-Consistenza enum(Solida, Liquida, Spalmabile)
+	-Particolarità: List<String>
+	-Ingredienti: List<String>
+	-Altri campi: List<Campo opzionale>
+
+Campo opzionale:
+	-ID: int
+	-Nome: String
+	-Descrizione: String
+
+Valutazione:
+	-ID: int
+	-Autore: account
+	-Prodotto: Recensione
+	-Positivo: boolean
+
+Recensione:
+	-ID: int
+	-Prodotto: Prodotto
+	-Autore: account
+	-Testo: string
+	-Commenti: List<Commento>
+	-Giudizi: List<Giudizio>
+	-dataora: timestamp
+
+Giudizio:
+	-ID: int
+	-Autore: account
+	-Recensone: Recensione
+	-Positivo: boolean
+
+COmmento:
+	-ID: int
+	-Autore: account
+	-Recensone: Recensione
+	-Testo: String
+	-dataora: timestamp
+
+
+
+
+Notizia:
+	-ID: int
+	-Autore: account
+	-Testo: String
 
 
 
 
 
 
+Risposta:
+	-id: int
+	-ticket: Ticket
+	-Autore: Account
+	-dataora: timestamp
+	-testo: String
+
+Ticket:
+	-Id: int
+	-Stato: boolean
+	-Autore: account
+	-Testo: String
+	-Risposte: List<Risposta>
+	-dataora: timestamp
+	----
+	-aggiungiRispsota()
+	-chiudiTicket()
+
+
+extended Ticket inserimento produttore
+	-Produttore mancante: String
+	-Prodotto mancante: Dettaglio Prodotto
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+RichiestaProdotto
+	-Id: int
+	-Autore: account
+	-Produttore destinatario: account
+	-Testo: String
+	-Prodotto mancante: Dettaglio Prodotto
 
 
 
