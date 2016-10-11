@@ -69,7 +69,7 @@
 
 Account
 	-ID: int
-	-Lista di enum ( Utente, Produttore, ... ): List<enum>
+	-Lista di privilegi enum( Utente, Produttore, Assistente, Moderatore,...): List<enum>
 	-username: String
 	-nome: String
 	-password: String
@@ -91,7 +91,11 @@ Tipo:
 =======================================================================
 
 
+(Account 0-1 Vetrina)
 
+Vetrina 
+	-
+	-
 
 
 

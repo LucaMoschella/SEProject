@@ -151,6 +151,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
 	\item \newListItem{cu:modificaPrivilegiAccount}{\formattaCU}{Modifica privilegi di un account}
+	\item \newListItem{cu:creaAccount}{\formattaCU}{Crea account}
 
 
 	\setCatCU{\ref*{pkg:gestionevalutazione}}%G
@@ -907,6 +908,29 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 	\end{enumCU}}%
 
 \vspaceTab
+
+\cuTab{cu:creaAccount}
+{\getTitletodesc{att:amministratore}}
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore}
+{Nel sistema è presente l'account creato con i dati inseriti}
+{\begin{enumCU}
+	\item Il caso d'uso ha inizio quando un Amministratore richiede di creare un nuovo account
+	\item Il sistema mostra all'Amministratore un modulo da compilare con i dati relativi all'account da creare
+	\item L'Amministratore compila il modulo
+	\item Il sistema mostra all'Amministratore la lista dei privilegi da assegnare all'account
+	\item L'Amministratore seleziona quali privilegi vuole fornire all'account\label{cufornpriv:1}
+	\item L'Amministratore conferma la selezione
+	\item Il sistema crea un nuovo account
+\end{enumCU}}
+%
+\cuAlternativo{cu:creaAccount}
+{Flusso alternativo 1}%
+{Annulla operazione}%
+{La persona connessa al sito è autenticata e ha i privilegi di Amministratore}%
+{\postNulle}%
+{\begin{enumCU}
+		\item Dopo il punto \ref{cufornpriv:1} l'Amministratore annulla l'operazione
+	\end{enumCU}}%
 
 %***************  Gestione valutazioni *****************
 \subsection{Gestione valutazioni}

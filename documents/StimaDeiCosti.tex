@@ -150,6 +150,8 @@ Di seguito riportiamo la tabella con indicati pesi di ogni attore:
 			\addlinespace[1em] 
 			\rowIDTitle{cu:modificaPrivilegiAccount} & 5 \\ 
 			\addlinespace[1em] 
+			\rowIDTitle{cu:creaAccount} & 5 \\ 
+			\addlinespace[1em] 
 			\rowIDTitle{cu:inserisciValutazioneProdotto} & 5 \\ 
 			\addlinespace[1em] 
 			\rowIDTitle{cu:modificaValutazioneProdotto} & 5 \\ 
@@ -210,7 +212,7 @@ Di seguito riportiamo la tabella con indicati pesi di ogni attore:
 			\addlinespace[1em] 
 			\rowIDTitle{cu:mostraAggF} & 5 \\ 
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
-			\formattaCampiTab{\gls{uucw}}  & & 290\\
+			\formattaCampiTab{\gls{uucw}}  & & 295\\
 	\end{longtable}
 \end{center}
 
@@ -295,7 +297,7 @@ Nella seguente tabella riportiamo gli aspetti ambientali che vengono presi in co
 			\formattaCampiTab{E7} & Part-time staff & -1.0 & 0.0\\ 
 			\addlinespace[1em] 
 			\formattaCampiTab{E8} & Difficult programming language & -1.0 & 2.0\\ 
-		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-4}
+			\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-4}
 			\formattaCampiTab{EF} & & & 16.0 \\ 
 			\formattaCampiTab{ECF} & & & 0.92 \\ 
 		\bottomrule
@@ -305,7 +307,7 @@ Nella seguente tabella riportiamo gli aspetti ambientali che vengono presi in co
 \section{Calcolo UCP}
 Il valore finale degli \acrfull{ucp} è dato dalla seguente formula:
 \begin{displaymath}
-	UCP = (UAW + UUCW) \times TCF \times ECF = (29 + 290) \times 0.95 \times 0.92 = 278.806 
+	UCP = (UAW + UUCW) \times TCF \times ECF = (29 + 295) \times 0.95 \times 0.92 = 283.186
 \end{displaymath}
 
 \section{Stima dello sforzo}
@@ -313,26 +315,26 @@ Una volta nota la stima della dimensione del progetto è possibile stimare lo sf
 Si assume, non avendo esperienze passate, che per ogni \gls{ucp} siano necessarie 30 ore/uomo.
 Lo sforzo totale per il completamento del progetto, \gls{ee}, è dato dalla seguente formula:
 \begin{displaymath}
-	EE = UCP \times (Hours Per UCP) = 278.806 \times 30 = 8364.18\, ore/uomo
+	EE = UCP \times (Hours Per UCP) = 283.186 \times 30 = 8495.28\, ore/uomo
 \end{displaymath}
 In un giorno si hanno generalmente 8 ore lavorative, quindi, dividendo la quantità precedente per 8 si ottiene lo sforzo in giorni/uomo:
 \begin{displaymath}
-	EE = 8364.18 \div 8 = 1045.52\, giorni/uomo
+	EE = 8495.28 \div 8 = 1061.91\, giorni/uomo
 \end{displaymath}
 In un mese si hanno generalmente 22 giorni lavorativi, quindi, dividendo la quantità precedente per 22 si ottiene lo sforzo in mesi/uomo:
 \begin{displaymath}
-	EE = 1045.52 \div 22 = 47.52\, mesi/uomo
+	EE = 1045.52 \div 22 = 48.27\, mesi/uomo
 \end{displaymath}
 Quindi lo sforzo in anni/uomo è il seguente:
 \begin{displaymath}
-	EE = 47.52 \div 12 = 3.96\, anni/uomo
+	EE = 47.52 \div 12 = 4\, anni/uomo
 \end{displaymath}
 Con un team di tre persone si stima il completamento del progetto entro 2 anni.
 
 \section{Stima del costo}
 Supponendo uno stipendio medio di \(4000\, euro\) si stima il seguente costo del progetto:
 \begin{displaymath}
-	COSTO = 47.52 \times 4000 = 190080\, euro
+	COSTO = 48.27 \times 4000 = 193080\, euro
 \end{displaymath}
 
 \newdate{costiuno}{03}{10}{2016}
