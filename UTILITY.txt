@@ -81,12 +81,19 @@ Tipo:
 
 =======================================================================
 
+Contenuto (Recensione, Commento, Scheda prodotto)
+	-Id: int
+	-Autore: account
+
 Account
 	-ID: int
 	-Lista di privilegi enum( Utente, Produttore, Assistente, Moderatore,...): List<enum>
 	-username: String
-	-password: String
+	-password: String (hash)
+	-email: String
 	-profilo: Profilo
+	-dataora: timestamp
+
 	--------------
 	-Vari add e remove
 	-Vari set
@@ -95,7 +102,7 @@ Account
 Profilo:
 	-Followed: List<Account>
 	-Follower: List<Account>
-	-Percorso immagine: String
+	-Immagine: Immagine
 	-nome: String
 	-cognome: String
 
@@ -109,14 +116,13 @@ Vetrina
 	-ID: int
 	-Produttore: account
 	-Lista di Prodotti: List<Prodotto>
-	-Percorso immagine: String
+	-Immagine: Immagine
 	-Descrizione: String
 	--------------
 	-Vari set
 	-Vari get
 
 Scheda Prodotto
-	-ID: int
 	-Vetrina: Vetrina
 	-Scheda: Scheda
 	-Recensioni: Lista<Recensione>
@@ -127,7 +133,7 @@ Dettaglio prodotto:
 	-Nome: 
 	-Descrizione
 	-Marca
-	-Percorso immagini: List<String>
+	-Immagini: List<Immagine>
 	-Categoria enum( Cioccolato, Dolce al cioccolato)
 	-Consistenza enum(Solida, Liquida, Spalmabile)
 	-Particolarità: List<String>
@@ -146,9 +152,7 @@ Valutazione:
 	-Positivo: boolean
 
 Recensione:
-	-ID: int
 	-Prodotto: Prodotto
-	-Autore: account
 	-Testo: string
 	-Commenti: List<Commento>
 	-Giudizi: List<Giudizio>
@@ -160,50 +164,44 @@ Giudizio:
 	-Recensone: Recensione
 	-Positivo: boolean
 
-COmmento:
-	-ID: int
-	-Autore: account
+Commento:
 	-Recensone: Recensione
 	-Testo: String
 	-dataora: timestamp
 
-
-
+Immagine:
+	-id: int
+	-path: string
 
 Notizia:
 	-ID: int
 	-Autore: account
 	-Testo: String
-
-
-
-
-
+	-Immagini: List<Immagine>
 
 Risposta:
 	-id: int
 	-ticket: Ticket
 	-Autore: Account
 	-dataora: timestamp
-	-testo: String
+	-Testo: String
+	-Immagini: List<Immagini>
 
 Ticket:
 	-Id: int
 	-Stato: boolean
 	-Autore: account
 	-Testo: String
+	-Immagini: List<Immagini>
 	-Risposte: List<Risposta>
 	-dataora: timestamp
 	----
 	-aggiungiRispsota()
 	-chiudiTicket()
 
-
 extended Ticket inserimento produttore
 	-Produttore mancante: String
 	-Prodotto mancante: Dettaglio Prodotto
-
-
 
 RichiestaProdotto
 	-Id: int
@@ -212,36 +210,30 @@ RichiestaProdotto
 	-Testo: String
 	-Prodotto mancante: Dettaglio Prodotto
 
+SingletionSegnalazioni
+	-Segnalazioni: list<SegnalazioneContenuto>
 
+SegnalazioneContenuto
+	-Id: int
+	-Contenuto: Contenuto
+	-Autore: account
+	-Testo: String
+	-Immagini: List<Immagine>
 
-Accesso 
-	- Ricerca
-	- Visualizzazione
-	<generalizzato in>
-		scriviRecensione: boolean
-		.
-		.
-		Produttore
-			canPutProduct: boolean
-			.
-			.
-		Amministratore
-			canRemove: boolean
-			.
-			.
-		Redattore
-			canInsert: boolean
-			.
-			.
-		Moderatore
-			.
-			.
-		Assistente 
-			.
-			.
+Accessi:
+	-Autenticati: List<Autenticazione>
+	-Visitatori: List<AccessoOspite>
+	_____________________________________
+	AggiungiUtente()
+	AggiungiVisitatore()
+	RimuovioVisitatore()
+	RimuovioUtente()
 
+Autenticazione:
+	-id: int
+	-Account: Account
+	-dataora: timestamp
 
---------------------------------------------
-
-
-
+AccessoOspite:
+	-id: int
+	-dataora: timestamp
