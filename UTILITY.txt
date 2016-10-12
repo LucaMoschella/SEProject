@@ -70,7 +70,7 @@
 =======================================================================
 
 (file di configurazione?)
-Tipo:
+Tipo:*
 	UTENTE:
 		-canRecensione=TRUE
 		-
@@ -139,7 +139,7 @@ Dettaglio prodotto:
 	-Particolarità: List<String>
 	-Ingredienti: List<String>
 	-Altri campi: List<Campo opzionale>
-
+integrata con
 Campo opzionale:
 	-ID: int
 	-Nome: String
@@ -237,3 +237,18 @@ Autenticazione:
 AccessoOspite:
 	-id: int
 	-dataora: timestamp
+
+
+
+
+
+
+_____________________________________________________
+____________________BAM_BAM_BAM______________________
+_____________________________________________________
+
+Gestione Iscritti
+	Account*
+	Tipo Account
+	Privilegi
+
