@@ -244,11 +244,197 @@ AccessoOspite:
 
 
 _____________________________________________________
-____________________BAM_BAM_BAM______________________
+______________Gerarchia Package/Classi_______________
 _____________________________________________________
 
-Gestione Iscritti
-	Account*
+)Gestione Iscritti
+	Account
 	Tipo Account
 	Privilegi
 
+)Gestione Contenuti
+	Contenuto
+		Commento
+		Recensione
+		Giudizio
+		Scheda Prodotto
+		Valutazione
+		Notizia
+	Dettaglio Prodotto
+	Immagine
+
+)Gestione Comunicazioni
+	Ticket
+		Richiesta Produttore
+	Risposta Ticket
+	Richiesta Prodotto
+	Singleton Segnalazioni
+	Segnalazione Contenuto
+
+)Gestione Profilo
+	Profilo
+		Profilo Produttore
+	Vetrina
+
+)Gestione Autenticazione
+	Singleton Connessi
+	Accesso Iscritto
+	Accesso Ospite
+	Storico Accessi
+
+_____________________________________________________
+_______________Contenuto delle Classi________________
+_____________________________________________________
+
+
+)Gestione Iscritti
+	Account
+		-id:int
+		-username:string
+		-password:string
+		-email:string
+		-dataoraiscrizione: timestamp
+		----------------------------
+		get per ogni attributo
+		set per password ed email
+
+	Tipo Account
+		UTENTE, PRODUTTORE, AMMINISTRATORE, MODERATORE, ASSISTENTE, REDATTORE
+		---
+		ottieniPrivilegiDisponibili( Set<tipiAccount> ) : Set<Privilegi>
+
+	Privilegi
+		CAN_DO_RECENSIONE, etc.
+
+)Gestione Contenuti
+	Contenuto
+		-id: int
+		-dataora inserimento: timestamp
+		----------------------------
+		get per ogni attributo
+	Commento
+		-testo: string
+		----------------------------
+		get per ogni attributo
+		set testo()
+	Recensione
+		-testo: string
+		----------------------------
+		get per ogni attributo
+		set testo()
+	Giudizio
+		-positivo: boolean
+		----------------------------
+		get per ogni attributo
+		setGiudizio()
+	Scheda Prodotto
+		----------------------------
+		get per ogni attributo
+	Dettaglio Prodotto
+		-id: int
+		-Nome: string
+		-Descrizione: string
+		-Marca: string
+		-Categoria enum( Cioccolato, Dolce al cioccolato)
+		-Consistenza enum(Solida, Liquida, Spalmabile)
+		-Particolarità: List<String>
+		-Ingredienti: List<String>
+	//	-Altri campi: Map<String,String>
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id, 
+	Valutazione
+		-voto: [1,5]
+		----------------------------
+		get per ogni attributo
+		set voto
+	Notizia
+		-testo: string
+		----------------------------
+		get per ogni attributo
+		set testo
+	Immagine
+		-path: string
+		----------------------------
+		get per ogni attributo
+		set path
+
+)Gestione Comunicazioni
+	Ticket
+		-id: int
+		-stato: boolean
+		-testo: String
+		-apertura: timestamp
+		-chiusura: timestamp
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id e apertura 
+		chiudiTicket()
+	Richiesta Produttore
+		-produttore: String
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo
+	Risposta Ticket
+		-id: int
+		-testo: String
+		-dataOra: timestamp
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id e dataora
+	Richiesta Prodotto
+		-testo: String
+		-dataOra: timestamp
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne dataora
+	Singleton Segnalazioni
+		----------------------------
+		get per ogni attributo
+	Segnalazione Contenuto
+		-id: int
+		-testo : String
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id
+
+)Gestione Profilo
+	Profilo
+		-id: int
+		-nome: String
+		-cognome: String
+		-nascita: data
+		-nickname: String
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id
+	Profilo Produttore
+		----------------------------
+		get per ogni attributo
+	Vetrina
+		-id: int
+		-Descrizione: String
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id
+
+)Gestione Autenticazione
+	Singleton Connessi
+		----------------------------
+		get per ogni attributo
+	Accesso Iscritto
+		-id: int
+		-dataOra: timestamp
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id e dataora
+	Accesso Ospite
+		-id: int
+		-dataOra: timestamp
+		----------------------------
+		get per ogni attributo
+		set per ogni attributo tranne id e dataora
+	Storico Accessi
+		-id: int
+		----------------------------
+		get per ogni attributo

@@ -24,7 +24,8 @@
 
 Todo:
 
-
+) Integrare CMS e DATABASE nell'analisi??
+) Togliere altri campi?
 
 Next:
 
