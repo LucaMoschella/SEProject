@@ -339,7 +339,7 @@ _____________________________________________________
 		-Consistenza enum(Solida, Liquida, Spalmabile)
 		-Particolarità: List<String>
 		-Ingredienti: List<String>
-	//	-Altri campi: Map<String,String>
+		//-Altri campi: Map<String,String>
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id, 
