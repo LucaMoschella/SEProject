@@ -294,6 +294,7 @@ _____________________________________________________
 		-password:string
 		-email:string
 		-dataoraiscrizione: timestamp
+		-storicoAccesso: storico
 		----------------------------
 		get per ogni attributo
 		set per password ed email
@@ -419,22 +420,32 @@ _____________________________________________________
 		set per ogni attributo tranne id
 
 )Gestione Autenticazione
-	Singleton Connessi
+	Gestione accessi
 		----------------------------
 		get per ogni attributo
+		login(username, password)
+		checkAccount(username, password)
+		aggiungiAccessoIscritto(accessoIscritto, account)
+		aggiungiAccessoOpsite(accessoOspite)
+
+
+
 	Accesso Iscritto
 		-id: int
 		-dataOra: timestamp
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id e dataora
+
 	Accesso Ospite
 		-id: int
 		-dataOra: timestamp
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id e dataora
+		
 	Storico Accessi
 		-id: int
 		----------------------------
 		get per ogni attributo
+		aggiungiAccesso( accessoIscritto )
