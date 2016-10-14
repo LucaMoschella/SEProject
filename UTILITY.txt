@@ -294,8 +294,8 @@ _____________________________________________________
 		-password:string
 		-email:string
 		-dataoraiscrizione: timestamp
-		-storicoAccesso: storico
 		----------------------------
+		Account( username, password, email, tipoAccount )
 		get per ogni attributo
 		set per password ed email
 
@@ -421,21 +421,30 @@ _____________________________________________________
 
 )Gestione Autenticazione
 	Gestione accessi
+		-accountAutenticati
+		-ospitiPresenti
+		-lista richieste iscrizioni
 		----------------------------
 		get per ogni attributo
 		login(username, password)
+		logout(username)
 		checkAccount(username, password)
-		aggiungiAccessoIscritto(accessoIscritto, account)
+		aggiungiAccessoIscritto(account, accessoIscritto)
 		aggiungiAccessoOpsite(accessoOspite)
-
-
+		rimuoviAccessoIscritto(acc)
+		iscrizioneUtente(username, password, email )
+		iscrizioneProduttore(username, password, email, richietsa)
+		aggiungiRichiestaIscrizione(rchiesta Iscrizione)
+		rimuoviRichiestaIscrizione(rchiesta Iscrizione)
 
 	Accesso Iscritto
 		-id: int
+		-account:
 		-dataOra: timestamp
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id e dataora
+		AccessoIscritto( account )
 
 	Accesso Ospite
 		-id: int
@@ -443,9 +452,10 @@ _____________________________________________________
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id e dataora
-		
-	Storico Accessi
-		-id: int
-		----------------------------
-		get per ogni attributo
-		aggiungiAccesso( accessoIscritto )
+
+	Richiesta iscrizione
+		username
+		email
+		richiesta
+		----
+		-Richiesta iscrzione( username, email, richiesta)
