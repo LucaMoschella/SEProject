@@ -25,7 +25,8 @@
 Todo:
 
 ) Integrare CMS e DATABASE nell'analisi??
-) Togliere altri campi?
+) Togliere altri campi. Via tutta la storia dei tag dinamici.
+) Togliere classe immagine
 
 Next:
 

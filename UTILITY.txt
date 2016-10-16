@@ -282,6 +282,8 @@ _____________________________________________________
 	Accesso Ospite
 	Storico Accessi
 
+)Gestione sistema
+	Utility
 _____________________________________________________
 _______________Contenuto delle Classi________________
 _____________________________________________________
@@ -319,7 +321,9 @@ _____________________________________________________
 		get per ogni attributo
 		set testo()
 	Recensione
+		-autore: utente
 		-testo: string
+		-immagini: sttrings [anche 0]
 		----------------------------
 		get per ogni attributo
 		set testo()
@@ -329,22 +333,28 @@ _____________________________________________________
 		get per ogni attributo
 		setGiudizio()
 	Scheda Prodotto
-		----------------------------
-		get per ogni attributo
-	Dettaglio Prodotto
 		-id: int
 		-Nome: string
 		-Descrizione: string
+		-Immagini: string[]
 		-Marca: string
 		-Categoria enum( Cioccolato, Dolce al cioccolato)
 		-Consistenza enum(Solida, Liquida, Spalmabile)
 		-Particolarità: List<String>
 		-Ingredienti: List<String>
+		-Valutazioni: List<valore>
+		-Recensioni: List<Recensione>
 		//-Altri campi: Map<String,String>
 		----------------------------
+		Scheda Prodotto(nome, desc, img, marca, cat, cons, part, ingr)
+		valutaProdotto(valore)
+		aggiungiValutazione(valore)
+		recensisciProdotto(valore)
+		aggiungiRecensione(recensione)
 		get per ogni attributo
 		set per ogni attributo tranne id, 
 	Valutazione
+		-Autore
 		-voto: [1,5]
 		----------------------------
 		get per ogni attributo
@@ -409,13 +419,20 @@ _____________________________________________________
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id
+
 	Profilo Produttore
 		----------------------------
 		get per ogni attributo
+
 	Vetrina
 		-id: int
+		-prodotto: SchedaProdotti[]
 		-Descrizione: String
 		----------------------------
+		aggiungiProdotto(scheda)
+		rimuoviProdotto(scheda)
+		inserisciProdotto(nome, descrizione. immagini, marca, categoria, consistenza particolarità, ingredienti )
+		checkDati(nome, descrizione. immagini, marca, categoria, consistenza particolarità, ingredienti )
 		get per ogni attributo
 		set per ogni attributo tranne id
 
@@ -434,10 +451,13 @@ _____________________________________________________
 		rimuoviAccessoIscritto(acc)
 		iscrizioneUtente(username, password, email )
 		iscrizioneProduttore(username, password, email, richietsa)
-		aggiungiRichiestaIscrizione(rchiesta Iscrizione)
-		rimuoviRichiestaIscrizione(rchiesta Iscrizione)
+		aggiungiRichiestaIscrizione(richiestaIscrizione)
+		rimuoviRichiestaIscrizione(richiestaIscrizione)
 		visualizzaRichiesteIscrizione()
 		getRichiestaIscrizione()
+		approvaIscrizione(richiestaIscrizione)
+		rifiutaIscrizione(richiestaIscrizione)
+
 
 	Accesso Iscritto
 		-id: int
@@ -458,8 +478,18 @@ _____________________________________________________
 	Richiesta iscrizione
 		-id
 		-username
+		-password
 		-email
 		-richiesta
 		----
 		get per ogni attributo
 		-Richiesta iscrzione( username, email, richiesta)
+
+) Gestione sistema
+	Utility
+
+		-----
+		Ricerca(testo, tipoRicerca)
+		RicercaProdotto(testo)
+		RicercaProfilo(testo)
+		RicercaNotizia(testo)
