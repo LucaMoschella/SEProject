@@ -436,6 +436,8 @@ _____________________________________________________
 		iscrizioneProduttore(username, password, email, richietsa)
 		aggiungiRichiestaIscrizione(rchiesta Iscrizione)
 		rimuoviRichiestaIscrizione(rchiesta Iscrizione)
+		visualizzaRichiesteIscrizione()
+		getRichiestaIscrizione()
 
 	Accesso Iscritto
 		-id: int
@@ -454,8 +456,10 @@ _____________________________________________________
 		set per ogni attributo tranne id e dataora
 
 	Richiesta iscrizione
-		username
-		email
-		richiesta
+		-id
+		-username
+		-email
+		-richiesta
 		----
+		get per ogni attributo
 		-Richiesta iscrzione( username, email, richiesta)
