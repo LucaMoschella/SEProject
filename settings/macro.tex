@@ -32,6 +32,10 @@
 %usage: \newListItem{key}{id}{titolo} 
 \newcommand\newListItem[3]{\hyperref[desc:#1]{\phantomsection\currentLabelText{#2}#2\label{id:#1}}\sepIDTitle\currentLabelText{#3}#3\label{title:#1}}
 
+\newcommand\linkedSubsection[1]{
+	\subsection{\getIDTitle{#1}}\label{desc:#1}%
+}
+
 %macro per stampare (e linkare, tranne il titolo) informazioni del req.
 %usage: \reqGet..{reqkey}
 \newcommand\getID[1]{\ref{id:#1}}
@@ -445,7 +449,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ATTIVITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ATTIVITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcounter{counterAT}
@@ -472,10 +476,36 @@
 }
 
 
-\newcommand\subsectionDA[1]{
-	\subsection{\getIDTitle{#1}}\label{desc:#1}%
-}
 			
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ATTIVITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcounter{counterSEQ}
+
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterSEQ}{
+\setcounter{counterSEQ}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\sequenzaSep}{.} 
+\newcommand{\displaySEQ}[1]{\texttt{#1}}
+\newcommand{\sequenza}[2]{\displaySEQ{#1\sequenzaSep#2}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\newcommand{\formattaSEQ}{%    
+	\sequenza{SEQ}{\arabic{counterSEQ}}%
+}
+
+\newcommand{\newSequenza}[3]{%
+	\protect\stepcounter{counterSEQ}\newListItem{#1}{#2}{#3}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AMBIENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

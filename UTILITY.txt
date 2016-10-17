@@ -322,11 +322,14 @@ _____________________________________________________
 		set testo()
 	Recensione
 		-autore: utente
+		-prodotto: prodotto
 		-testo: string
 		-immagini: sttrings [anche 0]
 		----------------------------
 		get per ogni attributo
 		set testo()
+		commentaRecensione(testo, immagini)
+		aggiungiCommento(Commento)
 	Giudizio
 		-positivo: boolean
 		----------------------------
@@ -364,11 +367,6 @@ _____________________________________________________
 		----------------------------
 		get per ogni attributo
 		set testo
-	Immagine
-		-path: string
-		----------------------------
-		get per ogni attributo
-		set path
 
 )Gestione Comunicazioni
 	Ticket

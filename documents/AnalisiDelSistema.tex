@@ -15,61 +15,72 @@ I diagrammi di attività descrivono il comportamento nel tempo di un particolare
 \begin{center}
 	\begin{tabularx}{\textwidth}{ l X } 
 		\toprule
-			\formattaTitoloTab{ID} & \formattaTitoloTab{Caso d'uso di riferimento} \\
+		\formattaTitoloTab{ID} & \formattaTitoloTab{Caso d'uso di riferimento} \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
 		\newAttivita{da:login}{\formattaAT}{Login} & \getIDTitletodesc{cu:login} \\ 
 		\addlinespace[1em] 
-		\newAttivita{da:logout}{\formattaAT}{Logout} & \getIDTitletodesc{cu:login} \\ 
+		\newAttivita{da:logout}{\formattaAT}{Logout} & \getIDTitletodesc{cu:logout} \\ 
 		\addlinespace[1em] 
-		\newAttivita{da:iscrizione}{\formattaAT}{Iscrizione} & \getIDTitletodesc{cu:login} \\ 
+		\newAttivita{da:iscrizione}{\formattaAT}{Iscrizione} & \getIDTitletodesc{cu:iscrizionePortale} \\
+		 													 & \getIDTitletodesc{cu:iscrizioneSocial} \\
+															 & \getIDTitletodesc{cu:iscrizioneApprovazione} \\ 
 		\addlinespace[1em] 
-		\newAttivita{da:approvazione}{\formattaAT}{Approvazione iscrizione} & \getIDTitletodesc{cu:login} \\ 
+		\newAttivita{da:approvazione}{\formattaAT}{Approvazione iscrizione} & \getIDTitletodesc{cu:approvazioneIscrizione} \\ 
 		\addlinespace[1em]
-		\newAttivita{da:schedaprodotto}{\formattaAT}{Inserimento scheda prodotto} & \getIDTitletodesc{cu:login} \\
+		\newAttivita{da:schedaprodotto}{\formattaAT}{Inserimento scheda prodotto} & \getIDTitletodesc{cu:personalizzaVetrinaInsProd} \\
 		\addlinespace[1em]
-		\newAttivita{da:ricerche}{\formattaAT}{Ricerche} & \getIDTitletodesc{cu:login}\\
+		\newAttivita{da:ricerche}{\formattaAT}{Ricerche} & \getIDTitletodesc{cu:ricercaProdotto} \\
+														 & \getIDTitletodesc{cu:ricercaNotizia} \\
+														 & \getIDTitletodesc{cu:ricercaProfilo} \\
 		\addlinespace[1em]
-		\newAttivita{da:valrec}{\formattaAT}{Inserimento valutazione e recensione} & \getIDTitletodesc{cu:login}\\
+		\newAttivita{da:valrec}{\formattaAT}{Inserimento valutazione e recensione} & \getIDTitletodesc{cu:inserisciValutazioneProdotto} \\
+																				   & \getIDTitletodesc{cu:inserisciRecensioneProdotto}\\
+		\addlinespace[1em]
+		\newAttivita{da:oprec}{\formattaAT}{Operazioni recensione} & \getIDTitletodesc{cu:modificaRecensioneProdotto}\\
+																   & \getIDTitletodesc{cu:eliminaRecensioneProdotto}\\
+																   & \getIDTitletodesc{cu:commentoRecensione}\\
+																   & \getIDTitletodesc{cu:giudizioRecensione}\\ 
+																   & \getIDTitletodesc{cu:modificaGiudizioRecensione}\\ 
 		\bottomrule
 	\end{tabularx}
 \end{center}
 
-\subsectionDA{da:login}
+\linkedSubsection{da:login}
 \begin{center}
 			\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/login}
 \end{center}
 
-\subsectionDA{da:logout}
+\linkedSubsection{da:logout}
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/logout}
 \end{center}
 
-\subsectionDA{da:iscrizione}
+\linkedSubsection{da:iscrizione}
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/iscrizioni}
 \end{center}
 
-\subsectionDA{da:approvazione}
+\linkedSubsection{da:approvazione}
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/approvazioneIscrizione}
 \end{center}
 
-\subsectionDA{da:schedaprodotto}
+\linkedSubsection{da:schedaprodotto}
 \begin{center}
 	\includegraphics[width=0.5\textwidth]{assets/visualParadigm/attivita/schedaprodotto}
 \end{center}
 
-\subsectionDA{da:ricerche}
+\linkedSubsection{da:ricerche}
 \begin{center}
 	\includegraphics[width=0.95\textwidth]{assets/visualParadigm/attivita/ricerche}
 \end{center}
 
-\subsectionDA{da:valrec}
+\linkedSubsection{da:valrec}
 \begin{center}
 	\includegraphics[width=0.5\textwidth]{assets/visualParadigm/attivita/valutazioneRecensione}
 \end{center}
 
-\subsectionDA{da:valrec}
+\linkedSubsection{da:oprec}
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/mostraRecensioni}
 \end{center}
@@ -91,6 +102,82 @@ Un diagramma di sequenza è costituito da:
 	\item Gli oggetti
 	\item I messaggi attraverso cui essi interagiscono
 \end{itemize}
+Di seguito sono elencati i diagrammi di sequenza, non verranno riportati tutti i diagrammi di sequenza, ma solo quelli corrispondenti ai casi d'uso principali.
+\begin{itemize}
+	\item \newSequenza{seq:login}{\formattaSEQ}{Login}
+	\item \newSequenza{seq:logout}{\formattaSEQ}{Logout}
+	\item \newSequenza{seq:iscrizioneProduttore}{\formattaSEQ}{Iscrizione Produttore}
+	\item \newSequenza{seq:iscrizioneUtente}{\formattaSEQ}{Iscrizione Utente}
+	\item \newSequenza{seq:approvazioneIscrizione}{\formattaSEQ}{Approvazione iscrizione}
+	\item \newSequenza{seq:inserimentoSchedaProdotto}{\formattaSEQ}{Inserimento scheda prodotto}
+	\item \newSequenza{seq:inserimentoValutazione}{\formattaSEQ}{Inserimento valutazione}
+	\item \newSequenza{seq:inserimentoRecensione}{\formattaSEQ}{Inserimento recensione}
+	\item \newSequenza{seq:rimuoviRecensione}{\formattaSEQ}{Rimuovi recensione}
+	\item \newSequenza{seq:commentoRecensione}{\formattaSEQ}{Commento recensione}
+	\item \newSequenza{seq:giudicaRecensione}{\formattaSEQ}{Giudica recensione}
+	\item \newSequenza{seq:ricerca}{\formattaSEQ}{Ricerca}
+\end{itemize}
+
+\linkedSubsection{seq:login}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/login}
+\end{center}
+
+\linkedSubsection{seq:logout}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/logout}
+\end{center}
+
+\linkedSubsection{seq:iscrizioneProduttore}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/iscrizioneProduttore}
+\end{center}
+
+\linkedSubsection{seq:iscrizioneUtente}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/iscrizioneUtente}
+\end{center}
+
+\linkedSubsection{seq:approvazioneIscrizione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/approvazioneIscrizione}
+\end{center}
+
+\linkedSubsection{seq:inserimentoSchedaProdotto}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/inserimentoSchedaProdotto}
+\end{center}
+
+\linkedSubsection{seq:inserimentoValutazione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/inserimentoValutazione}
+\end{center}
+
+\linkedSubsection{seq:inserimentoRecensione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/inserimentoRecensione}
+\end{center}
+
+\linkedSubsection{seq:rimuoviRecensione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/rimuoviRecensione}
+\end{center}
+
+\linkedSubsection{seq:commentoRecensione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/commentoRecensione}
+\end{center}
+
+\linkedSubsection{seq:giudicaRecensione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/giudicaRecensione}
+\end{center}
+
+\linkedSubsection{seq:ricerca}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/sequenza/ricerca}
+\end{center}
+
 
 \begin{comment}
 -	CU.A.1 - Login
