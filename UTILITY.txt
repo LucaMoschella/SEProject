@@ -336,13 +336,14 @@ _____________________________________________________
 		get per ogni attributo
 		setGiudizio()
 	Scheda Prodotto
+		COSTRUTTORE: nome, descrizione. immagini, marca, categoria, consistenza particolarità, ingredienti {già usato in: seq inserisci scheda,le richieste creano direttamente daa qui le schede provvisorie}
 		-id: int
 		-Nome: string
 		-Descrizione: string
 		-Immagini: string[]
 		-Marca: string
-		-Categoria enum( Cioccolato, Dolce al cioccolato)
-		-Consistenza enum(Solida, Liquida, Spalmabile)
+		-Categoria enum( Cioccolato, Dolce al cioccolato) (enum da creare vedi TODO)
+		-Consistenza enum(Solida, Liquida, Spalmabile) (enum da creare vedi TODO)
 		-Particolarità: List<String>
 		-Ingredienti: List<String>
 		-Valutazioni: List<valore>
@@ -414,9 +415,11 @@ _____________________________________________________
 		-cognome: String
 		-nascita: data
 		-nickname: String
+		-follower, followed, account, immagine
 		----------------------------
 		get per ogni attributo
 		set per ogni attributo tranne id
+		-aggiungi rimuovi followed
 
 	Profilo Produttore
 		----------------------------
@@ -426,13 +429,15 @@ _____________________________________________________
 		-id: int
 		-prodotto: SchedaProdotti[]
 		-Descrizione: String
+		-immagine
 		----------------------------
 		aggiungiProdotto(scheda)
 		rimuoviProdotto(scheda)
+		+aggiungiSchedaProdotto(prodotto : Scheda Prodotto) : boolean
+		+rimuoviSchedaProdotto(prodotto : Scheda Prodotto) : boolean
+		creaSchedaProdotto
 		inserisciProdotto(nome, descrizione. immagini, marca, categoria, consistenza particolarità, ingredienti )
-		checkDati(nome, descrizione. immagini, marca, categoria, consistenza particolarità, ingredienti )
-		get per ogni attributo
-		set per ogni attributo tranne id
+		checkDati(scheda)
 
 )Gestione Autenticazione
 	Gestione accessi

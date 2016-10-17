@@ -26,7 +26,12 @@ Todo:
 
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
-) Togliere classe immagine
+
+Classi DA AGGIUNGERE :  !!!!!! IMPORTAMTE, GIà AGGIUNTO NELLA CLASSE VETRINA
+(scritto così)
+
+) Categoria Prodotto
+) Consistenza Prodotto
 
 Next:
 
