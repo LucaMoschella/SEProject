@@ -489,10 +489,17 @@ _____________________________________________________
 		-Richiesta iscrzione( username, email, richiesta)
 
 ) Gestione sistema
-	Utility
+	Ricerca
 
 		-----
 		Ricerca(testo, tipoRicerca)
-		RicercaProdotto(testo)
-		RicercaProfilo(testo)
-		RicercaNotizia(testo)
+
+	TipoRicerca
+		PRODOTTO, NOTIZIA, PROFILO
+
+) Gestione anteprime
+	Anteprima
+	Anteprima Prodotto
+	Anteprima Notizia
+	Anteprima Profilo
+	Anteprima Profilo Produttore
