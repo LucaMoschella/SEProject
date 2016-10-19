@@ -86,8 +86,23 @@ I diagrammi di attività descrivono il comportamento nel tempo di un particolare
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/mostraRecensioni}
 \end{center}
 
+% \ul{testoSottolineato}
+% \setulcolor{orange}
+% \setul{depth}{thickness} 
+%
+%es.\setul{1ex}{0.8ex}
+%\definecolor{orange}{rgb}{1,0.5,0}
+%\setulcolor{orange}}
+
+
 \section{Analisi nomi verbi} 
-\jsognrepu In questo documento verrà descritto nel dettaglio il sistema nel suo complesso, in modo più approfondito rispetto al \docref{cha:documento_di_visione}.
+In questa sezione verrà effettuala l'analisi nomi/verbi della \docref{cha:specifica_sistema}.
+Si utilizzeranno le seguenti convenzioni:
+\begin{itemize}
+	\item Una \ulR{sottolineatura rossa} indica una canditata classe
+	\item Una \ulG{sottolineatura verde} indica un canditato attributo
+	\item Una \ulB{sottolineatura blu} indica una canditata operazione
+\end{itemize}
 
 \subsection{Analisi della specifica del sistema} 
 Il portale che si vuole realizzare interagirà con diverse \grupporuolo{figure pubbliche}, che si distinguono tra autenticate e non autenticate. Fra le \grupporuolo{figure pubbliche autenticate} troviamo gli \ruolo{utenti} e i \ruolo{produttori}, mentre i \ruolo{visitatori} sono l'unica \grupporuolo{figura pubblica non autenticata}.
@@ -96,49 +111,50 @@ Le diverse figure presenti si distinguono a seconda di quali funzionalità posso
 
 \bigskip
 \noindent
-Nel sistema sono presente diversi \emph{tipi di account}.
-Ogni \emph{account} presente nel sistema possiede almeno un tipo e, a seconda dei tipi che possiede, gli vengono associati determinati privilegi, che gli permettono l'accesso alle funzionalità che ogni privilegio fornisce. In questo modo un singolo account può ricoprire più ruoli, è ad esempio possibile che un utente sia anche un redattore anche se quest'ultimo di base non è un utente.
 
-I \ruolo{visitatori} possono effettuare l'iscrizione, diversa a seconda della tipologia di account che si vuole creare, e l'autenticazione. La creazione di un account \ruolo{utente} può essere effettuata tramite l'integrazione con Facebook.
+Nel sistema sono presente diversi \ulR{tipi di account}.
+Ogni \ulR{account} presente nel sistema possiede almeno un \ulG{tipo} e, a seconda dei tipi che possiede, gli vengono associati determinati \ulR{privilegi}, che gli permettono l'accesso alle funzionalità che ogni privilegio fornisce. In questo modo un singolo account può ricoprire più ruoli, è ad esempio possibile che un utente sia anche un redattore anche se quest'ultimo di base non è un utente.
 
-Gli \ruolo{utenti} possono valutare oppure effettuare una recensione di un prodotto, la quale aggiunge una descrizione con eventuali immagini alla valutazione. Una volta inserita una recensione o una valutazione è possibile modificarla, oppure è possibile eliminare la propria recensione. 
-Per permettere di visualizzare velocemente le recensioni più utili, gli \ruolo{utenti} possono dare un giudizio positivo oppure negativo alle recensioni presenti. Hanno inoltre la possibilità di commentare le recensioni, per permettere una maggiore interazione fra gli \ruolo{utenti}.
-Per facilitare l'inserimento di informazioni nel portale sono state inoltre pensate due particolari funzionalità: l'\ruolo{utente} può suggerire un prodotto mancante ad un \ruolo{produttore} iscritto, e tale \ruolo{produttore} potrà scegliere se accettare o rifiutare la richiesta di inserimento, eventualmente modificando le informazioni inserite dall'\ruolo{utente}; inoltre l'\ruolo{utente} potrà suggerire al sistema un prodotto mancante di un \ruolo{produttore} esterno non ancora iscritto al portale.
+I \ruolo{visitatori} possono \ulB{effettuare l'iscrizione}, diversa a seconda della tipologia di account che si vuole \ulB{creare}, e \ulB{l'autenticazione}. La creazione di un \ulR{account} \ruolo{utente} può essere effettuata tramite l'integrazione con Facebook.
 
-I \ruolo{produttori} hanno a disposizione uno spazio per pubblicizzare i loro prodotti, che da questo momento in avanti chiameremo \emph{vetrina}. Essi potranno personalizzare la loro vetrina, inserendo una descrizione e un immagine. Potranno inserire prodotti o modificare quelli già inseriti. L'inserimento di prodotti seguirà una rigida procedura per garantire la consistenza dei dati e facilitare la ricerca dei prodotti. Potranno inoltre commentare le recensioni dei prodotti.
+Gli \ruolo{utenti} possono \ulB{valutare oppure effettuare una recensione} di un \ulR{prodotto}, la quale aggiunge una \ulG{descrizione} con eventuali \ulG{immagini} alla \ulR{valutazione}. Una volta \ulB{inserita} una \ulR{recensione} o una \ulR{valutazione} è possibile \ulB{modificarla}, oppure è possibile \ulB{eliminare} la propria \ulR{recensione}. 
+Per permettere di \ulB{visualizzare} velocemente le \ulR{recensioni} più utili, gli \ruolo{utenti} possono \ulB{dare} un \ulR{giudizio} \ulG{positivo} oppure \ulG{negativo} alle \ulR{recensioni} presenti. Hanno inoltre la possibilità di \ulB{commentare} le \ulR{recensioni}, per permettere una maggiore interazione fra gli \ruolo{utenti}.
+Per facilitare l'inserimento di informazioni nel portale sono state inoltre pensate due particolari funzionalità: l'\ruolo{utente} può \ulB{suggerire un prodotto mancante ad un produttore iscritto}, e tale \ruolo{produttore} potrà scegliere se \ulB{accettare o rifiutare} la \ulR{richiesta di inserimento}, eventualmente modificando le \ulG{informazioni} inserite dall'\ruolo{utente}; inoltre l'\ruolo{utente} potrà \ulB{suggerire al sistema un prodotto mancante di un produttore esterno non ancora iscritto} al portale.
+
+I \ruolo{produttori} hanno a disposizione uno spazio per pubblicizzare i loro prodotti, che da questo momento in avanti chiameremo \ulR{vetrina}. Essi potranno \ulB{personalizzare} la loro \ulR{vetrina}, \ulB{inserendo} una \ulG{descrizione} e un \ulG{immagine}. Potranno \ulB{inserire prodotti o modificare quelli già inseriti}. L'inserimento di prodotti seguirà una rigida procedura per garantire la consistenza dei dati e facilitare la \ulB{ricerca dei prodotti}. Potranno inoltre \ulB{commentare le recensioni} dei prodotti.
 
 \bigskip
-Le \grupporuolo{figure pubbliche autenticate} possono usufruire del sistema di follower/followed, possono quindi seguire altri account per ricevere aggiornamenti da essi, rimuovere account che si stanno seguendo oppure visualizzare gli aggiornamenti dagli account seguiti. Possono inoltre segnalare recensioni/commenti con contenuti non appropriati e aprire tickets per richiedere assistenza.
+Le \grupporuolo{figure pubbliche autenticate} possono usufruire del sistema di \ulG{follower/followed}, possono quindi \ulB{seguire altri account} per \ulB{ricevere aggiornamenti} da essi, \ulB{rimuovere account} che si stanno seguendo oppure \ulB{visualizzare gli aggiornamenti dagli account seguiti}. Possono inoltre \ulB{segnalare recensioni/commenti con contenuti non appropriati} e \ulB{aprire} \ulR{ticket} per richiedere assistenza.
 
-I \ruolo{visitatori} e gli \ruolo{utenti} possono ricevere consigli sui prodotti o sulle notizie simili a quelli che stanno visualizzando. 
+I \ruolo{visitatori} e gli \ruolo{utenti} possono \ulB{ricevere consigli} sui prodotti o sulle notizie simili a quelli che stanno visualizzando. 
 
-Tutte le \grupporuolo{figure pubbliche} possono effettuare ricerche nel portale, in base a diversi criteri, di prodotti, di notizie e di profili pubblici.
-Esse possono inoltre gestire il proprio account, con la possibilità di visualizzare il profilo (pubblico), accedere alle impostazioni (private), effettuare il logout oppure rimuovere l'account. Da notare che l'eventuale rimozione dell'account non comporterà la rimozione dei contenuti inseriti nel portale, ma solo la rimozione dello stesso. Possono inoltre visualizzare i contenuti pubblici del portale, quali le vetrine dei produttori, con eventuali statistiche, i singoli prodotti con le recensioni associate, i profili pubblici altrui con le statistiche associate a quell'account e le notizie presenti nel portale.
+Tutte le \grupporuolo{figure pubbliche} possono \ulB{effettuare ricerche} nel portale, in base a diversi criteri, di \ulR{prodotti}, di \ulR{notizie} e di \ulR{profili pubblici}.
+Esse possono inoltre \ulB{gestire il proprio account}, con la possibilità di \ulB{visualizzare il profilo} (pubblico), \ulB{accedere alle impostazioni} (private), effettuare il \ulB{logout} oppure \ulB{rimuovere l'account}. Da notare che l'eventuale \ulB{rimozione dell'account} non comporterà la rimozione dei contenuti inseriti nel portale, ma solo la rimozione dello stesso. Possono inoltre \ulB{visualizzare} i \ulR{contenuti} pubblici del portale, quali le \ulR{vetrine} dei produttori, i singoli \ulR{prodotti} con le \ulR{recensioni} associate, i \ulR{profili pubblici} e le \ulR{notizie} presenti nel portale.
 
 \bigskip
 \noindent
 Segue una descrizione delle funzionalità specifiche delle \grupporuolo{figure amministrative}.
 
-I \ruolo{redattori} possono aggiungere, modificare o rimuovere notizie provenienti dal mondo dolciario.
+I \ruolo{redattori} possono \ulB{aggiungere}, \ulB{modificare} o \ulB{rimuovere} \ulR{notizie} provenienti dal mondo dolciario.
 
-Gli \ruolo{assistenti} possono rispondere ai tickets per risolvere i problemi degli \ruolo{utenti}. Hanno inoltre il compito di gestire le iscrizioni dei produttori effettuate direttamente nel portale, controllando la veridicità delle informazioni inserite, ed in caso creare l'account richiesto.
+Gli \ruolo{assistenti} possono \ulB{rispondere} ai \ulR{ticket} per risolvere i problemi degli \ruolo{utenti}. Hanno inoltre il compito di \ulB{gestire le iscrizioni} dei produttori effettuate direttamente nel portale, controllando la veridicità delle informazioni inserite, ed in caso \ulB{creare l'account} richiesto.
 
-I \ruolo{moderatori} possono eliminare contenuti non appropriati presenti nel sistema, che possono essere segnalati dalle \grupporuolo{figure pubbliche autenticate}.
+I \ruolo{moderatori} possono \ulB{eliminare contenuti non appropriati} presenti nel sistema, che possono essere \ulB{segnalati} dalle \grupporuolo{figure pubbliche autenticate}.
 
-Gli \ruolo{amministratori} possono accedere al pannello di controllo del \gls{cms}, attraverso il quale possono configurare il portale in ogni suo aspetto. Può inoltre gestire gli account, creandone di nuovi, modificando i privilegi o rimuovendo quelli già presenti. 
+Gli \ruolo{amministratori} possono accedere al pannello di controllo del \gls{cms}, attraverso il quale possono configurare il portale in ogni suo aspetto. Può inoltre gestire gli account, \ulB{creandone di nuovi, modificando i privilegi o rimuovendo} quelli già presenti. 
 
 \bigskip
 \noindent
-Nel portale che si vuole realizzare le informazioni sui prodotti sono di fondamentale importanza, perciò elenchiamo di seguito quelle contenute nel sistema:
+Nel portale che si vuole realizzare le informazioni sui \ulR{prodotti} sono di fondamentale importanza, perciò elenchiamo di seguito quelle contenute nel sistema:
 \begin{itemize}
-	\item \infoProdotto{Nome prodotto.}
-	\item \infoProdotto{Descrizione di presentazione.}
-	\item \infoProdotto{Almeno un'immagine del prodotto.}
-	\item \infoProdotto{Marca.}
-	\item \infoProdotto{Categoria.}
-	\item \infoProdotto{Consistenza.}
-	\item \infoProdotto{Particolarità.}
-	\item \infoProdotto{Ingredienti.}
+	\item \infoProdotto{\ulG{Nome prodotto.}}
+	\item \infoProdotto{\ulG{Descrizione di presentazione.}}
+	\item \infoProdotto{\ulG{Almeno un'immagine del prodotto.}}
+	\item \infoProdotto{\ulG{Marca.}}
+	\item \infoProdotto{\ulG{Categoria.}}
+	\item \infoProdotto{\ulG{Consistenza.}}
+	\item \infoProdotto{\ulG{Particolarità.}}
+	\item \infoProdotto{\ulG{Ingredienti.}}
 \end{itemize}
 L'inserimento di queste informazioni è compito del \ruolo{produttore}, il quale seguirà una rigida procedura che sarà descritta nel dettaglio durante la specifica delle funzionalità.
 
@@ -650,26 +666,14 @@ Di seguito sono elencati i diagrammi di sequenza, non verranno riportati tutti i
 \end{center}
 
 
-\begin{comment}
--	CU.A.1 - Login
--	CU.A.3 - Logout
--	CU.B.1 - Iscrizione tramite modulo
--	CU.B.2 - Iscrizione tramite Social Network
--	CU.B.3 - Iscrizione tramite approvazione
--	CU.B.4 - Approvazione iscrizione
--	CU.C.5 - Inserimento scheda prodotto
-
-	CU.G.1 - Inserimento valutazione
-	CU.H.1 - Inserimento recensione
-	CU.H.4 - Commento a recensione
-	CU.H.5 - Giudizio recensione
-
--	CU.K.1 - Ricerca prodotto
--	CU.K.2 - Ricerca profilo
--	CU.K.3 - Ricerca notizia
--	CU.M.1 - Mostra vetrina
--	CU.M.2 - Mostra scheda prodotto
--	CU.M.4 - Mostra recensione
--	CU.M.5 - Mostra profilo pubblico
--	CU.M.6 - Mostra notizia
-\end{comment}
+\newdate{analisiuno}{19}{10}{2016}
+\section{Revisioni}
+\begin{center}
+    \begin{tabular}{lll}
+        \toprule
+        	\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+        	1.0 & \displaydate{analisiuno} & Prima versione \\
+        \bottomrule
+    \end{tabular}
+\end{center}
