@@ -85,15 +85,70 @@ I diagrammi di attività descrivono il comportamento nel tempo di un particolare
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/mostraRecensioni}
 \end{center}
 
+\begin{landscape}
 \section{Diagramma dei package}
 Il diagramma dei package sono diagrammi di struttura che descrive i package del sistema e le relazioni tra essi.
 Un Package è uno spazio dei nomi utilizzato per raggruppare elementi che sono in relazione semantica tra loro.
+\begin{center}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/package/DiagrammaPacakage}
+\end{center}
+\end{landscape}
 
 \section{Diagrammi delle classi}
 I diagrammi delle classi servono a modellare la relazione tra le entità del sistema, rappresentate come classi.
 Una classe è composta da delle caratteristiche che la descrivono (attributi) e delle elaborazioni che vengono eseguite (metodi). 
 Le classi servono ad identificare chi fa che cosa e come all’interno del sistema. Queste possono avere relazioni tra loro, le quali sono rappresentate con le associazioni. La cardinalità di un’associazione esprime il numero di oggetti di una certa classe che prendono parte all’associazione.
 È inoltre possibile associare una nota ad una classe per descrivere il modello che la classe definisce.
+Di seguito sono elencati i diagrammi di sequenza, non verranno riportati tutti i diagrammi di sequenza, ma solo quelli corrispondenti ai casi d'uso principali.
+\begin{itemize}
+	\item \newPKG{pkg:GestioneAnteprime}{\formattaPKG}{Gestione anteprima}
+	\item \newPKG{pkg:GestioneAutenticazione}{\formattaPKG}{Gestione autenticazione}
+	\item \newPKG{pkg:GestioneIscritti}{\formattaPKG}{Gestione iscritti}
+	\item \newPKG{pkg:GestioneTicket}{\formattaPKG}{Gestione ticket}
+	\item \newPKG{pkg:GestioneProfilo}{\formattaPKG}{Gestione profilo}
+	\item \newPKG{pkg:GestioneContenuti}{\formattaPKG}{Gestione contenuti}
+	\item \newPKG{pkg:GestioneSistema}{\formattaPKG}{Gestione sistema}
+\end{itemize}
+
+\linkedSubsection{pkg:GestioneAnteprime}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneAnteprime}
+\end{center}
+
+\linkedSubsection{pkg:GestioneAutenticazione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneAutenticazione}
+\end{center}
+
+\linkedSubsection{pkg:GestioneIscritti}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneIscritti}
+\end{center}
+
+\linkedSubsection{pkg:GestioneTicket}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneTicket}
+\end{center}
+
+\begin{landscape}
+\linkedSubsection{pkg:GestioneProfilo}
+\begin{center}
+			\includegraphics[width=1.1\linewidth]{assets/visualParadigm/classi/GestioneProfilo}
+\end{center}
+\end{landscape}
+
+\begin{landscape}
+\linkedSubsection{pkg:GestioneContenuti}
+\begin{center}
+			\includegraphics[width=1.1\linewidth]{assets/visualParadigm/classi/GestioneContenuti}
+\end{center}
+\end{landscape}
+
+\linkedSubsection{pkg:GestioneSistema}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneSistema}
+\end{center}
+
 
 \section{Diagrammi di sequenza}
 I diagrammi di sequenza descrivono le interazioni tra gli oggetti organizzate in sequenza temporale. Ogni caso d’uso contiene al suo interno diversi diagrammi di sequenza. Rappresenteremo solo le sequenze principali.

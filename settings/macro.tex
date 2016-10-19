@@ -479,7 +479,7 @@
 			
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ATTIVITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SEQUENZE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -504,6 +504,34 @@
 
 \newcommand{\newSequenza}[3]{%
 	\protect\stepcounter{counterSEQ}\newListItem{#1}{#2}{#3}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CLASSI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcounter{counterPKG}
+
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterPKG}{
+\setcounter{counterPKG}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\pkgSep}{.} 
+\newcommand{\displayPKG}[1]{\texttt{#1}}
+\newcommand{\pkg}[2]{\displayPKG{#1\pkgSep#2}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\newcommand{\formattaPKG}{%    
+	\pkg{PKG}{\arabic{counterPKG}}%
+}
+
+\newcommand{\newPKG}[3]{%
+	\protect\stepcounter{counterPKG}\newListItem{#1}{#2}{#3}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -26,12 +26,7 @@ Todo:
 
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
-
-Classi DA AGGIUNGERE :  !!!!!! IMPORTAMTE, GIà AGGIUNTO NELLA CLASSE VETRINA
-(scritto così)
-
-) Categoria Prodotto
-) Consistenza Prodotto
+) RIEMPIRE ENUM PRIVILEGI!!!
 
 Next:
 
