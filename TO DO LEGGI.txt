@@ -26,9 +26,7 @@ Todo:
 
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
-) RIEMPIRE ENUM PRIVILEGI!!!
-) NOMI CLASSI NEL DIAGRAMMA PACKAGE
-) ANTEPRIMA IN CORSIVO
+) Mostra aggionamenti folower() IN Profilo
 
 Next:
 
