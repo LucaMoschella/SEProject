@@ -475,8 +475,61 @@
 	\protect\stepcounter{counterAT}\newListItem{#1}{#2}{#3}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CRC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{counterCRC}
 
-			
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterCRC}{
+\setcounter{counterCRC}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\crcSep}{.} 
+\newcommand{\displayCRC}[1]{\texttt{#1}}
+\newcommand{\crc}[2]{\displayCRC{#1\crcSep#2}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\newcommand{\formattaCRC}{%    
+	\protect\stepcounter{counterCRC}%
+	\crc{CRC}{\arabic{counterCRC}}%
+}
+
+\newcommand\getTitleLinked[1]{\ref{title:#1}}
+\newcommand\getSuperclassi[1]{\ref*{superclassi:#1}}
+\newcommand\getSottoclassi[1]{\ref*{sottoclassi:#1}}
+\newcommand\noClasse{-} 
+
+%Tabella per rischi
+%usage: {crckey}{prob}{effetto}{desc}{mitig}{monit}{manag}
+\newcommand{\crcTab}[3]{%
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection\label{desc:#1}
+			\begin{tabularx}{\textwidth}{ l  X }
+				\toprule
+					\multicolumn{2}{c}{\formattaTitoloTab{\getTitleLinked{#1}}}  \\
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+					\formattaCampiTab{Superclasse} & \getSuperclassi{#1} \\ 
+					\addlinespace[0.5em] 
+					\formattaCampiTab{Sottoclassi} & \getSottoclassi{#1} \\		
+					\addlinespace[0.5em]
+					\formattaCampiTab{Responsabilità} &  #2 \\
+					\addlinespace[0.5em]
+					\formattaCampiTab{Collaborazioni} &  #3 \\
+				\bottomrule
+			\end{tabularx}
+		\end{minipage}
+	\end{center}
+}
+
+
+%{key}{nome}{superclassi}{sottoclassi}
+\newcommand\newClassItem[4]{\hyperref[desc:#1]{\phantomsection\currentLabelText{#2}#2\label{title:#1}\currentLabelText{#3}\label{superclassi:#1}\currentLabelText{#4}\label{sottoclassi:#1}}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SEQUENZE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

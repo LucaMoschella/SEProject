@@ -503,3 +503,42 @@ _____________________________________________________
 	Anteprima Notizia
 	Anteprima Profilo
 	Anteprima Profilo Produttore
+
+
+
+**********************************************
+
+
+	Account
+	TipoAccount
+	Privilegi
+	Contenuto
+	Commento
+	Recensione
+	Giudizio
+	Scheda Prodotto
+	Valutazione
+	Notizia
+	ConsistenzaProdotto
+	CatgoriaProdotto
+	Ticket
+	RichiestaProduttore
+	RispostaTicket
+	RichiestaProdotto
+	GestioneSegnalazioni
+	SegnalazioneContenuto
+	Profilo
+	ProfiloProduttore
+	Vetrina
+	Gestione Connessi
+	Accesso Iscritto
+	Accesso Ospite
+	Utility
+	TipoRicerca
+	Antrpima
+	AnteprimaProdotto
+	AnteprimaProfilo
+	AnteprimaProfiloProduttore
+	AnteprimaNotizia
+
+	_________________

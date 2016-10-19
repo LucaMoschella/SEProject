@@ -9,6 +9,7 @@ Effettueremo la formalizzazione esclusivamente delle parti prinicpali del sistem
 	\item \nameref{cha:classi}
 	\item \nameref{cha:sequenza}
 \end{itemize}
+Per capire come strutturare le classi, le interazioni tra di esse e le operazioni che devono svolgere, utilizzeremo le carte \gls{crc}.
 
 \section{Diagrammi di attività} \label{cha:attivita}
 I diagrammi di attività descrivono il comportamento nel tempo di un particolare elemento. Con essi si modella l’interazione e la fusione dei flussi principali con i flussi alternativi dei casi d’uso. Questo viene fatto per rendere più visibili le varie ramificazioni che i flussi possono avere all’interno di un caso d’uso. Di seguito sono elencati i diagrammi di attività, non verranno riportati tutti i diagrammi, ma solo quelli corrispondenti ai casi d'uso principali.
@@ -84,6 +85,366 @@ I diagrammi di attività descrivono il comportamento nel tempo di un particolare
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/mostraRecensioni}
 \end{center}
+
+\section{Carte CRC}
+Le carte \gls{crc} sono uno strumento usato per impostare un progetto software object-oriented attraverso un processo di brainstorming.
+Ciascuna carta descrive una classe in modo sommario, indicando:
+\begin{itemize}
+	\item Il nome della classe
+ 	\item La sua superclassi
+ 	\item Le sue sottoclassi
+ 	\item Le sue responsabilità
+ 	\item Le sue collaborazioni
+\end{itemize}
+Dove le sue collaborazioni sono altre classi con cui essa collabora per svolgere i compiti di cui è responsabile
+Di seguito sono elencate le carte \gls{crc}:
+\begin{itemize}%{key}{nome}{superclassi}{sottoclassi}
+	\item \newClassItem{class:Account}{Account}{\noClasse}{\noClasse}
+	\item \newClassItem{class:TipoAccount}{Tipo Account}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Privilegi}{Privilegi}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Contenuto}{Contenuto}{\noClasse}{\getTitletodesc{class:Commento}, \getTitletodesc{class:Recensione}, \getTitletodesc{class:Giudizio}, \getTitletodesc{class:Scheda Prodotto}, \getTitletodesc{class:Valutazione}, \getTitletodesc{class:Notizia}}
+	\item \newClassItem{class:Commento}{Commento}{\getTitletodesc{class:Contenuto}}{\noClasse}
+	\item \newClassItem{class:Recensione}{Recensione}{\getTitletodesc{class:Contenuto}}{\noClasse}
+	\item \newClassItem{class:Giudizio}{Giudizio}{\getTitletodesc{class:Contenuto}}{\noClasse}
+	\item \newClassItem{class:Scheda Prodotto}{Scheda Prodotto}{\getTitletodesc{class:Contenuto}}{\noClasse}
+	\item \newClassItem{class:Valutazione}{Valutazione}{\getTitletodesc{class:Contenuto}}{\noClasse}
+	\item \newClassItem{class:Notizia}{Notizia}{\getTitletodesc{class:Contenuto}}{\noClasse}
+	\item \newClassItem{class:ConsistenzaProdotto}{Consistenza Prodotto}{\noClasse}{\noClasse}
+	\item \newClassItem{class:CategoriaProdotto}{Categoria Prodotto}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Ticket}{Ticket}{\noClasse}{\getTitletodesc{class:RichiestaProduttore}}
+	\item \newClassItem{class:RichiestaProduttore}{Richiesta Produttore}{\getTitletodesc{class:Ticket}}{\noClasse}
+	\item \newClassItem{class:RispostaTicket}{Risposta Ticket}{\noClasse}{\noClasse}
+	\item \newClassItem{class:RichiestaProdotto}{Richiesta Prodotto}{\noClasse}{\noClasse}
+	\item \newClassItem{class:GestioneSegnalazioni}{Gestione Segnalazioni}{\noClasse}{\noClasse}
+	\item \newClassItem{class:SegnalazioneContenuto}{Segnalazione Contenuto}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Profilo}{Profilo}{\noClasse}{\getTitletodesc{class:ProfiloProduttore}}
+	\item \newClassItem{class:ProfiloProduttore}{Profilo Produttore}{\getTitletodesc{class:Profilo}}{\noClasse}
+	\item \newClassItem{class:Vetrina}{Vetrina}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Gestione Accessi}{Gestione Accessi}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Accesso Iscritto}{Accesso Iscritto}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Accesso Ospite}{Accesso Ospite}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Utility}{Utility}{\noClasse}{\noClasse}
+	\item \newClassItem{class:TipoRicerca}{Tipo Ricerca}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Anteprima}{Anteprima}{\noClasse}{\getTitletodesc{class:AnteprimaProdotto}, \getTitletodesc{class:AnteprimaProfilo}, \getTitletodesc{class:AnteprimaNotizia}}
+	\item \newClassItem{class:AnteprimaProdotto}{Anteprima Prodotto}{\getTitletodesc{class:Anteprima}}{\noClasse}
+	\item \newClassItem{class:AnteprimaProfilo}{Anteprima Profilo}{\getTitletodesc{class:Anteprima}}{\getTitletodesc{class:AnteprimaProfiloProduttore}}
+	\item \newClassItem{class:AnteprimaProfiloProduttore}{Anteprima Profilo Produttore}{\getTitletodesc{class:AnteprimaProfilo}}{\noClasse}
+	\item \newClassItem{class:AnteprimaNotizia}{Anteprima Notizia}{\getTitletodesc{class:Anteprima}}{\noClasse}
+\end{itemize}
+
+\crcTab{class:Account}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni account
+\end{itemWork}}
+{\begin{itemWork}
+	\item Gestione Accessi, Segnalazione Contenuto, Ticket, Risposta Ticket, Profilo, Contenuto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:TipoAccount}
+{\begin{itemWork}
+	\item Enumerazione delle possibili tipologie di account presenti nel sistema
+\end{itemWork}}
+{\begin{itemWork}
+	\item Account, Privilegi
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Privilegi}
+{\begin{itemWork}
+	\item Enumerazione dei possibili privilegi, per avere accesso alle diverse funzionalità, che un account può avere
+\end{itemWork}}
+{\begin{itemWork}
+	\item Tipo account
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Contenuto}
+{\begin{itemWork}
+	\item Generalizzazione dei vari tipi di contenuti presenti nel sistema
+\end{itemWork}}
+{\begin{itemWork}
+	\item Segnalazione Contenuto, Account
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Commento}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per commentare una recensione
+\end{itemWork}}
+{\begin{itemWork}
+	\item Recensione
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Recensione}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per recensire una scheda di un prodotto
+	\item Possibilità di effettuare un commento
+	\item Possibilità di effettuare un giudizio
+\end{itemWork}}
+{\begin{itemWork}
+	\item Commento, Giudizio, Scheda Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Giudizio}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per giudicare una recensione
+\end{itemWork}}
+{\begin{itemWork}
+	\item Recensione
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Scheda Prodotto}
+{\begin{itemWork}
+	\item Memorizzazione di tutte le informazioni relative al prodotto
+	\item Possibilità di effettuare una recensione
+	\item Possibilità di effettuare una valutazione
+\end{itemWork}}
+{\begin{itemWork}
+	\item Recensione, Valutazione, Consistenza prodotto, Categoria prodotto, Richiesta produttore, Richiesta prodotto, Vetrina, Anteprima prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Valutazione}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per valutare una scheda prodotto
+\end{itemWork}}
+{\begin{itemWork}
+	\item Scheda Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Notizia}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per l'inserimento di una notizia
+\end{itemWork}}
+{\begin{itemWork}
+	\item AnteprimaNotizia
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:ConsistenzaProdotto}
+{\begin{itemWork}
+	\item Enumerazione delle possibili consistenze di un prodotto
+\end{itemWork}}
+{\begin{itemWork}
+	\item Scheda Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:CategoriaProdotto}
+{\begin{itemWork}
+	\item Enumerazione delle possibili categorie di un prodotto
+\end{itemWork}}
+{\begin{itemWork}
+	\item Scheda Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Ticket}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per la creazione di un ticket
+\end{itemWork}}
+{\begin{itemWork}
+	\item Risposta Ticket, Account
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:RichiestaProduttore}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di inserimento di un produttore mancante
+\end{itemWork}}
+{\begin{itemWork}
+	\item Scheda Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+
+\crcTab{class:RispostaTicket}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per rispondere ad un ticket aperto
+\end{itemWork}}
+{\begin{itemWork}
+	\item Ticket, Account
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:RichiestaProdotto}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di inserimento di un prodotto mancante
+\end{itemWork}}
+{\begin{itemWork}
+	\item Scheda Prodotto, Profilo Produttore
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:GestioneSegnalazioni}
+{\begin{itemWork}
+	\item Singleton necessario per raccogliere tutte le segnalazioni di contenuti presenti nel sistema
+\end{itemWork}}
+{\begin{itemWork}
+	\item Segnalazione contenuto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:SegnalazioneContenuto}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per la creazione di una segnalazione di un contenuto
+\end{itemWork}}
+{\begin{itemWork}
+	\item Gestione Segnalazioni, Account, Contenuto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Profilo}
+{\begin{itemWork}
+	\item Memorizzazione di tutte le informazioni del profilo
+	\item Memorizzazione della lista dei follower/followed del profilo
+\end{itemWork}}
+{\begin{itemWork}
+	\item Account, AnteprimaProfilo
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:ProfiloProduttore}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni relative ad un profilo produttore
+	\item Possibilità di visualizzare la vetrina associata
+\end{itemWork}}
+{\begin{itemWork}
+	\item Richiesta Prodotto, Scheda Prodotto, Vetrina
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Vetrina}
+{\begin{itemWork}
+    \item Memorizzazione delle informazioni e dei prodotti presenti nella vetrina di un dato produttore
+	\item Possibilità di inserire prodotti
+\end{itemWork}}
+{\begin{itemWork}
+	\item Profilo Produttore, Anteprima Profilo Produttore, Scheda Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:Gestione Accessi}
+{\begin{itemWork}
+	\item Singleton necessario per raccogliere le informazioni relative agli accessi degli iscritti e dei visitatori
+\end{itemWork}}
+{\begin{itemWork}
+	\item Account, Accesso Iscritto, Accesso Ospite
+\end{itemWork}}
+
+\vspaceTab
+
+
+\crcTab{class:Accesso Iscritto}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni relative ad un accesso di un iscritto
+\end{itemWork}}
+{-}
+
+
+\vspaceTab
+
+\crcTab{class:Accesso Ospite}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni relative ad un accesso di un ospite
+\end{itemWork}}
+{-}
+
+\vspaceTab
+
+\crcTab{class:Utility}
+{\begin{itemWork}
+	\item Classe necessaria per raccogliere metodi statici utili al sistema
+	\item Gestione ricerca
+\end{itemWork}}
+{-}
+
+\vspaceTab
+
+\crcTab{class:TipoRicerca}
+{\begin{itemWork}
+	\item Enumerazione delle tipologie di ricerca presenti nel sistema
+\end{itemWork}}
+{-}
+
+\vspaceTab
+
+\crcTab{class:Anteprima}
+{\begin{itemWork}
+	\item Generalizzazione delle possibili anteprime dei contenuti presenti nel sistema
+\end{itemWork}}
+{-}
+
+\vspaceTab
+
+\crcTab{class:AnteprimaProdotto}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di un dato prodotto
+	\item Possibilità di mostrare l'anteprima del prodotto associato
+\end{itemWork}}
+{\begin{itemWork}
+	\item Prodotto
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:AnteprimaProfilo}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di un dato profilo
+	\item Possibilità di mostrare l'anteprima del profilo associato
+\end{itemWork}}
+{\begin{itemWork}
+	\item Profilo
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:AnteprimaProfiloProduttore}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di un dato profilo produttore
+	\item Possibilità di mostrare l'anteprima del profilo associato, che comprenderà la possibilità di andare sia al profilo del produtture che alla vetrina dello stesso
+\end{itemWork}}
+{\begin{itemWork}
+	\item Vetrina
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:AnteprimaNotizia}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di una data notizia
+	\item Possibilità di mostrare l'anteprima della notizia associata
+\end{itemWork}}
+{\begin{itemWork}
+	\item Notizia
+\end{itemWork}}
+
 
 \begin{landscape}
 \section{Diagramma dei package}  \label{cha:package}
