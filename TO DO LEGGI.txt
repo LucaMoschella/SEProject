@@ -27,6 +27,7 @@ Todo:
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
 ) Mostra aggionamenti folower() IN Profilo
+) "Giudizio inserito" invece di "Commento inserito" nel diagramma
 
 Next:
 
