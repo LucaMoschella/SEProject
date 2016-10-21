@@ -196,7 +196,8 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item \newClassItem{class:Gestione Accessi}{Gestione Accessi}{\noClasse}{\noClasse}
 	\item \newClassItem{class:Accesso Iscritto}{Accesso Iscritto}{\noClasse}{\noClasse}
 	\item \newClassItem{class:Accesso Ospite}{Accesso Ospite}{\noClasse}{\noClasse}
-	\item \newClassItem{class:Utility}{Utility}{\noClasse}{\noClasse}
+	\item \newClassItem{class:Utility}{Utility}{\noClasse}{\getTitletodesc{class:Ricerca}}
+	\item \newClassItem{class:Ricerca}{Ricerca}{\getTitletodesc{class:Utility}}{\noClasse}
 	\item \newClassItem{class:TipoRicerca}{Tipo Ricerca}{\noClasse}{\noClasse}
 	\item \newClassItem{class:Anteprima}{Anteprima}{\noClasse}{\getTitletodesc{class:AnteprimaProdotto}, \getTitletodesc{class:AnteprimaProfilo}, \getTitletodesc{class:AnteprimaNotizia}}
 	\item \newClassItem{class:AnteprimaProdotto}{Anteprima Prodotto}{\getTitletodesc{class:Anteprima}}{\noClasse}
@@ -210,7 +211,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni account
 \end{itemWork}}
 {\begin{itemWork}
-	\item Gestione Accessi, Segnalazione Contenuto, Ticket, Risposta Ticket, Profilo, Contenuto
+	\item Tipo account, Profilo
 \end{itemWork}}
 
 \vspaceTab
@@ -218,9 +219,10 @@ Di seguito sono elencate le carte \gls{crc}:
 \crcTab{class:TipoAccount}
 {\begin{itemWork}
 	\item Enumerazione delle possibili tipologie di account presenti nel sistema
+	\item Possibilità di ottenere i privilegi disponibili dati i tipi posseduti
 \end{itemWork}}
 {\begin{itemWork}
-	\item Account, Privilegi
+	\item Privilegi
 \end{itemWork}}
 
 \vspaceTab
@@ -229,18 +231,17 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Enumerazione dei possibili privilegi, per avere accesso alle diverse funzionalità, che un account può avere
 \end{itemWork}}
-{\begin{itemWork}
-	\item Tipo account
-\end{itemWork}}
+{-}
 
 \vspaceTab
 
 \crcTab{class:Contenuto}
 {\begin{itemWork}
 	\item Generalizzazione dei vari tipi di contenuti presenti nel sistema
+	\item Memorizzazione dell'autore del contenuto
 \end{itemWork}}
 {\begin{itemWork}
-	\item Segnalazione Contenuto, Account
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -250,7 +251,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per commentare una recensione
 \end{itemWork}}
 {\begin{itemWork}
-	\item Recensione
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -262,7 +263,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Possibilità di effettuare un giudizio
 \end{itemWork}}
 {\begin{itemWork}
-	\item Commento, Giudizio, Scheda Prodotto
+	\item Account, Commento, Giudizio
 \end{itemWork}}
 
 \vspaceTab
@@ -272,7 +273,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per giudicare una recensione
 \end{itemWork}}
 {\begin{itemWork}
-	\item Recensione
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -284,7 +285,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Possibilità di effettuare una valutazione
 \end{itemWork}}
 {\begin{itemWork}
-	\item Recensione, Valutazione, Consistenza prodotto, Categoria prodotto, Richiesta produttore, Richiesta prodotto, Vetrina, Anteprima prodotto
+	\item Recensione, Valutazione, Consistenza prodotto, Categoria prodotto
 \end{itemWork}}
 
 \vspaceTab
@@ -294,7 +295,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per valutare una scheda prodotto
 \end{itemWork}}
 {\begin{itemWork}
-	\item Scheda Prodotto
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -304,7 +305,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per l'inserimento di una notizia
 \end{itemWork}}
 {\begin{itemWork}
-	\item AnteprimaNotizia
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -313,9 +314,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Enumerazione delle possibili consistenze di un prodotto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Scheda Prodotto
-\end{itemWork}}
+{-}
 
 \vspaceTab
 
@@ -323,9 +322,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Enumerazione delle possibili categorie di un prodotto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Scheda Prodotto
-\end{itemWork}}
+{-}
 
 \vspaceTab
 
@@ -334,7 +331,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per la creazione di un ticket
 \end{itemWork}}
 {\begin{itemWork}
-	\item Risposta Ticket, Account
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -344,7 +341,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di inserimento di un produttore mancante
 \end{itemWork}}
 {\begin{itemWork}
-	\item Scheda Prodotto
+	\item Account, Scheda Prodotto
 \end{itemWork}}
 
 \vspaceTab
@@ -365,7 +362,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di inserimento di un prodotto mancante
 \end{itemWork}}
 {\begin{itemWork}
-	\item Scheda Prodotto, Profilo Produttore
+	\item Account, Scheda Prodotto, Profilo Produttore
 \end{itemWork}}
 
 \vspaceTab
@@ -385,7 +382,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per la creazione di una segnalazione di un contenuto
 \end{itemWork}}
 {\begin{itemWork}
-	\item Gestione Segnalazioni, Account, Contenuto
+	\item Account, Contenuto
 \end{itemWork}}
 
 \vspaceTab
@@ -396,7 +393,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione della lista dei follower/followed del profilo
 \end{itemWork}}
 {\begin{itemWork}
-	\item Account, AnteprimaProfilo
+	\item Account
 \end{itemWork}}
 
 \vspaceTab
@@ -405,9 +402,10 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni relative ad un profilo produttore
 	\item Possibilità di visualizzare la vetrina associata
+	\item Possibilità di visualizzare le richieste prodotto a lui indirizzate
 \end{itemWork}}
 {\begin{itemWork}
-	\item Richiesta Prodotto, Scheda Prodotto, Vetrina
+	\item Richiesta Prodotto, Vetrina
 \end{itemWork}}
 
 \vspaceTab
@@ -415,10 +413,10 @@ Di seguito sono elencate le carte \gls{crc}:
 \crcTab{class:Vetrina}
 {\begin{itemWork}
     \item Memorizzazione delle informazioni e dei prodotti presenti nella vetrina di un dato produttore
-	\item Possibilità di inserire prodotti
+	\item Possibilità di gestire prodotti
 \end{itemWork}}
 {\begin{itemWork}
-	\item Profilo Produttore, Anteprima Profilo Produttore, Scheda Prodotto
+	\item Profilo Produttore, Scheda Prodotto
 \end{itemWork}}
 
 \vspaceTab
@@ -428,7 +426,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Singleton necessario per raccogliere le informazioni relative agli accessi degli iscritti e dei visitatori
 \end{itemWork}}
 {\begin{itemWork}
-	\item Account, Accesso Iscritto, Accesso Ospite
+	\item Accesso Iscritto, Accesso Ospite
 \end{itemWork}}
 
 \vspaceTab
@@ -438,7 +436,9 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni relative ad un accesso di un iscritto
 \end{itemWork}}
-{-}
+{\begin{itemWork}
+	\item Account
+\end{itemWork}}
 
 
 \vspaceTab
@@ -454,9 +454,16 @@ Di seguito sono elencate le carte \gls{crc}:
 \crcTab{class:Utility}
 {\begin{itemWork}
 	\item Classe necessaria per raccogliere metodi statici utili al sistema
-	\item Gestione ricerca
 \end{itemWork}}
 {-}
+
+\vspaceTab
+
+\crcTab{class:Ricerca}
+{\begin{itemWork}
+	\item Gestione ricerca
+\end{itemWork}}
+{TipoRicerca}
 
 \vspaceTab
 
