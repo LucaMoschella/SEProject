@@ -27,18 +27,4 @@ Todo:
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
 ) Mostra aggionamenti folower() IN Profilo
-) "Giudizio inserito" invece di "Commento inserito" nel diagramma
-
-Next:
-
-) Analisi CRC: Class-Responsibilities-Collaborators
-) Analisi nomi verbi
-
-) Diagrammi attività 
-....Desrcrivono come funzonano i casi d'uso, e come interagiscono i flussi alternativi
-
-) Analisi Classi
-) Analisi Package
-
-) Diagrammi di sequenza - se il tempo ha importanza
-) DIagrammi di comunicazione - altrimenti
+) Fare screen package e classi
