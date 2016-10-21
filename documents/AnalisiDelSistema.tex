@@ -172,6 +172,8 @@ Ciascuna carta descrive una classe in modo sommario, indicando:
 Dove le sue collaborazioni sono altre classi con cui essa collabora per svolgere i compiti di cui è responsabile
 Di seguito sono elencate le carte \gls{crc}:
 \begin{itemize}%{key}{nome}{superclassi}{sottoclassi}
+	\item \newClassItem{class:GestioneIscritti}{Gestione iscritti}{\noClasse}{\noClasse}
+	\item \newClassItem{class:RichiestaIscrizione}{Richiesta Iscrizione}{\noClasse}{\noClasse}
 	\item \newClassItem{class:Account}{Account}{\noClasse}{\noClasse}
 	\item \newClassItem{class:TipoAccount}{Tipo Account}{\noClasse}{\noClasse}
 	\item \newClassItem{class:Privilegi}{Privilegi}{\noClasse}{\noClasse}
@@ -205,6 +207,27 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item \newClassItem{class:AnteprimaProfiloProduttore}{Anteprima Profilo Produttore}{\getTitletodesc{class:AnteprimaProfilo}}{\noClasse}
 	\item \newClassItem{class:AnteprimaNotizia}{Anteprima Notizia}{\getTitletodesc{class:Anteprima}}{\noClasse}
 \end{itemize}
+
+\crcTab{class:GestioneIscritti}
+{\begin{itemWork}
+	\item Signleton necessario per raccogliere tutte le informazioni riguardanti le iscrizioni
+	\item Possibilità di effettuare l'iscrizione
+\end{itemWork}}
+{\begin{itemWork}
+	\item Account
+\end{itemWork}}
+
+\vspaceTab
+
+\crcTab{class:RichiestaIscrizione}
+{\begin{itemWork}
+	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di iscrizione
+\end{itemWork}}
+{\begin{itemWork}
+	\item Account
+\end{itemWork}}
+
+\vspaceTab
 
 \crcTab{class:Account}
 {\begin{itemWork}
