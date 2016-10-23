@@ -14,7 +14,7 @@ Per capire come strutturare le classi, le interazioni tra di esse e le operazion
 \section{Diagrammi di attività} \label{cha:attivita}
 I diagrammi di attività descrivono il comportamento nel tempo di un particolare elemento. Con essi si modella l’interazione e la fusione dei flussi principali con i flussi alternativi dei casi d’uso. Questo viene fatto per rendere più visibili le varie ramificazioni che i flussi possono avere all’interno di un caso d’uso. Di seguito sono elencati i diagrammi di attività, non verranno riportati tutti i diagrammi, ma solo quelli corrispondenti ai casi d'uso principali.
 \begin{center}
-	\begin{tabularx}{\textwidth}{ l X } 
+	\begin{tabularx}{\textwidth}{ X l } 
 		\toprule
 		\formattaTitoloTab{ID} & \formattaTitoloTab{Caso d'uso di riferimento} \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
@@ -551,8 +551,7 @@ Di seguito sono elencate le carte \gls{crc}:
 
 %\begin{landscape}
 \section{Diagramma dei package}  \label{cha:package}
-Il diagramma dei package sono diagrammi di struttura che descrive i package del sistema e le relazioni tra essi.
-Un Package è uno spazio dei nomi utilizzato per raggruppare elementi che sono in relazione semantica tra loro.
+Il diagramma dei package sono diagrammi di struttura che descrive i package del sistema e le relazioni tra essi. Il sistema è stato modellato seguendo il pattern \gls{ecb}.
 \begin{center}
 			\includegraphics[width=\linewidth]{assets/visualParadigm/package/DiagrammaPacakage}
 \end{center}
@@ -563,54 +562,83 @@ I diagrammi delle classi servono a modellare la relazione tra le entità del sis
 Una classe è composta da delle caratteristiche che la descrivono (attributi) e delle elaborazioni che vengono eseguite (metodi). 
 Le classi servono ad identificare chi fa che cosa e come all’interno del sistema. Queste possono avere relazioni tra loro, le quali sono rappresentate con le associazioni. La cardinalità di un’associazione esprime il numero di oggetti di una certa classe che prendono parte all’associazione. Di seguito sono elencati i diagrammi delle classi:
 \begin{itemize}
-	\item \newPKG{pkg:GestioneAnteprime}{\formattaPKG}{Gestione anteprima}
-	\item \newPKG{pkg:GestioneAutenticazione}{\formattaPKG}{Gestione autenticazione}
-	\item \newPKG{pkg:GestioneIscritti}{\formattaPKG}{Gestione iscritti}
-	\item \newPKG{pkg:GestioneTicket}{\formattaPKG}{Gestione ticket}
-	\item \newPKG{pkg:GestioneProfilo}{\formattaPKG}{Gestione profilo}
+	\item \newPKG{pkg:Autenticazione}{\formattaPKG}{Autenticazione}
+	\item \newPKG{pkg:Comunicazioni}{\formattaPKG}{Comunicazioni}
+	\item \newPKG{pkg:Contenuti}{\formattaPKG}{Contenuti}
 	\item \newPKG{pkg:GestioneContenuti}{\formattaPKG}{Gestione contenuti}
+	\item \newPKG{pkg:GestioneProfili}{\formattaPKG}{Gestione profili}
 	\item \newPKG{pkg:GestioneSistema}{\formattaPKG}{Gestione sistema}
+	\item \newPKG{pkg:GestioniComunicazioni}{\formattaPKG}{Gestioni comunicazioni}
+	\item \newPKG{pkg:Iscrizioni}{\formattaPKG}{Iscrizioni}
+	\item \newPKG{pkg:Pagine}{\formattaPKG}{Pagine}
+	\item \newPKG{pkg:Profili}{\formattaPKG}{Profili}
+	\item \newPKG{pkg:Utility}{\formattaPKG}{Utility}
 \end{itemize}
 
 
-\linkedSubsection{pkg:GestioneAnteprime}
+\linkedSubsection{pkg:Autenticazione}
 \begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneAnteprime}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Autenticazione}
 \end{center}
 
-\linkedSubsection{pkg:GestioneAutenticazione}
+\linkedSubsection{pkg:Comunicazioni}
 \begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneAutenticazione}
-\end{center}
-
-\linkedSubsection{pkg:GestioneIscritti}
-\begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneIscritti}
-\end{center}
-
-\linkedSubsection{pkg:GestioneTicket}
-\begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneTicket}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Comunicazioni}
 \end{center}
 
 \begin{landscape}
-\linkedSubsection{pkg:GestioneProfilo}
+\linkedSubsection{pkg:Contenuti}
 \begin{center}
-			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/GestioneProfilo}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/Contenuti}
 \end{center}
 \end{landscape}
-
-\begin{landscape}
+	
 \linkedSubsection{pkg:GestioneContenuti}
 \begin{center}
-			\includegraphics[width=1.1\linewidth]{assets/visualParadigm/classi/GestioneContenuti}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneContenuti}
+\end{center}
+
+\begin{landscape}
+\linkedSubsection{pkg:GestioneProfili}
+\begin{center}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/GestioneProfili}
 \end{center}
 \end{landscape}
 
+\begin{landscape}
 \linkedSubsection{pkg:GestioneSistema}
 \begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneSistema}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/GestioneSistema}
 \end{center}
+\end{landscape}
+
+\linkedSubsection{pkg:GestioniComunicazioni}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioniComunicazioni}
+\end{center}
+
+\linkedSubsection{pkg:Iscrizioni}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Iscrizioni}
+\end{center}
+
+\begin{landscape}
+\linkedSubsection{pkg:Pagine}
+\begin{center}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/Pagine}
+\end{center}
+\end{landscape}
+
+\linkedSubsection{pkg:Profili}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Profili}
+\end{center}
+
+\linkedSubsection{pkg:Utility}
+\begin{center}
+			\includegraphics[width=0.25\textwidth]{assets/visualParadigm/classi/Utility}
+\end{center}
+
 
 
 \section{Diagrammi di sequenza}  \label{cha:sequenza}
@@ -722,13 +750,15 @@ Di seguito sono elencati i diagrammi di sequenza, non verranno riportati tutti i
 
 
 \newdate{analisiuno}{19}{10}{2016}
+\newdate{analisidue}{23}{10}{2016}
 \section{Revisioni}
 \begin{center}
     \begin{tabular}{lll}
         \toprule
         	\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
-        	1.0 & \displaydate{analisiuno} & Prima versione \\
+        	1.0 & \displaydate{analisiuno} & Prima versione \\        
+        	2.0 & \displaydate{analisidue} & Introdotto pattern ECB \\
         \bottomrule
     \end{tabular}
 \end{center}

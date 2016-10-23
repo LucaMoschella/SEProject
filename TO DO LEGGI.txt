@@ -26,5 +26,4 @@ Todo:
 
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
-) Mostra aggionamenti folower() IN Profilo
-) Fare screen package e classi
+) Rivedere package PAGINE -> classi vuote?
