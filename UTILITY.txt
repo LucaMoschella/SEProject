@@ -1,3 +1,12 @@
+) advanced acces manager--- ruoli gestione profili
+) wp user fronted ---- modifica campi proprio profilo dal frontend
+) Dokan -- vetrine e pagine prodotti e gestione "negozi privati", ricerca,
+) buddypress con plugin follow/unfollow --- follow/unfollow
+) WP Support Plus Responsive Ticket System  --- gestione ticket
+) wp Report Post --- report dei contenuti inappropriati e segnalazioni
+) Ninja Forms ---- gestione forms per iscrizioni e cose varie
+
+
 Login													wordpress
 Login Figure Amministrative								wordpress
 Logout													wordpress
@@ -36,7 +45,7 @@ Iscrizione tramite modulo								wordpress
 - Segnalazione contenuti inappropriati
 - Mostra segnalazioni contenuti
 - Rimozione contenuti
-Follow account											buddypress con plugin follow/unfollow
+Follow account											 
 Unfollow account										buddypress con plugin follow/unfollow
 - Invio di un ticket									WP Support Plus Responsive Ticket System
 - Risposta ad un ticket									WP Support Plus Responsive Ticket System
