@@ -28,14 +28,14 @@ Vengono di seguito elencati i test funzionali:
 \testTab{cu:login}
 {Testare il corretto funzionamento della funzionalità di Login, controllando anche che in caso di inserimento di dati errati venga restituito l'errore previsto}
 {Le credenziali corrette sono presenti nel sistema, le credenziali errate non sono presenti nel sistema. La persona non è autenticata nel sistema}
-{\begin{enumerate}
+{\begin{enumCU}
 	\item Inserire le credenziali corrette
 	\item Effettuare il Login
 	\item Verificare che il Login abbia successo
 	\item Effettuare il Logout
 	\item Inserire le credenziali errate
 	\item Verificare che il Login non abbia successo e che venga mostrato l'errore previsto
-\end{enumerate}
+\end{enumCU}
 }
 
 \vspaceTab
@@ -43,10 +43,10 @@ Vengono di seguito elencati i test funzionali:
 \testTab{cu:logout}
 {Testare il corretto funzionamento della funzionalità di Logout}
 {La persona è autenticata nel sistema}
-{\begin{enumerate}
+{\begin{enumCU}
 	\item Effettuare il Logout
 	\item Verificare che la persona venga disconnessa dal sistema
-\end{enumerate}
+\end{enumCU}
 }
 
 \vspaceTab
@@ -54,21 +54,21 @@ Vengono di seguito elencati i test funzionali:
 \testTab{cu:iscrizionePortale}
 {Testare il corretto funzionamento della funzionalità di registrazione al sistema per creare account di tipo Utente}
 {Le credenziali corrette non sono presenti nel sistema, le credenziali errate sono già usate da un altro account. La persona non è utenticata nel sistema}
-{\begin{enumerate}
+{\begin{enumCU}
 	\item Avviare la procedura di registrazione per creare un account Utente
 	\item Compilare il form con le credenziali corrette
 	\item Confermare l'operazione di registrazione e verificare che avvenga con successo
 	\item Avviare la procedura di registrazione per creare un account Utente
 	\item Compilare il form con le credenziali errate
 	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore previsto
-\end{enumerate}}
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:iscrizioneApprovazione}
 {Testare il corretto funzionamento della funzionalità di registrazione al sistema per creare richieste di creazione account di tipo Produttore}
 {Le credenziali corrette non sono presenti nel sistema, le credenziali errate sono già usate da un altro account. La persona non è utenticata nel sistema}
-{\begin{enumerate}
+{\begin{enumCU}
     \item Avviare la procedura di registrazione per creare un account Produttore
     \item Compilare il form con le credenziali corrette
     \item Confermare l'operazione di registrazione
@@ -77,14 +77,14 @@ Vengono di seguito elencati i test funzionali:
     \item Compilare il form con le credenziali errate
     \item Confermare l'operazione di registrazione
     \item Verificare che venga mostrato l'errore previsto
-\end{enumerate}}
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:approvazioneIscrizione}
 {Testare il corretto funzionamento della funzionalità di approvazione delle iscrizioni per creare account di tipo Produttore}
 {È presente una richiesta con dati validi e una con dati non validi. La persona è autenticata nel sistema ed ha i privilegi di Assistente}
-{\begin{enumerate}
+{\begin{enumCU}
     \item Aprire la richiesta con dati validi
     \item Confermare richiesta di creazione dell'account con dati validi
     \item Verificare che la creazione dell'account sia avvenuta con successo
@@ -92,19 +92,19 @@ Vengono di seguito elencati i test funzionali:
     \item Aprire la richiesta con dati non validi
     \item Rifiutare la richiesta di creazione dell'account con dati validi
     \item Verificare che la richiesta non sia più presente
-\end{enumerate}}
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:personalizzaVetrinaInsProd}
 {Testare il corretto funzionamento della funzionalità di inserimento di una scheda prodotto}
 {La persona è autenticata nel sistema ed ha i privilegi di Produttore}
-{\begin{enumerate}
+{\begin{enumCU}
     \item Selezionare inserimento scheda prodotto
     \item Compilare i campi con i dati richiesti
     \item Confermare l'operazione di inserimento
     \item Verificare che il prodotto inserito sia presente nella vetrina del produttore
-\end{enumerate}}
+\end{enumCU}}
 
 \vspaceTab
 
