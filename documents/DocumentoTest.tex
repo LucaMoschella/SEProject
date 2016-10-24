@@ -1,0 +1,561 @@
+\chapter{Documento dei piani di test}
+\section{Introduzione}
+In questo documento vengono definiti i test funzionali, necessari per garantire il corretto comportamento del sistema.
+L'utilizzo di un \gls{cms} commerciale e dei suoi plugin, di cui assumiamo corretto il funzionamento (in quanto prodotti ampiamente diffusi e utilizzati negli ambiti più disparati con successo), ci permette di ridurre il numero di test necessari.
+Infatti i \docref{sub:requisiti_non_funzionali} possono essere considerati come soddisfatti, così come alcuni dei \docref{sub:requisiti_funzionali}.
+
+\section{Elenco test funzionali}
+I test funzionali garantiscono il rispetto dei casi d'uso da parte del sistema.
+Vengono di seguito elencati i test funzionali:
+\begin{itemize}
+	\item \newTestItem{cu:login}
+	\item \newTestItem{cu:logout}
+	\item \newTestItem{cu:iscrizionePortale}
+	\item \newTestItem{cu:iscrizioneApprovazione}
+	\item \newTestItem{cu:approvazioneIscrizione}
+	\item \newTestItem{cu:personalizzaVetrinaInsProd}
+	\item \newTestItem{cu:inserisciRecensioneProdotto}
+	\item \newTestItem{cu:eliminaRecensioneProdotto}
+	\item \newTestItem{cu:commentoRecensione}
+	\item \newTestItem{cu:giudizioRecensione}
+	\item \newTestItem{cu:ricercaProdotto}
+	\item \newTestItem{cu:ricercaProfilo}
+	\item \newTestItem{cu:ricercaNotizia}
+\end{itemize}
+
+\section{Descrizione test funzionali}
+%{Obiettivo}{Prerequisiti}{Azioni}
+\testTab{cu:login}
+{Testare il corretto funzionamento della funzionalità di Login, controllando anche che in caso di inserimento di dati errati venga restituito l'errore previsto}
+{Le credenziali corrette sono presenti nel sistema, le credenziali errate non sono presenti nel sistema. La persona non è autenticata nel sistema}
+{\begin{enumerate}
+	\item Inserire le credenziali corrette
+	\item Effettuare il Login
+	\item Verificare che il Login abbia successo
+	\item Effettuare il Logout
+	\item Inserire le credenziali errate
+	\item Verificare che il Login non abbia successo e che venga mostrato l'errore previsto
+\end{enumerate}
+}
+
+\vspaceTab
+
+\testTab{cu:logout}
+{Testare il corretto funzionamento della funzionalità di Logout}
+{La persona è autenticata nel sistema}
+{\begin{enumerate}
+	\item Effettuare il Logout
+	\item Verificare che la persona venga disconnessa dal sistema
+\end{enumerate}
+}
+
+\vspaceTab
+
+\testTab{cu:iscrizionePortale}
+{Testare il corretto funzionamento della funzionalità di registrazione al sistema per creare account di tipo Utente}
+{Le credenziali corrette non sono presenti nel sistema, le credenziali errate sono già usate da un altro account. La persona non è utenticata nel sistema}
+{\begin{enumerate}
+	\item Avviare la procedura di registrazione per creare un account Utente
+	\item Compilare il form con le credenziali corrette
+	\item Confermare l'operazione di registrazione e verificare che avvenga con successo
+	\item Avviare la procedura di registrazione per creare un account Utente
+	\item Compilare il form con le credenziali errate
+	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore previsto
+\end{enumerate}}
+
+\vspaceTab
+
+\testTab{cu:iscrizioneApprovazione}
+{Testare il corretto funzionamento della funzionalità di registrazione al sistema per creare richieste di creazione account di tipo Produttore}
+{Le credenziali corrette non sono presenti nel sistema, le credenziali errate sono già usate da un altro account. La persona non è utenticata nel sistema}
+{\begin{enumerate}
+    \item Avviare la procedura di registrazione per creare un account Produttore
+    \item Compilare il form con le credenziali corrette
+    \item Confermare l'operazione di registrazione
+    \item Verificare che la richiesta di creazione account sia avvenuta con successo
+    \item Avviare la procedura di registrazione per creare un account Produttore
+    \item Compilare il form con le credenziali errate
+    \item Confermare l'operazione di registrazione
+    \item Verificare che venga mostrato l'errore previsto
+\end{enumerate}}
+
+\vspaceTab
+
+\testTab{cu:approvazioneIscrizione}
+{Testare il corretto funzionamento della funzionalità di approvazione delle iscrizioni per creare account di tipo Produttore}
+{È presente una richiesta con dati validi e una con dati non validi. La persona è autenticata nel sistema ed ha i privilegi di Assistente}
+{\begin{enumerate}
+    \item Aprire la richiesta con dati validi
+    \item Confermare richiesta di creazione dell'account con dati validi
+    \item Verificare che la creazione dell'account sia avvenuta con successo
+    \item Verificare che la richiesta non sia più presente
+    \item Aprire la richiesta con dati non validi
+    \item Rifiutare la richiesta di creazione dell'account con dati validi
+    \item Verificare che la richiesta non sia più presente
+\end{enumerate}}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaInsProd}
+{Testare il corretto funzionamento della funzionalità di inserimento di una scheda prodotto}
+{La persona è autenticata nel sistema ed ha i privilegi di Produttore}
+{\begin{enumerate}
+    \item Selezionare inserimento scheda prodotto
+    \item Compilare i campi con i dati richiesti
+    \item Confermare l'operazione di inserimento
+    \item Verificare che il prodotto inserito sia presente nella vetrina del produttore
+\end{enumerate}}
+
+\vspaceTab
+
+\testTab{cu:inserisciRecensioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:eliminaRecensioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:commentoRecensione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:giudizioRecensione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ricercaProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ricercaProfilo}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ricercaNotizia}
+{}
+{}
+{}
+
+
+
+
+
+
+\begin{comment}
+\testTab{cu:login}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:loginAmm}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:logout}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:iscrizionePortale}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:iscrizioneSocial}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:iscrizioneApprovazione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:approvazioneIscrizione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaInsDesc}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaModDesc}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaInsImg}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaDelImg}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaInsProd}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:personalizzaVetrinaModProd}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:statistichePrivateVetrina}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:inserimentoNotizia}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaNotizia}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:rimozioneNotizia}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:suggerimentoProdotti}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:notizieSimili}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaProfilo}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:inserisciImgProfilo}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:rimuoviImgProfilo}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaImpostazioni}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:rimozioneAccountProprio}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:rimozioneAccountAltrui}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaPrivilegiAccount}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:creaAccount}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:inserisciValutazioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaValutazioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:inserisciRecensioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaRecensioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:eliminaRecensioneProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:commentoRecensione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:giudizioRecensione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:modificaGiudizioRecensione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:segnalazioneContenutiInap}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraSegnContenutiInap}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:rimozioneContenutiInap}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:followAccount}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:unFollowAccount}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ticketInvio}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ticketRisposta}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ticketChiudi}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ticketLettura}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ricercaProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ricercaProfilo}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:ricercaNotizia}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:richiestaInsProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraRichiestaInsProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:richiestaInsProduttore}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraVetrina}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraRecensioniProdotto}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraRecensione}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraProfilo}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraNotizia}
+{}
+{}
+{}
+
+\vspaceTab
+
+\testTab{cu:mostraAggF}
+{}
+{}
+{}
+
+\end{comment}

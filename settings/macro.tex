@@ -594,6 +594,58 @@
 	\protect\stepcounter{counterPKG}\newListItem{#1}{#2}{#3}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TEST %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcounter{counterTEST}
+
+%Funzione per resettare i contatori al cambio di categoria
+\newcommand{\resetCounterTEST}{
+\setcounter{counterTEST}{0}%
+}
+
+%formattazione requisiti - non mette link
+\newcommand{\testSep}{.} 
+\newcommand{\displayTEST}[1]{\texttt{#1}}
+\newcommand{\test}[2]{\displayTEST{#1\testSep#2}}
+
+%macro per gestire i requisiti, e sotto requisiti vari.
+%Oltre a formattare il requisito con \req (è in pratica un wrapper di req), 
+%fa in modo che anche la label contenga la giusta formattazione del requisito.
+\newcommand{\formattaTEST}{%    
+	\protect\stepcounter{counterTEST}%
+	\test{TEST}{\arabic{counterTEST}}%
+}
+
+%Tabella per rischi
+%usage: {keycu}{obiettivo}{prerequisiti}{azioni}
+\newcommand{\testTab}[4]{%
+	\begin{center}
+		\begin{minipage}[t]{\linewidth}
+			\phantomsection\label{desc:test:#1}
+			\begin{tabularx}{\textwidth}{ l  X }
+				\toprule
+					\multicolumn{2}{c}{\formattaTitoloTab{TEST - \getTitle{#1}}}  \\
+				\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-2}
+					\formattaCampiTab{ID} & \getID{test:#1} \\ 
+					\addlinespace[0.5em] 
+					\formattaCampiTab{Caso d'uso} & \getID{#1} \\ 
+					\addlinespace[0.5em] 
+					\formattaCampiTab{Nome} & \getTitle{#1} \\		
+					\addlinespace[0.5em]
+					\formattaCampiTab{Obiettivo} &  #2 \\
+					\addlinespace[0.5em]
+					\formattaCampiTab{Prerequisiti} &  #3 \\
+					\addlinespace[0.5em]
+					\formattaCampiTab{Azioni} & \begin{NoHyper}#4\end{NoHyper} \\		
+				\bottomrule
+			\end{tabularx}
+		\end{minipage}
+	\end{center}
+}
+
+\newcommand{\newTestItem}[1]{\newListItem{test:#1}{\formattaTEST}{\getTitle{#1}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AMBIENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -33,41 +33,27 @@ Per installare WordPress sarà necessario seguire i seguenti passi:
 \end{enumerate}
 
 \subsection{Configurazione}
--abilitare iscrizione e login
--grafico per fare la grafica
--creazione delle pagine necessarie atraverso la console admin
-
-
+Si dovranno creare le pagine descritte in fase di analisi, abilitare l'iscrizione ed il login al sito.
 
 \subsection{Plugin}
 WordPress mette a disposizione oltre 47mila plugin, i quali estendono ed espandono le funzionalità di base presenti.
 L'installazione e l'attivazione dei plugin è immediata, in quanto è possibile effettuarla direttamente tramite il pannello di controllo di WordPress.
 Per implementare tutte le funzionalità precedentemente descritte sarà necessario installare ed attivare i seguenti plugin.
 
-
-) advanced acces manager - ruoli
-) wp user manager - gestione profili
-) wp user fronted - modifica campi proprio profilo dal frontend
-) Dokan- vetrine e pagine prodotti e gestione "negozi privati", ricerca,
-) buddypress con plugin follow/unfollow - follow/unfollow
-) WP Support Plus Responsive Ticket System  - gestione ticket
-) wp Report Post - report dei contenuti inappropriati e segnalazioni
-) Ninja Forms - gestione forms per iscrizioni e cose varie
-
-
-Managing your members, creating front-end profiles and custom login and registration pages should be easy. With this plugin, it finally is.
-WP User Manager lets you create highly customizable user profiles. You easily add custom user registration, login and password recovery forms to your WordPress website. WP User Manager is the best solution to manage your users.
-
 \subsubsection{User Role Editor}
- \paragraph{Descrizione.} Con il plugin \gls{ure} è possibile cambiare le capacità del ruolo utente semplicemente. Basta spuntare le caselle di controllo delle capacità che si desidera aggiungere al ruolo selezionato. Aggiungere nuovi ruoli e personalizzarne le capacità in base alle proprie esigenze. Il ruolo creato automaticamente può essere eliminato se non ci sono utenti a cui tale ruolo è assegnato. Anche il ruolo assegnato di default alla creazione di ogni nuovo utente può essere modificato. Le capacità possono essere assegnate sulla base del singolo utente. Ruoli multipli possono essere assegnati all'utente simultaneamente. È possibile aggiungere nuove funzionalità e rimuovere le funzionalità non necessarie che potrebbero essere state lasciate da un plugin disinstallato.
- \paragraph{Utilizzo.}  \gls{ure} potrà essere utilizzato dall'amministratore per la gestione dei ruoli, dei profili, degli account e dell'assegnamento dei privilegi in base a quali ruoli un account possiede.
- \paragraph{Configurazione.} Si dovranno creare i ruoli Visitatore, Utente, Produttore, Assistente, Redattore, Moderatore e Amministratore, assegnando ad ognuno i corrispettivi privilegi.
+\paragraph{Descrizione.} Con il plugin \gls{ure} è possibile cambiare le capacità del ruolo utente semplicemente. Basta spuntare le caselle di controllo delle capacità che si desidera aggiungere al ruolo selezionato. Aggiungere nuovi ruoli e personalizzarne le capacità in base alle proprie esigenze. Il ruolo creato automaticamente può essere eliminato se non ci sono utenti a cui tale ruolo è assegnato. Anche il ruolo assegnato di default alla creazione di ogni nuovo utente può essere modificato. Le capacità possono essere assegnate sulla base del singolo utente. Ruoli multipli possono essere assegnati all'utente simultaneamente. È possibile aggiungere nuove funzionalità e rimuovere le funzionalità non necessarie che potrebbero essere state lasciate da un plugin disinstallato.
+\paragraph{Utilizzo.} \gls{ure} potrà essere utilizzato dall'amministratore per la gestione dei ruoli, dei profili, degli account e dell'assegnamento dei privilegi in base a quali ruoli un account possiede.
+\paragraph{Configurazione.} Si dovranno creare i ruoli Visitatore, Utente, Produttore, Assistente, Redattore, Moderatore e Amministratore, assegnando ad ognuno i corrispettivi privilegi.
 
-\subsubsection{WP User Manager}
-\paragraph{Descrizione.} Il plugin \gls{wpum} permette di creare profili altamente personalizzabili, è possibile inoltre personalizzare il form di iscrizione, login e recupero password. 
-\paragraph{Utilizzo.}  \gls{wpum} verrà utilizzato per creare i profili utente e produttore.
-\paragraph{Configurazione.}  Si dovranno creare i profili descritti e associarli agli account in base al loro ruolo.
+\subsubsection{Multiple Registration Forms}
+\paragraph{Descrizione.} Il plugin \gls{mrf} permette di creare form di iscrizione multipli, in base a quale tipologia di account si vuole creare
+\paragraph{Utilizzo.}  \gls{mrf} potrà essere utilizzato per creare i form di registrazione per utenti e produttori.
+\paragraph{Configurazione.}  Si dovranno creare i form di registrazione per gli utenti e i produttori.
 
+\subsubsection{Profile Builder Pro}
+\paragraph{Descrizione.} Il plugin \gls{pbp} permette di creare profili altamente personalizzabili, è possibile inoltre personalizzare il form di iscrizione, login e recupero password. 
+\paragraph{Utilizzo.}  \gls{pbp} potrà essere utilizzato per creare i profili utente e produttore, e approvare le richieste di iscrizione produttore.
+\paragraph{Configurazione.}  Si dovranno creare i profili descritti e associarli agli account in base al loro ruolo. Si dovrà impostare l'iscrizione previa approvazione per le registrazioni di produttori
 
 \subsubsection{WP User Frontend}
 \paragraph{Descrizione.} Questo plugin fornisce alle persone autenticate la possibilità di creare nuovi post, di modificare i propri profili direttamente dal fronted, senza dover accedere al pannello di amministrazione.
@@ -78,11 +64,12 @@ WP User Manager lets you create highly customizable user profiles. You easily ad
 \paragraph{Descrizione.} \gls{wc} è un plugin per e-commerce gratuito che ti permette di vendere in maniera ottimale qualsiasi cosa. \gls{wc}fornisce sia ai proprietari che agli sviluppatori il controllo completo del proprio shop.
 \paragraph{Utilizzo.} \gls{wc} potrà essere utilizzato per gestire la vetrina e l'inserimento e la modifica di prodotti, recensioni ad essi associate, commenti a recensioni, valutazioni e giudizi.
 \paragraph{Configurazione.} Si dovrà configurare \gls{wc} in modo da non permettere la vendita di prodotti, ma solo la loro esposizione.
+Per permettere a più produttori di avere la propria vetrina sarà necessaria l'installazione di \gls{wcv}.
 
 \subsubsection{WC Vendors}
 \paragraph{Descrizione.} Questo plugin permette di creare il proprio marketplace e di fornire ai venditori la possibilità di vendere come su etsy, Envato, eBay, o Amazon. \gls{wcv} permette a più venditori di vendere i propri prodotti.
 \paragraph{Utilizzo.} \gls{wcv} potrà essere utilizzato per gestire più vetrine contemporaneamente, permettendo ad ogni produttore di avere la propria vetrina in cui mostrare i propri prodotti.
-\paragraph{Configurazione.} Si dovrà configurare \gls{wcv} in modo da non permettere la vendita di prodotti, ma solo la loro esposizione.
+\paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{BuddyPress}
 \paragraph{Descrizione.}
@@ -90,7 +77,7 @@ BuddyPress è una insieme di componenti comuni a un tipico social network, e per
 BuddyPress è focalizzato sulla facilità di integrazione, facilità d'uso e estensibilità. È un software per creare social network volutamente potente anche se incredibilmente semplice, costruito dai contributori di WordPress.
 Consenti ai membri di registrarsi per aprire un profilo, avere conversazioni private, effettuare collegamenti, creare per interagire nei gruppi, e molto altro. 
 \paragraph{Utilizzo.}
-\gls{bp} verrà utilizzato per gestire il lato social del sistema, oltre a gestire le richieste dagli utenti ai produttori.
+\gls{bp} potrà essere utilizzato per gestire il lato social del sistema, oltre a gestire le richieste dagli utenti ai produttori.
 \paragraph{Configurazione.}
 Per configurare BuddyPress e gestire il sistema di follower/followed è necessario installare il plugin \gls{bpf}
 
@@ -98,19 +85,24 @@ Per configurare BuddyPress e gestire il sistema di follower/followed è necessar
 \paragraph{Descrizione.}
 Questo plugin permette di estendere le funzionalità di \gls{bp} per implementare il sistema di follower/followed .
 \paragraph{Utilizzo.} Verrà utilizzato per implementare il sistema di follower/followed.
-\paragraph{Configurazione.} Non necessita di configurazione.
+\paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{WP Support Plus Responsive Ticket System}
-\paragraph{Descrizione.}
-\paragraph{Utilizzo.}
-\paragraph{Configurazione.}
+\paragraph{Descrizione.} Questo plugin aggiunge a WordPress le funzionalità di un sistema di ticket completo. Permette alle persone autenticate di creare ticket per segnalare problemi o per ottenere supporto. I creatori del ticket possono impostare lo stato, la priorità e la categoria del ticket.
+\paragraph{Utilizzo.} Questo plugin potrà essere utilizzato dalle persone autenticate per creare ticket per ottenere supporto.
+\paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{WP Report Post}
-\paragraph{Descrizione.}
-\paragraph{Utilizzo.}
-\paragraph{Configurazione.}
+\paragraph{Descrizione.} Questo plugin permette di segnalare post o pagine con contenuti inappropriati. Tutti questi report sono mostrati in una tabella nella sezione di Amministratore, permettendo così a quest'ultimo di scegliere cosa fare: modificare i contenuti, cancellare la pubblicazione di post/pagine, o semplicemente di eliminare i report. \gls{wprp} è progettato per funzionare sia in modo automatico che in modo manuale. In modo automatico, il link per segnalare potrà essere aggiunto al meta box del post. In modo manuale, si può aggiungere il link, il bottone o l'immagine dove si vuole nel template.
+\paragraph{Utilizzo.} \gls{wprp} potrà essere utilizzato per inserire la possibilità di segnalare i contenuti del sistema, come schede prodotto, recensioni o commenti.
+\paragraph{Configurazione.} Si dovrà configurare il link/bottone/immagine per effettuare la segnalazione su ogni contenuto segnalabile.
 
 \subsubsection{Ninja Forms}
-\paragraph{Descrizione.}
-\paragraph{Utilizzo.}
-\paragraph{Configurazione.}
+\paragraph{Descrizione.} Questo plugin permette la creazione di form utilizzando un seplice drag-and-drop. Per i principianti è presente un design di creazione form semplice senza la necessità di scrivere codice. Gli sviluppatori, invece, possono utilizzare opzioni built-in, filtri, e template di campi personalizzati per la creazione di form di ogni tipo e anche per la loro sottomissione.
+\paragraph{Utilizzo.} \gls{nf} potrà essere utilizzato per permettere la creazione dei form necessari all'interno del sistema.
+\paragraph{Configurazione.} Non necessita di configurazione particolare.
+
+\subsubsection{Nextend Facebook Connect}
+\paragraph{Descrizione.} Questo plugin permette la registrazione ed il login tramite Facebook.
+\paragraph{Utilizzo.} \gls{nf} potrà essere utilizzato per permettere agli Visitatori di creare un account di tipo Utente utilizzando la registrazione tramite Facebook. Sarà perciò possibile effettuare il login con le credenziali di Facebook.
+\paragraph{Configurazione.} Si dovranno configurare il bottone per effettuare la registrazione e quello per effettuare il login tramite Facebook.
