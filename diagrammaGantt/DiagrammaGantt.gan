@@ -44,8 +44,9 @@
         <task id="8" name="Documento dei casi d'uso" meeting="false" start="2016-08-15" duration="57" complete="0" expand="true"/>
         <task id="9" name="Valutazione dei rischi" meeting="false" start="2016-09-29" duration="4" complete="0" expand="true"/>
         <task id="11" name="Stima dei costi" meeting="false" start="2016-10-02" duration="2" complete="0" expand="true"/>
-        <task id="12" name="Analisi del sistema" meeting="false" start="2016-10-10" duration="10" complete="0" expand="true"/>
-        <task id="15" name="Design del sistema" meeting="false" start="2016-10-19" duration="3" complete="0" expand="true"/>
+        <task id="12" name="Analisi del sistema" meeting="false" start="2016-10-10" duration="14" complete="0" expand="true"/>
+        <task id="15" name="Design del sistema" meeting="false" start="2016-10-19" duration="6" complete="0" expand="true"/>
+        <task id="16" name="Documento dei test" meeting="false" start="2016-10-24" duration="2" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
