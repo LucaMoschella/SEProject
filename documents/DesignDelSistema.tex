@@ -35,7 +35,7 @@ Per installare WordPress sarà necessario seguire i seguenti passi:
 \subsection{Configurazione}
 Si dovranno creare le pagine descritte in fase di analisi, abilitare l'iscrizione ed il login al sito.
 
-\subsection{Plugin}
+\subsection{Plugin} \label{sec_plugin}
 WordPress mette a disposizione oltre 47mila plugin, i quali estendono ed espandono le funzionalità di base presenti.
 L'installazione e l'attivazione dei plugin è immediata, in quanto è possibile effettuarla direttamente tramite il pannello di controllo di WordPress.
 Per implementare tutte le funzionalità precedentemente descritte sarà necessario installare ed attivare i seguenti plugin.
@@ -49,11 +49,6 @@ Per implementare tutte le funzionalità precedentemente descritte sarà necessar
 \paragraph{Descrizione.} Il plugin \gls{pbp} permette di creare profili altamente personalizzabili, è possibile inoltre personalizzare il form di iscrizione, login e recupero password. 
 \paragraph{Utilizzo.}  \gls{pbp} potrà essere utilizzato per creare i profili utente e produttore, e approvare le richieste di iscrizione produttore. Potrà essere utilizzato per creare i form di registrazione per utenti e produttori.
 \paragraph{Configurazione.}  Si dovranno creare i profili descritti e associarli agli account in base al loro ruolo. Si dovrà impostare l'iscrizione previa approvazione per le registrazioni di produttori. Si dovranno creare due form di registrazione: uno per gli utenti e i produttori.
-
-\subsubsection{WP User Frontend}
-\paragraph{Descrizione.} Questo plugin fornisce alle persone autenticate la possibilità di creare nuovi post, di modificare i propri profili direttamente dal fronted, senza dover accedere al pannello di amministrazione.
-\paragraph{Utilizzo.}  \gls{wpuf} potrà essere utilizzato dall'amministratore per fornire alle persone autenticate la possibilità di modificare i propri profili direttamente dal frontend.
-\paragraph{Configurazione.} Si dovrà dare alle persone iscritte la possibilità di personalizzare il profilo in base al ruolo posseduto.
 
 \subsubsection{WooCommerce}
 \paragraph{Descrizione.} \gls{wc} è un plugin per e-commerce gratuito che ti permette di vendere in maniera ottimale qualsiasi cosa. \gls{wc} fornisce sia ai proprietari che agli sviluppatori il controllo completo del proprio shop.
@@ -110,7 +105,7 @@ Questo plugin permette di estendere le funzionalità di \gls{bp} per implementar
 \subsection{Mapping classi di analisi}
 In questa sezione mostreremo come questa configurazione del \gls{cms} implementa tutte le classi di analisi descritte nel documento di \docref{cha:analisi}. Va notato che non c'è una corrispondenza biunivoca fra un sottoinsieme delle classi e un sottoinsieme dei plugin, piuttosto diversi plugin possono servire a implementare una classe o, viceversa, più classi possono essere implementate da un singolo plugin.
 Si noti che le scelte progettuali effettuate rendono agevole l'espansione del sistema con ulteriori funzionalità; inoltre i possibili problemi riscontrabili solo nella fase implementativa, come ad esempio la mancanza di alcune funzionalità necessarie per il corretto funzionamento del sistema, sono facilmente risolvibili semplicemente istallando ulteriori plugin. 
-Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi e il \gls{cms} con i suoi plugin che implementano quelle classi:
+Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi e il \gls{cms} con i suoi plugin che implementano quelle classi, in modo più strutturato rispetto a quanto già fatto nella sezione \docref{sec_plugin}:
 \begin{itemize}
 		\item \pkgCAT{pkg:Pagine}
 		\begin{itemize}	
@@ -205,25 +200,25 @@ Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi 
 
 \classeTab{classe:PaginaRecensione}
 {\acrlong{wp}, \acrlong{wc}}
-{\acrlong{wp} gestisce la creazione delle pagine, mentre il plugin \acrlong{wc} gestisce la visualizzazione delle recensioni}
+{\acrlong{wp} gestisce la creazione delle pagine contenenti recensioni, mentre il plugin \acrlong{wc} gestisce la visualizzazione delle recensioni}
 
 \vspaceTab
 
 \classeTab{classe:PaginaVetrina}
 {\acrlong{wp}, \acrlong{wc}, \acrlong{wcv}}
-{\acrlong{wp} gestisce la creazione delle pagine, il plugin \acrlong{wc} gestisce la visualizzazione delle recensioni mentre il plugin \acrlong{wcv} permette di avere negozi multipli (una vetrina per ogni produttore presente)}
+{\acrlong{wp} gestisce la creazione delle pagine vetrina, il plugin \acrlong{wc} gestisce la visualizzazione delle vetrine mentre il plugin \acrlong{wcv} permette di avere negozi multipli (una vetrina per ogni produttore presente)}
 
 \vspaceTab
 
 \classeTab{classe:PaginaSegnalazioni}
 {\acrlong{wp}, \acrlong{wprp}}
-{\acrlong{wp} gestisce la creazione delle pagine, mentre \acrlong{wprp} gestisce l'intero sistema di segnalazioni con relativa visualizzazione da parte di un moderatore delle stesse}
+{\acrlong{wp} gestisce la creazione delle pagine contenenti segnalazioni, mentre \acrlong{wprp} gestisce l'intero sistema di segnalazioni con relativa visualizzazione da parte di un moderatore delle stesse}
 
 \vspaceTab
 
 \classeTab{classe:PaginaTicket}
 {\acrlong{wp}, \acrlong{wpsprts}}
-{\acrlong{wp} gestisce la creazione delle pagine, mentre \acrlong{wpsprts} gestisce l'intero sistema di tiket con relativa visualizzazione da parte di un assistente delle stesse}
+{\acrlong{wp} gestisce la creazione delle pagine contenenti ticket, mentre \acrlong{wpsprts} gestisce l'intero sistema di tiket con relativa visualizzazione da parte di un assistente delle stesse}
 
 \vspaceTab
 
@@ -282,218 +277,219 @@ Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi 
 \vspaceTab
 
 \classeTab{classe:GestioneSchedaProdotto}
-{}
-{}
+{\acrlong{wc}, \acrlong{wcv}}
+{\acrlong{wc} e \acrlong{wcv} permettono ad ogni Produttore di gestire le proprie schede prodotto (inserire/modificare)}
 
 \vspaceTab
 
 \classeTab{classe:GestioneNotizia}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} gestisce senza necessità di particolari plugin la creazione di pagine contenenti notizie}
 
 \vspaceTab
 
 \classeTab{classe:GestioneRecensione}
-{}
-{}
+{\acrlong{wc}, \acrlong{wcv}}
+{\acrlong{wc} e \acrlong{wcv} permettono di gestire il sistema di recensioni dei prodotti}
 
 \vspaceTab
 
 \classeTab{classe:GestioneProfilo}
-{}
-{}
+{\acrlong{wp}, \acrlong{pbp}, \acrlong{bpf}, \acrlong{bpf}}
+{\acrlong{wp} permette la gestione del profilo, \acrlong{pbp} permette agli amministratori di creare profili personalizzati in base al tipo di account, \acrlong{bp} e \acrlong{bpf} permettono di gestire le funzionalità di follower/followed}
 
 \vspaceTab
 
 \classeTab{classe:GestioneVetrina}
-{}
-{}
+{\acrlong{wc}, \acrlong{wcv}}
+{\acrlong{wc} esteso tramite il plugin \acrlong{wcv} permettono ai produttori di avere una loro vetrina, contenente i loro prodotti}
 
 \vspaceTab
 
 \classeTab{classe:GestioneRichiesteProdotto}
-{}
-{}
+{\acrlong{bp}, \acrlong{nf}}
+{\acrlong{bp} permette la comunicazione fra gli utenti, \acrlong{nf} permette la gestione dei form delle richieste prodotto all'interno delle comunicazioni}
+
 
 \vspaceTab
 
 \classeTab{classe:GestioneSegnalazioni}
-{}
-{}
+{\acrlong{wp}, \acrlong{wprp}}
+{\acrlong{wp} permette di gestire le segnalazioni, mentre \acrlong{wprp} gestisce l'intero sistema di segnalazioni con relativa visualizzazione da parte di un moderatore delle stesse}
 
 \vspaceTab
 
 \classeTab{classe:GestioneTicket}
-{}
-{}
+{\acrlong{wpsprts}}
+{\acrlong{wpsprts} gestisce l'intero sistema di tiket con relativa visualizzazione da parte di un assistente delle stesse}
 
 \vspaceTab
 
 \classeTab{classe:GestioneAccessi}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} permette di gestire gli accessi al sistema da parte di iscritti e di visitatori}
 
 \vspaceTab
 
 \classeTab{classe:GestioneIscritti}
-{}
-{}
+{\acrlong{wp}, \acrlong{pbp}, \acrlong{nfc}}
+{\acrlong{wp} mette a diposizione la gestione base dell'iscrizione e degli account iscritti,  \acrlong{pbp} permette di creare due diverse procedure di iscrizione: per i produttori e per gli utenti. Inoltre permette di accettare le iscrizioni dei produttori solo previa approvazione.\acrlong{nfc} permette la registrazione, Utente, tramite Faceboo}
 
 \vspaceTab
 
 \classeTab{classe:Utility}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} permette l'estensione di funzionalità tramite l'utilizzo di plugin}
 
 \vspaceTab
 
 \classeTab{classe:Ricerca}
-{}
-{}
+{\acrlong{wc}, \acrlong{wps}}
+{\acrlong{wc} permette di cercare i contenuti inseriti, \acrlong{wps} permette di personalizzare la metodologia di ricerca, in particolare permette di ricercare: solo prodotti, solo profili o solo notizie}
 
 \vspaceTab
 
 \classeTab{classe:Contenuto}
-{}
-{}
+{\acrlong{wp}, \acrlong{wc}}
+{\acrlong{wp} permette la creazione di post e di pagine, \acrlong{wc} permette la creazione di contenuti come schede prodotto, recensioni, commenti, valutazioni o giudizi}
 
 \vspaceTab
 
 \classeTab{classe:Commento}
-{}
-{}
+{\acrlong{wc}}
+{\acrlong{wc} permette di creare commenti a recensioni}
 
 \vspaceTab
 
 \classeTab{classe:Recensione}
-{}
-{}
+{\acrlong{wc}}
+{\acrlong{wc} permette di creare recensioni di prodotti}
 
 \vspaceTab
 
 \classeTab{classe:Giudizio}
-{}
-{}
+{\acrlong{wc}}
+{\acrlong{wc} permette di inserire giudizi per commenti}
 
 \vspaceTab
 
 \classeTab{classe:SchedaProdotto}
-{}
-{}
+{\acrlong{wc}, \acrlong{nf}}
+{\acrlong{wc} e \acrlong{nf} permettono di creare schede prodotti con i campi necessari}
 
 \vspaceTab
 
 \classeTab{classe:Valutazione}
-{}
-{}
+{\acrlong{wc}}
+{\acrlong{wc} permette di inserire valutazioni per recensioni}
 
 \vspaceTab
 
 \classeTab{classe:Notizia}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} permette di creare post contenenti notizie}
 
 \vspaceTab
 
 \classeTab{classe:ConsistenzaProdotto}
-{}
-{}
+{\acrlong{nf}}
+{\acrlong{nf} permette di creare campi a scelta multipla}
 
 \vspaceTab
 
 \classeTab{classe:CategoriaProdotto}
-{}
-{}
+{\acrlong{nf}}
+{\acrlong{nf} permette di creare campi a scelta multipla}
 
 \vspaceTab
 
 \classeTab{classe:Ticket}
-{}
-{}
+{\acrlong{wpsprts}}
+{\acrlong{wpsprts} permette la creazione di ticket per richiedere assistenza}
 
 \vspaceTab
 
 \classeTab{classe:RichiestaProduttore}
-{}
-{}
+{\acrlong{wpsprts}}
+{\acrlong{wpsprts} permette la creazione di richieste produttore, creando tipologie di ticket personalizzate}
 
 \vspaceTab
 
 \classeTab{classe:RispostaTicket}
-{}
-{}
+{\acrlong{wpsprts}}
+{\acrlong{wpsprts} permette la creazione di risposte ad un ticket}
 
 \vspaceTab
 
 \classeTab{classe:RichiestaProdotto}
-{}
-{}
+{\acrlong{bp}, \acrlong{nf}}
+{\acrlong{bp} e \acrlong{nf} permettono l'invio di richieste prodotto ai produttori, attraverso l'utilizzo di messaggi strutturati con un form integrato}
 
 \vspaceTab
 
 \classeTab{classe:SegnalazioneContenuto}
-{}
-{}
+{\acrlong{wprp}}
+{\acrlong{wprp} permette di creare segnalazioni di contenuti all'interno del sistema}
 
 \vspaceTab
 
 \classeTab{classe:Account}
-{}
-{}
+{\acrlong{wp}, \acrlong{pbp}, \acrlong{ure}, \acrlong{nfc}}
+{\acrlong{wp} permette di gestire gli account iscritti senza estenzioni, \acrlong{pbp} permette di modificare le informazioni inserite in fase di registrazione (anche in base al ruolo che si vuole ottenre, Utene o Produttore), e quindi modificare le informazioni note dell'account, \acrlong{ure} permette di modificare i ruoli degli account, fornendogli di conseguenza le funzionalità associate, \acrlong{nfc} gestisce gli account iscritti tramite Facebook}
 
 \vspaceTab
 
 \classeTab{classe:TipoAccount}
-{}
-{}
+{\acrlong{ure}}
+{\acrlong{ure} permette la creazione di diversi ruoli (nell'analisi chiamati TipoAccount) a cui associare diverse funzionalità (nell'analisi chiamate privilegi)}
 
 \vspaceTab
 
 \classeTab{classe:RichiestaIscrizione}
-{}
-{}
+{\acrlong{pbp}}
+{\acrlong{pbp} permette la creazione di un form personalizzato per la registrazione dei produttori, ai quali verrà permessa l'iscrizione solo previa approvazione da parte dell'assistente}
 
 \vspaceTab
 
 \classeTab{classe:Privilegi}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} gestisce l'inserimento di ogni funzionalità aggiunta tramite plugin. L'elenco delle funzionalità sarà perciò costituito da quelle di \acrlong{wp} estese da quelle dei plugin installati ed attivati}
 
 \vspaceTab
 
 \classeTab{classe:Profilo}
-{}
-{}
+{\acrlong{wp}, \acrlong{pbp}}
+{\acrlong{wp} permette la modifica del profilo, \acrlong{pbp} permette agli amministratori di creare profili personalizzati in base al tipo di account}
 
 \vspaceTab
 
 \classeTab{classe:ProfiloProduttore}
-{}
-{}
+{\acrlong{wp}, \acrlong{pbp}}
+{\acrlong{wp} permette la modifica del profilo, \acrlong{pbp} permette agli amministratori di creare profili personalizzati in base al tipo di account. In particolare i profili dei produttori avranno una vetrina associata}
 
 \vspaceTab
 
 \classeTab{classe:Vetrina}
-{}
-{}
+{\acrlong{wc}, \acrlong{wcv}}
+{\acrlong{wc} gestisce la vetrine, creandone una alla creazione di ogni account produttore, mentre il plugin \acrlong{wcv} permette di avere negozi multipli (una vetrina per ogni produttore presente)}
 
 \vspaceTab
 
 \classeTab{classe:AccessoIscritto}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} il controllo degli accessi degli iscritti al sistema}
 
 \vspaceTab
 
 \classeTab{classe:AccessoOspite}
-{}
-{}
+{\acrlong{wp}}
+{\acrlong{wp} il controllo degli accessi dei visitatori al sistema}
 
 \vspaceTab
 
 \classeTab{classe:TipoRicerca}
-{}
-{}
+{\acrlong{wps}}
+{\acrlong{wps} permette la creazione di tipi di ricerca personalizzati}
 
 
 \newdate{designuno}{24}{10}{2016}

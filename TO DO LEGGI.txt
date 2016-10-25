@@ -24,6 +24,7 @@
 
 Todo:
 
+) iscrizioneFACEBOOK in gestione iscritti?
 ) Integrare CMS e DATABASE nell'analisi??
 ) Via tutta la storia dei tag dinamici.
 ) Rivedere package PAGINE -> classi vuote?
