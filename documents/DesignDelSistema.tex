@@ -107,10 +107,196 @@ Questo plugin permette di estendere le funzionalità di \gls{bp} per implementar
 \paragraph{Utilizzo.} \gls{nfc} potrà essere utilizzato per permettere ai Visitatori di creare un account di tipo Utente utilizzando la registrazione tramite Facebook. Sarà perciò possibile effettuare il login con le credenziali di Facebook.
 \paragraph{Configurazione.} Si dovranno configurare il bottone per effettuare la registrazione e quello per effettuare il login tramite Facebook.
 
-\subsubsection{WPSearch}
+\subsubsection{WP Search}
 \paragraph{Descrizione.} Questo plugin permette la personalizzazione della ricerca in diversi modi. E' possibile assegnare pesi ai diversi tipi di contenuti, cercare in base al tipo di contenuto o in base ai tag assegnati ai contenuti. Può essere esteso grazie alle molte estensioni disponibili e mette a disposizione diverse statistiche
 \paragraph{Utilizzo.} \gls{wps} potrà essere utilizzato per permettere la ricerca personalizzata in base alla tipologia di contenuto: Prodotto, Notizia o Profilo
 \paragraph{Configurazione.} Si dovranno configurare la ricerca personalizzata per Prodotti, Profili e Notizie. Inserire delle opzioni per selezionare quale tipo di ricerca effettuare
+
+\subsection{Mapping classi di analisi}
+In questa sezione mostreremo come questa configurazione del \gls{cms} implementa tutte le classi di analisi descritte nel documento di \docref{cha:analisi}. Va notato che non c'è una corrispondenza biunivoca fra un sottoinsieme delle classi e un sottoinsieme dei plugin, piuttosto diversi plugin possono servire a implementare una classe o, viceversa, più classi possono essere implementate da un singolo plugin.
+Si noti che le scelte progettuali effettuate rendono agevole l'espansione del sistema con ulteriori funzionalità; inoltre i possibili problemi riscontrabili solo nella fase implementativa, come ad esempio la mancanza di alcune funzionalità necessarie per il corretto funzionamento del sistema, sono facilmente risolvibili semplicemente istallando ulteriori plugin. 
+Nella seguente tabella riportiamo il mapping effettuato fra le classi di analisi e il \gls{cms} con i suoi plugin che implementano quelle classi:
+\begin{comment}
+\begin{center}
+	\begin{longtable}{ p{0.125\textwidth} p{0.7\textwidth} p{0.075\textwidth} } 
+		\toprule
+			\formattaTitoloTab{Classe} & \formattaTitoloTab{Implementazione} & \formattaTitoloTab{Descrizione} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+		\endfirsthead
+
+		\toprule
+			\formattaTitoloTab{Classe} & \formattaTitoloTab{Implementazione} & \formattaTitoloTab{Descrizione} \\
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+		\endhead
+
+		\midrule
+		\multicolumn{3}{r}{\footnotesize\itshape continua nella prossima pagina} \\
+		\endfoot
+		\bottomrule
+		\endlastfoot
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Autenticazione}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+		\formattaCampiTab{Pagina} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaRecensione} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaVetrina} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaSegnalazioni} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaTicket} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaNotizie} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaProfilo} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaRichiesteIscrizioni} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaLogin} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaSchedaProdotto} & & \\ 			
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaAggiornamentiFollower} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaRichiesteProdotto} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{PaginaIscrizione} & & \\ 
+		\addlinespace[1em] 
+		\formattaCampiTab{Home} & & \\ 
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Comunicazioni}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Contenuti}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:GestioneContenuti}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:GestioneProfili}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:GestioneSistema}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:GestioniComunicazioni}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Iscrizioni}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Pagine}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Profili}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+
+		\multicolumn{3}{r}{\textsf{\getIDTitle{pkg:Utility}}} 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em]
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em]  
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 			
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} &  & \\ 			
+			\addlinespace[1em] 
+			\formattaCampiTab{} &  & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em]
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+			\addlinespace[1em] 
+			\formattaCampiTab{} & & \\ 
+		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
+			\formattaCampiTab{\gls{uucw}}  & & 295\\
+	\end{longtable}
+\end{center}
+
+\end{comment}
 
 \newdate{designuno}{24}{10}{2016}
 \section{Revisioni}
