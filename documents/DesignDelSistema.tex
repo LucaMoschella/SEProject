@@ -105,7 +105,7 @@ Questo plugin permette di estendere le funzionalità di \gls{bp} per implementar
 \subsection{Mapping classi di analisi}
 In questa sezione mostreremo come questa configurazione del \gls{cms} implementa tutte le classi di analisi descritte nel documento di \docref{cha:analisi}. Va notato che non c'è una corrispondenza biunivoca fra un sottoinsieme delle classi e un sottoinsieme dei plugin, piuttosto diversi plugin possono servire a implementare una classe o, viceversa, più classi possono essere implementate da un singolo plugin.
 Si noti che le scelte progettuali effettuate rendono agevole l'espansione del sistema con ulteriori funzionalità; inoltre i possibili problemi riscontrabili solo nella fase implementativa, come ad esempio la mancanza di alcune funzionalità necessarie per il corretto funzionamento del sistema, sono facilmente risolvibili semplicemente istallando ulteriori plugin. 
-Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi e il \gls{cms} con i suoi plugin che implementano quelle classi, in modo più strutturato rispetto a quanto già fatto nella sezione \docref{sec_plugin}:
+Di seguito vengono elencati i package e le classi di analisi definite nel documento di \docref{cha:analisi}:
 \begin{itemize}
 		\item \pkgCAT{pkg:Pagine}
 		\begin{itemize}	
@@ -191,7 +191,7 @@ Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi 
 			\item \newListItem{classe:TipoRicerca}{\formattaCLASSE}{TipoRicerca} 
 		\end{itemize}	
 \end{itemize}
-
+Nelle seguenti tabelle riportiamo il mapping effettuato fra le classi di analisi e il \gls{cms} con i suoi plugin che implementano quelle classi, in modo più strutturato rispetto a quanto già fatto nella sezione \docref{sec_plugin}:
 \classeTab{classe:Pagina}
 {\nameref{cms:wp}}
 {\nameref{cms:wp} gestisce senza necessità di particolari plugin la creazione di pagine semplici}
