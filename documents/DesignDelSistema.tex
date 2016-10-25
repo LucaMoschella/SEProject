@@ -45,15 +45,10 @@ Per implementare tutte le funzionalità precedentemente descritte sarà necessar
 \paragraph{Utilizzo.} \gls{ure} potrà essere utilizzato dall'amministratore per la gestione dei ruoli, dei profili, degli account e dell'assegnamento dei privilegi in base a quali ruoli un account possiede.
 \paragraph{Configurazione.} Si dovranno creare i ruoli Visitatore, Utente, Produttore, Assistente, Redattore, Moderatore e Amministratore, assegnando ad ognuno i corrispettivi privilegi.
 
-\subsubsection{Multiple Registration Forms}
-\paragraph{Descrizione.} Il plugin \gls{mrf} permette di creare form di iscrizione multipli, in base a quale tipologia di account si vuole creare
-\paragraph{Utilizzo.}  \gls{mrf} potrà essere utilizzato per creare i form di registrazione per utenti e produttori.
-\paragraph{Configurazione.}  Si dovranno creare i form di registrazione per gli utenti e i produttori.
-
 \subsubsection{Profile Builder Pro}
 \paragraph{Descrizione.} Il plugin \gls{pbp} permette di creare profili altamente personalizzabili, è possibile inoltre personalizzare il form di iscrizione, login e recupero password. 
-\paragraph{Utilizzo.}  \gls{pbp} potrà essere utilizzato per creare i profili utente e produttore, e approvare le richieste di iscrizione produttore.
-\paragraph{Configurazione.}  Si dovranno creare i profili descritti e associarli agli account in base al loro ruolo. Si dovrà impostare l'iscrizione previa approvazione per le registrazioni di produttori
+\paragraph{Utilizzo.}  \gls{pbp} potrà essere utilizzato per creare i profili utente e produttore, e approvare le richieste di iscrizione produttore. Potrà essere utilizzato per creare i form di registrazione per utenti e produttori.
+\paragraph{Configurazione.}  Si dovranno creare i profili descritti e associarli agli account in base al loro ruolo. Si dovrà impostare l'iscrizione previa approvazione per le registrazioni di produttori. Si dovranno creare due form di registrazione: uno per gli utenti e i produttori.
 
 \subsubsection{WP User Frontend}
 \paragraph{Descrizione.} Questo plugin fornisce alle persone autenticate la possibilità di creare nuovi post, di modificare i propri profili direttamente dal fronted, senza dover accedere al pannello di amministrazione.
@@ -202,213 +197,317 @@ Nelle seguenti pagine riportiamo il mapping effettuato fra le classi di analisi 
 		\end{itemize}	
 \end{itemize}
 
-\classeTab{classe:Pagina}{}{}
+\classeTab{classe:Pagina}
+{\acrlong{wp}}
+{\acrlong{wp} gestisce senza necessità di particolari plugin la creazione di pagine semplici}
 
 \vspaceTab
 
-\classeTab{classe:PaginaRecensione}{}{}
+\classeTab{classe:PaginaRecensione}
+{\acrlong{wp}, \acrlong{wc}}
+{\acrlong{wp} gestisce la creazione delle pagine, mentre il plugin \acrlong{wc} gestisce la visualizzazione delle recensioni}
 
 \vspaceTab
 
-\classeTab{classe:PaginaVetrina}{}{}
+\classeTab{classe:PaginaVetrina}
+{\acrlong{wp}, \acrlong{wc}, \acrlong{wcv}}
+{\acrlong{wp} gestisce la creazione delle pagine, il plugin \acrlong{wc} gestisce la visualizzazione delle recensioni mentre il plugin \acrlong{wcv} permette di avere negozi multipli (una vetrina per ogni produttore presente)}
 
 \vspaceTab
 
-\classeTab{classe:PaginaSegnalazioni}{}{}
+\classeTab{classe:PaginaSegnalazioni}
+{\acrlong{wp}, \acrlong{wprp}}
+{\acrlong{wp} gestisce la creazione delle pagine, mentre \acrlong{wprp} gestisce l'intero sistema di segnalazioni con relativa visualizzazione da parte di un moderatore delle stesse}
 
 \vspaceTab
 
-\classeTab{classe:PaginaTicket}{}{}
+\classeTab{classe:PaginaTicket}
+{\acrlong{wp}, \acrlong{wpsprts}}
+{\acrlong{wp} gestisce la creazione delle pagine, mentre \acrlong{wpsprts} gestisce l'intero sistema di tiket con relativa visualizzazione da parte di un assistente delle stesse}
 
 \vspaceTab
 
-\classeTab{classe:PaginaNotizie}{}{}
+\classeTab{classe:PaginaNotizie}
+{\acrlong{wp}}
+{\acrlong{wp} gestisce senza necessità di particolari plugin la creazione di pagine contenenti notizie}
 
 \vspaceTab
 
-\classeTab{classe:PaginaProfilo}{}{}
+\classeTab{classe:PaginaProfilo}
+{\aprlong{wp}, \acrlong{pbp}}
+{\aprlong{wp} gestisce la creazione delle pagine profilo, \acrlong{pbp} permette agli amministratori di creare profili personalizzati in base al tipo di account}
+
+\vspaceTab 
+
+\classeTab{classe:PaginaRichiesteIscrizioni}
+{\acrlong{wp}, \acrlong{pbp}}
+{\acrlong{wp} gestisce la creazione delle pagine contenenti le richieste di iscrizione, \acrlong{pbp} permette agli assistenti di visualizzare le richieste d'iscrizione delle persone che si iscrivono tramite il form d'iscrizione produttori}
 
 \vspaceTab
 
-\classeTab{classe:PaginaRichiesteIscrizioni}{}{}
+\classeTab{classe:PaginaLogin}
+{\acrlong{wp}, \acrlong{nfc}}
+{\acrlong{wp} gestisce la creazione della pagina di Login, \acrlong{nfc} permette l'accesso tramite Facebook}
 
 \vspaceTab
 
-\classeTab{classe:PaginaLogin}{}{}
+\classeTab{classe:PaginaSchedaProdotto}
+{\acrlong{wp}, \acrlong{wc}, \acrlong{wcv}, \acrlong{nf}}
+{\acrlong{wp} gestisce la creazione delle pagine prodotto, \acrlong{wc} e \acrlong{wcv} permettono ai produttori di mostrare i propri prodotti, \acrlong{nf} permette di personalizzare i campi della scheda prodotto}
 
 \vspaceTab
 
-\classeTab{classe:PaginaSchedaProdotto}{}{}
+\classeTab{classe:PaginaAggiornamentiFollower}
+{\acrlong{wp}, \acrlong{bp}, \acrlong{bpf}}
+{\acrlong{wp} gestisce la creazione delle pagine in cui si possono visualizzare gli aggiornamenti delle persone che si seguono, \acrlong{bp} esteso con \acrlong{bpf} implementa le funzionalità di follower/followed}
 
 \vspaceTab
 
-\classeTab{classe:PaginaAggiornamentiFollower}{}{}
+\classeTab{classe:PaginaRichiesteProdotto}
+{\acrlong{wp}, \acrlong{bp}, \acrlong{nf}}
+{\acrlong{wp} gestisce la creazione delle pagine contenenti le richieste prodotto, \acrlong{bp} permette di visualizzare le richieste prodotto ricevute, \acrlong{nf} permette la gestione dei form delle richieste prodotto}
 
 \vspaceTab
 
-\classeTab{classe:PaginaRichiesteProdotto}{}{}
+\classeTab{classe:PaginaIscrizione}
+{\acrlong{wp}, \acrlong{pbp}, \acrlong{nfc}}
+{\acrlong{wp} gestisce la creazione delle pagine di iscrizione, \acrlong{pbp} permette di creare form di iscrizione multipli, quindi un form per l'iscrizione di account che otterrano ruolo utente e uno per quelli che otterrano ruolo produttore, \acrlong{nfc} permette di effettuare l'iscrizione direttamente con le credenziali di Facebook (effettuando direttamente il login)}
 
 \vspaceTab
 
-\classeTab{classe:PaginaIscrizione}{}{}
+\classeTab{classe:Home}
+{\acrlong{wp}, \acrlong{wc}, \acrlong{wps}}
+{\acrlong{wp} gestisce la creazione della pagina home, \acrlong{wc} permette di cercare i contenuti inseriti, \acrlong{wps} permette di personalizzare la metodologia di ricerca, in particolare permette di ricercare: solo prodotti, solo profili o solo notizie}
 
 \vspaceTab
 
-\classeTab{classe:Home}{}{}
+\classeTab{classe:GestioneSchedaProdotto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneSchedaProdotto}{}{}
+\classeTab{classe:GestioneNotizia}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneNotizia}{}{}
+\classeTab{classe:GestioneRecensione}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneRecensione}{}{}
+\classeTab{classe:GestioneProfilo}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneProfilo}{}{}
+\classeTab{classe:GestioneVetrina}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneVetrina}{}{}
+\classeTab{classe:GestioneRichiesteProdotto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneRichiesteProdotto}{}{}
+\classeTab{classe:GestioneSegnalazioni}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneSegnalazioni}{}{}
+\classeTab{classe:GestioneTicket}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneTicket}{}{}
+\classeTab{classe:GestioneAccessi}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneAccessi}{}{}
+\classeTab{classe:GestioneIscritti}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:GestioneIscritti}{}{}
+\classeTab{classe:Utility}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Utility}{}{}
+\classeTab{classe:Ricerca}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Ricerca}{}{}
+\classeTab{classe:Contenuto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Contenuto}{}{}
+\classeTab{classe:Commento}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Commento}{}{}
+\classeTab{classe:Recensione}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Recensione}{}{}
+\classeTab{classe:Giudizio}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Giudizio}{}{}
+\classeTab{classe:SchedaProdotto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:SchedaProdotto}{}{}
+\classeTab{classe:Valutazione}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Valutazione}{}{}
+\classeTab{classe:Notizia}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Notizia}{}{}
+\classeTab{classe:ConsistenzaProdotto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:ConsistenzaProdotto}{}{}
+\classeTab{classe:CategoriaProdotto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:CategoriaProdotto}{}{}
+\classeTab{classe:Ticket}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Ticket}{}{}
+\classeTab{classe:RichiestaProduttore}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:RichiestaProduttore}{}{}
+\classeTab{classe:RispostaTicket}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:RispostaTicket}{}{}
+\classeTab{classe:RichiestaProdotto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:RichiestaProdotto}{}{}
+\classeTab{classe:SegnalazioneContenuto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:SegnalazioneContenuto}{}{}
+\classeTab{classe:Account}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Account}{}{}
+\classeTab{classe:TipoAccount}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:TipoAccount}{}{}
+\classeTab{classe:RichiestaIscrizione}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:RichiestaIscrizione}{}{}
+\classeTab{classe:Privilegi}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Privilegi}{}{}
+\classeTab{classe:Profilo}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Profilo}{}{}
+\classeTab{classe:ProfiloProduttore}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:ProfiloProduttore}{}{}
+\classeTab{classe:Vetrina}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:Vetrina}{}{}
+\classeTab{classe:AccessoIscritto}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:AccessoIscritto}{}{}
+\classeTab{classe:AccessoOspite}
+{}
+{}
 
 \vspaceTab
 
-\classeTab{classe:AccessoOspite}{}{}
-
-\vspaceTab
-
-\classeTab{classe:TipoRicerca}{}{}
-
-\vspaceTab
+\classeTab{classe:TipoRicerca}
+{}
+{}
 
 
-
-\newdate{designuno}{24}{10}{2016}
-\newdate{designdue}{25}{10}{2016}
+\newdate{designuno}
+{24}
+{10}
+{2016}
+\newdate{designdue}
+{25}
+{10}
+{2016}
 \section{Revisioni}
 \begin{center}
-	\begin{tabular}{lll}
+	\begin{tabular}
+	{lll}
 		\toprule
 		\tabhead{Versione} & \tabhead{Data} & \tabhead{Descrizione} \\
 		\cmidrule(l{\cmidrulekern}r{\cmidrulekern}){1-3}
