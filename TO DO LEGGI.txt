@@ -32,6 +32,6 @@ Todo:
 		1) Usa "Prodotto" invece di "SchedaProdotto"
 		2) Letta da sola, nella classe, non si intuisce cosa fa ( es. "RimuoviIscrizione" invece di "RimuoviRichiestaIscrizione")
 	Se decidete di cambiare i nomi OCCHIO a mantenere la coerenza fra i nomi nei diagrammi di classe e di sequenza. 
-
+) DIAGRAMMA SEQUENZA ISCRIZIONE UTENTE --- RINOMINARE FUNZIONALITA' ISCRIZIONEUTENT in ISCRIZIONEUTENTE!!!!
 
 	TEST

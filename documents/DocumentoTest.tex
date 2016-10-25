@@ -27,14 +27,15 @@ Vengono di seguito elencati i test funzionali:
 %{Obiettivo}{Prerequisiti}{Azioni}
 \testTab{cu:login}
 {Testare il corretto funzionamento della funzionalità di Login, controllando anche che in caso di inserimento di dati errati venga restituito l'errore previsto}
-{Le credenziali corrette sono presenti nel sistema, le credenziali errate non sono presenti nel sistema. La persona non è autenticata nel sistema}
+{Le credenziali (username1, password1) sono presenti nel sistema, le credenziali (username2, passoword2) non sono presenti nel sistema. La persona non è autenticata nel sistema}
 {\begin{enumCU}
-	\item Inserire le credenziali corrette
+	\item Inserire le credenziali (username1, password1)
 	\item Effettuare il Login
 	\item Verificare che il Login abbia successo
 	\item Effettuare il Logout
-	\item Inserire le credenziali errate
-	\item Verificare che il Login non abbia successo e che venga mostrato l'errore previsto
+	\item Inserire le credenziali (username2, passoword2)
+	\item Effettuare il Login
+	\item Verificare che il Login non abbia successo e che venga mostrato l'errore di credenziali errate
 \end{enumCU}
 }
 
@@ -45,7 +46,7 @@ Vengono di seguito elencati i test funzionali:
 {La persona è autenticata nel sistema}
 {\begin{enumCU}
 	\item Effettuare il Logout
-	\item Verificare che la persona venga disconnessa dal sistema
+	\item Verificare che si è disconnesi dal sistema
 \end{enumCU}
 }
 
@@ -53,55 +54,63 @@ Vengono di seguito elencati i test funzionali:
 
 \testTab{cu:iscrizionePortale}
 {Testare il corretto funzionamento della funzionalità di registrazione al sistema per creare account di tipo Utente}
-{Le credenziali corrette non sono presenti nel sistema, le credenziali errate sono già usate da un altro account. La persona non è utenticata nel sistema}
+{Nelle credenziali (username1, password1, email1) né l'username1 né l'email1 sono presenti nel sistema. Nelle (username2, password2, email2) l'username2 è presente nel sistema, mentre l'email2 non è presente nel sistema. Nelle (username3, password3, email3) l'username3 non è presente nel sistema, mentre l'email3 è presente nel sistema. La persona non è utenticata nel sistema}
 {\begin{enumCU}
 	\item Avviare la procedura di registrazione per creare un account Utente
-	\item Compilare il form con le credenziali corrette
+	\item Compilare il form con le credenziali (username1, password1, email1)
 	\item Confermare l'operazione di registrazione e verificare che avvenga con successo
 	\item Avviare la procedura di registrazione per creare un account Utente
-	\item Compilare il form con le credenziali errate
-	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore previsto
+	\item Compilare il form con le credenziali (username2, password2, email2)
+	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore ``Errore username già esistente''
+	\item Avviare la procedura di registrazione per creare un account Utente
+	\item Compilare il form con le credenziali (username3, password3, email3)
+	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore ``Errore email già esistente''
 \end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:iscrizioneApprovazione}
 {Testare il corretto funzionamento della funzionalità di registrazione al sistema per creare richieste di creazione account di tipo Produttore}
-{Le credenziali corrette non sono presenti nel sistema, le credenziali errate sono già usate da un altro account. La persona non è utenticata nel sistema}
+{Nelle credenziali (username1, password1, email1, richiesta1) né l'username1 né l'email1 sono presenti nel sistema. Nelle (username2, password2, email2, richiesta2) l'username2 è presente nel sistema, mentre l'email2 non è presente nel sistema. Nelle (username3, password3, email3, richiesta3) l'username3 non è presente nel sistema, mentre l'email3 è presente nel sistema. La persona non è utenticata nel sistema}
 {\begin{enumCU}
-    \item Avviare la procedura di registrazione per creare un account Produttore
-    \item Compilare il form con le credenziali corrette
-    \item Confermare l'operazione di registrazione
-    \item Verificare che la richiesta di creazione account sia avvenuta con successo
-    \item Avviare la procedura di registrazione per creare un account Produttore
-    \item Compilare il form con le credenziali errate
-    \item Confermare l'operazione di registrazione
-    \item Verificare che venga mostrato l'errore previsto
+	\item Avviare la procedura di registrazione per creare un account Produttore
+	\item Compilare il form con le credenziali (username1, password1, email1, richiesta1)
+	\item Confermare l'operazione di registrazione e Verificare che la richiesta di creazione account sia avvenuta con successo
+	\item Avviare la procedura di registrazione per creare un account Produttore
+	\item Compilare il form con le credenziali (username2, password2, email2, richiesta2)
+	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore ``Errore username già esistente''
+	\item Avviare la procedura di registrazione per creare un account Produttore
+	\item Compilare il form con le credenziali (username3, password3, email3, richiesta3)
+	\item Confermare l'operazione di registrazione e verificare che venga mostrato l'errore ``Errore email già esistente''
 \end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:approvazioneIscrizione}
 {Testare il corretto funzionamento della funzionalità di approvazione delle iscrizioni per creare account di tipo Produttore}
-{È presente una richiesta con dati validi e una con dati non validi. La persona è autenticata nel sistema ed ha i privilegi di Assistente}
+{È presente una richiesta di iscrizione (username1, password1, email1, richiesta1) in cui richiesta1 dimostri la validità del produttore che si vuole iscrivere. È presente una richiesta di iscrizione (username2, password2, email2, richiesta2) in cui richiesta2 non dimostra la validità del produttore che si vuole iscrivere. La persona è autenticata nel sistema ed ha i privilegi di Assistente}
 {\begin{enumCU}
-    \item Aprire la richiesta con dati validi
-    \item Confermare richiesta di creazione dell'account con dati validi
-    \item Verificare che la creazione dell'account sia avvenuta con successo
-    \item Verificare che la richiesta non sia più presente
-    \item Aprire la richiesta con dati non validi
-    \item Rifiutare la richiesta di creazione dell'account con dati validi
-    \item Verificare che la richiesta non sia più presente
+    \item Aprire la richiesta (username1, *****, email1, richiesta1)
+    \item Confermare la richiesta di creazione dell'account
+    \item Verificare che la creazione dell'account sia avvenuta con successo, controllando che sia presente un account con credenziali (username1, *****, email1)
+    \item Verificare che la richiesta (username1, *****, email1, richiesta1) non sia più presente
+    \item Aprire la richiesta (username2, *****, email2, richiesta2)
+    \item Rifiutare la richiesta di creazione dell'account 
+    \item Verificare che la richiesta non sia più presente, controllando che non sia presente un account con credenziali (username2, *****, email2)
 \end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:personalizzaVetrinaInsProd}
 {Testare il corretto funzionamento della funzionalità di inserimento di una scheda prodotto}
-{La persona è autenticata nel sistema ed ha i privilegi di Produttore}
+{La persona è autenticata nel sistema ed ha i privilegi di Produttore. I dati (nome, descrizionbe, immagini, marca, categoria, consistenza, paricolarità, ingredienti) sono relativi ad una possibile scheda prodotto}
 {\begin{enumCU}
     \item Selezionare inserimento scheda prodotto
-    \item Compilare i campi con i dati richiesti
+    \item Compilare i campi con i dati (nome, descrizionbe, immagini, marca, categoria, consistenza, paricolarità, ingredienti)
+    \item Annullare l'operazione di inserimento
+    \item Verificare che il prodotto non sia presente nella vetrina del produttore
+    \item Selezionare inserimento scheda prodotto
+    \item Compilare i campi con i dati (nome, descrizionbe, immagini, marca, categoria, consistenza, paricolarità, ingredienti)
     \item Confermare l'operazione di inserimento
     \item Verificare che il prodotto inserito sia presente nella vetrina del produttore
 \end{enumCU}}
@@ -110,14 +119,14 @@ Vengono di seguito elencati i test funzionali:
 
 \testTab{cu:inserisciRecensioneProdotto}
 {Testare il corretto funzionamento della funzionalità di inserimeto di una recensione di un prodotto}
-{La persona è autenticata nel sistema ed ha i privilegi di Utente. La persona sta visualizzando la scheda del prodotto A.}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente. La persona sta visualizzando la scheda del prodotto A. I dati (testo, immagini) sono relativi ad una possibile recensione}
 {\begin{enumCU}
 	\item Iniziare la procedura per inserire la recensione del prodotto A
-	\item Compilare i campi necessari
+	\item Compilare i campi con i dati (testo, immagini)
 	\item Annullare l'operazione
 	\item Verificare che la recensione non sia presente
 	\item Iniziare la procedura per inserire la recensione del prodotto A
-	\item Compilare i campi necessari
+	\item Compilare i campi con i dati (testo, immagini)
 	\item Confermare l'operazione
 	\item Verificare che la recensione sia presente
 \end{enumCU}}
@@ -126,7 +135,7 @@ Vengono di seguito elencati i test funzionali:
 
 \testTab{cu:eliminaRecensioneProdotto}
 {Testare il corretto funzionamento della funzionalità di rimozione recensione di un prodotto}
-{La persona è autenticata nel sistema ed ha i privilegi di Utente. La persona sta visualizzando la recensione R che ha inserito per un prodotto presente nel sistema}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente. La persona sta visualizzando la recensione R che ha inserito per un prodotto A presente nel sistema}
 {\begin{enumCU}
 	\item Iniziare la procedura per rimuovere la recensione R
 	\item Annullare l'operazione
@@ -140,14 +149,14 @@ Vengono di seguito elencati i test funzionali:
 
 \testTab{cu:commentoRecensione}
 {Testare il corretto funzionamento della funzionalità di inserimento commento a recensione}
-{La persona è autenticata nel sistema ed ha i privilegi di Utente oppure Produttore. La persona sta visualizzando una recensione R di un prodotto presente nel sistema}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente oppure Produttore. La persona sta visualizzando una recensione R di un prodotto presente nel sistema. I dati (testo, immagini) sono relativi ad un possibile commento}
 {\begin{enumCU}
 	\item Iniziare la procedura di inserimento commento per la recensione R
-	\item Compilare i campi necessari
+	\item Compilare i campi con i dati (testo, immagini)
 	\item Annullare l'operazione 
 	\item Verificare che il commento per la recensione R non sia presente
 	\item Iniziare la procedura di inserimento commento per la recensione R
-	\item Compilare i campi necessari
+	\item Compilare i campi con i dati (testo, immagini)
 	\item Confermare l'operazione 
 	\item Verificare che il commento per la recensione R sia presente
 \end{enumCU}}
@@ -159,58 +168,55 @@ Vengono di seguito elencati i test funzionali:
 {La persona è autenticata nel sistema ed ha i privilegi di Utente oppure Produttore. La persona sta visualizzando una recensione R di un prodotto presente nel sistema}
 {\begin{enumCU}
 	\item Inserire un giudizio positivo o negativo per la recensione R
-	\item Verificare il giudizio per la recensione R sia presente
+	\item Verificare il giudizio inserito per la recensione R sia presente
 \end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:ricercaProdotto}
 {Testare il corretto funzionamento della funzionalità di ricerca prodotto}
-{La persona è connessa al sistema}
+{La persona è connessa al sistema. Il ``testo'' è la keyword che si vuole utilizzare per ricercare prodotti}
 {\begin{enumCU}
-	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Inserire il ``testo'' nell'apposito campo per la ricerca
 	\item Selezionare la tipologia di ricerca ``Prodotto''
 	\item Annullare la ricerca
 	\item Verificare che non vengano mostrati le anteprime dei risultati della ricerca
-	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Inserire il ``testo'' nell'apposito campo per la ricerca
 	\item Selezionare la tipologia di ricerca ``Prodotto''
 	\item Confermare la ricerca
-	\item Verificare che vengano mostrati le anteprime dei risultati della ricerca
-	\item Verificare che i risultati della ricerca siano corretti
+	\item Verificare che siano mostrati come risultato di ricerca solamente le anteprime di schede prodotti
 \end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:ricercaProfilo}
 {Testare il corretto funzionamento della funzionalità di ricerca profilo}
-{La persona è connessa al sistema}
+{La persona è connessa al sistema. Il ``testo'' è la keyword che si vuole utilizzare per ricercare prodotti}
 {\begin{enumCU}
-	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Inserire il ``testo'' nell'apposito campo per la ricerca
 	\item Selezionare la tipologia di ricerca ``Profilo''
 	\item Annullare la ricerca
 	\item Verificare che non vengano mostrati le anteprime dei risultati della ricerca
-	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Inserire il ``testo'' nell'apposito campo per la ricerca
 	\item Selezionare la tipologia di ricerca ``Profilo''
 	\item Confermare la ricerca
-	\item Verificare che vengano mostrati le anteprime dei risultati della ricerca
-	\item Verificare che i risultati della ricerca siano corretti
+	\item Verificare che siano mostrati come risultato di ricerca solamente le anteprime di profili
 \end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:ricercaNotizia}
 {Testare il corretto funzionamento della funzionalità di ricerca notizia}
-{La persona è connessa al sistema}
+{La persona è connessa al sistema. Il ````testo'''' è la keyword che si vuole utilizzare per ricercare prodotti}
 {\begin{enumCU}
-	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Inserire il ``testo'' nell'apposito campo per la ricerca
 	\item Selezionare la tipologia di ricerca ``Notizia''
 	\item Annullare la ricerca
 	\item Verificare che non vengano mostrati le anteprime dei risultati della ricerca
-	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Inserire il ``testo'' nell'apposito campo per la ricerca
 	\item Selezionare la tipologia di ricerca ``Notizia''
 	\item Confermare la ricerca
-	\item Verificare che vengano mostrati le anteprime dei risultati della ricerca
-	\item Verificare che i risultati della ricerca siano corretti
+	\item Verificare che siano mostrati come risultato di ricerca solamente le anteprime di notizie
 \end{enumCU}}
 
 
