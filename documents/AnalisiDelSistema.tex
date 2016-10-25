@@ -562,37 +562,27 @@ I diagrammi delle classi servono a modellare la relazione tra le entità del sis
 Una classe è composta da delle caratteristiche che la descrivono (attributi) e delle elaborazioni che vengono eseguite (metodi). 
 Le classi servono ad identificare chi fa che cosa e come all’interno del sistema. Queste possono avere relazioni tra loro, le quali sono rappresentate con le associazioni. La cardinalità di un’associazione esprime il numero di oggetti di una certa classe che prendono parte all’associazione. Di seguito sono elencati i diagrammi delle classi:
 \begin{itemize}
-	\item \newPKG{pkg:Autenticazione}{\formattaPKG}{Autenticazione}
-	\item \newPKG{pkg:Comunicazioni}{\formattaPKG}{Comunicazioni}
-	\item \newPKG{pkg:Contenuti}{\formattaPKG}{Contenuti}
+	\item \newPKG{pkg:Pagine}{\formattaPKG}{Pagine}
 	\item \newPKG{pkg:GestioneContenuti}{\formattaPKG}{Gestione contenuti}
 	\item \newPKG{pkg:GestioneProfili}{\formattaPKG}{Gestione profili}
-	\item \newPKG{pkg:GestioneSistema}{\formattaPKG}{Gestione sistema}
 	\item \newPKG{pkg:GestioniComunicazioni}{\formattaPKG}{Gestioni comunicazioni}
+	\item \newPKG{pkg:GestioneSistema}{\formattaPKG}{Gestione sistema}
+	\item \newPKG{pkg:Contenuti}{\formattaPKG}{Contenuti}
+	\item \newPKG{pkg:Comunicazioni}{\formattaPKG}{Comunicazioni}
 	\item \newPKG{pkg:Iscrizioni}{\formattaPKG}{Iscrizioni}
-	\item \newPKG{pkg:Pagine}{\formattaPKG}{Pagine}
 	\item \newPKG{pkg:Profili}{\formattaPKG}{Profili}
+	\item \newPKG{pkg:Autenticazione}{\formattaPKG}{Autenticazione}
 	\item \newPKG{pkg:Utility}{\formattaPKG}{Utility}
 \end{itemize}
 
 
-\linkedSubsection{pkg:Autenticazione}
-\begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Autenticazione}
-\end{center}
-
-\linkedSubsection{pkg:Comunicazioni}
-\begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Comunicazioni}
-\end{center}
-
 \begin{landscape}
-\linkedSubsection{pkg:Contenuti}
+\linkedSubsection{pkg:Pagine}
 \begin{center}
-			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/Contenuti}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/Pagine}
 \end{center}
 \end{landscape}
-	
+
 \linkedSubsection{pkg:GestioneContenuti}
 \begin{center}
 			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioneContenuti}
@@ -605,6 +595,11 @@ Le classi servono ad identificare chi fa che cosa e come all’interno del siste
 \end{center}
 \end{landscape}
 
+\linkedSubsection{pkg:GestioniComunicazioni}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioniComunicazioni}
+\end{center}
+
 \begin{landscape}
 \linkedSubsection{pkg:GestioneSistema}
 \begin{center}
@@ -612,9 +607,16 @@ Le classi servono ad identificare chi fa che cosa e come all’interno del siste
 \end{center}
 \end{landscape}
 
-\linkedSubsection{pkg:GestioniComunicazioni}
+\begin{landscape}
+\linkedSubsection{pkg:Contenuti}
 \begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/GestioniComunicazioni}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/Contenuti}
+\end{center}
+\end{landscape}
+
+\linkedSubsection{pkg:Comunicazioni}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Comunicazioni}
 \end{center}
 
 \linkedSubsection{pkg:Iscrizioni}
@@ -622,16 +624,14 @@ Le classi servono ad identificare chi fa che cosa e come all’interno del siste
 			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Iscrizioni}
 \end{center}
 
-\begin{landscape}
-\linkedSubsection{pkg:Pagine}
-\begin{center}
-			\includegraphics[width=\linewidth]{assets/visualParadigm/classi/Pagine}
-\end{center}
-\end{landscape}
-
 \linkedSubsection{pkg:Profili}
 \begin{center}
 			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Profili}
+\end{center}
+
+\linkedSubsection{pkg:Autenticazione}
+\begin{center}
+			\includegraphics[width=\textwidth]{assets/visualParadigm/classi/Autenticazione}
 \end{center}
 
 \linkedSubsection{pkg:Utility}
