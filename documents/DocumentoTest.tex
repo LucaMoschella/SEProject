@@ -109,52 +109,109 @@ Vengono di seguito elencati i test funzionali:
 \vspaceTab
 
 \testTab{cu:inserisciRecensioneProdotto}
-{}
-{}
-{}
+{Testare il corretto funzionamento della funzionalità di inserimeto di una recensione di un prodotto}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente. La persona sta visualizzando la scheda del prodotto A.}
+{\begin{enumCU}
+	\item Iniziare la procedura per inserire la recensione del prodotto A
+	\item Compilare i campi necessari
+	\item Annullare l'operazione
+	\item Verificare che la recensione non sia presente
+	\item Iniziare la procedura per inserire la recensione del prodotto A
+	\item Compilare i campi necessari
+	\item Confermare l'operazione
+	\item Verificare che la recensione sia presente
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:eliminaRecensioneProdotto}
-{}
-{}
-{}
+{Testare il corretto funzionamento della funzionalità di rimozione recensione di un prodotto}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente. La persona sta visualizzando la recensione R che ha inserito per un prodotto presente nel sistema}
+{\begin{enumCU}
+	\item Iniziare la procedura per rimuovere la recensione R
+	\item Annullare l'operazione
+	\item Verificare che la recensione sia ancora presente
+	\item Iniziare la procedura per rimuovere la recensione R
+	\item Confermare l'operazione
+	\item Verificare che la recensione non sia più presente
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:commentoRecensione}
-{}
-{}
-{}
+{Testare il corretto funzionamento della funzionalità di inserimento commento a recensione}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente oppure Produttore. La persona sta visualizzando una recensione R di un prodotto presente nel sistema}
+{\begin{enumCU}
+	\item Iniziare la procedura di inserimento commento per la recensione R
+	\item Compilare i campi necessari
+	\item Annullare l'operazione 
+	\item Verificare che il commento per la recensione R non sia presente
+	\item Iniziare la procedura di inserimento commento per la recensione R
+	\item Compilare i campi necessari
+	\item Confermare l'operazione 
+	\item Verificare che il commento per la recensione R sia presente
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:giudizioRecensione}
-{}
-{}
-{}
+{Testare il corretto funzionamento della funzionalità di inserimento giudizio a recensione}
+{La persona è autenticata nel sistema ed ha i privilegi di Utente oppure Produttore. La persona sta visualizzando una recensione R di un prodotto presente nel sistema}
+{\begin{enumCU}
+	\item Inserire un giudizio positivo o negativo per la recensione R
+	\item Verificare il giudizio per la recensione R sia presente
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:ricercaProdotto}
-{}
-{}
-{}
+{Testare il corretto funzionamento della funzionalità di ricerca prodotto}
+{La persona è connessa al sistema}
+{\begin{enumCU}
+	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Selezionare la tipologia di ricerca ``Prodotto''
+	\item Annullare la ricerca
+	\item Verificare che non vengano mostrati le anteprime dei risultati della ricerca
+	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Selezionare la tipologia di ricerca ``Prodotto''
+	\item Confermare la ricerca
+	\item Verificare che vengano mostrati le anteprime dei risultati della ricerca
+	\item Verificare che i risultati della ricerca siano corretti
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:ricercaProfilo}
-{}
-{}
-{}
+{Testare il corretto funzionamento della funzionalità di ricerca profilo}
+{La persona è connessa al sistema}
+{\begin{enumCU}
+	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Selezionare la tipologia di ricerca ``Profilo''
+	\item Annullare la ricerca
+	\item Verificare che non vengano mostrati le anteprime dei risultati della ricerca
+	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Selezionare la tipologia di ricerca ``Profilo''
+	\item Confermare la ricerca
+	\item Verificare che vengano mostrati le anteprime dei risultati della ricerca
+	\item Verificare che i risultati della ricerca siano corretti
+\end{enumCU}}
 
 \vspaceTab
 
 \testTab{cu:ricercaNotizia}
-{}
-{}
-{}
-
+{Testare il corretto funzionamento della funzionalità di ricerca notizia}
+{La persona è connessa al sistema}
+{\begin{enumCU}
+	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Selezionare la tipologia di ricerca ``Notizia''
+	\item Annullare la ricerca
+	\item Verificare che non vengano mostrati le anteprime dei risultati della ricerca
+	\item Inserire il testo nell'apposito campo per la ricerca
+	\item Selezionare la tipologia di ricerca ``Notizia''
+	\item Confermare la ricerca
+	\item Verificare che vengano mostrati le anteprime dei risultati della ricerca
+	\item Verificare che i risultati della ricerca siano corretti
+\end{enumCU}}
 
 
 
