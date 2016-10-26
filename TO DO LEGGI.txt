@@ -24,15 +24,9 @@
 
 Todo:
 
-) Via tutta la storia dei tag dinamici.
-)Aggiungi suggerimenti in gestione contenuti nel mapping
 )Prodotto non ha ID
 )Gestione prodotto o gestione vetrina devono permettere di prendere un prodotto (in tal modo è possibile implementare la funzione di modifica prodotto)
-)Plugin per il login con sms
 )Matrice tracciabilità
-) Contorlla casi d'uso per iscrizione con facebook
 ) Privilegio -> tipo in account
 )GestioneSegnalazioni: rimuoviSegnalazione
 ) modificaPrivilegi nella classe GestioneIscritti -> modificaTipi
-
-) Arrivati a RICERCA
