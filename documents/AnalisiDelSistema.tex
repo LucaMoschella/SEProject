@@ -46,25 +46,31 @@ I diagrammi di attività descrivono il comportamento nel tempo di un particolare
 	\end{tabularx}
 \end{center}
 
+\begin{landscape}
 \linkedSubsection{da:login}
 \begin{center}
-			\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/login}
+			\includegraphics[width=\linewidth]{assets/visualParadigm/attivita/login}
 \end{center}
+\end{landscape}
 
+\begin{landscape}
 \linkedSubsection{da:logout}
 \begin{center}
-	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/logout}
+	\includegraphics[width=\linewidth]{assets/visualParadigm/attivita/logout}
 \end{center}
+\end{landscape}
 
 \linkedSubsection{da:iscrizione}
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/iscrizioni}
 \end{center}
 
+\begin{landscape}
 \linkedSubsection{da:approvazione}
 \begin{center}
-	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/approvazioneIscrizione}
+	\includegraphics[width=\linewidth]{assets/visualParadigm/attivita/approvazioneIscrizione}
 \end{center}
+\end{landscape}
 
 \linkedSubsection{da:schedaprodotto}
 \begin{center}
@@ -85,6 +91,7 @@ I diagrammi di attività descrivono il comportamento nel tempo di un particolare
 \begin{center}
 	\includegraphics[width=\textwidth]{assets/visualParadigm/attivita/mostraRecensioni}
 \end{center}
+\newpage
 
 % \ul{testoSottolineato}
 % \setulcolor{orange}
@@ -112,24 +119,24 @@ Le diverse figure presenti si distinguono a seconda di quali funzionalità posso
 \bigskip
 \noindent
 
-Nel sistema sono presente diversi \ulR{tipi di account}.
-Ogni \ulR{account} presente nel sistema possiede almeno un \ulG{tipo} e, a seconda dei tipi che possiede, gli vengono associati determinati \ulR{privilegi}, che gli permettono l'accesso alle funzionalità che ogni privilegio fornisce. In questo modo un singolo account può ricoprire più ruoli, è ad esempio possibile che un utente sia anche un redattore anche se quest'ultimo di base non è un utente.
+Nel sistema sono presenti diversi \ulR{tipi di account}.
+Ogni \ulR{account} presente nel sistema possiede almeno un \ulG{tipo} e, a seconda dei tipi che possiede, gli vengono associati determinati \ulR{privilegi}, che gli permettono l'accesso alle funzionalità che ogni privilegio fornisce. In questo modo un singolo \ulR{account} può ricoprire più ruoli (possedendo più \ulR{tipi account}), è ad esempio possibile che un \ruolo{utente} sia anche un \ruolo{redattore} anche se quest'ultimo di base non è un \ruolo{utente}.
 
 I \ruolo{visitatori} possono \ulB{effettuare l'iscrizione}, diversa a seconda della tipologia di account che si vuole \ulB{creare}, e \ulB{l'autenticazione}. La creazione di un \ulR{account} \ruolo{utente} può essere effettuata tramite l'integrazione con Facebook.
 
-Gli \ruolo{utenti} possono \ulB{valutare oppure effettuare una recensione} di un \ulR{prodotto}, la quale aggiunge una \ulG{descrizione} con eventuali \ulG{immagini} alla \ulR{valutazione}. Una volta \ulB{inserita} una \ulR{recensione} o una \ulR{valutazione} è possibile \ulB{modificarla}, oppure è possibile \ulB{eliminare} la propria \ulR{recensione}. 
-Per permettere di \ulB{visualizzare} velocemente le \ulR{recensioni} più utili, gli \ruolo{utenti} possono \ulB{dare} un \ulR{giudizio} \ulG{positivo} oppure \ulG{negativo} alle \ulR{recensioni} presenti. Hanno inoltre la possibilità di \ulB{commentare} le \ulR{recensioni}, per permettere una maggiore interazione fra gli \ruolo{utenti}.
+Gli \ruolo{utenti} possono \ulB{effettuare} una \ulR{valutazione} o una \ulR{recensione} di un \ulR{prodotto}, la quale aggiunge un \ulG{testo} con eventuali \ulG{immagini} alla \ulR{valutazione}. E' possibile modificare le proprie \ulR{valutazioni} o \ulR{recensioni}. Inoltre è possibile \ulB{eliminare} le proprie \ulR{recensioni}.
+Gli \ruolo{utenti} possono dare un \ulR{giudizio} \ulG{positivo} oppure \ulG{negativo} alle \ulR{recensioni} presenti. Hanno inoltre la possibilità di \ulB{commentare le recensioni}, per avere la possibilità di interagire con gli altri \ruolo{utenti}.
 Per facilitare l'inserimento di informazioni nel portale sono state inoltre pensate due particolari funzionalità: l'\ruolo{utente} può \ulB{suggerire un prodotto mancante ad un produttore iscritto}, e tale \ruolo{produttore} potrà scegliere se \ulB{accettare o rifiutare} la \ulR{richiesta di inserimento}, eventualmente modificando le \ulG{informazioni} inserite dall'\ruolo{utente}; inoltre l'\ruolo{utente} potrà \ulB{suggerire al sistema un prodotto mancante di un produttore esterno non ancora iscritto} al portale.
 
-I \ruolo{produttori} hanno a disposizione uno spazio per pubblicizzare i loro prodotti, che da questo momento in avanti chiameremo \ulR{vetrina}. Essi potranno \ulB{personalizzare} la loro \ulR{vetrina}, \ulB{inserendo} una \ulG{descrizione} e un \ulG{immagine}. Potranno \ulB{inserire prodotti o modificare quelli già inseriti}. L'inserimento di prodotti seguirà una rigida procedura per garantire la consistenza dei dati e facilitare la \ulB{ricerca dei prodotti}. Potranno inoltre \ulB{commentare le recensioni} dei prodotti.
+I \ruolo{produttori} hanno a disposizione uno spazio per pubblicizzare i loro prodotti, che da questo momento in avanti chiameremo \ulR{vetrina}. Essi potranno \ulB{personalizzare} la loro \ulR{vetrina}, \ulB{inserendo} una \ulG{descrizione} e un'\ulG{immagine}. Potranno \ulB{inserire prodotti o modificare quelli già inseriti}. L'inserimento di prodotti seguirà una rigida procedura per garantire la consistenza dei dati e facilitare la \ulB{ricerca dei prodotti}. Potranno inoltre \ulB{commentare le recensioni} dei prodotti.
 
 \bigskip
-Le \grupporuolo{figure pubbliche autenticate} possono usufruire del sistema di \ulG{follower/followed}, possono quindi \ulB{seguire altri account} per \ulB{ricevere aggiornamenti} da essi, \ulB{rimuovere account} che si stanno seguendo oppure \ulB{visualizzare gli aggiornamenti dagli account seguiti}. Possono inoltre \ulB{segnalare recensioni/commenti con contenuti non appropriati} e \ulB{aprire} \ulR{ticket} per richiedere assistenza.
+Le \grupporuolo{figure pubbliche autenticate} possono usufruire del sistema di \ulG{follower/followed}, possono quindi \ulB{seguire altri account}, \ulB{rimuovere account che stanno seguendo} oppure \ulB{visualizzare gli aggiornamenti degli account che seguono}. Possono inoltre \ulB{segnalare contenuti inapprorpiati} e \ulB{aprire} \ulR{ticket} per richiedere assistenza.
 
 I \ruolo{visitatori} e gli \ruolo{utenti} possono \ulB{ricevere consigli} sui prodotti o sulle notizie simili a quelli che stanno visualizzando. 
 
-Tutte le \grupporuolo{figure pubbliche} possono \ulB{effettuare ricerche} nel portale, in base a diversi criteri, di \ulR{prodotti}, di \ulR{notizie} e di \ulR{profili pubblici}.
-Esse possono inoltre \ulB{gestire il proprio account}, con la possibilità di \ulB{visualizzare il profilo} (pubblico), \ulB{accedere alle impostazioni} (private), effettuare il \ulB{logout} oppure \ulB{rimuovere l'account}. Da notare che l'eventuale \ulB{rimozione dell'account} non comporterà la rimozione dei contenuti inseriti nel portale, ma solo la rimozione dello stesso. Possono inoltre \ulB{visualizzare} i \ulR{contenuti} pubblici del portale, quali le \ulR{vetrine} dei produttori, i singoli \ulR{prodotti} con le \ulR{recensioni} associate, i \ulR{profili pubblici} e le \ulR{notizie} presenti nel portale.
+Tutte le \grupporuolo{figure pubbliche} possono \ulB{effettuare ricerche} nel portale in base a diversi criteri: prodotti, notizie e profili pubblici.
+Esse possono inoltre \ulB{gestire il proprio account}, con la possibilità di \ulB{visualizzare il profilo} (pubblico), \ulB{accedere alle impostazioni} (private) oppure \ulB{rimuovere l'account}. Da notare che l'eventuale \ulB{rimozione dell'account} non comporterà la rimozione dei contenuti inseriti nel portale, ma solo la rimozione dello stesso. Possono inoltre \ulB{visualizzare} i \ulR{contenuti} pubblici del portale, quali le \ulR{vetrine} dei produttori, i singoli \ulR{prodotti} con le \ulR{recensioni} associate, i \ulR{profili pubblici} e le \ulR{notizie} presenti nel portale.
 
 \bigskip
 \noindent
@@ -141,7 +148,7 @@ Gli \ruolo{assistenti} possono \ulB{rispondere} ai \ulR{ticket} per risolvere i 
 
 I \ruolo{moderatori} possono \ulB{eliminare contenuti non appropriati} presenti nel sistema, che possono essere \ulB{segnalati} dalle \grupporuolo{figure pubbliche autenticate}.
 
-Gli \ruolo{amministratori} possono accedere al pannello di controllo del \gls{cms}, attraverso il quale possono configurare il portale in ogni suo aspetto. Può inoltre gestire gli account, \ulB{creandone di nuovi, modificando i privilegi o rimuovendo} quelli già presenti. 
+Gli \ruolo{amministratori} possono accedere al pannello di controllo del \gls{cms}, attraverso il quale possono configurare il portale in ogni suo aspetto. Possono inoltre gestire gli account, \ulB{creandone di nuovi, modificando i privilegi o rimuovendo} quelli già presenti. 
 
 \bigskip
 \noindent
@@ -157,6 +164,7 @@ Nel portale che si vuole realizzare le informazioni sui \ulR{prodotti} sono di f
 	\item \infoProdotto{\ulG{Ingredienti.}}
 \end{itemize}
 L'inserimento di queste informazioni è compito del \ruolo{produttore}, il quale seguirà una rigida procedura che sarà descritta nel dettaglio durante la specifica delle funzionalità.
+Sarà possibile marcare un \ulR{prodotto} come \infoProdotto{\ulG{Fuori produzione}}, modificando un campo presente nella sua scheda, che al momento dell'inserimento sarà automaticamente impostato a \infoProdotto{\ulG{In produzione}}.
 
 
 \section{Carte CRC}
@@ -213,9 +221,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Signleton necessario per raccogliere tutte le informazioni riguardanti le iscrizioni
 	\item Possibilità di effettuare l'iscrizione
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -223,9 +229,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di iscrizione
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -233,9 +237,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni account
 \end{itemWork}}
-{\begin{itemWork}
-	\item Tipo account, Profilo
-\end{itemWork}}
+{Tipo account, Profilo}
 
 \vspaceTab
 
@@ -244,9 +246,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Enumerazione delle possibili tipologie di account presenti nel sistema
 	\item Possibilità di ottenere i privilegi disponibili dati i tipi posseduti
 \end{itemWork}}
-{\begin{itemWork}
-	\item Privilegi
-\end{itemWork}}
+{Privilegi}
 
 \vspaceTab
 
@@ -263,9 +263,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Generalizzazione dei vari tipi di contenuti presenti nel sistema
 	\item Memorizzazione dell'autore del contenuto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -273,9 +271,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per commentare una recensione
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -285,9 +281,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Possibilità di effettuare un commento
 	\item Possibilità di effettuare un giudizio
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account, Commento, Giudizio
-\end{itemWork}}
+{Account, Commento, Giudizio}
 
 \vspaceTab
 
@@ -295,9 +289,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per giudicare una recensione
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -307,9 +299,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Possibilità di effettuare una recensione
 	\item Possibilità di effettuare una valutazione
 \end{itemWork}}
-{\begin{itemWork}
-	\item Recensione, Valutazione, Consistenza prodotto, Categoria prodotto
-\end{itemWork}}
+{Recensione, Valutazione, Consistenza prodotto, Categoria prodotto}
 
 \vspaceTab
 
@@ -317,9 +307,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per valutare una scheda prodotto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -327,9 +315,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per l'inserimento di una notizia
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -353,9 +339,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per la creazione di un ticket
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -363,9 +347,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di inserimento di un produttore mancante
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account, Scheda Prodotto
-\end{itemWork}}
+{Account, Scheda Prodotto}
 
 \vspaceTab
 
@@ -374,9 +356,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per rispondere ad un ticket aperto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Ticket, Account
-\end{itemWork}}
+{Ticket, Account}
 
 \vspaceTab
 
@@ -384,9 +364,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per la creazione di una richiesta di inserimento di un prodotto mancante
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account, Scheda Prodotto, Profilo Produttore
-\end{itemWork}}
+{Account, Scheda Prodotto, Profilo Produttore}
 
 \vspaceTab
 
@@ -394,9 +372,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Singleton necessario per raccogliere tutte le segnalazioni di contenuti presenti nel sistema
 \end{itemWork}}
-{\begin{itemWork}
-	\item Segnalazione contenuto
-\end{itemWork}}
+{Segnalazione contenuto}
 
 \vspaceTab
 
@@ -404,9 +380,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni necessarie per la creazione di una segnalazione di un contenuto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account, Contenuto
-\end{itemWork}}
+{Account, Contenuto}
 
 \vspaceTab
 
@@ -415,9 +389,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione di tutte le informazioni del profilo
 	\item Memorizzazione della lista dei follower/followed del profilo
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 \vspaceTab
 
@@ -427,9 +399,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Possibilità di visualizzare la vetrina associata
 	\item Possibilità di visualizzare le richieste prodotto a lui indirizzate
 \end{itemWork}}
-{\begin{itemWork}
-	\item Richiesta Prodotto, Vetrina
-\end{itemWork}}
+{Richiesta Prodotto, Vetrina}
 
 \vspaceTab
 
@@ -438,9 +408,7 @@ Di seguito sono elencate le carte \gls{crc}:
     \item Memorizzazione delle informazioni e dei prodotti presenti nella vetrina di un dato produttore
 	\item Possibilità di gestire prodotti
 \end{itemWork}}
-{\begin{itemWork}
-	\item Profilo Produttore, Scheda Prodotto
-\end{itemWork}}
+{Profilo Produttore, Scheda Prodotto}
 
 \vspaceTab
 
@@ -448,9 +416,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Singleton necessario per raccogliere le informazioni relative agli accessi degli iscritti e dei visitatori
 \end{itemWork}}
-{\begin{itemWork}
-	\item Accesso Iscritto, Accesso Ospite
-\end{itemWork}}
+{Accesso Iscritto, Accesso Ospite}
 
 \vspaceTab
 
@@ -459,9 +425,7 @@ Di seguito sono elencate le carte \gls{crc}:
 {\begin{itemWork}
 	\item Memorizzazione delle informazioni relative ad un accesso di un iscritto
 \end{itemWork}}
-{\begin{itemWork}
-	\item Account
-\end{itemWork}}
+{Account}
 
 
 \vspaceTab
@@ -511,9 +475,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di un dato prodotto
 	\item Possibilità di mostrare l'anteprima del prodotto associato
 \end{itemWork}}
-{\begin{itemWork}
-	\item Prodotto
-\end{itemWork}}
+{Prodotto}
 
 \vspaceTab
 
@@ -522,9 +484,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di un dato profilo
 	\item Possibilità di mostrare l'anteprima del profilo associato
 \end{itemWork}}
-{\begin{itemWork}
-	\item Profilo
-\end{itemWork}}
+{Profilo}
 
 \vspaceTab
 
@@ -533,9 +493,7 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di un dato profilo produttore
 	\item Possibilità di mostrare l'anteprima del profilo associato, che comprenderà la possibilità di andare sia al profilo del produtture che alla vetrina dello stesso
 \end{itemWork}}
-{\begin{itemWork}
-	\item Vetrina
-\end{itemWork}}
+{Vetrina}
 
 \vspaceTab
 
@@ -544,14 +502,12 @@ Di seguito sono elencate le carte \gls{crc}:
 	\item Memorizzazione delle informazioni necessarie per mostrare l'anteprima di una data notizia
 	\item Possibilità di mostrare l'anteprima della notizia associata
 \end{itemWork}}
-{\begin{itemWork}
-	\item Notizia
-\end{itemWork}}
+{Notizia}
 
 
 %\begin{landscape}
 \section{Diagramma dei package}  \label{cha:package}
-Il diagramma dei package sono diagrammi di struttura che descrive i package del sistema e le relazioni tra essi. Il sistema è stato modellato seguendo il pattern \gls{ecb}.
+Il diagramma dei package è un diagramma di struttura che descrive i package del sistema e le relazioni tra essi. Il sistema è stato modellato seguendo il pattern \gls{ecb}.
 \begin{center}
 			\includegraphics[width=\linewidth]{assets/visualParadigm/package/DiagrammaPacakage}
 \end{center}
@@ -639,16 +595,14 @@ Le classi servono ad identificare chi fa che cosa e come all’interno del siste
 			\includegraphics[width=0.25\textwidth]{assets/visualParadigm/classi/Utility}
 \end{center}
 
-
-
 \section{Diagrammi di sequenza}  \label{cha:sequenza}
-I diagrammi di sequenza descrivono le interazioni tra gli oggetti organizzate in sequenza temporale. Ogni caso d’uso contiene al suo interno diversi diagrammi di sequenza. Rappresenteremo solo le sequenze principali.
+I diagrammi di sequenza descrivono le interazioni tra gli oggetti, organizzate in modo temporale. Ogni caso d’uso contiene al suo interno diversi diagrammi di sequenza.
 Un diagramma di sequenza è costituito da:
 \begin{itemize}
 	\item Gli oggetti
 	\item I messaggi attraverso cui essi interagiscono
 \end{itemize}
-Di seguito sono elencati i diagrammi di sequenza, non verranno riportati tutti i diagrammi di sequenza, ma solo quelli corrispondenti ai casi d'uso principali.
+Di seguito sono elencati i diagrammi di sequenza, non verranno riportati tutti i diagrammi di sequenza ma solo quelli ritenuti più importanti.
 \begin{itemize}
 	\item \newSequenza{seq:login}{\formattaSEQ}{Login}
 	\item \newSequenza{seq:logout}{\formattaSEQ}{Logout}

@@ -32,3 +32,7 @@ Todo:
 )Matrice tracciabilità
 ) Contorlla casi d'uso per iscrizione con facebook
 ) Privilegio -> tipo in account
+)GestioneSegnalazioni: rimuoviSegnalazione
+) modificaPrivilegi nella classe GestioneIscritti -> modificaTipi
+
+) Arrivati a RICERCA

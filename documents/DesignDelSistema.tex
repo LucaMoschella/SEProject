@@ -1,7 +1,7 @@
 \chapter{Design del sistema}
 
 \section{Introduzione}
-In questo documento mostreremo delle soluzioni concrete per il modello di analisi effettuato nel documento di \docref{cha:analisi}, aggiungeremo quindi il \emph{come} al \emph{cosa}. Mostreremo quindi una specifica architetture del sistema e aggiungeremo il necessario per rendere possibile l'implementazione dei requisiti formalizzati nel documento di \docref{cha:specifica_requisiti}.
+In questo documento mostreremo delle soluzioni concrete per il modello descritto nel documento di \docref{cha:analisi}, aggiungeremo quindi il \emph{come} al \emph{cosa}. Mostreremo quindi una specifica architetturale del sistema e aggiungeremo il necessario per rendere possibile l'implementazione dei requisiti formalizzati nel documento di \docref{cha:specifica_requisiti}.
 
 \section{Architettura del sistema}
 Vengono di seguito mostrate l'architettura fisica e quella software del sistema.
@@ -15,7 +15,7 @@ L'architettura fisica del sistema è mostrata dalla seguente figura:
 \subsection{Architettura software}
 L'architettura software del sistema è mostrata dalla seguente figura:
 \begin{center}
-   \includegraphics[width=\textwidth]{assets/architetturaSoftware}
+   \includegraphics[width=0.7\textwidth]{assets/architetturaSoftware}
 \end{center}
 
 \section{WordPress} \label{cms:wp}
@@ -33,20 +33,20 @@ Per installare WordPress sarà necessario seguire i seguenti passi:
 \end{enumerate}
 
 \subsection{Configurazione}
-Si dovranno creare le pagine descritte in fase di analisi, abilitare l'iscrizione ed il login al sito.
+Si dovranno creare le pagine descritte in fase di analisi, abilitare l'iscrizione ed il login al sito. Si dovranno inoltre installare, attivare e configurare tutti i plugin descritti nella prossima sezione.
 
 \subsection{Plugin} \label{sec_plugin}
 WordPress mette a disposizione oltre 47mila plugin, i quali estendono ed espandono le funzionalità di base presenti.
 L'installazione e l'attivazione dei plugin è immediata, in quanto è possibile effettuarla direttamente tramite il pannello di controllo di WordPress.
-Per implementare tutte le funzionalità precedentemente descritte sarà necessario installare ed attivare i seguenti plugin.
+Per implementare tutte le funzionalità precedentemente descritte sarà necessario installare ed attivare i seguenti plugin. Dovranno essere disattivate le funzioni fornite in eccesso dai plugin.
 
 \subsubsection{User Role Editor} \label{plugin:ure}
-\paragraph{Descrizione.} Con il plugin \gls{ure} è possibile cambiare le capacità di ogni ruolo. Basta spuntare le caselle di controllo delle capacità che si desidera aggiungere al ruolo selezionato. Aggiungere nuovi ruoli e personalizzarne le capacità in base alle proprie esigenze. Il ruolo creato automaticamente può essere eliminato se non ci sono utenti a cui tale ruolo è assegnato. Anche il ruolo assegnato di default alla creazione di ogni nuovo utente può essere modificato. Le capacità possono essere assegnate sulla base del singolo utente. Ruoli multipli possono essere assegnati all'utente simultaneamente. È possibile aggiungere nuove funzionalità e rimuovere le funzionalità non necessarie che potrebbero essere state lasciate da un plugin disinstallato.
+\paragraph{Descrizione.} Con il plugin \gls{ure} è possibile cambiare le capacità di ogni ruolo. Basta spuntare le caselle di controllo delle capacità che si desidera aggiungere al ruolo selezionato. Aggiungere nuovi ruoli e personalizzarne le capacità in base alle proprie esigenze. Anche il ruolo assegnato di default alla creazione di ogni nuovo utente può essere modificato. Le capacità possono essere assegnate sulla base del singolo utente. Ruoli multipli possono essere assegnati all'utente simultaneamente. È possibile aggiungere nuove funzionalità e rimuovere le funzionalità non necessarie che potrebbero essere state lasciate da un plugin disinstallato.
 \paragraph{Utilizzo.} \gls{ure} potrà essere utilizzato dall'amministratore per la gestione dei ruoli, dei profili, degli account e dell'assegnamento dei privilegi in base a quali ruoli un account possiede.
 \paragraph{Configurazione.} Si dovranno creare i ruoli Visitatore, Utente, Produttore, Assistente, Redattore, Moderatore e Amministratore, assegnando ad ognuno i corrispettivi privilegi.
 
 \subsubsection{Profile Builder Pro} \label{plugin:pbp}
-\paragraph{Descrizione.} Il plugin \gls{pbp} permette di creare profili altamente personalizzabili, è possibile inoltre personalizzare il form di iscrizione, login e recupero password. 
+\paragraph{Descrizione.} Il plugin \gls{pbp} permette di creare profili altamente personalizzabili. E' possibile inoltre creare e personalizzare form di iscrizione, login multipli. Permette di richiedere l'approvazione degli account a seconda del ruolo che assumono.
 \paragraph{Utilizzo.}  \gls{pbp} potrà essere utilizzato per creare i profili utente e produttore, e approvare le richieste di iscrizione produttore. Potrà essere utilizzato per creare i form di registrazione per utenti e produttori.
 \paragraph{Configurazione.}  Si dovranno creare i profili descritti e associarli agli account in base al loro ruolo. Si dovrà impostare l'iscrizione previa approvazione per le registrazioni di produttori. Si dovranno creare due form di registrazione: uno per gli utenti e i produttori.
 
@@ -57,54 +57,58 @@ Per implementare tutte le funzionalità precedentemente descritte sarà necessar
 Per permettere a più produttori di avere la propria vetrina sarà necessaria l'installazione di \gls{wcv}.
 
 \subsubsection{WC Vendors} \label{plugin:wcv}
-\paragraph{Descrizione.} Questo plugin permette di creare il proprio marketplace e di fornire ai venditori la possibilità di vendere come su etsy, Envato, eBay, o Amazon. \gls{wcv} permette a più venditori di vendere i propri prodotti.
+\paragraph{Descrizione.} \gls{wcv} permette di creare il proprio marketplace e di fornire ai venditori la possibilità di vendere come su etsy, Envato, eBay, o Amazon. \gls{wcv} permette a più venditori di vendere i propri prodotti.
 \paragraph{Utilizzo.} \gls{wcv} potrà essere utilizzato per gestire più vetrine contemporaneamente, permettendo ad ogni produttore di avere la propria vetrina in cui mostrare i propri prodotti.
 \paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{BuddyPress} \label{plugin:bp}
 \paragraph{Descrizione.}
-BuddyPress è una insieme di componenti comuni a un tipico social network, e permette di aggiungere molte funzionalità attraverso l'esteso sistema di plugin di WordPress.
-BuddyPress è focalizzato sulla facilità di integrazione, facilità d'uso e estensibilità. È un software per creare social network volutamente potente anche se incredibilmente semplice, costruito dai contributori di WordPress.
-Consente ai membri di registrarsi per aprire un profilo, avere conversazioni private, effettuare collegamenti, creare per interagire nei gruppi, e molto altro. 
+\gls{bp} è un insieme di componenti comuni a un tipico social network, e permette di aggiungere molte funzionalità attraverso l'esteso sistema di plugin di WordPress.
+\gls{bp} è focalizzato sulla facilità di integrazione, facilità d'uso e estensibilità. È un software per creare social network volutamente potente anche se incredibilmente semplice, costruito dai contributori di WordPress.
 \paragraph{Utilizzo.}
 \gls{bp} potrà essere utilizzato per gestire il lato social del sistema, oltre a gestire le richieste dagli utenti ai produttori.
 \paragraph{Configurazione.}
-Per configurare BuddyPress e gestire il sistema di follower/followed è necessario installare il plugin \gls{bpf}
+Per configurare \gls{bp} e gestire il sistema di follower/followed è necessario installare il plugin \gls{bpf}
 
 \subsubsection{BuddyPress Follow} \label{plugin:bpf}
 \paragraph{Descrizione.}
-Questo plugin permette di estendere le funzionalità di \gls{bp} per implementare il sistema di follower/followed .
+\gls{bpf} permette di estendere le funzionalità di \gls{bp} per implementare il sistema di follower/followed .
 \paragraph{Utilizzo.} Verrà utilizzato per implementare il sistema di follower/followed.
 \paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{WP Support Plus Responsive Ticket System} \label{plugin:wpsprts}
-\paragraph{Descrizione.} Questo plugin aggiunge a WordPress le funzionalità di un sistema di ticket completo. Permette alle persone autenticate di creare ticket per segnalare problemi o per ottenere supporto. I creatori del ticket possono impostare lo stato, la priorità e la categoria del ticket.
-\paragraph{Utilizzo.} Questo plugin potrà essere utilizzato dalle persone autenticate per creare ticket per ottenere supporto.
+\paragraph{Descrizione.} \gls{wpsprts} aggiunge a WordPress le funzionalità di un sistema di ticket completo. Permette alle persone autenticate di creare ticket per segnalare problemi o per ottenere supporto. I creatori del ticket possono impostare lo stato, la priorità e la categoria del ticket.
+\paragraph{Utilizzo.} \gls{wpsprts} potrà essere utilizzato dalle persone autenticate per creare ticket per ottenere supporto.
 \paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{WP Report Post} \label{plugin:wprp}
-\paragraph{Descrizione.} Questo plugin permette di segnalare post o pagine con contenuti inappropriati. Tutti questi report sono mostrati in una tabella nella sezione di Amministratore, permettendo così a quest'ultimo di scegliere cosa fare: modificare i contenuti, cancellare la pubblicazione di post/pagine, o semplicemente di eliminare i report. \gls{wprp} è progettato per funzionare sia in modo automatico che in modo manuale. In modo automatico, il link per segnalare potrà essere aggiunto al meta box del post. In modo manuale, si può aggiungere il link, il bottone o l'immagine dove si vuole nel template.
+\paragraph{Descrizione.} \gls{wprp} permette di segnalare post o pagine con contenuti inappropriati. Tutti questi report sono mostrati in una tabella nella sezione di Amministratore, permettendo così a quest'ultimo di scegliere cosa fare: modificare i contenuti, cancellare la pubblicazione di post/pagine, o semplicemente di eliminare i report. \gls{wprp} è progettato per funzionare sia in modo automatico che in modo manuale. In modo automatico, il link per segnalare potrà essere aggiunto al meta box del post. In modo manuale, si può aggiungere il link, il bottone o l'immagine dove si vuole nel template.
 \paragraph{Utilizzo.} \gls{wprp} potrà essere utilizzato per inserire la possibilità di segnalare i contenuti del sistema, come schede prodotto, recensioni o commenti.
 \paragraph{Configurazione.} Si dovrà configurare il link/bottone/immagine per effettuare la segnalazione su ogni contenuto segnalabile.
 
 \subsubsection{Ninja Forms} \label{plugin:nf}
-\paragraph{Descrizione.} Questo plugin permette la creazione di form utilizzando un seplice drag-and-drop. Per i principianti è presente un design di creazione form semplice senza la necessità di scrivere codice. Gli sviluppatori, invece, possono utilizzare opzioni built-in, filtri, e template di campi personalizzati per la creazione di form di ogni tipo e anche per la loro sottomissione.
-\paragraph{Utilizzo.} \gls{nf} potrà essere utilizzato per permettere la creazione dei form necessari all'interno del sistema.
+\paragraph{Descrizione.} \gls{nf} permette la creazione di form utilizzando un semplice drag-and-drop. Per i principianti è presente un design di creazione form semplice senza la necessità di scrivere codice. Gli sviluppatori, invece, possono utilizzare opzioni built-in, filtri, e template di campi personalizzati per la creazione di form di ogni tipo e anche per la loro sottomissione.
+\paragraph{Utilizzo.} \gls{nf} potrà essere utilizzato per permettere la creazione dei form necessari all'interno del sistema, ad esempio per la Scheda Prodotto.
 \paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsubsection{Nextend Facebook Connect} \label{plugin:nfc}
-\paragraph{Descrizione.} Questo plugin permette la registrazione ed il login tramite Facebook.
-\paragraph{Utilizzo.} \gls{nfc} potrà essere utilizzato per permettere ai Visitatori di creare un account di tipo Utente utilizzando la registrazione tramite Facebook. Sarà perciò possibile effettuare il login con le credenziali di Facebook.
-\paragraph{Configurazione.} Si dovranno configurare il bottone per effettuare la registrazione e quello per effettuare il login tramite Facebook.
+\paragraph{Descrizione.} \gls{nfc} permette l'accesso tramite Facebook.
+\paragraph{Utilizzo.} \gls{nfc} potrà essere utilizzato per permettere ai Visitatori di creare un account di tipo Utente utilizzando la funzinoalità di login tramite Facebook. Sarà perciò possibile effettuare il login con le credenziali di Facebook.
+\paragraph{Configurazione.} Si dovrà configurare il bottone per effettuare il login tramite Facebook.
 
-\subsubsection{WP Search} \label{plugin:wps}
-\paragraph{Descrizione.} Questo plugin permette la personalizzazione della ricerca in diversi modi. E' possibile assegnare pesi ai diversi tipi di contenuti, cercare in base al tipo di contenuto o in base ai tag assegnati ai contenuti. Può essere esteso grazie alle molte estensioni disponibili e mette a disposizione diverse statistiche
-\paragraph{Utilizzo.} \gls{wps} potrà essere utilizzato per permettere la ricerca personalizzata in base alla tipologia di contenuto: Prodotto, Notizia o Profilo
-\paragraph{Configurazione.} Si dovranno configurare la ricerca personalizzata per Prodotti, Profili e Notizie. Inserire delle opzioni per selezionare quale tipo di ricerca effettuare
+\subsubsection{SearchWP} \label{plugin:wps}
+\paragraph{Descrizione.} \gls{wps} permette la personalizzazione della ricerca in diversi modi. E' possibile assegnare pesi ai diversi tipi di contenuti, cercare in base al tipo di contenuto o in base ai tag assegnati ai contenuti. Può essere esteso grazie alle molte estensioni disponibili e mette a disposizione diverse statistiche.
+\paragraph{Utilizzo.} \gls{wps} potrà essere utilizzato per permettere la ricerca personalizzata in base alla tipologia di contenuto: Prodotto, Notizia o Profilo.
+\paragraph{Configurazione.} Si dovrà configurare le ricerca personalizzata per Prodotti, Profili e Notizie. Inserire delle opzioni per selezionare quale tipo di ricerca effettuare.
+
+\subsubsection{WP Related Post} \label{plugin:wprep}
+\paragraph{Descrizione.} \gls{wprep} aggiunge in fondo alle pagine dei post visualizzati, i post all'interno del sito considerati simili. \gls{wprep} supporta differenti stili e miniature. E' completamente personalizzabile e include funzionalità di caching per migliorare le prestazioni.
+\paragraph{Utilizzo.} \gls{wprep} potrà essere utilizzate per fornire suggerimenti di prodotti o notizie simili a quelle che si stanno visualizzando.
+\paragraph{Configurazione.} Non necessita di configurazione particolare.
 
 \subsection{Mapping classi di analisi}
 In questa sezione mostreremo come questa configurazione del \gls{cms} implementa tutte le classi di analisi descritte nel documento di \docref{cha:analisi}. Va notato che non c'è una corrispondenza biunivoca fra un sottoinsieme delle classi e un sottoinsieme dei plugin, piuttosto diversi plugin possono servire a implementare una classe o, viceversa, più classi possono essere implementate da un singolo plugin.
-Si noti che le scelte progettuali effettuate rendono agevole l'espansione del sistema con ulteriori funzionalità; inoltre i possibili problemi riscontrabili solo nella fase implementativa, come ad esempio la mancanza di alcune funzionalità necessarie per il corretto funzionamento del sistema, sono facilmente risolvibili semplicemente istallando ulteriori plugin. 
+Si noti che le scelte progettuali effettuate rendono agevole l'espansione del sistema con ulteriori funzionalità; inoltre i possibili problemi riscontrabili solo nella fase implementativa, come ad esempio la mancanza di alcune funzionalità necessarie per il corretto funzionamento del sistema, sono facilmente risolvibili installando ulteriori plugin. 
 Di seguito vengono elencati i package e le classi di analisi definite nel documento di \docref{cha:analisi}:
 \begin{itemize}
 		\item \pkgCAT{pkg:Pagine}
@@ -218,13 +222,13 @@ Nelle seguenti tabelle riportiamo il mapping effettuato fra le classi di analisi
 
 \classeTab{classe:PaginaTicket}
 {\nameref{cms:wp}, \nameref{plugin:wpsprts}}
-{\nameref{cms:wp} gestisce la creazione delle pagine contenenti ticket, mentre \nameref{plugin:wpsprts} gestisce l'intero sistema di tiket con relativa visualizzazione da parte di un assistente delle stesse}
+{\nameref{cms:wp} gestisce la creazione delle pagine contenenti ticket, mentre \nameref{plugin:wpsprts} gestisce l'intero sistema di ticket con relativa visualizzazione da parte di un assistente delle stesse}
 
 \vspaceTab
 
 \classeTab{classe:PaginaNotizie}
-{\nameref{cms:wp}}
-{\nameref{cms:wp} gestisce senza necessità di particolari plugin la creazione di pagine contenenti notizie}
+{\nameref{cms:wp}, \nameref{plugin:wprep}}
+{\nameref{cms:wp} gestisce senza necessità di particolari plugin la creazione di pagine contenenti notizie, \nameref{plugin:wprep} permette di visualizzare suggerimenti di notizie simili a quella mostrata}
 
 \vspaceTab
 
@@ -247,8 +251,8 @@ Nelle seguenti tabelle riportiamo il mapping effettuato fra le classi di analisi
 \vspaceTab
 
 \classeTab{classe:PaginaSchedaProdotto}
-{\nameref{cms:wp}, \nameref{plugin:wc}, \nameref{plugin:wcv}, \nameref{plugin:nf}}
-{\nameref{cms:wp} gestisce la creazione delle pagine prodotto, \nameref{plugin:wc} e \nameref{plugin:wcv} permettono ai produttori di mostrare i propri prodotti, \nameref{plugin:nf} permette di personalizzare i campi della scheda prodotto}
+{\nameref{cms:wp}, \nameref{plugin:wc}, \nameref{plugin:wcv}, \nameref{plugin:nf}, \nameref{plugin:wprep}}
+{\nameref{cms:wp} gestisce la creazione delle pagine prodotto, \nameref{plugin:wc} e \nameref{plugin:wcv} permettono ai produttori di mostrare i propri prodotti, \nameref{plugin:nf} permette di personalizzare i campi della scheda prodotto, \nameref{plugin:wprep} permette di visualizzare suggerimenti di prodotti simili a quello mostrato}
 
 \vspaceTab
 
@@ -277,14 +281,14 @@ Nelle seguenti tabelle riportiamo il mapping effettuato fra le classi di analisi
 \vspaceTab
 
 \classeTab{classe:GestioneSchedaProdotto}
-{\nameref{plugin:wc}, \nameref{plugin:wcv}}
-{\nameref{plugin:wc} e \nameref{plugin:wcv} permettono ad ogni Produttore di gestire le proprie schede prodotto (inserire/modificare)}
+{\nameref{plugin:wc}, \nameref{plugin:wcv}, \nameref{plugin:wprep}}
+{\nameref{plugin:wc} e \nameref{plugin:wcv} permettono ad ogni Produttore di gestire le proprie schede prodotto (inserire/modificare), \nameref{plugin:wprep} permette di ricevere suggerimenti di prodotti simili a quello mostrato}
 
 \vspaceTab
 
 \classeTab{classe:GestioneNotizia}
-{\nameref{cms:wp}}
-{\nameref{cms:wp} gestisce senza necessità di particolari plugin la creazione di pagine contenenti notizie}
+{\nameref{cms:wp}, \nameref{plugin:wprep}}
+{\nameref{cms:wp} gestisce senza necessità di particolari plugin la creazione di pagine contenenti notizie, \nameref{plugin:wprep} permette di ricevere suggerimenti di notizie simili a quella mostrata}
 
 \vspaceTab
 
@@ -295,7 +299,7 @@ Nelle seguenti tabelle riportiamo il mapping effettuato fra le classi di analisi
 \vspaceTab
 
 \classeTab{classe:GestioneProfilo}
-{\nameref{cms:wp}, \nameref{plugin:pbp}, \nameref{plugin:bpf}, \nameref{plugin:bpf}}
+{\nameref{cms:wp}, \nameref{plugin:pbp}, \nameref{plugin:bp}, \nameref{plugin:bpf}}
 {\nameref{cms:wp} permette la gestione del profilo, \nameref{plugin:pbp} permette agli amministratori di creare profili personalizzati in base al tipo di account, \nameref{plugin:bp} e \nameref{plugin:bpf} permettono di gestire le funzionalità di follower/followed}
 
 \vspaceTab
@@ -321,19 +325,19 @@ Nelle seguenti tabelle riportiamo il mapping effettuato fra le classi di analisi
 
 \classeTab{classe:GestioneTicket}
 {\nameref{plugin:wpsprts}}
-{\nameref{plugin:wpsprts} gestisce l'intero sistema di tiket con relativa visualizzazione da parte di un assistente delle stesse}
+{\nameref{plugin:wpsprts} gestisce l'intero sistema di ticket con relativa visualizzazione da parte di un assistente delle stesse}
 
 \vspaceTab
 
 \classeTab{classe:GestioneAccessi}
-{\nameref{cms:wp}}
-{\nameref{cms:wp} permette di gestire gli accessi al sistema da parte di iscritti e di visitatori}
+{\nameref{cms:wp}, \nameref{plugin:ncf}}
+{\nameref{cms:wp} permette di gestire gli accessi al sistema da parte di iscritti e di visitatori, \nameref{plugin:ncf} permette l'accesso tramite Facebook}
 
 \vspaceTab
 
 \classeTab{classe:GestioneIscritti}
-{\nameref{cms:wp}, \nameref{plugin:pbp}, \nameref{plugin:nfc}}
-{\nameref{cms:wp} mette a diposizione la gestione base dell'iscrizione e degli account iscritti,  \nameref{plugin:pbp} permette di creare due diverse procedure di iscrizione: per i produttori e per gli utenti. Inoltre permette di accettare le iscrizioni dei produttori solo previa approvazione.\nameref{plugin:nfc} permette la registrazione, Utente, tramite Faceboo}
+{\nameref{cms:wp}, \nameref{plugin:pbp}, \nameref{plugin:ure}}
+{\nameref{cms:wp} mette a diposizione la gestione base dell'iscrizione e degli account iscritti,  \nameref{plugin:pbp} permette di creare due diverse procedure di iscrizione: per i produttori e per gli utenti. Inoltre permette di accettare le iscrizioni dei produttori solo previa approvazione, \nameref{plugin:ure} permette la gestione dei tipi di un account}
 
 \vspaceTab
 
