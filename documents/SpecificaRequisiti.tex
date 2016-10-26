@@ -111,8 +111,8 @@ Vengono di seguito elencati i requisiti funzionali:
 	%\item \newListItem{req:iscrizione}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione}
 	\item \newListItem{req:iscrizionePortale}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite modulo del portale}
 	%\item \newListItem{req:iscrizioneSocial}{\esubreq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network}
-	\item \newListItem{req:iscrizioneSocialVer}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network verificati}
-	\item \newListItem{req:iscrizioneSocialNotVer}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network non verificati}
+	%\item \newListItem{req:iscrizioneSocialVer}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Social Network verificati}
+	\item \newListItem{req:iscrizioneFacebook}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite Facebook}
 	\item \newListItem{req:iscrizioneApprovazione}{\ereq{RF}{\visitatore\noF\noF\noF\noF\noF\noF}}{Iscrizione tramite approvazione}
 	
 	%\setCatR{\ref*{cat:gestioneiscrizione}}%B
@@ -144,8 +144,8 @@ Vengono di seguito elencati i requisiti funzionali:
 	\item \newListItem{req:rimozioneAccountProprio}{\ereq{RF}{\noF\utente\produttore\noF\noF\noF\noF}}{Rimozione account proprio}
 	
 	\item \newListItem{req:rimozioneAccountAltrui}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimozione account altrui}
-	\item \newListItem{req:aggiungiPrivilegioFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi privilegio ad account}
-	\item \newListItem{req:rimuoviPrivilegioFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi privilegio da account}
+	\item \newListItem{req:aggiungiTipoFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Aggiungi tipo ad account}
+	\item \newListItem{req:rimuoviTipoFigura}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Rimuovi tipo da account}
 	\item \newListItem{req:creaAccount}{\ereq{RF}{\noF\noF\noF\noF\noF\noF\amministratore}}{Crea account}
 
 
@@ -246,326 +246,326 @@ Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requis
 %
 %\statoOK - approvato
 %\statoNOK - non approvato
-%\statoUn - da approvare
+%\statoOK - da approvare
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% A - AUTENTICAZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:login}{Il portale deve permettere ai visitatori di effettuare il login con i dati inseriti nella fase di iscrizione, per entrare nel portale come una Figura Pubblica autenticata}{\prioritaH}{\statoUn}
+\reqTabRF{req:login}{Il portale deve permettere ai visitatori di effettuare il login con i dati inseriti nella fase di iscrizione, per entrare nel portale come una Figura Pubblica autenticata}{\prioritaH}{\statoOK}
 
-\reqTabRF{req:loginAmm}{Il portale deve permettere agli amministratori di effettuare il login in modo sicuro}{\prioritaH}{\statoUn}
+\reqTabRF{req:loginAmm}{Il portale deve permettere agli amministratori di effettuare il login in modo sicuro}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:logout}{Il portale deve permettere di effettuare il logout}{\prioritaH}{\statoUn}
+\reqTabRF{req:logout}{Il portale deve permettere di effettuare il logout}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% B - GESTIONE ISCRIZIONE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\reqTabRF{req:iscrizione}{Il portale deve permettere l'iscrizione ai visitatori}{\prioritaH}{\statoUn}
+%\reqTabRF{req:iscrizione}{Il portale deve permettere l'iscrizione ai visitatori}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:iscrizionePortale}{L'iscrizione dei visitatori deve essere possibile tramite il portale, compilando un apposito modulo e fornendo le informazione necessarie. Tramite questo metodo di iscrizione è possibile creare solo un account utente}{\prioritaH}{\statoUn}
+\reqTabRF{req:iscrizionePortale}{L'iscrizione dei visitatori deve essere possibile tramite il portale, compilando un apposito modulo e fornendo le informazione necessarie. Tramite questo metodo di iscrizione è possibile creare solo un account utente}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-%\reqTabRF{req:iscrizioneSocial}{L'iscrizione dei visitatori deve essere possibile con account terzi di social network}{\prioritaM}{\statoUn}
+%\reqTabRF{req:iscrizioneSocial}{L'iscrizione dei visitatori deve essere possibile con account terzi di social network}{\prioritaM}{\statoOK}
+
+%\vspaceTab
+
+%\reqTabRF{req:iscrizioneSocialVer}{Deve essere possibile l'iscrizione con account verificati di Facebook. Tramite questo metodo di iscrizione è possibile creare un account utente oppure un account produttore.}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:iscrizioneSocialVer}{Deve essere possibile l'iscrizione con account verificati di social network. Tramite questo metodo di iscrizione è possibile creare un account utente oppure un account produttore. Per quest'ultimo verrà chiesto di selezionare la tipologia di produttore: \textsc{Industriale} o \textsc{Artigianale}.}{\prioritaM}{\statoUn}
+\reqTabRF{req:iscrizioneFacebook}{Deve essere possibile l'iscrizione con account di Facebook. Tramite questo metodo di iscrizione è possibile creare solo un account utente}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:iscrizioneSocialNotVer}{Deve essere possibile l'iscrizione con account non verificati di social network. Tramite questo metodo di iscrizione è possibile creare solo un account utente}{\prioritaM}{\statoUn}
+\reqTabRF{req:iscrizioneApprovazione}{L'iscrizione dei visitatori deve essere possibile richiedendo l'approvazione di un account, con apposita procedura. Tramite questo metodo di iscrizione è possibile creare solo un account produttore.}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:iscrizioneApprovazione}{L'iscrizione dei visitatori deve essere possibile richiedendo l'approvazione di un account, con apposita procedura. Tramite questo metodo di iscrizione è possibile creare solo un account produttore. Verrà chiesto di selezionare la tipologia di produttore: \textsc{Industriale} o \textsc{Artigianale}}{\prioritaH}{\statoUn}
-
-\vspaceTab
-
-\reqTabRF{req:approvazioneIscrizione}{Il portale deve permettere agli assistenti di rispondere alle richieste di iscrizione effettuate tramite la procedura che richiede approvazione}{\prioritaH}{\statoUn}
+\reqTabRF{req:approvazioneIscrizione}{Il portale deve permettere agli assistenti di rispondere alle richieste di iscrizione effettuate tramite la procedura che richiede approvazione}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% C - GESTIONE VETRINA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\reqTabRF{req:personalizzaVetrina}{Il portale deve permettere la personalizzazione della vetrina ad ogni produttore}{\prioritaH}{\statoUn}
+%\reqTabRF{req:personalizzaVetrina}{Il portale deve permettere la personalizzazione della vetrina ad ogni produttore}{\prioritaH}{\statoOK}
 
-\reqTabRF{req:personalizzaVetrinaInsDesc}{Deve essere possibile per il produttore inserire una descrizione nella propria vetrina}{\prioritaM}{\statoUn}
-
-\vspaceTab
-
-\reqTabRF{req:personalizzaVetrinaModDesc}{Deve essere possibile per il produttore modificare la descrizione nella propria vetrina}{\prioritaM}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaInsDesc}{Deve essere possibile per il produttore inserire una descrizione nella propria vetrina}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:personalizzaVetrinaInsImg}{Deve essere possibile per il produttore inserire un'immagine nella propria vetrina}{\prioritaM}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaModDesc}{Deve essere possibile per il produttore modificare la descrizione nella propria vetrina}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:personalizzaVetrinaDelImg}{Deve essere possibile per il produttore rimuovere l'immagine della propria vetrina}{\prioritaM}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaInsImg}{Deve essere possibile per il produttore inserire un'immagine nella propria vetrina}{\prioritaM}{\statoOK}
+
+\vspaceTab
+
+\reqTabRF{req:personalizzaVetrinaDelImg}{Deve essere possibile per il produttore rimuovere l'immagine della propria vetrina}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
 %Vedi se va qui la descrizione dettagliata dell'inserimento!
-\reqTabRF{req:personalizzaVetrinaInsProd}{Deve essere possibile per il produttore inserire una scheda prodotto nella propria vetrina}{\prioritaH}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaInsProd}{Deve essere possibile per il produttore inserire una scheda prodotto nella propria vetrina}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:personalizzaVetrinaModProd}{Deve essere possibile per il produttore modificare una scheda prodotto già inserito nella propria vetrina}{\prioritaH}{\statoUn}
+\reqTabRF{req:personalizzaVetrinaModProd}{Deve essere possibile per il produttore modificare una scheda prodotto già inserita nella propria vetrina}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:statistichePrivateVetrina}{Il portale deve permettere al produttore l'accesso alle statistiche private della sua vetrina}{\prioritaM}{\statoUn}
+\reqTabRF{req:statistichePrivateVetrina}{Il portale deve permettere al produttore l'accesso alle statistiche private della sua vetrina}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE NOTIZIE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:inserimentoNotizia}{Il portale deve permettere ai redattori di inserire una notizia}{\prioritaH}{\statoUn}
+\reqTabRF{req:inserimentoNotizia}{Il portale deve permettere ai redattori di inserire una notizia}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:modificaNotizia}{Il portale deve permettere ai redattori di modificare una notizia}{\prioritaH}{\statoUn}
+\reqTabRF{req:modificaNotizia}{Il portale deve permettere ai redattori di modificare una notizia}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:rimozioneNotizia}{Il portale deve permettere ai redattori di eliminare una notizia}{\prioritaH}{\statoUn}
+\reqTabRF{req:rimozioneNotizia}{Il portale deve permettere ai redattori di eliminare una notizia}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE SUGGERIMENTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:prodottiSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre schede prodotto sono simili a quello che si sta visualizzando}{\prioritaL}{\statoUn}
+\reqTabRF{req:prodottiSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre schede prodotto sono simili a quello che si sta visualizzando}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:notizieSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre notizie sono simili a quella che si sta visualizzando}{\prioritaL}{\statoUn}
+\reqTabRF{req:notizieSimili}{Il portale deve permettere di ricevere suggerimenti riguardo quali altre notizie sono simili a quella che si sta visualizzando}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - GESTIONE ACCOUNT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:modificaProfilo}{Il portale deve permette la modifica del proprio profilo}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaProfilo}{Il portale deve permette la modifica del proprio profilo}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:modificaImpostazioni}{Il portale deve permettere l'accesso alle impostazioni e la modifica di queste ultime}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaImpostazioni}{Il portale deve permettere l'accesso alle impostazioni e la modifica di queste ultime}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:rimozioneAccountProprio}{Il portale deve permettere l'eliminazione del proprio account. L'eliminazione di un account non comporterà l'eliminazione dei contenuti inseriti da esso.}{\prioritaL}{\statoUn}
+\reqTabRF{req:rimozioneAccountProprio}{Il portale deve permettere l'eliminazione del proprio account. L'eliminazione di un account non comporterà l'eliminazione dei contenuti inseriti da esso.}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:rimozioneAccountAltrui}{Il portale deve permettere agli amministratori di rimuovere un account}{\prioritaL}{\statoUn}
+\reqTabRF{req:rimozioneAccountAltrui}{Il portale deve permettere agli amministratori di rimuovere un account}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:aggiungiPrivilegioFigura}{Il portale deve permettere agli amministratori di aggiungere un privilegio ad un account presente nel sistema, che non possiede già tale privilegio. Fornendogli in tal modo funzionalità aggiuntive}{\prioritaL}{\statoUn}
+\reqTabRF{req:aggiungiTipoFigura}{Il portale deve permettere agli amministratori di aggiungere un tipo ad un account presente nel sistema, che non possiede già tale tipo. Fornendogli in tal modo le funzionalità associate a quel tipo}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:rimuoviPrivilegioFigura}{Il portale deve permettere agli amministratori di rimuovere un privilegio da un account presente nel sistema. Rimuovendogli in tal modo funzionalità aggiuntive, se non disponibili grazie ad altri privilegi già posseduti}{\prioritaL}{\statoUn}
+\reqTabRF{req:rimuoviTipoFigura}{Il portale deve permettere agli amministratori di rimuovere un tipo da un account presente nel sistema, rimuovendogli in tal modo le funzionalità associate a quel tipo, se non disponibili grazie ad altri tipi già posseduti}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:creaAccount}{Il portale deve permettere agli amministratori di creare un account nel sistema, assegnandogli i privilegi che desidera}{\prioritaL}{\statoUn}
+\reqTabRF{req:creaAccount}{Il portale deve permettere agli amministratori di creare un account nel sistema, assegnandogli i privilegi che desidera}{\prioritaL}{\statoOK}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - INTERAZIONE TRA FIGURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\reqTabRF{req:valutazioneProdotto}{Il portale deve permettere di valutare un prodotto}{\prioritaH}{\statoUn}
+%\reqTabRF{req:valutazioneProdotto}{Il portale deve permettere di valutare un prodotto}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:inserisciValutazioneProdotto}{Deve essere possibile inserire una valutazione di un dato prodotto, cioè un voto in voto in una scala limitata}{\prioritaH}{\statoUn}
+\reqTabRF{req:inserisciValutazioneProdotto}{Deve essere possibile inserire una valutazione di un dato prodotto, cioè un voto in una scala limitata}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:modificaValutazioneProdotto}{Deve essere possibile modificare una propria valutazione}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaValutazioneProdotto}{Deve essere possibile modificare una propria valutazione}{\prioritaM}{\statoOK}
 
 %\vspaceTab
 
-%\reqTabRF{req:eliminaValutazioneProdotto}{Deve essere possibile rimuovere una propria valutazione}{\prioritaM}{\statoUn}
+%\reqTabRF{req:eliminaValutazioneProdotto}{Deve essere possibile rimuovere una propria valutazione}{\prioritaM}{\statoOK}
 
 %\vspaceTab
 
-%\reqTabRF{req:recensioneProdotto}{Il portale deve permettere di recensire di un prodotto}{\prioritaH}{\statoUn}
+%\reqTabRF{req:recensioneProdotto}{Il portale deve permettere di recensire di un prodotto}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:inserisciRecensioneProdotto}{Deve essere possibile inserire una recensione di un dato prodotto, cioè una valutazione e una descrizione testuale}{\prioritaH}{\statoUn}
+\reqTabRF{req:inserisciRecensioneProdotto}{Deve essere possibile inserire una recensione di un dato prodotto, cioè una descrizione testuale. Non è possibile inserire una recensione se non si è già inserita una valutazione per quel prodotto}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:modificaRecensioneProdotto}{Deve essere possibile modificare una propria recensione}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaRecensioneProdotto}{Deve essere possibile modificare una propria recensione}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:eliminaRecensioneProdotto}{Deve essere possibile rimuovere una propria recensione}{\prioritaM}{\statoUn}
+\reqTabRF{req:eliminaRecensioneProdotto}{Deve essere possibile rimuovere una propria recensione}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:commentoRecensione}{Il portale deve permettere l'inserimento di un commento in una recensione}{\prioritaM}{\statoUn}
+\reqTabRF{req:commentoRecensione}{Il portale deve permettere l'inserimento di un commento in una recensione}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:giudizioRecensione}{Il portale deve permettere di esprimere un giudizio, positivo o negativo, di una recensione}{\prioritaM}{\statoUn}
+\reqTabRF{req:giudizioRecensione}{Il portale deve permettere di esprimere un giudizio, positivo o negativo, di una recensione}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:modificaGiudizioRecensione}{Il portale deve permettere di modificare un giudizio, positivo o negativo, espresso su una recensione}{\prioritaM}{\statoUn}
+\reqTabRF{req:modificaGiudizioRecensione}{Il portale deve permettere di modificare un giudizio, positivo o negativo, espresso su una recensione}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:segnalazioneContenutiInap}{Il portale deve permettere di segnalare contenuti inappropriati}{\prioritaL}{\statoUn}
+\reqTabRF{req:segnalazioneContenutiInap}{Il portale deve permettere di segnalare contenuti inappropriati}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:mostraSegnContenutiInap}{Il portale deve permettere ai moderatori la visualizzazione delle segnalazioni dei contenuti inappropriati}{\prioritaL}{\statoUn}
+\reqTabRF{req:mostraSegnContenutiInap}{Il portale deve permettere ai moderatori la visualizzazione delle segnalazioni dei contenuti inappropriati}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:rimozioneContenutiInap}{Il portale deve permettere ai moderatori la rimozione di contenuti inappropriati}{\prioritaL}{\statoUn}
+\reqTabRF{req:rimozioneContenutiInap}{Il portale deve permettere ai moderatori la rimozione di contenuti inappropriati}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:followAccount}{Il portale deve permettere di seguire un account per ricevere aggiornamenti da esso}{\prioritaH}{\statoUn}
+\reqTabRF{req:followAccount}{Il portale deve permettere di seguire un account per ricevere aggiornamenti da esso}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:unFollowAccount}{Il portale deve permettere di cessare di seguire un account che si segue}{\prioritaH}{\statoUn}
+\reqTabRF{req:unFollowAccount}{Il portale deve permettere di cessare di seguire un account che si segue}{\prioritaH}{\statoOK}
 
 %\vspaceTab
 
-%\reqTabRF{req:ticketComunicazione}{Il portale deve permettere alle figure di comunicare con gli assistenti tramite ticket}{\prioritaM}{\statoUn}
+%\reqTabRF{req:ticketComunicazione}{Il portale deve permettere alle figure di comunicare con gli assistenti tramite ticket}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ticketInvio}{Deve essere possibile creare ed inviare diversi tipi di ticket per comunicare con gli assistenti}{\prioritaM}{\statoUn}
+\reqTabRF{req:ticketInvio}{Deve essere possibile creare ed inviare diversi tipi di ticket per comunicare con gli assistenti}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ticketRisposta}{Deve essere possibile rispondere ad un ticket. Le risposte ad un ticket possono essere effettuate da un assistente o dal creatore dello stesso}{\prioritaM}{\statoUn}
+\reqTabRF{req:ticketRisposta}{Deve essere possibile rispondere ad un ticket. Le risposte ad un ticket possono essere effettuate da un assistente o dal creatore dello stesso}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ticketChiudi}{Deve essere possibile per gli assistenti chiudere un ticket}{\prioritaM}{\statoUn}
+\reqTabRF{req:ticketChiudi}{Deve essere possibile per gli assistenti chiudere un ticket}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ticketLettura}{Deve essere possibile visualizzare il ticket dal suo creatore per controllare lo status e dagli assistenti per gestirli}{\prioritaM}{\statoUn}
+\reqTabRF{req:ticketLettura}{Deve essere possibile visualizzare il ticket dal suo creatore per controllare lo status e dagli assistenti per gestirli}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - RICERCA CONTENUTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\reqTabRF{req:ricercaInfo}{Il portale deve permettere di effettuare ricerche in base a diversi criteri}{\prioritaH}{\statoUn}
+%\reqTabRF{req:ricercaInfo}{Il portale deve permettere di effettuare ricerche in base a diversi criteri}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ricercaProdotto}{Deve essere possibili cercare schede prodotto in base a diversi criteri}{\prioritaH}{\statoUn}
+\reqTabRF{req:ricercaProdotto}{Deve essere possibili cercare schede prodotto in base a diversi criteri}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ricercaProfilo}{Deve essere possibili cercare profili pubblici in base a diversi criteri}{\prioritaM}{\statoUn}
+\reqTabRF{req:ricercaProfilo}{Deve essere possibili cercare profili pubblici in base a diversi criteri}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:ricercaNotizia}{Deve essere possibili cercare notizie in base a diversi criteri}{\prioritaM}{\statoUn}
+\reqTabRF{req:ricercaNotizia}{Deve essere possibili cercare notizie in base a diversi criteri}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di una sua scheda prodotto tra quelli presenti nel sistema. La segnalazione conterrà una scheda prodotto parzialmente compilata dall'utente per favorirne l'aggiunta da parte del produttore}{\prioritaL}{\statoUn}
+\reqTabRF{req:richiestaInsProdotto}{Deve essere possibile segnalare ad un produttore la mancanza di una sua scheda prodotto tra quelli presenti nel sistema. La segnalazione conterrà una scheda prodotto parzialmente compilata dall'utente per favorirne l'aggiunta da parte del produttore}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:mostraRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento delle schede prodotto indirizzate a lui, con la possibilità di inserire direttamente la scheda prodotto consigliata, modificarla o rifiutare la richiesta.}{\prioritaL}{\statoUn}
+\reqTabRF{req:mostraRichiesteInsProdotto}{Il produttore potrà visualizzare le richieste di inserimento delle schede prodotto indirizzate a lui, con la possibilità di inserire direttamente la scheda prodotto consigliata, modificarla o rifiutare la richiesta.}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:richiestaInsProduttore}{Deve essere possibile segnalare al sistema l’assenza di un produttore}{\prioritaL}{\statoUn}
+\reqTabRF{req:richiestaInsProduttore}{Deve essere possibile segnalare al sistema l’assenza di un produttore}{\prioritaL}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% H - VISUALIZZIONE CONTENUTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRF{req:mostraVetrina}{Il portale deve permettere di visualizzare una data vetrina}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraVetrina}{Il portale deve permettere di visualizzare una data vetrina}{\prioritaH}{\statoOK}
 
 %\vspaceTab
 %
-%\reqTabRF{req:mostraStatistichePubVetrina}{Deve essere possibile visualizzare le statistiche pubbliche di una data vetrina}{\prioritaL}{\statoUn}
+%\reqTabRF{req:mostraStatistichePubVetrina}{Deve essere possibile visualizzare le statistiche pubbliche di una data vetrina}{\prioritaL}{\statoOK}
 
 %\vspaceTab
 %
-%\reqTabRF{req:mostraProdottiVetrina}{Deve essere possibile visualizzare i prodotti presenti in una data vetrina}{\prioritaH}{\statoUn}
+%\reqTabRF{req:mostraProdottiVetrina}{Deve essere possibile visualizzare i prodotti presenti in una data vetrina}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:mostraProdotto}{Il portale deve permettere di visualizzare una data scheda prodotto}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraProdotto}{Il portale deve permettere di visualizzare una data scheda prodotto}{\prioritaH}{\statoOK}
 
 %\vspaceTab
 %
-%\reqTabRF{req:mostraAnteprimaProdotto}{Il portale deve permettere di visualizzare l'anteprima di un dato prodotto}{\prioritaH}{\statoUn}
+%\reqTabRF{req:mostraAnteprimaProdotto}{Il portale deve permettere di visualizzare l'anteprima di un dato prodotto}{\prioritaH}{\statoOK}
 
-%\reqTabRF{req:mostraInfoProdotto}{Deve essere possibile visualizzare le informazioni di un dato prodotto}{\prioritaH}{\statoUn}
+%\reqTabRF{req:mostraInfoProdotto}{Deve essere possibile visualizzare le informazioni di un dato prodotto}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:mostraRecProdotto}{Deve essere possibile visualizzare le recensioni di un dato prodotto}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraRecProdotto}{Deve essere possibile visualizzare le recensioni di un dato prodotto}{\prioritaH}{\statoOK}
 
 %\vspaceTab
 %
-%\reqTabRF{req:mostraStatProdotto}{Deve essere possibile visualizzare le statistiche di un dato prodotto}{\prioritaM}{\statoUn}
+%\reqTabRF{req:mostraStatProdotto}{Deve essere possibile visualizzare le statistiche di un dato prodotto}{\prioritaM}{\statoOK}
 %
 \vspaceTab
 
-\reqTabRF{req:mostraProfilo}{Il portale deve permettere di visualizzare un dato profilo}{\prioritaM}{\statoUn}
+\reqTabRF{req:mostraProfilo}{Il portale deve permettere di visualizzare un dato profilo}{\prioritaM}{\statoOK}
 
 %\vspaceTab
 %
-%\reqTabRF{req:mostraAnteprimaProfilo}{Il portale deve permettere di visualizzare l'anteprima di un dato profilo}{\prioritaM}{\statoUn}
+%\reqTabRF{req:mostraAnteprimaProfilo}{Il portale deve permettere di visualizzare l'anteprima di un dato profilo}{\prioritaM}{\statoOK}
 
-%\reqTabRF{req:mostraInfoProfilo}{Deve essere possibile visualizzare le informazioni di un dato profilo}{\prioriaM}{\statoUn}
+%\reqTabRF{req:mostraInfoProfilo}{Deve essere possibile visualizzare le informazioni di un dato profilo}{\prioriaM}{\statoOK}
 %vspaceTab
 %
-%\reqTabRF{req:mostraStatProfilo}{Deve essere possibile visualizzare le statistiche di un dato profilo}{\prioritaM}{\statoUn}
+%\reqTabRF{req:mostraStatProfilo}{Deve essere possibile visualizzare le statistiche di un dato profilo}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:mostraNotizia}{Il portale deve permettere di visualizzare una data notizia}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraNotizia}{Il portale deve permettere di visualizzare una data notizia}{\prioritaH}{\statoOK}
 
 %\vspaceTab
 %
-%\reqTabRF{req:mostraAnteprimaNotizia}{Il portale deve permettere di visualizzare l'anteprima di una data notizia}{\prioritaH}{\statoUn}
+%\reqTabRF{req:mostraAnteprimaNotizia}{Il portale deve permettere di visualizzare l'anteprima di una data notizia}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRF{req:mostraAggF}{Il portale deve permettere di visualizzare gli aggiornamenti ricevuti dagli account che si stanno seguendo}{\prioritaH}{\statoUn}
+\reqTabRF{req:mostraAggF}{Il portale deve permettere di visualizzare gli aggiornamenti ricevuti dagli account che si stanno seguendo}{\prioritaH}{\statoOK}
 
 \subsection{Requisiti non funzionali}
 Vengono di seguito riportate le tabelle che descrivono nel dettaglio ogni requisito non funzionale.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SICUREZZA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRNF{req:sicurezzaHttps}{Il portale garantirà l'autenticità e la confidenzialità delle comunicazioni attraverso l'utilizzo del protocollo \texttt{HTTPS}}{\prioritaH}{\statoUn}
+\reqTabRNF{req:sicurezzaHttps}{Il portale garantirà l'autenticità e la confidenzialità delle comunicazioni attraverso l'utilizzo del protocollo \texttt{HTTPS}}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRNF{req:sicurezzaDati}{Il portale garantirà la protezione dei dati sensibili di tutte le figure che interagiscono con esso}{\prioritaH}{\statoUn}
+\reqTabRNF{req:sicurezzaDati}{Il portale garantirà la protezione dei dati sensibili di tutte le figure che interagiscono con esso}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% USABILITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRNF{req:usabilitaInterfaccia}{Il portale disporrà di un interfaccia semplice e intuitiva in modo tale da avere una curva di apprendimento bassa, affinché chiunque sia in un grado di utilizzarlo appieno}{\prioritaM}{\statoUn}
+\reqTabRNF{req:usabilitaInterfaccia}{Il portale disporrà di un interfaccia semplice e intuitiva in modo tale da avere una curva di apprendimento bassa, affinché chiunque sia in un grado di utilizzarlo appieno}{\prioritaM}{\statoOK}
 
 \vspaceTab
 
-\reqTabRNF{req:usabilitaRicerca}{Il portale disporrà di metodi di ricerca intuitivi per permettere di effettuare in poco tempo ricerche affidabili}{\prioritaH}{\statoUn}
+\reqTabRNF{req:usabilitaRicerca}{Il portale disporrà di metodi di ricerca intuitivi per permettere di effettuare in poco tempo ricerche affidabili}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PORTABILITA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\reqTabRNF{req:portabilitaBrowser}{Il sito web del portale sarà portabile fra i principali browser web presenti nel mercato}{\prioritaH}{\statoUn}
+\reqTabRNF{req:portabilitaBrowser}{Il sito web del portale sarà portabile fra i principali browser web presenti nel mercato}{\prioritaH}{\statoOK}
 
 \vspaceTab
 
-\reqTabRNF{req:portabilitaMobile}{Il sito web del portale sarà \emph{responsive} in modo tale da poter essere consultato agevolmente da qualsiasi dispositivo}{\prioritaH}{\statoUn}
+\reqTabRNF{req:portabilitaMobile}{Il sito web del portale sarà \emph{responsive} in modo tale da poter essere consultato agevolmente da qualsiasi dispositivo}{\prioritaH}{\statoOK}
 
 \newdate{requno}{09}{05}{2016}
 \newdate{reqdue}{13}{05}{2016}

@@ -120,7 +120,7 @@ Vengono di seguito elencati i casi d'uso:
 
 	\setCatCU{\ref*{pkg:iscrizione}}%B
 	\item \newListItem{cu:iscrizionePortale}{\formattaCU}{Iscrizione tramite modulo}
-	\item \newListItem{cu:iscrizioneSocial}{\formattaCU}{Iscrizione tramite Social Network}
+	\item \newListItem{cu:iscrizioneSocial}{\formattaCU}{Iscrizione tramite Facebook}
 	\item \newListItem{cu:iscrizioneApprovazione}{\formattaCU}{Iscrizione tramite approvazione}
 	\item \newListItem{cu:approvazioneIscrizione}{\formattaCU}{Approvazione iscrizione}
 
@@ -150,7 +150,7 @@ Vengono di seguito elencati i casi d'uso:
 	\item \newListItem{cu:modificaImpostazioni}{\formattaCU}{Modifica delle proprie impostazioni}
 	\item \newListItem{cu:rimozioneAccountProprio}{\formattaCU}{Rimozione account proprio}
 	\item \newListItem{cu:rimozioneAccountAltrui}{\formattaCU}{Rimozione account altrui}
-	\item \newListItem{cu:modificaPrivilegiAccount}{\formattaCU}{Modifica privilegi di un account}
+	\item \newListItem{cu:modificaPrivilegiAccount}{\formattaCU}{Modifica tipi di un account}
 	\item \newListItem{cu:creaAccount}{\formattaCU}{Crea account}
 
 
@@ -351,10 +351,10 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 \cuTab{cu:iscrizioneSocial}
 {\getTitletodesc{att:visitatore}}
 {La persona è connessa al sito come Visitatore}
-{La persona ha ora un account proprio, creato tramite le API messe a disposizione dal Social Network utilizzato durante l'iscrizione}
+{La persona ha ora un account proprio, creato tramite le API messe a disposizione da Facebook utilizzato durante l'iscrizione}
 {\begin{enumCU}
-		\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare l'iscrizione tramite un Social Network
-		\item Il sistema richiede le credenziali di accesso del Social Network scelto
+		\item Il caso d'uso ha inizio quando un Visitatore richiede di effettuare l'iscrizione tramite Facebook
+		\item Il sistema richiede le credenziali di accesso di Facebook
 		\item Il Visitatore inserisce i dati richiesti \label{cuiscrappsocial:3}
 		\item Il Visitatore conferma i dati inseriti \label{cuiscrappsocial:5}
 		\item Il Il sistema crea un nuovo account con le credenziali ricevute
@@ -891,9 +891,9 @@ Vengono di seguito elencate le tabelle che descrivono i casi d'uso, suddivisi pe
 {Nel sistema sono stati aggiornati i privilegi di quell'account come richiesto}
 {\begin{enumCU}
 	\item Il caso d'uso ha inizio quando un Amministratore seleziona un'\gls{anteprima} profilo tra quelle mostrate nel risultato della ricerca e richiede di modificarne i privilegi
-	\item Il sistema mostra all'Amministratore la lista dei privilegi, specificando quelli posseduti dall'account associato al profilo selezionato
-	\item Il sistema chiede di modificare i privilegi posseduti dall'account
-	\item L'Amministratore seleziona quali privilegi vuole fornire all'account\label{cufornpriv:1}
+	\item Il sistema mostra all'Amministratore la lista dei tipi, specificando quelli posseduti dall'account associato al profilo selezionato
+	\item Il sistema chiede di modificare i tipi posseduti dall'account
+	\item L'Amministratore seleziona quali tipi vuole fornire all'account\label{cufornpriv:1}
 	\item L'Amministratore conferma la selezione
 	\item Il sistema memorizza le scelte effettuate
 \end{enumCU}}
