@@ -46,7 +46,7 @@
         <task id="11" name="Stima dei costi" meeting="false" start="2016-10-02" duration="2" complete="0" expand="true"/>
         <task id="12" name="Analisi del sistema" meeting="false" start="2016-10-10" duration="14" complete="0" expand="true"/>
         <task id="15" name="Design del sistema" meeting="false" start="2016-10-19" duration="7" complete="0" expand="true"/>
-        <task id="16" name="Documento dei test" meeting="false" start="2016-10-24" duration="2" complete="0" expand="true"/>
+        <task id="16" name="Piano dei test" meeting="false" start="2016-10-24" duration="2" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
